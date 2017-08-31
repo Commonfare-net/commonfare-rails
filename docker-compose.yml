@@ -1,0 +1,21 @@
+version: '3'
+services:
+  app:
+    build: .
+    command: rails server -p 3000 -b '0.0.0.0'
+    volumes:
+      - .:/app
+    ports:
+      - "3000:3000"
+    # links app container to postgres container.
+    # Containers for the linked service will be reachable at a hostname identical to the alias, or the service name if no alias was specified.
+    # see https://docs.docker.com/compose/compose-file/#links
+    links:
+      - postgres
+    # These two allow debug with pry 
+    tty: true
+    stdin_open: true
+  postgres:
+    image: postgres:9.6
+    ports:
+      - "5432"

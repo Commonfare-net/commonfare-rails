@@ -1,0 +1,74 @@
+class CommonersController < ApplicationController
+  before_action :set_commoner, only: [:show, :edit, :update, :destroy]
+
+  # GET /commoners
+  # GET /commoners.json
+  def index
+    @commoners = Commoner.all
+  end
+
+  # GET /commoners/1
+  # GET /commoners/1.json
+  def show
+  end
+
+  # GET /commoners/new
+  def new
+    @commoner = Commoner.new
+  end
+
+  # GET /commoners/1/edit
+  def edit
+  end
+
+  # POST /commoners
+  # POST /commoners.json
+  def create
+    @commoner = Commoner.new(commoner_params)
+
+    respond_to do |format|
+      if @commoner.save
+        format.html { redirect_to @commoner, notice: 'Commoner was successfully created.' }
+        format.json { render :show, status: :created, location: @commoner }
+      else
+        format.html { render :new }
+        format.json { render json: @commoner.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # PATCH/PUT /commoners/1
+  # PATCH/PUT /commoners/1.json
+  def update
+    respond_to do |format|
+      if @commoner.update(commoner_params)
+        format.html { redirect_to @commoner, notice: 'Commoner was successfully updated.' }
+        format.json { render :show, status: :ok, location: @commoner }
+      else
+        format.html { render :edit }
+        format.json { render json: @commoner.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # DELETE /commoners/1
+  # DELETE /commoners/1.json
+  def destroy
+    @commoner.destroy
+    respond_to do |format|
+      format.html { redirect_to commoners_url, notice: 'Commoner was successfully destroyed.' }
+      format.json { head :no_content }
+    end
+  end
+
+  private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_commoner
+      @commoner = Commoner.find(params[:id])
+    end
+
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def commoner_params
+      params.require(:commoner).permit(:name)
+    end
+end
