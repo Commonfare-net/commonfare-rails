@@ -79,6 +79,8 @@ This will recreate only the Rails container from the new image, and not the DB c
 
 ## Debug with `pry`
 
+From [this gist](https://gist.github.com/briankung/ebfb567d149209d2d308576a6a34e5d8).
+
 Find out the Container ID and attach to the container logs
 
 ```bash

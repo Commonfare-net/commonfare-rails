@@ -1,15 +1,15 @@
-<h2><%= s_('Login page title|Log in') %></h2>
+<div class="row justify-content-center">
+  <div class="col-md-6 col-lg-4">
+    <h2 class="text-center"><%= s_('Login page title|Log in') %></h2>
+    <p class="login-subtitle"><%= _("Want to be a Commoner?") %> <%= link_to _("Join us!"), new_registration_path(resource_name) %></p>
+    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-inputs">
-    <%= f.input :email, required: false, autofocus: true %>
-    <%= f.input :password, required: false %>
-    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+        <%= f.input :email, required: false, autofocus: true %>
+        <%= f.input :password, required: false %>
+        <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+        <%= f.button :submit, s_('Login page button|Log in'), class: 'btn-success btn-lg btn-block' %>
+    <% end %>
+
+    <%= render "users/shared/links" %>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, s_('Login page button|Log in') %>
-  </div>
-<% end %>
-
-<%= render "users/shared/links" %>
+</div>
