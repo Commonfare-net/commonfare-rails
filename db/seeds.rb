@@ -1,19 +1,15 @@
 def user_attributes_for(resource)
   resource.user_attributes = {
     email: "#{resource.name.parameterize}@example.com",
-    password: 'password',
-    password_confirmation: 'password'
+    password: 'password'
   }
 end
 
-NAMES = %w(Marco Sara)
+NAMES = %w(Marco Sara Zeno Zoe)
 
 NAMES.each do |name|
-  commoner = Commoner.find_or_create_by name: name
-  User.find_or_create_by email: "#{commoner.name.parameterize}@example.com" do |user|
-              user.password = 'password'
-              user.meta_id = commoner.id
-              user.meta_type = 'Commoner'
+  Commoner.find_or_create_by name: name do |commoner|
+    user_attributes_for commoner
   end
-  puts "#{name} created"
+  # puts "#{name} created"
 end

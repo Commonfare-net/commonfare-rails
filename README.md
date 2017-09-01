@@ -76,3 +76,14 @@ $ docker-compose up
 ```
 
 This will recreate only the Rails container from the new image, and not the DB container, that this way persists data.
+
+## Debug with `pry`
+
+Find out the Container ID and attach to the container logs
+
+```bash
+$ docker ps
+$ docker attach ID
+```
+
+When done, exit `pry` by entering `exit` and detach from the container with `Ctrl+P` `Ctrl+Q`. Don't use `Ctrl+C` because you wuld kill the rails server and so the container itself.
