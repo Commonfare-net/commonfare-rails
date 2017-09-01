@@ -1,15 +1,12 @@
-<h2>Forgot your password?</h2>
+<div class="row justify-content-center">
+  <div class="col-md-6 col-lg-4">
+    <h2 class="text-center"><%= s_('Forgot password page header|Forgot password?') %></h2>
+    <p class="text-center"><%= _('No problem. Just enter your email address here and we will send you the link for creating a new one.') %></p>
 
-<%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
+    <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+      <%= f.error_notification %>
+      <%= f.input :email, autofocus: true %>
+      <%= f.button :submit, "Send me the instructions", class: 'btn-info btn-block' %>
+    <% end %>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Send me reset password instructions" %>
-  </div>
-<% end %>
-
-<%= render "users/shared/links" %>
+</div>

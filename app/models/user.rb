@@ -8,4 +8,10 @@ class User < ApplicationRecord
   # you may need to check this out http://astockwell.com/blog/2014/07/polymorphic-associations-in-rails-4-part-2/
 
   delegate :name, to: :meta
+
+  %i(commoner).each do |role|
+    define_method "is_#{role}?" do
+      meta_type == role.to_s.classify
+    end
+  end
 end

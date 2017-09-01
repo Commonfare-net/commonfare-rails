@@ -1,19 +1,13 @@
 <div class="row justify-content-center">
   <div class="col-md-6 col-lg-4">
     <h2 class="text-center"><%= s_('Sign up page header|Become a Commoner') %></h2>
-    <p class="text-center"><%= _("Already a Commoner?") %> <%= link_to _("Join us!"), new_user_session_path %></p>
+    <p class="text-center"><%= _("Already a Commoner?") %> <%= link_to _("Log in!"), new_user_session_path %></p>
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= f.error_notification %>
-
-      <div class="form-inputs">
-        <%= f.input :email, autofocus: true %>
-        <%= f.input :password, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-        <%= f.input :password_confirmation %>
-      </div>
-
-      <div class="form-actions">
-        <%= f.button :submit, s_('Sign up page button|Join Commonfare'), class: 'btn-success btn-lg btn-block' %>
-      </div>
+      <%= f.input :email, autofocus: true %>
+      <%= f.input :password, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+      <%= f.input :password_confirmation %>
+      <%= f.button :submit, s_('Sign up page button|Join Commonfare'), class: 'btn-success btn-lg btn-block' %>
     <% end %>
   </div>
 </div>

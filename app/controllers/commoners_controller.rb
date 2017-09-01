@@ -1,5 +1,6 @@
 class CommonersController < ApplicationController
-  before_action :set_commoner, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource
+  # before_action :set_commoner, only: [:show, :edit, :update, :destroy]
 
   # GET /commoners
   # GET /commoners.json
