@@ -1,9 +1,29 @@
 <p id="notice"><%= notice %></p>
+<div class="row text-center">
+  <div class="col-sm-6">
+    <%= image_tag "http://placebear.com/100/100", class: 'rounded-circle' %>
+  </div>
+  <div class="col-sm-6">
+    <p class='lead'>
+      <%= @commoner.name %>
+      <small><%= link_to 'Edit', edit_commoner_path(@commoner) if can? :edit, @commoner %></small>
+    </p>
+  </div>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @commoner.name %>
-</p>
+<div class="row">
+<% 6.times do %>
+  <div class="col-lg-4 col-md-6">
+    <div class="card my-2" >
+      <img class="card-img-top" src="http://placebear.com/318/180" alt="Card image cap">
+      <div class="card-body">
+        <h4 class="card-title">Card title</h4>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
 
-<%= link_to 'Edit', edit_commoner_path(@commoner) %> |
 <%= link_to 'Back', commoners_path %>
