@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang='<%= I18n.locale %>'>
   <head>
     <title><%= yield(:title).present? ? yield(:title) : _("Welcome") %> | Commonfare.net</title>
     <%= csrf_meta_tags %>

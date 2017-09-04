@@ -1,9 +1,41 @@
-<%# The nav.fixed-bottom is always visible %>
-<!-- <nav class="navbar fixed-bottom navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">Change language</a>
-</nav> -->
+<%# see http://getbootstrap.com/docs/4.0/examples/sticky-footer-navbar/ %>
 <footer class="footer">
   <div class="container">
-    <span>Change language from here</span>
+    <div class="row pt-2">
+      <div class="col-sm-4 language-select">
+        <%= _("Change language") %>
+        <div class="dropdown d-inline">
+          <button href="#" id="dropdownMenuButton" type="button" class="btn btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <%= I18n.locale.to_s.upcase %>
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <% other_locales.each do |locale| %>
+              <%= link_to locale.to_s.upcase, { locale: locale }, class: 'dropdown-item' %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4 center-links">
+        <p class="hidden-xs">
+          <small>Commonfare.net <%= Time.now.year %> | <%= mail_to "hello@commonfare.net" %></small>
+        </p>
+      </div>
+      <div class="col-sm-4 right-links hidden-xs">
+        <ul class="list-unstyled">
+          <li>
+            <small><%#= link_to _("Help"), page_path(id: 'help') %></small>
+          </li>
+          <li>
+            <small><%#= link_to _("About us"), page_path(id: 'about') %></small>
+          </li>
+          <li>
+            <small><%#= link_to _("Terms and Conditions"), page_path(id: 'legal/tos') %></small>
+          </li>
+          <li>
+            <small><%#= link_to _("Privacy Policy"), page_path(id: 'legal/privacy') %></small>
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
 </footer>
