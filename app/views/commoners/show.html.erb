@@ -8,6 +8,8 @@
       <%= @commoner.name %>
       <small><%= link_to 'Edit', edit_commoner_path(@commoner) if can? :edit, @commoner %></small>
     </p>
+    <%= link_to _("Share a Story"), new_commoner_story_path(@commoner), class: 'btn btn-success' %>
+    <%= link_to _("My Stories"), commoner_stories_path(@commoner), class: 'btn btn-info' %>
   </div>
 </div>
 
