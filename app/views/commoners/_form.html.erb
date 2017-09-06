@@ -1,5 +1,5 @@
 <%= simple_form_for(@commoner) do |f| %>
   <%= f.error_notification %>
-    <%= f.input :name %>
+    <%= f.input :name, required: false %>
     <%= f.button :submit, s_('Update profile page button|Update profile'), class: 'btn-info btn-lg btn-block' %>
 <% end %>
