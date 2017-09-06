@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <%= link_to root_path, class: 'navbar-brand' do %>
+  <%= link_to (user_signed_in? ? commoner_path(current_user.meta) : root_path), class: 'navbar-brand' do %>
     <%= image_tag "logo.svg", height: 30 %>
   <% end %>
 
