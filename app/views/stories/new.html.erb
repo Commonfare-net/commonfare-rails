@@ -1,3 +1,5 @@
 <h1>New Story</h1>
-
+<p>
+  <%= _("You are writing this Story in %{lang_name}" %{ lang_name: localised_language_name }) %>
+</p>
 <%= render 'form', story: @story %>

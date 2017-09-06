@@ -36,6 +36,8 @@ gem 'jbuilder', '~> 2.5'
 # Frontend
 gem 'bootstrap', '~> 4.0.0.beta'
 gem 'jquery-rails'
+# Rich text by basecamp
+gem 'trix'
 
 # Forms
 gem 'simple_form'
@@ -48,6 +50,7 @@ gem 'devise-i18n'
 # Localization
 gem 'gettext_i18n_rails'
 gem 'gettext_i18n_rails_js', '~> 1.0.0'
+gem 'i18n_data'
 # From branch master to work with Rails 5
 gem 'globalize', git: 'https://github.com/globalize/globalize'
 gem 'activemodel-serializers-xml' # needed by globalize
@@ -63,6 +66,10 @@ group :development, :test do
   gem 'selenium-webdriver'
   # Nice debug
   gem 'pry-rails'
+
+  # Nice error page, with console
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 group :development do
