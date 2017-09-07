@@ -1,7 +1,7 @@
 class StoriesController < ApplicationController
   load_and_authorize_resource :commoner
   load_and_authorize_resource :story, through: :commoner, shallow: true
-  # before_action :set_story, only: [:show, :edit, :update, :destroy]
+  before_action :set_story_locale#, only: [:new, :edit, :create, :update]
 
   # GET /stories
   # GET /stories.json
@@ -27,12 +27,19 @@ class StoriesController < ApplicationController
   # POST /stories.json
   def create
     # @story = Story.new(story_params)
+    # Temporary change I18n.locale for saving the Story using @story_locale
+    current_locale = I18n.locale
+    I18n.locale = @story_locale
     @story = @commoner.stories.build(story_params)
     respond_to do |format|
       if @story.save
-        format.html { redirect_to @story, notice: 'Story was successfully created.' }
+        # I18n.locale back to the original
+        I18n.locale = current_locale
+        format.html { redirect_to story_path(@story, story_locale: @story_locale), notice: _('Story was successfully created.') }
         format.json { render :show, status: :created, location: @story }
       else
+        # I18n.locale back to the original
+        I18n.locale = current_locale
         format.html { render :new }
         format.json { render json: @story.errors, status: :unprocessable_entity }
       end
@@ -43,10 +50,17 @@ class StoriesController < ApplicationController
   # PATCH/PUT /stories/1.json
   def update
     respond_to do |format|
+      # Temporary change I18n.locale for saving the Story using @story_locale
+      current_locale = I18n.locale
+      I18n.locale = @story_locale
       if @story.update(story_params)
-        format.html { redirect_to @story, notice: 'Story was successfully updated.' }
+        # I18n.locale back to the original
+        I18n.locale = current_locale
+        format.html { redirect_to story_path(@story, story_locale: @story_locale), notice: _('Story was successfully updated.') }
         format.json { render :show, status: :ok, location: @story }
       else
+        # I18n.locale back to the original
+        I18n.locale = current_locale
         format.html { render :edit }
         format.json { render json: @story.errors, status: :unprocessable_entity }
       end
@@ -58,16 +72,19 @@ class StoriesController < ApplicationController
   def destroy
     @story.destroy
     respond_to do |format|
-      format.html { redirect_to stories_url, notice: 'Story was successfully destroyed.' }
+      format.html { redirect_to stories_url, notice: _('Story was successfully destroyed.') }
       format.json { head :no_content }
     end
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    # def set_story
-    #   @story = Story.find(params[:id])
-    # end
+    def set_story_locale
+      @story_locale = I18n.locale
+      if params[:story_locale].present? && I18n.available_locales.include?(params[:story_locale].to_sym)
+        @story_locale = params[:story_locale].to_sym
+      end
+    end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def story_params

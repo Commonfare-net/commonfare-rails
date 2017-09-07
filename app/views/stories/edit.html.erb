@@ -1,5 +1,21 @@
 <h1>Editing Story</h1>
-
-<%= render 'form', story: @story %>
-
-<%= link_to 'Show', @story %> |
+<% Globalize.with_locale(@story_locale) do %>
+  <div>
+    <%#= _("You are editing this Story in %{lang_name}" %{ lang_name: localised_language_name(I18n.locale, @story_locale) }) %>
+    <%= _("You are editing this Story in") %>
+    <div class="dropdown d-inline">
+      <button href="#" id="dropdownMenuButton" type="button" class="btn btn-link btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <%= localised_language_name(I18n.locale, @story_locale) %>
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <% other_locales(@story_locale).each do |locale| %>
+          <%= link_to "#{localised_language_name(I18n.locale, locale)}", { story_locale: locale }, class: 'dropdown-item' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <%#= render 'form', story: @story %>
+  <%= simple_form_for([@commoner, @story], url: story_path(@story, story_locale: @story_locale)) do |f| %>
+    <%= render 'fields', f: f %>
+  <% end %>
+<% end %>

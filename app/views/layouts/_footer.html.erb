@@ -10,7 +10,7 @@
           </button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <% other_locales.each do |locale| %>
-              <%= link_to "#{locale.to_s.upcase} - #{localised_language_name(locale, locale)}", { locale: locale }, class: 'dropdown-item' %>
+              <%= link_to "#{locale.to_s.upcase} - #{localised_language_name(locale, locale)}", { locale: locale, story_locale: @story_locale }, class: 'dropdown-item' %>
             <% end %>
           </div>
         </div>

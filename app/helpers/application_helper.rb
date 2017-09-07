@@ -1,6 +1,6 @@
 module ApplicationHelper
-  def other_locales
-    I18n.available_locales - [ I18n.locale ]
+  def other_locales(current_locale=I18n.locale)
+    I18n.available_locales - [ current_locale ]
   end
 
   def localised_language_name(translation_locale=I18n.locale, language_locale=I18n.locale)

@@ -1,31 +1,18 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Stories</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Content</th>
-      <th>Place</th>
-      <th>Commoner</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @stories.each do |story| %>
-      <tr>
-        <td><%= story.title %></td>
-        <td><%= story.content %></td>
-        <td><%= story.place %></td>
-        <td><%= story.commoner %></td>
-        <td><%= link_to 'Show', story %></td>
-        <td><%= link_to 'Edit', edit_story_path(story) %></td>
-        <td><%= link_to 'Destroy', story, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
+<h1><%= _('My Stories') %></h1>
+<div class="row">
+<% @commoner.stories.each do |story| %>
+  <div class="col-lg-4 col-md-6">
+    <div class="card my-2" >
+      <img class="card-img-top" src="http://placebear.com/318/180" alt="Card image cap">
+      <div class="card-body">
+        <h4 class="card-title"><%= story.title %></h4>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <%= link_to _('Continue reading'), story_path(story), class: 'btn btn-primary' %>
+        <%= link_to(_('Edit'), story_path(story), class: 'btn btn-info') if can? :edit, story %>
+      </div>
+    </div>
+  </div>
+<% end %>
+</div>
