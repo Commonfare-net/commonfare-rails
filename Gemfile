@@ -47,6 +47,8 @@ gem 'cancancan'
 gem 'devise'
 gem 'devise-i18n'
 
+gem 'geocoder'
+
 # Localization
 gem 'gettext_i18n_rails'
 gem 'gettext_i18n_rails_js', '~> 1.0.0'

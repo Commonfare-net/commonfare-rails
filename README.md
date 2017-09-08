@@ -89,3 +89,14 @@ $ docker attach ID
 ```
 
 When done, exit `pry` by entering `exit` and detach from the container with `Ctrl+P` `Ctrl+Q`. Don't use `Ctrl+C` because you wuld kill the rails server and so the container itself.
+
+## Deployment
+
+On production machine run
+
+NOTE: Not yet tested!
+
+```bash
+$ git pull
+$ docker-compose build app && docker-compose up -d app
+```

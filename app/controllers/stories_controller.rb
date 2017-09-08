@@ -21,12 +21,15 @@ class StoriesController < ApplicationController
 
   # GET /stories/1/edit
   def edit
+    # binding.pry
   end
 
   # POST /stories
   # POST /stories.json
   def create
-    # @story = Story.new(story_params)
+    # NOTE: To avoid DEPRECATION WARNING when saving with Globalize attributes
+    # wait for this pull request to be merged https://github.com/globalize/globalize/pull/629
+
     # Temporary change I18n.locale for saving the Story using @story_locale
     current_locale = I18n.locale
     I18n.locale = @story_locale
@@ -50,6 +53,9 @@ class StoriesController < ApplicationController
   # PATCH/PUT /stories/1.json
   def update
     respond_to do |format|
+      # NOTE: To avoid DEPRECATION WARNING when saving with Globalize attributes
+      # wait for this pull request to be merged https://github.com/globalize/globalize/pull/629
+
       # Temporary change I18n.locale for saving the Story using @story_locale
       current_locale = I18n.locale
       I18n.locale = @story_locale
