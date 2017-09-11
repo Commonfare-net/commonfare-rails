@@ -13,6 +13,11 @@
       </div>
     </div>
   </div>
+  <% unless @story.translated_in?(@story_locale) %>
+    <div class="badge badge-warning">
+      <%= _("You haven't yet saved this Story in %{localised_lang_name}" %{localised_lang_name: localised_language_name(I18n.locale, @story_locale)}) %>
+    </div>
+  <% end %>
   <%#= render 'form', story: @story %>
   <%= simple_form_for([@commoner, @story], url: story_path(@story, story_locale: @story_locale)) do |f| %>
     <%= render 'fields', f: f %>

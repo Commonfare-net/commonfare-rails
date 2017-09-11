@@ -1,11 +1,17 @@
 <%= f.error_notification %>
 <%# binding.pry %>
 <%= f.input :title,
+            label: _('Give a nice title to your Story'),
             required: false,
-            placeholder: _('What is the title of your story?') %>
+            placeholder: _('e.g. There and back again') %>
 <%= f.input :content,
+            label: _('Write here your Story'),
             as: :trix_editor,
             required: false,
             hint: _("Please don't be too concise (min. 500 chars)") %>
-<%= f.input :place, required: false, placeholder: _('e.g. Milan, Italy'), hint: _('The city, region or country of your story') %>
+<%= f.input :place,
+            label: _('Where is this story set?'),
+            required: false,
+            placeholder: _('e.g. Milan, Italy'),
+            hint: _('The city, region or country of your story') %>
 <%= f.button :submit, s_('Story form button|Share your Story'), class: 'btn btn-success btn-block' %>
