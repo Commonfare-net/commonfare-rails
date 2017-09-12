@@ -1,4 +1,8 @@
 class StoriesController < ApplicationController
+  # This must stay **before** cancan methods, because they do a Story.new(story_params)
+  # but new tags break it
+  before_action :create_new_tags, only: [:create, :update]
+
   load_and_authorize_resource :commoner
   load_and_authorize_resource :story, through: :commoner, shallow: true
   before_action :set_story_locale#, only: [:new, :edit, :create, :update]
@@ -21,7 +25,6 @@ class StoriesController < ApplicationController
 
   # GET /stories/1/edit
   def edit
-    # binding.pry
   end
 
   # POST /stories
@@ -89,6 +92,19 @@ class StoriesController < ApplicationController
       @story_locale = I18n.locale
       if params[:story_locale].present? && I18n.available_locales.include?(params[:story_locale].to_sym)
         @story_locale = params[:story_locale].to_sym
+      end
+    end
+
+    # This method creates the not-yet-existing tags and replaces
+    # tag_ids with their ids.
+    def create_new_tags
+      params[:story][:tag_ids].map! do |tag_id|
+        if Tag.exists? tag_id
+          tag_id
+        else
+          new_tag = Tag.create(name: tag_id.downcase)
+          new_tag.id
+        end
       end
     end
 
