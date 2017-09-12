@@ -14,4 +14,5 @@
             required: false,
             placeholder: _('e.g. Milan, Italy'),
             hint: _('The city, region or country of your story') %>
+<%= f.association :tags %>
 <%= f.button :submit, s_('Story form button|Share your Story'), class: 'btn btn-success btn-block' %>

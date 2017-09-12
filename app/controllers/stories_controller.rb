@@ -29,7 +29,7 @@ class StoriesController < ApplicationController
   def create
     # NOTE: To avoid DEPRECATION WARNING when saving with Globalize attributes
     # wait for this pull request to be merged https://github.com/globalize/globalize/pull/629
-
+    # binding.pry
     # Temporary change I18n.locale for saving the Story using @story_locale
     current_locale = I18n.locale
     I18n.locale = @story_locale
@@ -94,6 +94,6 @@ class StoriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def story_params
-      params.require(:story).permit(:title, :content, :place)
+      params.require(:story).permit(:title, :content, :place, tag_ids: [])
     end
 end

@@ -1,5 +1,6 @@
 class Story < ApplicationRecord
   belongs_to :commoner
+  has_and_belongs_to_many :tags
 
   translates :title, :content
 

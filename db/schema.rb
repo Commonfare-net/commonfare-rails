@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170905092040) do
+ActiveRecord::Schema.define(version: 20170911145536) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,13 @@ ActiveRecord::Schema.define(version: 20170905092040) do
     t.index ["commoner_id"], name: "index_stories_on_commoner_id"
   end
 
+  create_table "stories_tags", id: false, force: :cascade do |t|
+    t.bigint "story_id", null: false
+    t.bigint "tag_id", null: false
+    t.index ["story_id", "tag_id"], name: "index_stories_tags_on_story_id_and_tag_id", unique: true
+    t.index ["tag_id", "story_id"], name: "index_stories_tags_on_tag_id_and_story_id", unique: true
+  end
+
   create_table "story_translations", force: :cascade do |t|
     t.integer "story_id", null: false
     t.string "locale", null: false
@@ -40,6 +47,13 @@ ActiveRecord::Schema.define(version: 20170905092040) do
     t.text "content"
     t.index ["locale"], name: "index_story_translations_on_locale"
     t.index ["story_id"], name: "index_story_translations_on_story_id"
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_tags_on_name", unique: true
   end
 
   create_table "users", force: :cascade do |t|

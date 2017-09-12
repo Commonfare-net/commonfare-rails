@@ -38,6 +38,8 @@ gem 'bootstrap', '~> 4.0.0.beta'
 gem 'jquery-rails'
 # Rich text by basecamp
 gem 'trix'
+# Select2
+gem 'select2-rails'
 
 # Forms
 gem 'simple_form'
