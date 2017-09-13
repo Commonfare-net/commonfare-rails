@@ -7,12 +7,160 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2017-08-31 14:13+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2017-09-13 09:41+0200\n"
 "Language-Team: Italian\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"\n"
+"POT-Creation-Date: \n"
+"Last-Translator: Pietro <pbmolini@fbk.eu>\n"
+"X-Generator: Poedit 2.0.3\n"
+
+msgid "All your content will be permanetly deleted too."
+msgstr ""
+
+msgid "Already a Commoner?"
+msgstr ""
+
+msgid "Are you sure?"
+msgstr ""
+
+msgid "Auth Button title|Forgot your password?"
+msgstr ""
+
+msgid "Auth Button title|Log in"
+msgstr ""
+
+msgid "Auth Button title|Sign up"
+msgstr ""
+
+msgid "Change language"
+msgstr "Cambia lingua"
+
+msgid "Continue reading"
+msgstr ""
+
+msgid "Edit"
+msgstr ""
+
+msgid "Edit credentials"
+msgstr ""
+
+msgid "Edit profile"
+msgstr ""
+
+msgid "Edit your credentials"
+msgstr ""
+
+msgid "Forgot password page header|Forgot password?"
+msgstr ""
+
+msgid "Give a nice title to your Story"
+msgstr ""
+
+msgid "Home"
+msgstr ""
+
+msgid "Join us!"
+msgstr ""
+
+msgid "Log in!"
+msgstr ""
+
+msgid "Login"
+msgstr ""
+
+msgid "Login page button|Log in"
+msgstr ""
+
+msgid "Login page header|Log in"
+msgstr ""
+
+msgid "My Stories"
+msgstr ""
+
+msgid "No problem. Just enter your email address here and we will send you the link for creating a new one."
+msgstr ""
+
+msgid "Please don't be too concise (min. 500 chars)"
+msgstr ""
+
+msgid "Press Enter to separate the tags"
+msgstr ""
+
+msgid "Share a Story"
+msgstr ""
+
+msgid "Sign up"
+msgstr ""
+
+msgid "Sign up page button|Join Commonfare"
+msgstr ""
+
+msgid "Sign up page header|Become a Commoner"
+msgstr ""
+
+msgid "Some words useful to tag your story"
+msgstr ""
+
+msgid "Story form button|Share your Story"
+msgstr ""
+
+msgid "Story was successfully created."
+msgstr ""
+
+msgid "Story was successfully destroyed."
+msgstr ""
+
+msgid "Story was successfully updated."
+msgstr ""
+
+msgid "The city, region or country of your story"
+msgstr ""
+
+msgid "Update"
+msgstr ""
+
+msgid "Update profile page button|Update profile"
+msgstr ""
+
+msgid "Want to be a Commoner?"
+msgstr ""
+
+msgid "Welcome"
+msgstr ""
+
+msgid "What is the title of your story?"
+msgstr ""
+
+msgid "Where is this story set?"
+msgstr ""
+
+msgid "Write here your Story"
+msgstr ""
+
+msgid "Yes please. Cancel my account"
+msgstr ""
+
+msgid "You are editing this Story in"
+msgstr ""
+
+msgid "You are reading this Story in"
+msgstr ""
+
+msgid "You are writing this Story in"
+msgstr ""
+
+msgid "You haven't yet saved this Story in %{localised_lang_name}"
+msgstr ""
+
+msgid "e.g. Milan, Italy"
+msgstr ""
+
+msgid "e.g. Pregnancy, Food sharing, etc."
+msgstr ""
+
+msgid "e.g. There and back again"
+msgstr ""
