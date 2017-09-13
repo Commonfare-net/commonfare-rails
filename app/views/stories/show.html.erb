@@ -1,32 +1,59 @@
-<% Globalize.with_locale(@story_locale) do %>
-  <div>
-    <%= _("You are reading this Story in") %>
-    <div class="dropdown d-inline">
-      <button href="#" id="dropdownMenuButton" type="button" class="btn btn-link btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <%= localised_language_name(I18n.locale, @story_locale) %>
-      </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <% other_locales(@story_locale).each do |locale| %>
-          <%= link_to "#{localised_language_name(I18n.locale, locale)}", { story_locale: locale }, class: 'dropdown-item' %>
-        <% end %>
+<div class="row justify-content-center">
+  <div class="col-md-8 col-lg-6">
+    <% Globalize.with_locale(@story_locale) do %>
+
+    <%# Language selection %>
+    <% if @story.available_translations.length > 1 && @story.has_translations_besides(@story_locale) %>
+    <div class="row">
+      <div class="col">
+        <div class="story-lang-select">
+          <%= (_("This Story is also available in %{other_languages}") %{other_languages: other_story_available_translations(@story, @story_locale)}).html_safe %>
+        </div>
       </div>
     </div>
+    <% end %>
+
+    <%# STORY TITLE %>
+    <div class="row">
+      <div class="col">
+        <div class="story-title">
+          <h2><%= @story.title %></h2>
+        </div>
+      </div>
+    </div>
+
+    <%# STORY PLACE %>
+    <div class="row">
+      <div class="col">
+        <div class="story-place">
+          <%= fa_icon('map-marker', text: @story.place) %>
+        </div>
+      </div>
+    </div>
+
+    <%# STORY CONTENT %>
+    <div class="row">
+      <div class="col">
+        <div class="story-content">
+          <%= @story.content.html_safe %>
+        </div>
+      </div>
+    </div>
+
+    <%= link_to 'Edit', edit_story_path(@story, story_locale: @story_locale) %>
+    <% end %>
+
+    <%# STORY TAGS %>
+    <div class="row">
+      <div class="col">
+        <hr>
+        <p class="story-tags">
+          <% @story.tags.each do |tag| %>
+          <%= link_to tag.name, '#', class: 'btn btn-sm btn-light' %>
+          <% end %>
+        </p>
+      </div>
+    </div>
+
   </div>
-
-<p>
-  <strong>Title:</strong>
-  <%= @story.title %>
-</p>
-
-<p>
-  <strong>Content:</strong>
-  <%= @story.content.html_safe %>
-</p>
-
-<p>
-  <strong>Place:</strong>
-  <%= @story.place %>
-</p>
-
-<%= link_to 'Edit', edit_story_path(@story, story_locale: @story_locale) %> |
-<% end %>
+</div>

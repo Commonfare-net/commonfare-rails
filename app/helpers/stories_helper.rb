@@ -1,8 +1,17 @@
 module StoriesHelper
-  def card_tags_links(story)
+  def story_card_tags_links(story)
     links = story.tags.map do |tag|
       link_to(tag.name, '#', class: 'story-card-tag-link')
     end
     links.join(', ').html_safe
+  end
+
+  def other_story_available_translations(story, story_locale=I18n.locale)
+    # e.g. I18nData.languages(:it)['HR'] => 'Croato'
+    other_translations_locales = story.title_translations.keys - [ story_locale.to_s ]
+    available_translations_links = other_translations_locales.map do |loc|
+      link_to(I18nData.languages(I18n.locale)[loc.to_s.upcase], { story_locale: loc })
+    end
+    available_translations_links.to_sentence
   end
 end

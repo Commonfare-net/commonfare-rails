@@ -9,4 +9,12 @@ class Story < ApplicationRecord
   def translated_in?(locale)
     title_translations.keys.include? locale.to_s
   end
+
+  def has_translations_besides(current_locale)
+    (title_translations.keys - [current_locale.to_s]).any?
+  end
+
+  def available_translations
+    title_translations.keys.map(&:to_sym)
+  end
 end

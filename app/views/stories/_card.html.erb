@@ -1,10 +1,10 @@
-<div class="card my-2" >
+<div class="story-card my-2" >
   <%= link_to story_path(story), class: '' do %>
     <%= image_tag 'http://placebear.com/318/150', alt: 'Story title', class: 'card-img-top' %>
   <% end %>
   <div class="card-body">
     <div class="my-2">
-      <small class="card-subtitle text-muted"><%= fa_icon('tags') %> <%= card_tags_links(story) %></small>
+      <small class="card-subtitle text-muted"><%= fa_icon('tags') %> <%= story_card_tags_links(story) %></small>
     </div>
     <h5 class="story-card-title"><%= link_to(truncate(story.title, length: 55), story_path(story), class: 'story-card-title-link') %></h5>
     <!-- <p class="card-text"><%#= truncate(strip_tags(story.content), length: 100) %></p> -->
