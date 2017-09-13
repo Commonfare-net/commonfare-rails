@@ -101,6 +101,8 @@ GEM
     execjs (2.7.0)
     fast_gettext (1.5.1)
     ffi (1.9.18)
+    font-awesome-rails (4.7.0.2)
+      railties (>= 3.2, < 5.2)
     geocoder (1.4.4)
     gettext (3.2.4)
       locale (>= 2.0.5)
@@ -270,6 +272,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise
   devise-i18n
+  font-awesome-rails
   geocoder
   gettext_i18n_rails
   gettext_i18n_rails_js (~> 1.0.0)

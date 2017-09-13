@@ -36,6 +36,7 @@ gem 'jbuilder', '~> 2.5'
 # Frontend
 gem 'bootstrap', '~> 4.0.0.beta'
 gem 'jquery-rails'
+gem 'font-awesome-rails'
 # Rich text by basecamp
 gem 'trix'
 # Select2

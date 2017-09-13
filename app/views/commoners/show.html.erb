@@ -14,16 +14,9 @@
 <hr>
 <h2 class="text-center">Latest Stories</h2>
 <div class="row">
-<% 6.times do %>
+<% Story.last(10).each do |story| %>
   <div class="col-lg-4 col-md-6">
-    <div class="card my-2" >
-      <img class="card-img-top" src="http://placebear.com/318/180" alt="Card image cap">
-      <div class="card-body">
-        <h4 class="card-title">Card title</h4>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary"><%= _('Continue reading') %></a>
-      </div>
-    </div>
+    <%= render 'stories/card', story: story %>
   </div>
 <% end %>
 </div>
