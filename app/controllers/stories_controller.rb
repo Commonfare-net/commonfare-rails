@@ -3,14 +3,17 @@ class StoriesController < ApplicationController
   # but new tags break it
   before_action :create_new_tags, only: [:create, :update]
 
-  load_and_authorize_resource :commoner
-  load_and_authorize_resource :story, through: :commoner, shallow: true
-  before_action :set_story_locale#, only: [:new, :edit, :create, :update]
+  load_and_authorize_resource :story
+  before_action :set_commoner, only: [:new, :create]
+  before_action :set_story_locale
 
   # GET /stories
   # GET /stories.json
   def index
-    @stories = @commoner.stories
+    if params[:commoner_id].present? && Commoner.exists?(params[:commoner_id])
+      @commoner = Commoner.find params[:commoner_id]
+      @stories = @commoner.stories
+    end
   end
 
   # GET /stories/1
@@ -21,6 +24,7 @@ class StoriesController < ApplicationController
   # GET /stories/new
   def new
     @story = @commoner.stories.build
+    #binding.pry
   end
 
   # GET /stories/1/edit
@@ -87,6 +91,11 @@ class StoriesController < ApplicationController
   end
 
   private
+
+    def set_commoner
+      @commoner = current_user.meta
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_story_locale
       @story_locale = I18n.locale

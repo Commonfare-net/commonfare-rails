@@ -1,3 +1,4 @@
+<% content_for :title, @commoner.name %>
 <div class="row text-center">
   <div class="col-sm-6">
     <%= image_tag "http://placebear.com/100/100", class: 'rounded-circle' %>
@@ -5,10 +6,9 @@
   <div class="col-sm-6">
     <p class='lead'>
       <%= @commoner.name %>
-      <small>(<%= link_to 'Edit', edit_commoner_path(@commoner) if can? :edit, @commoner %>)</small>
+      <small><%= link_to '(Edit profile)', edit_commoner_path(@commoner) if can? :edit, @commoner %></small>
     </p>
-    <%= link_to _("Share a Story"), new_commoner_story_path(@commoner), class: 'btn btn-success' %>
-    <%= link_to _("My Stories"), commoner_stories_path(@commoner), class: 'btn btn-info' %>
+    <%= link_to((_("%{commoner_name}'s Stories") %{commoner_name: @commoner.name}), commoner_stories_path(@commoner), class: 'btn btn-info') %>
   </div>
 </div>
 <hr>

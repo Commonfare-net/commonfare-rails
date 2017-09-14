@@ -4,8 +4,9 @@ Rails.application.routes.draw do
     root to: 'devise/sessions#new'
   end
   scope "(:locale)", locale: /en|it|nl|hr/ do
+    resources :stories
     resources :commoners do
-      resources :stories, shallow: true
+      resources :stories, only: [:index]
     end
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

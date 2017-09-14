@@ -1,6 +1,7 @@
-<h1><%= _('My Stories') %></h1>
+<% content_for :title, @commoner.present? ? _('My Stories') : _('Stories') %>
+<h1><%= _('My Stories') if @commoner.present? %></h1>
 <div class="row">
-<% @commoner.stories.each do |story| %>
+<% @stories.each do |story| %>
   <div class="col-lg-4 col-md-6">
     <%= render 'card', story: story %>
   </div>

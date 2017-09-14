@@ -8,6 +8,19 @@ class ApplicationController < ActionController::Base
   authorize_resource unless: :should_skip_authorization?
   check_authorization unless: :should_skip_authorization?
 
+  rescue_from CanCan::AccessDenied do |exception|
+    if current_user.nil?
+      redirect_to new_user_session_path, notice: _("You have to log in to continue")
+    else
+      #render :file => "#{Rails.root}/public/403.html", :status => 403
+      if request.env["HTTP_REFERER"].present?
+        redirect_to :back, alert: exception.message
+      else
+        redirect_to root_url, alert: exception.message
+      end
+    end
+  end
+
   # Devise wants this method here, see:
   # https://github.com/plataformatec/devise/wiki/How-To:-Redirect-to-a-specific-page-after-a-successful-sign-in-or-sign-out
   def after_sign_in_path_for(resource)

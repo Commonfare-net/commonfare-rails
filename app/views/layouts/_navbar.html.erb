@@ -25,6 +25,9 @@
     </ul>
     <ul class="navbar-nav">
     <% if user_signed_in? %>
+      <li class="nav-item">
+        <%= link_to(_("Share a Story"), new_story_path, class: 'btn btn-sm btn-success mt-1') %>
+      </li>
       <li class="nav-item active">
         <%= link_to(current_user.name, commoner_path(current_user.meta), class: 'nav-link') %>
       </li>
@@ -36,7 +39,7 @@
         <%= link_to(_('Login'), new_user_session_path, class: 'nav-link') %>
       </li>
       <li class="nav-item">
-        <%= link_to _("Sign up"), new_registration_path(resource_name), class: 'nav-link' %>
+        <%= link_to _("Sign up"), new_user_registration_path, class: 'nav-link' %>
       </li>
     <% end %>
   </ul>
