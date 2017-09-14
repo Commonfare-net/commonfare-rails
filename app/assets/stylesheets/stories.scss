@@ -23,14 +23,21 @@
   }
 }
 
-.story-title {
-  
-}
-
 .story-lang-select {
   @extend .text-muted;
   font-size: 0.8em;
   padding: 5px;
+}
+
+.story-title {
+
+}
+
+.story-author {
+  font-style: italic;
+  a {
+    color: inherit;
+  }
 }
 
 .story-place {

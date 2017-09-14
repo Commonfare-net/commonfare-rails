@@ -22,6 +22,25 @@
       </div>
     </div>
 
+    <%# STORY AUTHOR %>
+    <div class="row">
+      <div class="col">
+        <div class="story-author">
+          <p>
+          <% if current_user == @story.author.user %>
+            <%= link_to(_('You'), commoner_path(@story.commoner)) %>
+          <% else %>
+            <%= link_to(@story.author.name, commoner_path(@story.commoner)) %>
+          <% end %>,
+          <%= l(@story.created_at.to_date, format: :long) %>
+          <% if can? :edit, @story %>
+            (<%= link_to _('Edit this Story'), edit_story_path(@story, story_locale: @story_locale) %>)
+          <% end %>
+          </p>
+        </div>
+      </div>
+    </div>
+
     <%# STORY PLACE %>
     <div class="row">
       <div class="col">
@@ -40,7 +59,6 @@
       </div>
     </div>
 
-    <%= link_to 'Edit', edit_story_path(@story, story_locale: @story_locale) %>
     <% end %>
 
     <%# STORY TAGS %>

@@ -15,6 +15,7 @@ body {
   height: 100px;
   background-color: $commonfare-brand-color;
   .center-links {
+    @extend .text-center;
     a {
       color: white;
     }

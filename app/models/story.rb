@@ -6,6 +6,10 @@ class Story < ApplicationRecord
 
   validates :title, :content, :place, presence: true
 
+  def author
+    commoner
+  end
+
   def translated_in?(locale)
     title_translations.keys.include? locale.to_s
   end
