@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
 
   before_action :set_gettext_locale
   before_action :set_locale
+  before_action :set_globalize_fallbacks
   # before_action :authenticate_user!
 
   authorize_resource unless: :should_skip_authorization?
@@ -51,5 +52,14 @@ class ApplicationController < ActionController::Base
     devise_controller? ||
       is_a?(::PagesController) # ||
       # admin_controller?
+  end
+
+  def set_globalize_fallbacks
+    Globalize.fallbacks = {
+      en: %i[en it nl hr],
+      it: %i[it en nl hr],
+      nl: %i[nl en it hr],
+      hr: %i[hr en it nl],
+    }
   end
 end

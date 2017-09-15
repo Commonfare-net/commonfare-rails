@@ -11,11 +11,13 @@
   </p>
   <p class="lead"><strong><%= s_('Hero unit text|Commonfare is a way of sharing that wealth so that we all benefit.') %></strong></p>
   <p class="lead">
-    <%= link_to(_('Join us now'), new_user_registration_path, class: 'btn btn-primary btn-lg') %>
+    <% if user_signed_in? %>
+      <%= link_to(_('Share a Story'), new_story_path, class: 'btn btn-success btn-lg') %>
+    <% else %>
+      <%= link_to(_('Join us now'), new_user_registration_path, class: 'btn btn-primary btn-lg') %>
+    <% end %>
   </p>
-  <p></p>
 </div>
-
 <h2 class="text-center">Latest Stories</h2>
 <div class="row">
 <% Story.last(10).each do |story| %>

@@ -26,7 +26,7 @@
     <ul class="navbar-nav">
     <% if user_signed_in? %>
       <li class="nav-item">
-        <%= link_to(_("Share a Story"), new_story_path, class: 'btn btn-sm btn-success mt-1') %>
+        <%= link_to(_('Share a Story'), new_story_path, class: 'btn btn-sm btn-success mt-1') %>
       </li>
       <li class="nav-item active">
         <%= link_to(current_user.name, commoner_path(current_user.meta), class: 'nav-link') %>
@@ -40,6 +40,16 @@
       </li>
       <li class="nav-item">
         <%= link_to _("Sign up"), new_user_registration_path, class: 'nav-link' %>
+      </li>
+      <li class="nav-item dropdown active">
+        <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <%= I18n.locale.to_s.upcase %>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+          <% other_locales.each do |locale| %>
+            <%= link_to "#{locale.to_s.upcase} - #{localised_language_name(locale, locale)}", { locale: locale, story_locale: @story_locale }, class: 'dropdown-item' %>
+          <% end %>
+        </div>
       </li>
     <% end %>
   </ul>
