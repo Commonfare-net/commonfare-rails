@@ -1,0 +1,26 @@
+<div class="cf-jumbotron text-center">
+  <div class="row justify-content-center">
+    <div class="col">
+      <div class="logo-container">
+        <%= inline_svg 'logo', id: 'logo-svg' %>
+      </div>
+    </div>
+  </div>
+  <p class="lead">
+    <%= s_('Hero unit text|Commonfare is the name of a new, collaborative approach to social welfare.  The idea is that we can help each other (and ourselves!) when we connect and cooperate. We all have access to real wealth, in the common ground of stories, knowledge, time and skills that each of us has.') %>
+  </p>
+  <p class="lead"><strong><%= s_('Hero unit text|Commonfare is a way of sharing that wealth so that we all benefit.') %></strong></p>
+  <p class="lead">
+    <%= link_to(_('Join us now'), new_user_registration_path, class: 'btn btn-primary btn-lg') %>
+  </p>
+  <p></p>
+</div>
+
+<h2 class="text-center">Latest Stories</h2>
+<div class="row">
+<% Story.last(10).each do |story| %>
+  <div class="col-lg-4 col-md-6">
+    <%= render 'stories/card', story: story %>
+  </div>
+<% end %>
+</div>

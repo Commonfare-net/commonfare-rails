@@ -17,6 +17,9 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "\n"
 
+msgid "%{commoner_name}'s Stories"
+msgstr ""
+
 msgid "All your content will be permanetly deleted too."
 msgstr ""
 
@@ -38,9 +41,6 @@ msgstr ""
 msgid "Change language"
 msgstr ""
 
-msgid "Continue reading"
-msgstr ""
-
 msgid "Edit"
 msgstr ""
 
@@ -48,6 +48,12 @@ msgid "Edit credentials"
 msgstr ""
 
 msgid "Edit profile"
+msgstr ""
+
+msgid "Edit this Story"
+msgstr ""
+
+msgid "Edit your Story"
 msgstr ""
 
 msgid "Edit your credentials"
@@ -59,7 +65,16 @@ msgstr ""
 msgid "Give a nice title to your Story"
 msgstr ""
 
+msgid "Hero unit text|Commonfare is a way of sharing that wealth so that we all benefit."
+msgstr ""
+
+msgid "Hero unit text|Commonfare is the name of a new, collaborative approach to social welfare.  The idea is that we can help each other (and ourselves!) when we connect and cooperate. We all have access to real wealth, in the common ground of stories, knowledge, time and skills that each of us has."
+msgstr ""
+
 msgid "Home"
+msgstr ""
+
+msgid "Join us now"
 msgstr ""
 
 msgid "Join us!"
@@ -104,6 +119,9 @@ msgstr ""
 msgid "Some words useful to tag your story"
 msgstr ""
 
+msgid "Stories"
+msgstr ""
+
 msgid "Story form button|Share your Story"
 msgstr ""
 
@@ -117,6 +135,9 @@ msgid "Story was successfully updated."
 msgstr ""
 
 msgid "The city, region or country of your story"
+msgstr ""
+
+msgid "This Story is also available in %{other_languages}"
 msgstr ""
 
 msgid "Update"
@@ -140,16 +161,22 @@ msgstr ""
 msgid "Write here your Story"
 msgstr ""
 
+msgid "Write your Story"
+msgstr ""
+
 msgid "Yes please. Cancel my account"
+msgstr ""
+
+msgid "You"
 msgstr ""
 
 msgid "You are editing this Story in"
 msgstr ""
 
-msgid "You are reading this Story in"
+msgid "You are writing this Story in"
 msgstr ""
 
-msgid "You are writing this Story in"
+msgid "You have to log in to continue"
 msgstr ""
 
 msgid "You haven't yet saved this Story in %{localised_lang_name}"

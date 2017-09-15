@@ -41,6 +41,8 @@ gem 'font-awesome-rails'
 gem 'trix'
 # Select2
 gem 'select2-rails'
+# Embed SVGs
+gem 'inline_svg'
 
 # Forms
 gem 'simple_form'
@@ -59,6 +61,9 @@ gem 'i18n_data'
 # From branch master to work with Rails 5
 gem 'globalize', git: 'https://github.com/globalize/globalize'
 gem 'activemodel-serializers-xml' # needed by globalize
+
+# Static pages
+gem 'high_voltage', '~> 3.0.0'
 
 # Nice logs
 gem 'lograge'

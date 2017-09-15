@@ -48,9 +48,8 @@ class ApplicationController < ActionController::Base
   end
 
   def should_skip_authorization?
-    devise_controller? # ||
-      # admin_controller? ||
-      # is_a?(::PagesController) ||
-      # is_a?(::ReportsController) # ReportsController has manual authorization in place because it is not RESTful
+    devise_controller? ||
+      is_a?(::PagesController) # ||
+      # admin_controller?
   end
 end

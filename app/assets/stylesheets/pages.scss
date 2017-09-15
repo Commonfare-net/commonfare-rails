@@ -1,0 +1,18 @@
+// Place all the styles related to the pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.cf-jumbotron {
+  @extend .jumbotron;
+  background-color: $commonfare-background-color;
+  .logo-container {
+    @extend .d-inline-block;
+    width: 100%;
+    max-width: 768px;
+    #logo-svg {
+      width: inherit;
+      path {
+        fill: $commonfare-brand-color !important;
+      }
+    }
+  }
+}
