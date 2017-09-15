@@ -4,7 +4,7 @@
     <% Globalize.with_locale(@story_locale) do %>
 
     <%# Language selection %>
-    <% if @story.available_translations.length > 1 && @story.has_translations_besides(@story_locale) %>
+    <% if @story.translated_locales.length > 1 && @story.has_translations_besides(@story_locale) %>
     <div class="row">
       <div class="col">
         <div class="story-lang-select">

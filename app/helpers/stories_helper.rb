@@ -8,7 +8,7 @@ module StoriesHelper
 
   def other_story_available_translations(story, story_locale=I18n.locale)
     # e.g. I18nData.languages(:it)['HR'] => 'Croato'
-    other_translations_locales = story.title_translations.keys - [ story_locale.to_s ]
+    other_translations_locales = story.translated_locales - [ story_locale.to_sym ]
     available_translations_links = other_translations_locales.map do |loc|
       link_to(I18nData.languages(I18n.locale)[loc.to_s.upcase], { story_locale: loc })
     end
