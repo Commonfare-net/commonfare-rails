@@ -50,7 +50,8 @@ class ApplicationController < ActionController::Base
 
   def should_skip_authorization?
     devise_controller? ||
-      is_a?(::PagesController) # ||
+      is_a?(::PagesController) ||
+      is_a?(::MainController)
       # admin_controller?
   end
 

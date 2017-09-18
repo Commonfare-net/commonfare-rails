@@ -1,0 +1,10 @@
+<% @tags.each do |tag| %>
+<%= tag.name  %>
+<% end %>
+<div class="row">
+<% @stories.each do |story| %>
+  <div class="col-lg-4 col-md-6">
+    <%= render 'stories/card', story: story %>
+  </div>
+<% end %>
+</div>

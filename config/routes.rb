@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     # root to: 'devise/sessions#new'
   end
   scope "(:locale)", locale: /en|it|nl|hr/ do
+    get :search, controller: :main
     resources :stories
     resources :commoners do
       resources :stories, only: [:index]
