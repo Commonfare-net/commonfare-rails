@@ -1,10 +1,10 @@
-document.addEventListener('turbolinks:load', function() {
+function autocomplete(locale) {
   $input = $("[data-behavior='autocomplete']")
 
   var options = {
     getValue: "name",
     url: function(phrase) {
-      return "/en/search.json?q=" + phrase;
+      return "/" + locale + "/autocomplete?q=" + phrase;
     },
     categories: [
       {
@@ -16,14 +16,16 @@ document.addEventListener('turbolinks:load', function() {
         header: "<strong>Stories</strong>"
       },
     ],
+    requestDelay: 200,
     list: {
       onChooseEvent: function() {
         var url = $input.getSelectedItemData().url;
         $input.val("");
         Turbolinks.visit(url);
       }
-    }
+    },
+    cssClasses: 'cf-search-form'
   }
 
   $input.easyAutocomplete(options);
-});
+}

@@ -1,5 +1,7 @@
 {
   "name": "commonfare-rails",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "easy-autocomplete": "^1.3.5"
+  }
 }

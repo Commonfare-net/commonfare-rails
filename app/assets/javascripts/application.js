@@ -17,6 +17,6 @@
 //= require bootstrap-sprockets
 //= require trix
 //= require select2
-//= require jquery.easy-autocomplete
+//= require easy-autocomplete/dist/jquery.easy-autocomplete
 //= require search
 //= require_tree .

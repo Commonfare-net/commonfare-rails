@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   end
   scope "(:locale)", locale: /en|it|nl|hr/ do
     get :search, controller: :main
+    get :autocomplete, controller: :main, defaults: { format: :json }
     resources :stories
     resources :commoners do
       resources :stories, only: [:index]

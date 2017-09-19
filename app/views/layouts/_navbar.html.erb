@@ -24,7 +24,7 @@
         <%= link_to(_("Home"), root_path, class: 'nav-link') %>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="http://infohub.commonfare.net">InfoHub</a>
+        <a class="nav-link" href="http://infohub.commonfare.net">InfoHub <%= fa_icon 'external-link' %></a>
       </li>
     </ul>
     <ul class="navbar-nav">
@@ -60,3 +60,9 @@
   </div>
 
 </nav>
+
+<%= content_for :scripts do %>
+  <script type="text/javascript">
+    autocomplete('<%= I18n.locale %>');
+  </script>
+<% end %>

@@ -21,3 +21,17 @@ body {
     }
   }
 }
+// Used in search.js as option to customize easyAutocomplete
+.cf-search-form {
+  width: 201px !important;
+  @media screen and (max-width: 575px) {
+    width: 193px !important;
+    margin-right: 8px;
+  }
+  input {
+    padding: 8px 12px;
+  }
+  .easy-autocomplete-container {
+    width: 193px !important;
+  }
+}
