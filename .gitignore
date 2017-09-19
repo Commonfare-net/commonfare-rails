@@ -19,3 +19,6 @@
 .byebug_history
 
 /db-data/*
+
+docker-compose.production.yml
+docker-compose.staging.yml

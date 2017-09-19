@@ -4,4 +4,6 @@ db/*.sqlite3-journal
 log/*
 tmp/*
 Dockerfile
+docker-compose.production.yml
+docker-compose.staging.yml
 README.md
