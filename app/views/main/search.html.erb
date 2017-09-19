@@ -6,7 +6,7 @@
     <p class="story-tags">
       Tags:
       <% @tags.each do |tag| %>
-      <%= link_to tag.name, '#', class: 'btn btn-sm btn-light' %>
+      <%= link_to tag.name, tag_path(tag), class: 'btn btn-sm btn-light' %>
       <% end %>
     </p>
   </div>

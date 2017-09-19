@@ -3,11 +3,11 @@ class Ability
 
   def initialize(user)
     user ||= User.new # guest user (not logged in)
-    # guests can see a Commoner
+    # visitors can see Commoners, Stories, Tags
     can :read, Commoner
     can :read, Story
+    can :read, Tag
     alias_action :create, :read, :update, :destroy, :to => :crud
-    # binding.pry
     if user.is_commoner?
       commoner = user.meta
       can :crud, Commoner, id: commoner.id

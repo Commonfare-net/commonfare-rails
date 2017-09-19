@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   devise_for :users
   devise_scope :user do
     # root to: 'devise/sessions#new'
@@ -11,6 +12,7 @@ Rails.application.routes.draw do
       resources :stories, only: [:index]
     end
 
+    resources :tags, only: [:show]
     get "/pages/*id" => 'pages#show', as: :page, format: false
     root to: 'pages#show', id: 'home'
   end

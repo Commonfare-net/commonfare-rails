@@ -9,6 +9,6 @@ end
 json.tags do
   json.array!(@tags) do |tag|
     json.name tag.name
-    json.url root_path
+    json.url tag_path(tag, {locale: I18n.locale})
   end
 end
