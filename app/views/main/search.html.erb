@@ -1,6 +1,18 @@
-<% @tags.each do |tag| %>
-<%= tag.name  %>
+<% content_for :title, (_("Results for %{search_term}") %{search_term: @q}) %>
+<h2><%= (_("Results for '%{search_term}'") %{search_term: @q}) %></h2>
+<% if @tags.any? %>
+<div class="row">
+  <div class="col">
+    <p class="story-tags">
+      Tags:
+      <% @tags.each do |tag| %>
+      <%= link_to tag.name, '#', class: 'btn btn-sm btn-light' %>
+      <% end %>
+    </p>
+  </div>
+</div>
 <% end %>
+<% if @stories.any? %>
 <div class="row">
 <% @stories.each do |story| %>
   <div class="col-lg-4 col-md-6">
@@ -8,3 +20,4 @@
   </div>
 <% end %>
 </div>
+<% end %>
