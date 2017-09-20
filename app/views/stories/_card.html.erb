@@ -9,7 +9,7 @@
     <h5 class="story-card-title"><%= link_to(truncate(story.title, length: 55), story_path(story), class: 'story-card-title-link') %></h5>
     <!-- <p class="card-text"><%#= truncate(strip_tags(story.content), length: 100) %></p> -->
     <div class="media mb-2">
-      <%= image_tag "http://placebear.com/48/48", class: 'd-flex mr-3 rounded-circle' %>
+      <%= image_tag story.commoner.avatar.card, class: 'd-flex mr-3 rounded-circle' %>
       <div class="media-body">
         <p class="my-0"><%= link_to(story.commoner.name, commoner_path(story.commoner), class: 'text-muted') %></p>
         <small class="text-muted"><%= l(story.created_at.to_date, format: :short) %></small>

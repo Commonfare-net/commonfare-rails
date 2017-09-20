@@ -1,7 +1,7 @@
 <% content_for :title, @commoner.name %>
 <div class="row text-center">
   <div class="col-sm-6">
-    <%= image_tag "http://placebear.com/100/100", class: 'rounded-circle' %>
+    <%= image_tag @commoner.avatar.profile, class: 'rounded-circle' %>
   </div>
   <div class="col-sm-6">
     <p class='lead'>

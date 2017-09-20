@@ -1,5 +1,5 @@
 <% content_for :title, @commoner.present? ? _('My Stories') : _('Stories') %>
-<h1><%= _('My Stories') if @commoner.present? %></h1>
+<h2><%= (_('Stories from %{author_name}') %{author_name: @commoner.name}) if @commoner.present? %></h2>
 <div class="row">
 <% @stories.each do |story| %>
   <div class="col-lg-4 col-md-6">

@@ -78,6 +78,10 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    carrierwave (1.1.0)
+      activemodel (>= 4.0.0)
+      activesupport (>= 4.0.0)
+      mime-types (>= 1.16)
     childprocess (0.7.1)
       ffi (~> 1.0, >= 1.0.11)
     coderay (1.1.1)
@@ -148,6 +152,7 @@ GEM
     mime-types (3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
+    mini_magick (4.8.0)
     mini_mime (0.1.4)
     mini_portile2 (2.2.0)
     minitest (5.10.3)
@@ -231,6 +236,10 @@ GEM
     simple_form (3.5.0)
       actionpack (> 4, < 5.2)
       activemodel (> 4, < 5.2)
+    simple_form_fancy_uploads (0.2.0)
+      carrierwave
+      rails (>= 4.0.0)
+      simple_form (~> 3.1)
     slop (3.6.0)
     spring (2.0.2)
       activesupport (>= 4.2)
@@ -281,6 +290,7 @@ DEPENDENCIES
   byebug
   cancancan
   capybara (~> 2.13)
+  carrierwave (~> 1.0)
   coffee-rails (~> 4.2)
   devise
   devise-i18n
@@ -296,6 +306,7 @@ DEPENDENCIES
   jquery-rails
   listen (>= 3.0.5, < 3.2)
   lograge
+  mini_magick
   pg (~> 0.18)
   pry-rails
   puma (~> 3.7)
@@ -305,6 +316,7 @@ DEPENDENCIES
   select2-rails
   selenium-webdriver
   simple_form
+  simple_form_fancy_uploads
   spring
   spring-watcher-listen (~> 2.0.0)
   trix

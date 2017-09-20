@@ -70,6 +70,6 @@ class CommonersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def commoner_params
-      params.require(:commoner).permit(:name)
+      params.require(:commoner).permit(:name, :avatar)
     end
 end
