@@ -82,7 +82,13 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
+
+staging:
+  <<: *default
+  database: commonfare_staging
+  password: <%= ENV['COMMONFARE-RAILS_STAGING_DATABASE_PASSWORD'] %>
+
 production:
   <<: *default
   database: commonfare_production
-  password: <%= ENV['COMMONFARE-RAILS_DATABASE_PASSWORD'] %>
+  password: <%= ENV['COMMONFARE-RAILS_PROD_DATABASE_PASSWORD'] %>

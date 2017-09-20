@@ -2,6 +2,7 @@ version: '3'
 services:
   app:
     build: .
+    container_name: commonfare_rails_app
     command: rails server -p 3000 -b '0.0.0.0'
     volumes:
       - .:/app
@@ -17,6 +18,7 @@ services:
     stdin_open: true
   postgres:
     image: postgres:9.6
+    container_name: commonfare_pg
     ports:
       - "5432"
     volumes:
