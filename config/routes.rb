@@ -1,9 +1,21 @@
 Rails.application.routes.draw do
 
-  devise_for :users
-  devise_scope :user do
-    # root to: 'devise/sessions#new'
-  end
+  devise_for :users,
+    controllers: {
+      sessions: 'users/sessions',
+      registrations: 'users/registrations'
+    },
+    path: "auth",
+    path_names: {
+      sign_in: 'login',
+      sign_out: 'logout',
+      password: 'secret',
+      confirmation: 'verification',
+      unlock: 'unblock',
+      registration: 'register',
+      sign_up: 'signup'
+    }
+
   scope "(:locale)", locale: /en|it|nl|hr/ do
     get :search, controller: :main
     get :autocomplete, controller: :main, defaults: { format: :json }
