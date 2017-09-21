@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     resources :commoners do
       resources :stories, only: [:index]
     end
+    get :welcome, controller: :commoners
 
     resources :tags, only: [:show]
     get "/pages/*id" => 'pages#show', as: :page, format: false

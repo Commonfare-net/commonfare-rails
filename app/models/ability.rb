@@ -11,6 +11,9 @@ class Ability
     if user.is_commoner?
       commoner = user.meta
       can :crud, Commoner, id: commoner.id
+      can :welcome, Commoner do |commoner|
+        commoner.user.sign_in_count == 1
+      end
       can [:create, :update, :destroy], Story, commoner_id: commoner.id
     end
   end

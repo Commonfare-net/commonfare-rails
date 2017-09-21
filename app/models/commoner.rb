@@ -3,5 +3,5 @@ class Commoner < ApplicationRecord
   mount_uploader :avatar, AvatarUploader
   has_many :stories
 
-  validates :name, presence: true
+  validates :name, presence: true, uniqueness: { case_sensitive: false }
 end

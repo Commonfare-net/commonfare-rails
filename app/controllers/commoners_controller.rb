@@ -2,6 +2,10 @@ class CommonersController < ApplicationController
   load_and_authorize_resource
   # before_action :set_commoner, only: [:show, :edit, :update, :destroy]
 
+  def welcome
+    # redirect_back(fallback_location: root_path) if @commoner.user.sign_in_count > 1
+    @commoner = current_user.meta
+  end
   # GET /commoners
   # GET /commoners.json
   def index
