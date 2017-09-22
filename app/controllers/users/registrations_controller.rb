@@ -63,7 +63,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   private
 
   def generate_name
-    name = [Namey::Generator.new.name(:common, false), rand(100..999)].join
+    name = [('a'..'z').to_a.shuffle[0,8].join, rand(100..999)].join
     if Commoner.exists?(["lower(name) = ?", name.downcase])
       generate_name
     else

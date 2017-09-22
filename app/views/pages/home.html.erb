@@ -2,7 +2,7 @@
   <div class="row justify-content-center">
     <div class="col">
       <div class="logo-container">
-        <%= inline_svg 'logo', id: 'logo-svg' %>
+        <%= inline_svg 'logo.svg', id: 'logo-svg' %>
       </div>
     </div>
   </div>
@@ -18,11 +18,13 @@
     <% end %>
   </p>
 </div>
-<h2 class="text-center">Latest Stories</h2>
-<div class="row">
-<% Story.last(10).each do |story| %>
-  <div class="col-lg-4 col-md-6">
-    <%= render 'stories/card', story: story %>
+<% if @featured_stories.any? %>
+  <h2 class="text-center">Latest Stories</h2>
+  <div class="row">
+  <% @featured_stories.each do |story| %>
+    <div class="col-lg-4 col-md-6">
+      <%= render 'stories/card', story: story %>
+    </div>
+  <% end %>
   </div>
 <% end %>
-</div>

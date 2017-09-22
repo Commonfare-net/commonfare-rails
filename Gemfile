@@ -56,7 +56,7 @@ gem 'geocoder'
 
 # Localization
 gem 'gettext_i18n_rails'
-gem 'gettext_i18n_rails_js', '~> 1.0.0'
+gem 'gettext_i18n_rails_js', '~> 1.2.0'
 gem 'i18n_data'
 # From branch master to work with Rails 5
 gem 'globalize', git: 'https://github.com/globalize/globalize'
@@ -77,7 +77,7 @@ gem 'mini_magick'
 gem 'simple_form_fancy_uploads'
 
 # random names
-gem 'namey'
+# gem 'namey'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
