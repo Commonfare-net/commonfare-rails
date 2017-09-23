@@ -7,6 +7,7 @@ class Ability
     can :read, Commoner
     can :read, Story
     can :read, Tag
+    can :read, Comment
     alias_action :create, :read, :update, :destroy, :to => :crud
     if user.is_commoner?
       commoner = user.meta
@@ -15,6 +16,7 @@ class Ability
         commoner.user.sign_in_count == 1
       end
       can [:create, :update, :destroy], Story, commoner_id: commoner.id
+      can [:create, :update, :destroy], Comment, commoner_id: commoner.id
     end
   end
 end

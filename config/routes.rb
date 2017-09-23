@@ -19,13 +19,18 @@ Rails.application.routes.draw do
   scope "(:locale)", locale: /en|it|nl|hr/ do
     get :search, controller: :main
     get :autocomplete, controller: :main, defaults: { format: :json }
-    resources :stories
-    resources :commoners do
-      resources :stories, only: [:index]
+    resources :stories do
+      resources :comments, only: [:index, :create]
     end
+    resources :commoners do
+      resources :stories, only: :index
+      resources :comments, only: :index
+    end
+    resources :comments, except: [:new, :show, :index]
+    resources :tags, only: :show
+
     get :welcome, controller: :commoners
 
-    resources :tags, only: [:show]
     get "/pages/*id" => 'pages#show', as: :page, format: false
     root to: 'pages#show', id: 'home'
   end

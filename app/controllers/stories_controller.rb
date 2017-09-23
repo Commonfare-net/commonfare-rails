@@ -19,6 +19,10 @@ class StoriesController < ApplicationController
   # GET /stories/1
   # GET /stories/1.json
   def show
+    @comments = @story.comments
+    if user_signed_in?
+      @comment = current_user.meta.comments.build
+    end
   end
 
   # GET /stories/new

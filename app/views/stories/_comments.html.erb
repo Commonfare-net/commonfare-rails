@@ -1,0 +1,37 @@
+<div class="row justify-content-center">
+  <div class="col-md-8 col-lg-6">
+    <%= simple_form_for(@comment, url: story_comments_path(story)) do |f| %>
+    <%= f.error_notification %>
+      <%= f.input :body, required: false, label: _('Write a comment') %>
+      <%= f.hidden_field :story_id, value: story.id %>
+      <%= f.button :submit, s_('Publish comment button|Comment'), class: 'btn btn-sm btn-success float-right' %>
+    <% end %>
+  </div>
+</div>
+<div class="row justify-content-center">
+  <div class="col-md-8 col-lg-6">
+    <hr>
+    <h3><%= _('Comments') %></h3>
+    <% if story.comments.empty? %>
+      <p class="text-muted"><%= _('There are no comments for this Story') %></p>
+    <% end %>
+    <% @comments.each do |comment| %>
+    <div class="card mb-3">
+      <div class="card-header">
+        <%= link_to commoner_path(comment.author) do %>
+          <%= image_tag comment.author.avatar.card, class: 'navbar-avatar' %> <%= comment.author.name %>
+        <% end %>
+        <small class="text-muted">
+          <%= (_('commented on %{date}') %{date: l(comment.created_at.to_date, format: :short)}) %>
+        </small>
+        <% if can? :edit, comment %>
+          <small><%= link_to _('Edit'), edit_comment_path(comment), class: 'float-right' %></small>
+        <% end %>
+      </div>
+      <div class="card-body">
+        <p class="card-text"><%= comment.body %></p>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>

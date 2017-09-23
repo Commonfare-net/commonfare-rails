@@ -66,13 +66,17 @@
     <div class="row">
       <div class="col">
         <hr>
+        <% if @story.tags.any? %>
         <p class="story-tags">
           <% @story.tags.each do |tag| %>
           <%= link_to tag.name, tag_path(tag), class: 'btn btn-sm btn-light' %>
           <% end %>
         </p>
+        <% end %>
       </div>
     </div>
 
   </div>
 </div>
+
+<%= render 'comments', story: @story %>
