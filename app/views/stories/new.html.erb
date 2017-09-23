@@ -16,7 +16,6 @@
           </div>
         </div>
       </div>
-      <%#= render 'form', story: @story %>
       <%= simple_form_for([@commoner, @story], url: stories_path({story_locale: @story_locale})) do |f| %>
         <%= render 'fields', f: f %>
       <% end %>

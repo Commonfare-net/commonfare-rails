@@ -1,0 +1,19 @@
+<% if comments.empty? %>
+  <p class="text-muted"><%= _('There are no comments for this Story') %></p>
+<% end %>
+<% comments.each do |comment| %>
+<div class="card mb-3">
+  <div class="card-header">
+    <%= link_to commoner_path(comment.author) do %>
+      <%= image_tag comment.author.avatar.card, class: 'navbar-avatar' %> <%= comment.author.name %>
+    <% end %>
+    <small class="text-muted">
+      <%= (_('commented on %{date}') %{date: l(comment.created_at.to_date, format: :short)}) %>
+    </small>
+    <%= link_to(fa_icon('edit lg'), edit_comment_path(comment), class: 'float-right') if can? :edit, comment %>
+  </div>
+  <div class="card-body">
+    <p class="card-text"><%= comment.body %></p>
+  </div>
+</div>
+<% end %>

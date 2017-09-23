@@ -63,20 +63,27 @@
     <% end %>
 
     <%# STORY TAGS %>
+    <% if @story.tags.any? %>
     <div class="row">
       <div class="col">
         <hr>
-        <% if @story.tags.any? %>
         <p class="story-tags">
           <% @story.tags.each do |tag| %>
           <%= link_to tag.name, tag_path(tag), class: 'btn btn-sm btn-light' %>
           <% end %>
         </p>
-        <% end %>
       </div>
     </div>
+    <% end %>
 
   </div>
 </div>
 
-<%= render 'comments', story: @story %>
+<%= render('comments/new', story: @story, comment: @comment) if user_signed_in? %>
+<div class="row justify-content-center">
+  <div class="col-md-8 col-lg-6">
+    <hr>
+    <h3><%= _('Comments') %></h3>
+    <%= render 'comments/list', comments: @comments %>
+  </div>
+</div>

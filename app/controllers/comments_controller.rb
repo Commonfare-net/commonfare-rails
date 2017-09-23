@@ -9,7 +9,15 @@ class CommentsController < ApplicationController
   # GET /comments
   # GET /comments.json
   def index
-    @comments = Comment.all
+    if params[:story_id].present?
+      @story = Story.find(params[:story_id])
+      @comments = @story.comments
+    elsif params[:commoner_id].present?
+      @commoner = Commoner.find(params[:commoner_id])
+      @comments = @commoner.comments
+    else
+      @comments = []
+    end
   end
 
   # GET /comments/1
@@ -32,7 +40,10 @@ class CommentsController < ApplicationController
         format.html { redirect_to @commentable, notice: _('Comment was successfully created.') }
         format.json { render :show, status: :created, location: @comment }
       else
-        format.html { render :new }
+        # Here I show the story again, so I need to set the instance variables
+        @story = @commentable
+        @comments = @story.comments - [@comment]
+        format.html { render 'stories/show'  }
         format.json { render json: @comment.errors, status: :unprocessable_entity }
       end
     end
@@ -43,7 +54,7 @@ class CommentsController < ApplicationController
   def update
     respond_to do |format|
       if @comment.update(comment_params)
-        format.html { redirect_to @comment, notice: _('Comment was successfully updated.') }
+        format.html { redirect_to @comment.commentable, notice: _('Comment was successfully updated.') }
         format.json { render :show, status: :ok, location: @comment }
       else
         format.html { render :edit }
@@ -55,9 +66,10 @@ class CommentsController < ApplicationController
   # DELETE /comments/1
   # DELETE /comments/1.json
   def destroy
+    @commentable = @comment.commentable
     @comment.destroy
     respond_to do |format|
-      format.html { redirect_to comments_url, notice: _('Comment was successfully destroyed.') }
+      format.html { redirect_to @commentable, notice: _('Comment was successfully destroyed.') }
       format.json { head :no_content }
     end
   end

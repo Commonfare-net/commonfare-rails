@@ -20,10 +20,12 @@ Rails.application.routes.draw do
     get :search, controller: :main
     get :autocomplete, controller: :main, defaults: { format: :json }
     resources :stories do
+      # :index used for stories/42/comments, visible only by story's author
       resources :comments, only: [:index, :create]
     end
     resources :commoners do
       resources :stories, only: :index
+      # :index used for commoner/42/comments, visible only by comments' author
       resources :comments, only: :index
     end
     resources :comments, except: [:new, :show, :index]

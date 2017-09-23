@@ -1,0 +1,9 @@
+<div class="row justify-content-center">
+  <div class="col-md-8 col-lg-6">
+    <%= simple_form_for(comment, url: story_comments_path(story)) do |f| %>
+      <%= f.error_notification %>
+      <%= f.input :body, required: false, label: _('Write a comment') %>
+      <%= f.button :submit, s_('Publish comment button|Comment'), class: 'btn btn-sm btn-success float-right' %>
+    <% end %>
+  </div>
+</div>
