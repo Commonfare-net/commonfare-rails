@@ -18,5 +18,6 @@
 //= require trix
 //= require select2
 //= require easy-autocomplete/dist/jquery.easy-autocomplete
+//= require autosize/dist/autosize
 //= require search
 //= require_tree .

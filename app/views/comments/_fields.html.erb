@@ -1,0 +1,9 @@
+<%= f.error_notification %>
+<%= f.input :body, required: false, label: _('Write a comment') %>
+<%= f.button :submit, btn_text, class: 'btn btn-sm btn-success float-right' %>
+
+<%= content_for :scripts do %>
+  <script type="text/javascript">
+    autosize($('#comment_body'));
+  </script>
+<% end %>

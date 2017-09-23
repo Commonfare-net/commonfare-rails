@@ -1,10 +1,8 @@
-<div class="row justify-content-center">
+<div class="row justify-content-center pb-3">
   <div class="col-md-8 col-lg-6">
     <h3><%= _('Edit your comment') %></h3>
     <%= simple_form_for(@comment) do |f| %>
-      <%= f.error_notification %>
-      <%= f.input :body, required: false, label: _('Write a comment') %>
-      <%= f.button :submit, s_('Edit'), class: 'btn btn-sm btn-success float-right' %>
+      <%= render 'comments/fields', f: f, btn_text: s_('Edit') %>
     <% end %>
     <small>
       <%= link_to(_('Delete this comment'), comment_path(@comment), class: 'text-danger', method: :delete, data: { confirm: _('Are you sure?') }) if can? :destroy, @comment %>
