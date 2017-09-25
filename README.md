@@ -94,14 +94,14 @@ When done, exit `pry` by entering `exit` and detach from the container with `Ctr
 
 ### Staging
 
-NOTE: Not yet tested!
+NOTE: This is a sort of manual deployment. It has a downtime due to build time.
 
 ```bash
 $ docker-compose -f docker-compose.staging.yml down
 $ git co staging
 $ git pull origin staging
 $ docker-compose -f docker-compose.staging.yml build
-$ docker-compose -f docker-compose.staging.yml run --rm rails db:migrate
+$ docker-compose -f docker-compose.staging.yml run --rm app rails db:migrate
 $ docker-compose -f docker-compose.staging.yml up -d
 ```
 ### Production
