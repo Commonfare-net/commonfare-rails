@@ -11,7 +11,7 @@ class AvatarUploader < CarrierWave::Uploader::Base
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
-    "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+    "uploads/#{model.class.to_s.underscore}/#{model.id}/#{mounted_as}"
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
@@ -31,10 +31,10 @@ class AvatarUploader < CarrierWave::Uploader::Base
 
   # Create different versions of your uploaded files:
   version :profile do
-    process resize_to_fit: [100, 100]
+    process resize_to_fill: [100, 100]
   end
   version :card do
-    process resize_to_fit: [48, 48]
+    process resize_to_fill: [48, 48]
   end
 
   # Add a white list of extensions which are allowed to be uploaded.
