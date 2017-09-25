@@ -6,6 +6,16 @@ module StoriesHelper
     links.join(', ').html_safe
   end
 
+  # The story's authors sees only the comments
+  # All the others see the commments after the story
+  def story_card_comments_link(story)
+    if can? :edit, story
+      story_comments_path(story)
+    else
+      story_path(story, anchor: 'comments-anchor')
+    end
+  end
+
   def other_story_available_translations(story, story_locale=I18n.locale)
     # e.g. I18nData.languages(:it)['HR'] => 'Croato'
     other_translations_locales = story.translated_locales - [ story_locale.to_sym ]

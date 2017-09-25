@@ -21,6 +21,15 @@
       text-decoration: none;
     }
   }
+
+  .story-card-comments-link {
+    color: inherit;
+    text-decoration: none;
+    &:hover {
+      color: inherit;
+      text-decoration: none;
+    }
+  }
 }
 
 .story-lang-select {
