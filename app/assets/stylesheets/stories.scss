@@ -13,16 +13,7 @@
     @extend .text-muted;
   }
 
-  .story-card-title-link {
-    color: inherit;
-    text-decoration: none;
-    &:hover {
-      color: inherit;
-      text-decoration: none;
-    }
-  }
-
-  .story-card-comments-link {
+  .story-card-title-link, .story-card-comments-link {
     color: inherit;
     text-decoration: none;
     &:hover {

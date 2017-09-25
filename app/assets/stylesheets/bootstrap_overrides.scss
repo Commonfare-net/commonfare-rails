@@ -1,7 +1,7 @@
 // This is used in simple_form wrappers
 // to make errors visible
 .has-error {
-  input {
+  input, textarea {
     @extend .is-invalid;
   }
 }
