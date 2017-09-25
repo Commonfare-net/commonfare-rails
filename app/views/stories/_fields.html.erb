@@ -16,7 +16,7 @@
 <%= f.association :tags,
             label: _('Some words useful to tag your story'),
             # placeholder: "Managed in JS",
-            hint: _('Press Enter to separate the tags') %>
+            hint: _('Use comma or press Enter to separate tags') %>
 <%= f.button :submit, s_('Story form button|Share your Story'), class: 'btn btn-success btn-block' %>
 
 <%= content_for :scripts do %>
@@ -25,11 +25,11 @@
       theme: 'bootstrap',
       placeholder: "<%= _('e.g. Pregnancy, Food sharing, etc.') %>",
       minimumResultsForSearch: -1,
-      tags: true
+      tags: true,
+      tokenSeparators: [',']
     });
     $('#story_tag_ids').on('select2:select', function (e) {
-      var data = e.params.data;
-      console.log(data);
+      // console.log(data.text);
     });
   </script>
 <% end %>

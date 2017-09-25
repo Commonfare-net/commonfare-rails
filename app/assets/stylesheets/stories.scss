@@ -23,33 +23,39 @@
   }
 }
 
-.story-lang-select {
-  @extend .text-muted;
-  font-size: 0.8em;
-  padding: 5px;
-}
+.story-container {
+  @extend .col-md-8, .col-lg-6;
+  background-color: snow;
 
-.story-title {
-
-}
-
-.story-author {
-  font-style: italic;
-  a {
-    color: inherit;
+  .story-lang-select {
+    @extend .text-muted;
+    font-size: 0.8em;
+    padding: 5px;
   }
-}
 
-.story-place {
-  @extend .text-muted;
-  font-size: 0.8em;
-  padding: 5px;
-}
+  .story-title {
 
-.story-content {
-  line-height: 1.7em;
-}
+  }
 
-.story-tags {
-  padding: 1em;
+  .story-author {
+    font-style: italic;
+    a {
+      color: inherit;
+    }
+  }
+
+  .story-place {
+    @extend .text-muted;
+    font-size: 0.8em;
+    padding: 5px;
+  }
+
+  .story-content {
+    line-height: 1.7em;
+  }
+
+  .story-tags {
+    padding: 1em;
+  }
+
 }
