@@ -15,6 +15,7 @@
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
+//= require whatwg-fetch/fetch
 //= require trix
 //= require select2
 //= require easy-autocomplete/dist/jquery.easy-autocomplete

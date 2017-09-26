@@ -27,6 +27,7 @@ Rails.application.routes.draw do
       resources :stories, only: :index
       # :index used for commoner/42/comments, visible only by comments' author
       resources :comments, only: :index
+      resources :images, only: [:create, :destroy]
     end
     resources :comments, except: [:new, :show, :index]
     resources :tags, only: :show

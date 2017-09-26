@@ -21,6 +21,65 @@
 
 <%= content_for :scripts do %>
   <script type="text/javascript">
+    (function() {
+      var createStorageKey, host, uploadAttachment;
+
+      Trix.config.attachments.preview.caption = {
+        name: false,
+        size: false
+      };
+
+      document.addEventListener("trix-attachment-add", function(event) {
+        var attachment;
+        attachment = event.attachment;
+        if (attachment.file) {
+          return uploadAttachment(attachment);
+        }
+      });
+      document.addEventListener("trix-attachment-remove", function(event) {
+        var attachment;
+        attachment = event.attachment;
+        var url = attachment.attachment.previewURL
+        var image_id = /images\/(\d+)/.exec(url)[1]
+        console.log(attachment.attachment.previewURL);
+        // return deleteAttachment(attachment);
+      });
+
+      host = "<%= commoner_images_url(@commoner) %>";
+
+      uploadAttachment = function(attachment) {
+        var file, form, key, xhr;
+        file = attachment.file;
+        form = new FormData;
+        form.append("Content-Type", file.type);
+        form.append("image[picture]", file);
+        fetch(host, {
+          method: "POST",
+          body: form,
+          headers: {
+            'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content'),
+            'X-Requested-With': 'XMLHttpRequest'
+          },
+          credentials: 'same-origin'
+        })
+        .then(function(response) {
+          if (response.ok) {
+            return response.json();
+          }
+        })
+        .then(function(json) {
+          var href, url;
+          url = href = json.url;
+          return attachment.setAttributes({
+            url: url,
+            href: href
+          });
+        })
+      };
+
+    }).call(this);
+
+    // Select2 for tags
     $('#story_tag_ids').select2({
       theme: 'bootstrap',
       placeholder: "<%= _('e.g. Pregnancy, Food sharing, etc.') %>",

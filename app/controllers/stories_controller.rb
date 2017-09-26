@@ -4,7 +4,7 @@ class StoriesController < ApplicationController
   before_action :create_new_tags, only: [:create, :update]
 
   load_and_authorize_resource :story
-  before_action :set_commoner, only: [:new, :create]
+  before_action :set_commoner, only: [:new, :create, :edit]
   before_action :set_story_locale
 
   # GET /stories

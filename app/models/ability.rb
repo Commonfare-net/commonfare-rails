@@ -17,6 +17,7 @@ class Ability
       end
       can [:create, :update, :destroy], Story, commoner_id: commoner.id
       can [:create, :update, :destroy], Comment, commoner_id: commoner.id
+      can [:create, :destroy], Image, commoner_id: commoner.id
     end
   end
 end

@@ -52,6 +52,18 @@
 
   .story-content {
     line-height: 1.7em;
+    figure {
+      img {
+        width: 100%;
+        height: auto;
+      }
+      figcaption {
+        font-style: italic;
+        font-size: .9rem;
+        text-align: center;
+        color: gray;
+      }
+    }
   }
 
   .story-tags {
