@@ -1,6 +1,6 @@
 <div class="story-card my-2" >
   <%= link_to story_path(story), class: '' do %>
-    <%= image_tag 'http://placebear.com/318/150', alt: 'Story title', class: 'card-img-top' %>
+    <%= image_tag story_card_image_path(story), alt: 'Story title', class: 'card-img-top' %>
   <% end %>
   <div class="card-body">
     <div class="my-2">

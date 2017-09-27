@@ -29,21 +29,21 @@
         size: false
       };
 
-      document.addEventListener('trix-initialize', function(e){
-        trix = e.target;
-        toolBar = trix.toolbarElement;
-
-        button = document.createElement("button");
-        button.setAttribute("type", "button");
-        button.setAttribute("class", "attach");
-        button.setAttribute("data-trix-action", "x-attach");
-        button.setAttribute("title", "Attach a file");
-        button.setAttribute("tabindex", "-1");
-        button.innerText = "Attach a file";
-
-        uploadButton = toolBar.querySelector('.button_group.block_tools').appendChild(button);
-        // uploadButton.addEventListener('click', function() { ... }
-      });
+      // document.addEventListener('trix-initialize', function(e){
+      //   trix = e.target;
+      //   toolBar = trix.toolbarElement;
+      //
+      //   button = document.createElement("button");
+      //   button.setAttribute("type", "button");
+      //   button.setAttribute("class", "attach");
+      //   button.setAttribute("data-trix-action", "x-attach");
+      //   button.setAttribute("title", "Attach a file");
+      //   button.setAttribute("tabindex", "-1");
+      //   button.innerText = "Attach a file";
+      //
+      //   uploadButton = toolBar.querySelector('.button_group.block_tools').appendChild(button);
+      //   // uploadButton.addEventListener('click', function() { ... }
+      // });
 
       document.addEventListener("trix-attachment-add", function(event) {
         var attachment;

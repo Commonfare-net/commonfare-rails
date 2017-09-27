@@ -12,7 +12,7 @@ class StoriesController < ApplicationController
   def index
     if params[:commoner_id].present? && Commoner.exists?(params[:commoner_id])
       @commoner = Commoner.find params[:commoner_id]
-      @stories = @commoner.stories
+      @stories = @commoner.stories.order('created_at DESC')
     end
   end
 
@@ -47,6 +47,7 @@ class StoriesController < ApplicationController
     @story = @commoner.stories.build(story_params)
     respond_to do |format|
       if @story.save
+        @story.images << images_from_content(@story)
         # I18n.locale back to the original
         I18n.locale = current_locale
         format.html { redirect_to story_path(@story, story_locale: @story_locale), notice: _('Story was successfully created.') }
@@ -71,6 +72,7 @@ class StoriesController < ApplicationController
       current_locale = I18n.locale
       I18n.locale = @story_locale
       if @story.update(story_params)
+        @story.images << images_from_content(@story)
         # I18n.locale back to the original
         I18n.locale = current_locale
         format.html { redirect_to story_path(@story, story_locale: @story_locale), notice: _('Story was successfully updated.') }
@@ -121,6 +123,7 @@ class StoriesController < ApplicationController
       end
     end
 
+    # This always returns an array, even if content is nil or ""
     def images_from_content(story)
       content = Nokogiri::HTML(story.content)
       ids = content.css('figure').map { |fig_ns| fig_ns.css('img').first['src'].scan(/images\/(\d+)\//).last.first.to_i }
