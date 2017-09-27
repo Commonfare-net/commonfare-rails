@@ -20,7 +20,8 @@ module StoriesHelper
     if story.images.any?
       story.images.first.picture.card.url
     else
-      'http://placebear.com/318/150'
+      image_path 'card_default_img.png'
+      # 'http://placebear.com/318/150'
     end
   end
 
