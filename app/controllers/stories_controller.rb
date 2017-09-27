@@ -121,6 +121,12 @@ class StoriesController < ApplicationController
       end
     end
 
+    def images_from_content(story)
+      content = Nokogiri::HTML(story.content)
+      ids = content.css('figure').map { |fig_ns| fig_ns.css('img').first['src'].scan(/images\/(\d+)\//).last.first.to_i }
+      Image.find(ids)
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def story_params
       params.require(:story).permit(:title, :content, :place, tag_ids: [])

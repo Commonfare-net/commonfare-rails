@@ -22,12 +22,28 @@
 <%= content_for :scripts do %>
   <script type="text/javascript">
     (function() {
-      var createStorageKey, host, uploadAttachment;
+      var createStorageKey, host, uploadAttachment, deleteAttachment;
 
       Trix.config.attachments.preview.caption = {
         name: false,
         size: false
       };
+
+      document.addEventListener('trix-initialize', function(e){
+        trix = e.target;
+        toolBar = trix.toolbarElement;
+
+        button = document.createElement("button");
+        button.setAttribute("type", "button");
+        button.setAttribute("class", "attach");
+        button.setAttribute("data-trix-action", "x-attach");
+        button.setAttribute("title", "Attach a file");
+        button.setAttribute("tabindex", "-1");
+        button.innerText = "Attach a file";
+
+        uploadButton = toolBar.querySelector('.button_group.block_tools').appendChild(button);
+        // uploadButton.addEventListener('click', function() { ... }
+      });
 
       document.addEventListener("trix-attachment-add", function(event) {
         var attachment;
@@ -36,16 +52,32 @@
           return uploadAttachment(attachment);
         }
       });
+
       document.addEventListener("trix-attachment-remove", function(event) {
         var attachment;
         attachment = event.attachment;
         var url = attachment.attachment.previewURL
         var image_id = /images\/(\d+)/.exec(url)[1]
-        console.log(attachment.attachment.previewURL);
-        // return deleteAttachment(attachment);
+        return deleteAttachment(attachment, image_id);
       });
 
       host = "<%= commoner_images_url(@commoner) %>";
+
+      deleteAttachment = function(attachment, image_id) {
+        fetch(host + "/" + image_id, {
+          method: "DELETE",
+          headers: {
+            'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content'),
+            'X-Requested-With': 'XMLHttpRequest'
+          },
+          credentials: 'same-origin'
+        })
+        .then(function(response) {
+          if (!response.ok) {
+            // TODO: Show some message and handle this
+          }
+        })
+      }
 
       uploadAttachment = function(attachment) {
         var file, form, key, xhr;
