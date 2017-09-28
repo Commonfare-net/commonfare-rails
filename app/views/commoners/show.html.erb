@@ -14,7 +14,7 @@
 <hr>
 <h2 class="text-center">Latest Stories</h2>
 <div class="row">
-<% Story.order('created_at DESC').last(10).each do |story| %>
+<% Story.order('created_at DESC').first(6).each do |story| %>
   <div class="col-lg-4 col-md-6">
     <%= render 'stories/card', story: story %>
   </div>
