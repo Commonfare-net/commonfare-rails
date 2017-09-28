@@ -24,7 +24,18 @@ class PictureUploader < CarrierWave::Uploader::Base
   #   "/images/fallback/" + [version_name, "default.png"].compact.join('_')
   # end
 
+  # To avoid rotation of picture if it is portrait
+  # see https://stackoverflow.com/a/21037115/1897170
+  process :right_orientation
+  def right_orientation
+    manipulate! do |img|
+      img.auto_orient
+      img
+    end
+  end
+
   # Process files as they are uploaded:
+  process resize_to_limit: [1920, 1080]
   # process scale: [200, 300]
   #
   # def scale(width, height)
