@@ -10,6 +10,7 @@ class StoriesController < ApplicationController
   # GET /stories
   # GET /stories.json
   def index
+    @stories = Story.order('created_at DESC') # All descending
     if params[:commoner_id].present? && Commoner.exists?(params[:commoner_id])
       @commoner = Commoner.find params[:commoner_id]
       @stories = @commoner.stories.order('created_at DESC')
