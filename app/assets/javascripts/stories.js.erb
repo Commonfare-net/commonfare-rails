@@ -1,0 +1,40 @@
+document.addEventListener('trix-initialize', function(e){
+  trix = e.target;
+  toolBar = trix.toolbarElement;
+
+  button = document.createElement("button");
+  button.setAttribute("type", "button");
+  button.setAttribute("class", "trix-button trix-button--icon trix-button--image");
+  button.setAttribute("data-trix-attribute", "x-attach");
+  button.setAttribute("title", "Attach a file");
+  button.setAttribute("tabindex", "-1");
+  // The button icon is defined in CSS
+
+  if (document.querySelectorAll('.trix-button--image').length === 0) {
+    uploadButton = toolBar.querySelector('.trix-button-group.trix-button-group--text-tools').appendChild(button);
+    uploadButton.addEventListener('click', uploadImage);
+  }
+});
+
+function uploadImage() {
+  // Create a temporary file input
+  fileInput = document.createElement("input");
+  fileInput.setAttribute("type", "file");
+  fileInput.setAttribute("multiple", "");
+
+  // Add listener on change for this file input
+  fileInput.addEventListener("change", function(event) {
+    var file, _i, _len, _ref, _results;
+    _ref = this.files;
+    _results = [];
+    // Getting files
+    for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+      file = _ref[_i];
+      // pushing them to Trix
+      _results.push(trix.editor.insertFile(file));
+    }
+    return _results;
+  })
+  // Then virtually click on it
+  fileInput.click()
+}

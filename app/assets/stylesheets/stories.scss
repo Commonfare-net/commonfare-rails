@@ -1,7 +1,6 @@
 // Place all the styles related to the Stories controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
 .story-card {
   @extend .card;
   .story-card-title {
@@ -70,4 +69,12 @@
     padding: 1em;
   }
 
+}
+
+.trix-button--image::before {
+  background-image: image-url('retro.svg')
+}
+
+.trix-button-group.trix-button-group--history-tools {
+  display: none;
 }

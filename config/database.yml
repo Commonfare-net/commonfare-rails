@@ -86,9 +86,9 @@ test:
 staging:
   <<: *default
   database: commonfare_staging
-  password: <%= ENV['COMMONFARE-RAILS_STAGING_DATABASE_PASSWORD'] %>
+  password: <%= ENV['COMMONFARE_RAILS_STAGING_DATABASE_PASSWORD'] %>
 
 production:
   <<: *default
   database: commonfare_production
-  password: <%= ENV['COMMONFARE-RAILS_PROD_DATABASE_PASSWORD'] %>
+  password: <%= ENV['COMMONFARE_RAILS_PROD_DATABASE_PASSWORD'] %>
