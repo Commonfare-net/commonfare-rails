@@ -18,4 +18,10 @@ module ApplicationHelper
       'secondary'
     end
   end
+
+  def infohub_url
+    locale = %i(it nl hr).include?(I18n.locale) ? I18n.locale : ''
+    language = I18n.locale
+    "http://infohub.commonfare.net/#{locale}?language=#{language}"
+  end
 end
