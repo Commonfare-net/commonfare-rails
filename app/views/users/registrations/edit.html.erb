@@ -23,7 +23,11 @@
       <br>
       <small><%= _('All your content will be permanetly deleted too.') %></small>
       <br>
-      <%= link_to _("Yes please. Cancel my account"), registration_path(resource_name), data: { confirm: _("Are you sure?") }, method: :delete %>
+      <%= link_to _("Yes please. Cancel my account"),
+                  registration_path(resource_name),
+                  class: 'text-danger',
+                  data: { confirm: _("Are you sure?") },
+                  method: :delete %>
     </p>
   </div>
 </div>

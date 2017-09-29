@@ -1,23 +1,23 @@
 <%= f.error_notification %>
 <%= f.input :title,
-            label: _('Give a nice title to your Story'),
+            label: _('Give a title to your content'),
             required: false,
             placeholder: _('e.g. There and back again') %>
 <%= f.input :content,
-            label: _('Write here your Story'),
+            label: _('Write here'),
             as: :trix_editor,
             required: false,
-            hint: _("Please don't be too concise (min. 500 chars)") %>
+            hint: _("Please don't be too short (min. 500 chars)") %>
 <%= f.input :place,
-            label: _('Where is this story set?'),
+            label: _('Where is this set?'),
             required: false,
             placeholder: _('e.g. Milan, Italy'),
-            hint: _('The city, region or country of your story') %>
+            hint: _('City, Region, Country') %>
 <%= f.association :tags,
-            label: _('Some words useful to tag your story'),
+            label: _('Tags'),
             # placeholder: "Managed in JS",
             hint: _('Use comma or press Enter to separate tags') %>
-<%= f.button :submit, s_('Story form button|Share your Story'), class: 'btn btn-success btn-block' %>
+<%= f.button :submit, s_('Story form button|Publish'), class: 'btn btn-success btn-block' %>
 
 <%= content_for :scripts do %>
   <script type="text/javascript">

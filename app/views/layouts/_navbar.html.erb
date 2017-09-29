@@ -24,7 +24,9 @@
         <%= link_to(_("Home"), root_path, class: 'nav-link') %>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="http://infohub.commonfare.net">InfoHub <%= fa_icon 'external-link' %></a>
+        <%= link_to("Welfare provisions #{fa_icon('external-link')}".html_safe,
+                    "http://infohub.commonfare.net/#{I18n.locale}?language=#{I18n.locale}",
+                    class: 'nav-link') %>
       </li>
     </ul>
     <ul class="navbar-nav">
@@ -45,7 +47,7 @@
         <%= link_to(_('Login'), new_user_session_path, class: 'nav-link') %>
       </li>
       <li class="nav-item">
-        <%= link_to _("Sign up"), new_user_registration_path, class: 'nav-link' %>
+        <%= link_to _("Register"), new_user_registration_path, class: 'nav-link' %>
       </li>
       <li class="nav-item dropdown active">
         <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

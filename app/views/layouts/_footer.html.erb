@@ -22,20 +22,11 @@
         </p>
       </div>
       <div class="col-sm-4 right-links">
-        <ul class="list-unstyled">
-          <li>
-            <small><%#= link_to _("Help"), page_path(id: 'help') %></small>
-          </li>
-          <li>
-            <small><%#= link_to _("About us"), page_path(id: 'about') %></small>
-          </li>
-          <li>
-            <small><%#= link_to _("Terms and Conditions"), page_path(id: 'legal/tos') %></small>
-          </li>
-          <li>
-            <small><%#= link_to _("Privacy Policy"), page_path(id: 'legal/privacy') %></small>
-          </li>
-        </ul>
+        <div>
+          <small><%= link_to _("About"), page_path(id: 'about') %></small> |
+          <small><%= link_to _("Terms of Service"), page_path(id: 'tos') %></small> |
+          <small><%= link_to _("Privacy"), page_path(id: 'privacy') %></small>
+        </div>
       </div>
     </div>
   </div>

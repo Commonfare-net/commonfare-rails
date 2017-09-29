@@ -7,6 +7,15 @@
       <%= f.input :email, autofocus: true %>
       <%= f.input :password, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
       <%= f.input :password_confirmation %>
+      <p>
+        <small>
+          <%= (_("By joining you agree to our %{tos} and %{privacy}.") %{
+                tos: link_to(_('Terms of Service'), page_path(id: 'tos')),
+                privacy: link_to(_('Privacy Policy'), page_path(id: 'privacy'))
+                }
+            ).html_safe %>
+        </small>
+      </p>
       <%= f.button :submit, s_('Sign up page button|Join Commonfare'), class: 'btn btn-success btn-lg btn-block mb-3' %>
     <% end %>
   </div>
