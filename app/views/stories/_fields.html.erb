@@ -17,7 +17,11 @@
             label: _('Tags'),
             # placeholder: "Managed in JS",
             hint: _('Use comma or press Enter to separate tags') %>
-<%= f.button :submit, s_('Story form button|Publish'), class: 'btn btn-success btn-block' %>
+<%= f.button :submit,
+            s_('Story form button|Publish'),
+            id: 'publish-button',
+            class: 'btn btn-success btn-block',
+            data: {'disable-with': _('Publishing...')} %>
 
 <%= content_for :scripts do %>
   <script type="text/javascript">
@@ -82,12 +86,14 @@
           }
         }
 
+        disablePublishButton();
         axios.post(host, form, options)
           .then(function(response) {
             // console.log(response);
             if (response.statusText === 'OK') {
               var href, url;
               url = href = response.data.url;
+              enablePublishButton();
               return attachment.setAttributes({
                 url: url,
                 href: href
@@ -95,6 +101,7 @@
             }
           })
           .catch(function (error) {
+            enablePublishButton();
             // console.log(error);
             // TODO: Show some message and handle this
           });
