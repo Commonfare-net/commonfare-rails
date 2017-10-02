@@ -91,6 +91,9 @@ group :development, :test do
   # Nice error page, with console
   gem 'better_errors'
   gem 'binding_of_caller'
+
+  # Favicon as if were no tomorrow
+  gem 'rails_real_favicon'
 end
 
 group :development do
