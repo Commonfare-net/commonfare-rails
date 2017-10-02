@@ -3,6 +3,7 @@ class ImagesController < ApplicationController
   load_and_authorize_resource :image, through: :commoner
 
   def create
+    sdfs
     @image = Image.new(image_params)
     @image.commoner = @commoner
     respond_to do |format|

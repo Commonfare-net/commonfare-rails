@@ -15,8 +15,7 @@
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
-// whatwg-fetch is the polyfill for fetch. DO NOT REMOVE
-//= require whatwg-fetch/fetch
+//= require axios/dist/axios
 //= require trix
 //= require select2
 //= require easy-autocomplete/dist/jquery.easy-autocomplete

@@ -48,19 +48,18 @@
       host = "<%= commoner_images_url(@commoner) %>";
 
       deleteAttachment = function(attachment, image_id) {
-        fetch(host + "/" + image_id, {
-          method: "DELETE",
+        var config = {
           headers: {
             'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content'),
             'X-Requested-With': 'XMLHttpRequest'
-          },
-          credentials: 'same-origin'
-        })
-        .then(function(response) {
-          if (!response.ok) {
-            // TODO: Show some message and handle this
           }
-        })
+        }
+        axios.delete(host + "/" + image_id, config)
+          .then(function(response) {
+            if (response.status != 204) {
+              // TODO: Show some message and handle this
+            }
+          })
       }
 
       uploadAttachment = function(attachment) {
@@ -69,28 +68,36 @@
         form = new FormData;
         form.append("Content-Type", file.type);
         form.append("image[picture]", file);
-        fetch(host, {
-          method: "POST",
-          body: form,
+
+        var options = {
           headers: {
             'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content'),
             'X-Requested-With': 'XMLHttpRequest'
           },
-          credentials: 'same-origin'
-        })
-        .then(function(response) {
-          if (response.ok) {
-            return response.json();
+          onUploadProgress: function(progressEvent) {
+            var progress;
+            progress = progressEvent.loaded / progressEvent.total * 100;
+            // console.log(progress);
+            return attachment.setUploadProgress(progress);
           }
-        })
-        .then(function(json) {
-          var href, url;
-          url = href = json.url;
-          return attachment.setAttributes({
-            url: url,
-            href: href
+        }
+
+        axios.post(host, form, options)
+          .then(function(response) {
+            // console.log(response);
+            if (response.statusText === 'OK') {
+              var href, url;
+              url = href = response.data.url;
+              return attachment.setAttributes({
+                url: url,
+                href: href
+              });
+            }
+          })
+          .catch(function (error) {
+            // console.log(error);
+            // TODO: Show some message and handle this
           });
-        })
       };
 
     }).call(this);
