@@ -23,7 +23,8 @@ body {
 }
 // Used in search.js as option to customize easyAutocomplete
 .cf-search-form {
-  width: 201px !important;
+  // width: 201px !important;
+  width: unset !important;
   @media screen and (max-width: 575px) {
     width: 193px !important;
     margin-right: 8px;
