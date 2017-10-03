@@ -15,6 +15,24 @@ module CommonfareRails
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
 
+    # Here this works, in an initializer it doesn't
+    config.exception_handler = {
+      dev: true,
+      layouts: {
+        500 => 'application',
+        501 => 'application',
+        502 => 'application',
+        503 => 'application',
+        504 => 'application',
+        505 => 'application',
+        506 => 'application',
+        507 => 'application',
+        508 => 'application',
+        509 => 'application',
+        510 => 'application',
+      }
+    }
+
     # This enables translation fallbacks. Needed to use globalize fallbacks
     config.i18n.fallbacks = true
   end

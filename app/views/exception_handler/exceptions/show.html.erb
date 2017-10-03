@@ -1,0 +1,27 @@
+<%= content_for :title, _('Error') %>
+<div class="container">
+<div class="row align-items-center justify-content-center">
+  <div class="col-md-8 col-lg-6">
+    <h2>Ooops... 😓</h2>
+    
+    <p class="lead">
+    <% if @exception.status == 404 %>
+      <%= _('Sorry, the page you are looking for does not exist.') %>
+    <% else %>
+      <%= _('An error occured while visiting this page.') %>
+    <% end %>
+    </p>
+
+    <% unless @exception.status == 404 %>
+    <p>
+      <code><%= _('Error code: %{err_code}') %{err_code: @exception.status} %></code>
+    </p>
+    <% end %>
+
+    <p class="text-center">
+      <%= link_to _('Homepage'), root_path, class: 'btn btn-sm btn-info' %>
+    </p>
+
+  </div>
+</div>
+</div>

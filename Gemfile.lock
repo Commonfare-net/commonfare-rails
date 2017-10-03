@@ -104,6 +104,10 @@ GEM
     domain_name (0.5.20170404)
       unf (>= 0.0.5, < 1.0.0)
     erubi (1.6.1)
+    exception_handler (0.7.7.0)
+      bundler
+      rails (>= 4.2.0)
+      responders
     execjs (2.7.0)
     fast_gettext (1.5.1)
     ffi (1.9.18)
@@ -311,6 +315,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise
   devise-i18n
+  exception_handler (~> 0.7.7.0)
   font-awesome-rails
   geocoder
   gettext_i18n_rails
