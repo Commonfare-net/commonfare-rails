@@ -27,6 +27,7 @@
   <script type="text/javascript">
     (function() {
       var createStorageKey, host, uploadAttachment, deleteAttachment;
+      publishButton = $('#publish-button');
 
       Trix.config.attachments.preview.caption = {
         name: false,
@@ -86,14 +87,19 @@
           }
         }
 
-        disablePublishButton();
+
+        disableButton(publishButton,
+                            '<%= _('Uploading image, please wait...') %>'
+                            );
         axios.post(host, form, options)
           .then(function(response) {
             // console.log(response);
             if (response.statusText === 'OK') {
               var href, url;
               url = href = response.data.url;
-              enablePublishButton();
+              enableButton(publishButton,
+                                  '<%= _('Publish') %>'
+                                 );
               return attachment.setAttributes({
                 url: url,
                 href: href
@@ -101,7 +107,9 @@
             }
           })
           .catch(function (error) {
-            enablePublishButton();
+            enableButton(publishButton,
+                                '<%= _('Publish') %>'
+                               );
             // console.log(error);
             // TODO: Show some message and handle this
           });

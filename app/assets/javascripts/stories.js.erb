@@ -39,18 +39,16 @@ function uploadImage() {
   fileInput.click()
 }
 
-
-
-function disablePublishButton() {
-  if (!$('#publish-button').prop('disabled')) {
-    $('#publish-button').prop('disabled', 'disabled');
-    $('#publish-button').prop('value', '<%= _('Uploading image, please wait...') %>');
+function disableButton(button, text) {
+  if (!button.prop('disabled')) {
+    button.prop('disabled', 'disabled');
+    button.prop('value', text);
   }
 }
 
-function enablePublishButton() {
-  if ($('#publish-button').prop('disabled')) {
-    $('#publish-button').prop('disabled', false);
-    $('#publish-button').prop('value', '<%= _('Publish') %>');
+function enableButton(button, text) {
+  if (button.prop('disabled')) {
+    button.prop('disabled', false);
+    button.prop('value', text);
   }
 }
