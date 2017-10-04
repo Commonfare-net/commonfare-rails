@@ -7,10 +7,15 @@
         <div class="dropdown d-inline">
           <button href="#" id="dropdownMenuButton" type="button" class="btn btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <%= I18n.locale.to_s.upcase %>
+            <%# binding.pry %>
           </button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <% other_locales.each do |locale| %>
-              <%= link_to "#{locale.to_s.upcase} - #{localised_language_name(locale, locale)}", { locale: locale, story_locale: @story_locale }, class: 'dropdown-item' %>
+            <% begin %>
+              <% other_locales.each do |locale| %>
+                <%= link_to "#{locale.to_s.upcase} - #{localised_language_name(locale, locale)}", { locale: locale, story_locale: @story_locale }, class: 'dropdown-item' %>
+              <% end %>
+            <% rescue ActionController::UrlGenerationError %>
+              <%= link_to _('Homepage'), root_path, class: 'dropdown-item' %>
             <% end %>
           </div>
         </div>
