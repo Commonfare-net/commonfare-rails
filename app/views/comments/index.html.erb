@@ -2,7 +2,7 @@
   <div class="col-md-8 col-lg-6">
     <% if @story.present? %>
       <h4><%= _('All comments for') %></h4>
-      <h3><%= link_to(truncate(@story.title), story_path(@story)) %></h3>
+      <h3><%= link_to(@story.title, story_path(@story), class: 'clamp') %></h3>
       <%= render 'list', comments: @comments %>
     <% end %>
   </div>

@@ -6,8 +6,7 @@
     <div class="my-2">
       <small class="card-subtitle text-muted"><%= fa_icon('tags') %> <%= story_card_tags_links(story) %></small>
     </div>
-    <h5 class="story-card-title"><%= link_to(truncate(story.title, length: 55), story_path(story), class: 'story-card-title-link') %></h5>
-    <!-- <p class="card-text"><%#= truncate(strip_tags(story.content), length: 100) %></p> -->
+    <h5 class="story-card-title"><%= link_to(story.title, story_path(story), class: 'story-card-title-link clamp') %></h5>
     <div class="media mb-2">
       <%= image_tag story.commoner.avatar.card, class: 'd-flex mr-3 rounded-circle' %>
       <div class="media-body">

@@ -1,3 +1,9 @@
+document.addEventListener("turbolinks:load", function() {
+  Ellipsis({
+    lines: 3,
+  });
+});
+
 document.addEventListener('trix-initialize', function(e){
   trix = e.target;
   toolBar = trix.toolbarElement;
