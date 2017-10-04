@@ -1,7 +1,7 @@
 <% content_for :title, _('Write your Story') %>
 <div class="row justify-content-center pb-2">
   <div class="col-md-10 col-lg-8">
-    <h1><%= _('Write your Story') %></h1>
+    <h2><%= _('Write your Story') %></h2>
     <% Globalize.with_locale(@story_locale) do %>
       <div>
         <%= _("You are writing in") %>
@@ -18,6 +18,11 @@
       </div>
       <%= simple_form_for([@commoner, @story], url: stories_path({story_locale: @story_locale})) do |f| %>
         <%= render 'fields', f: f %>
+        <%= f.button :submit,
+                s_('Story form button|Publish'),
+                id: 'publish-button',
+                class: 'btn btn-success btn-block',
+                data: {'disable-with': _('Publishing...')} %>
       <% end %>
     <% end %>
   </div>

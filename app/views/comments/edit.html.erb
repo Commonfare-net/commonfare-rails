@@ -5,7 +5,7 @@
       <%= render 'comments/fields', f: f, btn_text: s_('Edit') %>
     <% end %>
     <small>
-      <%= link_to(_('Delete this comment'), comment_path(@comment), class: 'text-danger', method: :delete, data: { confirm: _('Are you sure?') }) if can? :destroy, @comment %>
+      <%= link_to(fa_icon('trash', text: _('Delete this comment')), comment_path(@comment), class: 'text-danger', method: :delete, data: { confirm: _('Are you sure?') }) if can? :destroy, @comment %>
     </small>
   </div>
 </div>

@@ -8,6 +8,8 @@ class Story < ApplicationRecord
 
   validates :title, :content, :place, presence: true
 
+  before_destroy :destroy_lonely_tags
+
   def author
     commoner
   end
@@ -18,5 +20,12 @@ class Story < ApplicationRecord
 
   def has_translations_besides(current_locale)
     (translated_locales - [current_locale.to_sym]).any?
+  end
+
+  # this destroys all tags associated only to this story
+  def destroy_lonely_tags
+    tags.each do |tag|
+      tag.destroy if tag.stories == [self]
+    end
   end
 end

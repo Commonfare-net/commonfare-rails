@@ -1,7 +1,7 @@
 <% content_for :title, _('Edit your Story') %>
 <div class="row justify-content-center pb-2">
   <div class="col-md-10 col-lg-8">
-    <h1><%= _('Edit your Story') %></h1>
+    <h2><%= _('Edit your Story') %></h2>
     <% Globalize.with_locale(@story_locale) do %>
       <div>
         <%= _("You are editing in") %>
@@ -24,7 +24,21 @@
       <%#= render 'form', story: @story %>
       <%= simple_form_for([@commoner, @story], url: story_path(@story, story_locale: @story_locale)) do |f| %>
         <%= render 'fields', f: f %>
+        <%= f.button :submit,
+                s_('Story form button|Edit'),
+                id: 'publish-button',
+                class: 'btn btn-success btn-block',
+                data: {'disable-with': _('Publishing...')} %>
       <% end %>
+      <p class="text-right">
+        <small>
+          <%= link_to(fa_icon('trash', text: _('Delete this Story')),
+          story_path(@story),
+          method: :delete,
+          class: 'text-danger',
+            data: {confirm: _('Are you sure? This will delete all the comments as well.')}) %>
+        </small>
+      </p>
     <% end %>
   </div>
 </div>

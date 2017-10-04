@@ -17,11 +17,6 @@
             label: _('Tags'),
             # placeholder: "Managed in JS",
             hint: _('Use comma or press Enter to separate tags') %>
-<%= f.button :submit,
-            s_('Story form button|Publish'),
-            id: 'publish-button',
-            class: 'btn btn-success btn-block',
-            data: {'disable-with': _('Publishing...')} %>
 
 <%= content_for :scripts do %>
   <script type="text/javascript">

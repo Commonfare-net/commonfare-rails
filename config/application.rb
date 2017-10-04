@@ -17,7 +17,7 @@ module CommonfareRails
 
     # Here this works, in an initializer it doesn't
     config.exception_handler = {
-      dev: true,
+      # dev: true, # enable this to see error pages in development
       layouts: {
         500 => 'application',
         501 => 'application',
