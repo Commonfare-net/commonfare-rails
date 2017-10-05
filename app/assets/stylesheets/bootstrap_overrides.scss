@@ -4,4 +4,10 @@
   input, textarea {
     @extend .is-invalid;
   }
+  trix-editor {
+    border-color: #dc3545;
+  }
+  &.trix_editor .invalid-feedback {
+    display: block;
+  }
 }
