@@ -90,9 +90,6 @@ class StoriesController < ApplicationController
   # DELETE /stories/1
   # DELETE /stories/1.json
   def destroy
-    # reload is needed for destroying polymorphic associations
-    @story.images.reload
-    @story.comments.reload
     @story.destroy
     respond_to do |format|
       format.html { redirect_to stories_url, notice: _('Story was successfully destroyed.') }

@@ -8,6 +8,9 @@ class Story < ApplicationRecord
 
   validates :title, :content, :place, presence: true
 
+  # prepend: true ensures the callback is called before dependent: :destroy
+  before_destroy :reload_associations, prepend: true
+
   before_destroy :destroy_lonely_tags
 
   def author
@@ -27,5 +30,11 @@ class Story < ApplicationRecord
     tags.each do |tag|
       tag.destroy if tag.stories == [self]
     end
+  end
+
+  # reload is needed for destroying polymorphic associations
+  def reload_associations
+    images.reload
+    comments.reload
   end
 end
