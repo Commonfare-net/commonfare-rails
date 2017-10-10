@@ -1,0 +1,42 @@
+<%#
+# Application Layout
+
+This view template is used as the layout
+for every page that Administrate generates.
+
+By default, it renders:
+- Navigation
+- Content for a search bar
+  (if provided by a `content_for` block in a nested page)
+- Flashes
+- Links to stylesheets and JavaScripts
+%>
+
+<!DOCTYPE html>
+<html lang="<%= I18n.locale %>">
+<head>
+  <meta charset="utf-8">
+  <meta name="ROBOTS" content="NOODP">
+  <meta name="viewport" content="initial-scale=1">
+  <title>
+    <%= content_for(:title) %> - <%= Rails.application.class.parent_name.titlecase %>
+  </title>
+  <%= render "administrate/application/stylesheet" %>
+  <%= stylesheet_link_tag 'admin' %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <div class="app-container">
+
+    <%= render "admin/application/navigation" if admin_user_signed_in? -%>
+
+    <main class="main-content" role="main">
+      <%= render "admin/application/flashes" -%>
+      <%= yield %>
+    </main>
+  </div>
+
+  <%= render "admin/application/javascript" %>
+</body>
+</html>

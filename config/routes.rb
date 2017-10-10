@@ -1,5 +1,19 @@
 Rails.application.routes.draw do
 
+  # ************* ADMIN START **********
+  devise_for :admin_users
+  namespace :admin do
+    resources :users
+    resources :comments
+    resources :commoners
+    resources :images
+    resources :stories
+    resources :tags
+
+    root to: "users#index"
+  end
+  # ************* ADMIN END **********
+
   devise_for :users,
     controllers: {
       sessions: 'users/sessions',

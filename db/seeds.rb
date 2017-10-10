@@ -13,3 +13,8 @@ NAMES.each do |name|
   end
   # puts "#{name} created"
 end
+
+AdminUser.find_or_create_by email: 'admin@example.com' do |admin_user|
+  admin_user.password = 'password'
+  admin_user.password_confirmation = 'password'
+end

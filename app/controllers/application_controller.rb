@@ -9,6 +9,8 @@ class ApplicationController < ActionController::Base
   authorize_resource unless: :should_skip_authorization?
   check_authorization unless: :should_skip_authorization?
 
+  layout :layout_by_resource
+
   rescue_from CanCan::AccessDenied do |exception|
     if current_user.nil?
       redirect_to new_user_session_path, notice: _("You have to log in to continue")
@@ -25,7 +27,11 @@ class ApplicationController < ActionController::Base
   # Devise wants this method here, see:
   # https://github.com/plataformatec/devise/wiki/How-To:-Redirect-to-a-specific-page-after-a-successful-sign-in-or-sign-out
   def after_sign_in_path_for(resource)
-    commoner_path(current_user.meta)
+    if resource.is_a? AdminUser
+      admin_root_path
+    else
+      commoner_path(current_user.meta)
+    end
   end
 
   def set_locale
@@ -43,9 +49,21 @@ class ApplicationController < ActionController::Base
 
   private
 
+  def layout_by_resource
+    if devise_controller? && resource.is_a?(AdminUser)
+      'admin/application'
+    else
+      'application'
+    end
+  end
+
   def after_sign_out_path_for(resource_or_scope)
     # here resource_or_scope is a :symbol!
-    root_path
+    if resource_or_scope == :admin_user
+      new_admin_user_session_path
+    else
+      root_path
+    end
   end
 
   def should_skip_authorization?

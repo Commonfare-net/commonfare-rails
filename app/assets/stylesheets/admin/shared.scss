@@ -1,0 +1,35 @@
+.fa.boolean-true {
+  color: green;
+}
+
+.fa.boolean-false {
+  color: red;
+}
+
+.customer-logo {
+  margin: 0 20px;
+}
+
+.customer-header {
+  width: 568px;
+}
+
+.resource-has_many {
+  margin: 25px;
+}
+
+.customer-navbar {
+  height: 56px;
+  background: #f6f7f7;
+  box-shadow: 2px 0 4px rgba(41, 63, 84, 0.24), 2px 0 6px rgba(41, 63, 84, 0.12);
+
+  h1 {
+    line-height: 56px;
+    font-size: 28px;
+    padding-left: 22px;
+  }
+  img {
+    vertical-align: text-top;
+    margin-right: 10px;
+  }
+}
