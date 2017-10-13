@@ -16,7 +16,7 @@ class CommonerDashboard < Administrate::BaseDashboard
     name: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
-    avatar: Field::String,
+    avatar: CarrierWaveField,
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -25,6 +25,7 @@ class CommonerDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
+    :name,
     :user,
     :images,
     :stories,

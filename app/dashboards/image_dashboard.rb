@@ -11,7 +11,7 @@ class ImageDashboard < Administrate::BaseDashboard
     commoner: Field::BelongsTo,
     imageable: Field::Polymorphic,
     id: Field::Number,
-    picture: Field::String,
+    picture: CarrierWaveField,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze

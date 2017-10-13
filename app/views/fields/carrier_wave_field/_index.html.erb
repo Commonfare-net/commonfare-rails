@@ -1,0 +1,7 @@
+<% if field.attribute == :picture %>
+  <%= image_tag field.url, class: 'image-thumb' %>
+<% elsif field.attribute == :avatar %>
+  <%= image_tag field.url, class: 'commoner-avatar' %>
+<% else %>
+  <%= field.to_s %>
+<% end %>

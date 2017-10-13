@@ -1,0 +1,13 @@
+<div class="field-unit__label">
+  <%= f.label field.attribute %>
+</div>
+<div class="field-unit__field">
+  <% if field.attribute == :picture %>
+    <%= image_tag field.url %>
+  <% elsif field.attribute == :avatar %>
+    <%= image_tag field.url, class: 'commoner-avatar' %>
+  <% else %>
+    <%= field.to_s %>
+  <% end %>
+  <%= f.file_field field.attribute %>
+</div>
