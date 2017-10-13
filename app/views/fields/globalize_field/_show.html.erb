@@ -1,0 +1,6 @@
+<dl class="">
+  <% field.data.each do |lang, translation| %>
+    <dt><%= I18nData.languages(I18n.locale)[lang.to_s.upcase] %></dt>
+    <dd><%= translation.html_safe %></dd>
+  <% end %>
+</dl>
