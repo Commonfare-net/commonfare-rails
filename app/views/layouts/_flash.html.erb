@@ -1,8 +1,8 @@
+<%# Toastr configuration is in flash_setup.coffee %>
+<script type="text/javascript">
 <% flash.each do |name, message| %>
-  <div class="alert alert-<%= flash_alert_type(name) %> alert-dismissible fade show" role="alert">
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-    </button>
-    <small><%= message %></small>
-  </div>
+  <% name = "info" if name == "notice" %>
+  <% name = "error" if name == "alert" %>
+  toastr.<%= name %>(<%= message.inspect.html_safe %>);
 <% end %>
+</script>

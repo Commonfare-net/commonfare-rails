@@ -21,5 +21,6 @@
 //= require easy-autocomplete/dist/jquery.easy-autocomplete
 //= require autosize/dist/autosize
 //= require ellipsis.js/ellipsis.min.js
+//= require toastr/build/toastr.min
 //= require search
 //= require_tree .
