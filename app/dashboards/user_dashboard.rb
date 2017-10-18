@@ -33,7 +33,9 @@ class UserDashboard < Administrate::BaseDashboard
     :meta,
     :id,
     :email,
-    :encrypted_password,
+    :created_at,
+    :last_sign_in_at,
+    # :encrypted_password,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES

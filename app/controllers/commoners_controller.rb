@@ -15,6 +15,7 @@ class CommonersController < ApplicationController
   # GET /commoners/1
   # GET /commoners/1.json
   def show
+    @stories = @commoner.stories.order('created_at DESC').first(6)
   end
 
   # GET /commoners/new

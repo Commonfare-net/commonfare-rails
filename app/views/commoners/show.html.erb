@@ -8,15 +8,31 @@
       <%= @commoner.name %>
       <small><%= link_to '(Edit profile)', edit_commoner_path(@commoner) if can? :edit, @commoner %></small>
     </p>
-    <%= link_to((_("%{commoner_name}'s Stories") %{commoner_name: @commoner.name}), commoner_stories_path(@commoner), class: 'btn btn-info') %>
   </div>
 </div>
 <hr>
-<h2 class="text-center">Latest Stories</h2>
-<div class="row">
-<% Story.order('created_at DESC').first(6).each do |story| %>
-  <div class="col-lg-4 col-md-6">
-    <%= render 'stories/card', story: story %>
+<h4 class="text-center"><%= _("%{commoner_name}'s latest stories") %{commoner_name: @commoner.name} %></h4>
+<% if @stories.any? %>
+  <div class="row">
+    <% @stories.each do |story| %>
+    <div class="col-lg-4 col-md-6">
+      <%= render 'stories/card', story: story %>
+    </div>
+    <% end %>
+  </div>
+<% else %>
+  <div class="row justify-content-center">
+    <div class="col text-center">
+      <p class="lead">
+        <em><%= _("No Stories yet.") %></em>
+      </p>
+    </div>
   </div>
 <% end %>
-</div>
+<% if @commoner.stories.count > 6 %>
+  <div class="row justify-content-center">
+    <div class="col text-center">
+      <%= link_to(_("Read more"), commoner_stories_path(@commoner), class: 'btn btn-info') %>
+    </div>
+  </div>
+<% end %>
