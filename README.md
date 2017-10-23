@@ -1,6 +1,6 @@
 # Commonfare.net
 
-## Setup the develompent environment with Docker
+## Setup the development environment with Docker
 
 Build the image for the Rails app container:
 

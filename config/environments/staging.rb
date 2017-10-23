@@ -1,6 +1,16 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  # Mail settings
+  config.action_mailer.smtp_settings = {
+    :address              => ENV['MAIL_SERVER_HOST'],
+    :port                 => ENV['MAIL_SERVER_PORT'],
+    :enable_starttls_auto => true
+  }
+  config.action_mailer.default_url_options = { host: ENV['VIRTUAL_HOST'], protocol: 'http' }
+  config.action_mailer.default :from => 'info@commonfare.net'
+  config.action_mailer.default :reply_to => 'info@commonfare.net'
+
   # Code is not reloaded between requests.
   config.cache_classes = true
 

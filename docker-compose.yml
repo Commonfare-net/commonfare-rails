@@ -14,9 +14,16 @@ services:
     # see https://docs.docker.com/compose/compose-file/#links
     links:
       - postgres
+      - mailcatcher
     # These two allow debug with pry
     tty: true
     stdin_open: true
+  mailcatcher:
+    image: yappabe/mailcatcher
+    container_name: commonfare_mailcatcher
+    ports:
+        - 1025:1025
+        - 1080:1080
   postgres:
     image: postgres:9.6
     container_name: commonfare_pg
