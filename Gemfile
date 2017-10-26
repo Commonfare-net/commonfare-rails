@@ -85,6 +85,9 @@ gem 'administrate'
 # Piwik analytics
 gem 'piwik_analytics'
 
+# Cookie Law
+gem 'cookies_eu'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
