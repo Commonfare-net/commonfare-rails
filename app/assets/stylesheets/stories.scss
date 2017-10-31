@@ -56,6 +56,9 @@
         width: 100%;
         height: auto;
       }
+      iframe {
+        width: 100%;
+      }
       figcaption {
         font-style: italic;
         font-size: .9rem;
@@ -71,10 +74,20 @@
 
 }
 
+trix-editor {
+  iframe {
+    max-width: 100%;
+  }
+}
+
 .trix-button--image::before {
   background-image: image-url('retro.svg')
 }
 
-.trix-button-group.trix-button-group--history-tools {
+.trix-button--video::before {
+  background-image: image-url('film.svg')
+}
+
+.trix-button-group.trix-button-group--history-tools, .trix-button--icon-code {
   display: none;
 }

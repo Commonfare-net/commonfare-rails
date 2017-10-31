@@ -125,9 +125,10 @@ class StoriesController < ApplicationController
     end
 
     # This always returns an array, even if content is nil or ""
+    # or if there is an embedded video (with iframe)
     def images_from_content(story)
       content = Nokogiri::HTML(story.content)
-      ids = content.css('figure').map { |fig_ns| fig_ns.css('img').first['src'].scan(/images\/(\d+)\//).last.first.to_i }
+      ids = content.css('figure').map { |fig_ns| fig_ns.css('img').first['src'].scan(/images\/(\d+)\//).last.first.to_i if fig_ns.css('img').present? }.compact
       Image.find(ids)
     end
 

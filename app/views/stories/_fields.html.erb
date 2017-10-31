@@ -18,6 +18,15 @@
             # placeholder: "Managed in JS",
             hint: _('Use comma or press Enter to separate tags') %>
 
+<div class="trix-dialog trix-dialog--link trix-active" data-trix-dialog="embed-video" data-trix-dialog-attribute="embed-video" id="embed-video-dialog">
+  <div class="trix-dialog__link-fields">
+    <input name="embed-video" class="trix-input trix-input--dialog" placeholder="Paste the embed code" required="" data-trix-input="" type="text">
+    <div class="trix-button-group">
+      <input class="trix-button trix-button--dialog" id="embed-button" value="Embed" data-trix-method="setAttribute" type="button">
+    </div>
+  </div>
+</div>
+
 <%= content_for :scripts do %>
   <script type="text/javascript">
     (function() {

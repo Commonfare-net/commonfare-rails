@@ -8,11 +8,12 @@ document.addEventListener('trix-initialize', function(e){
   trix = e.target;
   toolBar = trix.toolbarElement;
 
+  // Button for uploading image
   button = document.createElement("button");
   button.setAttribute("type", "button");
   button.setAttribute("class", "trix-button trix-button--icon trix-button--image");
   button.setAttribute("data-trix-attribute", "x-attach");
-  button.setAttribute("title", "Attach a file");
+  button.setAttribute("title", '<%= _("Attach a file") %>');
   button.setAttribute("tabindex", "-1");
   // The button icon is defined in CSS
 
@@ -20,6 +21,33 @@ document.addEventListener('trix-initialize', function(e){
     uploadButton = toolBar.querySelector('.trix-button-group.trix-button-group--text-tools').appendChild(button);
     uploadButton.addEventListener('click', uploadImage);
   }
+
+  // Button for embedding video
+  vButton = document.createElement("button");
+  vButton.setAttribute("type", "button");
+  vButton.setAttribute("class", "trix-button trix-button--icon trix-button--video");
+  vButton.setAttribute("data-trix-attribute", "embed-video");
+  vButton.setAttribute("title", '<%= _("Embed a video") %>');
+  vButton.setAttribute("tabindex", "-1");
+  // The button icon is defined in CSS
+
+  if (document.querySelectorAll('.trix-button--video').length === 0) {
+    toolBar.querySelector('.trix-button-group.trix-button-group--text-tools').appendChild(vButton);
+    // filmButton.addEventListener('click', uploadImage);
+  }
+
+  var embedVideoDialog = $('#embed-video-dialog').detach();
+  embedVideoDialog.appendTo($('.trix-dialogs'));
+
+  $('#embed-video-dialog').on('click', '#embed-button', function(e) {
+    var element = document.querySelector("trix-editor");
+    var embedVideoInput = $('input[name="embed-video"]');
+    var embedCode = embedVideoInput.val();
+    var attachment = new Trix.Attachment({ content: embedCode })
+    element.editor.insertAttachment(attachment);
+    $('.trix-button--video').removeClass('trix-active');
+    $('.trix-button--video').removeAttr('data-trix-active');
+  });
 });
 
 function uploadImage() {
