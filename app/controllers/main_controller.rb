@@ -17,7 +17,7 @@ class MainController < ApplicationController
     # no search key? Get back to where you once belonged (cit. The Beatles)
     redirect_back(fallback_location: root_path) if @q.blank?
     @stories  = Story.ransack(
-                        translations_title_or_translations_content_or_tags_name_cont: @q
+                        translations_title_or_translations_content_or_tags_name_or_place_cont: @q
                       ).result(distinct: true)
     @tags     = Tag.ransack(
                         name_cont: @q
