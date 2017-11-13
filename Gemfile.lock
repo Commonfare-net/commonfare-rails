@@ -7,6 +7,13 @@ GIT
       activerecord (>= 4.2, < 5.2)
       request_store (~> 1.0)
 
+GIT
+  remote: https://github.com/norman/friendly_id-globalize
+  revision: 8aea237f493cbcb0b5f20929883fb70f5572f835
+  specs:
+    friendly_id-globalize (1.0.0.alpha3)
+      friendly_id (>= 5.2.0, < 6.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -128,6 +135,8 @@ GEM
     ffi (1.9.18)
     font-awesome-rails (4.7.0.2)
       railties (>= 3.2, < 5.2)
+    friendly_id (5.2.3)
+      activerecord (>= 4.0.0)
     geocoder (1.4.4)
     gettext (3.2.4)
       locale (>= 2.0.5)
@@ -355,6 +364,8 @@ DEPENDENCIES
   devise-i18n
   exception_handler (~> 0.7.7.0)
   font-awesome-rails
+  friendly_id (~> 5.2.0)
+  friendly_id-globalize!
   geocoder
   gettext_i18n_rails
   gettext_i18n_rails_js (~> 1.2.0)
@@ -388,4 +399,4 @@ DEPENDENCIES
   web-console (>= 3.3.0)
 
 BUNDLED WITH
-   1.15.4
+   1.16.0

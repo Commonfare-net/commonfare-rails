@@ -3,7 +3,11 @@ class StoriesController < ApplicationController
   # but new tags break it
   before_action :create_new_tags, only: [:create, :update]
 
-  load_and_authorize_resource :story
+  # load and authorize are separate to make FriendlyID work
+  # with both :id and :slug
+  before_action :set_story, except: :new # manual load
+  authorize_resource :story # managed by CanCanCan
+
   before_action :set_commoner, only: [:new, :create, :edit]
   before_action :set_story_locale
 
@@ -98,6 +102,10 @@ class StoriesController < ApplicationController
   end
 
   private
+
+    def set_story
+      @story = Story.friendly.find params[:id]
+    end
 
     def set_commoner
       @commoner = current_user.meta

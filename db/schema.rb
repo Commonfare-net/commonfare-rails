@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171010081420) do
+ActiveRecord::Schema.define(version: 20171113110435) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +50,20 @@ ActiveRecord::Schema.define(version: 20171010081420) do
     t.string "avatar"
   end
 
+  create_table "friendly_id_slugs", force: :cascade do |t|
+    t.string "slug", null: false
+    t.integer "sluggable_id", null: false
+    t.string "sluggable_type", limit: 50
+    t.string "scope"
+    t.datetime "created_at"
+    t.string "locale"
+    t.index ["locale"], name: "index_friendly_id_slugs_on_locale"
+    t.index ["slug", "sluggable_type", "locale"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_locale"
+    t.index ["slug", "sluggable_type", "scope", "locale"], name: "index_friendly_id_slugs_uniqueness", unique: true
+    t.index ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
+    t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
+  end
+
   create_table "images", force: :cascade do |t|
     t.string "picture"
     t.bigint "commoner_id"
@@ -68,7 +82,9 @@ ActiveRecord::Schema.define(version: 20171010081420) do
     t.bigint "commoner_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "slug"
     t.index ["commoner_id"], name: "index_stories_on_commoner_id"
+    t.index ["slug"], name: "index_stories_on_slug", unique: true
   end
 
   create_table "stories_tags", id: false, force: :cascade do |t|
@@ -85,6 +101,7 @@ ActiveRecord::Schema.define(version: 20171010081420) do
     t.datetime "updated_at", null: false
     t.string "title"
     t.text "content"
+    t.string "slug"
     t.index ["locale"], name: "index_story_translations_on_locale"
     t.index ["story_id"], name: "index_story_translations_on_story_id"
   end
