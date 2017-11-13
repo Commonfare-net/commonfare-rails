@@ -8,7 +8,7 @@ class Story < ApplicationRecord
   # As for the docs, `translates` goes BEFORE `friendly_id`
   # see https://github.com/norman/friendly_id-globalize#translating-slugs-using-globalize
   translates :title, :content, :slug
-  friendly_id :title, use: [:slugged, :history, :globalize]
+  friendly_id :title, use: [:slugged, :history, :globalize] # keep this order, see https://stackoverflow.com/a/33652486/1897170
 
   validates :title, :content, :place, presence: true
 
