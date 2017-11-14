@@ -49,8 +49,10 @@ namespace :welfare_cards do
       story.save
 
       # Add tags
-      story.tags << get_tags_from_names(story_tags_names.flatten)
-      story.tags << get_tags_from_names(WP_TRANSLATIONS.values_at(*story_locales))
+      story.tags << (
+        get_tags_from_names(story_tags_names.flatten) +
+        get_tags_from_names(WP_TRANSLATIONS.values_at(*story_locales))
+      ).uniq
 
       # Date the Story back in time
       story.created_at = Time.new(2017, 9, 1).in_time_zone
