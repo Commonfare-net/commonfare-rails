@@ -6,8 +6,8 @@ namespace :welfare_cards do
   task import_from_file: :environment do
     LOCALES = %w(english italian dutch croatian).freeze
     WP_TRANSLATIONS = {
-      en: 'welfare provision',
-      it: 'misura di welfare',
+      en: 'welfare provisions',
+      it: 'misure di welfare',
       hr: 'socijalna zaštita',
       nl: 'sociale voorziening'
     }
