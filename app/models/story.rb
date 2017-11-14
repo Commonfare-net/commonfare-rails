@@ -45,6 +45,6 @@ class Story < ApplicationRecord
   # Overrid this method to control exactly when new friendly ids are set
   # see http://norman.github.io/friendly_id/file.Guide.html
   def should_generate_new_friendly_id?
-    !saved_change_to_title? || super
+    !saved_change_to_attribute?(:title) || super
   end
 end
