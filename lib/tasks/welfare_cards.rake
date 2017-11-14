@@ -11,10 +11,10 @@ namespace :welfare_cards do
       hr: 'socijalna zaštita',
       nl: 'sociale voorziening'
     }
-    @commoner = User.find_by(email: 'info@commonfare.net').meta
+    @commoner = User.find_by(email: 'news@commonfare.net').meta
     file_path = File.join(host_home_path, "welfare-cards-export.json")
     data_array = JSON.parse(File.read(file_path))
-    data_array.first(2).each do |welfare_card|
+    data_array.each do |welfare_card|
       story_locales = get_story_locales(welfare_card.keys)
 
       # New story for @commoner
