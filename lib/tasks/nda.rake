@@ -34,9 +34,23 @@ namespace :nda do
   task export_comments: :environment do
     output_file = File.join(host_home_path, (Time.now.strftime("%Y%m%d%H%M%S") + "_comments.csv"))
     CSV.open(output_file, 'wb') do |csv|
-      csv << %w(comment_id comment_author_id comment_story_id comment_story_author_id, comment_created_at)
+      csv << %w(comment_id comment_author_id comment_story_id comment_story_author_id comment_created_at)
       Comment.find_each do |comment|
         csv << [comment.id, comment.author.id, comment.commentable.id, comment.commentable.author.id, comment.created_at]
+      end
+    end
+  end
+
+  desc  """
+          Creates a timestamped CSV file in the home directory
+          with the list of tags
+        """
+  task export_tags: :environment do
+    output_file = File.join(host_home_path, (Time.now.strftime("%Y%m%d%H%M%S") + "_tags.csv"))
+    CSV.open(output_file, 'wb') do |csv|
+      csv << %w(tag_id tag_name tag_story_ids tag_created_at)
+      Tag.find_each do |tag|
+        csv << [tag.id, tag.name, tag.stories.map(&:id).join('-'), tag.created_at]
       end
     end
   end
