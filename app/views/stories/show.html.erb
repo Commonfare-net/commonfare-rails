@@ -2,6 +2,14 @@
 <div class="row justify-content-center">
   <div class="story-container">
     <% Globalize.with_locale(@story_locale) do %>
+    <%= content_for :fb_open_graph_tags do %>
+    <!-- OpenGraph tags -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content='<%= @story.title %> | Commonfare' />
+    <meta property="og:description" content='<%= strip_tags(@story.content).truncate(42) %>' />
+    <meta property="og:image" content='<%= story_card_image_url(@story) %>' />
+    <meta property="og:url" content='<%= request.url %>' />
+    <% end %>
 
     <%# Language selection %>
     <% if @story.translated_locales.length > 1 && @story.has_translations_besides(@story_locale) %>
