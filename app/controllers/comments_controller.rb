@@ -86,7 +86,7 @@ class CommentsController < ApplicationController
 
     def load_commentable
       resource, id = request.path.split('/')[2,2]
-      @commentable = resource.singularize.classify.constantize.find(id)
+      @commentable = resource.singularize.classify.constantize.friendly.find(id)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
