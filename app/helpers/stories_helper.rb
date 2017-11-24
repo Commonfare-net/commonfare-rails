@@ -25,6 +25,16 @@ module StoriesHelper
     end
   end
 
+  def story_card_image_url(story)
+    relative_path = ""
+    if story.images.any?
+      relative_path = story.images.first.picture.card.url
+    else
+      relative_path = image_path 'card_default_img.png'
+    end
+    root_url(locale: nil) + relative_path
+  end
+
   def other_story_available_translations(story, story_locale=I18n.locale)
     # e.g. I18nData.languages(:it)['HR'] => 'Croato'
     other_translations_locales = story.translated_locales - [ story_locale.to_sym ]
