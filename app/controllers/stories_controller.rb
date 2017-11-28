@@ -5,7 +5,7 @@ class StoriesController < ApplicationController
 
   # load and authorize are separate to make FriendlyID work
   # with both :id and :slug
-  before_action :set_story, except: [:new, :index] # manual load
+  before_action :set_story, except: [:new, :create, :index] # manual load
   authorize_resource :story # managed by CanCanCan
 
   before_action :set_commoner, only: [:new, :create, :edit]
