@@ -1,3 +1,10 @@
 // Place all the styles related to the Commoners controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.image_preview.commoner_avatar {
+  img {
+    border-radius: 50px;
+    margin: 1em auto;
+  }
+}

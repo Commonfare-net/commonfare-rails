@@ -10,5 +10,5 @@
                 label: _('Your name on Commonfare.net'),
                 placeholder: _('e.g. Bungo Baggins, pbm42, etc.'),
                 hint: _('It must be unique') %>
-    <%= f.button :submit, s_('Update profile page button|Update'), class: 'btn-info btn-lg btn-block' %>
+    <%= render 'shared/back_and_save_buttons', f: f, cancel_path: commoner_path(@commoner) %>
 <% end %>

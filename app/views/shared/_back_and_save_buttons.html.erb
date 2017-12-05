@@ -1,0 +1,10 @@
+<%# This partial must have two arguments: :f and :cancel_path %>
+<%# e.g. `render 'shared/back_and_save_buttons', f: f, cancel_path: nil` %>
+<div class="row">
+  <div class="col">
+    <%= link_to s_('Button|Cancel'), (cancel_path || :back), class: 'btn btn-secondary btn-lg btn-block'  %>
+  </div>
+  <div class="col">
+    <%= f.button :submit, s_('Button|Save'), class: 'btn-cf btn-lg btn-block' %>
+  </div>
+</div>

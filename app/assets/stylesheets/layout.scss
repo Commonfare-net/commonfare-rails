@@ -8,6 +8,20 @@ body {
   margin-bottom: 100px;
 }
 
+.red-title {
+  color: $commonfare-brand-color;
+  text-align: center;
+  font-weight: 700;
+  margin: .5em auto;
+}
+
+.btn-cf-inverse {
+  @extend .btn;
+  background-color: white;
+  color: $commonfare-brand-color;
+  border-color: $commonfare-brand-color;
+}
+
 // White links against a dark background
 .navbar-cf {
   .navbar-brand {
