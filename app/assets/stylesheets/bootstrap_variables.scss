@@ -105,8 +105,8 @@ $theme-colors: (
   warning: $yellow,
   danger: $red,
   light: $gray-100,
-  // dark: $gray-800
-  dark: $commonfare-brand-color
+  dark: $gray-800,
+  cf: $commonfare-brand-color
 );
 
 // Set a specific jump point for requesting color jumps
@@ -565,6 +565,14 @@ $theme-colors: (
 // $navbar-dark-disabled-color:        rgba($white,.25);
 // $navbar-dark-toggler-icon-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$navbar-dark-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"), "#", "%23");
 // $navbar-dark-toggler-border-color:  rgba($white,.1);
+
+$navbar-cf-color:                 rgba($white,.5);
+$navbar-cf-hover-color:           rgba($white,.75);
+$navbar-cf-active-color:          rgba($white,1);
+$navbar-cf-disabled-color:        rgba($white,.25);
+$navbar-cf-toggler-icon-bg:       url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$navbar-cf-active-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+
+$navbar-cf-toggler-border-color:  rgba($white,0);
 
 // $navbar-light-color:                rgba($black,.5);
 // $navbar-light-hover-color:          rgba($black,.7);

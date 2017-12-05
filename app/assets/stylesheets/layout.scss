@@ -7,6 +7,59 @@ body {
   /* Margin bottom by footer height */
   margin-bottom: 100px;
 }
+
+// White links against a dark background
+.navbar-cf {
+  .navbar-brand {
+    color: $navbar-cf-active-color;
+
+    @include hover-focus {
+      color: $navbar-cf-active-color;
+    }
+  }
+
+  .navbar-nav {
+    .nav-link {
+      color: $navbar-cf-color;
+
+      @include hover-focus {
+        color: $navbar-cf-hover-color;
+      }
+
+      &.disabled {
+        color: $navbar-cf-disabled-color;
+      }
+    }
+
+    .show > .nav-link,
+    .active > .nav-link,
+    .nav-link.show,
+    .nav-link.active {
+      color: $navbar-cf-active-color;
+    }
+  }
+
+  .navbar-toggler {
+    color: $navbar-cf-color;
+    border-color: $navbar-cf-toggler-border-color;
+  }
+
+  .navbar-toggler-icon {
+    background-image: $navbar-cf-toggler-icon-bg;
+  }
+
+  .navbar-text {
+    color: $navbar-cf-color;
+    a {
+      color: $navbar-cf-active-color;
+
+      @include hover-focus {
+        color: $navbar-cf-active-color;
+      }
+    }
+  }
+}
+
 .footer {
   color: white;
   position: absolute;
