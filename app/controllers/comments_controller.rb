@@ -10,7 +10,7 @@ class CommentsController < ApplicationController
   # GET /comments.json
   def index
     if params[:story_id].present?
-      @story = Story.find(params[:story_id])
+      @story = Story.friendly.find(params[:story_id])
       @comments = @story.comments
     elsif params[:commoner_id].present?
       @commoner = Commoner.find(params[:commoner_id])
