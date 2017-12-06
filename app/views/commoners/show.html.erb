@@ -1,17 +1,17 @@
 <% content_for :title, @commoner.name %>
-<div class="row text-center">
+<div class="row commoner-profile">
   <div class="col-sm-6">
-    <%= image_tag @commoner.avatar.profile, class: 'rounded-circle' %>
+    <%= image_tag @commoner.avatar.profile %>
   </div>
   <div class="col-sm-6">
     <p class='lead'>
       <%= @commoner.name %>
-      <small><%= link_to '(Edit profile)', edit_commoner_path(@commoner) if can? :edit, @commoner %></small>
     </p>
+    <%= link_to s_('Button|Edit profile'), edit_commoner_path(@commoner), class: 'btn btn-outline-cf btn-sm' if can? :edit, @commoner %>
   </div>
 </div>
 <hr>
-<h4 class="text-center"><%= _("%{commoner_name}'s latest stories") %{commoner_name: @commoner.name} %></h4>
+<h4 class="text-center red-title"><%= _("%{commoner_name}'s stories") %{commoner_name: @commoner.name} %></h4>
 <% if @stories.any? %>
   <div class="row">
     <% @stories.each do |story| %>

@@ -2,7 +2,7 @@
   <%= image_tag story_card_image_path(story), alt: 'Story picture', class: 'card-img-top' %>
   <div class="story-card-img-overlay">
     <div class="story-card-title-container">
-      <h4 class="card-title"><%= link_to(story.title, story_path(story), class: 'story-card-title-link clamp') %></h4>
+      <h4 class="card-title"><%= link_to(story.title, story_path(story), class: 'story-card-title-link') %></h4>
     </div>
     <div class="media">
       <%= image_tag story.commoner.avatar.card, class: 'story-card-author-image' %>
@@ -14,7 +14,7 @@
     </div>
   </div>
   <div class="story-card-footer">
-    <small class="text-muted"><%= fa_icon('tags') %> <%= story_card_tags_links(story) %></small>
+    <small class="story-card-tags text-muted"><%= fa_icon('tags') %> <%= story_card_tags_links(story) %></small>
     <% if story.comments.any? %>
     <small class="float-right text-muted">
       <%= link_to story_card_comments_link(story), class: 'story-card-comments-link' do %>

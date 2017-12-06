@@ -2,6 +2,14 @@ document.addEventListener("turbolinks:load", function() {
   Ellipsis({
     lines: 3,
   });
+  Ellipsis({
+    class: '.story-card-title-link',
+    lines: 3,
+  })
+  Ellipsis({
+    class: '.story-card-tags',
+    lines: 2,
+  });
 });
 
 document.addEventListener('trix-initialize', function(e){

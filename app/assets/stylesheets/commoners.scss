@@ -4,7 +4,18 @@
 
 .image_preview.commoner_avatar {
   img {
-    border-radius: 50px;
+    @extend .rounded-circle;
     margin: 1em auto;
+  }
+}
+
+.commoner-profile {
+  @extend .text-center;
+  p {
+    @extend .red-title;
+  }
+  img {
+    @extend .rounded-circle;
+    border: 2px solid $commonfare-brand-color;
   }
 }

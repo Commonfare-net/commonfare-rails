@@ -1,6 +1,11 @@
 // Place all the styles related to the Stories controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.story-share-link {
+  color: $commonfare-brand-color
+}
+
 .new-story-card {
   @extend .card;
   .story-card-img-overlay {
@@ -92,7 +97,10 @@
   }
 
   .story-title {
-    color: $commonfare-brand-color;
+    margin-top: 1em;
+    h2 {
+      font-weight: 700;
+    }
   }
 
   .story-author {
