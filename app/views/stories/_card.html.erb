@@ -17,8 +17,8 @@
     <small class="story-card-tags text-muted"><%= fa_icon('tags') %> <%= story_card_tags_links(story) %></small>
     <% if story.comments.any? %>
     <small class="float-right text-muted">
-      <%= link_to story_card_comments_link(story), class: 'story-card-comments-link' do %>
-        <%= fa_icon 'comment-o', class: 'story-card-comment-icon' %> <%= story.comments.count %>
+      <%= link_to story_card_comments_link(story), class: 'story-comments-link' do %>
+        <%= fa_icon 'comment-o', class: 'story-comments-icon' %> <%= story.comments.count %>
       <% end %>
     </small>
     <% end %>

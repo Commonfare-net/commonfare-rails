@@ -19,6 +19,11 @@ module ApplicationHelper
     end
   end
 
+  def fab_visible?
+    user_signed_in? &&
+    !(controller_name == 'stories' && action_name == 'new')
+  end
+
   def infohub_url
     locale = %i(it nl hr).include?(I18n.locale) ? I18n.locale : ''
     language = I18n.locale

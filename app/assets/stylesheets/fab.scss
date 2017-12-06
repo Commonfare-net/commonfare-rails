@@ -1,0 +1,23 @@
+// Fab
+.app-fab--absolute {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  background-color: white;
+  border: 1px solid $commonfare-brand-color;
+  z-index: 999;
+  &:hover {
+    color: inherit;
+    text-decoration: none;
+  }
+  .mdc-fab__icon {
+    color: $commonfare-brand-color;
+  }
+}
+
+@media(min-width: 1024px) {
+   .app-fab--absolute {
+    bottom: 1.5rem;
+    right: 1.5rem;
+  }
+}

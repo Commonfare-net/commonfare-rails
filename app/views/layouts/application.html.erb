@@ -21,6 +21,7 @@
     <%= render 'layouts/navbar' %>
     <div class="container py-2">
       <%= render 'layouts/flash' %>
+      <%= render 'layouts/fab' if fab_visible? %>
       <%= yield %>
     </div>
     <%= render 'layouts/footer' %>

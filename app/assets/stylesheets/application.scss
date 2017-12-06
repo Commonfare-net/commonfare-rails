@@ -24,11 +24,13 @@
 @import "easy-autocomplete/dist/easy-autocomplete";
 @import "easy-autocomplete/dist/easy-autocomplete.themes";
 @import "toastr/build/toastr.min";
+@import "@material/fab/mdc-fab";
 @import "cookies_eu";
 
 
 @import "custom_variables";
 @import "layout";
+@import "fab";
 @import "pages";
 @import "commoners";
 @import "stories";
