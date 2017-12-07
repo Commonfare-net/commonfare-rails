@@ -9,7 +9,7 @@ body {
 }
 
 .red-title {
-  color: $commonfare-brand-color;
+  color: $cf-primary-color;
   text-align: center;
   font-weight: 700;
   margin: .5em auto;
@@ -18,8 +18,8 @@ body {
 .btn-cf-inverse {
   @extend .btn;
   background-color: white;
-  color: $commonfare-brand-color;
-  border-color: $commonfare-brand-color;
+  color: $cf-primary-color;
+  border-color: $cf-primary-color;
 }
 
 // White links against a dark background
@@ -80,7 +80,7 @@ body {
   bottom: 0;
   width: 100%;
   height: 100px;
-  background-color: $commonfare-brand-color;
+  background-color: $cf-primary-color;
   .center-links, .right-links {
     @extend .text-center;
     a {

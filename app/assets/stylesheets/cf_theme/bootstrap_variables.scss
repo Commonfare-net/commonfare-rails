@@ -79,7 +79,8 @@ $yellow:  #ffc107;
 $green:   #28a745;
 $teal:    #20c997;
 $cyan:    #17a2b8;
-$commonfare-brand-color: #EC6C58;
+$cf-primary-color: #EC6C58;
+$cf-secondary-color: #488580;
 
 // $colors: (
 //   blue: $blue,
@@ -106,7 +107,8 @@ $theme-colors: (
   danger: $red,
   light: $gray-100,
   dark: $gray-800,
-  cf: $commonfare-brand-color
+  cf: $cf-primary-color,
+  cf-secondary: $cf-secondary-color
 );
 
 // Set a specific jump point for requesting color jumps
