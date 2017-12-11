@@ -22,6 +22,7 @@
 //= require autosize/dist/autosize
 //= require ellipsis.js/ellipsis.min.js
 //= require toastr/build/toastr.min
+//= require clipboard/dist/clipboard.min
 //= require cookies_eu
 //= require search
 //= require_tree .

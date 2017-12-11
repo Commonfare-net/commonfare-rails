@@ -21,7 +21,7 @@ module ApplicationHelper
 
   def fab_visible?
     user_signed_in? &&
-    !(controller_name == 'stories' && action_name == 'new')
+    !(action_name == 'edit' || action_name == 'new')
   end
 
   def infohub_url

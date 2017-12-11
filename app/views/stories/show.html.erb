@@ -31,7 +31,7 @@
       </div>
     </div>
 
-    <%# STORY AUTHOR %>
+    <%# STORY AUTHOR, DATE, COMMENTS, SHARE %>
     <div class="row">
       <div class="col-8">
         <div class="story-author">
@@ -40,8 +40,8 @@
             <%= link_to(_('You'), commoner_path(@story.commoner)) %>
           <% else %>
             <%= link_to(@story.author.name, commoner_path(@story.commoner)) %>
-          <% end %>,
-          <%= l(@story.created_at.to_date, format: :long) %>
+          <% end %> <br>
+          <small><%= l(@story.created_at.to_date, format: :long) %></small>
           </p>
         </div>
       </div>
@@ -54,7 +54,9 @@
             <%= fa_icon 'comment-o', class: 'story-comments-icon' %> <%= @story.comments.count %>
           <% end %>
         </small>
-        <%= fa_icon 'share-alt lg', class: 'story-share-link' %>
+        <a href="#" class="story-share-link" data-toggle="modal" data-target="#shareModal">
+          <%= fa_icon 'share-alt lg' %>
+        </a>
       </div>
     </div>
 
@@ -103,3 +105,5 @@
     <%= render 'comments/list', comments: @comments %>
   </div>
 </div>
+
+<%= render 'share_modal' %>
