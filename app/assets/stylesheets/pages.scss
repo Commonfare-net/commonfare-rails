@@ -16,3 +16,23 @@
     }
   }
 }
+
+.carousel {
+  height: 410px;
+  background-color: $commonfare-background-color;
+  text-align: left;
+  h1 {
+    color: $cf-primary-color;
+    font-weight: 700;
+  }
+  p {
+    @extend .lead;
+    font-weight: 700;
+    margin: 1em auto;
+  }
+  .carousel-indicators {
+    li {
+      border-radius: 10px;
+    }
+  }
+}

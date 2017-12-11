@@ -6,6 +6,68 @@
       </div>
     </div>
   </div>
+  <div class="row">
+    <div class="col">
+      <div id="carouselControls" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselControls" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselControls" data-slide-to="1"></li>
+          <li data-target="#carouselControls" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <h1><%= s_('Home carousel title|Get involved and help it grow') %></h1>
+            <p>
+              <%= s_("Home carousel text|Commonfare.net aims to foster a new approach to social welfare in Europe. We can help each other (and ourselves!) when we connect and cooperate. Commonfare is for people and about people") %>
+            </p>
+          </div>
+          <div class="carousel-item">
+            <h1><%= s_('Home carousel title|Inform and get informed') %></h1>
+            <p>
+              <%= s_("Home carousel text|Commonfare.net is a place where you can inform and get informed about welfare provisions and grassroots initiatives") %>
+            </p>
+          </div>
+          <div class="carousel-item">
+            <h1><%= s_('Home carousel title|Share your experience and stories') %></h1>
+            <p>
+              <%= s_("Home carousel text|Share your experience and stories, communicate events throughout Europe, support initiatives based on collaboration and solidarity") %>
+            </p>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselControls" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselControls" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <% unless user_signed_in? %>
+  <div class="row justify-content-center">
+    <div class="col-lg-4">
+      <div class="row">
+        <div class="col">
+          <%= link_to s_('Button|Join'), new_user_registration_path, class: 'btn btn-cf btn-lg btn-block' %>
+        </div>
+        <div class="col">
+          <%= link_to s_('Button|Login'), new_user_session_path, class: 'btn btn-outline-cf btn-lg btn-block'  %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
+<div class="cf-jumbotron text-center">
+  <div class="row justify-content-center">
+    <div class="col">
+      <div class="logo-container">
+        <%= inline_svg 'logo.svg', id: 'logo-svg' %>
+      </div>
+    </div>
+  </div>
   <p class="lead">
     <%= s_('Hero unit text|Commonfare.net is a place where you can inform and get informed about welfare provisions and grassroots initiatives, share your experience and stories, communicate events throughout Europe, support initiatives based on collaboration and solidarity. Commonfare.net aims to foster a new approach to social welfare in Europe. We can help each other (and ourselves!) when we connect and cooperate.
 ') %>
