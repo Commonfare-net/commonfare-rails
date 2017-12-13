@@ -1,4 +1,7 @@
 <div class="story-card text-white my-2" >
+  <% if story.welfare_provision? %>
+    <div class="card-ribbon"><%= _("Welfare Provision") %></div>
+  <% end %>
   <%= image_tag story_card_image_path(story), alt: 'Story picture', class: 'card-img-top' %>
   <div class="story-card-img-overlay">
     <div class="story-card-title-container">

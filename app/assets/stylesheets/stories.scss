@@ -37,6 +37,13 @@ input#story-share-url {
 .story-card {
   @extend .card;
   box-shadow: 1px 1px 2px #585858;
+  .card-ribbon {
+    padding: 3px 10px;
+    color: white;
+    background-color: $cf-primary-color;
+    z-index: 997;
+    font-size: 1em;
+  }
   .story-card-img-overlay {
     @extend .card-img-overlay;
     background-color: rgba(0, 0, 0, .2);
@@ -46,6 +53,7 @@ input#story-share-url {
     flex-direction: column;
 
     .story-card-title-container {
+      padding-top: 1.1rem;
       flex: 1;
     }
   }
@@ -152,7 +160,7 @@ input#story-share-url {
         padding: 0 1em;
         color: black;
         &:hover {
-          text-decoration-line: underline;         
+          text-decoration-line: underline;
         }
       }
     }

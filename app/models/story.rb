@@ -29,6 +29,10 @@ class Story < ApplicationRecord
     (translated_locales - [current_locale.to_sym]).any?
   end
 
+  def welfare_provision?
+    author.email == "news@commonfare.net"
+  end
+
   # this destroys all tags associated only to this story
   def destroy_lonely_tags
     tags.each do |tag|
