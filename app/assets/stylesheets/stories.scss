@@ -34,8 +34,9 @@ input#story-share-url {
 }
 
 // Specific for Story card
-.new-story-card {
+.story-card {
   @extend .card;
+  box-shadow: 1px 1px 2px #888888;
   .story-card-img-overlay {
     @extend .card-img-overlay;
     background-color: rgba(0, 0, 0, .2);
@@ -79,7 +80,7 @@ input#story-share-url {
 }
 
 // Old Story card style - TODO delete it when the new is stable
-.story-card {
+.old-story-card {
   @extend .card;
   .story-card-title {
     @extend .card-title;

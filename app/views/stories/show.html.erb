@@ -85,7 +85,7 @@
     <div class="row">
       <div class="col">
         <hr>
-        <p class="story-tags">
+        <p id="tags-anchor" class="story-tags">
           <% @story.tags.each do |tag| %>
           <%= link_to tag.name, tag_path(tag), class: 'btn btn-sm btn-light' %>
           <% end %>

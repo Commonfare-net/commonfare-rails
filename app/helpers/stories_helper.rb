@@ -1,8 +1,12 @@
 module StoriesHelper
   def story_card_tags_links(story)
-    links = story.tags.map do |tag|
-      link_to(tag.name, tag_path(tag), class: 'story-card-tag-link')
-    end
+    first_tag = story.tags.first
+    other_tags_count = story.tags.count - 1
+    links = [link_to(first_tag.name, tag_path(first_tag), class: 'story-card-tag-link')]
+    links << link_to(_("+ #{other_tags_count} more"), story_path(story, anchor: 'tags-anchor'), class: 'story-card-tag-link') if other_tags_count > 0
+    # links = story.tags.map do |tag|
+    #   link_to(tag.name, tag_path(tag), class: 'story-card-tag-link')
+    # end
     links.join(', ').html_safe
   end
 

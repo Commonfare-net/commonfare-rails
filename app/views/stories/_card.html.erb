@@ -1,4 +1,4 @@
-<div class="new-story-card text-white my-2" >
+<div class="story-card text-white my-2" >
   <%= image_tag story_card_image_path(story), alt: 'Story picture', class: 'card-img-top' %>
   <div class="story-card-img-overlay">
     <div class="story-card-title-container">
@@ -12,9 +12,20 @@
       </div>
       <%#= link_to(fa_icon('edit'), edit_story_path(story, story_locale: @story_locale), class: 'btn btn-info align-self-end') if can? :edit, story %>
     </div>
+    <% if can? :edit, story %>
+      <%= link_to edit_story_path(story), class: 'mdc-fab mdc-fab--mini material-icons card-fab--absolute', 'aria-label': 'Favorite', data: { 'mdc-auto-init': 'MDCRipple' } do %>
+      <span class="mdc-fab__icon">
+        <%= fa_icon 'pencil lg' %>
+      </span>
+      <% end %>
+    <% end %>
   </div>
   <div class="story-card-footer">
-    <small class="story-card-tags text-muted"><%= fa_icon('tags') %> <%= story_card_tags_links(story) %></small>
+    <% if story.tags.any? %>
+    <small class="story-card-tags-text text-muted">
+      <%= fa_icon('tags') %> <%= story_card_tags_links(story) %>
+    </small>
+    <% end %>
     <% if story.comments.any? %>
     <small class="float-right text-muted">
       <%= link_to story_card_comments_link(story), class: 'story-comments-link' do %>
@@ -24,30 +35,30 @@
     <% end %>
   </div>
 </div>
-
-<div class="story-card my-2" >
-  <%= link_to story_path(story), class: '' do %>
-    <%= image_tag story_card_image_path(story), alt: 'Story title', class: 'card-img-top' %>
-  <% end %>
+<!--
+<div class="old-story-card my-2" >
+  <%#= link_to story_path(story), class: '' do %>
+    <%#= image_tag story_card_image_path(story), alt: 'Story title', class: 'card-img-top' %>
+  <%# end %>
   <div class="card-body">
     <div class="my-2">
-      <small class="card-subtitle text-muted"><%= fa_icon('tags') %> <%= story_card_tags_links(story) %></small>
+      <small class="card-subtitle text-muted"><%#= fa_icon('tags') %> <%#= story_card_tags_links(story) %></small>
     </div>
-    <h5 class="story-card-title"><%= link_to(story.title, story_path(story), class: 'story-card-title-link clamp') %></h5>
+    <h5 class="story-card-title"><%#= link_to(story.title, story_path(story), class: 'story-card-title-link clamp') %></h5>
     <div class="media mb-2">
-      <%= image_tag story.commoner.avatar.card, class: 'd-flex mr-3 rounded-circle' %>
+      <%#= image_tag story.commoner.avatar.card, class: 'd-flex mr-3 rounded-circle' %>
       <div class="media-body">
-        <p class="my-0"><%= link_to(story.commoner.name, commoner_path(story.commoner), class: 'text-muted') %></p>
-        <small class="text-muted"><%= l(story.created_at.to_date, format: :short) %></small>
+        <p class="my-0"><%#= link_to(story.commoner.name, commoner_path(story.commoner), class: 'text-muted') %></p>
+        <small class="text-muted"><%#= l(story.created_at.to_date, format: :short) %></small>
         <% if story.comments.any? %>
           <small class="float-right text-muted pr-3">
-            <%= link_to story_card_comments_link(story), class: 'story-card-comments-link' do %>
-              <%= fa_icon 'comment-o' %> <%= story.comments.count %>
-            <% end %>
+            <%#= link_to story_card_comments_link(story), class: 'story-card-comments-link' do %>
+              <%#= fa_icon 'comment-o' %> <%#= story.comments.count %>
+            <%# end %>
           </small>
         <% end %>
       </div>
-      <%= link_to(fa_icon('edit'), edit_story_path(story, story_locale: @story_locale), class: 'btn btn-info align-self-end') if can? :edit, story %>
+      <%#= link_to(fa_icon('edit'), edit_story_path(story, story_locale: @story_locale), class: 'btn btn-info align-self-end') if can? :edit, story %>
     </div>
   </div>
-</div>
+</div> -->
