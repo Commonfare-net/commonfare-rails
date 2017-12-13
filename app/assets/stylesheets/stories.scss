@@ -164,11 +164,11 @@ trix-editor {
 }
 
 .trix-button--image::before {
-  background-image: image-url('retro.svg')
+  background-image: image-url('retro.svg');
 }
 
 .trix-button--video::before {
-  background-image: image-url('film.svg')
+  background-image: image-url('film.svg');
 }
 
 .trix-button-group.trix-button-group--history-tools, .trix-button--icon-code {

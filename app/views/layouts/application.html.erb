@@ -19,6 +19,9 @@
   <body>
     <%= render 'cookies_eu/consent_banner' %>
     <%= render 'layouts/navbar' %>
+    <div class="container-fluid hero">
+      <%= yield :hero %>
+    </div>
     <div class="container py-2">
       <%= render 'layouts/flash' %>
       <%= render 'layouts/fab' if fab_visible? %>
