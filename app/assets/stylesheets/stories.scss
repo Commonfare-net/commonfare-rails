@@ -36,7 +36,7 @@ input#story-share-url {
 // Specific for Story card
 .story-card {
   @extend .card;
-  box-shadow: 1px 1px 2px #888888;
+  box-shadow: 1px 1px 2px #585858;
   .story-card-img-overlay {
     @extend .card-img-overlay;
     background-color: rgba(0, 0, 0, .2);
@@ -104,7 +104,8 @@ input#story-share-url {
 // Specific for Story show
 .story-container {
   @extend .col-md-8, .col-lg-6;
-  background-color: snow;
+  // background-color: snow;
+  color: #414141;
 
   .story-lang-select {
     @extend .text-muted;
@@ -135,6 +136,8 @@ input#story-share-url {
   .story-content {
     line-height: 1.7em;
     figure {
+      box-shadow: 1px 1px 2px #585858;
+      border: 1px solid #585858;
       img {
         width: 100%;
         height: auto;
@@ -143,16 +146,20 @@ input#story-share-url {
         width: 100%;
       }
       figcaption {
-        font-style: italic;
+        background-color: #efefef;
+        // font-style: italic;
         font-size: .9rem;
-        text-align: center;
-        color: gray;
+        padding: 0 1em;
+        color: black;
+        &:hover {
+          text-decoration-line: underline;         
+        }
       }
     }
   }
 
   .story-tags {
-    padding: 1em;
+    color: $cf-primary-color
   }
 
 }

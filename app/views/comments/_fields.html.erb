@@ -1,5 +1,5 @@
 <%= f.error_notification %>
-<%= f.input :body, required: false, label: _('Write a comment') %>
+<%= f.input :body, required: false, placeholder: _('Write a comment'), label: false %>
 <%= f.button :submit, btn_text, class: 'btn btn-sm btn-success float-right' %>
 
 <%= content_for :scripts do %>

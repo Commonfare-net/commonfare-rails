@@ -21,7 +21,7 @@
   right: 1rem;
   background-color: white;
   border: 1px solid $cf-secondary-color;
-  z-index: 999;
+  z-index: 998; // one less than the add fab
   &:hover {
     color: inherit;
     text-decoration: none;
