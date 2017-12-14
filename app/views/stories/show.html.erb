@@ -11,16 +11,22 @@
     <meta property="og:url" content='<%= request.url %>' />
     <% end %>
 
-    <%# Language selection %>
-    <% if @story.translated_locales.length > 1 && @story.has_translations_besides(@story_locale) %>
+
+    <%# Language selection and ribbon %>
     <div class="row">
+      <% if @story.translated_locales.length > 1 && @story.has_translations_besides(@story_locale) %>
       <div class="col">
         <div class="story-lang-select">
-          <%= (_("This Story is also available in %{other_languages}") %{other_languages: other_story_available_translations(@story, @story_locale)}).html_safe %>
+          <%= (_("Read in %{other_languages}") %{other_languages: other_story_available_translations(@story, @story_locale)}).html_safe %>
         </div>
       </div>
+      <% end %>
+      <% if @story.welfare_provision? %>
+      <div class="col">
+        <div class="story-ribbon"><%= _("Welfare Provision") %></div>
+      </div>
+      <% end %>
     </div>
-    <% end %>
 
     <%# STORY TITLE %>
     <div class="row">

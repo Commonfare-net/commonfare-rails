@@ -115,6 +115,15 @@ input#story-share-url {
   // background-color: snow;
   color: #414141;
 
+  .story-ribbon {
+    float: right;
+    font-size: .9rem;
+    color: white;
+    padding: .2rem 1rem;
+    background-color: $cf-primary-color;
+    box-shadow: 1px 1px 2px #585858;
+  }
+
   .story-lang-select {
     @extend .text-muted;
     font-size: 0.8em;

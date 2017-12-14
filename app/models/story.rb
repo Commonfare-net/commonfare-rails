@@ -12,6 +12,8 @@ class Story < ApplicationRecord
 
   validates :title, :content, :place, presence: true
 
+  after_commit :check_welfare_provision, on: [:create, :update]
+
   # prepend: true ensures the callback is called before dependent: :destroy
   before_destroy :reload_associations, prepend: true
 
@@ -27,10 +29,6 @@ class Story < ApplicationRecord
 
   def has_translations_besides(current_locale)
     (translated_locales - [current_locale.to_sym]).any?
-  end
-
-  def welfare_provision?
-    author.email == "news@commonfare.net"
   end
 
   # this destroys all tags associated only to this story
@@ -50,5 +48,18 @@ class Story < ApplicationRecord
   # see http://norman.github.io/friendly_id/file.Guide.html
   def should_generate_new_friendly_id?
     !saved_change_to_attribute?(:title) || super
+  end
+
+  private
+
+  def check_welfare_provision
+    tag_names = tags.pluck :name
+    is_wp = author.email == "news@commonfare.net" && (
+                   tag_names.include?("welfare provisions") && (
+                     tag_names.include?('misure di welfare') ||
+                     tag_names.include?('socijalna zaštita') ||
+                     tag_names.include?('sociale voorziening')
+                   ))
+    update_column(:welfare_provision, is_wp)
   end
 end

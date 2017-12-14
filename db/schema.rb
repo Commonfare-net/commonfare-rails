@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171113110435) do
+ActiveRecord::Schema.define(version: 20171214101351) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -83,8 +83,10 @@ ActiveRecord::Schema.define(version: 20171113110435) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "slug"
+    t.boolean "welfare_provision", default: false
     t.index ["commoner_id"], name: "index_stories_on_commoner_id"
     t.index ["slug"], name: "index_stories_on_slug", unique: true
+    t.index ["welfare_provision"], name: "index_stories_on_welfare_provision"
   end
 
   create_table "stories_tags", id: false, force: :cascade do |t|
