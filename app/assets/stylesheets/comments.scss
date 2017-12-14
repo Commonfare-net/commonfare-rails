@@ -1,3 +1,27 @@
 // Place all the styles related to the Comments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.comment-container {
+  margin-top: 1rem;
+  .comment-avatar {
+    @extend .rounded-circle;
+    margin-top: .5rem;
+    border: 2px solid lightgray;
+  }
+  p.comment-author {
+    a {
+      color: black;
+    }
+    margin-bottom: 0;
+    font-weight: 700;
+  }
+  #commentDropdownMenuLink {
+    color: inherit;
+  }
+  p.comment-body {
+    margin-top: 1rem;
+  }
+}
+textarea#comment_body {
+  padding: 1rem;
+}

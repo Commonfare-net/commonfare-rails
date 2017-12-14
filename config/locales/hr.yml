@@ -236,5 +236,6 @@ hr:
     formats:
       default: "%d.%m.%Y. %H:%M:%S"
       long: "%e. %B %Y. %H:%M"
+      comment_timestamp: "%e. %B %Y. %H:%M"
       short: "%e.%-m. %k:%M"
     pm: PM
