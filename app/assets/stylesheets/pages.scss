@@ -5,9 +5,12 @@
   @extend .jumbotron;
   border-radius: 0;
   padding: 4rem 0;
-  // background-color: $commonfare-background-color;
-  // background: image-url('jumbotron-bg.jpg') no-repeat center center;
-  background-image: image-url('jumbotron-bg.jpg');
+  background: image-url('jumbotron-bg-color.jpg') no-repeat center center scroll;
+  // background: image-url('jumbotron-bg-phone.jpg') no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
   .btn-outline-cf {
     background-color: white;
