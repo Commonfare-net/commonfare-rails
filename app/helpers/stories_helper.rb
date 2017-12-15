@@ -12,11 +12,11 @@ module StoriesHelper
 
   # The story's authors sees only the comments
   # All the others see the commments after the story
-  def story_card_comments_link(story)
+  def story_card_comments_link(story, story_locale = nil)
     if can? :edit, story
       story_comments_path(story)
     else
-      story_path(story, anchor: 'comments-anchor')
+      story_path(story, anchor: 'comments-anchor', story_locale: story_locale)
     end
   end
 

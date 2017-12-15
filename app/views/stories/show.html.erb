@@ -60,7 +60,7 @@
           <% end %>
         <% end %>
         <small class="text-muted">
-          <%= link_to story_card_comments_link(@story), class: 'story-comments-link' do %>
+          <%= link_to '#comments-anchor', class: 'story-comments-link' do %>
             <%= fa_icon 'comment-o', class: 'story-comments-icon' %> <%= @story.comments.count %>
           <% end %>
         </small>
