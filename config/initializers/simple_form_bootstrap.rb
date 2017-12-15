@@ -1,4 +1,5 @@
 # Use this setup block to configure all options available in SimpleForm.
+# This is based on Bootstrap v3 and customized for v4
 SimpleForm.setup do |config|
   config.error_notification_class = 'alert alert-danger'
   config.button_class = 'btn btn-default'
@@ -26,8 +27,8 @@ SimpleForm.setup do |config|
     b.optional :readonly
     b.use :label, class: 'control-label'
 
-    b.use :input
-    b.use :error, wrap_with: { tag: 'span', class: 'help-block' }
+    b.use :input, class: 'form-control-file'
+    b.use :error, wrap_with: { tag: 'div', class: 'invalid-feedback' }
     b.use :hint,  wrap_with: { tag: 'small', class: 'form-text text-muted' }
   end
 

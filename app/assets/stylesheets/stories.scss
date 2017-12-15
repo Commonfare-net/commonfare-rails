@@ -27,6 +27,10 @@
   font-family: monospace;
 }
 
+button#langSelectDropdownMenuButton {
+  padding-top: 0;
+}
+
 input#story-share-url {
   font-family: monospace;
   width: 100%;
@@ -78,28 +82,6 @@ input#story-share-url {
   }
 
   .story-card-title-link {
-    color: inherit;
-    text-decoration: none;
-    &:hover {
-      color: inherit;
-      text-decoration: none;
-    }
-  }
-}
-
-// Old Story card style - TODO delete it when the new is stable
-.old-story-card {
-  @extend .card;
-  .story-card-title {
-    @extend .card-title;
-    height: 2.2em;
-  }
-
-  .story-card-tag-link {
-    @extend .text-muted;
-  }
-
-  .story-card-title-link, .story-card-comments-link {
     color: inherit;
     text-decoration: none;
     &:hover {

@@ -2,9 +2,10 @@
   <%= f.error_notification %>
     <%= f.input :avatar,
                 as: :image_preview,
-                input_html: {preview_version: :profile},
+                input_html: { preview_version: :profile },
                 label: false,
-                hint: _('Square pictures look better ✨') %>
+                hint: _('Square pictures look better ✨'),
+                wrapper: :vertical_file_input %>
     <%= f.input :name,
                 required: false,
                 label: _('Your name on Commonfare.net'),
