@@ -86,11 +86,11 @@ body {
   width: 100%;
   height: 100px;
   background-color: $cf-primary-color;
-  .center-links, .right-links {
-    @extend .text-center;
-    a {
-      color: white;
-    }
+  a {
+    color: white;
+  }
+  a.dropdown-item {
+    color: inherit;
   }
 }
 // Used in search.js as option to customize easyAutocomplete

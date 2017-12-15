@@ -2,31 +2,25 @@
 <footer class="footer">
   <div class="container">
     <div class="row pt-2">
-      <div class="col-sm-4 language-select">
-        <%= _("Change language") %>
-        <div class="dropdown d-inline">
-          <button href="#" id="dropdownMenuButton" type="button" class="btn btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <div class="col left-links">
+        <div class="dropdown d-inline float-right">
+          <a href="#" id="footerDropdownMenuLink" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <%= I18n.locale.to_s.upcase %>
-            <%# binding.pry %>
-          </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          </a>
+          <div class="dropdown-menu" aria-labelledby="footerDropdownMenuLink">
             <% begin %>
-              <% other_locales.each do |locale| %>
-                <%= link_to "#{locale.to_s.upcase} - #{localised_language_name(locale, locale)}", { locale: locale, story_locale: @story_locale }, class: 'dropdown-item' %>
-              <% end %>
+            <% other_locales.each do |locale| %>
+            <%= link_to "#{locale.to_s.upcase} - #{localised_language_name(locale, locale)}", { locale: locale, story_locale: @story_locale }, class: 'dropdown-item' %>
+            <% end %>
             <% rescue ActionController::UrlGenerationError %>
-              <%= link_to _('Homepage'), root_path, class: 'dropdown-item' %>
+            <%= link_to _('Homepage'), root_path, class: 'dropdown-item' %>
             <% end %>
           </div>
         </div>
-      </div>
-      <div class="col-sm-4 center-links">
         <p>
           <small>Commonfare.net <%= Time.now.year %></small>
           <small><%= mail_to "info@commonfare.net" %></small>
         </p>
-      </div>
-      <div class="col-sm-4 right-links">
         <div>
           <small><%= link_to _("About"), page_path(id: 'about') %></small> |
           <small><%= link_to _("Terms of Service"), page_path(id: 'tos') %></small> |
