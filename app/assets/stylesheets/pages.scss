@@ -6,7 +6,6 @@
   border-radius: 0;
   padding: 4rem 0;
   background: image-url('jumbotron-bg-color.jpg') no-repeat center center scroll;
-  // background: image-url('jumbotron-bg-phone.jpg') no-repeat center center scroll;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -24,9 +23,6 @@
     max-width: 576px;
     #logo-svg {
       width: inherit;
-      path {
-        fill: $cf-primary-color !important;
-      }
     }
   }
 }
@@ -62,6 +58,10 @@
 }
 
 @media screen and (max-width: 991px) {
+  // Keep this media query, one day it will be used
+}
+
+@media screen and (max-width: 767px) {
   .cf-jumbotron {
     background-color: white;
     background-image: none;
@@ -70,6 +70,7 @@
     background-color: inherit;
   }
   .carousel {
+    height: 348px;
     p {
       color: black;
     }
@@ -79,14 +80,13 @@
       }
     }
   }
-}
-
-@media screen and (max-width: 767px) {
-  .carousel {
-    height: 348px;
-  }
   .carousel-control-prev, .carousel-control-next {
     display: none;
+  }
+  #logo-svg {
+    path {
+      fill: $cf-primary-color !important;
+    }
   }
 }
 

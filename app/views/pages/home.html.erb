@@ -1,8 +1,8 @@
 <%= content_for :hero do %>
 <div class="cf-jumbotron">
-  <div class="container">
+  <div class="container-fluid">
     <div class="row justify-content-center">
-      <div class="col">
+      <div class="col-lg-8">
         <div class="logo-container">
           <%= inline_svg 'logo.svg', id: 'logo-svg' %>
         </div>
@@ -55,9 +55,9 @@
     </div>
   </div>
   <% unless user_signed_in? %>
-  <div class="container">
+  <div class="container-fluid">
     <div class="row justify-content-center mt-2">
-      <div class="col-lg-4">
+      <div class="col-lg-4 col-md-6">
         <div class="row">
           <div class="col">
             <%= link_to s_('Button|Join'), new_user_registration_path, class: 'btn btn-cf btn-lg btn-block' %>
