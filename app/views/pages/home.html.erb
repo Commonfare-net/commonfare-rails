@@ -55,14 +55,16 @@
     </div>
   </div>
   <% unless user_signed_in? %>
-  <div class="row justify-content-center mt-2">
-    <div class="col-lg-4">
-      <div class="row">
-        <div class="col">
-          <%= link_to s_('Button|Join'), new_user_registration_path, class: 'btn btn-cf btn-lg btn-block' %>
-        </div>
-        <div class="col">
-          <%= link_to s_('Button|Login'), new_user_session_path, class: 'btn btn-outline-cf btn-lg btn-block'  %>
+  <div class="container">
+    <div class="row justify-content-center mt-2">
+      <div class="col-lg-4">
+        <div class="row">
+          <div class="col">
+            <%= link_to s_('Button|Join'), new_user_registration_path, class: 'btn btn-cf btn-lg btn-block' %>
+          </div>
+          <div class="col">
+            <%= link_to s_('Button|Login'), new_user_session_path, class: 'btn btn-outline-cf btn-lg btn-block'  %>
+          </div>
         </div>
       </div>
     </div>

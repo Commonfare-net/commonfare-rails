@@ -1,7 +1,4 @@
 <nav class="navbar navbar-expand-lg navbar-cf bg-cf">
-  <%= link_to root_path, class: 'navbar-brand' do %>
-    <%= image_tag "logo.svg", height: 30 %>
-  <% end %>
 
   <%# The display: flex of form-inline makes the form disply in two lines %>
   <%# see https://getbootstrap.com/docs/4.0/components/forms/#inline-forms %>
@@ -13,28 +10,30 @@
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
+  <div class="d-block d-lg-none d-xl-none">
+    <%= form_with url: search_path, local: true, method: :get, html: { class: 'form-inline my-lg-0' } do |form| %>
+    <%= form.text_field :q, placeholder: _('Search'), data: { behavior: 'autocomplete' }, class: 'form-control mr-sm-2' %>
+    <%= form.button fa_icon('search'), class: 'btn btn-cf' %>
+    <% end %>
+  </div>
+  <%= link_to root_path, class: 'navbar-brand d-none d-lg-block d-xl-block' do %>
+    <%= image_tag "logo.svg", height: 30 %>
+  <% end %>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <%= form_with url: search_path, local: true, method: :get, html: { class: 'form-inline my-2 my-lg-0' } do |form| %>
-      <%= form.text_field :q, placeholder: _('Search'), data: {behavior: 'autocomplete'}, class: 'form-control mr-sm-2' %>
-      <%= form.button fa_icon('search'), class: 'btn btn-cf-secondary my-2 my-sm-0' %>
-    <% end %>
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <%#= link_to("Welfare provisions #{fa_icon('external-link')}".html_safe,
-                    infohub_url,
-                    class: 'nav-link') %>
-      </li>
-    </ul>
-    <ul class="navbar-nav">
+    <ul class="navbar-nav ml-auto">
+    <li class="nav-item d-none d-lg-block d-xl-block">
+      <%= form_with url: search_path, local: true, method: :get, html: { class: 'form-inline my-2 my-lg-0' } do |form| %>
+      <%= form.text_field :q, placeholder: _('Search'), data: { behavior: 'autocomplete' }, class: 'form-control mr-sm-2' %>
+      <%= form.button fa_icon('search'), class: 'btn btn-cf my-2 my-sm-0' %>
+      <% end %>
+    </li>
+    <li class="nav-item d-block d-lg-none d-xl-none">
+      <%= link_to 'Home', root_path, class: 'nav-link'  %>
+    </li>
     <% if user_signed_in? %>
-      <li class="nav-item">
-        <%= link_to(_('Share a Story'), new_story_path, class: 'btn btn-sm btn-cf-secondary mt-1') %>
-      </li>
       <li class="nav-item active">
-        <%= link_to commoner_path(current_user.meta), class: 'nav-link' do %>
-          <%= image_tag current_user.meta.avatar.card, class: 'navbar-avatar' %> <%= current_user.meta.name %>
-        <% end %>
+        <%= link_to current_user.meta.name, commoner_path(current_user.meta), class: 'nav-link' %>
       </li>
       <li class="nav-item">
         <%= link_to "Logout", destroy_user_session_path, class: 'nav-link', method: :delete %>
