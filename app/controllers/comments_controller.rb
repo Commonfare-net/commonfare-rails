@@ -5,6 +5,7 @@ class CommentsController < ApplicationController
   skip_authorization_check only: :create
   before_action :load_commentable, only: :create
   before_action :set_commoner, only: [:create, :edit, :update]
+  before_action :set_story_locale
 
   # GET /comments
   # GET /comments.json
@@ -87,6 +88,16 @@ class CommentsController < ApplicationController
     def load_commentable
       resource, id = request.path.split('/')[2,2]
       @commentable = resource.singularize.classify.constantize.friendly.find(id)
+    end
+
+    # This is the same as the one in StoriesController, but it is not an optimal solutions
+    # as here the story#show is rendered in case of validation errors, so basically
+    # the story_locale is not passed through the various controllers' actions
+    def set_story_locale
+      @story_locale = I18n.locale
+      if params[:story_locale].present? && I18n.available_locales.include?(params[:story_locale].to_sym)
+        @story_locale = params[:story_locale].to_sym
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
