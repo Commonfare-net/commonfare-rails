@@ -98,7 +98,7 @@
         axios.post(host, form, options)
           .then(function(response) {
             // console.log(response);
-            if (response.statusText === 'OK') {
+            if (response.status === 200) {
               var href, url;
               url = href = response.data.url;
               enableButton(publishButton,
