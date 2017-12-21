@@ -5,7 +5,7 @@
   @extend .jumbotron;
   border-radius: 0;
   padding: 4rem 0;
-  background: image-url('jumbotron-bg-color.jpg') no-repeat center center scroll;
+  background: image-url('jumbotron-bg-hands.jpg') no-repeat center center scroll;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -22,6 +22,9 @@
     width: 100%;
     max-width: 576px;
     #logo-svg {
+      // path {
+      //   fill: $cf-primary-color !important;
+      // }
       width: inherit;
     }
   }
