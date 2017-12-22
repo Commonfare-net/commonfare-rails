@@ -7,27 +7,51 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2017-09-13 09:41+0200\n"
+"PO-Revision-Date: 2017-12-22 11:19+0100\n"
 "Language-Team: Italian\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"POT-Creation-Date: 2017-09-15 09:41+0000\n"
 "Last-Translator: Pietro <pbmolini@fbk.eu>\n"
-"X-Generator: Poedit 2.0.3\n"
+"X-Generator: Poedit 2.0.5\n"
+"POT-Creation-Date: 2017-12-22 10:21+0000\n"
 
-msgid "%{commoner_name}'s Stories"
+msgid "\"+ #{other_tags_count} more\""
 msgstr ""
 
-msgid "All your content will be permanetly deleted too."
+msgid "%{commoner_name}'s stories"
+msgstr ""
+
+msgid "About"
+msgstr ""
+
+msgid "About page"
+msgstr ""
+
+msgid "Add a comment"
+msgstr ""
+
+msgid "All comments for"
+msgstr ""
+
+msgid "All your content will be permanently deleted too."
 msgstr ""
 
 msgid "Already a Commoner?"
 msgstr ""
 
+msgid "An error occured while visiting this page."
+msgstr ""
+
 msgid "Are you sure?"
+msgstr ""
+
+msgid "Are you sure? This will delete all the comments as well."
+msgstr ""
+
+msgid "Attach a file"
 msgstr ""
 
 msgid "Auth Button title|Forgot your password?"
@@ -39,49 +63,147 @@ msgstr ""
 msgid "Auth Button title|Sign up"
 msgstr ""
 
-msgid "Change language"
-msgstr "Cambia lingua"
+msgid "Button|Cancel"
+msgstr ""
+
+msgid "Button|Edit profile"
+msgstr ""
+
+msgid "Button|Join"
+msgstr ""
+
+msgid "Button|Login"
+msgstr ""
+
+msgid "Button|Save"
+msgstr ""
+
+msgid "Button|Share"
+msgstr ""
+
+msgid "By joining you agree to our %{tos} and %{privacy}."
+msgstr ""
+
+msgid "Change password page button|Change my password"
+msgstr ""
+
+msgid "Change password page field|Confirm your new password"
+msgstr ""
+
+msgid "Change password page field|New password"
+msgstr ""
+
+msgid "Change password page header|Change your password"
+msgstr ""
+
+msgid "City, Region, Country"
+msgstr ""
+
+msgid "Comment"
+msgid_plural "Comments"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "Comment was successfully created."
+msgstr ""
+
+msgid "Comment was successfully destroyed."
+msgstr ""
+
+msgid "Comment was successfully updated."
+msgstr ""
+
+msgid "Comments"
+msgstr ""
+
+msgid "Copy and close"
+msgstr "Copia e chiudi"
+
+msgid "Delete this Story"
+msgstr "Elimina questa Storia"
+
+msgid "Delete this comment"
+msgstr "Elimina questo commento"
 
 msgid "Edit"
+msgstr ""
+
+msgid "Edit comment"
 msgstr ""
 
 msgid "Edit credentials"
 msgstr ""
 
-msgid "Edit profile"
+msgid "Edit email"
 msgstr ""
 
-msgid "Edit this Story"
+msgid "Edit password"
+msgstr ""
+
+msgid "Edit profile"
 msgstr ""
 
 msgid "Edit your Story"
 msgstr ""
 
-msgid "Edit your credentials"
+msgid "Edit your comment"
+msgstr ""
+
+msgid "Edit your email or password"
+msgstr ""
+
+msgid "Embed a video"
+msgstr ""
+
+msgid "Error"
+msgstr ""
+
+msgid "Error code: %{err_code}"
+msgstr ""
+
+msgid "Forgot password"
+msgstr ""
+
+msgid "Forgot password page button|Send me the instructions"
 msgstr ""
 
 msgid "Forgot password page header|Forgot password?"
 msgstr ""
 
-msgid "Give a nice title to your Story"
+msgid "Give a title to your content"
 msgstr ""
 
-msgid "Hero unit text|Commonfare is a way of sharing that wealth so that we all benefit."
+msgid "Home carousel text|Commonfare.net aims to foster a new approach to social welfare in Europe. We can help each other (and ourselves!) when we connect and cooperate. Commonfare is for people and about people"
 msgstr ""
 
-msgid "Hero unit text|Commonfare is the name of a new, collaborative approach to social welfare.  The idea is that we can help each other (and ourselves!) when we connect and cooperate. We all have access to real wealth, in the common ground of stories, knowledge, time and skills that each of us has."
+msgid "Home carousel text|Commonfare.net is a place where you can inform and get informed about welfare provisions and grassroots initiatives"
 msgstr ""
 
-msgid "Home"
+msgid "Home carousel text|Share your experience and stories, communicate events throughout Europe, support initiatives based on collaboration and solidarity"
 msgstr ""
 
-msgid "Join us now"
+msgid "Home carousel title|Get involved and help it grow"
 msgstr ""
 
-msgid "Join us!"
+msgid "Home carousel title|Inform and get informed"
 msgstr ""
 
-msgid "Log in!"
+msgid "Home carousel title|Share your experience and stories"
+msgstr ""
+
+msgid "Homepage"
+msgstr ""
+
+msgid "It must be unique"
+msgstr ""
+
+msgid "Join us"
+msgstr ""
+
+msgid "Latest Stories"
+msgstr ""
+
+msgid "Log in"
 msgstr ""
 
 msgid "Login"
@@ -93,7 +215,13 @@ msgstr ""
 msgid "Login page header|Log in"
 msgstr ""
 
+msgid "Modal title|Share this Story"
+msgstr ""
+
 msgid "My Stories"
+msgstr ""
+
+msgid "No Stories yet."
 msgstr ""
 
 msgid "No problem. Just enter your email address here and we will send you the link for creating a new one."
@@ -102,13 +230,43 @@ msgstr ""
 msgid "Please don't be too concise (min. 500 chars)"
 msgstr ""
 
-msgid "Press Enter to separate the tags"
+msgid "Please don't be too short (min. 500 chars)"
 msgstr ""
 
-msgid "Share a Story"
+msgid "Privacy"
 msgstr ""
 
-msgid "Sign up"
+msgid "Privacy Policy"
+msgstr ""
+
+msgid "Publish"
+msgstr ""
+
+msgid "Publish comment button|Comment"
+msgstr ""
+
+msgid "Publishing..."
+msgstr ""
+
+msgid "Read in %{other_languages}"
+msgstr ""
+
+msgid "Read more"
+msgstr ""
+
+msgid "Register"
+msgstr ""
+
+msgid "Results for %{search_term}"
+msgstr ""
+
+msgid "Results for '%{search_term}'"
+msgstr ""
+
+msgid "Search"
+msgstr ""
+
+msgid "See more"
 msgstr ""
 
 msgid "Sign up page button|Join Commonfare"
@@ -117,10 +275,28 @@ msgstr ""
 msgid "Sign up page header|Become a Commoner"
 msgstr ""
 
-msgid "Some words useful to tag your story"
+msgid "Sorry, the page you are looking for does not exist."
+msgstr ""
+
+msgid "Square pictures look better ✨"
 msgstr ""
 
 msgid "Stories"
+msgstr ""
+
+msgid "Stories from %{author_name}"
+msgstr ""
+
+msgid "Stories with tag"
+msgstr ""
+
+msgid "Stories with tag %{tag_name}"
+msgstr ""
+
+msgid "Story form button|Edit"
+msgstr ""
+
+msgid "Story form button|Publish"
 msgstr ""
 
 msgid "Story form button|Share your Story"
@@ -135,16 +311,22 @@ msgstr ""
 msgid "Story was successfully updated."
 msgstr ""
 
+msgid "Tags"
+msgstr ""
+
+msgid "Terms of Service"
+msgstr ""
+
 msgid "The city, region or country of your story"
 msgstr ""
 
-msgid "This Story is also available in %{other_languages}"
+msgid "There are no comments for this Story"
 msgstr ""
 
-msgid "Update"
+msgid "Uploading image, please wait..."
 msgstr ""
 
-msgid "Update profile page button|Update profile"
+msgid "Use comma or press Enter to separate tags"
 msgstr ""
 
 msgid "Want to be a Commoner?"
@@ -153,13 +335,22 @@ msgstr ""
 msgid "Welcome"
 msgstr ""
 
+msgid "Welcome!"
+msgstr ""
+
+msgid "Welfare Provision"
+msgstr ""
+
 msgid "What is the title of your story?"
 msgstr ""
 
-msgid "Where is this story set?"
+msgid "Where is this set?"
 msgstr ""
 
-msgid "Write here your Story"
+msgid "Write a comment"
+msgstr ""
+
+msgid "Write here"
 msgstr ""
 
 msgid "Write your Story"
@@ -171,16 +362,25 @@ msgstr ""
 msgid "You"
 msgstr ""
 
-msgid "You are editing this Story in"
-msgstr ""
+msgid "You are editing in"
+msgstr "Stai modificando in"
 
-msgid "You are writing this Story in"
-msgstr ""
+msgid "You are writing in"
+msgstr "Stai scrivendo in"
 
 msgid "You have to log in to continue"
 msgstr ""
 
 msgid "You haven't yet saved this Story in %{localised_lang_name}"
+msgstr ""
+
+msgid "Your name on Commonfare.net"
+msgstr ""
+
+msgid "commented on %{date}"
+msgstr ""
+
+msgid "e.g. Bungo Baggins, pbm42, etc."
 msgstr ""
 
 msgid "e.g. Milan, Italy"
@@ -190,4 +390,7 @@ msgid "e.g. Pregnancy, Food sharing, etc."
 msgstr ""
 
 msgid "e.g. There and back again"
+msgstr ""
+
+msgid "share a Story"
 msgstr ""
