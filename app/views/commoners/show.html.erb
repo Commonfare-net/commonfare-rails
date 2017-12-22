@@ -1,18 +1,18 @@
 <% content_for :title, @commoner.name %>
-<div class="row commoner-profile">
-  <div class="col-sm-6">
-    <%= image_tag @commoner.avatar.profile %>
-  </div>
-  <div class="col-sm-6">
-    <p class='lead'>
-      <%= @commoner.name %>
-    </p>
-    <%= link_to s_('Button|Edit profile'), edit_commoner_path(@commoner), class: 'btn btn-outline-cf btn-sm' if can? :edit, @commoner %>
+<div class="row">
+  <div class="col-md-6 col-sm-12">
+    <div class="row commoner-profile">
+      <div class="col-sm-6">
+        <%= image_tag @commoner.avatar.profile, class: 'mb-1' %>
+        <p><%= @commoner.name %></p>
+        <%= link_to s_('Button|Edit profile'), edit_commoner_path(@commoner), class: 'btn btn-outline-cf btn-sm' if can? :edit, @commoner %>
+      </div>
+    </div>
   </div>
 </div>
 <hr>
-<h4 class="text-center red-title"><%= _("%{commoner_name}'s stories") %{commoner_name: @commoner.name} %></h4>
 <% if @stories.any? %>
+  <h4 class="text-center red-title"><%= _("%{commoner_name}'s stories") %{commoner_name: @commoner.name} %></h4>
   <div class="row">
     <% @stories.each do |story| %>
     <div class="col-lg-4 col-md-6">
@@ -23,9 +23,9 @@
 <% else %>
   <div class="row justify-content-center">
     <div class="col text-center">
-      <p class="lead">
-        <em><%= _("No Stories yet.") %></em>
-      </p>
+      <h1 class="red-title">
+        <%= _("No stories yet") %>
+      </h1>
     </div>
   </div>
 <% end %>

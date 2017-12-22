@@ -11,8 +11,9 @@
 
 .commoner-profile {
   @extend .text-center;
+  margin-top: 2rem;
   p {
-    @extend .red-title;
+    font-weight: 700;
   }
   img {
     @extend .rounded-circle;
