@@ -2,29 +2,29 @@ it:
   activerecord:
     attributes:
       user:
-        confirmation_sent_at: 
-        confirmation_token: 
-        confirmed_at: 
-        created_at: 
+        confirmation_sent_at:
+        confirmation_token:
+        confirmed_at:
+        created_at:
         current_password: Password corrente
-        current_sign_in_at: 
-        current_sign_in_ip: 
+        current_sign_in_at:
+        current_sign_in_ip:
         email: Email
-        encrypted_password: 
-        failed_attempts: 
-        last_sign_in_at: 
-        last_sign_in_ip: 
-        locked_at: 
+        encrypted_password:
+        failed_attempts:
+        last_sign_in_at:
+        last_sign_in_ip:
+        locked_at:
         password: Password
         password_confirmation: Conferma password
-        remember_created_at: 
+        remember_created_at:
         remember_me: Ricordami
-        reset_password_sent_at: 
+        reset_password_sent_at:
         reset_password_token: Token di reset password
-        sign_in_count: 
-        unconfirmed_email: 
+        sign_in_count:
+        unconfirmed_email:
         unlock_token: Token di sblocco
-        updated_at: 
+        updated_at:
     models:
       user: Utente
   devise:
@@ -107,8 +107,8 @@ it:
       already_signed_out: Sei uscito correttamente.
       new:
         sign_in: Accedi
-      signed_in: Accesso effettuato con successo.
-      signed_out: Sei uscito correttamente.
+      signed_in: ""
+      signed_out: ""
     shared:
       links:
         back: Indietro

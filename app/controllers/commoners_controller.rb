@@ -34,7 +34,7 @@ class CommonersController < ApplicationController
 
     respond_to do |format|
       if @commoner.save
-        format.html { redirect_to @commoner, notice: 'Commoner was successfully created.' }
+        format.html { redirect_to @commoner }
         format.json { render :show, status: :created, location: @commoner }
       else
         format.html { render :new }
@@ -48,7 +48,7 @@ class CommonersController < ApplicationController
   def update
     respond_to do |format|
       if @commoner.update(commoner_params)
-        format.html { redirect_to @commoner, notice: 'Commoner was successfully updated.' }
+        format.html { redirect_to @commoner }
         format.json { render :show, status: :ok, location: @commoner }
       else
         format.html { render :edit }
