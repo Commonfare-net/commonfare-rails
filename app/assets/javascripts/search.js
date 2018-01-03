@@ -1,5 +1,6 @@
 function autocomplete(locale) {
-  $input = $("[data-behavior='autocomplete']")
+  // $input = $("[data-behavior='autocomplete']")
+  $input = $(".autocomplete-input")
 
   var options = {
     getValue: "name",
