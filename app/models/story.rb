@@ -54,21 +54,24 @@ class Story < ApplicationRecord
 
   def check_welfare_provision_and_good_practice
     tag_names = tags.pluck :name
+    gp_authors = ENV['GP_AUTHORS'].split(',')
+    wp_authors = ENV['WP_AUTHORS'].split(',')
 
-    # TODO mettere le email in variabile d'ambiente
-    is_wp = author.email == "news@commonfare.net" && (
-                   tag_names.include?("welfare provisions") && (
-                     tag_names.include?('misure di welfare') ||
-                     tag_names.include?('socijalna zaštita') ||
-                     tag_names.include?('sociale voorziening')
-                   ))
+    is_wp = wp_authors.include?(author.email) && (
+              tag_names.include?('welfare provisions') && (
+                tag_names.include?('misure di welfare') ||
+                tag_names.include?('socijalna zaštita') ||
+                tag_names.include?('sociale voorziening')
+                )
+              )
 
-    is_gp = author.email == "news@commonfare.net" && (
-                  tag_names.include?("good practices") && (
-                    tag_names.include?('buone pratiche') ||
-                    tag_names.include?('socijalna zaštita') ||
-                    tag_names.include?('sociale voorziening')
-                  ))
+    is_gp = gp_authors.include?(author.email) && (
+              tag_names.include?('good practices') && (
+                tag_names.include?('buone pratiche') ||
+                tag_names.include?('dobre prakse') ||
+                tag_names.include?('goede oefeningen')
+                )
+              )
 
     update_column(:welfare_provision, is_wp) if is_wp
     update_column(:good_practice, is_gp) if is_gp

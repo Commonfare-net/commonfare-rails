@@ -23,7 +23,12 @@
       <% end %>
       <% if @story.welfare_provision? %>
       <div class="col">
-        <div class="story-ribbon"><%= _("Welfare Provision") %></div>
+        <div class="story-ribbon wp-ribbon"><%= _("Welfare Provision") %></div>
+      </div>
+      <% end %>
+      <% if @story.good_practice? %>
+      <div class="col">
+        <div class="story-ribbon gp-ribbon"><%= _("Good Practice") %></div>
       </div>
       <% end %>
     </div>

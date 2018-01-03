@@ -43,8 +43,14 @@ input#story-share-url {
   box-shadow: 1px 1px 2px #585858;
   .card-ribbon {
     padding: 3px 10px;
+    background-color: black;
     color: white;
-    background-color: $cf-primary-color;
+    &.wp-ribbon {
+      background-color: $cf-primary-color;
+    }
+    &.gp-ribbon {
+      background-color: $cf-secondary-color;
+    }
     z-index: 997;
     font-size: 1em;
   }
@@ -102,7 +108,13 @@ input#story-share-url {
     font-size: .9rem;
     color: white;
     padding: .2rem 1rem;
-    background-color: $cf-primary-color;
+    background-color: black;
+    &.wp-ribbon {
+      background-color: $cf-primary-color;
+    }
+    &.gp-ribbon {
+      background-color: $cf-secondary-color;
+    }
     box-shadow: 1px 1px 2px #585858;
   }
 

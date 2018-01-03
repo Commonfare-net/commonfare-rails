@@ -1,6 +1,9 @@
 <div class="story-card text-white my-2" >
   <% if story.welfare_provision? %>
-    <div class="card-ribbon"><%= _("Welfare Provision") %></div>
+    <div class="card-ribbon wp-ribbon"><%= _("Welfare Provision") %></div>
+  <% end %>
+  <% if story.good_practice? %>
+    <div class="card-ribbon gp-ribbon"><%= _("Good Practice") %></div>
   <% end %>
   <%= image_tag story_card_image_path(story), alt: 'Story picture', class: 'card-img-top' %>
   <div class="story-card-img-overlay">

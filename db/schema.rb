@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171214101351) do
+ActiveRecord::Schema.define(version: 20180102144601) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -84,7 +84,9 @@ ActiveRecord::Schema.define(version: 20171214101351) do
     t.datetime "updated_at", null: false
     t.string "slug"
     t.boolean "welfare_provision", default: false
+    t.boolean "good_practice", default: false
     t.index ["commoner_id"], name: "index_stories_on_commoner_id"
+    t.index ["good_practice"], name: "index_stories_on_good_practice"
     t.index ["slug"], name: "index_stories_on_slug", unique: true
     t.index ["welfare_provision"], name: "index_stories_on_welfare_provision"
   end

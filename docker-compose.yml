@@ -16,6 +16,9 @@ services:
     links:
       - postgres
       - mailcatcher
+    environment:
+      - WP_AUTHORS=news@commonfare.net
+      - GP_AUTHORS=news@commonfare.net,zoe@example.com
     # These two allow debug with pry
     tty: true
     stdin_open: true
