@@ -69,7 +69,7 @@ class Story < ApplicationRecord
               tag_names.include?('good practices') && (
                 tag_names.include?('buone pratiche') ||
                 tag_names.include?('dobre prakse') ||
-                tag_names.include?('goede oefeningen')
+                tag_names.include?('goede voorbeelden')
                 )
               )
 
