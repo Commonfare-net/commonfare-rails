@@ -74,7 +74,7 @@
 <% end %>
 
 <% if @featured_stories.any? %>
-  <h2 class="text-center">Latest Stories</h2>
+  <h2 class="text-center"><%= _('Latest Stories') %></h2>
   <div class="row">
   <% @featured_stories.each do |story| %>
     <div class="col-lg-4 col-md-6">
@@ -85,6 +85,38 @@
   <div class="row pb-3">
     <div class="col text-center">
       <%= link_to _('See more'), stories_path, class: 'btn btn-outline-cf-secondary' %>
+    </div>
+  </div>
+<% end %>
+
+<% if @featured_wps.any? %>
+  <h2 class="text-center"><%= _('Latest Welfare Provisions') %></h2>
+  <div class="row">
+  <% @featured_wps.each do |story| %>
+    <div class="col-lg-4 col-md-6">
+      <%= render 'stories/card', story: story %>
+    </div>
+  <% end %>
+  </div>
+  <div class="row pb-3">
+    <div class="col text-center">
+      <%= link_to _('See more'), stories_path(welfare_provision: :all), class: 'btn btn-outline-cf-secondary' %>
+    </div>
+  </div>
+<% end %>
+
+<% if @featured_gps.any? %>
+  <h2 class="text-center"><%= _('Latest Good Practices') %></h2>
+  <div class="row">
+  <% @featured_gps.each do |story| %>
+    <div class="col-lg-4 col-md-6">
+      <%= render 'stories/card', story: story %>
+    </div>
+  <% end %>
+  </div>
+  <div class="row pb-3">
+    <div class="col text-center">
+      <%= link_to _('See more'), stories_path(good_practice: :all), class: 'btn btn-outline-cf-secondary' %>
     </div>
   </div>
 <% end %>

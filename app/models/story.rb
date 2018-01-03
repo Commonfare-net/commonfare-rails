@@ -19,6 +19,10 @@ class Story < ApplicationRecord
 
   before_destroy :destroy_lonely_tags
 
+  scope :welfare_provision, -> { where(welfare_provision: true) }
+  scope :good_practice, -> { where(good_practice: true) }
+  scope :normal, -> { where(good_practice: false, welfare_provision: false)   }
+
   def author
     commoner
   end
@@ -69,7 +73,7 @@ class Story < ApplicationRecord
               tag_names.include?('good practices') && (
                 tag_names.include?('buone pratiche') ||
                 tag_names.include?('dobre prakse') ||
-                tag_names.include?('goede oefeningen')
+                tag_names.include?('goede voorbeelden')
                 )
               )
 
