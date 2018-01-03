@@ -1,8 +1,5 @@
-function autocomplete(locale) {
-  // $input = $("[data-behavior='autocomplete']")
-  $input = $(".autocomplete-input")
-
-  var options = {
+function optionsFor(input, locale) {
+  return {
     getValue: "name",
     url: function(phrase) {
       return "/" + locale + "/autocomplete?q=" + phrase;
@@ -20,13 +17,17 @@ function autocomplete(locale) {
     requestDelay: 200,
     list: {
       onChooseEvent: function() {
-        var url = $input.getSelectedItemData().url;
-        $input.val("");
+        var url = $(input).getSelectedItemData().url;
+        $(input).val("");
         Turbolinks.visit(url);
       }
     },
     cssClasses: 'cf-search-form'
   }
+}
 
-  $input.easyAutocomplete(options);
+function autocomplete(locale) {
+  $("[data-behavior='autocomplete']").each(function(index) {
+    $(this).easyAutocomplete(optionsFor(this, locale));
+  })
 }
