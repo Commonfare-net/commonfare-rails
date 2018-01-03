@@ -12,7 +12,7 @@ class Story < ApplicationRecord
 
   validates :title, :content, :place, presence: true
 
-  after_commit :check_welfare_provision, on: [:create, :update]
+  after_commit :check_welfare_provision_and_good_practice, on: [:create, :update]
 
   # prepend: true ensures the callback is called before dependent: :destroy
   before_destroy :reload_associations, prepend: true
@@ -52,14 +52,25 @@ class Story < ApplicationRecord
 
   private
 
-  def check_welfare_provision
+  def check_welfare_provision_and_good_practice
     tag_names = tags.pluck :name
+
+    # TODO mettere le email in variabile d'ambiente
     is_wp = author.email == "news@commonfare.net" && (
                    tag_names.include?("welfare provisions") && (
                      tag_names.include?('misure di welfare') ||
                      tag_names.include?('socijalna zaštita') ||
                      tag_names.include?('sociale voorziening')
                    ))
-    update_column(:welfare_provision, is_wp)
+
+    is_gp = author.email == "news@commonfare.net" && (
+                  tag_names.include?("good practices") && (
+                    tag_names.include?('buone pratiche') ||
+                    tag_names.include?('socijalna zaštita') ||
+                    tag_names.include?('sociale voorziening')
+                  ))
+
+    update_column(:welfare_provision, is_wp) if is_wp
+    update_column(:good_practice, is_gp) if is_gp
   end
 end
