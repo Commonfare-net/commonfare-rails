@@ -65,6 +65,9 @@ msgstr ""
 msgid "Button|Cancel"
 msgstr ""
 
+msgid "Button|Comment"
+msgstr ""
+
 msgid "Button|Edit profile"
 msgstr ""
 
@@ -160,6 +163,15 @@ msgstr ""
 msgid "Error code: %{err_code}"
 msgstr ""
 
+msgid "Footer|About"
+msgstr ""
+
+msgid "Footer|Privacy"
+msgstr ""
+
+msgid "Footer|Terms of Service"
+msgstr ""
+
 msgid "Forgot password"
 msgstr ""
 
@@ -170,6 +182,12 @@ msgid "Forgot password page header|Forgot password?"
 msgstr ""
 
 msgid "Give a title to your content"
+msgstr ""
+
+msgid "Good Practice"
+msgstr ""
+
+msgid "Good Practices"
 msgstr ""
 
 msgid "Home carousel text|Commonfare.net aims to foster a new approach to social welfare in Europe. We can help each other (and ourselves!) when we connect and cooperate. Commonfare is for people and about people"
@@ -199,13 +217,16 @@ msgstr ""
 msgid "Join us"
 msgstr ""
 
+msgid "Latest Good Practices"
+msgstr ""
+
 msgid "Latest Stories"
 msgstr ""
 
-msgid "Log in"
+msgid "Latest Welfare Provisions"
 msgstr ""
 
-msgid "Login"
+msgid "Log in"
 msgstr ""
 
 msgid "Login page button|Log in"
@@ -217,22 +238,28 @@ msgstr ""
 msgid "Modal title|Share this Story"
 msgstr ""
 
-msgid "My Stories"
+msgid "Navbar|Home"
 msgstr ""
 
-msgid "No Stories yet."
+msgid "Navbar|Join"
+msgstr ""
+
+msgid "Navbar|Login"
+msgstr ""
+
+msgid "Navbar|Logout"
 msgstr ""
 
 msgid "No problem. Just enter your email address here and we will send you the link for creating a new one."
+msgstr ""
+
+msgid "No stories yet"
 msgstr ""
 
 msgid "Please don't be too concise (min. 500 chars)"
 msgstr ""
 
 msgid "Please don't be too short (min. 500 chars)"
-msgstr ""
-
-msgid "Privacy"
 msgstr ""
 
 msgid "Privacy Policy"
@@ -250,12 +277,6 @@ msgstr ""
 msgid "Read in %{other_languages}"
 msgstr ""
 
-msgid "Read more"
-msgstr ""
-
-msgid "Register"
-msgstr ""
-
 msgid "Results for %{search_term}"
 msgstr ""
 
@@ -265,7 +286,7 @@ msgstr ""
 msgid "Search"
 msgstr ""
 
-msgid "See more"
+msgid "See all"
 msgstr ""
 
 msgid "Sign up page button|Join Commonfare"
@@ -283,7 +304,7 @@ msgstr ""
 msgid "Stories"
 msgstr ""
 
-msgid "Stories from %{author_name}"
+msgid "Stories by %{author_name}"
 msgstr ""
 
 msgid "Stories with tag"
@@ -338,6 +359,9 @@ msgid "Welcome!"
 msgstr ""
 
 msgid "Welfare Provision"
+msgstr ""
+
+msgid "Welfare Provisions"
 msgstr ""
 
 msgid "What is the title of your story?"

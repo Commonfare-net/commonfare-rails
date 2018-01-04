@@ -14,7 +14,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"POT-Creation-Date: 2017-12-22 10:21+0000\n"
 "Last-Translator: Pietro <pbmolini@fbk.eu>\n"
 "X-Generator: Poedit 2.0.3\n"
 
@@ -64,6 +63,9 @@ msgid "Auth Button title|Sign up"
 msgstr ""
 
 msgid "Button|Cancel"
+msgstr ""
+
+msgid "Button|Comment"
 msgstr ""
 
 msgid "Button|Edit profile"
@@ -161,6 +163,15 @@ msgstr ""
 msgid "Error code: %{err_code}"
 msgstr ""
 
+msgid "Footer|About"
+msgstr ""
+
+msgid "Footer|Privacy"
+msgstr ""
+
+msgid "Footer|Terms of Service"
+msgstr ""
+
 msgid "Forgot password"
 msgstr ""
 
@@ -171,6 +182,12 @@ msgid "Forgot password page header|Forgot password?"
 msgstr ""
 
 msgid "Give a title to your content"
+msgstr ""
+
+msgid "Good Practice"
+msgstr ""
+
+msgid "Good Practices"
 msgstr ""
 
 msgid "Home carousel text|Commonfare.net aims to foster a new approach to social welfare in Europe. We can help each other (and ourselves!) when we connect and cooperate. Commonfare is for people and about people"
@@ -200,13 +217,16 @@ msgstr ""
 msgid "Join us"
 msgstr ""
 
+msgid "Latest Good Practices"
+msgstr ""
+
 msgid "Latest Stories"
 msgstr ""
 
-msgid "Log in"
+msgid "Latest Welfare Provisions"
 msgstr ""
 
-msgid "Login"
+msgid "Log in"
 msgstr ""
 
 msgid "Login page button|Log in"
@@ -218,22 +238,28 @@ msgstr ""
 msgid "Modal title|Share this Story"
 msgstr ""
 
-msgid "My Stories"
+msgid "Navbar|Home"
 msgstr ""
 
-msgid "No Stories yet."
+msgid "Navbar|Join"
+msgstr ""
+
+msgid "Navbar|Login"
+msgstr ""
+
+msgid "Navbar|Logout"
 msgstr ""
 
 msgid "No problem. Just enter your email address here and we will send you the link for creating a new one."
+msgstr ""
+
+msgid "No stories yet"
 msgstr ""
 
 msgid "Please don't be too concise (min. 500 chars)"
 msgstr ""
 
 msgid "Please don't be too short (min. 500 chars)"
-msgstr ""
-
-msgid "Privacy"
 msgstr ""
 
 msgid "Privacy Policy"
@@ -251,12 +277,6 @@ msgstr ""
 msgid "Read in %{other_languages}"
 msgstr ""
 
-msgid "Read more"
-msgstr ""
-
-msgid "Register"
-msgstr ""
-
 msgid "Results for %{search_term}"
 msgstr ""
 
@@ -266,7 +286,7 @@ msgstr ""
 msgid "Search"
 msgstr ""
 
-msgid "See more"
+msgid "See all"
 msgstr ""
 
 msgid "Sign up page button|Join Commonfare"
@@ -284,7 +304,7 @@ msgstr ""
 msgid "Stories"
 msgstr ""
 
-msgid "Stories from %{author_name}"
+msgid "Stories by %{author_name}"
 msgstr ""
 
 msgid "Stories with tag"
@@ -341,6 +361,9 @@ msgstr ""
 msgid "Welfare Provision"
 msgstr ""
 
+msgid "Welfare Provisions"
+msgstr ""
+
 msgid "What is the title of your story?"
 msgstr ""
 
@@ -394,20 +417,3 @@ msgstr ""
 
 msgid "share a Story"
 msgstr ""
-
-#~ msgid ""
-#~ "Hero unit text|Commonfare is a way of sharing that wealth so that we all benef"
-#~ "it."
-#~ msgstr ""
-#~ "Commonfare is een manier om die rijkdom te delen zodat we er allemaal van kunn"
-#~ "en profiteren."
-#~ msgid ""
-#~ "Hero unit text|Commonfare is the name of a new, collaborative approach to soci"
-#~ "al welfare.  The idea is that we can help each other (and ourselves!) when we "
-#~ "connect and cooperate. We all have access to real wealth, in the common ground"
-#~ " of stories, knowledge, time and skills that each of us has."
-#~ msgstr ""
-#~ "Commonfare is de naam van een nieuwe en gezamenlijke aanpak van welvaart. Het "
-#~ "idee is dat we elkaar (en tegelijkertijd onszelf!) helpen als we verbinden en "
-#~ "samenwerken. We hebben allemaal toegang tot echte rijkdom in de vorm van verha"
-#~ "len, kennis, tijd en vaardigheden die we allemaal hebben."
