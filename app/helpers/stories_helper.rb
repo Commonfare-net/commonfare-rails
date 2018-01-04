@@ -47,4 +47,15 @@ module StoriesHelper
     end
     available_translations_links.to_sentence
   end
+
+  def title_for_stories(title)
+    case title
+    when :good_practice
+      _('Good Practices')
+    when :welfare_provision
+      _('Welfare Provisions')
+    else
+      _('Stories')
+    end
+  end
 end

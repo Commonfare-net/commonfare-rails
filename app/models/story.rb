@@ -19,8 +19,10 @@ class Story < ApplicationRecord
 
   before_destroy :destroy_lonely_tags
 
-  scope :welfare_provision, -> { where(welfare_provision: true) }
-  scope :good_practice, -> { where(good_practice: true) }
+  TYPES = %i(welfare_provision good_practice).freeze
+  TYPES.each do |type|
+    scope type, -> { where(type => true)   }
+  end
   scope :normal, -> { where(good_practice: false, welfare_provision: false) }
 
   def author

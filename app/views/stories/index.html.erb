@@ -1,9 +1,9 @@
-<% content_for :title, @commoner.present? ? _('My Stories') : _('Stories') %>
+<% content_for :title, title_for_stories(@title) %>
 <h2>
   <% if @commoner.present? %>
-    <%= (_('Stories from %{author_name}') %{author_name: @commoner.name}) %>
+    <%= (_('Stories by %{author_name}') %{author_name: @commoner.name}) %>
   <% else %>
-    <%= _('Latest Stories') %>
+    <%= title_for_stories(@title) %>
   <% end %>
 </h2>
 <div class="row">

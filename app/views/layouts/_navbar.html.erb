@@ -29,21 +29,21 @@
       <% end %>
     </li>
     <li class="nav-item active d-block d-lg-none d-xl-none">
-      <%= link_to 'Home', root_path, class: 'nav-link'  %>
+      <%= link_to s_('Navbar|Home'), root_path, class: 'nav-link'  %>
     </li>
     <% if user_signed_in? %>
       <li class="nav-item active">
         <%= link_to current_user.meta.name, commoner_path(current_user.meta), class: 'nav-link' %>
       </li>
       <li class="nav-item">
-        <%= link_to "Logout", destroy_user_session_path, class: 'nav-link', method: :delete %>
+        <%= link_to s_('Navbar|Logout'), destroy_user_session_path, class: 'nav-link', method: :delete %>
       </li>
     <% else %>
       <li class="nav-item ">
-        <%= link_to(_('Login'), new_user_session_path, class: 'nav-link') %>
+        <%= link_to(s_('Navbar|Login'), new_user_session_path, class: 'nav-link') %>
       </li>
       <li class="nav-item">
-        <%= link_to _("Register"), new_user_registration_path, class: 'nav-link' %>
+        <%= link_to s_('Navbar|Join'), new_user_registration_path, class: 'nav-link' %>
       </li>
       <li class="nav-item dropdown active">
         <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

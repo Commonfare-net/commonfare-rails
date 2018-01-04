@@ -32,7 +32,7 @@
 <% if @commoner.stories.count > 6 %>
   <div class="row justify-content-center">
     <div class="col text-center">
-      <%= link_to(_("Read more"), commoner_stories_path(@commoner), class: 'btn btn-info') %>
+      <%= link_to(_('See all'), commoner_stories_path(@commoner), class: 'btn btn-outline-cf-secondary') %>
     </div>
   </div>
 <% end %>

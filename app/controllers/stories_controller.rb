@@ -17,12 +17,17 @@ class StoriesController < ApplicationController
     if params[:commoner_id].present? && Commoner.exists?(params[:commoner_id])
       @commoner = Commoner.find params[:commoner_id]
       @stories = @commoner.stories.order('created_at DESC')
-    elsif params[:good_practice].present?
-      @stories = Story.good_practice.order('created_at DESC')
-    elsif params[:welfare_provision].present?
-      @stories = Story.welfare_provision.order('created_at DESC')
+    elsif params[:filter].present?
+      if Story::TYPES.include? params[:filter].to_sym
+        @stories = Story.send(params[:filter].to_sym).order('created_at DESC')
+        @title = params[:filter].to_sym
+      else
+        @stories = Story.normal.order('created_at DESC')
+        @title = :normal
+      end
     else
       @stories = Story.order('created_at DESC') # All descending
+      @title = :all
     end
   end
 
