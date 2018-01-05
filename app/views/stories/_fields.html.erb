@@ -17,6 +17,22 @@
             label: _('Tags'),
             # placeholder: "Managed in JS",
             hint: _('Use comma or press Enter to separate tags') %>
+<%= f.label _('Card image preview') %>
+<div class="row story-img-preview">
+  <div class="col-xs-6 col-sm-4">
+    <%= image_tag story_card_image_path(f.object), alt: 'Story picture', class: 'border border-secondary rounded' %>
+  </div>
+  <div class="col-xs-6 col-sm-8">
+    <small class="text-muted">
+      <%= _('This is the current image for the card of this Story.') %>
+      <% if f.object.new_record? %>
+        <%= _('Upload a new image in the text and save the Story to change it.') %>
+      <% else %>
+        <%= _('Change the first image in the text and save the Story to change it.') %>
+      <% end %>
+    </small>
+  </div>
+</div>
 
 <div class="trix-dialog trix-dialog--link trix-active" data-trix-dialog="embed-video" data-trix-dialog-attribute="embed-video" id="embed-video-dialog">
   <div class="trix-dialog__link-fields">
