@@ -89,6 +89,22 @@
   </div>
 <% end %>
 <hr>
+<% if @featured_gps.any? %>
+<h2 class="text-center"><%= _('Latest Good Practices') %></h2>
+<div class="row">
+  <% @featured_gps.each do |story| %>
+  <div class="col-lg-4 col-md-6">
+    <%= render 'stories/card', story: story %>
+  </div>
+  <% end %>
+</div>
+<div class="row pb-3">
+  <div class="col text-center">
+    <%= link_to _('See all'), stories_path(filter: :good_practice), class: 'btn btn-outline-cf-secondary' %>
+  </div>
+</div>
+<% end %>
+<hr>
 <% if @featured_wps.any? %>
   <h2 class="text-center"><%= _('Latest Welfare Provisions') %></h2>
   <div class="row">
@@ -101,22 +117,6 @@
   <div class="row pb-3">
     <div class="col text-center">
       <%= link_to _('See all'), stories_path(filter: :welfare_provision), class: 'btn btn-outline-cf-secondary' %>
-    </div>
-  </div>
-<% end %>
-<hr>
-<% if @featured_gps.any? %>
-  <h2 class="text-center"><%= _('Latest Good Practices') %></h2>
-  <div class="row">
-  <% @featured_gps.each do |story| %>
-    <div class="col-lg-4 col-md-6">
-      <%= render 'stories/card', story: story %>
-    </div>
-  <% end %>
-  </div>
-  <div class="row pb-3">
-    <div class="col text-center">
-      <%= link_to _('See all'), stories_path(filter: :good_practice), class: 'btn btn-outline-cf-secondary' %>
     </div>
   </div>
 <% end %>

@@ -4,6 +4,7 @@ services:
     build: .
     image: commonfare_dev_rails_app
     container_name: commonfare_dev_rails_app
+    restart: always
     command: rails server -p 3000 -b '0.0.0.0'
     volumes:
       - .:/app
@@ -25,12 +26,14 @@ services:
   mailcatcher:
     image: yappabe/mailcatcher
     container_name: commonfare_mailcatcher
+    restart: always
     ports:
         - 1025:1025
         - 1080:1080
   postgres:
     image: postgres:9.6
     container_name: commonfare_pg
+    restart: always
     ports:
       - "5432"
     volumes:
