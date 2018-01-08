@@ -5,9 +5,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: app 1.0.0\n"
+"Project-Id-Version: commonfare 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2017-09-15 11:44+0200\n"
+"PO-Revision-Date: 2018-01-08 17:36+0100\n"
 "Language-Team: Dutch\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
@@ -15,180 +15,184 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "Last-Translator: Pietro <pbmolini@fbk.eu>\n"
-"X-Generator: Poedit 2.0.3\n"
+"X-Generator: Poedit 2.0.5\n"
+"POT-Creation-Date: \n"
 
-msgid "\"+ #{other_tags_count} more\""
-msgstr ""
-
+# In Dutch the S as a rule is attached to the name, so it’s Merels verhaal and Peters reactie, except… when the name ends with a vowel (Daniela’s verhaal and Pietro’s reactie). When a name ends with an S, there is no extra S to indicate ‘property’, but a ‘ (Mees’ verhaal and Ans’ reactie). I don’t know what to do here… perhaps rephrase as: Story by %{commoner_name} and Verhaal van %{commoner_name}
 msgid "%{commoner_name}'s stories"
-msgstr ""
+msgstr "Verhaal van %{commoner_name}"
+
+msgid "+ %{other_tags_count} more"
+msgstr "+ %{other_tags_count} meer"
 
 msgid "About"
-msgstr ""
+msgstr "Over"
 
 msgid "About page"
-msgstr ""
+msgstr "Over pagina"
 
 msgid "Add a comment"
-msgstr ""
+msgstr "Voeg een reactie toe"
 
 msgid "All comments for"
-msgstr ""
+msgstr "Alle reacties op"
 
 msgid "All your content will be permanently deleted too."
-msgstr ""
+msgstr "Ook al jouw uploads worden permanent verwijderd."
 
 msgid "Already a Commoner?"
-msgstr ""
+msgstr "Al een Commoner?"
 
 msgid "An error occured while visiting this page."
-msgstr ""
+msgstr "Er is iets mis gegaan tijdens het bezoeken van deze pagina."
 
 msgid "Are you sure?"
-msgstr ""
+msgstr "Weet je het zeker?"
 
 msgid "Are you sure? This will delete all the comments as well."
-msgstr ""
+msgstr "Weet je het zeker? Ook alle reacties worden verwijderd."
 
 msgid "Attach a file"
-msgstr ""
+msgstr "Voeg een bestand toe"
 
 msgid "Auth Button title|Forgot your password?"
-msgstr ""
+msgstr "Wachtwoord vergeten?"
 
 msgid "Auth Button title|Log in"
-msgstr ""
+msgstr "Inloggen"
 
 msgid "Auth Button title|Sign up"
-msgstr ""
+msgstr "Registreren"
 
 msgid "Button|Cancel"
-msgstr ""
+msgstr "Annuleer"
 
 msgid "Button|Comment"
-msgstr ""
+msgstr "Reageer"
 
 msgid "Button|Edit profile"
-msgstr ""
+msgstr "Bewerk profiel"
 
 msgid "Button|Join"
-msgstr ""
+msgstr "Registreer"
 
 msgid "Button|Login"
-msgstr ""
+msgstr "Inloggen"
 
 msgid "Button|Save"
-msgstr ""
+msgstr "Bewaar"
 
 msgid "Button|Share"
-msgstr ""
+msgstr "Deel"
 
 msgid "By joining you agree to our %{tos} and %{privacy}."
-msgstr ""
+msgstr "Door te registreren ga je akkoord met onze %{tos} en %{privacy}."
 
 msgid "Change password page button|Change my password"
-msgstr ""
+msgstr "Wijzig mijn wachtwoord"
 
 msgid "Change password page field|Confirm your new password"
-msgstr ""
+msgstr "Bevestig je nieuwe wachtwoord"
 
 msgid "Change password page field|New password"
-msgstr ""
+msgstr "Nieuw wachtwoord"
 
 msgid "Change password page header|Change your password"
-msgstr ""
+msgstr "Wijzig je wachtwoord"
 
 msgid "City, Region, Country"
-msgstr ""
+msgstr "Stad, Provincie, Land"
 
 msgid "Comment"
 msgid_plural "Comments"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Reactie"
+msgstr[1] "Reacties"
 
 msgid "Comment was successfully created."
-msgstr ""
+msgstr "Reactie is geplaatst."
 
 msgid "Comment was successfully destroyed."
-msgstr ""
+msgstr "Reactie is verwijderd."
 
 msgid "Comment was successfully updated."
-msgstr ""
+msgstr "Reactie is gewijzigd."
 
 msgid "Comments"
-msgstr ""
+msgstr "Reacties"
 
 msgid "Copy and close"
-msgstr ""
+msgstr "Kopieer en sluit"
 
 msgid "Delete this Story"
-msgstr ""
+msgstr "Verwijder dit verhaal"
 
 msgid "Delete this comment"
-msgstr ""
+msgstr "Verwijder deze reactie"
 
 msgid "Edit"
-msgstr ""
+msgstr "Bewerk"
 
 msgid "Edit comment"
-msgstr ""
+msgstr "Bewerk reactie"
 
+# How is this used on the site? I cannot be 100% sure of this translation without context
 msgid "Edit credentials"
-msgstr ""
+msgstr "Gegevens wijzigen"
 
 msgid "Edit email"
-msgstr ""
+msgstr "E-mailadres wijzigen"
 
 msgid "Edit password"
-msgstr ""
+msgstr "Wachtwoord wijzigen"
 
 msgid "Edit profile"
-msgstr ""
+msgstr "Profiel wijzigen"
 
 msgid "Edit your Story"
-msgstr ""
+msgstr "Bewerk je verhaal"
 
 msgid "Edit your comment"
-msgstr ""
+msgstr "Bewerk je reactie"
 
 msgid "Edit your email or password"
-msgstr ""
+msgstr "Wijzig je e-mailadres of wachtwoord"
 
 msgid "Embed a video"
-msgstr ""
+msgstr "Video insluiten"
 
 msgid "Error"
-msgstr ""
+msgstr "Fout"
 
 msgid "Error code: %{err_code}"
-msgstr ""
+msgstr "Foutmelding: %{err_code}"
 
 msgid "Footer|About"
-msgstr ""
+msgstr "Over"
 
 msgid "Footer|Privacy"
-msgstr ""
+msgstr "Privacy"
 
 msgid "Footer|Terms of Service"
-msgstr ""
+msgstr "Algemene voorwaarden"
 
 msgid "Forgot password"
-msgstr ""
+msgstr "Wachtwoord vergeten"
 
 msgid "Forgot password page button|Send me the instructions"
-msgstr ""
+msgstr "Mail me de instructies"
 
 msgid "Forgot password page header|Forgot password?"
-msgstr ""
+msgstr "Wachtwoord vergeten?"
 
+# Do we mean story here? What other ‘content’ do people upload? Feedback needed for good translation + suggestion to alter English to: Give a title to your story
 msgid "Give a title to your content"
-msgstr ""
+msgstr "Geef een titel aan je verhaal"
 
 msgid "Good Practice"
-msgstr ""
+msgstr "Goed Voorbeeld"
 
 msgid "Good Practices"
-msgstr ""
+msgstr "Goede Voorbeelden"
 
 msgid "Home carousel text|Commonfare.net aims to foster a new approach to social welfare in Europe. We can help each other (and ourselves!) when we connect and cooperate. Commonfare is for people and about people"
 msgstr ""
@@ -209,211 +213,220 @@ msgid "Home carousel title|Share your experience and stories"
 msgstr ""
 
 msgid "Homepage"
-msgstr ""
+msgstr "Homepage"
 
 msgid "It must be unique"
-msgstr ""
+msgstr "Moet uniek zijn"
 
 msgid "Join us"
-msgstr ""
+msgstr "Doe mee"
 
 msgid "Latest Good Practices"
-msgstr ""
+msgstr "Meest recente goede voorbeelden"
 
 msgid "Latest Stories"
-msgstr ""
+msgstr "Meest recente verhalen"
 
 msgid "Latest Welfare Provisions"
-msgstr ""
+msgstr "Meest recente sociale voorzieningen"
 
 msgid "Log in"
-msgstr ""
+msgstr "Inloggen"
 
 msgid "Login page button|Log in"
-msgstr ""
+msgstr "Inloggen"
 
 msgid "Login page header|Log in"
-msgstr ""
+msgstr "Inloggen"
 
 msgid "Modal title|Share this Story"
-msgstr ""
+msgstr "Deel dit verhaal"
 
 msgid "Navbar|Home"
-msgstr ""
+msgstr "Home"
 
 msgid "Navbar|Join"
-msgstr ""
+msgstr "Registreer"
 
 msgid "Navbar|Login"
-msgstr ""
+msgstr "Inloggen"
 
 msgid "Navbar|Logout"
-msgstr ""
+msgstr "Uitloggen"
 
+# This is about the password right? If not, I translated wrongly ;)
 msgid "No problem. Just enter your email address here and we will send you the link for creating a new one."
-msgstr ""
+msgstr "Geen probleem. Vul hier je e-mailadres in en we sturen je een link om een nieuw wachtwoord aan te maken."
 
 msgid "No stories yet"
-msgstr ""
+msgstr "Nog geen verhalen"
 
 msgid "Please don't be too concise (min. 500 chars)"
-msgstr ""
+msgstr "Wees alsjeblieft niet te beknopt (min. 500 karakters)"
 
 msgid "Please don't be too short (min. 500 chars)"
-msgstr ""
+msgstr "Wees alsjeblieft niet te kort (min. 500 karakters)"
 
 msgid "Privacy Policy"
-msgstr ""
+msgstr "Privacybeleid"
 
+# I am going to have to see this on commonfare.net if this is the better term to use universally or if ‘share/delen’ is the better one…
 msgid "Publish"
-msgstr ""
+msgstr "Plaats je verhaal"
 
 msgid "Publish comment button|Comment"
-msgstr ""
+msgstr "Reageer"
 
+# This is not translatable to Dutch… Assuming that this is what a users sees after clicking an action button, I translated as the Dutch equivalent of ‘One moment please…’
 msgid "Publishing..."
-msgstr ""
+msgstr "Een momentje…"
 
 msgid "Read in %{other_languages}"
-msgstr ""
+msgstr "Lees in het %{other_languages}"
 
 msgid "Results for %{search_term}"
-msgstr ""
+msgstr "Resultaten voor %{search_term}"
 
 msgid "Results for '%{search_term}'"
-msgstr ""
+msgstr "Resultaten voor ‘%{search_term}’"
 
 msgid "Search"
-msgstr ""
+msgstr "Zoek"
 
 msgid "See all"
-msgstr ""
+msgstr "Bekijk alles"
 
 msgid "Sign up page button|Join Commonfare"
-msgstr ""
+msgstr "Registreer op Commonfare"
 
 msgid "Sign up page header|Become a Commoner"
-msgstr ""
+msgstr "Word een Commoner"
 
 msgid "Sorry, the page you are looking for does not exist."
-msgstr ""
+msgstr "Sorry, de pagina die je zoekt bestaat niet."
 
 msgid "Square pictures look better ✨"
-msgstr ""
+msgstr "Vierkante plaatjes zien er beter uit ✨"
 
 msgid "Stories"
-msgstr ""
+msgstr "Verhalen"
 
 msgid "Stories by %{author_name}"
-msgstr ""
+msgstr "Verhalen van %{author_name}"
 
 msgid "Stories with tag"
-msgstr ""
+msgstr "Verhalen met de tag"
 
 msgid "Stories with tag %{tag_name}"
-msgstr ""
+msgstr "Verhalen met de tag %{tag_name}"
 
 msgid "Story form button|Edit"
-msgstr ""
+msgstr "Bewerk"
 
 msgid "Story form button|Publish"
-msgstr ""
+msgstr "Publiceren"
 
 msgid "Story form button|Share your Story"
-msgstr ""
+msgstr "Deel je Verhaal"
 
 msgid "Story was successfully created."
-msgstr ""
+msgstr "Verhaal is geplaatst."
 
+# In English, wouldn’t this be sucesfully deleted? Destroyed sounds a bit distructive ;)
 msgid "Story was successfully destroyed."
-msgstr ""
+msgstr "Verhaal is verwijderd."
 
 msgid "Story was successfully updated."
-msgstr ""
+msgstr "Verhaal is gewijzigd."
 
 msgid "Tags"
-msgstr ""
+msgstr "Tags"
 
 msgid "Terms of Service"
-msgstr ""
+msgstr "Algemene voorwaarden"
 
 msgid "The city, region or country of your story"
-msgstr ""
+msgstr "De stad, provincie of het land waar jouw verhaal plaatsvindt"
 
 msgid "There are no comments for this Story"
-msgstr ""
+msgstr "Er zijn geen reacties op dit verhaal"
 
 msgid "Uploading image, please wait..."
-msgstr ""
+msgstr "Afbeelding uploaden, even geduld…"
 
 msgid "Use comma or press Enter to separate tags"
-msgstr ""
+msgstr "Gebruik een komma of druk op ‘enter’ om tags te scheiden"
 
 msgid "Want to be a Commoner?"
-msgstr ""
+msgstr "Wil je een Commoner worden?"
 
 msgid "Welcome"
-msgstr ""
+msgstr "Welkom"
 
 msgid "Welcome!"
-msgstr ""
+msgstr "Welkom!"
 
 msgid "Welfare Provision"
-msgstr ""
+msgstr "Sociale Voorziening"
 
 msgid "Welfare Provisions"
-msgstr ""
+msgstr "Sociale Voorzieningen"
 
 msgid "What is the title of your story?"
-msgstr ""
+msgstr "Wat is de titel van je verhaal?"
 
 msgid "Where is this set?"
-msgstr ""
+msgstr "Waar vindt het plaats?"
 
 msgid "Write a comment"
-msgstr ""
+msgstr "Schrijf een reactie"
 
 msgid "Write here"
-msgstr ""
+msgstr "Schrijf hier"
 
 msgid "Write your Story"
-msgstr ""
+msgstr "Schrijf je Verhaal"
 
 msgid "Yes please. Cancel my account"
-msgstr ""
+msgstr "Ja, alsjeblieft, verwijder mijn account"
 
+# Need to see in context; this can be translated as JIJ, JE, JULLIE, U, ETC
 msgid "You"
-msgstr ""
+msgstr "Van jou"
 
+# Need context
 msgid "You are editing in"
-msgstr ""
+msgstr "Je bewerkt in het"
 
+# Need context
 msgid "You are writing in"
-msgstr ""
+msgstr "Je schrijft in het"
 
 msgid "You have to log in to continue"
-msgstr ""
+msgstr "Je moet inloggen om door te gaan"
 
+# In general I am a bit confused about the inconsistent use of capital letters. I guess I have to see this live on commonfare.net to be able to judge this properly. I have only deviated from the original if it really didn’t work in Dutch
 msgid "You haven't yet saved this Story in %{localised_lang_name}"
-msgstr ""
+msgstr "Je hebt dit verhaal nog niet opgeslagen in het %{localised_lang_name}"
 
 msgid "Your name on Commonfare.net"
-msgstr ""
+msgstr "Jouw naam op Commonfare.net"
 
 msgid "commented on %{date}"
-msgstr ""
+msgstr "gereageerd op %{date}"
 
 msgid "e.g. Bungo Baggins, pbm42, etc."
-msgstr ""
+msgstr "bijv. Anna Muggen, msc11, etc."
 
 msgid "e.g. Milan, Italy"
-msgstr ""
+msgstr "bijv. Rotterdam, Nederland"
 
 msgid "e.g. Pregnancy, Food sharing, etc."
-msgstr ""
+msgstr "bijv. Zwangerschap, gratis internet, etc."
 
+# need context
 msgid "e.g. There and back again"
-msgstr ""
+msgstr "bijv. Er was eens…"
 
 msgid "share a Story"
-msgstr ""
+msgstr "deel een Verhaal"

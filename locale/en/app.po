@@ -17,10 +17,10 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "\n"
 
-msgid "\"+ #{other_tags_count} more\""
+msgid "%{commoner_name}'s stories"
 msgstr ""
 
-msgid "%{commoner_name}'s stories"
+msgid "+ %{other_tags_count} more"
 msgstr ""
 
 msgid "About"

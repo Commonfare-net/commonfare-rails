@@ -5,9 +5,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: app 1.0.0\n"
+"Project-Id-Version: commonfare 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2017-09-15 11:43+0200\n"
+"PO-Revision-Date: 2018-01-08 17:36+0100\n"
 "Language-Team: Croatian\n"
 "Language: hr\n"
 "MIME-Version: 1.0\n"
@@ -16,180 +16,185 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4"
 " && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "Last-Translator: Pietro <pbmolini@fbk.eu>\n"
-"X-Generator: Poedit 2.0.3\n"
-
-msgid "\"+ #{other_tags_count} more\""
-msgstr ""
+"X-Generator: Poedit 2.0.5\n"
 
 msgid "%{commoner_name}'s stories"
-msgstr ""
+msgstr "Priče %{commoner_name}"
 
+msgid "+ %{other_tags_count} more"
+msgstr "+ %{other_tags_count} više"
+
+# please note translation is "about us" as in croatian you cannot have just "about" on its own.
 msgid "About"
-msgstr ""
+msgstr "O nama"
 
 msgid "About page"
-msgstr ""
+msgstr "O stranici"
 
 msgid "Add a comment"
-msgstr ""
+msgstr "Dodajte komentar"
 
 msgid "All comments for"
-msgstr ""
+msgstr "Svi komentari za"
 
 msgid "All your content will be permanently deleted too."
-msgstr ""
+msgstr "Sav vaš sadržaj će biti trajno izbrisani."
 
 msgid "Already a Commoner?"
-msgstr ""
+msgstr "Već ste član?"
 
 msgid "An error occured while visiting this page."
-msgstr ""
+msgstr "Došlo je do pogreške prilikom posjete ovoj stranici."
 
 msgid "Are you sure?"
-msgstr ""
+msgstr "Jeste li sigurni?"
 
 msgid "Are you sure? This will delete all the comments as well."
-msgstr ""
+msgstr "Jeste li sigurni? Ovim putem će se izbrisati svi komentari."
 
 msgid "Attach a file"
-msgstr ""
+msgstr "Priložite datoteku"
 
 msgid "Auth Button title|Forgot your password?"
-msgstr ""
+msgstr "Zaboravili ste podatke za logiranje?"
 
 msgid "Auth Button title|Log in"
-msgstr ""
+msgstr "Prijavite se"
 
 msgid "Auth Button title|Sign up"
-msgstr ""
+msgstr "Registrirajte se"
 
 msgid "Button|Cancel"
-msgstr ""
+msgstr "Otkazati"
 
 msgid "Button|Comment"
-msgstr ""
+msgstr "Komentirajte"
 
 msgid "Button|Edit profile"
-msgstr ""
+msgstr "Uredite profil"
 
 msgid "Button|Join"
-msgstr ""
+msgstr "Pridružite se"
 
 msgid "Button|Login"
-msgstr ""
+msgstr "Prijavite se"
 
 msgid "Button|Save"
-msgstr ""
+msgstr "Spremi"
 
+# If by "share" is meant to share with the community, via facebook, twitter, etc, then this is the correct word. If by "share" we are olny referring to publishing content on the website, then please replace with "objavite".
 msgid "Button|Share"
-msgstr ""
+msgstr "Podjeli"
 
 msgid "By joining you agree to our %{tos} and %{privacy}."
-msgstr ""
+msgstr "Pridruživanjem se slažete sa našim %{tos} i %{privacy}."
 
 msgid "Change password page button|Change my password"
-msgstr ""
+msgstr "Promjenite lozinku"
 
 msgid "Change password page field|Confirm your new password"
-msgstr ""
+msgstr "Potvrdite novu lozinku"
 
 msgid "Change password page field|New password"
-msgstr ""
+msgstr "Nova lozinka"
 
 msgid "Change password page header|Change your password"
-msgstr ""
+msgstr "Promjenite lozinku"
 
 msgid "City, Region, Country"
-msgstr ""
+msgstr "Grad, regija, zemlja"
 
 msgid "Comment"
 msgid_plural "Comments"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Komentar"
+msgstr[1] "Komentara"
+msgstr[2] "Komentara"
 
 msgid "Comment was successfully created."
-msgstr ""
+msgstr "Komentar je uspješno prenesen."
 
 msgid "Comment was successfully destroyed."
-msgstr ""
+msgstr "Komentar je uspješno izbrisan."
 
 msgid "Comment was successfully updated."
-msgstr ""
+msgstr "Komentar je uspješno ažuriran."
 
 msgid "Comments"
-msgstr ""
+msgstr "Komentari"
 
 msgid "Copy and close"
-msgstr ""
+msgstr "Kopirajte i zatvorite"
 
 msgid "Delete this Story"
-msgstr ""
+msgstr "Izbriši ovu priču"
 
 msgid "Delete this comment"
-msgstr ""
+msgstr "Izbriši ovaj komentar"
 
 msgid "Edit"
-msgstr ""
+msgstr "Uredi"
 
 msgid "Edit comment"
-msgstr ""
+msgstr "Uredi komentar"
 
 msgid "Edit credentials"
-msgstr ""
+msgstr "Uredi vjerodajnice"
 
 msgid "Edit email"
-msgstr ""
+msgstr "Uredi email"
 
 msgid "Edit password"
-msgstr ""
+msgstr "Uredi lozinku"
 
 msgid "Edit profile"
-msgstr ""
+msgstr "Uredi profil"
 
 msgid "Edit your Story"
-msgstr ""
+msgstr "Uredi priču"
 
 msgid "Edit your comment"
-msgstr ""
+msgstr "Uredi komentar"
 
 msgid "Edit your email or password"
-msgstr ""
+msgstr "Uredi email ili lozinku"
 
 msgid "Embed a video"
-msgstr ""
+msgstr "Embed video"
 
 msgid "Error"
-msgstr ""
+msgstr "Greška"
 
 msgid "Error code: %{err_code}"
-msgstr ""
+msgstr "Kod pogreške"
 
+# Here as before, in croatian we have to specify "about" what/who. I have translated about us here
 msgid "Footer|About"
-msgstr ""
+msgstr "O nama"
 
 msgid "Footer|Privacy"
-msgstr ""
+msgstr "Privatnost"
 
+# In Croatian, only the first word in a term in capitalized, the rest is lower case as written
 msgid "Footer|Terms of Service"
-msgstr ""
+msgstr "Uvjeti pružanja usluge"
 
 msgid "Forgot password"
-msgstr ""
+msgstr "Zaboravili ste lozinku"
 
 msgid "Forgot password page button|Send me the instructions"
-msgstr ""
+msgstr "Pošaljite mi upute"
 
 msgid "Forgot password page header|Forgot password?"
-msgstr ""
+msgstr "Zaboravili ste lozinku?"
 
 msgid "Give a title to your content"
-msgstr ""
+msgstr "Dajte naslov vašem sadržaju"
 
 msgid "Good Practice"
-msgstr ""
+msgstr "Dobra praksa"
 
 msgid "Good Practices"
-msgstr ""
+msgstr "Dobre prakse"
 
 msgid "Home carousel text|Commonfare.net aims to foster a new approach to social welfare in Europe. We can help each other (and ourselves!) when we connect and cooperate. Commonfare is for people and about people"
 msgstr ""
@@ -210,211 +215,216 @@ msgid "Home carousel title|Share your experience and stories"
 msgstr ""
 
 msgid "Homepage"
-msgstr ""
+msgstr "Početna stranica"
 
 msgid "It must be unique"
-msgstr ""
+msgstr "Mora biti jedinstveno"
 
 msgid "Join us"
-msgstr ""
+msgstr "Pridružite nam se"
 
 msgid "Latest Good Practices"
-msgstr ""
+msgstr "Najnovije dobre prakse"
 
 msgid "Latest Stories"
-msgstr ""
+msgstr "Najnovije priče"
 
 msgid "Latest Welfare Provisions"
-msgstr ""
+msgstr "Najnovije odredbe socijalne skrbi"
 
 msgid "Log in"
-msgstr ""
+msgstr "Prijavite se"
 
 msgid "Login page button|Log in"
-msgstr ""
+msgstr "Prijavite se"
 
 msgid "Login page header|Log in"
-msgstr ""
+msgstr "Prijavite se"
 
 msgid "Modal title|Share this Story"
-msgstr ""
+msgstr "Podjelite ovu priču"
 
 msgid "Navbar|Home"
-msgstr ""
+msgstr "Početna stranica"
 
 msgid "Navbar|Join"
-msgstr ""
+msgstr "Pridružite se"
 
 msgid "Navbar|Login"
-msgstr ""
+msgstr "Prijavite se"
 
 msgid "Navbar|Logout"
-msgstr ""
+msgstr "Odjavite se"
 
+# Please note, ni croatian we cannot say "create a new one" with specifying what "one" is, so I have assumed here that we are talking about a new password, so the exact translation is "No problem. Enter your email adress and we will send you the link for creating a new password."
 msgid "No problem. Just enter your email address here and we will send you the link for creating a new one."
-msgstr ""
+msgstr "Nema problema. Unesite vašu e-mail adresu i poslat ćemo vam upute za izradu nove lozinke."
 
 msgid "No stories yet"
-msgstr ""
+msgstr "Još nema priča"
 
+# I would change this phrasing, because in Croatian (and english) concise means to write something that is exact, precise, and does not include unnecessary details --- generally a good thing.
 msgid "Please don't be too concise (min. 500 chars)"
-msgstr ""
+msgstr "Molimo vas, nemojte biti prekratki (najmanje 500 znakova)"
 
 msgid "Please don't be too short (min. 500 chars)"
-msgstr ""
+msgstr "Molimo vas, nemojte biti prekratki (najmanje 500 znakova)"
 
 msgid "Privacy Policy"
-msgstr ""
+msgstr "Pravila o privatnosti"
 
 msgid "Publish"
-msgstr ""
+msgstr "Objavite"
 
 msgid "Publish comment button|Comment"
-msgstr ""
+msgstr "Komentirajte"
 
 msgid "Publishing..."
-msgstr ""
+msgstr "Objavljiva se..."
 
 msgid "Read in %{other_languages}"
-msgstr ""
+msgstr "Čitajte na"
 
 msgid "Results for %{search_term}"
-msgstr ""
+msgstr "Rezultati za"
 
 msgid "Results for '%{search_term}'"
-msgstr ""
+msgstr "Rezultati za ‘%{search_term}’"
 
 msgid "Search"
-msgstr ""
+msgstr "Pretraži"
 
 msgid "See all"
-msgstr ""
+msgstr "Vidi sve"
 
 msgid "Sign up page button|Join Commonfare"
-msgstr ""
+msgstr "Pridružite se Commonfare-u"
 
 msgid "Sign up page header|Become a Commoner"
-msgstr ""
+msgstr "Postanite član"
 
 msgid "Sorry, the page you are looking for does not exist."
-msgstr ""
+msgstr "Žao nam je, stranica koju tražite ne postoji."
 
 msgid "Square pictures look better ✨"
-msgstr ""
+msgstr "Kvadratne slike izgledaju bolje ✨"
 
 msgid "Stories"
-msgstr ""
+msgstr "Priče"
 
 msgid "Stories by %{author_name}"
-msgstr ""
+msgstr "Priče od"
 
 msgid "Stories with tag"
-msgstr ""
+msgstr "Priče"
 
 msgid "Stories with tag %{tag_name}"
 msgstr ""
 
 msgid "Story form button|Edit"
-msgstr ""
+msgstr "Uredi"
 
 msgid "Story form button|Publish"
-msgstr ""
+msgstr "Objavi"
 
 msgid "Story form button|Share your Story"
-msgstr ""
+msgstr "Podjeli priču"
 
 msgid "Story was successfully created."
-msgstr ""
+msgstr "Priča je uspješno prenesena."
 
 msgid "Story was successfully destroyed."
-msgstr ""
+msgstr "Priča je uspješno izbrisana."
 
 msgid "Story was successfully updated."
-msgstr ""
+msgstr "Priča je uspješno ažururana."
 
 msgid "Tags"
-msgstr ""
+msgstr "Oznake"
 
 msgid "Terms of Service"
-msgstr ""
+msgstr "Uvjeti pružanja usluge"
 
 msgid "The city, region or country of your story"
-msgstr ""
+msgstr "Grad, regija ili zemlja vaše priče"
 
 msgid "There are no comments for this Story"
-msgstr ""
+msgstr "Nema komentara za ovu priču"
 
 msgid "Uploading image, please wait..."
-msgstr ""
+msgstr "Slika se prenosi, molimo vas pričekajte..."
 
 msgid "Use comma or press Enter to separate tags"
-msgstr ""
+msgstr "Koristite zarez ili pritisnite Enter za razdvajanje oznaka"
 
 msgid "Want to be a Commoner?"
-msgstr ""
+msgstr "Želite biti Commoner?"
 
 msgid "Welcome"
-msgstr ""
+msgstr "Dobrodošli"
 
 msgid "Welcome!"
-msgstr ""
+msgstr "Dobrodošli!"
 
 msgid "Welfare Provision"
-msgstr ""
+msgstr "Odredba socijalne skrbi"
 
 msgid "Welfare Provisions"
-msgstr ""
+msgstr "Odredbe socijalne skrbi"
 
 msgid "What is the title of your story?"
-msgstr ""
+msgstr "Što je naslov vaše priče?"
 
 msgid "Where is this set?"
-msgstr ""
+msgstr "Gdje se ovo dogodilo?"
 
 msgid "Write a comment"
-msgstr ""
+msgstr "Dodajte komentar"
 
 msgid "Write here"
-msgstr ""
+msgstr "Napišite ovdje"
 
 msgid "Write your Story"
-msgstr ""
+msgstr "Napišite priču"
 
 msgid "Yes please. Cancel my account"
-msgstr ""
+msgstr "Da, molim vas izbrišite moj račun"
 
+# Please note I am using the third person formal "you" and not the second person, informal "you" here. i.e. " vous" vs "tu" in french.
+# Please note that I have used the formal "you" throughout the translations
 msgid "You"
-msgstr ""
+msgstr "Vi"
 
+# Assuming this will refer to language, the translation is as written. If it is refering to something else, the translation may be different.
 msgid "You are editing in"
-msgstr ""
+msgstr "Uređuješ na"
 
 msgid "You are writing in"
-msgstr ""
+msgstr "Pišete na"
 
 msgid "You have to log in to continue"
-msgstr ""
+msgstr "Morate se prijaviti da biste nastavili"
 
 msgid "You haven't yet saved this Story in %{localised_lang_name}"
-msgstr ""
+msgstr "Još niste spremili priču na"
 
 msgid "Your name on Commonfare.net"
-msgstr ""
+msgstr "Vaše ime na Commonfare.net-u"
 
 msgid "commented on %{date}"
-msgstr ""
+msgstr "comentirano %{date}"
 
 msgid "e.g. Bungo Baggins, pbm42, etc."
-msgstr ""
+msgstr "npr. Bungo Baggins, pbm42, itd."
 
 msgid "e.g. Milan, Italy"
-msgstr ""
+msgstr "npr. Milano, Italija"
 
 msgid "e.g. Pregnancy, Food sharing, etc."
-msgstr ""
+msgstr "npr. trudnoća, dijeljenje hrane, itd."
 
 msgid "e.g. There and back again"
-msgstr ""
+msgstr "npr. tamo i natrag"
 
 msgid "share a Story"
-msgstr ""
+msgstr "podijelite priču"
