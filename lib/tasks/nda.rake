@@ -4,7 +4,7 @@ namespace :nda do
           with the list of commoners
         """
   task export_commoners: :environment do
-    output_file = File.join(host_home_path, (Time.now.strftime("%Y%m%d%H%M%S") + "_commoners.csv"))
+    output_file = File.join(host_tmp_path, (Time.now.strftime("%Y%m%d%H%M%S") + "_commoners.csv"))
     CSV.open(output_file, 'wb') do |csv|
       csv << %w(commoner_id commoner_name commoner_created_at)
       Commoner.find_each do |commoner|
@@ -18,7 +18,7 @@ namespace :nda do
           with the list of stories
         """
   task export_stories: :environment do
-    output_file = File.join(host_home_path, (Time.now.strftime("%Y%m%d%H%M%S") + "_stories.csv"))
+    output_file = File.join(host_tmp_path, (Time.now.strftime("%Y%m%d%H%M%S") + "_stories.csv"))
     CSV.open(output_file, 'wb') do |csv|
       csv << %w(story_id story_author_id story_created_at)
       Story.find_each do |story|
@@ -32,7 +32,7 @@ namespace :nda do
           with the list of comments
         """
   task export_comments: :environment do
-    output_file = File.join(host_home_path, (Time.now.strftime("%Y%m%d%H%M%S") + "_comments.csv"))
+    output_file = File.join(host_tmp_path, (Time.now.strftime("%Y%m%d%H%M%S") + "_comments.csv"))
     CSV.open(output_file, 'wb') do |csv|
       csv << %w(comment_id comment_author_id comment_story_id comment_story_author_id comment_created_at)
       Comment.find_each do |comment|
@@ -46,7 +46,7 @@ namespace :nda do
           with the list of tags
         """
   task export_tags: :environment do
-    output_file = File.join(host_home_path, (Time.now.strftime("%Y%m%d%H%M%S") + "_tags.csv"))
+    output_file = File.join(host_tmp_path, (Time.now.strftime("%Y%m%d%H%M%S") + "_tags.csv"))
     CSV.open(output_file, 'wb') do |csv|
       csv << %w(tag_id tag_name tag_story_ids tag_created_at)
       Tag.find_each do |tag|
@@ -55,8 +55,8 @@ namespace :nda do
     end
   end
 
-  def host_home_path
-    "/host_home" # A volume defined in the proper docker-compose file
+  def host_tmp_path
+    "/host_tmp" # A volume defined in the proper docker-compose file
   end
 
 end
