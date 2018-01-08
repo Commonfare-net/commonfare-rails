@@ -12,7 +12,7 @@ namespace :welfare_cards do
       nl: 'sociale voorziening'
     }
     @commoner = User.find_by(email: 'news@commonfare.net').meta
-    file_path = File.join(host_home_path, "welfare-cards-export.json")
+    file_path = File.join(host_tmp_path, "welfare-cards-export.json")
     data_array = JSON.parse(File.read(file_path))
     data_array.each do |welfare_card|
       story_locales = get_story_locales(welfare_card.keys)
@@ -61,8 +61,8 @@ namespace :welfare_cards do
 
   end
 
-  def host_home_path
-    "/host_home" # A volume defined in the proper docker-compose file
+  def host_tmp_path
+    "/host_tmp" # A volume defined in the proper docker-compose file
   end
 
   # Returns all the locales of the welfare_card as symbols

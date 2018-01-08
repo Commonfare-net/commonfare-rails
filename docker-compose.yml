@@ -8,7 +8,7 @@ services:
     command: rails server -p 3000 -b '0.0.0.0'
     volumes:
       - .:/app
-      - ~:/host_home
+      - ~/tmp:/host_tmp
     ports:
       - "3000:3000"
     # links app container to postgres container.
