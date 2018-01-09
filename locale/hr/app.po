@@ -7,16 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: commonfare 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2018-01-08 17:36+0100\n"
+"PO-Revision-Date: 2018-01-09 12:11+0100\n"
 "Language-Team: Croatian\n"
 "Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4"
-" && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "Last-Translator: Pietro <pbmolini@fbk.eu>\n"
 "X-Generator: Poedit 2.0.5\n"
+"POT-Creation-Date: \n"
 
 msgid "%{commoner_name}'s stories"
 msgstr "Priče %{commoner_name}"
@@ -27,9 +27,6 @@ msgstr "+ %{other_tags_count} više"
 # please note translation is "about us" as in croatian you cannot have just "about" on its own.
 msgid "About"
 msgstr "O nama"
-
-msgid "About page"
-msgstr "O stranici"
 
 msgid "Add a comment"
 msgstr "Dodajte komentar"
@@ -363,6 +360,32 @@ msgstr "Želite biti Commoner?"
 msgid "Welcome"
 msgstr "Dobrodošli"
 
+# … please visit our *About page*.
+#, fuzzy
+msgid "Welcome page text|About page"
+msgstr "O stranici"
+
+# … and you can *share a Story* of your own …
+#, fuzzy
+msgid "Welcome page text|share a Story"
+msgstr "podijelite priču"
+
+#, fuzzy
+msgid "Welcome page|Before you go on, please notice that your temporary name on Commonfare.net is <strong>%{name}</strong>. This is a random name that has been created to protect your privacy, and that you can change anytime. If you want to do it now, just click on it!"
+msgstr "Dobrodošli"
+
+#, fuzzy
+msgid "Welcome page|Commonfare.net is constantly growing and more things will come in the next weeks. At the moment you can access the <strong>%{link_to_gps}</strong> and the <strong>%{link_to_wps}</strong> available in Italy, Croatia and the Netherlands, and you can <strong>%{link_to_share_a_story}</strong> of your own that could be a personal experience, some good practices, or anything you would like that other people know of. You can also respond to other people's Stories by commenting them."
+msgstr "Priče"
+
+#, fuzzy
+msgid "Welcome page|If you want to know more about what Commonfare.net is and who is actively working on it, please visit our <strong>%{link_to_about_page}</strong>."
+msgstr "Dobrodošli"
+
+#, fuzzy
+msgid "Welcome page|Soon you will also be able to create real relations with other Commoners by sharing (and receiving) not only your experience but also time, goods, expertise, etc."
+msgstr "Dobrodošli"
+
 msgid "Welcome!"
 msgstr "Dobrodošli!"
 
@@ -425,6 +448,3 @@ msgstr "npr. trudnoća, dijeljenje hrane, itd."
 
 msgid "e.g. There and back again"
 msgstr "npr. tamo i natrag"
-
-msgid "share a Story"
-msgstr "podijelite priču"

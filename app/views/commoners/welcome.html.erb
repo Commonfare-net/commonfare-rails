@@ -3,16 +3,16 @@
   <div class="col-md-8 col-lg-6">
     <h1 class="red-title"><%= _('Welcome!') %> 😀</h1>
     <p>
-      Before you go on, please notice that your temporary name on Commonfare.net is <strong><%= link_to @commoner.name, edit_commoner_path(@commoner) %></strong>. This is a random name that has been created to protect your privacy, and that you can change anytime. If you want to do it now, just click on it!
+      <%= (s_('Welcome page|Before you go on, please notice that your temporary name on Commonfare.net is <strong>%{name}</strong>. This is a random name that has been created to protect your privacy, and that you can change anytime. If you want to do it now, just click on it!') %{name: link_to(@commoner.name, edit_commoner_path(@commoner))}).html_safe %>
     </p>
     <p>
-      Commonfare.net is constantly growing and more things will come in the next weeks. At the moment you can access the <strong><%= link_to("Welfare provisions", infohub_url, target: :blank) %></strong> available in Italy, Croatia and the Netherlands, and you can <strong><%= link_to(_('share a Story'), new_story_path) %></strong> of your own that could be a personal experience, some good practices, or anything you would like that other people know of. You can also respond to other people's Stories by commenting them.
+      <%= (s_("Welcome page|Commonfare.net is constantly growing and more things will come in the next weeks. At the moment you can access the <strong>%{link_to_gps}</strong> and the <strong>%{link_to_wps}</strong> available in Italy, Croatia and the Netherlands, and you can <strong>%{link_to_share_a_story}</strong> of your own that could be a personal experience, some good practices, or anything you would like that other people know of. You can also respond to other people's Stories by commenting them.") %{link_to_gps: link_to(_('Good Practices'), stories_path(filter: :good_practice)), link_to_wps: link_to(_('Welfare Provisions'), stories_path(filter: :welfare_provision)), link_to_share_a_story: link_to(s_('Welcome page text|share a Story'), new_story_path)}).html_safe %>
     </p>
     <p>
-      Soon you will also be able to create real relations with other Commoners by sharing (and receiving) not only your experience but also time, goods, expertise, etc.
+      <%= (s_('Welcome page|Soon you will also be able to create real relations with other Commoners by sharing (and receiving) not only your experience but also time, goods, expertise, etc.')).html_safe %>
     </p>
     <p>
-      If you want to know more about what Commonfare.net is and who is actively working on it, please visit our <strong><%= link_to _('About page'), page_path(id: 'about') %></strong>.
+      <%= (s_('Welcome page|If you want to know more about what Commonfare.net is and who is actively working on it, please visit our <strong>%{link_to_about_page}</strong>.') %{link_to_about_page: link_to(_('Welcome page text|About page'), page_path(id: 'about'))}).html_safe %>
     </p>
   </div>
 </div>

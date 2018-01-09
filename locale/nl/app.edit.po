@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: commonfare 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2018-01-08 17:26+0100\n"
+"PO-Revision-Date: 2018-01-08 17:36+0100\n"
 "Language-Team: Dutch\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
@@ -16,20 +16,16 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "Last-Translator: Pietro <pbmolini@fbk.eu>\n"
 "X-Generator: Poedit 2.0.5\n"
-"POT-Creation-Date: 2018-01-08 16:32+0000\n"
 
 # In Dutch the S as a rule is attached to the name, so it’s Merels verhaal and Peters reactie, except… when the name ends with a vowel (Daniela’s verhaal and Pietro’s reactie). When a name ends with an S, there is no extra S to indicate ‘property’, but a ‘ (Mees’ verhaal and Ans’ reactie). I don’t know what to do here… perhaps rephrase as: Story by %{commoner_name} and Verhaal van %{commoner_name}
 msgid "%{commoner_name}'s stories"
 msgstr "Verhaal van %{commoner_name}"
 
 msgid "+ %{other_tags_count} more"
-msgstr ""
+msgstr "+ %{other_tags_count} meer"
 
 msgid "About"
 msgstr "Over"
-
-msgid "About page"
-msgstr "Over pagina"
 
 msgid "Add a comment"
 msgstr "Voeg een reactie toe"
@@ -363,6 +359,30 @@ msgstr "Wil je een Commoner worden?"
 msgid "Welcome"
 msgstr "Welkom"
 
+#, fuzzy
+msgid "Welcome page text|About page"
+msgstr "Over pagina"
+
+#, fuzzy
+msgid "Welcome page text|share a Story"
+msgstr "deel een Verhaal"
+
+#, fuzzy
+msgid "Welcome page|Before you go on, please notice that your temporary name on Commonfare.net is <strong>%{name}</strong>. This is a random name that has been created to protect your privacy, and that you can change anytime. If you want to do it now, just click on it!"
+msgstr "Welkom"
+
+#, fuzzy
+msgid "Welcome page|Commonfare.net is constantly growing and more things will come in the next weeks. At the moment you can access the <strong>%{link_to_gps}</strong> and the <strong>%{link_to_wps}</strong> available in Italy, Croatia and the Netherlands, and you can <strong>%{link_to_share_a_story}</strong> of your own that could be a personal experience, some good practices, or anything you would like that other people know of. You can also respond to other people's Stories by commenting them."
+msgstr "Verhalen"
+
+#, fuzzy
+msgid "Welcome page|If you want to know more about what Commonfare.net is and who is actively working on it, please visit our <strong>%{link_to_about_page}</strong>."
+msgstr "Welkom"
+
+#, fuzzy
+msgid "Welcome page|Soon you will also be able to create real relations with other Commoners by sharing (and receiving) not only your experience but also time, goods, expertise, etc."
+msgstr "Welkom"
+
 msgid "Welcome!"
 msgstr "Welkom!"
 
@@ -428,8 +448,32 @@ msgstr "bijv. Zwangerschap, gratis internet, etc."
 msgid "e.g. There and back again"
 msgstr "bijv. Er was eens…"
 
-msgid "share a Story"
-msgstr "deel een Verhaal"
+#~ msgid "About page"
+#~ msgstr "Over pagina"
 
-#~ msgid "+ %{other_tags_count} more"
-#~ msgstr "+ #{other_tags_count} meer"
+#, fuzzy
+#~ msgid ""
+#~ "Welcome page|Commonfare.net is constantly growing and more things will come in"
+#~ " the next weeks. At the moment you can access the <strong>%{wp_link}</strong> "
+#~ "available in Italy, Croatia and the Netherlands, and you can <strong>%{share_a"
+#~ "_story_link}</strong> of your own that could be a personal experience, some go"
+#~ "od practices, or anything you would like that other people know of. You can al"
+#~ "so respond to other people's Stories by commenting them."
+#~ msgstr "Verhalen"
+
+#, fuzzy
+#~ msgid "Welfare provisions"
+#~ msgstr "Sociale Voorzieningen"
+
+#~ msgid "share a Story"
+#~ msgstr "deel een Verhaal"
+
+#~ msgid ""
+#~ "\n"
+#~ "        Welcome page|\n"
+#~ "        Before you go on, please notice that your temporary name on Commonfare"
+#~ ".net is <strong>%{name}</strong>. This is a random name that has been created "
+#~ "to protect your privacy, and that you can change anytime. If you want to do it"
+#~ " now, just click on it!\n"
+#~ "        "
+#~ msgstr "Welkom"

@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-08 16:32+0000\n"
-"PO-Revision-Date: 2018-01-08 16:32+0000\n"
+"POT-Creation-Date: 2018-01-09 11:05+0000\n"
+"PO-Revision-Date: 2018-01-09 11:05+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -25,9 +25,6 @@ msgid "+ %{other_tags_count} more"
 msgstr ""
 
 msgid "About"
-msgstr ""
-
-msgid "About page"
 msgstr ""
 
 msgid "Add a comment"
@@ -356,6 +353,24 @@ msgstr ""
 msgid "Welcome"
 msgstr ""
 
+msgid "Welcome page text|About page"
+msgstr ""
+
+msgid "Welcome page text|share a Story"
+msgstr ""
+
+msgid "Welcome page|Before you go on, please notice that your temporary name on Commonfare.net is <strong>%{name}</strong>. This is a random name that has been created to protect your privacy, and that you can change anytime. If you want to do it now, just click on it!"
+msgstr ""
+
+msgid "Welcome page|Commonfare.net is constantly growing and more things will come in the next weeks. At the moment you can access the <strong>%{link_to_gps}</strong> and the <strong>%{link_to_wps}</strong> available in Italy, Croatia and the Netherlands, and you can <strong>%{link_to_share_a_story}</strong> of your own that could be a personal experience, some good practices, or anything you would like that other people know of. You can also respond to other people's Stories by commenting them."
+msgstr ""
+
+msgid "Welcome page|If you want to know more about what Commonfare.net is and who is actively working on it, please visit our <strong>%{link_to_about_page}</strong>."
+msgstr ""
+
+msgid "Welcome page|Soon you will also be able to create real relations with other Commoners by sharing (and receiving) not only your experience but also time, goods, expertise, etc."
+msgstr ""
+
 msgid "Welcome!"
 msgstr ""
 
@@ -414,7 +429,4 @@ msgid "e.g. Pregnancy, Food sharing, etc."
 msgstr ""
 
 msgid "e.g. There and back again"
-msgstr ""
-
-msgid "share a Story"
 msgstr ""

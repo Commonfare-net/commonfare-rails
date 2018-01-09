@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: commonfare 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2018-01-08 17:36+0100\n"
+"PO-Revision-Date: 2018-01-09 12:12+0100\n"
 "Language-Team: Dutch\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
@@ -27,9 +27,6 @@ msgstr "+ %{other_tags_count} meer"
 
 msgid "About"
 msgstr "Over"
-
-msgid "About page"
-msgstr "Over pagina"
 
 msgid "Add a comment"
 msgstr "Voeg een reactie toe"
@@ -363,6 +360,32 @@ msgstr "Wil je een Commoner worden?"
 msgid "Welcome"
 msgstr "Welkom"
 
+# … please visit our *About page*.
+#, fuzzy
+msgid "Welcome page text|About page"
+msgstr "Over pagina"
+
+# … and you can *share a Story* of your own …
+#, fuzzy
+msgid "Welcome page text|share a Story"
+msgstr "deel een Verhaal"
+
+#, fuzzy
+msgid "Welcome page|Before you go on, please notice that your temporary name on Commonfare.net is <strong>%{name}</strong>. This is a random name that has been created to protect your privacy, and that you can change anytime. If you want to do it now, just click on it!"
+msgstr "Welkom"
+
+#, fuzzy
+msgid "Welcome page|Commonfare.net is constantly growing and more things will come in the next weeks. At the moment you can access the <strong>%{link_to_gps}</strong> and the <strong>%{link_to_wps}</strong> available in Italy, Croatia and the Netherlands, and you can <strong>%{link_to_share_a_story}</strong> of your own that could be a personal experience, some good practices, or anything you would like that other people know of. You can also respond to other people's Stories by commenting them."
+msgstr "Verhalen"
+
+#, fuzzy
+msgid "Welcome page|If you want to know more about what Commonfare.net is and who is actively working on it, please visit our <strong>%{link_to_about_page}</strong>."
+msgstr "Welkom"
+
+#, fuzzy
+msgid "Welcome page|Soon you will also be able to create real relations with other Commoners by sharing (and receiving) not only your experience but also time, goods, expertise, etc."
+msgstr "Welkom"
+
 msgid "Welcome!"
 msgstr "Welkom!"
 
@@ -427,6 +450,3 @@ msgstr "bijv. Zwangerschap, gratis internet, etc."
 # need context
 msgid "e.g. There and back again"
 msgstr "bijv. Er was eens…"
-
-msgid "share a Story"
-msgstr "deel een Verhaal"

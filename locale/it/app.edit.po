@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: commonfare 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2018-01-08 17:35+0100\n"
+"PO-Revision-Date: 2018-01-09 11:55+0100\n"
 "Language-Team: Italian\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "Last-Translator: Pietro <pbmolini@fbk.eu>\n"
 "X-Generator: Poedit 2.0.5\n"
-"POT-Creation-Date: 2018-01-08 16:32+0000\n"
+"POT-Creation-Date: 2018-01-09 11:05+0000\n"
 
 msgid "%{commoner_name}'s stories"
 msgstr "Storie di %{commoner_name}"
@@ -27,10 +27,6 @@ msgstr "+ altri %{other_tags_count}"
 # Dopo averci pensato un po’ e considerando la fascia di etàdegli utenti della piattaforma, secondo me questa sezione può essere lasciata col nome “About”
 msgid "About"
 msgstr "About"
-
-# Non ho capito di preciso a cosa si riferisce questa sezione
-msgid "About page"
-msgstr "pagina di descrizione"
 
 msgid "Add a comment"
 msgstr "Aggiungi un commento"
@@ -361,6 +357,30 @@ msgstr "Vuoi essere un/a Commoner?"
 msgid "Welcome"
 msgstr "Benvenuto/a"
 
+# Non ho capito di preciso a cosa si riferisce questa sezione
+#, fuzzy
+msgid "Welcome page text|About page"
+msgstr "pagina di descrizione"
+
+#, fuzzy
+msgid "Welcome page text|share a Story"
+msgstr "condividi una storia"
+
+msgid "Welcome page|Before you go on, please notice that your temporary name on Commonfare.net is <strong>%{name}</strong>. This is a random name that has been created to protect your privacy, and that you can change anytime. If you want to do it now, just click on it!"
+msgstr ""
+
+#, fuzzy
+msgid "Welcome page|Commonfare.net is constantly growing and more things will come in the next weeks. At the moment you can access the <strong>%{link_to_gps}</strong> and the <strong>%{link_to_wps}</strong> available in Italy, Croatia and the Netherlands, and you can <strong>%{link_to_share_a_story}</strong> of your own that could be a personal experience, some good practices, or anything you would like that other people know of. You can also respond to other people's Stories by commenting them."
+msgstr "Storie"
+
+#, fuzzy
+msgid "Welcome page|If you want to know more about what Commonfare.net is and who is actively working on it, please visit our <strong>%{link_to_about_page}</strong>."
+msgstr "Benvenuto/a"
+
+#, fuzzy
+msgid "Welcome page|Soon you will also be able to create real relations with other Commoners by sharing (and receiving) not only your experience but also time, goods, expertise, etc."
+msgstr "Benvenuto/a"
+
 msgid "Welcome!"
 msgstr "Benvenuto/a!"
 
@@ -422,5 +442,13 @@ msgstr "es. Gravidanza, Consumo critico, ecc."
 msgid "e.g. There and back again"
 msgstr "es. Andata e ritorno"
 
-msgid "share a Story"
-msgstr "condividi una storia"
+# Non ho capito di preciso a cosa si riferisce questa sezione
+#~ msgid "About page"
+#~ msgstr "pagina di descrizione"
+
+#, fuzzy
+#~ msgid "Welfare provisions"
+#~ msgstr "Misure di welfare"
+
+#~ msgid "share a Story"
+#~ msgstr "condividi una storia"
