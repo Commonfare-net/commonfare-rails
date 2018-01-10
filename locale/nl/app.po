@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: commonfare 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2018-01-09 12:12+0100\n"
+"PO-Revision-Date: 2018-01-10 17:08+0100\n"
 "Language-Team: Dutch\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
@@ -16,6 +16,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "Last-Translator: Pietro <pbmolini@fbk.eu>\n"
 "X-Generator: Poedit 2.0.5\n"
+"POT-Creation-Date: \n"
 
 # In Dutch the S as a rule is attached to the name, so it’s Merels verhaal and Peters reactie, except… when the name ends with a vowel (Daniela’s verhaal and Pietro’s reactie). When a name ends with an S, there is no extra S to indicate ‘property’, but a ‘ (Mees’ verhaal and Ans’ reactie). I don’t know what to do here… perhaps rephrase as: Story by %{commoner_name} and Verhaal van %{commoner_name}
 msgid "%{commoner_name}'s stories"
@@ -191,17 +192,16 @@ msgid "Good Practices"
 msgstr "Goede Voorbeelden"
 
 msgid "Home carousel text|Commonfare is a new and complementary form of welfare provision that is accessible to all and bottom-up. Commonfare is for, with, and by people."
-msgstr ""
+msgstr "Commonfare is een nieuwe en aanvullende vorm van welvaartsvoorziening die toegankelijk is voor iedereen en die bottom-up (van onderop) wordt georganiseerd. Commonfare is voor, met en door mensen."
 
 msgid "Home carousel text|Commonfare proposes an unconditional basic income; proper management of common goods; free access to basic needs, and alternative monetary circuits."
-msgstr ""
+msgstr "Commonfare stelt een onvoorwaardelijk basisinkomen voor; het goed beheer van gemeenschappelijke goederen; gratis toegang tot de basisbehoeften en de creatie van complementaire financiële en monetaire systemen."
 
-#, fuzzy
 msgid "Home carousel text|Commonfare.net is where we share information on existing welfare state provisions, support self-organized welfare initiatives and tell stories to promote collaboration. Join us!"
-msgstr "Doe mee"
+msgstr "Commonfare.net is waar we informatie delen over bestaande sociale voorzieningen, zelf georganiseerde initiatieven op het gebied van sociale welvaart steuren en verhalen vertellen om samenwerking te stimuleren. Doe mee!"
 
 msgid "Home carousel title|Get involved and help it grow"
-msgstr ""
+msgstr "‘Over’ pagina"
 
 msgid "Home carousel title|Inform and get informed"
 msgstr ""
@@ -370,30 +370,24 @@ msgid "Welcome"
 msgstr "Welkom"
 
 # … please visit our *About page*.
-#, fuzzy
 msgid "Welcome page text|About page"
-msgstr "Over pagina"
+msgstr "‘Over’ pagina"
 
 # … and you can *share a Story* of your own …
-#, fuzzy
 msgid "Welcome page text|share a Story"
-msgstr "deel een Verhaal"
+msgstr "jouw eigen verhaal"
 
-#, fuzzy
 msgid "Welcome page|Before you go on, please notice that your temporary name on Commonfare.net is <strong>%{name}</strong>. This is a random name that has been created to protect your privacy, and that you can change anytime. If you want to do it now, just click on it!"
-msgstr "Welkom"
+msgstr "Welcome page|Before you go on, please notice that your temporary name on Commonfare.net is <strong>%{name}</strong>. This is a random name that has been created to protect your privacy, and that you can change anytime. If you want to do it now, just click on it!"
 
-#, fuzzy
 msgid "Welcome page|Commonfare.net is constantly growing and more things will come in the next weeks. At the moment you can access the <strong>%{link_to_gps}</strong> and the <strong>%{link_to_wps}</strong> available in Italy, Croatia and the Netherlands, and you can <strong>%{link_to_share_a_story}</strong> of your own that could be a personal experience, some good practices, or anything you would like that other people know of. You can also respond to other people's Stories by commenting them."
-msgstr "Verhalen"
+msgstr "Commonfare.net groeit constant en meer en meer dingen zullen de komende tijd online komen. Op het moment vind je hier de <strong>%{link_to_gps}</strong> en de <strong>%{link_to_wps}</strong> beschikbaar in Italië, Kroatië en Nederland en kan je <strong>%{link_to_share_a_story}</strong> van jezelf, bijvoorbeeld een persoonlijke ervaring, goede voorbeelden die je kent of gewoon wat jij vindt dat mensen moeten weten. Je kan ook reageren op de verhalen van anderen."
 
-#, fuzzy
 msgid "Welcome page|If you want to know more about what Commonfare.net is and who is actively working on it, please visit our <strong>%{link_to_about_page}</strong>."
-msgstr "Welkom"
+msgstr "Als je meer wilt weren over het wie, wat, waar, wanneer en waarom van Commonfare.net, bezoek dan vooral onze <strong>%{link_to_about_page}</strong>."
 
-#, fuzzy
 msgid "Welcome page|Soon you will also be able to create real relations with other Commoners by sharing (and receiving) not only your experience but also time, goods, expertise, etc."
-msgstr "Welkom"
+msgstr "Binnenkort kan je op Commonfare.net nog veel meer nieuwe functionaliteiten verwachten, zoals bijvoorbeeld het direct uitwisselen van berichten of goederen en diensten met anderen hier."
 
 msgid "Welcome!"
 msgstr "Welkom!"
