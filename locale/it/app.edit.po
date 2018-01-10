@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: commonfare 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2018-01-09 11:55+0100\n"
+"PO-Revision-Date: 2018-01-10 09:52+0100\n"
 "Language-Team: Italian\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
@@ -16,7 +16,6 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "Last-Translator: Pietro <pbmolini@fbk.eu>\n"
 "X-Generator: Poedit 2.0.5\n"
-"POT-Creation-Date: 2018-01-09 11:05+0000\n"
 
 msgid "%{commoner_name}'s stories"
 msgstr "Storie di %{commoner_name}"
@@ -191,14 +190,14 @@ msgstr "Buona pratica"
 msgid "Good Practices"
 msgstr "Buone pratiche"
 
-msgid "Home carousel text|Commonfare.net aims to foster a new approach to social welfare in Europe. We can help each other (and ourselves!) when we connect and cooperate. Commonfare is for people and about people"
-msgstr ""
+msgid "Home carousel text|Commonfare is a new and complementary form of welfare provision that is accessible to all and bottom-up. Commonfare is for, with, and by people."
+msgstr "Commonfare è una nuova forma complementare di welfare “dal basso”, accessibile a tutti e tutte. Commonfare è fatto per le persone e con le persone."
 
-msgid "Home carousel text|Commonfare.net is a place where you can inform and get informed about welfare provisions and grassroots initiatives"
-msgstr ""
+msgid "Home carousel text|Commonfare proposes an unconditional basic income; proper management of common goods; free access to basic needs, and alternative monetary circuits."
+msgstr "Commonfare propone un reddito di base incondizionato; una gestione più giusta dei beni comuni; il libero accesso ai bisogni di base e a circuiti monetari alternativi."
 
-msgid "Home carousel text|Share your experience and stories, communicate events throughout Europe, support initiatives based on collaboration and solidarity"
-msgstr ""
+msgid "Home carousel text|Commonfare.net is where we share information on existing welfare state provisions, support self-organized welfare initiatives and tell stories to promote collaboration. Join us!"
+msgstr "Commonfare.net è uno spazio in cui condividiamo informazioni sulle misure di welfare disponibili, in cui supportiamo iniziative di welfare “dal basso”, e in cui raccontiamo storie che promuovono la collaborazione tra le persone. Partecipa e unisciti a noi!"
 
 msgid "Home carousel title|Get involved and help it grow"
 msgstr "Partecipa e aiutaci a far crescere Commonfare"
@@ -232,6 +231,9 @@ msgstr "Accedi"
 
 msgid "Login page button|Log in"
 msgstr "Accedi"
+
+msgid "Login page form|Remember me"
+msgstr "Ricordami"
 
 msgid "Login page header|Log in"
 msgstr "Accedi"
@@ -293,6 +295,12 @@ msgstr "Vedi tutti"
 
 msgid "Sign up page button|Join Commonfare"
 msgstr "Partecipa a Commonfare"
+
+msgid "Sign up page form hint|%{min_password_length} characters minimum"
+msgstr "minimo %{min_password_length} caratteri"
+
+msgid "Sign up page form|Password Confirmation"
+msgstr "Conferma password"
 
 msgid "Sign up page header|Become a Commoner"
 msgstr "Diventa un/a Commoner"
@@ -357,29 +365,25 @@ msgstr "Vuoi essere un/a Commoner?"
 msgid "Welcome"
 msgstr "Benvenuto/a"
 
-# Non ho capito di preciso a cosa si riferisce questa sezione
-#, fuzzy
+# … please visit our *About page*.
 msgid "Welcome page text|About page"
-msgstr "pagina di descrizione"
+msgstr "su di noi"
 
-#, fuzzy
+# … and you can *share a Story* of your own …
 msgid "Welcome page text|share a Story"
-msgstr "condividi una storia"
+msgstr "condividere una storia"
 
 msgid "Welcome page|Before you go on, please notice that your temporary name on Commonfare.net is <strong>%{name}</strong>. This is a random name that has been created to protect your privacy, and that you can change anytime. If you want to do it now, just click on it!"
-msgstr ""
+msgstr "Prima di andare avanti, ricorda che il tuo nome temporaneo su Commonfare.net è <strong>%{name}</strong>. Si tratta di un nome casuale che è stato creato per proteggere la tua privacy e che puoi modificare in qualsiasi momento. Se vuoi modificarlo ora, basta cliccare su di esso!"
 
-#, fuzzy
 msgid "Welcome page|Commonfare.net is constantly growing and more things will come in the next weeks. At the moment you can access the <strong>%{link_to_gps}</strong> and the <strong>%{link_to_wps}</strong> available in Italy, Croatia and the Netherlands, and you can <strong>%{link_to_share_a_story}</strong> of your own that could be a personal experience, some good practices, or anything you would like that other people know of. You can also respond to other people's Stories by commenting them."
-msgstr "Storie"
+msgstr "Commonfare.net cresce costantemente e sarà presto aggiornato con nuove funzioni. Al momento puoi accedere alle <strong>%{link_to_gps}</strong> e alle <strong>%{link_to_wps}</strong> disponibili in Italia, Croazia e Olanda, e puoi <strong>%{link_to_share_a_story}</strong> su una tua esperienza personale, buone pratiche di welfare e collaborazione sociale e qualsiasi altra cosa tu voglia comunicare e condividere. Puoi anche interagire con le storie di altre persone attraverso i commenti."
 
-#, fuzzy
 msgid "Welcome page|If you want to know more about what Commonfare.net is and who is actively working on it, please visit our <strong>%{link_to_about_page}</strong>."
-msgstr "Benvenuto/a"
+msgstr "Se vuoi conoscere meglio Commonfare.net e sapere chi sono le persone che lavorano attivamente a questo progetto, visita la sezione <strong>%{link_to_about_page}</strong>."
 
-#, fuzzy
 msgid "Welcome page|Soon you will also be able to create real relations with other Commoners by sharing (and receiving) not only your experience but also time, goods, expertise, etc."
-msgstr "Benvenuto/a"
+msgstr "Presto potrai costruire relazioni reali con altri/e Commoners attraverso la condivisione reciproca non solo di esperienze, ma anche di tempo, beni, e saperi."
 
 msgid "Welcome!"
 msgstr "Benvenuto/a!"
@@ -441,14 +445,3 @@ msgstr "es. Gravidanza, Consumo critico, ecc."
 # ho inteso sia l’esempio del titolo di una storia
 msgid "e.g. There and back again"
 msgstr "es. Andata e ritorno"
-
-# Non ho capito di preciso a cosa si riferisce questa sezione
-#~ msgid "About page"
-#~ msgstr "pagina di descrizione"
-
-#, fuzzy
-#~ msgid "Welfare provisions"
-#~ msgstr "Misure di welfare"
-
-#~ msgid "share a Story"
-#~ msgstr "condividi una storia"

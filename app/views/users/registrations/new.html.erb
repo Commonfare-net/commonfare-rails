@@ -6,8 +6,8 @@
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= f.error_notification %>
       <%= f.input :email, autofocus: true %>
-      <%= f.input :password, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-      <%= f.input :password_confirmation %>
+      <%= f.input :password, hint: ((s_("Sign up page form hint|%{min_password_length} characters minimum") %{min_password_length: @minimum_password_length}) if @minimum_password_length) %>
+      <%= f.input :password_confirmation, label: s_('Sign up page form|Password Confirmation') %>
       <p>
         <small>
           <%= (_("By joining you agree to our %{tos} and %{privacy}.") %{
