@@ -6,7 +6,7 @@
       <%= f.error_notification %>
       <%= f.input :reset_password_token, as: :hidden %>
       <%= f.full_error :reset_password_token %>
-      <%= f.input :password, label: s_("Change password page field|New password"), autofocus: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+      <%= f.input :password, label: s_("Change password page field|New password"), autofocus: true, hint: ((s_("Sign up page form hint|%{min_password_length} characters minimum") %{min_password_length: @minimum_password_length}) if @minimum_password_length) %>
       <%= f.input :password_confirmation, label: s_("Change password page field|Confirm your new password") %>
       <%= f.button :submit, s_("Change password page button|Change my password"), class: 'btn btn-cf btn-block' %>
     <% end %>

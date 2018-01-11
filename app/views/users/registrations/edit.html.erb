@@ -12,16 +12,16 @@
           <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
         <% end %>
         <h5 class="font-weight-bold"><%= _('Edit password') %></h5>
-        <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false %>
-        <%= f.input :password_confirmation, required: false %>
-        <%= f.input :current_password, hint: "we need your current password to confirm your changes" %>
+        <%= f.input :password, autocomplete: "off", hint: s_("Edit credentials form|leave it blank if you don't want to change it"), required: false %>
+        <%= f.input :password_confirmation, label: s_('Edit credentials form|Password confirmation'), required: false %>
+        <%= f.input :current_password, label: s_('Edit credentials form|Current password'), hint: s_("Edit credentials form|we need your current password to confirm your changes") %>
         <%= render 'shared/back_and_save_buttons', f: f, cancel_path: nil %>
     <% end %>
 
     <hr>
-    <h4 class="red-title">Delete account</h4>
+    <h4 class="red-title"><%= s_("Edit credentials subtitle|Delete account") %></h4>
     <p>
-      Do you want to leave Commonfare.net?
+      <%= s_("Edit credentials form|Do you want to leave Commonfare.net?") %>
       <br>
       <small><%= _('All your content will be permanently deleted too.') %></small>
       <br>

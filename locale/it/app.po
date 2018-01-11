@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: commonfare 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2018-01-10 17:20+0100\n"
+"PO-Revision-Date: 2018-01-11 09:31+0100\n"
 "Language-Team: Italian\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
@@ -136,6 +136,24 @@ msgstr "Modifica il commento"
 
 msgid "Edit credentials"
 msgstr "Modifica le credenziali"
+
+msgid "Edit credentials form|Current password"
+msgstr "Password attuale"
+
+msgid "Edit credentials form|Do you want to leave Commonfare.net?"
+msgstr "Vuoi cancellare il tuo account su Commonfare.net?"
+
+msgid "Edit credentials form|Password confirmation"
+msgstr "Conferma password"
+
+msgid "Edit credentials form|leave it blank if you don't want to change it"
+msgstr "lascia lo spazio vuoto se non vuoi modificare"
+
+msgid "Edit credentials form|we need your current password to confirm your changes"
+msgstr "abbiamo bisogno della tua password attuale per procedere con la modifica"
+
+msgid "Edit credentials subtitle|Delete account"
+msgstr "Cancella il tuo account"
 
 msgid "Edit email"
 msgstr "Modifica email"

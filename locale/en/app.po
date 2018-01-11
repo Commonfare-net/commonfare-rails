@@ -133,6 +133,24 @@ msgstr ""
 msgid "Edit credentials"
 msgstr ""
 
+msgid "Edit credentials form|Current password"
+msgstr ""
+
+msgid "Edit credentials form|Do you want to leave Commonfare.net?"
+msgstr ""
+
+msgid "Edit credentials form|Password confirmation"
+msgstr ""
+
+msgid "Edit credentials form|leave it blank if you don't want to change it"
+msgstr ""
+
+msgid "Edit credentials form|we need your current password to confirm your changes"
+msgstr ""
+
+msgid "Edit credentials subtitle|Delete account"
+msgstr ""
+
 msgid "Edit email"
 msgstr ""
 

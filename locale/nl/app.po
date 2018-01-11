@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: commonfare 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2018-01-10 17:35+0100\n"
+"PO-Revision-Date: 2018-01-11 09:33+0100\n"
 "Language-Team: Dutch\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
@@ -136,6 +136,30 @@ msgstr "Bewerk reactie"
 msgid "Edit credentials"
 msgstr "Gegevens wijzigen"
 
+# How is this used on the site? I cannot be 100% sure of this translation without context
+msgid "Edit credentials form|Current password"
+msgstr ""
+
+# How is this used on the site? I cannot be 100% sure of this translation without context
+msgid "Edit credentials form|Do you want to leave Commonfare.net?"
+msgstr ""
+
+# How is this used on the site? I cannot be 100% sure of this translation without context
+msgid "Edit credentials form|Password confirmation"
+msgstr "Bevestig wachtwoord"
+
+# How is this used on the site? I cannot be 100% sure of this translation without context
+msgid "Edit credentials form|leave it blank if you don't want to change it"
+msgstr ""
+
+# How is this used on the site? I cannot be 100% sure of this translation without context
+msgid "Edit credentials form|we need your current password to confirm your changes"
+msgstr ""
+
+# How is this used on the site? I cannot be 100% sure of this translation without context
+msgid "Edit credentials subtitle|Delete account"
+msgstr ""
+
 msgid "Edit email"
 msgstr "E-mailadres wijzigen"
 
@@ -234,7 +258,7 @@ msgid "Login page button|Log in"
 msgstr "Inloggen"
 
 msgid "Login page form|Remember me"
-msgstr ""
+msgstr "Onthoud mij"
 
 msgid "Login page header|Log in"
 msgstr "Inloggen"
@@ -300,10 +324,10 @@ msgid "Sign up page button|Join Commonfare"
 msgstr "Registreer op Commonfare"
 
 msgid "Sign up page form hint|%{min_password_length} characters minimum"
-msgstr ""
+msgstr "%{min_password_length} minimaal aantal karakters"
 
 msgid "Sign up page form|Password Confirmation"
-msgstr ""
+msgstr "Bevestig wachtwoord"
 
 msgid "Sign up page header|Become a Commoner"
 msgstr "Word een Commoner"
@@ -378,7 +402,7 @@ msgid "Welcome page text|share a Story"
 msgstr "jouw eigen verhaal"
 
 msgid "Welcome page|Before you go on, please notice that your temporary name on Commonfare.net is <strong>%{name}</strong>. This is a random name that has been created to protect your privacy, and that you can change anytime. If you want to do it now, just click on it!"
-msgstr "Before you go on, please notice that your temporary name on Commonfare.net is <strong>%{name}</strong>. This is a random name that has been created to protect your privacy, and that you can change anytime. If you want to do it now, just click on it!"
+msgstr "Voordat je doorgaat even dit: zoals je ziet hebben we je de volgende tijdelijke naam gegeven op Commonfare.net <strong>%{name}</strong>. Deze naam is totaal willekeurig gekozen om jouw privacy te beschermen. Je kan deze naam veranderen wanneer je maar wilt. Bijvoorbeeld nu door erop te klikken!"
 
 msgid "Welcome page|Commonfare.net is constantly growing and more things will come in the next weeks. At the moment you can access the <strong>%{link_to_gps}</strong> and the <strong>%{link_to_wps}</strong> available in Italy, Croatia and the Netherlands, and you can <strong>%{link_to_share_a_story}</strong> of your own that could be a personal experience, some good practices, or anything you would like that other people know of. You can also respond to other people's Stories by commenting them."
 msgstr "Commonfare.net groeit constant en meer en meer dingen zullen de komende tijd online komen. Op het moment vind je hier de <strong>%{link_to_gps}</strong> en de <strong>%{link_to_wps}</strong> beschikbaar in Italië, Kroatië en Nederland en kan je <strong>%{link_to_share_a_story}</strong> van jezelf, bijvoorbeeld een persoonlijke ervaring, goede voorbeelden die je kent of gewoon wat jij vindt dat mensen moeten weten. Je kan ook reageren op de verhalen van anderen."

@@ -1,15 +1,15 @@
-it:
+hr:
   simple_form:
-    "yes": 'Sì'
-    "no": 'No'
+    "yes": 'Da'
+    "no": 'Ne'
     required:
-      text: 'richiesto'
+      text: 'traženo'
       mark: '*'
       # You can uncomment the line below if you need to overwrite the whole required html.
       # When using html, text and mark won't be used.
       # html: '<abbr title="required">*</abbr>'
     error_notification:
-      default_message: "Controlla i problemi elencati sotto:"
+      default_message: "Pregledajte probleme u nastavku:"
     # Labels and hints examples
     # labels:
     #   defaults:

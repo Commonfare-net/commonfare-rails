@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: commonfare 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2018-01-09 12:11+0100\n"
+"PO-Revision-Date: 2018-01-10 17:21+0100\n"
 "Language-Team: Croatian\n"
 "Language: hr\n"
 "MIME-Version: 1.0\n"
@@ -17,7 +17,7 @@ msgstr ""
 " && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "Last-Translator: Pietro <pbmolini@fbk.eu>\n"
 "X-Generator: Poedit 2.0.5\n"
-"POT-Creation-Date: 2018-01-10 08:49+0000\n"
+"POT-Creation-Date: 2018-01-11 08:03+0000\n"
 
 msgid "%{commoner_name}'s stories"
 msgstr "Priče %{commoner_name}"
@@ -138,6 +138,30 @@ msgstr "Uredi komentar"
 msgid "Edit credentials"
 msgstr "Uredi vjerodajnice"
 
+#, fuzzy
+msgid "Edit credentials form|Current password"
+msgstr "Uredi vjerodajnice"
+
+#, fuzzy
+msgid "Edit credentials form|Do you want to leave Commonfare.net?"
+msgstr "Uredi vjerodajnice"
+
+#, fuzzy
+msgid "Edit credentials form|Password confirmation"
+msgstr "Uredi vjerodajnice"
+
+#, fuzzy
+msgid "Edit credentials form|leave it blank if you don't want to change it"
+msgstr "Uredi vjerodajnice"
+
+#, fuzzy
+msgid "Edit credentials form|we need your current password to confirm your changes"
+msgstr "Uredi vjerodajnice"
+
+#, fuzzy
+msgid "Edit credentials subtitle|Delete account"
+msgstr "Uredi vjerodajnice"
+
 msgid "Edit email"
 msgstr "Uredi email"
 
@@ -195,14 +219,13 @@ msgid "Good Practices"
 msgstr "Dobre prakse"
 
 msgid "Home carousel text|Commonfare is a new and complementary form of welfare provision that is accessible to all and bottom-up. Commonfare is for, with, and by people."
-msgstr ""
+msgstr "Commonfare je ideja o novom obliku socijalne zaštite koja je dostupna svima i koristi pristup odozdo prema gore. Commonfare: ljudi za ljude."
 
 msgid "Home carousel text|Commonfare proposes an unconditional basic income; proper management of common goods; free access to basic needs, and alternative monetary circuits."
-msgstr ""
+msgstr "Commonfare predlaže univerzalni osnovni dohodak; pravedno upravljanje javnim dobrima; besplatan pristup dobrima i uslugama koji zadovoljavaju osnovne potrebe te alternativne monetarne krugove."
 
-#, fuzzy
 msgid "Home carousel text|Commonfare.net is where we share information on existing welfare state provisions, support self-organized welfare initiatives and tell stories to promote collaboration. Join us!"
-msgstr "Pridružite nam se"
+msgstr "Pridružite nam seCommonfare.net je mjesto gdje dijelimo informacije o postojećim odredbama socijalne zaštite, podržavamo samoorganizirane društvene inicijative, dijelimo naše priče i potičemo suradnju. Pridružite nam se!"
 
 msgid "Home carousel title|Get involved and help it grow"
 msgstr ""
@@ -377,25 +400,20 @@ msgid "Welcome page text|About page"
 msgstr "O stranici"
 
 # … and you can *share a Story* of your own …
-#, fuzzy
 msgid "Welcome page text|share a Story"
-msgstr "podijelite priču"
+msgstr ""
 
-#, fuzzy
 msgid "Welcome page|Before you go on, please notice that your temporary name on Commonfare.net is <strong>%{name}</strong>. This is a random name that has been created to protect your privacy, and that you can change anytime. If you want to do it now, just click on it!"
-msgstr "Dobrodošli"
+msgstr ""
 
-#, fuzzy
 msgid "Welcome page|Commonfare.net is constantly growing and more things will come in the next weeks. At the moment you can access the <strong>%{link_to_gps}</strong> and the <strong>%{link_to_wps}</strong> available in Italy, Croatia and the Netherlands, and you can <strong>%{link_to_share_a_story}</strong> of your own that could be a personal experience, some good practices, or anything you would like that other people know of. You can also respond to other people's Stories by commenting them."
-msgstr "Priče"
+msgstr ""
 
-#, fuzzy
 msgid "Welcome page|If you want to know more about what Commonfare.net is and who is actively working on it, please visit our <strong>%{link_to_about_page}</strong>."
-msgstr "Dobrodošli"
+msgstr ""
 
-#, fuzzy
 msgid "Welcome page|Soon you will also be able to create real relations with other Commoners by sharing (and receiving) not only your experience but also time, goods, expertise, etc."
-msgstr "Dobrodošli"
+msgstr ""
 
 msgid "Welcome!"
 msgstr "Dobrodošli!"
