@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: commonfare 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2018-01-11 09:33+0100\n"
+"PO-Revision-Date: 2018-01-11 17:03+0100\n"
 "Language-Team: Dutch\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
@@ -219,7 +219,7 @@ msgid "Home carousel text|Commonfare is a new and complementary form of welfare 
 msgstr "Commonfare is een nieuwe en aanvullende vorm van welvaartsvoorziening die toegankelijk is voor iedereen en die bottom-up (van onderop) wordt georganiseerd. Commonfare is voor, met en door mensen."
 
 msgid "Home carousel text|Commonfare proposes an unconditional basic income; proper management of common goods; free access to basic needs, and alternative monetary circuits."
-msgstr "Commonfare stelt een onvoorwaardelijk basisinkomen voor; het goed beheer van gemeenschappelijke goederen; gratis toegang tot de basisbehoeften en de creatie van complementaire financiële en monetaire systemen."
+msgstr "Commonfare stelt een onvoorwaardelijk basisinkomen voor; het goed beheer van gemeenschappelijke goederen; gratis toegang tot de basisbehoeften en de creatie van alternatieve financiële en monetaire systemen."
 
 msgid "Home carousel text|Commonfare.net is where we share information on existing welfare state provisions, support self-organized welfare initiatives and tell stories to promote collaboration. Join us!"
 msgstr "Commonfare.net is waar we informatie delen over bestaande sociale voorzieningen, zelf georganiseerde initiatieven op het gebied van sociale welvaart steuren en verhalen vertellen om samenwerking te stimuleren. Doe mee!"
