@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: commonfare 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2018-01-11 09:34+0100\n"
+"PO-Revision-Date: 2018-01-11 16:23+0100\n"
 "Language-Team: Croatian\n"
 "Language: hr\n"
 "MIME-Version: 1.0\n"
@@ -138,22 +138,22 @@ msgid "Edit credentials"
 msgstr "Uredi vjerodajnice"
 
 msgid "Edit credentials form|Current password"
-msgstr ""
+msgstr "Trenutna lozinka"
 
 msgid "Edit credentials form|Do you want to leave Commonfare.net?"
-msgstr ""
+msgstr "Želite li napustiti Commonfare.net?"
 
 msgid "Edit credentials form|Password confirmation"
-msgstr ""
+msgstr "Potvrdi lozinku"
 
 msgid "Edit credentials form|leave it blank if you don't want to change it"
-msgstr ""
+msgstr "ostavite prazno ako ne želite promijeniti"
 
 msgid "Edit credentials form|we need your current password to confirm your changes"
-msgstr ""
+msgstr "trebamo vašu trenutnu lozinku za potvrdu vaših izmjena"
 
 msgid "Edit credentials subtitle|Delete account"
-msgstr ""
+msgstr "Izbriši račun"
 
 msgid "Edit email"
 msgstr "Uredi email"
@@ -221,13 +221,13 @@ msgid "Home carousel text|Commonfare.net is where we share information on existi
 msgstr "Pridružite nam seCommonfare.net je mjesto gdje dijelimo informacije o postojećim odredbama socijalne zaštite, podržavamo samoorganizirane društvene inicijative, dijelimo naše priče i potičemo suradnju. Pridružite nam se!"
 
 msgid "Home carousel title|Get involved and help it grow"
-msgstr ""
+msgstr "Pridružite nam se i pomognite nam da razvijamo stranicu"
 
 msgid "Home carousel title|Inform and get informed"
-msgstr ""
+msgstr "Podijeli informacije i informirajse"
 
 msgid "Home carousel title|Share your experience and stories"
-msgstr ""
+msgstr "Podijeli vaša iskustva i priče"
 
 msgid "Homepage"
 msgstr "Početna stranica"
@@ -254,7 +254,7 @@ msgid "Login page button|Log in"
 msgstr "Prijavite se"
 
 msgid "Login page form|Remember me"
-msgstr ""
+msgstr "Zapamti me"
 
 msgid "Login page header|Log in"
 msgstr "Prijavite se"
@@ -319,10 +319,10 @@ msgid "Sign up page button|Join Commonfare"
 msgstr "Pridružite se Commonfare-u"
 
 msgid "Sign up page form hint|%{min_password_length} characters minimum"
-msgstr ""
+msgstr "najmanje znakova %{min_password_length}"
 
 msgid "Sign up page form|Password Confirmation"
-msgstr ""
+msgstr "Potvrdi lozinku"
 
 msgid "Sign up page header|Become a Commoner"
 msgstr "Postanite član"
@@ -343,7 +343,7 @@ msgid "Stories with tag"
 msgstr "Priče"
 
 msgid "Stories with tag %{tag_name}"
-msgstr ""
+msgstr "Priče sa tagom %{tag_name}"
 
 msgid "Story form button|Edit"
 msgstr "Uredi"
@@ -388,25 +388,24 @@ msgid "Welcome"
 msgstr "Dobrodošli"
 
 # … please visit our *About page*.
-#, fuzzy
 msgid "Welcome page text|About page"
-msgstr "O stranici"
+msgstr "o stranici"
 
 # … and you can *share a Story* of your own …
 msgid "Welcome page text|share a Story"
-msgstr ""
+msgstr "sodjeli svoju priču"
 
 msgid "Welcome page|Before you go on, please notice that your temporary name on Commonfare.net is <strong>%{name}</strong>. This is a random name that has been created to protect your privacy, and that you can change anytime. If you want to do it now, just click on it!"
-msgstr ""
+msgstr "Prije nego što nastavite, obratite pozornost da je vaše privremeno ime na Commonfare.net <strong>%{name}</strong>. Ovo je nasumično izabrano ime nastalo kako bismo zaštitili vašu privatnost. Možete promjeniti vaše ime bilo kada. Ako to želite učiniti sada, pritisnite ime!"
 
 msgid "Welcome page|Commonfare.net is constantly growing and more things will come in the next weeks. At the moment you can access the <strong>%{link_to_gps}</strong> and the <strong>%{link_to_wps}</strong> available in Italy, Croatia and the Netherlands, and you can <strong>%{link_to_share_a_story}</strong> of your own that could be a personal experience, some good practices, or anything you would like that other people know of. You can also respond to other people's Stories by commenting them."
-msgstr ""
+msgstr "Commonfare.net kontinuirano raste i više sadržaja će biti dostupno sljedećih tjedana. U ovom trenutku možete pristupiti <strong>%{link_to_gps}</strong> i <strong>%{link_to_wps}</strong> dostupnima u Italiji, Hrvatskoj i Nizozemskoj, te možete <strong>%{link_to_share_a_story}</strong> svoju priču koja može biti osobno iskustvo, neka od dobrih praksi, ili bilo što za što bi željeli da drugi znaju. Također, možete komentirati objave drugih korisnika."
 
 msgid "Welcome page|If you want to know more about what Commonfare.net is and who is actively working on it, please visit our <strong>%{link_to_about_page}</strong>."
-msgstr ""
+msgstr "Ukoliko želite znati više o tome što je Commonfare.net i tko aktivno radi na njemu, molimo da posjetite <strong>%{link_to_about_page}</strong>."
 
 msgid "Welcome page|Soon you will also be able to create real relations with other Commoners by sharing (and receiving) not only your experience but also time, goods, expertise, etc."
-msgstr ""
+msgstr "Uskoro ćete biti u mogućnosti kreirati stvarne odnose sa drugim Commoners-ima dijeleći (i primajući) ne samo vaše iskustvo nego i vrijeme, robu i stručnost."
 
 msgid "Welcome!"
 msgstr "Dobrodošli!"

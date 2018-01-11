@@ -55,11 +55,11 @@ hr:
         message:
         subject:
       reset_password_instructions:
-        action:
-        greeting:
-        instruction:
-        instruction_2:
-        instruction_3:
+        action: Promjenite vašu lozinku
+        greeting: Pozdrav! %{recipient}!
+        instruction: Netko je zatražio promjenu vaše lozinke, što se može učiniti na slijedećoj poveznici.
+        instruction_2: Ako to niste vi zatražili, zanemarite ovaj mail.
+        instruction_3: Vaša se lozinka neće promjeniti dok ne pristupite poveznici i napravite novu.
         subject: Upute za promjenu lozinke
       unlock_instructions:
         action:
