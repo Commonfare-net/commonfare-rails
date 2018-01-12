@@ -41,7 +41,7 @@ input#story-share-url {
 .story-card {
   @extend .card;
   box-shadow: 1px 1px 12px #5858582b;
-  border: 1px solid rgba(0, 0, 0, .08);
+  border: 0px;
   .media-body {
     line-height: 1rem;
     a {
@@ -54,13 +54,22 @@ input#story-share-url {
   .card-ribbon {
     padding: 0 10px;
     top: 0px;
+    right: -4px;
     background-color: black;
     color: white;
     &.wp-ribbon {
       background-color: $cf-primary-color;
+      &::after {
+        border-top-color: #a54839;
+        border-left-color: #bd4f3d;
+      }
     }
     &.gp-ribbon {
       background-color: $cf-secondary-color;
+      &::after {
+        border-top-color: #2e5653;
+        border-left-color: #37635f;
+      }
     }
     z-index: 997;
     font-size: 1em;
