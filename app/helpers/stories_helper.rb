@@ -24,7 +24,7 @@ module StoriesHelper
     if story.images.any?
       story.images.first.picture.card.url
     else
-      image_path 'card_default_img.png'
+      image_path 'card_default_img.jpg'
       # 'http://placebear.com/318/150'
     end
   end
@@ -34,7 +34,7 @@ module StoriesHelper
     if story.images.any?
       relative_path = story.images.first.picture.card.url
     else
-      relative_path = image_path 'card_default_img.png'
+      relative_path = image_path 'card_default_img.jpg'
     end
     root_url(locale: nil) + relative_path
   end

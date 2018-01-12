@@ -2,10 +2,17 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .cf-jumbotron {
+  .gray-layer {
+    background-color: rgba(0, 0, 0, .5);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: -2rem;
+  }
   @extend .jumbotron;
   border-radius: 0;
   padding: 4rem 0;
-  background: image-url('jumbotron-bg-hands.jpg') no-repeat center center scroll;
+  background: image-url('jumbotron-bg-wall.jpg') no-repeat center center scroll;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -26,12 +33,13 @@
       //   fill: $cf-primary-color !important;
       // }
       width: inherit;
+      height: auto;
     }
   }
 }
 
 .carousel-container {
-  background-color: rgba(0, 0, 0, .4);
+  // background-color: rgba(0, 0, 0, .4);
   padding: 2rem 0;
 }
 
@@ -47,6 +55,7 @@
     @extend .lead;
     color: white;
     font-weight: 700;
+    font-size: 1.5rem;
     margin: 1em auto;
   }
   .carousel-indicators {
@@ -61,7 +70,9 @@
 }
 
 @media screen and (max-width: 991px) {
-  // Keep this media query, one day it will be used
+  .carousel-control-prev, .carousel-control-next {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -71,6 +82,7 @@
   }
   .carousel-container {
     background-color: inherit;
+    padding: 0;
   }
   .carousel {
     height: 348px;
@@ -82,9 +94,6 @@
         background-color: #888888;
       }
     }
-  }
-  .carousel-control-prev, .carousel-control-next {
-    display: none;
   }
   #logo-svg {
     path {
