@@ -90,6 +90,10 @@ $ docker attach ID
 
 When done, exit `pry` by entering `exit` and detach from the container with `Ctrl+P` `Ctrl+Q`. Don't use `Ctrl+C` because you wuld kill the rails server and so the container itself.
 
+## Translation
+
+We use [translation.io](https://github.com/aurels/translation-gem), so  write text using `_('Free text')` and execute `docker-compose run --rm app rake translation:sync` to push new keys and get new translations.
+
 ## Deployment
 
 See the [wiki](https://github.com/PIENews/commonfare-rails/wiki)

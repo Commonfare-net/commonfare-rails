@@ -55,8 +55,10 @@ gem 'devise-i18n'
 gem 'geocoder'
 
 # Localization
-gem 'gettext_i18n_rails'
-gem 'gettext_i18n_rails_js', '~> 1.2.0'
+# No gettext since we moved to translation.io
+# gem 'gettext_i18n_rails'
+# gem 'gettext_i18n_rails_js', '~> 1.2.0'
+gem 'translation'
 gem 'i18n_data'
 # From branch master to work with Rails 5
 gem 'globalize', git: 'https://github.com/globalize/globalize'
