@@ -1,471 +1,673 @@
 # Croatian translations for app package.
-# Copyright (C) 2017 THE PACKAGE'S COPYRIGHT HOLDER
+# Copyright (C) 2018 app
 # This file is distributed under the same license as the app package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: commonfare 1.0.0\n"
-"Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2018-01-11 16:23+0100\n"
+"Project-Id-Version: app 1.0\n"
+"Report-Msgid-Bugs-To: contact@translation.io\n"
+"POT-Creation-Date: 2018-01-29 13:06+0000\n"
+"PO-Revision-Date: 2018-01-29 14:06+0100\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Croatian\n"
 "Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"Last-Translator: Pietro <pbmolini@fbk.eu>\n"
-"X-Generator: Poedit 2.0.5\n"
-"POT-Creation-Date: \n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4"
+" && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"\n"
 
-msgid "%{commoner_name}'s stories"
-msgstr "Priče %{commoner_name}"
-
-msgid "+ %{other_tags_count} more"
-msgstr "+ %{other_tags_count} više"
-
-# please note translation is "about us" as in croatian you cannot have just "about" on its own.
-msgid "About"
-msgstr "O nama"
-
-msgid "Add a comment"
-msgstr "Dodajte komentar"
-
-msgid "All comments for"
-msgstr "Svi komentari za"
-
-msgid "All your content will be permanently deleted too."
-msgstr "Sav vaš sadržaj će biti trajno izbrisani."
-
-msgid "Already a Commoner?"
-msgstr "Već ste član?"
-
-msgid "An error occured while visiting this page."
-msgstr "Došlo je do pogreške prilikom posjete ovoj stranici."
-
-msgid "Are you sure?"
-msgstr "Jeste li sigurni?"
-
-msgid "Are you sure? This will delete all the comments as well."
-msgstr "Jeste li sigurni? Ovim putem će se izbrisati svi komentari."
-
+#: ../app/assets/javascripts/stories.js.erb:24
 msgid "Attach a file"
 msgstr "Priložite datoteku"
 
-msgid "Auth Button title|Forgot your password?"
-msgstr "Zaboravili ste podatke za logiranje?"
+#: ../app/assets/javascripts/stories.js.erb:38
+msgid "Embed a video"
+msgstr "Embed video"
 
-msgid "Auth Button title|Log in"
-msgstr "Prijavite se"
+#: ../app/controllers/application_controller.rb:16
+msgid "You have to log in to continue"
+msgstr "Morate se prijaviti da biste nastavili"
 
-msgid "Auth Button title|Sign up"
-msgstr "Registrirajte se"
+#: ../app/controllers/comments_controller.rb:41
+msgid "Comment was successfully created."
+msgstr "Komentar je uspješno prenesen."
 
-msgid "Button|Cancel"
-msgstr "Otkazati"
+#: ../app/controllers/comments_controller.rb:58
+msgid "Comment was successfully updated."
+msgstr "Komentar je uspješno ažuriran."
 
+#: ../app/controllers/comments_controller.rb:73
+msgid "Comment was successfully destroyed."
+msgstr "Komentar je uspješno izbrisan."
+
+#: ../app/controllers/stories_controller.rb:68
+msgid "Story was successfully created."
+msgstr "Priča je uspješno prenesena."
+
+#: ../app/controllers/stories_controller.rb:93
+msgid "Story was successfully updated."
+msgstr "Priča je uspješno ažururana."
+
+#: ../app/controllers/stories_controller.rb:109
+msgid "Story was successfully destroyed."
+msgstr "Priča je uspješno izbrisana."
+
+#: ../app/helpers/stories_helper.rb:6
+msgid "+ %{other_tags_count} more"
+msgstr "+ %{other_tags_count} više"
+
+#: ../app/helpers/stories_helper.rb:54
+#: ../app/views/commoners/welcome.html.erb:9
+msgid "Good Practices"
+msgstr "Dobre prakse"
+
+#: ../app/helpers/stories_helper.rb:56
+#: ../app/views/commoners/welcome.html.erb:9
+msgid "Welfare Provisions"
+msgstr "Odredbe socijalne skrbi"
+
+#: ../app/helpers/stories_helper.rb:58
+msgid "Stories"
+msgstr "Priče"
+
+#: ../app/views/comments/_fields.html.erb:2
+msgid "Add a comment"
+msgstr "Dodajte komentar"
+
+#: ../app/views/comments/_list.html.erb:2
+#: ../app/views/stories/_comments.html.erb:16
+msgid "There are no comments for this Story"
+msgstr "Nema komentara za ovu priču"
+
+#: ../app/views/comments/_list.html.erb:15
+msgid "Edit comment"
+msgstr "Uredi komentar"
+
+#: ../app/views/comments/_new.html.erb:4
 msgid "Button|Comment"
 msgstr "Komentirajte"
 
+#: ../app/views/comments/edit.html.erb:3
+msgid "Edit your comment"
+msgstr "Uredi komentar"
+
+#: ../app/views/comments/edit.html.erb:5
+#: ../app/views/stories/_comments.html.erb:28
+msgid "Edit"
+msgstr "Uredi"
+
+#: ../app/views/comments/edit.html.erb:8
+msgid "Delete this comment"
+msgstr "Izbriši ovaj komentar"
+
+#: ../app/views/comments/edit.html.erb:8
+#: ../app/views/users/registrations/edit.html.erb:31
+msgid "Are you sure?"
+msgstr "Jeste li sigurni?"
+
+#: ../app/views/comments/index.html.erb:4
+msgid "All comments for"
+msgstr "Svi komentari za"
+
+#: ../app/views/commoners/_form.html.erb:7
+msgid "Square pictures look better ✨"
+msgstr "Kvadratne slike izgledaju bolje ✨"
+
+#: ../app/views/commoners/_form.html.erb:11
+msgid "Your name on Commonfare.net"
+msgstr "Vaše ime na Commonfare.net-u"
+
+#: ../app/views/commoners/_form.html.erb:12
+msgid "e.g. Bungo Baggins, pbm42, etc."
+msgstr "npr. Bungo Baggins, pbm42, itd."
+
+#: ../app/views/commoners/_form.html.erb:13
+msgid "It must be unique"
+msgstr "Mora biti jedinstveno"
+
+#: ../app/views/commoners/edit.html.erb:1
+#: ../app/views/commoners/edit.html.erb:4
+msgid "Edit profile"
+msgstr "Uredi profil"
+
+#: ../app/views/commoners/edit.html.erb:8
+msgid "Edit your email or password"
+msgstr "Uredi email ili lozinku"
+
+#: ../app/views/commoners/show.html.erb:8
 msgid "Button|Edit profile"
 msgstr "Uredite profil"
 
+#: ../app/views/commoners/show.html.erb:15
+msgid "%{commoner_name}'s stories"
+msgstr "Priče %{commoner_name}"
+
+#: ../app/views/commoners/show.html.erb:27
+msgid "No stories yet"
+msgstr "Još nema priča"
+
+#: ../app/views/commoners/show.html.erb:35 ../app/views/pages/home.html.erb:85
+#: ../app/views/pages/home.html.erb:101 ../app/views/pages/home.html.erb:117
+msgid "See all"
+msgstr "Vidi sve"
+
+#: ../app/views/commoners/welcome.html.erb:1
+#: ../app/views/commoners/welcome.html.erb:4
+msgid "Welcome!"
+msgstr "Dobrodošli!"
+
+#: ../app/views/commoners/welcome.html.erb:6
+msgid ""
+"Welcome page|Before you go on, please notice that your temporary name on Commo"
+"nfare.net is <strong>%{name}</strong>. This is a random name that has been cre"
+"ated to protect your privacy, and that you can change anytime. If you want to "
+"do it now, just click on it!"
+msgstr ""
+"Prije nego što nastavite, obratite pozornost da je vaše privremeno ime na Comm"
+"onfare.net <strong>%{name}</strong>. Ovo je nasumično izabrano ime nastalo kak"
+"o bismo zaštitili vašu privatnost. Možete promjeniti vaše ime bilo kada. Ako t"
+"o želite učiniti sada, pritisnite ime!"
+
+#: ../app/views/commoners/welcome.html.erb:9
+msgid ""
+"Welcome page|Commonfare.net is constantly growing and more things will come in"
+" the next weeks. At the moment you can access the <strong>%{link_to_gps}</stro"
+"ng> and the <strong>%{link_to_wps}</strong> available in Italy, Croatia and th"
+"e Netherlands, and you can <strong>%{link_to_share_a_story}</strong> of your o"
+"wn that could be a personal experience, some good practices, or anything you w"
+"ould like that other people know of. You can also respond to other people's St"
+"ories by commenting them."
+msgstr ""
+"Commonfare.net kontinuirano raste i više sadržaja će biti dostupno sljedećih t"
+"jedana. U ovom trenutku možete pristupiti <strong>%{link_to_gps}</strong> i <s"
+"trong>%{link_to_wps}</strong> dostupnima u Italiji, Hrvatskoj i Nizozemskoj, t"
+"e možete <strong>%{link_to_share_a_story}</strong> svoju priču koja može biti "
+"osobno iskustvo, neka od dobrih praksi, ili bilo što za što bi željeli da drug"
+"i znaju. Također, možete komentirati objave drugih korisnika."
+
+#: ../app/views/commoners/welcome.html.erb:9
+msgid "Welcome page text|share a Story"
+msgstr "sodjeli svoju priču"
+
+#: ../app/views/commoners/welcome.html.erb:12
+msgid ""
+"Welcome page|Soon you will also be able to create real relations with other Co"
+"mmoners by sharing (and receiving) not only your experience but also time, goo"
+"ds, expertise, etc."
+msgstr ""
+"Uskoro ćete biti u mogućnosti kreirati stvarne odnose sa drugim Commoners-ima "
+"dijeleći (i primajući) ne samo vaše iskustvo nego i vrijeme, robu i stručnost."
+
+#: ../app/views/commoners/welcome.html.erb:15
+msgid ""
+"Welcome page|If you want to know more about what Commonfare.net is and who is "
+"actively working on it, please visit our <strong>%{link_to_about_page}</strong"
+">."
+msgstr ""
+"Ukoliko želite znati više o tome što je Commonfare.net i tko aktivno radi na n"
+"jemu, molimo da posjetite <strong>%{link_to_about_page}</strong>."
+
+#: ../app/views/commoners/welcome.html.erb:15
+msgid "Welcome page text|About page"
+msgstr "o stranici"
+
+#: ../app/views/exception_handler/exceptions/show.html.erb:1
+msgid "Error"
+msgstr "Greška"
+
+#: ../app/views/exception_handler/exceptions/show.html.erb:9
+msgid "Sorry, the page you are looking for does not exist."
+msgstr "Žao nam je, stranica koju tražite ne postoji."
+
+#: ../app/views/exception_handler/exceptions/show.html.erb:11
+msgid "An error occured while visiting this page."
+msgstr "Došlo je do pogreške prilikom posjete ovoj stranici."
+
+#: ../app/views/exception_handler/exceptions/show.html.erb:17
+msgid "Error code: %{err_code}"
+msgstr "Kod pogreške"
+
+#: ../app/views/exception_handler/exceptions/show.html.erb:22
+#: ../app/views/layouts/_footer.html.erb:16
+msgid "Homepage"
+msgstr "Početna stranica"
+
+#: ../app/views/layouts/_footer.html.erb:25
+msgid "Footer|About"
+msgstr "O nama"
+
+#: ../app/views/layouts/_footer.html.erb:26
+msgid "Footer|Terms of Service"
+msgstr "Uvjeti pružanja usluge"
+
+#: ../app/views/layouts/_footer.html.erb:27
+msgid "Footer|Privacy"
+msgstr "Privatnost"
+
+#: ../app/views/layouts/_navbar.html.erb:15
+#: ../app/views/layouts/_navbar.html.erb:27
+msgid "Search"
+msgstr "Pretraži"
+
+#: ../app/views/layouts/_navbar.html.erb:32
+msgid "Navbar|Home"
+msgstr "Početna stranica"
+
+#: ../app/views/layouts/_navbar.html.erb:39
+msgid "Navbar|Logout"
+msgstr "Odjavite se"
+
+#: ../app/views/layouts/_navbar.html.erb:43
+msgid "Navbar|Login"
+msgstr "Prijavite se"
+
+#: ../app/views/layouts/_navbar.html.erb:46
+msgid "Navbar|Join"
+msgstr "Pridružite se"
+
+#: ../app/views/layouts/application.html.erb:4
+msgid "Welcome"
+msgstr "Dobrodošli"
+
+#: ../app/views/main/search.html.erb:1
+msgid "Results for %{search_term}"
+msgstr "Rezultati za"
+
+#: ../app/views/main/search.html.erb:2
+msgid "Results for '%{search_term}'"
+msgstr "Rezultati za ‘%{search_term}’"
+
+#: ../app/views/pages/about.html.erb:1
+msgid "About"
+msgstr "O nama"
+
+#: ../app/views/pages/home.html.erb:27
+msgid ""
+"Home carousel text|Commonfare is a new and complementary form of welfare provi"
+"sion that is accessible to all and bottom-up. Commonfare is for, with, and by "
+"people."
+msgstr ""
+"Commonfare je ideja o novom obliku socijalne zaštite koja je dostupna svima i "
+"koristi pristup odozdo prema gore. Commonfare: ljudi za ljude."
+
+#: ../app/views/pages/home.html.erb:32
+msgid ""
+"Home carousel text|Commonfare proposes an unconditional basic income; proper m"
+"anagement of common goods; free access to basic needs, and alternative monetar"
+"y circuits."
+msgstr ""
+"Commonfare predlaže univerzalni osnovni dohodak; pravedno upravljanje javnim d"
+"obrima; besplatan pristup dobrima i uslugama koji zadovoljavaju osnovne potreb"
+"e te alternativne monetarne krugove."
+
+#: ../app/views/pages/home.html.erb:37
+msgid ""
+"Home carousel text|Commonfare.net is where we share information on existing we"
+"lfare state provisions, support self-organized welfare initiatives and tell st"
+"ories to promote collaboration. Join us!"
+msgstr ""
+"Pridružite nam seCommonfare.net je mjesto gdje dijelimo informacije o postojeć"
+"im odredbama socijalne zaštite, podržavamo samoorganizirane društvene inicijat"
+"ive, dijelimo naše priče i potičemo suradnju. Pridružite nam se!"
+
+#: ../app/views/pages/home.html.erb:61
 msgid "Button|Join"
 msgstr "Pridružite se"
 
+#: ../app/views/pages/home.html.erb:64
 msgid "Button|Login"
 msgstr "Prijavite se"
 
+#: ../app/views/pages/home.html.erb:75
+msgid "Latest Stories"
+msgstr "Najnovije priče"
+
+#: ../app/views/pages/home.html.erb:91
+msgid "Latest Good Practices"
+msgstr "Najnovije dobre prakse"
+
+#: ../app/views/pages/home.html.erb:107
+msgid "Latest Welfare Provisions"
+msgstr "Najnovije odredbe socijalne skrbi"
+
+#: ../app/views/pages/privacy.html.erb:1
+#: ../app/views/users/registrations/new.html.erb:15
+msgid "Privacy Policy"
+msgstr "Pravila o privatnosti"
+
+#: ../app/views/pages/tos.html.erb:1
+#: ../app/views/users/registrations/new.html.erb:14
+msgid "Terms of Service"
+msgstr "Uvjeti pružanja usluge"
+
+#: ../app/views/shared/_back_and_save_buttons.html.erb:5
+msgid "Button|Cancel"
+msgstr "Otkazati"
+
+#: ../app/views/shared/_back_and_save_buttons.html.erb:8
 msgid "Button|Save"
 msgstr "Spremi"
 
-# If by "share" is meant to share with the community, via facebook, twitter, etc, then this is the correct word. If by "share" we are olny referring to publishing content on the website, then please replace with "objavite".
-msgid "Button|Share"
-msgstr "Podjeli"
+#: ../app/views/stories/_card.html.erb:3 ../app/views/stories/show.html.erb:26
+msgid "Welfare Provision"
+msgstr "Odredba socijalne skrbi"
 
-msgid "By joining you agree to our %{tos} and %{privacy}."
-msgstr "Pridruživanjem se slažete sa našim %{tos} i %{privacy}."
+#: ../app/views/stories/_card.html.erb:6 ../app/views/stories/show.html.erb:31
+msgid "Good Practice"
+msgstr "Dobra praksa"
 
-msgid "Change password page button|Change my password"
-msgstr "Promjenite lozinku"
+#: ../app/views/stories/_comments.html.erb:5
+msgid "Write a comment"
+msgstr "Dodajte komentar"
 
-msgid "Change password page field|Confirm your new password"
-msgstr "Potvrdite novu lozinku"
+#: ../app/views/stories/_comments.html.erb:7
+msgid "Publish comment button|Comment"
+msgstr "Komentirajte"
 
-msgid "Change password page field|New password"
-msgstr "Nova lozinka"
+#: ../app/views/stories/_comments.html.erb:14
+msgid "Comments"
+msgstr "Komentari"
 
-msgid "Change password page header|Change your password"
-msgstr "Promjenite lozinku"
+#: ../app/views/stories/_comments.html.erb:25
+msgid "commented on %{date}"
+msgstr "comentirano %{date}"
 
+#: ../app/views/stories/_fields.html.erb:3
+msgid "Give a title to your content"
+msgstr "Dajte naslov vašem sadržaju"
+
+#: ../app/views/stories/_fields.html.erb:5
+msgid "e.g. There and back again"
+msgstr "npr. tamo i natrag"
+
+#: ../app/views/stories/_fields.html.erb:7
+msgid "Write here"
+msgstr "Napišite ovdje"
+
+#: ../app/views/stories/_fields.html.erb:10
+msgid "Please don't be too short (min. 500 chars)"
+msgstr "Molimo vas, nemojte biti prekratki (najmanje 500 znakova)"
+
+#: ../app/views/stories/_fields.html.erb:12
+msgid "Where is this set?"
+msgstr "Gdje se ovo dogodilo?"
+
+#: ../app/views/stories/_fields.html.erb:14
+#: ../app/views/stories/_form.html.erb:11
+msgid "e.g. Milan, Italy"
+msgstr "npr. Milano, Italija"
+
+#: ../app/views/stories/_fields.html.erb:15
 msgid "City, Region, Country"
 msgstr "Grad, regija, zemlja"
 
+#: ../app/views/stories/_fields.html.erb:17
+msgid "Tags"
+msgstr "Oznake"
+
+#: ../app/views/stories/_fields.html.erb:19
+msgid "Use comma or press Enter to separate tags"
+msgstr "Koristite zarez ili pritisnite Enter za razdvajanje oznaka"
+
+#: ../app/views/stories/_fields.html.erb:96
+msgid "Uploading image, please wait..."
+msgstr "Slika se prenosi, molimo vas pričekajte..."
+
+#: ../app/views/stories/_fields.html.erb:105
+#: ../app/views/stories/_fields.html.erb:115
+msgid "Publish"
+msgstr "Objavite"
+
+#: ../app/views/stories/_fields.html.erb:127
+msgid "e.g. Pregnancy, Food sharing, etc."
+msgstr "npr. trudnoća, dijeljenje hrane, itd."
+
+#: ../app/views/stories/_form.html.erb:6
+msgid "What is the title of your story?"
+msgstr "Što je naslov vaše priče?"
+
+#: ../app/views/stories/_form.html.erb:10
+msgid "Please don't be too concise (min. 500 chars)"
+msgstr "Molimo vas, nemojte biti prekratki (najmanje 500 znakova)"
+
+#: ../app/views/stories/_form.html.erb:11
+msgid "The city, region or country of your story"
+msgstr "Grad, regija ili zemlja vaše priče"
+
+#: ../app/views/stories/_form.html.erb:12
+msgid "Story form button|Share your Story"
+msgstr "Podjeli priču"
+
+#: ../app/views/stories/_share_modal.html.erb:6
+msgid "Modal title|Share this Story"
+msgstr "Podjelite ovu priču"
+
+#: ../app/views/stories/_share_modal.html.erb:14
+msgid ""
+"Commonfare.net is not linked to any external platform, so to share this Story "
+"on Facebook, Twitter, etc. you can copy the URL and paste it there."
+msgstr ""
+
+#: ../app/views/stories/_share_modal.html.erb:18
+msgid "Copy and close"
+msgstr "Kopirajte i zatvorite"
+
+#: ../app/views/stories/edit.html.erb:1
+msgid "Edit your Story"
+msgstr "Uredi priču"
+
+#: ../app/views/stories/edit.html.erb:6
+msgid "You are editing in"
+msgstr "Uređuješ na"
+
+#: ../app/views/stories/edit.html.erb:20
+msgid "You haven't yet saved this Story in %{localised_lang_name}"
+msgstr "Još niste spremili priču na"
+
+#: ../app/views/stories/edit.html.erb:27
+msgid "Story form button|Edit"
+msgstr "Uredi"
+
+#: ../app/views/stories/edit.html.erb:30 ../app/views/stories/new.html.erb:24
+msgid "Publishing..."
+msgstr "Objavljiva se..."
+
+#: ../app/views/stories/edit.html.erb:34
+msgid "Delete this Story"
+msgstr "Izbriši ovu priču"
+
+#: ../app/views/stories/edit.html.erb:38
+msgid "Are you sure? This will delete all the comments as well."
+msgstr "Jeste li sigurni? Ovim putem će se izbrisati svi komentari."
+
+#: ../app/views/stories/index.html.erb:4
+msgid "Stories by %{author_name}"
+msgstr "Priče od"
+
+#: ../app/views/stories/new.html.erb:1
+msgid "Write your Story"
+msgstr "Napišite priču"
+
+#: ../app/views/stories/new.html.erb:6
+msgid "You are writing in"
+msgstr "Pišete na"
+
+#: ../app/views/stories/new.html.erb:21
+msgid "Story form button|Publish"
+msgstr "Objavi"
+
+#: ../app/views/stories/show.html.erb:20
+msgid "Read in %{other_languages}"
+msgstr "Čitajte na"
+
+#: ../app/views/stories/show.html.erb:51
+msgid "You"
+msgstr "Vi"
+
+#: ../app/views/stories/show.html.erb:115
+msgid "Button|Share"
+msgstr "Podjeli"
+
+#: ../app/views/stories/show.html.erb:126
 msgid "Comment"
 msgid_plural "Comments"
 msgstr[0] "Komentar"
 msgstr[1] "Komentara"
 msgstr[2] "Komentara"
 
-msgid "Comment was successfully created."
-msgstr "Komentar je uspješno prenesen."
-
-msgid "Comment was successfully destroyed."
-msgstr "Komentar je uspješno izbrisan."
-
-msgid "Comment was successfully updated."
-msgstr "Komentar je uspješno ažuriran."
-
-msgid "Comments"
-msgstr "Komentari"
-
-msgid "Copy and close"
-msgstr "Kopirajte i zatvorite"
-
-msgid "Delete this Story"
-msgstr "Izbriši ovu priču"
-
-msgid "Delete this comment"
-msgstr "Izbriši ovaj komentar"
-
-msgid "Edit"
-msgstr "Uredi"
-
-msgid "Edit comment"
-msgstr "Uredi komentar"
-
-msgid "Edit credentials"
-msgstr "Uredi vjerodajnice"
-
-msgid "Edit credentials form|Current password"
-msgstr "Trenutna lozinka"
-
-msgid "Edit credentials form|Do you want to leave Commonfare.net?"
-msgstr "Želite li napustiti Commonfare.net?"
-
-msgid "Edit credentials form|Password confirmation"
-msgstr "Potvrdi lozinku"
-
-msgid "Edit credentials form|leave it blank if you don't want to change it"
-msgstr "ostavite prazno ako ne želite promijeniti"
-
-msgid "Edit credentials form|we need your current password to confirm your changes"
-msgstr "trebamo vašu trenutnu lozinku za potvrdu vaših izmjena"
-
-msgid "Edit credentials subtitle|Delete account"
-msgstr "Izbriši račun"
-
-msgid "Edit email"
-msgstr "Uredi email"
-
-msgid "Edit password"
-msgstr "Uredi lozinku"
-
-msgid "Edit profile"
-msgstr "Uredi profil"
-
-msgid "Edit your Story"
-msgstr "Uredi priču"
-
-msgid "Edit your comment"
-msgstr "Uredi komentar"
-
-msgid "Edit your email or password"
-msgstr "Uredi email ili lozinku"
-
-msgid "Embed a video"
-msgstr "Embed video"
-
-msgid "Error"
-msgstr "Greška"
-
-msgid "Error code: %{err_code}"
-msgstr "Kod pogreške"
-
-# Here as before, in croatian we have to specify "about" what/who. I have translated about us here
-msgid "Footer|About"
-msgstr "O nama"
-
-msgid "Footer|Privacy"
-msgstr "Privatnost"
-
-# In Croatian, only the first word in a term in capitalized, the rest is lower case as written
-msgid "Footer|Terms of Service"
-msgstr "Uvjeti pružanja usluge"
-
-msgid "Forgot password"
-msgstr "Zaboravili ste lozinku"
-
-msgid "Forgot password page button|Send me the instructions"
-msgstr "Pošaljite mi upute"
-
-msgid "Forgot password page header|Forgot password?"
-msgstr "Zaboravili ste lozinku?"
-
-msgid "Give a title to your content"
-msgstr "Dajte naslov vašem sadržaju"
-
-msgid "Good Practice"
-msgstr "Dobra praksa"
-
-msgid "Good Practices"
-msgstr "Dobre prakse"
-
-msgid "Home carousel text|Commonfare is a new and complementary form of welfare provision that is accessible to all and bottom-up. Commonfare is for, with, and by people."
-msgstr "Commonfare je ideja o novom obliku socijalne zaštite koja je dostupna svima i koristi pristup odozdo prema gore. Commonfare: ljudi za ljude."
-
-msgid "Home carousel text|Commonfare proposes an unconditional basic income; proper management of common goods; free access to basic needs, and alternative monetary circuits."
-msgstr "Commonfare predlaže univerzalni osnovni dohodak; pravedno upravljanje javnim dobrima; besplatan pristup dobrima i uslugama koji zadovoljavaju osnovne potrebe te alternativne monetarne krugove."
-
-msgid "Home carousel text|Commonfare.net is where we share information on existing welfare state provisions, support self-organized welfare initiatives and tell stories to promote collaboration. Join us!"
-msgstr "Pridružite nam seCommonfare.net je mjesto gdje dijelimo informacije o postojećim odredbama socijalne zaštite, podržavamo samoorganizirane društvene inicijative, dijelimo naše priče i potičemo suradnju. Pridružite nam se!"
-
-msgid "Home carousel title|Get involved and help it grow"
-msgstr "Pridružite nam se i pomognite nam da razvijamo stranicu"
-
-msgid "Home carousel title|Inform and get informed"
-msgstr "Podijeli informacije i informirajse"
-
-msgid "Home carousel title|Share your experience and stories"
-msgstr "Podijeli vaša iskustva i priče"
-
-msgid "Homepage"
-msgstr "Početna stranica"
-
-msgid "It must be unique"
-msgstr "Mora biti jedinstveno"
-
-msgid "Join us"
-msgstr "Pridružite nam se"
-
-msgid "Latest Good Practices"
-msgstr "Najnovije dobre prakse"
-
-msgid "Latest Stories"
-msgstr "Najnovije priče"
-
-msgid "Latest Welfare Provisions"
-msgstr "Najnovije odredbe socijalne skrbi"
-
-msgid "Log in"
-msgstr "Prijavite se"
-
-msgid "Login page button|Log in"
-msgstr "Prijavite se"
-
-msgid "Login page form|Remember me"
-msgstr "Zapamti me"
-
-msgid "Login page header|Log in"
-msgstr "Prijavite se"
-
-msgid "Modal title|Share this Story"
-msgstr "Podjelite ovu priču"
-
-msgid "Navbar|Home"
-msgstr "Početna stranica"
-
-msgid "Navbar|Join"
-msgstr "Pridružite se"
-
-msgid "Navbar|Login"
-msgstr "Prijavite se"
-
-msgid "Navbar|Logout"
-msgstr "Odjavite se"
-
-# Please note, ni croatian we cannot say "create a new one" with specifying what "one" is, so I have assumed here that we are talking about a new password, so the exact translation is "No problem. Enter your email adress and we will send you the link for creating a new password."
-msgid "No problem. Just enter your email address here and we will send you the link for creating a new one."
-msgstr "Nema problema. Unesite vašu e-mail adresu i poslat ćemo vam upute za izradu nove lozinke."
-
-msgid "No stories yet"
-msgstr "Još nema priča"
-
-# I would change this phrasing, because in Croatian (and english) concise means to write something that is exact, precise, and does not include unnecessary details --- generally a good thing.
-msgid "Please don't be too concise (min. 500 chars)"
-msgstr "Molimo vas, nemojte biti prekratki (najmanje 500 znakova)"
-
-msgid "Please don't be too short (min. 500 chars)"
-msgstr "Molimo vas, nemojte biti prekratki (najmanje 500 znakova)"
-
-msgid "Privacy Policy"
-msgstr "Pravila o privatnosti"
-
-msgid "Publish"
-msgstr "Objavite"
-
-msgid "Publish comment button|Comment"
-msgstr "Komentirajte"
-
-msgid "Publishing..."
-msgstr "Objavljiva se..."
-
-msgid "Read in %{other_languages}"
-msgstr "Čitajte na"
-
-msgid "Results for %{search_term}"
-msgstr "Rezultati za"
-
-msgid "Results for '%{search_term}'"
-msgstr "Rezultati za ‘%{search_term}’"
-
-msgid "Search"
-msgstr "Pretraži"
-
-msgid "See all"
-msgstr "Vidi sve"
-
-msgid "Sign up page button|Join Commonfare"
-msgstr "Pridružite se Commonfare-u"
-
-msgid "Sign up page form hint|%{min_password_length} characters minimum"
-msgstr "najmanje znakova %{min_password_length}"
-
-msgid "Sign up page form|Password Confirmation"
-msgstr "Potvrdi lozinku"
-
-msgid "Sign up page header|Become a Commoner"
-msgstr "Postanite član"
-
-msgid "Sorry, the page you are looking for does not exist."
-msgstr "Žao nam je, stranica koju tražite ne postoji."
-
-msgid "Square pictures look better ✨"
-msgstr "Kvadratne slike izgledaju bolje ✨"
-
-msgid "Stories"
-msgstr "Priče"
-
-msgid "Stories by %{author_name}"
-msgstr "Priče od"
-
-msgid "Stories with tag"
-msgstr "Priče"
-
+#: ../app/views/tags/show.html.erb:1
 msgid "Stories with tag %{tag_name}"
 msgstr "Priče sa tagom %{tag_name}"
 
-msgid "Story form button|Edit"
-msgstr "Uredi"
+#: ../app/views/tags/show.html.erb:2
+msgid "Stories with tag"
+msgstr "Priče"
 
-msgid "Story form button|Publish"
-msgstr "Objavi"
+#: ../app/views/users/passwords/edit.html.erb:1
+#: ../app/views/users/passwords/edit.html.erb:4
+msgid "Change password page header|Change your password"
+msgstr "Promjenite lozinku"
 
-msgid "Story form button|Share your Story"
-msgstr "Podjeli priču"
+#: ../app/views/users/passwords/edit.html.erb:9
+msgid "Change password page field|New password"
+msgstr "Nova lozinka"
 
-msgid "Story was successfully created."
-msgstr "Priča je uspješno prenesena."
+#: ../app/views/users/passwords/edit.html.erb:9
+#: ../app/views/users/registrations/new.html.erb:9
+msgid "Sign up page form hint|%{min_password_length} characters minimum"
+msgstr "najmanje znakova %{min_password_length}"
 
-msgid "Story was successfully destroyed."
-msgstr "Priča je uspješno izbrisana."
+#: ../app/views/users/passwords/edit.html.erb:10
+msgid "Change password page field|Confirm your new password"
+msgstr "Potvrdite novu lozinku"
 
-msgid "Story was successfully updated."
-msgstr "Priča je uspješno ažururana."
+#: ../app/views/users/passwords/edit.html.erb:11
+msgid "Change password page button|Change my password"
+msgstr "Promjenite lozinku"
 
-msgid "Tags"
-msgstr "Oznake"
+#: ../app/views/users/passwords/new.html.erb:1
+msgid "Forgot password"
+msgstr "Zaboravili ste lozinku"
 
-msgid "Terms of Service"
-msgstr "Uvjeti pružanja usluge"
+#: ../app/views/users/passwords/new.html.erb:4
+msgid "Forgot password page header|Forgot password?"
+msgstr "Zaboravili ste lozinku?"
 
-msgid "The city, region or country of your story"
-msgstr "Grad, regija ili zemlja vaše priče"
+#: ../app/views/users/passwords/new.html.erb:5
+msgid ""
+"No problem. Just enter your email address here and we will send you the link f"
+"or creating a new one."
+msgstr ""
+"Nema problema. Unesite vašu e-mail adresu i poslat ćemo vam upute za izradu no"
+"ve lozinke."
 
-msgid "There are no comments for this Story"
-msgstr "Nema komentara za ovu priču"
+#: ../app/views/users/passwords/new.html.erb:9
+msgid "Forgot password page button|Send me the instructions"
+msgstr "Pošaljite mi upute"
 
-msgid "Uploading image, please wait..."
-msgstr "Slika se prenosi, molimo vas pričekajte..."
+#: ../app/views/users/registrations/edit.html.erb:1
+#: ../app/views/users/registrations/edit.html.erb:4
+msgid "Edit credentials"
+msgstr "Uredi vjerodajnice"
 
-msgid "Use comma or press Enter to separate tags"
-msgstr "Koristite zarez ili pritisnite Enter za razdvajanje oznaka"
+#: ../app/views/users/registrations/edit.html.erb:8
+msgid "Edit email"
+msgstr "Uredi email"
 
-msgid "Want to be a Commoner?"
-msgstr "Želite biti Commoner?"
+#: ../app/views/users/registrations/edit.html.erb:14
+msgid "Edit password"
+msgstr "Uredi lozinku"
 
-msgid "Welcome"
-msgstr "Dobrodošli"
+#: ../app/views/users/registrations/edit.html.erb:15
+msgid "Edit credentials form|leave it blank if you don't want to change it"
+msgstr "ostavite prazno ako ne želite promijeniti"
 
-# … please visit our *About page*.
-msgid "Welcome page text|About page"
-msgstr "o stranici"
+#: ../app/views/users/registrations/edit.html.erb:16
+msgid "Edit credentials form|Password confirmation"
+msgstr "Potvrdi lozinku"
 
-# … and you can *share a Story* of your own …
-msgid "Welcome page text|share a Story"
-msgstr "sodjeli svoju priču"
+#: ../app/views/users/registrations/edit.html.erb:17
+msgid "Edit credentials form|Current password"
+msgstr "Trenutna lozinka"
 
-msgid "Welcome page|Before you go on, please notice that your temporary name on Commonfare.net is <strong>%{name}</strong>. This is a random name that has been created to protect your privacy, and that you can change anytime. If you want to do it now, just click on it!"
-msgstr "Prije nego što nastavite, obratite pozornost da je vaše privremeno ime na Commonfare.net <strong>%{name}</strong>. Ovo je nasumično izabrano ime nastalo kako bismo zaštitili vašu privatnost. Možete promjeniti vaše ime bilo kada. Ako to želite učiniti sada, pritisnite ime!"
+#: ../app/views/users/registrations/edit.html.erb:17
+msgid "Edit credentials form|we need your current password to confirm your changes"
+msgstr "trebamo vašu trenutnu lozinku za potvrdu vaših izmjena"
 
-msgid "Welcome page|Commonfare.net is constantly growing and more things will come in the next weeks. At the moment you can access the <strong>%{link_to_gps}</strong> and the <strong>%{link_to_wps}</strong> available in Italy, Croatia and the Netherlands, and you can <strong>%{link_to_share_a_story}</strong> of your own that could be a personal experience, some good practices, or anything you would like that other people know of. You can also respond to other people's Stories by commenting them."
-msgstr "Commonfare.net kontinuirano raste i više sadržaja će biti dostupno sljedećih tjedana. U ovom trenutku možete pristupiti <strong>%{link_to_gps}</strong> i <strong>%{link_to_wps}</strong> dostupnima u Italiji, Hrvatskoj i Nizozemskoj, te možete <strong>%{link_to_share_a_story}</strong> svoju priču koja može biti osobno iskustvo, neka od dobrih praksi, ili bilo što za što bi željeli da drugi znaju. Također, možete komentirati objave drugih korisnika."
+#: ../app/views/users/registrations/edit.html.erb:22
+msgid "Edit credentials subtitle|Delete account"
+msgstr "Izbriši račun"
 
-msgid "Welcome page|If you want to know more about what Commonfare.net is and who is actively working on it, please visit our <strong>%{link_to_about_page}</strong>."
-msgstr "Ukoliko želite znati više o tome što je Commonfare.net i tko aktivno radi na njemu, molimo da posjetite <strong>%{link_to_about_page}</strong>."
+#: ../app/views/users/registrations/edit.html.erb:24
+msgid "Edit credentials form|Do you want to leave Commonfare.net?"
+msgstr "Želite li napustiti Commonfare.net?"
 
-msgid "Welcome page|Soon you will also be able to create real relations with other Commoners by sharing (and receiving) not only your experience but also time, goods, expertise, etc."
-msgstr "Uskoro ćete biti u mogućnosti kreirati stvarne odnose sa drugim Commoners-ima dijeleći (i primajući) ne samo vaše iskustvo nego i vrijeme, robu i stručnost."
+#: ../app/views/users/registrations/edit.html.erb:26
+msgid "All your content will be permanently deleted too."
+msgstr "Sav vaš sadržaj će biti trajno izbrisani."
 
-msgid "Welcome!"
-msgstr "Dobrodošli!"
-
-msgid "Welfare Provision"
-msgstr "Odredba socijalne skrbi"
-
-msgid "Welfare Provisions"
-msgstr "Odredbe socijalne skrbi"
-
-msgid "What is the title of your story?"
-msgstr "Što je naslov vaše priče?"
-
-msgid "Where is this set?"
-msgstr "Gdje se ovo dogodilo?"
-
-msgid "Write a comment"
-msgstr "Dodajte komentar"
-
-msgid "Write here"
-msgstr "Napišite ovdje"
-
-msgid "Write your Story"
-msgstr "Napišite priču"
-
+#: ../app/views/users/registrations/edit.html.erb:28
 msgid "Yes please. Cancel my account"
 msgstr "Da, molim vas izbrišite moj račun"
 
-# Please note I am using the third person formal "you" and not the second person, informal "you" here. i.e. " vous" vs "tu" in french.
-# Please note that I have used the formal "you" throughout the translations
-msgid "You"
-msgstr "Vi"
+#: ../app/views/users/registrations/new.html.erb:1
+#: ../app/views/users/sessions/new.html.erb:5
+msgid "Join us"
+msgstr "Pridružite nam se"
 
-# Assuming this will refer to language, the translation is as written. If it is refering to something else, the translation may be different.
-msgid "You are editing in"
-msgstr "Uređuješ na"
+#: ../app/views/users/registrations/new.html.erb:4
+msgid "Sign up page header|Become a Commoner"
+msgstr "Postanite član"
 
-msgid "You are writing in"
-msgstr "Pišete na"
+#: ../app/views/users/registrations/new.html.erb:5
+#: ../app/views/users/sessions/new.html.erb:1
+msgid "Log in"
+msgstr "Prijavite se"
 
-msgid "You have to log in to continue"
-msgstr "Morate se prijaviti da biste nastavili"
+#: ../app/views/users/registrations/new.html.erb:5
+msgid "Already a Commoner?"
+msgstr "Već ste član?"
 
-msgid "You haven't yet saved this Story in %{localised_lang_name}"
-msgstr "Još niste spremili priču na"
+#: ../app/views/users/registrations/new.html.erb:10
+msgid "Sign up page form|Password Confirmation"
+msgstr "Potvrdi lozinku"
 
-msgid "Your name on Commonfare.net"
-msgstr "Vaše ime na Commonfare.net-u"
+#: ../app/views/users/registrations/new.html.erb:13
+msgid "By joining you agree to our %{tos} and %{privacy}."
+msgstr "Pridruživanjem se slažete sa našim %{tos} i %{privacy}."
 
-msgid "commented on %{date}"
-msgstr "comentirano %{date}"
+#: ../app/views/users/registrations/new.html.erb:20
+msgid "Sign up page button|Join Commonfare"
+msgstr "Pridružite se Commonfare-u"
 
-msgid "e.g. Bungo Baggins, pbm42, etc."
-msgstr "npr. Bungo Baggins, pbm42, itd."
+#: ../app/views/users/sessions/new.html.erb:4
+msgid "Login page header|Log in"
+msgstr "Prijavite se"
 
-msgid "e.g. Milan, Italy"
-msgstr "npr. Milano, Italija"
+#: ../app/views/users/sessions/new.html.erb:5
+msgid "Want to be a Commoner?"
+msgstr "Želite biti Commoner?"
 
-msgid "e.g. Pregnancy, Food sharing, etc."
-msgstr "npr. trudnoća, dijeljenje hrane, itd."
+#: ../app/views/users/sessions/new.html.erb:9
+msgid "Login page form|Remember me"
+msgstr "Zapamti me"
 
-msgid "e.g. There and back again"
-msgstr "npr. tamo i natrag"
+#: ../app/views/users/sessions/new.html.erb:10
+msgid "Login page button|Log in"
+msgstr "Prijavite se"
+
+#: ../app/views/users/sessions/new.html.erb:12
+#: ../app/views/users/shared/_links.html.erb:10
+msgid "Auth Button title|Forgot your password?"
+msgstr "Zaboravili ste podatke za logiranje?"
+
+#: ../app/views/users/shared/_links.html.erb:2
+msgid "Auth Button title|Log in"
+msgstr "Prijavite se"
+
+#: ../app/views/users/shared/_links.html.erb:6
+msgid "Auth Button title|Sign up"
+msgstr "Registrirajte se"

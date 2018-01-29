@@ -1,479 +1,675 @@
 # Dutch translations for app package.
-# Copyright (C) 2017 THE PACKAGE'S COPYRIGHT HOLDER
+# Copyright (C) 2018 app
 # This file is distributed under the same license as the app package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: commonfare 1.0.0\n"
-"Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2018-01-11 17:03+0100\n"
+"Project-Id-Version: app 1.0\n"
+"Report-Msgid-Bugs-To: contact@translation.io\n"
+"POT-Creation-Date: 2018-01-29 13:06+0000\n"
+"PO-Revision-Date: 2018-01-29 14:06+0100\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Dutch\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"Last-Translator: Pietro <pbmolini@fbk.eu>\n"
-"X-Generator: Poedit 2.0.5\n"
-"POT-Creation-Date: \n"
+"\n"
 
-# In Dutch the S as a rule is attached to the name, so it’s Merels verhaal and Peters reactie, except… when the name ends with a vowel (Daniela’s verhaal and Pietro’s reactie). When a name ends with an S, there is no extra S to indicate ‘property’, but a ‘ (Mees’ verhaal and Ans’ reactie). I don’t know what to do here… perhaps rephrase as: Story by %{commoner_name} and Verhaal van %{commoner_name}
-msgid "%{commoner_name}'s stories"
-msgstr "Verhaal van %{commoner_name}"
-
-msgid "+ %{other_tags_count} more"
-msgstr "+ %{other_tags_count} meer"
-
-msgid "About"
-msgstr "Over"
-
-msgid "Add a comment"
-msgstr "Voeg een reactie toe"
-
-msgid "All comments for"
-msgstr "Alle reacties op"
-
-msgid "All your content will be permanently deleted too."
-msgstr "Ook al jouw uploads worden permanent verwijderd."
-
-msgid "Already a Commoner?"
-msgstr "Al een Commoner?"
-
-msgid "An error occured while visiting this page."
-msgstr "Er is iets mis gegaan tijdens het bezoeken van deze pagina."
-
-msgid "Are you sure?"
-msgstr "Weet je het zeker?"
-
-msgid "Are you sure? This will delete all the comments as well."
-msgstr "Weet je het zeker? Ook alle reacties worden verwijderd."
-
+#: ../app/assets/javascripts/stories.js.erb:24
 msgid "Attach a file"
 msgstr "Voeg een bestand toe"
 
-msgid "Auth Button title|Forgot your password?"
-msgstr "Wachtwoord vergeten?"
+#: ../app/assets/javascripts/stories.js.erb:38
+msgid "Embed a video"
+msgstr "Video insluiten"
 
-msgid "Auth Button title|Log in"
-msgstr "Inloggen"
+#: ../app/controllers/application_controller.rb:16
+msgid "You have to log in to continue"
+msgstr "Je moet inloggen om door te gaan"
 
-msgid "Auth Button title|Sign up"
-msgstr "Registreren"
+#: ../app/controllers/comments_controller.rb:41
+msgid "Comment was successfully created."
+msgstr "Reactie is geplaatst."
 
-msgid "Button|Cancel"
-msgstr "Annuleer"
+#: ../app/controllers/comments_controller.rb:58
+msgid "Comment was successfully updated."
+msgstr "Reactie is gewijzigd."
 
+#: ../app/controllers/comments_controller.rb:73
+msgid "Comment was successfully destroyed."
+msgstr "Reactie is verwijderd."
+
+#: ../app/controllers/stories_controller.rb:68
+msgid "Story was successfully created."
+msgstr "Verhaal is geplaatst."
+
+#: ../app/controllers/stories_controller.rb:93
+msgid "Story was successfully updated."
+msgstr "Verhaal is gewijzigd."
+
+#: ../app/controllers/stories_controller.rb:109
+msgid "Story was successfully destroyed."
+msgstr "Verhaal is verwijderd."
+
+#: ../app/helpers/stories_helper.rb:6
+msgid "+ %{other_tags_count} more"
+msgstr "+ %{other_tags_count} meer"
+
+#: ../app/helpers/stories_helper.rb:54
+#: ../app/views/commoners/welcome.html.erb:9
+msgid "Good Practices"
+msgstr "Goede Voorbeelden"
+
+#: ../app/helpers/stories_helper.rb:56
+#: ../app/views/commoners/welcome.html.erb:9
+msgid "Welfare Provisions"
+msgstr "Sociale Voorzieningen"
+
+#: ../app/helpers/stories_helper.rb:58
+msgid "Stories"
+msgstr "Verhalen"
+
+#: ../app/views/comments/_fields.html.erb:2
+msgid "Add a comment"
+msgstr "Voeg een reactie toe"
+
+#: ../app/views/comments/_list.html.erb:2
+#: ../app/views/stories/_comments.html.erb:16
+msgid "There are no comments for this Story"
+msgstr "Er zijn geen reacties op dit verhaal"
+
+#: ../app/views/comments/_list.html.erb:15
+msgid "Edit comment"
+msgstr "Bewerk reactie"
+
+#: ../app/views/comments/_new.html.erb:4
 msgid "Button|Comment"
 msgstr "Reageer"
 
+#: ../app/views/comments/edit.html.erb:3
+msgid "Edit your comment"
+msgstr "Bewerk je reactie"
+
+#: ../app/views/comments/edit.html.erb:5
+#: ../app/views/stories/_comments.html.erb:28
+msgid "Edit"
+msgstr "Bewerk"
+
+#: ../app/views/comments/edit.html.erb:8
+msgid "Delete this comment"
+msgstr "Verwijder deze reactie"
+
+#: ../app/views/comments/edit.html.erb:8
+#: ../app/views/users/registrations/edit.html.erb:31
+msgid "Are you sure?"
+msgstr "Weet je het zeker?"
+
+#: ../app/views/comments/index.html.erb:4
+msgid "All comments for"
+msgstr "Alle reacties op"
+
+#: ../app/views/commoners/_form.html.erb:7
+msgid "Square pictures look better ✨"
+msgstr "Vierkante plaatjes zien er beter uit ✨"
+
+#: ../app/views/commoners/_form.html.erb:11
+msgid "Your name on Commonfare.net"
+msgstr "Jouw naam op Commonfare.net"
+
+#: ../app/views/commoners/_form.html.erb:12
+msgid "e.g. Bungo Baggins, pbm42, etc."
+msgstr "bijv. Anna Muggen, msc11, etc."
+
+#: ../app/views/commoners/_form.html.erb:13
+msgid "It must be unique"
+msgstr "Moet uniek zijn"
+
+#: ../app/views/commoners/edit.html.erb:1
+#: ../app/views/commoners/edit.html.erb:4
+msgid "Edit profile"
+msgstr "Profiel wijzigen"
+
+#: ../app/views/commoners/edit.html.erb:8
+msgid "Edit your email or password"
+msgstr "Wijzig je e-mailadres of wachtwoord"
+
+#: ../app/views/commoners/show.html.erb:8
 msgid "Button|Edit profile"
 msgstr "Bewerk profiel"
 
+#: ../app/views/commoners/show.html.erb:15
+msgid "%{commoner_name}'s stories"
+msgstr "Verhaal van %{commoner_name}"
+
+#: ../app/views/commoners/show.html.erb:27
+msgid "No stories yet"
+msgstr "Nog geen verhalen"
+
+#: ../app/views/commoners/show.html.erb:35 ../app/views/pages/home.html.erb:85
+#: ../app/views/pages/home.html.erb:101 ../app/views/pages/home.html.erb:117
+msgid "See all"
+msgstr "Bekijk alles"
+
+#: ../app/views/commoners/welcome.html.erb:1
+#: ../app/views/commoners/welcome.html.erb:4
+msgid "Welcome!"
+msgstr "Welkom!"
+
+#: ../app/views/commoners/welcome.html.erb:6
+msgid ""
+"Welcome page|Before you go on, please notice that your temporary name on Commo"
+"nfare.net is <strong>%{name}</strong>. This is a random name that has been cre"
+"ated to protect your privacy, and that you can change anytime. If you want to "
+"do it now, just click on it!"
+msgstr ""
+"Voordat je doorgaat even dit: zoals je ziet hebben we je de volgende tijdelijk"
+"e naam gegeven op Commonfare.net <strong>%{name}</strong>. Deze naam is totaal"
+" willekeurig gekozen om jouw privacy te beschermen. Je kan deze naam verandere"
+"n wanneer je maar wilt. Bijvoorbeeld nu door erop te klikken!"
+
+#: ../app/views/commoners/welcome.html.erb:9
+msgid ""
+"Welcome page|Commonfare.net is constantly growing and more things will come in"
+" the next weeks. At the moment you can access the <strong>%{link_to_gps}</stro"
+"ng> and the <strong>%{link_to_wps}</strong> available in Italy, Croatia and th"
+"e Netherlands, and you can <strong>%{link_to_share_a_story}</strong> of your o"
+"wn that could be a personal experience, some good practices, or anything you w"
+"ould like that other people know of. You can also respond to other people's St"
+"ories by commenting them."
+msgstr ""
+"Commonfare.net groeit constant en meer en meer dingen zullen de komende tijd o"
+"nline komen. Op het moment vind je hier de <strong>%{link_to_gps}</strong> en "
+"de <strong>%{link_to_wps}</strong> beschikbaar in Italië, Kroatië en Nederland"
+" en kan je <strong>%{link_to_share_a_story}</strong> van jezelf, bijvoorbeeld "
+"een persoonlijke ervaring, goede voorbeelden die je kent of gewoon wat jij vin"
+"dt dat mensen moeten weten. Je kan ook reageren op de verhalen van anderen."
+
+#: ../app/views/commoners/welcome.html.erb:9
+msgid "Welcome page text|share a Story"
+msgstr "jouw eigen verhaal"
+
+#: ../app/views/commoners/welcome.html.erb:12
+msgid ""
+"Welcome page|Soon you will also be able to create real relations with other Co"
+"mmoners by sharing (and receiving) not only your experience but also time, goo"
+"ds, expertise, etc."
+msgstr ""
+"Binnenkort kan je op Commonfare.net nog veel meer nieuwe functionaliteiten ver"
+"wachten, zoals bijvoorbeeld het direct uitwisselen van berichten of goederen e"
+"n diensten met anderen hier."
+
+#: ../app/views/commoners/welcome.html.erb:15
+msgid ""
+"Welcome page|If you want to know more about what Commonfare.net is and who is "
+"actively working on it, please visit our <strong>%{link_to_about_page}</strong"
+">."
+msgstr ""
+"Als je meer wilt weren over het wie, wat, waar, wanneer en waarom van Commonfa"
+"re.net, bezoek dan vooral onze <strong>%{link_to_about_page}</strong>."
+
+#: ../app/views/commoners/welcome.html.erb:15
+msgid "Welcome page text|About page"
+msgstr "‘Over’ pagina"
+
+#: ../app/views/exception_handler/exceptions/show.html.erb:1
+msgid "Error"
+msgstr "Fout"
+
+#: ../app/views/exception_handler/exceptions/show.html.erb:9
+msgid "Sorry, the page you are looking for does not exist."
+msgstr "Sorry, de pagina die je zoekt bestaat niet."
+
+#: ../app/views/exception_handler/exceptions/show.html.erb:11
+msgid "An error occured while visiting this page."
+msgstr "Er is iets mis gegaan tijdens het bezoeken van deze pagina."
+
+#: ../app/views/exception_handler/exceptions/show.html.erb:17
+msgid "Error code: %{err_code}"
+msgstr "Foutmelding: %{err_code}"
+
+#: ../app/views/exception_handler/exceptions/show.html.erb:22
+#: ../app/views/layouts/_footer.html.erb:16
+msgid "Homepage"
+msgstr "Homepage"
+
+#: ../app/views/layouts/_footer.html.erb:25
+msgid "Footer|About"
+msgstr "Over"
+
+#: ../app/views/layouts/_footer.html.erb:26
+msgid "Footer|Terms of Service"
+msgstr "Algemene voorwaarden"
+
+#: ../app/views/layouts/_footer.html.erb:27
+msgid "Footer|Privacy"
+msgstr "Privacy"
+
+#: ../app/views/layouts/_navbar.html.erb:15
+#: ../app/views/layouts/_navbar.html.erb:27
+msgid "Search"
+msgstr "Zoek"
+
+#: ../app/views/layouts/_navbar.html.erb:32
+msgid "Navbar|Home"
+msgstr "Home"
+
+#: ../app/views/layouts/_navbar.html.erb:39
+msgid "Navbar|Logout"
+msgstr "Uitloggen"
+
+#: ../app/views/layouts/_navbar.html.erb:43
+msgid "Navbar|Login"
+msgstr "Inloggen"
+
+#: ../app/views/layouts/_navbar.html.erb:46
+msgid "Navbar|Join"
+msgstr "Registreer"
+
+#: ../app/views/layouts/application.html.erb:4
+msgid "Welcome"
+msgstr "Welkom"
+
+#: ../app/views/main/search.html.erb:1
+msgid "Results for %{search_term}"
+msgstr "Resultaten voor %{search_term}"
+
+#: ../app/views/main/search.html.erb:2
+msgid "Results for '%{search_term}'"
+msgstr "Resultaten voor ‘%{search_term}’"
+
+#: ../app/views/pages/about.html.erb:1
+msgid "About"
+msgstr "Over"
+
+#: ../app/views/pages/home.html.erb:27
+msgid ""
+"Home carousel text|Commonfare is a new and complementary form of welfare provi"
+"sion that is accessible to all and bottom-up. Commonfare is for, with, and by "
+"people."
+msgstr ""
+"Commonfare is een nieuwe en aanvullende vorm van welvaartsvoorziening die toeg"
+"ankelijk is voor iedereen en die bottom-up (van onderop) wordt georganiseerd. "
+"Commonfare is voor, met en door mensen."
+
+#: ../app/views/pages/home.html.erb:32
+msgid ""
+"Home carousel text|Commonfare proposes an unconditional basic income; proper m"
+"anagement of common goods; free access to basic needs, and alternative monetar"
+"y circuits."
+msgstr ""
+"Commonfare stelt een onvoorwaardelijk basisinkomen voor; het goed beheer van g"
+"emeenschappelijke goederen; gratis toegang tot de basisbehoeften en de creatie"
+" van alternatieve financiële en monetaire systemen."
+
+#: ../app/views/pages/home.html.erb:37
+msgid ""
+"Home carousel text|Commonfare.net is where we share information on existing we"
+"lfare state provisions, support self-organized welfare initiatives and tell st"
+"ories to promote collaboration. Join us!"
+msgstr ""
+"Commonfare.net is waar we informatie delen over bestaande sociale voorzieninge"
+"n, zelf georganiseerde initiatieven op het gebied van sociale welvaart steuren"
+" en verhalen vertellen om samenwerking te stimuleren. Doe mee!"
+
+#: ../app/views/pages/home.html.erb:61
 msgid "Button|Join"
 msgstr "Registreer"
 
+#: ../app/views/pages/home.html.erb:64
 msgid "Button|Login"
 msgstr "Inloggen"
 
+#: ../app/views/pages/home.html.erb:75
+msgid "Latest Stories"
+msgstr "Meest recente verhalen"
+
+#: ../app/views/pages/home.html.erb:91
+msgid "Latest Good Practices"
+msgstr "Meest recente goede voorbeelden"
+
+#: ../app/views/pages/home.html.erb:107
+msgid "Latest Welfare Provisions"
+msgstr "Meest recente sociale voorzieningen"
+
+#: ../app/views/pages/privacy.html.erb:1
+#: ../app/views/users/registrations/new.html.erb:15
+msgid "Privacy Policy"
+msgstr "Privacybeleid"
+
+#: ../app/views/pages/tos.html.erb:1
+#: ../app/views/users/registrations/new.html.erb:14
+msgid "Terms of Service"
+msgstr "Algemene voorwaarden"
+
+#: ../app/views/shared/_back_and_save_buttons.html.erb:5
+msgid "Button|Cancel"
+msgstr "Annuleer"
+
+#: ../app/views/shared/_back_and_save_buttons.html.erb:8
 msgid "Button|Save"
 msgstr "Bewaar"
 
-msgid "Button|Share"
-msgstr "Deel"
+#: ../app/views/stories/_card.html.erb:3 ../app/views/stories/show.html.erb:26
+msgid "Welfare Provision"
+msgstr "Sociale Voorziening"
 
-msgid "By joining you agree to our %{tos} and %{privacy}."
-msgstr "Door te registreren ga je akkoord met onze %{tos} en %{privacy}."
+#: ../app/views/stories/_card.html.erb:6 ../app/views/stories/show.html.erb:31
+msgid "Good Practice"
+msgstr "Goed Voorbeeld"
 
-msgid "Change password page button|Change my password"
-msgstr "Wijzig mijn wachtwoord"
+#: ../app/views/stories/_comments.html.erb:5
+msgid "Write a comment"
+msgstr "Schrijf een reactie"
 
-msgid "Change password page field|Confirm your new password"
-msgstr "Bevestig je nieuwe wachtwoord"
+#: ../app/views/stories/_comments.html.erb:7
+msgid "Publish comment button|Comment"
+msgstr "Reageer"
 
-msgid "Change password page field|New password"
-msgstr "Nieuw wachtwoord"
+#: ../app/views/stories/_comments.html.erb:14
+msgid "Comments"
+msgstr "Reacties"
 
-msgid "Change password page header|Change your password"
-msgstr "Wijzig je wachtwoord"
+#: ../app/views/stories/_comments.html.erb:25
+msgid "commented on %{date}"
+msgstr "gereageerd op %{date}"
 
+#: ../app/views/stories/_fields.html.erb:3
+msgid "Give a title to your content"
+msgstr "Geef een titel aan je verhaal"
+
+#: ../app/views/stories/_fields.html.erb:5
+msgid "e.g. There and back again"
+msgstr "bijv. Er was eens…"
+
+#: ../app/views/stories/_fields.html.erb:7
+msgid "Write here"
+msgstr "Schrijf hier"
+
+#: ../app/views/stories/_fields.html.erb:10
+msgid "Please don't be too short (min. 500 chars)"
+msgstr "Wees alsjeblieft niet te kort (min. 500 karakters)"
+
+#: ../app/views/stories/_fields.html.erb:12
+msgid "Where is this set?"
+msgstr "Waar vindt het plaats?"
+
+#: ../app/views/stories/_fields.html.erb:14
+#: ../app/views/stories/_form.html.erb:11
+msgid "e.g. Milan, Italy"
+msgstr "bijv. Rotterdam, Nederland"
+
+#: ../app/views/stories/_fields.html.erb:15
 msgid "City, Region, Country"
 msgstr "Stad, Provincie, Land"
 
+#: ../app/views/stories/_fields.html.erb:17
+msgid "Tags"
+msgstr "Tags"
+
+#: ../app/views/stories/_fields.html.erb:19
+msgid "Use comma or press Enter to separate tags"
+msgstr "Gebruik een komma of druk op ‘enter’ om tags te scheiden"
+
+#: ../app/views/stories/_fields.html.erb:96
+msgid "Uploading image, please wait..."
+msgstr "Afbeelding uploaden, even geduld…"
+
+#: ../app/views/stories/_fields.html.erb:105
+#: ../app/views/stories/_fields.html.erb:115
+msgid "Publish"
+msgstr "Plaats je verhaal"
+
+#: ../app/views/stories/_fields.html.erb:127
+msgid "e.g. Pregnancy, Food sharing, etc."
+msgstr "bijv. Zwangerschap, gratis internet, etc."
+
+#: ../app/views/stories/_form.html.erb:6
+msgid "What is the title of your story?"
+msgstr "Wat is de titel van je verhaal?"
+
+#: ../app/views/stories/_form.html.erb:10
+msgid "Please don't be too concise (min. 500 chars)"
+msgstr "Wees alsjeblieft niet te beknopt (min. 500 karakters)"
+
+#: ../app/views/stories/_form.html.erb:11
+msgid "The city, region or country of your story"
+msgstr "De stad, provincie of het land waar jouw verhaal plaatsvindt"
+
+#: ../app/views/stories/_form.html.erb:12
+msgid "Story form button|Share your Story"
+msgstr "Deel je Verhaal"
+
+#: ../app/views/stories/_share_modal.html.erb:6
+msgid "Modal title|Share this Story"
+msgstr "Deel dit verhaal"
+
+#: ../app/views/stories/_share_modal.html.erb:14
+msgid ""
+"Commonfare.net is not linked to any external platform, so to share this Story "
+"on Facebook, Twitter, etc. you can copy the URL and paste it there."
+msgstr ""
+"Commonfare.net is niet gekoppeld aan een extern platform, dus om dit verhaal t"
+"e delen op Facebook, Twitter, etc., kan je de URL kopiëren en daar plakken."
+
+#: ../app/views/stories/_share_modal.html.erb:18
+msgid "Copy and close"
+msgstr "Kopieer en sluit"
+
+#: ../app/views/stories/edit.html.erb:1
+msgid "Edit your Story"
+msgstr "Bewerk je verhaal"
+
+#: ../app/views/stories/edit.html.erb:6
+msgid "You are editing in"
+msgstr "Je bewerkt in het"
+
+#: ../app/views/stories/edit.html.erb:20
+msgid "You haven't yet saved this Story in %{localised_lang_name}"
+msgstr "Je hebt dit verhaal nog niet opgeslagen in het %{localised_lang_name}"
+
+#: ../app/views/stories/edit.html.erb:27
+msgid "Story form button|Edit"
+msgstr "Bewerk"
+
+#: ../app/views/stories/edit.html.erb:30 ../app/views/stories/new.html.erb:24
+msgid "Publishing..."
+msgstr "Een momentje…"
+
+#: ../app/views/stories/edit.html.erb:34
+msgid "Delete this Story"
+msgstr "Verwijder dit verhaal"
+
+#: ../app/views/stories/edit.html.erb:38
+msgid "Are you sure? This will delete all the comments as well."
+msgstr "Weet je het zeker? Ook alle reacties worden verwijderd."
+
+#: ../app/views/stories/index.html.erb:4
+msgid "Stories by %{author_name}"
+msgstr "Verhalen van %{author_name}"
+
+#: ../app/views/stories/new.html.erb:1
+msgid "Write your Story"
+msgstr "Schrijf je Verhaal"
+
+#: ../app/views/stories/new.html.erb:6
+msgid "You are writing in"
+msgstr "Je schrijft in het"
+
+#: ../app/views/stories/new.html.erb:21
+msgid "Story form button|Publish"
+msgstr "Publiceren"
+
+#: ../app/views/stories/show.html.erb:20
+msgid "Read in %{other_languages}"
+msgstr "Lees in het %{other_languages}"
+
+#: ../app/views/stories/show.html.erb:51
+msgid "You"
+msgstr "Van jou"
+
+#: ../app/views/stories/show.html.erb:115
+msgid "Button|Share"
+msgstr "Deel"
+
+#: ../app/views/stories/show.html.erb:126
 msgid "Comment"
 msgid_plural "Comments"
 msgstr[0] "Reactie"
 msgstr[1] "Reacties"
 
-msgid "Comment was successfully created."
-msgstr "Reactie is geplaatst."
-
-msgid "Comment was successfully destroyed."
-msgstr "Reactie is verwijderd."
-
-msgid "Comment was successfully updated."
-msgstr "Reactie is gewijzigd."
-
-msgid "Comments"
-msgstr "Reacties"
-
-msgid "Copy and close"
-msgstr "Kopieer en sluit"
-
-msgid "Delete this Story"
-msgstr "Verwijder dit verhaal"
-
-msgid "Delete this comment"
-msgstr "Verwijder deze reactie"
-
-msgid "Edit"
-msgstr "Bewerk"
-
-msgid "Edit comment"
-msgstr "Bewerk reactie"
-
-# How is this used on the site? I cannot be 100% sure of this translation without context
-msgid "Edit credentials"
-msgstr "Gegevens wijzigen"
-
-# How is this used on the site? I cannot be 100% sure of this translation without context
-msgid "Edit credentials form|Current password"
-msgstr ""
-
-# How is this used on the site? I cannot be 100% sure of this translation without context
-msgid "Edit credentials form|Do you want to leave Commonfare.net?"
-msgstr ""
-
-# How is this used on the site? I cannot be 100% sure of this translation without context
-msgid "Edit credentials form|Password confirmation"
-msgstr "Bevestig wachtwoord"
-
-# How is this used on the site? I cannot be 100% sure of this translation without context
-msgid "Edit credentials form|leave it blank if you don't want to change it"
-msgstr ""
-
-# How is this used on the site? I cannot be 100% sure of this translation without context
-msgid "Edit credentials form|we need your current password to confirm your changes"
-msgstr ""
-
-# How is this used on the site? I cannot be 100% sure of this translation without context
-msgid "Edit credentials subtitle|Delete account"
-msgstr ""
-
-msgid "Edit email"
-msgstr "E-mailadres wijzigen"
-
-msgid "Edit password"
-msgstr "Wachtwoord wijzigen"
-
-msgid "Edit profile"
-msgstr "Profiel wijzigen"
-
-msgid "Edit your Story"
-msgstr "Bewerk je verhaal"
-
-msgid "Edit your comment"
-msgstr "Bewerk je reactie"
-
-msgid "Edit your email or password"
-msgstr "Wijzig je e-mailadres of wachtwoord"
-
-msgid "Embed a video"
-msgstr "Video insluiten"
-
-msgid "Error"
-msgstr "Fout"
-
-msgid "Error code: %{err_code}"
-msgstr "Foutmelding: %{err_code}"
-
-msgid "Footer|About"
-msgstr "Over"
-
-msgid "Footer|Privacy"
-msgstr "Privacy"
-
-msgid "Footer|Terms of Service"
-msgstr "Algemene voorwaarden"
-
-msgid "Forgot password"
-msgstr "Wachtwoord vergeten"
-
-msgid "Forgot password page button|Send me the instructions"
-msgstr "Mail me de instructies"
-
-msgid "Forgot password page header|Forgot password?"
-msgstr "Wachtwoord vergeten?"
-
-# Do we mean story here? What other ‘content’ do people upload? Feedback needed for good translation + suggestion to alter English to: Give a title to your story
-msgid "Give a title to your content"
-msgstr "Geef een titel aan je verhaal"
-
-msgid "Good Practice"
-msgstr "Goed Voorbeeld"
-
-msgid "Good Practices"
-msgstr "Goede Voorbeelden"
-
-msgid "Home carousel text|Commonfare is a new and complementary form of welfare provision that is accessible to all and bottom-up. Commonfare is for, with, and by people."
-msgstr "Commonfare is een nieuwe en aanvullende vorm van welvaartsvoorziening die toegankelijk is voor iedereen en die bottom-up (van onderop) wordt georganiseerd. Commonfare is voor, met en door mensen."
-
-msgid "Home carousel text|Commonfare proposes an unconditional basic income; proper management of common goods; free access to basic needs, and alternative monetary circuits."
-msgstr "Commonfare stelt een onvoorwaardelijk basisinkomen voor; het goed beheer van gemeenschappelijke goederen; gratis toegang tot de basisbehoeften en de creatie van alternatieve financiële en monetaire systemen."
-
-msgid "Home carousel text|Commonfare.net is where we share information on existing welfare state provisions, support self-organized welfare initiatives and tell stories to promote collaboration. Join us!"
-msgstr "Commonfare.net is waar we informatie delen over bestaande sociale voorzieningen, zelf georganiseerde initiatieven op het gebied van sociale welvaart steuren en verhalen vertellen om samenwerking te stimuleren. Doe mee!"
-
-msgid "Home carousel title|Get involved and help it grow"
-msgstr "‘Over’ pagina"
-
-msgid "Home carousel title|Inform and get informed"
-msgstr ""
-
-msgid "Home carousel title|Share your experience and stories"
-msgstr ""
-
-msgid "Homepage"
-msgstr "Homepage"
-
-msgid "It must be unique"
-msgstr "Moet uniek zijn"
-
-msgid "Join us"
-msgstr "Doe mee"
-
-msgid "Latest Good Practices"
-msgstr "Meest recente goede voorbeelden"
-
-msgid "Latest Stories"
-msgstr "Meest recente verhalen"
-
-msgid "Latest Welfare Provisions"
-msgstr "Meest recente sociale voorzieningen"
-
-msgid "Log in"
-msgstr "Inloggen"
-
-msgid "Login page button|Log in"
-msgstr "Inloggen"
-
-msgid "Login page form|Remember me"
-msgstr "Onthoud mij"
-
-msgid "Login page header|Log in"
-msgstr "Inloggen"
-
-msgid "Modal title|Share this Story"
-msgstr "Deel dit verhaal"
-
-msgid "Navbar|Home"
-msgstr "Home"
-
-msgid "Navbar|Join"
-msgstr "Registreer"
-
-msgid "Navbar|Login"
-msgstr "Inloggen"
-
-msgid "Navbar|Logout"
-msgstr "Uitloggen"
-
-# This is about the password right? If not, I translated wrongly ;)
-msgid "No problem. Just enter your email address here and we will send you the link for creating a new one."
-msgstr "Geen probleem. Vul hier je e-mailadres in en we sturen je een link om een nieuw wachtwoord aan te maken."
-
-msgid "No stories yet"
-msgstr "Nog geen verhalen"
-
-msgid "Please don't be too concise (min. 500 chars)"
-msgstr "Wees alsjeblieft niet te beknopt (min. 500 karakters)"
-
-msgid "Please don't be too short (min. 500 chars)"
-msgstr "Wees alsjeblieft niet te kort (min. 500 karakters)"
-
-msgid "Privacy Policy"
-msgstr "Privacybeleid"
-
-# I am going to have to see this on commonfare.net if this is the better term to use universally or if ‘share/delen’ is the better one…
-msgid "Publish"
-msgstr "Plaats je verhaal"
-
-msgid "Publish comment button|Comment"
-msgstr "Reageer"
-
-# This is not translatable to Dutch… Assuming that this is what a users sees after clicking an action button, I translated as the Dutch equivalent of ‘One moment please…’
-msgid "Publishing..."
-msgstr "Een momentje…"
-
-msgid "Read in %{other_languages}"
-msgstr "Lees in het %{other_languages}"
-
-msgid "Results for %{search_term}"
-msgstr "Resultaten voor %{search_term}"
-
-msgid "Results for '%{search_term}'"
-msgstr "Resultaten voor ‘%{search_term}’"
-
-msgid "Search"
-msgstr "Zoek"
-
-msgid "See all"
-msgstr "Bekijk alles"
-
-msgid "Sign up page button|Join Commonfare"
-msgstr "Registreer op Commonfare"
-
-msgid "Sign up page form hint|%{min_password_length} characters minimum"
-msgstr "%{min_password_length} minimaal aantal karakters"
-
-msgid "Sign up page form|Password Confirmation"
-msgstr "Bevestig wachtwoord"
-
-msgid "Sign up page header|Become a Commoner"
-msgstr "Word een Commoner"
-
-msgid "Sorry, the page you are looking for does not exist."
-msgstr "Sorry, de pagina die je zoekt bestaat niet."
-
-msgid "Square pictures look better ✨"
-msgstr "Vierkante plaatjes zien er beter uit ✨"
-
-msgid "Stories"
-msgstr "Verhalen"
-
-msgid "Stories by %{author_name}"
-msgstr "Verhalen van %{author_name}"
-
-msgid "Stories with tag"
-msgstr "Verhalen met de tag"
-
+#: ../app/views/tags/show.html.erb:1
 msgid "Stories with tag %{tag_name}"
 msgstr "Verhalen met de tag %{tag_name}"
 
-msgid "Story form button|Edit"
-msgstr "Bewerk"
+#: ../app/views/tags/show.html.erb:2
+msgid "Stories with tag"
+msgstr "Verhalen met de tag"
 
-msgid "Story form button|Publish"
-msgstr "Publiceren"
+#: ../app/views/users/passwords/edit.html.erb:1
+#: ../app/views/users/passwords/edit.html.erb:4
+msgid "Change password page header|Change your password"
+msgstr "Wijzig je wachtwoord"
 
-msgid "Story form button|Share your Story"
-msgstr "Deel je Verhaal"
+#: ../app/views/users/passwords/edit.html.erb:9
+msgid "Change password page field|New password"
+msgstr "Nieuw wachtwoord"
 
-msgid "Story was successfully created."
-msgstr "Verhaal is geplaatst."
+#: ../app/views/users/passwords/edit.html.erb:9
+#: ../app/views/users/registrations/new.html.erb:9
+msgid "Sign up page form hint|%{min_password_length} characters minimum"
+msgstr "%{min_password_length} minimaal aantal karakters"
 
-# In English, wouldn’t this be sucesfully deleted? Destroyed sounds a bit distructive ;)
-msgid "Story was successfully destroyed."
-msgstr "Verhaal is verwijderd."
+#: ../app/views/users/passwords/edit.html.erb:10
+msgid "Change password page field|Confirm your new password"
+msgstr "Bevestig je nieuwe wachtwoord"
 
-msgid "Story was successfully updated."
-msgstr "Verhaal is gewijzigd."
+#: ../app/views/users/passwords/edit.html.erb:11
+msgid "Change password page button|Change my password"
+msgstr "Wijzig mijn wachtwoord"
 
-msgid "Tags"
-msgstr "Tags"
+#: ../app/views/users/passwords/new.html.erb:1
+msgid "Forgot password"
+msgstr "Wachtwoord vergeten"
 
-msgid "Terms of Service"
-msgstr "Algemene voorwaarden"
+#: ../app/views/users/passwords/new.html.erb:4
+msgid "Forgot password page header|Forgot password?"
+msgstr "Wachtwoord vergeten?"
 
-msgid "The city, region or country of your story"
-msgstr "De stad, provincie of het land waar jouw verhaal plaatsvindt"
+#: ../app/views/users/passwords/new.html.erb:5
+msgid ""
+"No problem. Just enter your email address here and we will send you the link f"
+"or creating a new one."
+msgstr ""
+"Geen probleem. Vul hier je e-mailadres in en we sturen je een link om een nieu"
+"w wachtwoord aan te maken."
 
-msgid "There are no comments for this Story"
-msgstr "Er zijn geen reacties op dit verhaal"
+#: ../app/views/users/passwords/new.html.erb:9
+msgid "Forgot password page button|Send me the instructions"
+msgstr "Mail me de instructies"
 
-msgid "Uploading image, please wait..."
-msgstr "Afbeelding uploaden, even geduld…"
+#: ../app/views/users/registrations/edit.html.erb:1
+#: ../app/views/users/registrations/edit.html.erb:4
+msgid "Edit credentials"
+msgstr "Gegevens wijzigen"
 
-msgid "Use comma or press Enter to separate tags"
-msgstr "Gebruik een komma of druk op ‘enter’ om tags te scheiden"
+#: ../app/views/users/registrations/edit.html.erb:8
+msgid "Edit email"
+msgstr "E-mailadres wijzigen"
 
-msgid "Want to be a Commoner?"
-msgstr "Wil je een Commoner worden?"
+#: ../app/views/users/registrations/edit.html.erb:14
+msgid "Edit password"
+msgstr "Wachtwoord wijzigen"
 
-msgid "Welcome"
-msgstr "Welkom"
+#: ../app/views/users/registrations/edit.html.erb:15
+msgid "Edit credentials form|leave it blank if you don't want to change it"
+msgstr "laat leeg als je het niet wilt wijzigen"
 
-# … please visit our *About page*.
-msgid "Welcome page text|About page"
-msgstr "‘Over’ pagina"
+#: ../app/views/users/registrations/edit.html.erb:16
+msgid "Edit credentials form|Password confirmation"
+msgstr "Bevestig wachtwoord"
 
-# … and you can *share a Story* of your own …
-msgid "Welcome page text|share a Story"
-msgstr "jouw eigen verhaal"
+#: ../app/views/users/registrations/edit.html.erb:17
+msgid "Edit credentials form|Current password"
+msgstr "Huidig wachtwoord"
 
-msgid "Welcome page|Before you go on, please notice that your temporary name on Commonfare.net is <strong>%{name}</strong>. This is a random name that has been created to protect your privacy, and that you can change anytime. If you want to do it now, just click on it!"
-msgstr "Voordat je doorgaat even dit: zoals je ziet hebben we je de volgende tijdelijke naam gegeven op Commonfare.net <strong>%{name}</strong>. Deze naam is totaal willekeurig gekozen om jouw privacy te beschermen. Je kan deze naam veranderen wanneer je maar wilt. Bijvoorbeeld nu door erop te klikken!"
+#: ../app/views/users/registrations/edit.html.erb:17
+msgid "Edit credentials form|we need your current password to confirm your changes"
+msgstr "we hebben je huidige wachtwoord nodig om je veranderingen te bevestigen"
 
-msgid "Welcome page|Commonfare.net is constantly growing and more things will come in the next weeks. At the moment you can access the <strong>%{link_to_gps}</strong> and the <strong>%{link_to_wps}</strong> available in Italy, Croatia and the Netherlands, and you can <strong>%{link_to_share_a_story}</strong> of your own that could be a personal experience, some good practices, or anything you would like that other people know of. You can also respond to other people's Stories by commenting them."
-msgstr "Commonfare.net groeit constant en meer en meer dingen zullen de komende tijd online komen. Op het moment vind je hier de <strong>%{link_to_gps}</strong> en de <strong>%{link_to_wps}</strong> beschikbaar in Italië, Kroatië en Nederland en kan je <strong>%{link_to_share_a_story}</strong> van jezelf, bijvoorbeeld een persoonlijke ervaring, goede voorbeelden die je kent of gewoon wat jij vindt dat mensen moeten weten. Je kan ook reageren op de verhalen van anderen."
+#: ../app/views/users/registrations/edit.html.erb:22
+msgid "Edit credentials subtitle|Delete account"
+msgstr "Account verwijderen"
 
-msgid "Welcome page|If you want to know more about what Commonfare.net is and who is actively working on it, please visit our <strong>%{link_to_about_page}</strong>."
-msgstr "Als je meer wilt weren over het wie, wat, waar, wanneer en waarom van Commonfare.net, bezoek dan vooral onze <strong>%{link_to_about_page}</strong>."
+#: ../app/views/users/registrations/edit.html.erb:24
+msgid "Edit credentials form|Do you want to leave Commonfare.net?"
+msgstr "Wil je Commonfare.net verlaten?"
 
-msgid "Welcome page|Soon you will also be able to create real relations with other Commoners by sharing (and receiving) not only your experience but also time, goods, expertise, etc."
-msgstr "Binnenkort kan je op Commonfare.net nog veel meer nieuwe functionaliteiten verwachten, zoals bijvoorbeeld het direct uitwisselen van berichten of goederen en diensten met anderen hier."
+#: ../app/views/users/registrations/edit.html.erb:26
+msgid "All your content will be permanently deleted too."
+msgstr "Ook al jouw uploads worden permanent verwijderd."
 
-msgid "Welcome!"
-msgstr "Welkom!"
-
-msgid "Welfare Provision"
-msgstr "Sociale Voorziening"
-
-msgid "Welfare Provisions"
-msgstr "Sociale Voorzieningen"
-
-msgid "What is the title of your story?"
-msgstr "Wat is de titel van je verhaal?"
-
-msgid "Where is this set?"
-msgstr "Waar vindt het plaats?"
-
-msgid "Write a comment"
-msgstr "Schrijf een reactie"
-
-msgid "Write here"
-msgstr "Schrijf hier"
-
-msgid "Write your Story"
-msgstr "Schrijf je Verhaal"
-
+#: ../app/views/users/registrations/edit.html.erb:28
 msgid "Yes please. Cancel my account"
 msgstr "Ja, alsjeblieft, verwijder mijn account"
 
-# Need to see in context; this can be translated as JIJ, JE, JULLIE, U, ETC
-msgid "You"
-msgstr "Van jou"
+#: ../app/views/users/registrations/new.html.erb:1
+#: ../app/views/users/sessions/new.html.erb:5
+msgid "Join us"
+msgstr "Doe mee"
 
-# Need context
-msgid "You are editing in"
-msgstr "Je bewerkt in het"
+#: ../app/views/users/registrations/new.html.erb:4
+msgid "Sign up page header|Become a Commoner"
+msgstr "Word een Commoner"
 
-# Need context
-msgid "You are writing in"
-msgstr "Je schrijft in het"
+#: ../app/views/users/registrations/new.html.erb:5
+#: ../app/views/users/sessions/new.html.erb:1
+msgid "Log in"
+msgstr "Inloggen"
 
-msgid "You have to log in to continue"
-msgstr "Je moet inloggen om door te gaan"
+#: ../app/views/users/registrations/new.html.erb:5
+msgid "Already a Commoner?"
+msgstr "Al een Commoner?"
 
-# In general I am a bit confused about the inconsistent use of capital letters. I guess I have to see this live on commonfare.net to be able to judge this properly. I have only deviated from the original if it really didn’t work in Dutch
-msgid "You haven't yet saved this Story in %{localised_lang_name}"
-msgstr "Je hebt dit verhaal nog niet opgeslagen in het %{localised_lang_name}"
+#: ../app/views/users/registrations/new.html.erb:10
+msgid "Sign up page form|Password Confirmation"
+msgstr "Bevestig wachtwoord"
 
-msgid "Your name on Commonfare.net"
-msgstr "Jouw naam op Commonfare.net"
+#: ../app/views/users/registrations/new.html.erb:13
+msgid "By joining you agree to our %{tos} and %{privacy}."
+msgstr "Door te registreren ga je akkoord met onze %{tos} en %{privacy}."
 
-msgid "commented on %{date}"
-msgstr "gereageerd op %{date}"
+#: ../app/views/users/registrations/new.html.erb:20
+msgid "Sign up page button|Join Commonfare"
+msgstr "Registreer op Commonfare"
 
-msgid "e.g. Bungo Baggins, pbm42, etc."
-msgstr "bijv. Anna Muggen, msc11, etc."
+#: ../app/views/users/sessions/new.html.erb:4
+msgid "Login page header|Log in"
+msgstr "Inloggen"
 
-msgid "e.g. Milan, Italy"
-msgstr "bijv. Rotterdam, Nederland"
+#: ../app/views/users/sessions/new.html.erb:5
+msgid "Want to be a Commoner?"
+msgstr "Wil je een Commoner worden?"
 
-msgid "e.g. Pregnancy, Food sharing, etc."
-msgstr "bijv. Zwangerschap, gratis internet, etc."
+#: ../app/views/users/sessions/new.html.erb:9
+msgid "Login page form|Remember me"
+msgstr "Onthoud mij"
 
-# need context
-msgid "e.g. There and back again"
-msgstr "bijv. Er was eens…"
+#: ../app/views/users/sessions/new.html.erb:10
+msgid "Login page button|Log in"
+msgstr "Inloggen"
+
+#: ../app/views/users/sessions/new.html.erb:12
+#: ../app/views/users/shared/_links.html.erb:10
+msgid "Auth Button title|Forgot your password?"
+msgstr "Wachtwoord vergeten?"
+
+#: ../app/views/users/shared/_links.html.erb:2
+msgid "Auth Button title|Log in"
+msgstr "Inloggen"
+
+#: ../app/views/users/shared/_links.html.erb:6
+msgid "Auth Button title|Sign up"
+msgstr "Registreren"
