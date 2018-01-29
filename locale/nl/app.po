@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0\n"
 "Report-Msgid-Bugs-To: contact@translation.io\n"
-"POT-Creation-Date: 2018-01-26 14:19+0000\n"
-"PO-Revision-Date: 2018-01-26 15:19+0100\n"
+"POT-Creation-Date: 2018-01-29 13:03+0000\n"
+"PO-Revision-Date: 2018-01-29 14:03+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Dutch\n"
 "Language: nl\n"
@@ -451,6 +451,8 @@ msgid ""
 "Commonfare.net is not linked to any external platform, so to share this Story "
 "on Facebook, Twitter, etc. you can copy the URL and paste it there."
 msgstr ""
+"Commonfare.net is niet gekoppeld aan een extern platform, dus om dit verhaal t"
+"e delen op Facebook, Twitter, etc., kan je de URL kopiëren en daar plakken."
 
 #: ../app/views/stories/_share_modal.html.erb:18
 msgid "Copy and close"
@@ -583,7 +585,7 @@ msgstr "Wachtwoord wijzigen"
 
 #: ../app/views/users/registrations/edit.html.erb:15
 msgid "Edit credentials form|leave it blank if you don't want to change it"
-msgstr ""
+msgstr "laat leeg als je het niet wilt wijzigen"
 
 #: ../app/views/users/registrations/edit.html.erb:16
 msgid "Edit credentials form|Password confirmation"
@@ -591,19 +593,19 @@ msgstr "Bevestig wachtwoord"
 
 #: ../app/views/users/registrations/edit.html.erb:17
 msgid "Edit credentials form|Current password"
-msgstr ""
+msgstr "Huidig wachtwoord"
 
 #: ../app/views/users/registrations/edit.html.erb:17
 msgid "Edit credentials form|we need your current password to confirm your changes"
-msgstr ""
+msgstr "we hebben je huidige wachtwoord nodig om je veranderingen te bevestigen"
 
 #: ../app/views/users/registrations/edit.html.erb:22
 msgid "Edit credentials subtitle|Delete account"
-msgstr ""
+msgstr "Account verwijderen"
 
 #: ../app/views/users/registrations/edit.html.erb:24
 msgid "Edit credentials form|Do you want to leave Commonfare.net?"
-msgstr ""
+msgstr "Wil je Commonfare.net verlaten?"
 
 #: ../app/views/users/registrations/edit.html.erb:26
 msgid "All your content will be permanently deleted too."
