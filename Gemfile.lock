@@ -320,6 +320,8 @@ GEM
     thor (0.20.0)
     thread_safe (0.3.6)
     tilt (2.0.8)
+    translation (1.10)
+      gettext (>= 3.2.2)
     trix (0.11.0)
       rails (> 4.1, < 5.2)
     turbolinks (5.0.1)
@@ -367,7 +369,6 @@ DEPENDENCIES
   friendly_id (~> 5.2.0)
   friendly_id-globalize!
   geocoder
-  gettext_i18n_rails
   gettext_i18n_rails_js (~> 1.2.0)
   globalize!
   high_voltage (~> 3.0.0)
@@ -392,6 +393,7 @@ DEPENDENCIES
   simple_form_fancy_uploads
   spring
   spring-watcher-listen (~> 2.0.0)
+  translation
   trix
   turbolinks (~> 5)
   tzinfo-data
@@ -399,4 +401,4 @@ DEPENDENCIES
   web-console (>= 3.3.0)
 
 BUNDLED WITH
-   1.16.0
+   1.16.1

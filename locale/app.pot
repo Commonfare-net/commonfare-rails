@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0\n"
 "Report-Msgid-Bugs-To: contact@translation.io\n"
-"POT-Creation-Date: 2018-01-29 13:06+0000\n"
-"PO-Revision-Date: 2018-01-29 13:06+0000\n"
+"POT-Creation-Date: 2018-01-29 13:03+0000\n"
+"PO-Revision-Date: 2018-01-29 13:03+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -420,6 +420,12 @@ msgstr ""
 
 #: ../app/views/stories/_share_modal.html.erb:6
 msgid "Modal title|Share this Story"
+msgstr ""
+
+#: ../app/views/stories/_share_modal.html.erb:14
+msgid ""
+"Commonfare.net is not linked to any external platform, so to share this Story "
+"on Facebook, Twitter, etc. you can copy the URL and paste it there."
 msgstr ""
 
 #: ../app/views/stories/_share_modal.html.erb:18

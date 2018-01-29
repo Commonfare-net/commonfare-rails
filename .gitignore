@@ -24,4 +24,5 @@
 
 Dockerfile.*
 docker-compose.*.yml
+
 app_variables.env
