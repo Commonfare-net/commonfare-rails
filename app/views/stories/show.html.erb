@@ -47,11 +47,7 @@
       <div class="col-8">
         <div class="story-author">
           <p>
-          <% if current_user == @story.author.user %>
-            <%= link_to(_('You'), commoner_path(@story.commoner)) %>
-          <% else %>
-            <%= link_to(@story.author.name, commoner_path(@story.commoner)) %>
-          <% end %> <br>
+          <%= author_for(@story) %> <br>
           <small><%= l(@story.created_at.to_date, format: :long) %></small>
           </p>
         </div>

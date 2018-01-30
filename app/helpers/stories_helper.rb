@@ -58,4 +58,23 @@ module StoriesHelper
       _('Stories')
     end
   end
+
+  def author_for(content)
+    return unless content.respond_to? :author
+    if current_user == content.author.user
+      link_to(_('You'), commoner_path(content.author))
+    elsif content.anonymous?
+      _('Anonymous')
+    else
+      link_to(content.author.name, commoner_path(content.author))
+    end
+  end
+
+  def card_author(story)
+    if story.anonymous?
+      content_tag(:span, _('Anonymous'), class: 'text-white')
+    else
+      link_to(story.commoner.name, commoner_path(story.commoner), class: 'text-white')
+    end
+  end
 end

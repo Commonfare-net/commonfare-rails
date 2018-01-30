@@ -5,5 +5,10 @@
       <h3><%= link_to(@story.title, story_path(@story), class: 'clamp') %></h3>
       <%= render 'list', comments: @comments %>
     <% end %>
+
+    <% if @commoner.present? %>
+      <h4><%= _('All comments by %{commoner_name}') %{commoner_name: @commoner.name} %></h4>
+      <%= render 'list', comments: @comments %>
+    <% end %>
   </div>
 </div>

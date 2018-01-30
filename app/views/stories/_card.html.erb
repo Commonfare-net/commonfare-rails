@@ -11,9 +11,13 @@
       <h4 class="card-title"><%= link_to(story.title, story_path(story), class: 'story-card-title-link') %></h4>
     </div>
     <div class="media">
-      <%= image_tag story.commoner.avatar.card, class: 'story-card-author-image' %>
+      <% if story.anonymous? %>
+        <%= image_tag 'anonymous_avatar.png', class: 'story-card-author-image' %>
+      <% else %>
+        <%= image_tag story.commoner.avatar.card, class: 'story-card-author-image' %>
+      <% end %>
       <div class="media-body">
-        <p class="my-0"><%= link_to(story.commoner.name, commoner_path(story.commoner), class: 'text-white') %></p>
+        <p class="my-0 text-white"><%= card_author(story) %></p>
         <small class="text-white"><%= l(story.created_at.to_date, format: :short) %></small>
       </div>
       <%#= link_to(fa_icon('edit'), edit_story_path(story, story_locale: @story_locale), class: 'btn btn-info align-self-end') if can? :edit, story %>

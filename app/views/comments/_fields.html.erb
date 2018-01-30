@@ -1,5 +1,6 @@
 <%= f.error_notification %>
 <%= f.input :body, required: false, placeholder: _('Add a comment'), label: false %>
+<%= f.input :anonymous, as: :boolean, inline_label: _('Comment anonymously'), wrapper: :checkbox_inline %>
 <%= f.button :submit, btn_text, class: 'btn btn-sm btn-cf float-right' %>
 
 <%= content_for :scripts do %>

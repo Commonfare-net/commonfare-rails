@@ -15,7 +15,12 @@ class CommentsController < ApplicationController
       @comments = @story.comments
     elsif params[:commoner_id].present?
       @commoner = Commoner.find(params[:commoner_id])
-      @comments = @commoner.comments
+      if current_user == @commoner.user
+        @comments = @commoner.comments.order('created_at DESC')
+      else
+        @comments = @commoner.comments.where(anonymous: false).order('created_at DESC')
+      end
+
     else
       @comments = []
     end
@@ -102,6 +107,6 @@ class CommentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def comment_params
-      params.require(:comment).permit(:body)
+      params.require(:comment).permit(:body, :anonymous)
     end
 end

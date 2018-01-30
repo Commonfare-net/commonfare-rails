@@ -16,7 +16,11 @@ class StoriesController < ApplicationController
   def index
     if params[:commoner_id].present? && Commoner.exists?(params[:commoner_id])
       @commoner = Commoner.find params[:commoner_id]
-      @stories = @commoner.stories.order('created_at DESC')
+      if current_user == @commoner.user
+        @stories = @commoner.stories.order('created_at DESC')
+      else
+        @stories = @commoner.stories.where(anonymous: false).order('created_at DESC')
+      end
     elsif params[:filter].present?
       if Story::TYPES.include? params[:filter].to_sym
         @stories = Story.send(params[:filter].to_sym).order('created_at DESC')
@@ -152,6 +156,6 @@ class StoriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def story_params
-      params.require(:story).permit(:title, :content, :place, tag_ids: [])
+      params.require(:story).permit(:title, :content, :place, :anonymous, tag_ids: [])
     end
 end

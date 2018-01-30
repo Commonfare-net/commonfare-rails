@@ -5,6 +5,10 @@ SimpleForm.setup do |config|
   config.button_class = 'btn btn-default'
   config.boolean_label_class = nil
 
+  config.wrappers :checkbox_inline, :tag => false do |b|
+    b.use :label_input
+  end
+
   # Custom css for errors in bootsrap-overrides.scss
   config.wrappers :vertical_form, tag: 'div', class: 'form-group', error_class: 'has-error' do |b|
     b.use :html5

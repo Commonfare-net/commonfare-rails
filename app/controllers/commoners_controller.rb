@@ -15,7 +15,11 @@ class CommonersController < ApplicationController
   # GET /commoners/1
   # GET /commoners/1.json
   def show
-    @stories = @commoner.stories.order('created_at DESC').first(6)
+    if current_user == @commoner.user
+      @stories = @commoner.stories.order('created_at DESC').first(6)
+    else
+      @stories = @commoner.stories.where(anonymous: false).order('created_at DESC').first(6)
+    end
   end
 
   # GET /commoners/new

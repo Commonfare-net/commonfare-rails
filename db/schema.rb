@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180102144601) do
+ActiveRecord::Schema.define(version: 20180130104534) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +39,8 @@ ActiveRecord::Schema.define(version: 20180102144601) do
     t.bigint "commentable_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "anonymous", default: false
+    t.index ["anonymous"], name: "index_comments_on_anonymous"
     t.index ["commentable_type", "commentable_id"], name: "index_comments_on_commentable_type_and_commentable_id"
     t.index ["commoner_id"], name: "index_comments_on_commoner_id"
   end
@@ -85,6 +87,8 @@ ActiveRecord::Schema.define(version: 20180102144601) do
     t.string "slug"
     t.boolean "welfare_provision", default: false
     t.boolean "good_practice", default: false
+    t.boolean "anonymous", default: false
+    t.index ["anonymous"], name: "index_stories_on_anonymous"
     t.index ["commoner_id"], name: "index_stories_on_commoner_id"
     t.index ["good_practice"], name: "index_stories_on_good_practice"
     t.index ["slug"], name: "index_stories_on_slug", unique: true
