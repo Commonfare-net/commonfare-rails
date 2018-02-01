@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0\n"
 "Report-Msgid-Bugs-To: contact@translation.io\n"
-"POT-Creation-Date: 2018-01-29 13:03+0000\n"
-"PO-Revision-Date: 2018-01-29 13:03+0000\n"
+"POT-Creation-Date: 2018-02-01 11:13+0000\n"
+"PO-Revision-Date: 2018-02-01 11:13+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -30,27 +30,27 @@ msgstr ""
 msgid "You have to log in to continue"
 msgstr ""
 
-#: ../app/controllers/comments_controller.rb:41
+#: ../app/controllers/comments_controller.rb:46
 msgid "Comment was successfully created."
 msgstr ""
 
-#: ../app/controllers/comments_controller.rb:58
+#: ../app/controllers/comments_controller.rb:63
 msgid "Comment was successfully updated."
 msgstr ""
 
-#: ../app/controllers/comments_controller.rb:73
+#: ../app/controllers/comments_controller.rb:78
 msgid "Comment was successfully destroyed."
 msgstr ""
 
-#: ../app/controllers/stories_controller.rb:68
+#: ../app/controllers/stories_controller.rb:73
 msgid "Story was successfully created."
 msgstr ""
 
-#: ../app/controllers/stories_controller.rb:93
+#: ../app/controllers/stories_controller.rb:98
 msgid "Story was successfully updated."
 msgstr ""
 
-#: ../app/controllers/stories_controller.rb:109
+#: ../app/controllers/stories_controller.rb:114
 msgid "Story was successfully destroyed."
 msgstr ""
 
@@ -72,8 +72,21 @@ msgstr ""
 msgid "Stories"
 msgstr ""
 
+#: ../app/helpers/stories_helper.rb:65
+msgid "You"
+msgstr ""
+
+#: ../app/helpers/stories_helper.rb:67 ../app/helpers/stories_helper.rb:75
+#: ../app/views/stories/_comments.html.erb:23
+msgid "Anonymous"
+msgstr ""
+
 #: ../app/views/comments/_fields.html.erb:2
 msgid "Add a comment"
+msgstr ""
+
+#: ../app/views/comments/_fields.html.erb:3
+msgid "Comment anonymously"
 msgstr ""
 
 #: ../app/views/comments/_list.html.erb:2
@@ -81,7 +94,7 @@ msgstr ""
 msgid "There are no comments for this Story"
 msgstr ""
 
-#: ../app/views/comments/_list.html.erb:15
+#: ../app/views/comments/_list.html.erb:19
 msgid "Edit comment"
 msgstr ""
 
@@ -94,7 +107,7 @@ msgid "Edit your comment"
 msgstr ""
 
 #: ../app/views/comments/edit.html.erb:5
-#: ../app/views/stories/_comments.html.erb:28
+#: ../app/views/stories/_comments.html.erb:34
 msgid "Edit"
 msgstr ""
 
@@ -109,6 +122,10 @@ msgstr ""
 
 #: ../app/views/comments/index.html.erb:4
 msgid "All comments for"
+msgstr ""
+
+#: ../app/views/comments/index.html.erb:10
+msgid "All comments by %{commoner_name}"
 msgstr ""
 
 #: ../app/views/commoners/_form.html.erb:7
@@ -348,7 +365,7 @@ msgstr ""
 msgid "Comments"
 msgstr ""
 
-#: ../app/views/stories/_comments.html.erb:25
+#: ../app/views/stories/_comments.html.erb:31
 msgid "commented on %{date}"
 msgstr ""
 
@@ -389,16 +406,20 @@ msgstr ""
 msgid "Use comma or press Enter to separate tags"
 msgstr ""
 
-#: ../app/views/stories/_fields.html.erb:96
+#: ../app/views/stories/_fields.html.erb:21
+msgid "Publish anonymously"
+msgstr ""
+
+#: ../app/views/stories/_fields.html.erb:98
 msgid "Uploading image, please wait..."
 msgstr ""
 
-#: ../app/views/stories/_fields.html.erb:105
-#: ../app/views/stories/_fields.html.erb:115
+#: ../app/views/stories/_fields.html.erb:107
+#: ../app/views/stories/_fields.html.erb:117
 msgid "Publish"
 msgstr ""
 
-#: ../app/views/stories/_fields.html.erb:127
+#: ../app/views/stories/_fields.html.erb:129
 msgid "e.g. Pregnancy, Food sharing, etc."
 msgstr ""
 
@@ -480,15 +501,11 @@ msgstr ""
 msgid "Read in %{other_languages}"
 msgstr ""
 
-#: ../app/views/stories/show.html.erb:51
-msgid "You"
-msgstr ""
-
-#: ../app/views/stories/show.html.erb:115
+#: ../app/views/stories/show.html.erb:111
 msgid "Button|Share"
 msgstr ""
 
-#: ../app/views/stories/show.html.erb:126
+#: ../app/views/stories/show.html.erb:122
 msgid "Comment"
 msgid_plural "Comments"
 msgstr[0] ""
