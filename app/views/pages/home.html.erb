@@ -71,50 +71,63 @@
 </div>
 <% end %>
 
-<% if @featured_stories.any? %>
-  <h2 class="text-center"><%= _('Latest Stories') %></h2>
-  <div class="row">
-  <% @featured_stories.each do |story| %>
-    <div class="col-lg-4 col-md-6">
-      <%= render 'stories/card', story: story %>
+<nav class="mb-3">
+  <div class="nav nav-pills nav-fill nav-justified story-content-filter flex-column flex-sm-row" role="tablist">
+    <a class="flex-sm-fill text-sm-center nav-item nav-link active" id="pills-stories-tab" data-toggle="pill" href="#pills-stories" role="tab" aria-controls="pills-home" aria-selected="true"><span class="pill-text"><%= _('Stories') %></span></a>
+    <a class="flex-sm-fill text-sm-center nav-item nav-link" id="pills-gp-tab" data-toggle="pill" href="#pills-gp" role="tab" aria-controls="pills-home" aria-selected="true"><span class="pill-text"><%= _('Good Practices') %></span></a>
+    <a class="flex-sm-fill text-sm-center nav-item nav-link" id="pills-wp-tab" data-toggle="pill" href="#pills-wp" role="tab" aria-controls="pills-home" aria-selected="true"><span class="pill-text"><%= _('Welfare Provisions') %></span></a>
+  </div>
+</nav>
+<div class="tab-content" id="pills-tabContent">
+  <div class="tab-pane fade show active" id="pills-stories" role="tabpanel" aria-labelledby="pills-stories-tab">
+    <% if @featured_stories.any? %>
+      <h2 class="text-center"><%= _('Latest Stories') %></h2>
+      <div class="row">
+      <% @featured_stories.each do |story| %>
+        <div class="col-lg-4 col-md-6">
+          <%= render 'stories/card', story: story %>
+        </div>
+      <% end %>
+      </div>
+      <div class="row py-3">
+        <div class="col text-center">
+          <%= link_to _('See all'), stories_path(filter: :normal), class: 'btn btn-outline-cf-secondary' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="tab-pane fade" id="pills-gp" role="tabpanel" aria-labelledby="pills-gp-tab">
+    <% if @featured_gps.any? %>
+    <h2 class="text-center"><%= _('Latest Good Practices') %></h2>
+    <div class="row">
+      <% @featured_gps.each do |story| %>
+      <div class="col-lg-4 col-md-6">
+        <%= render 'stories/card', story: story %>
+      </div>
+      <% end %>
     </div>
-  <% end %>
-  </div>
-  <div class="row py-3">
-    <div class="col text-center">
-      <%= link_to _('See all'), stories_path(filter: :normal), class: 'btn btn-outline-cf-secondary' %>
+    <div class="row py-3">
+      <div class="col text-center">
+        <%= link_to _('See all'), stories_path(filter: :good_practice), class: 'btn btn-outline-cf-secondary' %>
+      </div>
     </div>
+    <% end %>
   </div>
-<% end %>
-<hr>
-<% if @featured_gps.any? %>
-<h2 class="text-center"><%= _('Latest Good Practices') %></h2>
-<div class="row">
-  <% @featured_gps.each do |story| %>
-  <div class="col-lg-4 col-md-6">
-    <%= render 'stories/card', story: story %>
+  <div class="tab-pane fade" id="pills-wp" role="tabpanel" aria-labelledby="pills-wp-tab">
+    <% if @featured_wps.any? %>
+      <h2 class="text-center"><%= _('Latest Welfare Provisions') %></h2>
+      <div class="row">
+      <% @featured_wps.each do |story| %>
+        <div class="col-lg-4 col-md-6">
+          <%= render 'stories/card', story: story %>
+        </div>
+      <% end %>
+      </div>
+      <div class="row py-3">
+        <div class="col text-center">
+          <%= link_to _('See all'), stories_path(filter: :welfare_provision), class: 'btn btn-outline-cf-secondary' %>
+        </div>
+      </div>
+    <% end %>
   </div>
-  <% end %>
 </div>
-<div class="row py-3">
-  <div class="col text-center">
-    <%= link_to _('See all'), stories_path(filter: :good_practice), class: 'btn btn-outline-cf-secondary' %>
-  </div>
-</div>
-<% end %>
-<hr>
-<% if @featured_wps.any? %>
-  <h2 class="text-center"><%= _('Latest Welfare Provisions') %></h2>
-  <div class="row">
-  <% @featured_wps.each do |story| %>
-    <div class="col-lg-4 col-md-6">
-      <%= render 'stories/card', story: story %>
-    </div>
-  <% end %>
-  </div>
-  <div class="row py-3">
-    <div class="col text-center">
-      <%= link_to _('See all'), stories_path(filter: :welfare_provision), class: 'btn btn-outline-cf-secondary' %>
-    </div>
-  </div>
-<% end %>

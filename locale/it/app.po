@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0\n"
 "Report-Msgid-Bugs-To: contact@translation.io\n"
-"POT-Creation-Date: 2018-02-01 11:13+0000\n"
-"PO-Revision-Date: 2018-02-01 12:13+0100\n"
+"POT-Creation-Date: 2018-02-01 14:06+0000\n"
+"PO-Revision-Date: 2018-02-01 15:06+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Italian\n"
 "Language: it\n"
@@ -60,15 +60,17 @@ msgstr "+ altri %{other_tags_count}"
 
 #: ../app/helpers/stories_helper.rb:54
 #: ../app/views/commoners/welcome.html.erb:9
+#: ../app/views/pages/home.html.erb:77
 msgid "Good Practices"
 msgstr "Buone pratiche"
 
 #: ../app/helpers/stories_helper.rb:56
 #: ../app/views/commoners/welcome.html.erb:9
+#: ../app/views/pages/home.html.erb:78
 msgid "Welfare Provisions"
 msgstr "Misure di welfare"
 
-#: ../app/helpers/stories_helper.rb:58
+#: ../app/helpers/stories_helper.rb:58 ../app/views/pages/home.html.erb:76
 msgid "Stories"
 msgstr "Storie"
 
@@ -165,10 +167,12 @@ msgstr "Storie di %{commoner_name}"
 msgid "No stories yet"
 msgstr "Non ci sono storie presenti"
 
-#: ../app/views/commoners/show.html.erb:35 ../app/views/pages/home.html.erb:85
-#: ../app/views/pages/home.html.erb:101 ../app/views/pages/home.html.erb:117
+#: ../app/views/commoners/show.html.erb:35 ../app/views/pages/home.html.erb:94
+#: ../app/views/pages/home.html.erb:111 ../app/views/pages/home.html.erb:128
+#: ../app/views/pages/home.html.erb:146 ../app/views/pages/home.html.erb:162
+#: ../app/views/pages/home.html.erb:178
 msgid "See all"
-msgstr "Vedi tutti"
+msgstr "Vedi tutte"
 
 #: ../app/views/commoners/welcome.html.erb:1
 #: ../app/views/commoners/welcome.html.erb:4
@@ -341,15 +345,15 @@ msgstr "Partecipa"
 msgid "Button|Login"
 msgstr "Accedi"
 
-#: ../app/views/pages/home.html.erb:75
+#: ../app/views/pages/home.html.erb:84 ../app/views/pages/home.html.erb:136
 msgid "Latest Stories"
 msgstr "Ultime storie"
 
-#: ../app/views/pages/home.html.erb:91
+#: ../app/views/pages/home.html.erb:101 ../app/views/pages/home.html.erb:152
 msgid "Latest Good Practices"
 msgstr "Ultime buone pratiche"
 
-#: ../app/views/pages/home.html.erb:107
+#: ../app/views/pages/home.html.erb:118 ../app/views/pages/home.html.erb:168
 msgid "Latest Welfare Provisions"
 msgstr "Ultime misure di welfare"
 
