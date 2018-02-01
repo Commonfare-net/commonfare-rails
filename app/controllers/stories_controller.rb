@@ -22,9 +22,10 @@ class StoriesController < ApplicationController
         @stories = @commoner.stories.where(anonymous: false).order('created_at DESC')
       end
     elsif params[:filter].present?
-      if Story::TYPES.include? params[:filter].to_sym
-        @stories = Story.send(params[:filter].to_sym).order('created_at DESC')
-        @title = params[:filter].to_sym
+      @filter = params[:filter]
+      if Story::TYPES.include? @filter.to_sym
+        @stories = Story.send(@filter.to_sym).order('created_at DESC')
+        @title = @filter.to_sym
       else
         @stories = Story.normal.order('created_at DESC')
         @title = :normal

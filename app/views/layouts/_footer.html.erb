@@ -10,7 +10,7 @@
           <div class="dropdown-menu" aria-labelledby="footerDropdownMenuLink">
             <% begin %>
             <% other_locales.each do |locale| %>
-            <%= link_to "#{locale.to_s.upcase} - #{localised_language_name(locale, locale)}", { locale: locale, story_locale: @story_locale }, class: 'dropdown-item' %>
+              <%= link_to "#{locale.to_s.upcase} - #{localised_language_name(locale, locale)}", { locale: locale, story_locale: @story_locale, filter: @filter, q: @q }, class: 'dropdown-item' %>
             <% end %>
             <% rescue ActionController::UrlGenerationError %>
             <%= link_to _('Homepage'), root_path, class: 'dropdown-item' %>
