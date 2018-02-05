@@ -1,3 +1,12 @@
+<%= content_for :open_graph_tags do %>
+<!-- OpenGraph tags -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content='<%= @tag.name %> | Commonfare' />
+<meta property="og:description" content='<%= _("Stories with tag %{tag_name}") %{tag_name: @tag.name} %>' />
+<meta property="og:url" content='<%= request.url %>' />
+<!-- Twitter tags -->
+<meta name="twitter:card" content="summary" />
+<% end %>
 <% content_for :title, (_("Stories with tag %{tag_name}") %{tag_name: @tag.name}) %>
 <h3><%= _("Stories with tag") %> <%= button_tag @tag.name, class: 'btn btn-lg btn-light' %></h3>
 <div class="row">
