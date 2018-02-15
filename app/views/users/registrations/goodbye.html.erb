@@ -1,0 +1,27 @@
+<%= content_for :title, _('Goodbye') %>
+<div class="row justify-content-center">
+  <div class="col-md-6 col-lg-6">
+    <h2 class="red-title"><%= _('Do you want to leave Commonfare.net?') %></h2>
+    <p>
+      <%= _('Your profile will be permanently removed from Commonfare.net, along with all personal data associated with it, such as your email, password, avatar, etc.') %>
+    </p>
+    <p>
+      <%= (_("Your content (e.g. stories, comments) will be moved to the account %{archive_commoner}. It will remain available for others to read but any reference to your account will be deleted.") %{archive_commoner: link_to(@archive_commoner.name, commoner_path(@archive_commoner))}).html_safe %>
+    </p>
+    <p>
+      <%= _(('<em>Both profile deletion and content transfer are irreversible</em> - if you make a new commonfare.net account in the future, you will not be able to reclaim content generated under a cancelled account.')).html_safe %>
+    </p>
+    <div class="row">
+      <div class="col mb-1">
+        <%= link_to s_("Button|I've changed my mind"), :back, class: 'btn btn-outline-secondary btn-block'  %>
+      </div>
+      <div class="col">
+        <%= link_to s_("Button|Go ahead, cancel my account"),
+        registration_path(resource_name),
+        class: 'btn btn-cf btn-block',
+          data: { confirm: _("Are you sure?") },
+          method: :delete %>
+        </div>
+      </div>
+  </div>
+</div>

@@ -18,6 +18,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
+  def goodbye
+    @archive_commoner = User.find_by(email: ENV['ARCHIVE_COMMONER']).meta
+  end
+
   # PUT /resource
   # def update
   #   super

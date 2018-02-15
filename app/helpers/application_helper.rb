@@ -1,4 +1,6 @@
 module ApplicationHelper
+  ACTION_WITHOUT_FAB = %w(edit new goodbye)
+
   def other_locales(current_locale=I18n.locale)
     I18n.available_locales - [ current_locale ]
   end
@@ -21,7 +23,7 @@ module ApplicationHelper
 
   def fab_visible?
     user_signed_in? &&
-    !(action_name == 'edit' || action_name == 'new')
+    !ACTION_WITHOUT_FAB.include?(action_name)
   end
 
   # def infohub_url

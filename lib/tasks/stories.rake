@@ -16,6 +16,17 @@ namespace :stories do
     end
   end
 
+  task rename_image_urls_in_stories: :environment do |t|
+    Story.find_each do |story|
+      story.content_translations.each do |lang, content|
+        I18n.locale = lang.to_sym
+        new_content = content.gsub(/\/uploads\/commoner\/\d+\/images/, "/uploads/images")
+        story.content = new_content
+        story.save
+      end
+    end
+  end
+
   def host_tmp_path
     "/host_tmp" # A volume defined in the proper docker-compose file
   end

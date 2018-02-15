@@ -4,4 +4,12 @@ namespace :carrierwave do
     CarrierWave.clean_cached_files!
   end
 
+  desc "Copy the images to the new :store_dir"
+  task copy_images: :environment do
+    Image.find_each do |image|
+      src_path = Rails.root.join('public', image.picture.store_dir)
+      dest_path = Rails.root.join('public', 'uploads', 'images', image.id.to_s)
+      FileUtils.copy_entry src_path, dest_path if Dir.exists?(src_path)
+    end
+  end
 end

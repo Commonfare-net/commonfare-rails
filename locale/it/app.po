@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0\n"
 "Report-Msgid-Bugs-To: contact@translation.io\n"
-"POT-Creation-Date: 2018-02-01 14:06+0000\n"
-"PO-Revision-Date: 2018-02-01 15:06+0100\n"
+"POT-Creation-Date: 2018-02-15 10:51+0000\n"
+"PO-Revision-Date: 2018-02-15 11:51+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Italian\n"
 "Language: it\n"
@@ -60,17 +60,17 @@ msgstr "+ altri %{other_tags_count}"
 
 #: ../app/helpers/stories_helper.rb:54
 #: ../app/views/commoners/welcome.html.erb:9
-#: ../app/views/pages/home.html.erb:77
+#: ../app/views/pages/home.html.erb:87
 msgid "Good Practices"
 msgstr "Buone pratiche"
 
 #: ../app/helpers/stories_helper.rb:56
 #: ../app/views/commoners/welcome.html.erb:9
-#: ../app/views/pages/home.html.erb:78
+#: ../app/views/pages/home.html.erb:88
 msgid "Welfare Provisions"
 msgstr "Misure di welfare"
 
-#: ../app/helpers/stories_helper.rb:58 ../app/views/pages/home.html.erb:76
+#: ../app/helpers/stories_helper.rb:58 ../app/views/pages/home.html.erb:86
 msgid "Stories"
 msgstr "Storie"
 
@@ -118,7 +118,7 @@ msgid "Delete this comment"
 msgstr "Elimina questo commento"
 
 #: ../app/views/comments/edit.html.erb:8
-#: ../app/views/users/registrations/edit.html.erb:31
+#: ../app/views/users/registrations/goodbye.html.erb:22
 msgid "Are you sure?"
 msgstr "Sei sicuro/a?"
 
@@ -167,10 +167,8 @@ msgstr "Storie di %{commoner_name}"
 msgid "No stories yet"
 msgstr "Non ci sono storie presenti"
 
-#: ../app/views/commoners/show.html.erb:35 ../app/views/pages/home.html.erb:94
-#: ../app/views/pages/home.html.erb:111 ../app/views/pages/home.html.erb:128
-#: ../app/views/pages/home.html.erb:146 ../app/views/pages/home.html.erb:162
-#: ../app/views/pages/home.html.erb:178
+#: ../app/views/commoners/show.html.erb:35 ../app/views/pages/home.html.erb:104
+#: ../app/views/pages/home.html.erb:121 ../app/views/pages/home.html.erb:138
 msgid "See all"
 msgstr "Vedi tutte"
 
@@ -307,7 +305,7 @@ msgstr "Risultati per ‘%{search_term}’"
 msgid "About"
 msgstr "About"
 
-#: ../app/views/pages/home.html.erb:27
+#: ../app/views/pages/home.html.erb:37
 msgid ""
 "Home carousel text|Commonfare is a new and complementary form of welfare provi"
 "sion that is accessible to all and bottom-up. Commonfare is for, with, and by "
@@ -316,7 +314,7 @@ msgstr ""
 "Commonfare è una nuova forma complementare di welfare “dal basso”, accessibile"
 " a tutti e tutte. Commonfare è fatto per le persone e con le persone."
 
-#: ../app/views/pages/home.html.erb:32
+#: ../app/views/pages/home.html.erb:42
 msgid ""
 "Home carousel text|Commonfare proposes an unconditional basic income; proper m"
 "anagement of common goods; free access to basic needs, and alternative monetar"
@@ -326,7 +324,7 @@ msgstr ""
 "dei beni comuni; il libero accesso ai bisogni di base e a circuiti monetari al"
 "ternativi."
 
-#: ../app/views/pages/home.html.erb:37
+#: ../app/views/pages/home.html.erb:47
 msgid ""
 "Home carousel text|Commonfare.net is where we share information on existing we"
 "lfare state provisions, support self-organized welfare initiatives and tell st"
@@ -337,23 +335,23 @@ msgstr ""
 " cui raccontiamo storie che promuovono la collaborazione tra le persone. Parte"
 "cipa e unisciti a noi!"
 
-#: ../app/views/pages/home.html.erb:61
+#: ../app/views/pages/home.html.erb:71
 msgid "Button|Join"
 msgstr "Partecipa"
 
-#: ../app/views/pages/home.html.erb:64
+#: ../app/views/pages/home.html.erb:74
 msgid "Button|Login"
 msgstr "Accedi"
 
-#: ../app/views/pages/home.html.erb:84 ../app/views/pages/home.html.erb:136
+#: ../app/views/pages/home.html.erb:94
 msgid "Latest Stories"
 msgstr "Ultime storie"
 
-#: ../app/views/pages/home.html.erb:101 ../app/views/pages/home.html.erb:152
+#: ../app/views/pages/home.html.erb:111
 msgid "Latest Good Practices"
 msgstr "Ultime buone pratiche"
 
-#: ../app/views/pages/home.html.erb:118 ../app/views/pages/home.html.erb:168
+#: ../app/views/pages/home.html.erb:128
 msgid "Latest Welfare Provisions"
 msgstr "Ultime misure di welfare"
 
@@ -375,11 +373,11 @@ msgstr "Annulla"
 msgid "Button|Save"
 msgstr "Salva"
 
-#: ../app/views/stories/_card.html.erb:3 ../app/views/stories/show.html.erb:26
+#: ../app/views/stories/_card.html.erb:3 ../app/views/stories/show.html.erb:28
 msgid "Welfare Provision"
 msgstr "Misura di welfare"
 
-#: ../app/views/stories/_card.html.erb:6 ../app/views/stories/show.html.erb:31
+#: ../app/views/stories/_card.html.erb:6 ../app/views/stories/show.html.erb:33
 msgid "Good Practice"
 msgstr "Buona pratica"
 
@@ -530,25 +528,25 @@ msgstr "Stai scrivendo in"
 msgid "Story form button|Publish"
 msgstr "Pubblica"
 
-#: ../app/views/stories/show.html.erb:20
+#: ../app/views/stories/show.html.erb:22
 msgid "Read in %{other_languages}"
 msgstr "Leggi %{other_languages}"
 
-#: ../app/views/stories/show.html.erb:111
+#: ../app/views/stories/show.html.erb:113
 msgid "Button|Share"
 msgstr "Condividi"
 
-#: ../app/views/stories/show.html.erb:122
+#: ../app/views/stories/show.html.erb:124
 msgid "Comment"
 msgid_plural "Comments"
 msgstr[0] "Commento"
 msgstr[1] "Commenti"
 
-#: ../app/views/tags/show.html.erb:1
+#: ../app/views/tags/show.html.erb:5 ../app/views/tags/show.html.erb:10
 msgid "Stories with tag %{tag_name}"
 msgstr "Storie con tag %{tag_name}"
 
-#: ../app/views/tags/show.html.erb:2
+#: ../app/views/tags/show.html.erb:11
 msgid "Stories with tag"
 msgstr "Storie con tag"
 
@@ -627,6 +625,10 @@ msgstr "abbiamo bisogno della tua password attuale per procedere con la modifica
 msgid "Edit credentials subtitle|Delete account"
 msgstr "Cancella il tuo account"
 
+#: ../app/views/users/registrations/edit.html.erb:23
+msgid "Leave Commonfare.net..."
+msgstr ""
+
 #: ../app/views/users/registrations/edit.html.erb:24
 msgid "Edit credentials form|Do you want to leave Commonfare.net?"
 msgstr "Vuoi cancellare il tuo account su Commonfare.net?"
@@ -638,6 +640,42 @@ msgstr "Anche tutti i tuoi contenuti verranno eliminati in modo permanente."
 #: ../app/views/users/registrations/edit.html.erb:28
 msgid "Yes please. Cancel my account"
 msgstr "Sì. Cancella il mio account"
+
+#: ../app/views/users/registrations/goodbye.html.erb:1
+msgid "Goodbye"
+msgstr ""
+
+#: ../app/views/users/registrations/goodbye.html.erb:4
+msgid "Do you want to leave Commonfare.net?"
+msgstr ""
+
+#: ../app/views/users/registrations/goodbye.html.erb:6
+msgid ""
+"Your profile will be permanently removed from Commonfare.net, along with all p"
+"ersonal data associated with it, such as your email, password, avatar, etc."
+msgstr ""
+
+#: ../app/views/users/registrations/goodbye.html.erb:9
+msgid ""
+"Your content (e.g. stories, comments) will be moved to the account %{archive_c"
+"ommoner}. It will remain available for others to read but any reference to you"
+"r account will be deleted."
+msgstr ""
+
+#: ../app/views/users/registrations/goodbye.html.erb:12
+msgid ""
+"<em>Both profile deletion and content transfer are irreversible</em> - if you "
+"make a new commonfare.net account in the future, you will not be able to recla"
+"im content generated under a cancelled account."
+msgstr ""
+
+#: ../app/views/users/registrations/goodbye.html.erb:16
+msgid "Button|I've changed my mind"
+msgstr ""
+
+#: ../app/views/users/registrations/goodbye.html.erb:19
+msgid "Button|Go ahead, cancel my account"
+msgstr ""
 
 #: ../app/views/users/registrations/new.html.erb:1
 #: ../app/views/users/sessions/new.html.erb:5

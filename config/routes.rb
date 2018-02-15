@@ -30,6 +30,13 @@ Rails.application.routes.draw do
       sign_up: 'signup'
     }
 
+  devise_scope :user do
+    # see https://github.com/plataformatec/devise/wiki/how-to:-define-resource-actions-that-require-authentication-using-routes.rb
+    authenticate :user do
+      get 'auth/goodbye', to: 'users/registrations#goodbye', as: 'goodbye'
+    end
+  end
+
   scope "(:locale)", locale: /en|it|nl|hr/ do
     get :search, controller: :main
     get :autocomplete, controller: :main, defaults: { format: :json }
