@@ -23,12 +23,12 @@ services:
     tty: true
     stdin_open: true
   mailcatcher:
-    image: yappabe/mailcatcher
+    image: tophfr/mailcatcher
     container_name: commonfare_mailcatcher
     restart: always
     ports:
         - 1025:1025
-        - 1080:1080
+        - 1080:80
   postgres:
     image: postgres:9.6
     container_name: commonfare_pg
