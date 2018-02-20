@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0\n"
 "Report-Msgid-Bugs-To: contact@translation.io\n"
-"POT-Creation-Date: 2018-02-20 12:44+0000\n"
-"PO-Revision-Date: 2018-02-20 13:44+0100\n"
+"POT-Creation-Date: 2018-02-20 13:10+0000\n"
+"PO-Revision-Date: 2018-02-20 14:10+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Dutch\n"
 "Language: nl\n"
@@ -618,25 +618,9 @@ msgstr "Huidig wachtwoord"
 msgid "Edit credentials form|we need your current password to confirm your changes"
 msgstr "we hebben je huidige wachtwoord nodig om je veranderingen te bevestigen"
 
-#: ../app/views/users/registrations/edit.html.erb:22
-msgid "Edit credentials subtitle|Delete account"
-msgstr "Account verwijderen"
-
 #: ../app/views/users/registrations/edit.html.erb:23
 msgid "Leave Commonfare.net..."
 msgstr "Verlaat Commonfare.net..."
-
-#: ../app/views/users/registrations/edit.html.erb:24
-msgid "Edit credentials form|Do you want to leave Commonfare.net?"
-msgstr "Wil je Commonfare.net verlaten?"
-
-#: ../app/views/users/registrations/edit.html.erb:26
-msgid "All your content will be permanently deleted too."
-msgstr "Ook al jouw uploads worden permanent verwijderd."
-
-#: ../app/views/users/registrations/edit.html.erb:28
-msgid "Yes please. Cancel my account"
-msgstr "Ja, alsjeblieft, verwijder mijn account"
 
 #: ../app/views/users/registrations/goodbye.html.erb:1
 msgid "Goodbye"
@@ -669,16 +653,6 @@ msgstr ""
 "Op deze manier blijven ze beschikbaar voor anderen, maar zijn ze niet meer aan"
 " jouw profiel gelinkt."
 
-#: ../app/views/users/registrations/goodbye.html.erb:9
-msgid ""
-"Your content (e.g. stories, comments) will be moved to the account %{archive_c"
-"ommoner}. It will remain available for others to read but any reference to you"
-"r account will be deleted."
-msgstr ""
-"De verhalen en opmerkingen die je hebt gedeeld worden ze verplaatst naar het %"
-"{archive_commoner} profiel. Op deze manier blijven ze beschikbaar voor anderen"
-", maar zijn ze niet meer aan jouw profiel gelinkt."
-
 #: ../app/views/users/registrations/goodbye.html.erb:12
 msgid ""
 "Remember that while you have a Commonfare.net account, you can always delete a"
@@ -690,16 +664,6 @@ msgstr ""
 "alen of opmerkingen kunt verwijderen die je hebt geplaatst. Dus als er een ver"
 "haal of opmerking is die je niet via het archief beschikbaar wilt stellen, kan"
 " je nu teruggaan en dat doen voordat je je profiel verwijdert."
-
-#: ../app/views/users/registrations/goodbye.html.erb:12
-msgid ""
-"<em>Both profile deletion and content transfer are irreversible</em> - if you "
-"make a new commonfare.net account in the future, you will not be able to recla"
-"im content generated under a cancelled account."
-msgstr ""
-"<em> Zowel het verwijderen van je profiel als het overbrengen van inhoud is on"
-"omkeerbaar </ em> - als je in de toekomst een nieuw profiel op commonfare.net "
-"aanmaakt, kan je jouw oude verhalen en reacties niet terugkrijgen. "
 
 #: ../app/views/users/registrations/goodbye.html.erb:15
 msgid ""

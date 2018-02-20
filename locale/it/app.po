@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0\n"
 "Report-Msgid-Bugs-To: contact@translation.io\n"
-"POT-Creation-Date: 2018-02-20 12:44+0000\n"
-"PO-Revision-Date: 2018-02-20 13:44+0100\n"
+"POT-Creation-Date: 2018-02-20 13:10+0000\n"
+"PO-Revision-Date: 2018-02-20 14:10+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Italian\n"
 "Language: it\n"
@@ -621,25 +621,9 @@ msgstr "Password attuale"
 msgid "Edit credentials form|we need your current password to confirm your changes"
 msgstr "abbiamo bisogno della tua password attuale per procedere con la modifica"
 
-#: ../app/views/users/registrations/edit.html.erb:22
-msgid "Edit credentials subtitle|Delete account"
-msgstr "Cancella il tuo account"
-
 #: ../app/views/users/registrations/edit.html.erb:23
 msgid "Leave Commonfare.net..."
 msgstr "Lascia Commonfare.net ..."
-
-#: ../app/views/users/registrations/edit.html.erb:24
-msgid "Edit credentials form|Do you want to leave Commonfare.net?"
-msgstr "Vuoi cancellare il tuo account su Commonfare.net?"
-
-#: ../app/views/users/registrations/edit.html.erb:26
-msgid "All your content will be permanently deleted too."
-msgstr "Anche tutti i tuoi contenuti verranno eliminati in modo permanente."
-
-#: ../app/views/users/registrations/edit.html.erb:28
-msgid "Yes please. Cancel my account"
-msgstr "Sì. Cancella il mio account"
 
 #: ../app/views/users/registrations/goodbye.html.erb:1
 msgid "Goodbye"
@@ -672,16 +656,6 @@ msgstr ""
 "ponibili per essere letti da altri, ma il riferimento al tuo account verrà eli"
 "minato."
 
-#: ../app/views/users/registrations/goodbye.html.erb:9
-msgid ""
-"Your content (e.g. stories, comments) will be moved to the account %{archive_c"
-"ommoner}. It will remain available for others to read but any reference to you"
-"r account will be deleted."
-msgstr ""
-"I tuoi contenuti (ad esempio storie o commenti) verranno spostati nell'account"
-" %{archive_commoner}. I tuoi contenuti saranno così disponibili per essere let"
-"ti da altri Commoners, ma qualsiasi riferimento al tuo account sarà eliminato."
-
 #: ../app/views/users/registrations/goodbye.html.erb:12
 msgid ""
 "Remember that while you have a Commonfare.net account, you can always delete a"
@@ -695,17 +669,6 @@ msgstr ""
 "ellare i contenuti che non vuoi rendere disponibili prima di eliminare il tuo "
 "profilo."
 
-#: ../app/views/users/registrations/goodbye.html.erb:12
-msgid ""
-"<em>Both profile deletion and content transfer are irreversible</em> - if you "
-"make a new commonfare.net account in the future, you will not be able to recla"
-"im content generated under a cancelled account."
-msgstr ""
-"<em> La cancellazione del profilo e il trasferimento dei contenuti sono operaz"
-"ioni irreversibili </ em> - se in futuro attiverai un nuovo account su Commonf"
-"are.net, non potrai più recuperare i contenuti generati con il tuo vecchio acc"
-"ount cancellato."
-
 #: ../app/views/users/registrations/goodbye.html.erb:15
 msgid ""
 "<em>Both profile deletion and transfer of your content to the Commonfare Archi"
@@ -713,18 +676,18 @@ msgid ""
 "ure, you will not be able to reclaim content generated under a cancelled accou"
 "nt."
 msgstr ""
-"<em> La cancellazione del profilo e il trasferimento dei contenuti sono operaz"
-"ioni irreversibili </ em> - se in futuro attiverai un nuovo account su Commonf"
-"are.net, non potrai più recuperare i contenuti generati con il tuo vecchio acc"
-"ount cancellato."
+"<em>La cancellazione del profilo e il trasferimento dei contenuti sono operazi"
+"oni irreversibili</em> - se in futuro attiverai un nuovo account su Commonfare"
+".net, non potrai più recuperare i contenuti generati con il tuo vecchio accoun"
+"t cancellato."
 
 #: ../app/views/users/registrations/goodbye.html.erb:19
 msgid "Button|I've changed my mind"
-msgstr "Button | Ho cambiato idea"
+msgstr "Ho cambiato idea"
 
 #: ../app/views/users/registrations/goodbye.html.erb:22
 msgid "Button|Go ahead, cancel my account"
-msgstr "Button | Continua e cancella il mio account"
+msgstr "Continua e cancella il mio account"
 
 #: ../app/views/users/registrations/new.html.erb:1
 #: ../app/views/users/sessions/new.html.erb:5
