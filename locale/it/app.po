@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0\n"
 "Report-Msgid-Bugs-To: contact@translation.io\n"
-"POT-Creation-Date: 2018-02-20 12:44+0000\n"
-"PO-Revision-Date: 2018-02-20 13:44+0100\n"
+"POT-Creation-Date: 2018-02-20 12:52+0000\n"
+"PO-Revision-Date: 2018-02-20 13:52+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Italian\n"
 "Language: it\n"
@@ -720,11 +720,11 @@ msgstr ""
 
 #: ../app/views/users/registrations/goodbye.html.erb:19
 msgid "Button|I've changed my mind"
-msgstr "Button | Ho cambiato idea"
+msgstr "Ho cambiato idea"
 
 #: ../app/views/users/registrations/goodbye.html.erb:22
 msgid "Button|Go ahead, cancel my account"
-msgstr "Button | Continua e cancella il mio account"
+msgstr "Continua e cancella il mio account"
 
 #: ../app/views/users/registrations/new.html.erb:1
 #: ../app/views/users/sessions/new.html.erb:5
