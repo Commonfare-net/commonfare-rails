@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0\n"
 "Report-Msgid-Bugs-To: contact@translation.io\n"
-"POT-Creation-Date: 2018-02-15 10:51+0000\n"
-"PO-Revision-Date: 2018-02-15 11:51+0100\n"
+"POT-Creation-Date: 2018-02-20 12:44+0000\n"
+"PO-Revision-Date: 2018-02-20 13:44+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Italian\n"
 "Language: it\n"
@@ -118,7 +118,7 @@ msgid "Delete this comment"
 msgstr "Elimina questo commento"
 
 #: ../app/views/comments/edit.html.erb:8
-#: ../app/views/users/registrations/goodbye.html.erb:22
+#: ../app/views/users/registrations/goodbye.html.erb:25
 msgid "Are you sure?"
 msgstr "Sei sicuro/a?"
 
@@ -627,7 +627,7 @@ msgstr "Cancella il tuo account"
 
 #: ../app/views/users/registrations/edit.html.erb:23
 msgid "Leave Commonfare.net..."
-msgstr ""
+msgstr "Lascia Commonfare.net ..."
 
 #: ../app/views/users/registrations/edit.html.erb:24
 msgid "Edit credentials form|Do you want to leave Commonfare.net?"
@@ -643,17 +643,34 @@ msgstr "Sì. Cancella il mio account"
 
 #: ../app/views/users/registrations/goodbye.html.erb:1
 msgid "Goodbye"
-msgstr ""
+msgstr "Ciao"
 
 #: ../app/views/users/registrations/goodbye.html.erb:4
 msgid "Do you want to leave Commonfare.net?"
-msgstr ""
+msgstr "Vuoi cancellare il tuo account su Commonfare.net?"
 
 #: ../app/views/users/registrations/goodbye.html.erb:6
 msgid ""
 "Your profile will be permanently removed from Commonfare.net, along with all p"
 "ersonal data associated with it, such as your email, password, avatar, etc."
 msgstr ""
+"Il tuo profilo verrà rimosso definitivamente da Commonfare.net, insieme a tutt"
+"i i dati personali ad esso associati, come email, password, avatar, ecc."
+
+#: ../app/views/users/registrations/goodbye.html.erb:9
+msgid ""
+"The stories and comments you have already shared here are part of the commons "
+"on Commonfare.net and they could still benefit other Commoners. On deletion of"
+" your profile, they will be moved to the account %{archive_commoner}. In this "
+"way, they will remain available for others to read but reference to your accou"
+"nt will be deleted."
+msgstr ""
+"Le storie e i commenti che hai già condiviso qui fanno parte dei beni comuni s"
+"u Commonfare.net e potrebbero comunque diventare una risorsa per altri Commone"
+"rs. Con la cancellazione del tuo profilo, le tue storie e i tuoi commenti verr"
+"anno spostati nell'account %{archive_commoner}. In questo modo, rimarranno dis"
+"ponibili per essere letti da altri, ma il riferimento al tuo account verrà eli"
+"minato."
 
 #: ../app/views/users/registrations/goodbye.html.erb:9
 msgid ""
@@ -661,6 +678,22 @@ msgid ""
 "ommoner}. It will remain available for others to read but any reference to you"
 "r account will be deleted."
 msgstr ""
+"I tuoi contenuti (ad esempio storie o commenti) verranno spostati nell'account"
+" %{archive_commoner}. I tuoi contenuti saranno così disponibili per essere let"
+"ti da altri Commoners, ma qualsiasi riferimento al tuo account sarà eliminato."
+
+#: ../app/views/users/registrations/goodbye.html.erb:12
+msgid ""
+"Remember that while you have a Commonfare.net account, you can always delete a"
+"ny stories or comments you have posted, so if there is a story or comment you "
+"do not want to be made available through the archive, you can go back now and "
+"do so before deleting your profile."
+msgstr ""
+"Ricorda che con l'account attivo su Commonfare.net puoi sempre eliminare quals"
+"iasi storia o commento che hai postato. Se c'è una storia o un commento che no"
+"n vuoi rendere disponibile attraverso l'archivio, puoi tornare indietro e canc"
+"ellare i contenuti che non vuoi rendere disponibili prima di eliminare il tuo "
+"profilo."
 
 #: ../app/views/users/registrations/goodbye.html.erb:12
 msgid ""
@@ -668,14 +701,30 @@ msgid ""
 "make a new commonfare.net account in the future, you will not be able to recla"
 "im content generated under a cancelled account."
 msgstr ""
+"<em> La cancellazione del profilo e il trasferimento dei contenuti sono operaz"
+"ioni irreversibili </ em> - se in futuro attiverai un nuovo account su Commonf"
+"are.net, non potrai più recuperare i contenuti generati con il tuo vecchio acc"
+"ount cancellato."
 
-#: ../app/views/users/registrations/goodbye.html.erb:16
-msgid "Button|I've changed my mind"
+#: ../app/views/users/registrations/goodbye.html.erb:15
+msgid ""
+"<em>Both profile deletion and transfer of your content to the Commonfare Archi"
+"ve are irreversible</em> - if you make a new commonfare.net account in the fut"
+"ure, you will not be able to reclaim content generated under a cancelled accou"
+"nt."
 msgstr ""
+"<em> La cancellazione del profilo e il trasferimento dei contenuti sono operaz"
+"ioni irreversibili </ em> - se in futuro attiverai un nuovo account su Commonf"
+"are.net, non potrai più recuperare i contenuti generati con il tuo vecchio acc"
+"ount cancellato."
 
 #: ../app/views/users/registrations/goodbye.html.erb:19
+msgid "Button|I've changed my mind"
+msgstr "Button | Ho cambiato idea"
+
+#: ../app/views/users/registrations/goodbye.html.erb:22
 msgid "Button|Go ahead, cancel my account"
-msgstr ""
+msgstr "Button | Continua e cancella il mio account"
 
 #: ../app/views/users/registrations/new.html.erb:1
 #: ../app/views/users/sessions/new.html.erb:5

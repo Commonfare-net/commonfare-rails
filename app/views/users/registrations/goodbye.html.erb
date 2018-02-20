@@ -6,10 +6,13 @@
       <%= _('Your profile will be permanently removed from Commonfare.net, along with all personal data associated with it, such as your email, password, avatar, etc.') %>
     </p>
     <p>
-      <%= (_("Your content (e.g. stories, comments) will be moved to the account %{archive_commoner}. It will remain available for others to read but any reference to your account will be deleted.") %{archive_commoner: link_to(@archive_commoner.name, commoner_path(@archive_commoner))}).html_safe %>
+      <%= (_("The stories and comments you have already shared here are part of the commons on Commonfare.net and they could still benefit other Commoners. On deletion of your profile, they will be moved to the account %{archive_commoner}. In this way, they will remain available for others to read but reference to your account will be deleted.") %{archive_commoner: link_to(@archive_commoner.name, commoner_path(@archive_commoner))}).html_safe %>
     </p>
     <p>
-      <%= _(('<em>Both profile deletion and content transfer are irreversible</em> - if you make a new commonfare.net account in the future, you will not be able to reclaim content generated under a cancelled account.')).html_safe %>
+      <%= _('Remember that while you have a Commonfare.net account, you can always delete any stories or comments you have posted, so if there is a story or comment you do not want to be made available through the archive, you can go back now and do so before deleting your profile.') %>
+    </p>
+    <p>
+      <%= _(('<em>Both profile deletion and transfer of your content to the Commonfare Archive are irreversible</em> - if you make a new commonfare.net account in the future, you will not be able to reclaim content generated under a cancelled account.')).html_safe %>
     </p>
     <div class="row">
       <div class="col mb-1">

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0\n"
 "Report-Msgid-Bugs-To: contact@translation.io\n"
-"POT-Creation-Date: 2018-02-15 10:51+0000\n"
-"PO-Revision-Date: 2018-02-15 11:51+0100\n"
+"POT-Creation-Date: 2018-02-20 12:44+0000\n"
+"PO-Revision-Date: 2018-02-20 13:44+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Dutch\n"
 "Language: nl\n"
@@ -81,7 +81,7 @@ msgstr "Van jou"
 #: ../app/helpers/stories_helper.rb:67 ../app/helpers/stories_helper.rb:75
 #: ../app/views/stories/_comments.html.erb:23
 msgid "Anonymous"
-msgstr ""
+msgstr "Anoniem"
 
 #: ../app/views/comments/_fields.html.erb:2
 msgid "Add a comment"
@@ -89,7 +89,7 @@ msgstr "Voeg een reactie toe"
 
 #: ../app/views/comments/_fields.html.erb:3
 msgid "Comment anonymously"
-msgstr ""
+msgstr "Reageer anoniem"
 
 #: ../app/views/comments/_list.html.erb:2
 #: ../app/views/stories/_comments.html.erb:16
@@ -118,7 +118,7 @@ msgid "Delete this comment"
 msgstr "Verwijder deze reactie"
 
 #: ../app/views/comments/edit.html.erb:8
-#: ../app/views/users/registrations/goodbye.html.erb:22
+#: ../app/views/users/registrations/goodbye.html.erb:25
 msgid "Are you sure?"
 msgstr "Weet je het zeker?"
 
@@ -128,7 +128,7 @@ msgstr "Alle reacties op"
 
 #: ../app/views/comments/index.html.erb:10
 msgid "All comments by %{commoner_name}"
-msgstr ""
+msgstr "Alle reacties van %{commoner_name}"
 
 #: ../app/views/commoners/_form.html.erb:7
 msgid "Square pictures look better ✨"
@@ -434,7 +434,7 @@ msgstr "Gebruik een komma of druk op ‘enter’ om tags te scheiden"
 
 #: ../app/views/stories/_fields.html.erb:21
 msgid "Publish anonymously"
-msgstr ""
+msgstr "Publiceer anoniem"
 
 #: ../app/views/stories/_fields.html.erb:98
 msgid "Uploading image, please wait..."
@@ -624,7 +624,7 @@ msgstr "Account verwijderen"
 
 #: ../app/views/users/registrations/edit.html.erb:23
 msgid "Leave Commonfare.net..."
-msgstr ""
+msgstr "Verlaat Commonfare.net..."
 
 #: ../app/views/users/registrations/edit.html.erb:24
 msgid "Edit credentials form|Do you want to leave Commonfare.net?"
@@ -640,17 +640,34 @@ msgstr "Ja, alsjeblieft, verwijder mijn account"
 
 #: ../app/views/users/registrations/goodbye.html.erb:1
 msgid "Goodbye"
-msgstr ""
+msgstr "Tot ziens"
 
 #: ../app/views/users/registrations/goodbye.html.erb:4
 msgid "Do you want to leave Commonfare.net?"
-msgstr ""
+msgstr "Wil je Commonfare.net verlaten?"
 
 #: ../app/views/users/registrations/goodbye.html.erb:6
 msgid ""
 "Your profile will be permanently removed from Commonfare.net, along with all p"
 "ersonal data associated with it, such as your email, password, avatar, etc."
 msgstr ""
+"Je profiel wordt permanent verwijderd van Commonfare.net, samen met alle perso"
+"onlijke gegevens die eraan zijn gekoppeld, zoals je e-mailadres, wachtwoord, a"
+"vatar, etc."
+
+#: ../app/views/users/registrations/goodbye.html.erb:9
+msgid ""
+"The stories and comments you have already shared here are part of the commons "
+"on Commonfare.net and they could still benefit other Commoners. On deletion of"
+" your profile, they will be moved to the account %{archive_commoner}. In this "
+"way, they will remain available for others to read but reference to your accou"
+"nt will be deleted."
+msgstr ""
+"De verhalen en opmerkingen die je hebt gedeeld zijn onderdeel van de commons o"
+"p Commonfare.net en kunnen nog steeds nuttig zijn voor anderen. Nadat je jouw "
+"profiel verwijdert worden ze verplaatst naar het %{archive_commoner} profiel. "
+"Op deze manier blijven ze beschikbaar voor anderen, maar zijn ze niet meer aan"
+" jouw profiel gelinkt."
 
 #: ../app/views/users/registrations/goodbye.html.erb:9
 msgid ""
@@ -658,6 +675,21 @@ msgid ""
 "ommoner}. It will remain available for others to read but any reference to you"
 "r account will be deleted."
 msgstr ""
+"De verhalen en opmerkingen die je hebt gedeeld worden ze verplaatst naar het %"
+"{archive_commoner} profiel. Op deze manier blijven ze beschikbaar voor anderen"
+", maar zijn ze niet meer aan jouw profiel gelinkt."
+
+#: ../app/views/users/registrations/goodbye.html.erb:12
+msgid ""
+"Remember that while you have a Commonfare.net account, you can always delete a"
+"ny stories or comments you have posted, so if there is a story or comment you "
+"do not want to be made available through the archive, you can go back now and "
+"do so before deleting your profile."
+msgstr ""
+"Vergeet niet dat je zolang je een Commonfare.net profiel hebt altijd alle verh"
+"alen of opmerkingen kunt verwijderen die je hebt geplaatst. Dus als er een ver"
+"haal of opmerking is die je niet via het archief beschikbaar wilt stellen, kan"
+" je nu teruggaan en dat doen voordat je je profiel verwijdert."
 
 #: ../app/views/users/registrations/goodbye.html.erb:12
 msgid ""
@@ -665,14 +697,28 @@ msgid ""
 "make a new commonfare.net account in the future, you will not be able to recla"
 "im content generated under a cancelled account."
 msgstr ""
+"<em> Zowel het verwijderen van je profiel als het overbrengen van inhoud is on"
+"omkeerbaar </ em> - als je in de toekomst een nieuw profiel op commonfare.net "
+"aanmaakt, kan je jouw oude verhalen en reacties niet terugkrijgen. "
 
-#: ../app/views/users/registrations/goodbye.html.erb:16
-msgid "Button|I've changed my mind"
+#: ../app/views/users/registrations/goodbye.html.erb:15
+msgid ""
+"<em>Both profile deletion and transfer of your content to the Commonfare Archi"
+"ve are irreversible</em> - if you make a new commonfare.net account in the fut"
+"ure, you will not be able to reclaim content generated under a cancelled accou"
+"nt."
 msgstr ""
+"<em> Zowel het verwijderen van je profiel als het overbrengen van inhoud is on"
+"omkeerbaar </ em> - als je in de toekomst een nieuw profiel op commonfare.net "
+"aanmaakt, kan je jouw oude verhalen en reacties niet terugkrijgen. "
 
 #: ../app/views/users/registrations/goodbye.html.erb:19
+msgid "Button|I've changed my mind"
+msgstr "Ik ben van gedachten veranderd"
+
+#: ../app/views/users/registrations/goodbye.html.erb:22
 msgid "Button|Go ahead, cancel my account"
-msgstr ""
+msgstr "Ga door, annuleer mijn account"
 
 #: ../app/views/users/registrations/new.html.erb:1
 #: ../app/views/users/sessions/new.html.erb:5

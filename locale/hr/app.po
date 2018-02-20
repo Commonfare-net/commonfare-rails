@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0\n"
 "Report-Msgid-Bugs-To: contact@translation.io\n"
-"POT-Creation-Date: 2018-02-15 10:51+0000\n"
-"PO-Revision-Date: 2018-02-15 11:51+0100\n"
+"POT-Creation-Date: 2018-02-20 12:44+0000\n"
+"PO-Revision-Date: 2018-02-20 13:44+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Croatian\n"
 "Language: hr\n"
@@ -119,7 +119,7 @@ msgid "Delete this comment"
 msgstr "Izbriši ovaj komentar"
 
 #: ../app/views/comments/edit.html.erb:8
-#: ../app/views/users/registrations/goodbye.html.erb:22
+#: ../app/views/users/registrations/goodbye.html.erb:25
 msgid "Are you sure?"
 msgstr "Jeste li sigurni?"
 
@@ -652,9 +652,26 @@ msgstr ""
 
 #: ../app/views/users/registrations/goodbye.html.erb:9
 msgid ""
+"The stories and comments you have already shared here are part of the commons "
+"on Commonfare.net and they could still benefit other Commoners. On deletion of"
+" your profile, they will be moved to the account %{archive_commoner}. In this "
+"way, they will remain available for others to read but reference to your accou"
+"nt will be deleted."
+msgstr ""
+
+#: ../app/views/users/registrations/goodbye.html.erb:9
+msgid ""
 "Your content (e.g. stories, comments) will be moved to the account %{archive_c"
 "ommoner}. It will remain available for others to read but any reference to you"
 "r account will be deleted."
+msgstr ""
+
+#: ../app/views/users/registrations/goodbye.html.erb:12
+msgid ""
+"Remember that while you have a Commonfare.net account, you can always delete a"
+"ny stories or comments you have posted, so if there is a story or comment you "
+"do not want to be made available through the archive, you can go back now and "
+"do so before deleting your profile."
 msgstr ""
 
 #: ../app/views/users/registrations/goodbye.html.erb:12
@@ -664,11 +681,19 @@ msgid ""
 "im content generated under a cancelled account."
 msgstr ""
 
-#: ../app/views/users/registrations/goodbye.html.erb:16
-msgid "Button|I've changed my mind"
+#: ../app/views/users/registrations/goodbye.html.erb:15
+msgid ""
+"<em>Both profile deletion and transfer of your content to the Commonfare Archi"
+"ve are irreversible</em> - if you make a new commonfare.net account in the fut"
+"ure, you will not be able to reclaim content generated under a cancelled accou"
+"nt."
 msgstr ""
 
 #: ../app/views/users/registrations/goodbye.html.erb:19
+msgid "Button|I've changed my mind"
+msgstr ""
+
+#: ../app/views/users/registrations/goodbye.html.erb:22
 msgid "Button|Go ahead, cancel my account"
 msgstr ""
 

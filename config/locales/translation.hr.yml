@@ -2,7 +2,7 @@
 # IF YOU UPDATE IT, YOUR CHANGES WILL BE LOST AT THE NEXT SYNC.
 #
 # To update this file, use this translation interface:
-# http://translation.io/pbmolini/commonfare-net/hr
+# https://translation.io/pbmolini/commonfare-net/hr
 #
 ---
 hr:
@@ -71,17 +71,19 @@ hr:
         units:
           thousand: Tisuća
           million: Milijun
-          billion: Milijarda
+          billion: 'Milijarda
+
+'
           trillion: Bilijun
           quadrillion: Bilijarda
   errors:
     format: "%{attribute} %{message}"
     messages:
-      model_invalid: 
+      model_invalid: 'Validacija nije uspjela: %{errors}'
       inclusion: nije u listi
       exclusion: je rezerviran
       invalid: nije ispravan
-      confirmation: se ne slaže sa svojom potvrdom
+      confirmation: ne odgovara %{attribute}
       accepted: mora biti prihvaćen
       empty: ne smije biti prazan
       blank: ne smije biti prazan
@@ -105,7 +107,7 @@ hr:
       other_than: mora biti različit od %{count}
       odd: mora biti neparan
       even: mora biti paran
-      required: 
+      required: mora postojati
       taken: je već zauzet
       already_confirmed: je već potvrđen, molimo pokušajte se prijaviti
       confirmation_period_expired: je trebao biti potvrđen tijekom perioda %{period},
@@ -121,8 +123,14 @@ hr:
       header:
         one: "%{count} greška je spriječila %{model} da se spremi"
         other: "%{count} grešaka je spriječilo %{model} da se spremi"
-    unavailable_session: 
-    unacceptable_request: 
+    unavailable_session: |
+      Sesija %{id} više nije dostupna u memoriji.
+
+      Ako slučajno koristite višeprocesorski poslužitelj  (poput Unicorn ili Puma) ovaj proces neće biti sačuvan %{id} u memoriju. Razmotrite broj okretaja
+      procesa / radnika na jedan (1) ili koristeći drugačiji poslužitelj u razvoju.
+    unacceptable_request: 'Podržana verzija očekuje se u zaglavlju prihvaćanja.
+
+'
     connection_refused: 
   activerecord:
     errors:
@@ -133,31 +141,53 @@ hr:
           has_many: Nije moguće izbrisati zapis jer postoje ovisni %{record}
     attributes:
       user:
-        confirmation_sent_at: 
-        confirmation_token: 
-        confirmed_at: 
-        created_at: 
-        current_password: 
-        current_sign_in_at: 
-        current_sign_in_ip: 
-        email: 
-        encrypted_password: 
-        failed_attempts: 
-        last_sign_in_at: 
-        last_sign_in_ip: 
-        locked_at: 
-        password: 
-        password_confirmation: 
-        remember_created_at: 
-        remember_me: 
-        reset_password_sent_at: 
-        reset_password_token: 
-        sign_in_count: 
-        unconfirmed_email: 
-        unlock_token: 
-        updated_at: 
+        confirmation_sent_at: 'Potvrda je poslana u
+
+'
+        confirmation_token: 'Lozinka za potvrdu
+
+'
+        confirmed_at: Potvrđeno u
+        created_at: "Stvoreno u \n"
+        current_password: 'Trenutna lozinka
+
+'
+        current_sign_in_at: "Trenutno prijavljen(a) u \n"
+        current_sign_in_ip: 'Trenutačna IP adresa
+
+'
+        email: 'E-mail
+
+'
+        encrypted_password: Šifrirana lozinka
+        failed_attempts: neuspješnih pokušaja
+        last_sign_in_at: 'posljedna prijava u
+
+'
+        last_sign_in_ip: 'Posljedni IP '
+        locked_at: 'zaključan na
+
+'
+        password: 'Lozinka
+
+'
+        password_confirmation: Potvrda lozinke
+        remember_created_at: 'Zapamti stvoreno u
+
+'
+        remember_me: Zapamti me
+        reset_password_sent_at: 'Upute za promjenu lozinke poslane na
+
+'
+        reset_password_token: Šifra za promjenu lozinke
+        sign_in_count: "Broj prijava \n"
+        unconfirmed_email: 'Nepotvrđena e-mail adresa
+
+'
+        unlock_token: Otključaj šifru
+        updated_at: Ažurirano u
     models:
-      user: 
+      user: Korisnik
   datetime:
     distance_in_words:
       half_a_minute: pola minute
@@ -195,8 +225,10 @@ hr:
         one: skoro %{count} godina
         other: skoro %{count} godina
       x_years:
-        one: 
-        other: 
+        one: '1 godina
+
+'
+        other: "%{count} godina"
     prompts:
       year: Godina
       month: Mjesec
@@ -206,46 +238,51 @@ hr:
       second: Sekunde
   helpers:
     select:
-      prompt: Izaberite
+      prompt: Molimo izaberite
     submit:
       create: Stvori %{model}
-      update: Izmjeni %{model}
+      update: Ažuriraj %{model}
       submit: Spremi %{model}
     page_entries_info:
       entry:
-        zero: 
-        one: 
-        other: 
+        zero: unesena sadržaja
+        one: unesen sadržaj
+        other: unesena sadržaja
       one_page:
         display_entries:
-          zero: 
-          one: 
-          other: 
+          zero: Nije pronađen %{entry_name}
+          one: Prikazuje se <b> 1 </ b> %{entry_name}
+          other: Prikazuju se <b> svi %{count} </ b> %{entry_name}
       more_pages:
-        display_entries: 
+        display_entries: Prikazano %{entry_name} <b> %{first} & nbsp; - & nbsp; %{last}
+          </ b> od <b> %{total} </ b> ukupno
   flash:
     actions:
       create:
-        notice: 
+        notice: "%{resource_name} uspješno je stvoren."
       update:
-        notice: 
+        notice: "%{resource} je uspješno ažuriran.\n"
       destroy:
-        notice: 
-        alert: 
+        notice: "%{resource} je uspješno uništen."
+        alert: "%{resource_name} nije bilo moguće uništiti."
   ransack:
     search: 
-    predicate: 
-    and: 
-    or: 
-    any: 
-    all: 
+    predicate: iskaz
+    and: 'i
+
+'
+    or: ili
+    any: 'bilo koji '
+    all: 'sve
+
+'
     combinator: 
-    attribute: 
+    attribute: atribut
     value: 
-    condition: 
+    condition: stanje
     sort: 
-    asc: 
-    desc: 
+    asc: u usponu
+    desc: silazni
     predicates:
       eq: 
       eq_any: 
@@ -256,9 +293,9 @@ hr:
       matches: 
       matches_any: 
       matches_all: 
-      does_not_match: 
-      does_not_match_any: 
-      does_not_match_all: 
+      does_not_match: ne odgovara
+      does_not_match_any: ne odgovara nijednom
+      does_not_match_all: ne odgovara svima
       lt: 
       lt_any: 
       lt_all: 
@@ -277,9 +314,9 @@ hr:
       not_in: 
       not_in_any: 
       not_in_all: 
-      cont: 
-      cont_any: 
-      cont_all: 
+      cont: sadrži
+      cont_any: sadrži bilo koju
+      cont_all: sadrži sve
       not_cont: 
       not_cont_any: 
       not_cont_all: 
@@ -289,23 +326,23 @@ hr:
       not_start: 
       not_start_any: 
       not_start_all: 
-      end: 
-      end_any: 
-      end_all: 
+      end: završava s
+      end_any: završava s bilo kojim
+      end_all: završava svima
       not_end: 
       not_end_any: 
       not_end_all: 
       'true': 
       'false': 
       present: 
-      blank: 
+      blank: je prazan
       'null': 
       not_null: 
   devise:
     confirmations:
       confirmed: Vaš račun je uspješno potvrđen. Sad ste prijavljeni.
       new:
-        resend_confirmation_instructions: 
+        resend_confirmation_instructions: Ponovno pošaljite upute za potvrdu
       send_instructions: U roku nekoliko minuta ćete primiti e-mail s uputama za potvrdu
         Vašeg računa.
       send_paranoid_instructions: Ukoliko se Vaša email adresa nalazi u našoj bazi
@@ -322,14 +359,16 @@ hr:
       unconfirmed: Prije nastavka morate potvrditi Vaš račun.
     mailer:
       confirmation_instructions:
-        action: 
-        greeting: 
-        instruction: 
+        action: Potvrdite moj račun
+        greeting: Dobrodošli/a %{recipient}!
+        instruction: 'E-mail računa možete potvrditi putem veze u nastavku:
+
+'
         subject: Upute za potvrdu korisničkog računa
       password_change:
-        greeting: 
-        message: 
-        subject: 
+        greeting: Pozdrav! %{recipient}!
+        message: Obavještavamo vas da je vaša lozinka promijenjena.
+        subject: Vaša lozinka je uspješno promijenjena.
       reset_password_instructions:
         action: Promjenite vašu lozinku
         greeting: Pozdrav! %{recipient}!
@@ -340,25 +379,28 @@ hr:
           i napravite novu.
         subject: Upute za promjenu lozinke
       unlock_instructions:
-        action: 
-        greeting: 
-        instruction: 
-        message: 
+        action: Otključaj moj račun
+        greeting: Pozdrav %{recipient}!
+        instruction: 'Kliknite poveznicu u nastavku da biste otključali svoj račun: '
+        message: Vaš je račun zaključan zbog prevelike količine neuspješnih pokušaja
+          prijave.
         subject: Upute za otključavanje korisničkog računa
       email_changed:
-        subject: 
+        subject: Promijenjena je e-mail adresa
     omniauth_callbacks:
       failure: Nismo Vas u mogućnosti autorizirati sa %{kind} računom zbog "%{reason}".
       success: Uspješna autorizacija sa %{kind} računa.
     passwords:
       edit:
-        change_my_password: 
-        change_your_password: 
-        confirm_new_password: 
-        new_password: 
+        change_my_password: Promijeni moju lozinku
+        change_your_password: Promjenite lozinku
+        confirm_new_password: Potvrdite novu lozinku
+        new_password: Nova lozinka
       new:
-        forgot_your_password: 
-        send_me_reset_password_instructions: 
+        forgot_your_password: Zaboravili ste lozinku?
+        send_me_reset_password_instructions: 'Pošaljite mi upute za promjenu lozinke
+
+'
       no_token: Ne možete pristupiti ovoj stranici ako niste kliknuli na link u emailu
         za resetiranje lozinke.
       send_instructions: U roku nekoliko minuta ćete primiti e-mail s uputama za promjenu
@@ -371,16 +413,20 @@ hr:
       destroyed: Pozdrav! Vaš račun je uspješno obrisan. Nadamo se da ćete se brzo
         vratiti.
       edit:
-        are_you_sure: 
-        cancel_my_account: 
-        currently_waiting_confirmation_for_email: 
-        leave_blank_if_you_don_t_want_to_change_it: 
-        title: 
-        unhappy: 
-        update: 
-        we_need_your_current_password_to_confirm_your_changes: 
+        are_you_sure: Jeste li sigurni?
+        cancel_my_account: 'Izbrišite moj račun
+
+'
+        currently_waiting_confirmation_for_email: 'Trenutno se čeka potvrda za: %{email}'
+        leave_blank_if_you_don_t_want_to_change_it: ostavite prazno ako ne želite
+          promijeniti
+        title: Uredi %{resource}
+        unhappy: Nesretan/na?
+        update: Ažuriraj
+        we_need_your_current_password_to_confirm_your_changes: trebamo vašu trenutnu
+          lozinku za potvrdu vaših izmjena
       new:
-        sign_up: 
+        sign_up: Prijavite se
       signed_up: Dobrodošli! Uspješno ste se registrirali.
       signed_up_but_inactive: Uspješno ste se registrirali. Doduše, ne možete se prijaviti
         u sustav zato što Vaš račun još nije aktiviran.
@@ -393,30 +439,31 @@ hr:
         za potvrdu.
       updated: Uspješno ste izmjenili Vaš račun.
     sessions:
-      already_signed_out: 
+      already_signed_out: Uspješno ste se odjavili.
       new:
-        sign_in: 
+        sign_in: Prijaviti se
       signed_in: Uspješno ste se prijavili.
       signed_out: Uspješno ste se odjavili.
     shared:
       links:
-        back: 
-        didn_t_receive_confirmation_instructions: 
-        didn_t_receive_unlock_instructions: 
-        forgot_your_password: 
-        sign_in: 
-        sign_in_with_provider: 
-        sign_up: 
+        back: Natrag
+        didn_t_receive_confirmation_instructions: Niste primili upute za potvrdu?
+        didn_t_receive_unlock_instructions: Niste primili upute za otključavanje?
+        forgot_your_password: Zaboravili ste lozinku?
+        sign_in: Prijaviti se
+        sign_in_with_provider: Prijavite se s %{provider}
+        sign_up: Registrirajte se
     unlocks:
       new:
-        resend_unlock_instructions: 
+        resend_unlock_instructions: Ponovno pošaljite upute za otključavanje
       send_instructions: U roku nekoliko minuta ćete primiti e-mail s uputama za otključavanje
         Vašeg računa.
       send_paranoid_instructions: Ako Vaš račun postoji, na email ćete u roku nekoliko
         minuta primiti upute kako ga otključati.
       unlocked: Vaš račun je uspješno otključan. Molimo prijavite se.
   exception_handler:
-    internal_server_error: 
+    internal_server_error: "<strong> %{status} Greška </ strong> %{message} <p> Vrati
+      se početnoj stranici</ p>"
   views:
     pagination:
       first: 
@@ -426,30 +473,36 @@ hr:
       truncate: 
   administrate:
     actions:
-      confirm: 
-      destroy: 
-      edit: 
-      show: 
-      new: 
-      back: 
+      confirm: Jeste li sigurni?
+      destroy: 'Uništi
+
+'
+      edit: Uredi
+      show: Pokazati
+      new: Novi
+      back: Natrag
     controller:
       create:
-        success: 
+        success: "%{resource} je uspješno prenesen.  "
       destroy:
-        success: 
+        success: "%{resource} je uspješno uništen."
       update:
-        success: 
+        success: "%{resource} je uspješno ažuriran.\n"
     fields:
       has_many:
-        more: 
-        none: 
+        more: Prikaz %{count} od %{total_count}
+        none: 'Nema
+
+'
       polymorphic:
-        not_supported: 
+        not_supported: 'Polimorfni oblici odnosa nisu podržani.
+
+'
       has_one:
-        not_supported: 
+        not_supported: Oblici odnosa HasOne nisu podržani.
     search:
-      clear: 
-      label: 
+      clear: Izbriši pretraživanje
+      label: Pretraži %{resource}
   cookies_eu:
     cookies_text: Cookies nam pomažu pri pružanju usluga. Korištenjem naših usluga,
       prihvaćate naše korištenje cookies-a.

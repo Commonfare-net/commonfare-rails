@@ -2,7 +2,7 @@
 # IF YOU UPDATE IT, YOUR CHANGES WILL BE LOST AT THE NEXT SYNC.
 #
 # To update this file, use this translation interface:
-# http://translation.io/pbmolini/commonfare-net/it
+# https://translation.io/pbmolini/commonfare-net/it
 #
 ---
 it:
@@ -135,9 +135,9 @@ it:
             dipendenti
     attributes:
       user:
-        confirmation_sent_at: 
-        confirmation_token: 
-        confirmed_at: 
+        confirmation_sent_at: Conferma inviata a
+        confirmation_token: Token di conferma
+        confirmed_at: Conferma inviata a
         created_at: 
         current_password: Password corrente
         current_sign_in_at: 
