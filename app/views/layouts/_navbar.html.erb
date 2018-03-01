@@ -21,6 +21,21 @@
   <% end %>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto navbar-story-links">
+      <li class="nav-item active">
+        <%= link_to s_('Navbar|Commoners Voices'), stories_path(filter: :normal), class: 'nav-link' %>
+      </li>
+      <li class="nav-item active">
+        <%= link_to s_('Navbar|Good Practices'), stories_path(filter: :good_practice), class: 'nav-link' %>
+      </li>
+      <li class="nav-item active">
+        <%= link_to s_('Navbar|Public Benefits'), stories_path(filter: :welfare_provision), class: 'nav-link' %>
+      </li>
+      <div class="navbar-cf-divider"></div>
+      <li class="nav-item">
+        <%= link_to s_('Navbar|About'), page_path(id: 'about'), class: 'nav-link' %>
+      </li>
+    </ul>
     <ul class="navbar-nav ml-auto">
     <li class="nav-item d-none d-lg-block d-xl-block">
       <%= form_with url: search_path, local: true, method: :get, html: { class: 'form-inline my-2 my-lg-0' } do |form| %>

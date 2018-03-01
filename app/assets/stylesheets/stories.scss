@@ -175,6 +175,8 @@ input#story-share-url {
 
   .story-content {
     line-height: 1.7em;
+    font-family: "Lora", serif;
+    font-size: 1.3em;
     figure {
       box-shadow: 1px 1px 2px #585858;
       border: 1px solid #585858;
@@ -221,4 +223,12 @@ trix-editor {
 
 .trix-button-group.trix-button-group--history-tools, .trix-button--icon-code {
   display: none;
+}
+
+// Media queries
+
+@media screen and (max-width: 575px) {
+  .story-container .story-content {
+    font-size: 1.1em;
+  }
 }

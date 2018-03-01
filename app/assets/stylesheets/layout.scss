@@ -31,6 +31,12 @@ body {
 
 // White links against a dark background
 .navbar-cf {
+  .navbar-cf-divider {
+    width: 0;
+    margin: 0 .5rem;
+    overflow: hidden;
+    border-right: 1px solid $navbar-cf-disabled-color;
+  }
   .navbar-brand {
     color: $navbar-cf-active-color;
 
@@ -40,6 +46,11 @@ body {
   }
 
   .navbar-nav {
+    &.navbar-story-links {
+      .nav-item {
+        font-size: 1.1rem;
+      }
+    }
     .nav-link {
       color: $navbar-cf-color;
 
