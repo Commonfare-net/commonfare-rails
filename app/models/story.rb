@@ -23,7 +23,7 @@ class Story < ApplicationRecord
   TYPES.each do |type|
     scope type, -> { where(type => true)   }
   end
-  scope :normal, -> { where(good_practice: false, welfare_provision: false) }
+  scope :commoners_voice, -> { where(good_practice: false, welfare_provision: false) }
 
   def author
     commoner

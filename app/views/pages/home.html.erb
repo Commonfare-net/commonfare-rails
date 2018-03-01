@@ -65,15 +65,14 @@
   <% unless user_signed_in? %>
   <div class="container-fluid">
     <div class="row justify-content-center mt-2">
-      <div class="col-lg-4 col-md-6">
-        <div class="row">
-          <div class="col">
-            <%= link_to s_('Button|Join'), new_user_registration_path, class: 'btn btn-cf btn-lg btn-block' %>
-          </div>
-          <div class="col">
-            <%= link_to s_('Button|Login'), new_user_session_path, class: 'btn btn-outline-cf btn-lg btn-block'  %>
-          </div>
-        </div>
+      <div class="col-lg-4 col-md-6 text-center">
+        <p class="jumbotron-text">
+          <%= s_('Home text|Do you want to join the community? You will need only an email address, and we will never use it for other purposes.') %>
+        </p>
+        <%= link_to s_('Button|Join'), new_user_registration_path, class: 'btn btn-cf btn-lg btn-block' %>
+        <p class="jumbotron-text">
+          <%= (s_('Home text|Are you already registered? <strong>%{login_link}</strong>') %{login_link: link_to(_('Login'), new_user_session_path)}).html_safe %>
+        </p>
       </div>
     </div>
   </div>
@@ -101,7 +100,7 @@
       </div>
       <div class="row py-3">
         <div class="col text-center">
-          <%= link_to _('See all'), stories_path(filter: :normal), class: 'btn btn-outline-cf-secondary' %>
+          <%= link_to _('See all'), stories_path(filter: :commoners_voice), class: 'btn btn-outline-cf-secondary' %>
         </div>
       </div>
     <% end %>

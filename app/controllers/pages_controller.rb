@@ -18,7 +18,7 @@ class PagesController < ApplicationController
 
   def home
     if params[:id] == 'home'
-      @featured_stories = Story.normal.order('created_at DESC').first(6)
+      @featured_stories = Story.commoners_voice.order('created_at DESC').first(6)
       @featured_wps = Story.welfare_provision.order('created_at DESC').first(6)
       @featured_gps = Story.good_practice.order('created_at DESC').first(6)
     end

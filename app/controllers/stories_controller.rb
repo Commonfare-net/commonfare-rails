@@ -27,8 +27,8 @@ class StoriesController < ApplicationController
         @stories = Story.send(@filter.to_sym).order('created_at DESC')
         @title = @filter.to_sym
       else
-        @stories = Story.normal.order('created_at DESC')
-        @title = :normal
+        @stories = Story.commoners_voice.order('created_at DESC')
+        @title = :commoners_voice
       end
     else
       @stories = Story.order('created_at DESC') # All descending

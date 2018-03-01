@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .cf-jumbotron {
   .gray-layer {
-    background-color: rgba(0, 0, 0, .2);
+    background: linear-gradient(to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5));
     height: 100%;
     width: 100%;
     position: absolute;
@@ -11,13 +11,18 @@
   }
   @extend .jumbotron;
   border-radius: 0;
-  padding: 4rem 0;
-  background: image-url('jumbotron-bg-wall.jpg') no-repeat center center scroll;
+  padding: 6rem 0;
+  background-image: none;
+  background-color: #488580;
+  background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
-  background-size: cover;
   -o-background-size: cover;
-  background-size: cover;
+  .btn-block {
+    display: block;
+    width: 60%;
+    margin: auto;
+  }
   .btn-outline-cf {
     background-color: white;
     &:hover {
@@ -36,6 +41,14 @@
       height: auto;
     }
   }
+  p {
+    color: white;
+    &.jumbotron-text {
+      font-size: 13px;
+      color: white;
+      margin: 1em;
+    }
+  }
 }
 
 .carousel-container {
@@ -44,7 +57,8 @@
 }
 
 .carousel {
-  height: 248px;
+  // height: 248px;
+  height: auto;
   background-color: inherit;
   text-align: left;
   h1 {
@@ -54,9 +68,13 @@
   p {
     @extend .lead;
     color: white;
-    font-weight: 700;
-    font-size: 1.5rem;
+    font-weight: 400;
+    font-size: 2.65rem;
     margin: 1em auto;
+    line-height: 1.35em;
+  }
+  .carousel-control-prev, .carousel-control-next {
+    display: none;
   }
   .carousel-indicators {
     li {
