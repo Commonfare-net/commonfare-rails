@@ -1,23 +1,39 @@
 <% content_for :title, (_("Results for %{search_term}") %{search_term: @q}) %>
-<h2><%= (_("Results for '%{search_term}'") %{search_term: @q}) %></h2>
+<h1><%= (_("Results for '%{search_term}'") %{search_term: @q}) %></h1>
 <% if @tags.any? %>
-<div class="row">
+<div class="row my-4">
   <div class="col">
-    <p class="story-tags">
-      Tags:
+    <h2><%= (_("Tags with '%{search_term}'") %{search_term: @q}) %></h2>
+    <p class="cf-tags">
       <% @tags.each do |tag| %>
-      <%= link_to tag.name, tag_path(tag), class: 'btn btn-sm btn-light' %>
+        <%= link_to tag.name, tag_path(tag) %>
       <% end %>
     </p>
   </div>
 </div>
 <% end %>
-<% if @stories.any? %>
-<div class="row">
-<% @stories.each do |story| %>
-  <div class="col-lg-4 col-md-6">
-    <%= render 'stories/card', story: story %>
-  </div>
-<% end %>
-</div>
+
+<% @story_types_and_lists.each do |story_type, story_list| %>
+  <% if story_list.any? %>
+    <div class="row story-type-header">
+      <div class="col">
+        <h2><%= story_type_title(story_type) %></h2>
+      </div>
+    </div>
+    <div class="row">
+    <% if story_type == :welfare_provision %>
+      <div class="col">
+        <% story_list.each do |story| %>
+          <%= render 'stories/wp_row', story: story %>
+        <% end %>
+      </div>
+    <% else %>
+      <% story_list.each do |story| %>
+        <div class="col-lg-4 col-md-6">
+          <%= render 'stories/card', story: story %>
+        </div>
+      <% end %>
+    <% end %>
+    </div>
+  <% end %>
 <% end %>
