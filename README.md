@@ -12,50 +12,37 @@ Build the images for Composer and run the containers:
 
 ```bash
 $ docker-compose build
-$ docker-compose up
-```
-
-Edit `database.yml`:
-
-```yml
-default: &default
-  adapter: postgresql
-  encoding: unicode
-  pool: 5
-  timeout: 5000
-  username: postgres
-  host: postgres
-  port: 5432
-
-development:
-  <<: *default
-  database: commonfare_development
-
-test:
-  <<: *default
-  database: commonfare_test
-
-production:
-  <<: *default
-  database: commonfare_production
+$ docker-compose up -d
 ```
 
 Create the database and run migrations
 
 ```bash
-$ docker-compose run app rake db:create
-$ docker-compose run app rake db:migrate
+$ docker-compose run --rm app rake db:create
+$ docker-compose run --rm app rake db:migrate
+```
+
+We use `yarn` for managing npm packages, so install it on your machine and run
+
+```bash
+$ yarn install
 ```
 
 ### Start and stop containers
 
-Don't use **up** and **down** just to restart the rails server, because this will cause the container to be destroyed and recreated, and the data in the DB will be lost.
+Use **up** and **down** just to start up/shut down the rails server.
 
-Instead, use **start** and **stop** like this:
+```bash
+$ docker-compose up -d
+$ docker-compose down
+```
+
+Alternatively, you can use **start**, **stop**, **restart** like this:
 
 ```bash
 $ docker-compose start
 $ docker-compose stop
+$ docker-compose restart
 ```
 
 ## `Gemfile` modifications
@@ -63,17 +50,11 @@ $ docker-compose stop
 Every time you modify the `Gemfile` you have to **rebuild** the docker image of the Rails app, so:
 
 ```bash
-$ docker build .
+$ docker-compose build
+$ docker-compose up -d
 ```
 
 *This will re-create the image so the `bundle` will take quite some time.*
-
-Then you have to rebuild also with Composer an then use **up**:
-
-```bash
-$ docker-compose build
-$ docker-compose up
-```
 
 This will recreate only the Rails container from the new image, and not the DB container, that this way persists data.
 
@@ -92,7 +73,11 @@ When done, exit `pry` by entering `exit` and detach from the container with `Ctr
 
 ## Translation
 
-We use [translation.io](https://github.com/aurels/translation-gem), so  write text using `_('Free text')` and execute `docker-compose run --rm app rake translation:sync` to push new keys and get new translations.
+We use [translation.io](https://github.com/aurels/translation-gem), so  write text using `_('Free text')` and execute this command to push new keys and get new translations (You will need an APY key for this).
+
+```bash
+$ docker-compose run --rm app rake translation:sync
+```
 
 ## Deployment
 
