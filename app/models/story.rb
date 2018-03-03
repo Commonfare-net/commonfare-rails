@@ -29,6 +29,16 @@ class Story < ApplicationRecord
     commoner
   end
 
+  def type
+    if good_practice?
+      :good_practice
+    elsif welfare_provision?
+      :welfare_provision
+    else
+      :commoners_voice
+    end
+  end
+
   def translated_in?(locale)
     translated_locales.include? locale.to_sym
   end

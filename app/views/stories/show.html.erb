@@ -13,116 +13,96 @@
     <meta name="twitter:card" content="<%= @story.images.any? ? 'summary_large_image' : 'summary' %>" />
     <% end %>
 
-
-    <%# Language selection and ribbon %>
-    <div class="row">
-      <% if @story.translated_locales.length > 1 && @story.has_translations_besides(@story_locale) %>
-      <div class="col">
-        <div class="story-lang-select">
-          <%= (_("Read in %{other_languages}") %{other_languages: other_story_available_translations(@story, @story_locale)}).html_safe %>
-        </div>
-      </div>
-      <% end %>
-      <% if @story.welfare_provision? %>
-      <div class="col">
-        <div class="story-ribbon wp-ribbon"><%= _("Welfare Provision") %></div>
-      </div>
-      <% end %>
-      <% if @story.good_practice? %>
-      <div class="col">
-        <div class="story-ribbon gp-ribbon"><%= _("Good Practice") %></div>
-      </div>
-      <% end %>
-    </div>
-
-    <%# STORY TITLE %>
     <div class="row">
       <div class="col">
         <div class="story-title">
-          <h2><%= @story.title %></h2>
-        </div>
-      </div>
-    </div>
-
-    <%# STORY AUTHOR, DATE, COMMENTS, SHARE %>
-    <div class="row">
-      <div class="col-8">
-        <div class="story-author">
-          <p>
-          <%= author_for(@story) %> <br>
-          <small><%= l(@story.created_at.to_date, format: :long) %></small>
-          </p>
-        </div>
-      </div>
-      <div class="col-4 text-right">
-        <% if can? :edit, @story %>
+          <% if can? :edit, @story %>
           <%= link_to edit_story_path(@story), class: 'mdc-fab mdc-fab--mini material-icons card-fab--absolute', 'aria-label': 'Favorite', data: { 'mdc-auto-init': 'MDCRipple' } do %>
           <span class="mdc-fab__icon">
             <%= fa_icon 'pencil lg' %>
           </span>
           <% end %>
-        <% end %>
-        <small class="text-muted">
-          <%= link_to '#comments-anchor', class: 'story-comments-link' do %>
-            <%= fa_icon 'comment-o', class: 'story-comments-icon' %> <%= @story.comments.count %>
           <% end %>
-        </small>
-        <a href="#" class="story-share-link" data-toggle="modal" data-target="#shareModal">
-          <%= fa_icon 'share-alt lg' %>
-        </a>
-      </div>
-    </div>
-
-    <%# STORY PLACE %>
-    <div class="row">
-      <div class="col">
-        <div class="story-place">
-          <%= fa_icon('map-marker', text: @story.place) %>
+          <p class="story-type"><%= title_for_stories(@story.type).upcase %></p>
+          <h2><%= @story.title %></h2>
         </div>
       </div>
     </div>
 
-    <%# STORY CONTENT %>
-    <div class="row">
-      <div class="col">
-        <div class="story-content">
-          <%= @story.content.html_safe %>
-        </div>
-      </div>
-    </div>
-
-    <% end %>
-
-    <%# STORY TAGS %>
     <% if @story.tags.any? %>
     <div class="row">
       <div class="col my-2">
-        <p id="tags-anchor" class="story-tags">
-          <span class="text-muted">Tags:</span>
-          <%= @story.tags.map do |tag| %>
-            <% link_to tag.name, tag_path(tag) %>
-          <% end.join(', ').html_safe %>
+        <p id="tags-anchor" class="cf-tags">
+          <% @story.tags.each do |tag| %>
+            <%= link_to tag.name, tag_path(tag) %>
+          <% end %>
         </p>
       </div>
     </div>
     <% end %>
 
-    <%# BOTTOM SHARE BUTTON %>
     <div class="row">
-      <div class="col mt-2 mb-3">
-        <%= link_to s_("Button|Share"), '#', class: 'btn btn-cf', data: { toggle: "modal", target: "#shareModal" } %>
+      <div class="col-lg-3">
+        <div class="story-info">
+          <div class="row mb-2">
+            <div class="col">
+              <div class="story-author">
+                <%= fa_icon('user fw', text: author_for(@story)) %>
+              </div>
+              <div class="story-date">
+                <%= fa_icon('clock-o fw', text: l(@story.created_at.to_date, format: :long)) %>
+              </div>
+              <div class="story-place">
+                <%= fa_icon('map-marker fw', text: @story.place) %>
+              </div>
+              <% if @story.translated_locales.length > 1 && @story.has_translations_besides(@story_locale) %>
+              <div class="row">
+                <div class="col">
+                  <div class="story-lang-select">
+                    <%= fa_icon('globe', text: other_story_available_translations(@story, @story_locale).html_safe) %>
+                  </div>
+                </div>
+              </div>
+              <% end %>
+              <div class="story-comments">
+                <%= link_to '#comments-anchor', class: 'story-comments-link' do %>
+                  <%= fa_icon 'comment-o', text: "#{@comments.count} #{n_('Comment', 'Comments', @comments.count)}" %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <%= link_to s_("Button|Share"), '#', class: 'btn btn-cf btn-block', data: { toggle: "modal", target: "#shareModal" } %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-9">
+        <div class="row">
+          <div class="col">
+            <div class="story-content">
+              <%= @story.content.html_safe %>
+            </div>
+          </div>
+        </div>
+        <div class="row py-5">
+          <div class="col-lg-4">
+            <%= link_to s_("Button|Share"), '#', class: 'btn btn-cf btn-block', data: { toggle: "modal", target: "#shareModal" } %>
+          </div>
+        </div>
+        <%= render('comments/new', story: @story, comment: @comment) if user_signed_in? %>
+        <div class="row justify-content-center">
+          <div class="col-md-8 col-lg-8">
+            <h3 id="comments-anchor" class="red-title text-left"><%= @comments.count %> <%= n_('Comment', 'Comments', @comments.count) %></h3>
+            <%= render 'comments/list', comments: @comments %>
+          </div>
+        </div>
       </div>
     </div>
 
-  </div>
-</div>
+    <% end %> <%# end Globalize block %>
 
-<%= render('comments/new', story: @story, comment: @comment) if user_signed_in? %>
-
-<div class="row justify-content-center">
-  <div class="col-md-8 col-lg-6">
-    <h3 id="comments-anchor" class="red-title text-left"><%= @comments.count %> <%= n_('Comment', 'Comments', @comments.count) %></h3>
-    <%= render 'comments/list', comments: @comments %>
   </div>
 </div>
 

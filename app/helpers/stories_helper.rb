@@ -55,7 +55,7 @@ module StoriesHelper
     when :welfare_provision
       _('Welfare Provisions')
     else
-      _('Stories')
+      _('Commoners Voices')
     end
   end
 
