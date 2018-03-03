@@ -93,11 +93,19 @@
         <%= link_to _('See all'), stories_path(filter: story_type), class: 'btn btn-outline-cf-secondary' %>
       </div>
     </div>
-    <div class="row mb-5">
-    <% story_list.each do |story| %>
-      <div class="col-lg-4 col-md-6">
-        <%= render 'stories/card', story: story %>
+    <div class="row">
+    <% if story_type == :welfare_provision %>
+      <div class="col">
+        <% story_list.each do |story| %>
+          <%= render 'stories/wp_row', story: story %>
+        <% end %>
       </div>
+    <% else %>
+      <% story_list.each do |story| %>
+        <div class="col-lg-4 col-md-6">
+          <%= render 'stories/card', story: story %>
+        </div>
+      <% end %>
     <% end %>
     </div>
   <% end %>

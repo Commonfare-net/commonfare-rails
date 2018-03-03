@@ -1,4 +1,11 @@
 module StoriesHelper
+  def story_card_tags(story)
+    first_tags = story.tags.first(9)
+    first_tags.map do |tag|
+      link_to(tag.name, tag_path(tag), class: 'story-card-tag-link')
+    end.join('').html_safe
+  end
+
   def story_card_tags_links(story)
     first_tag = story.tags.first
     other_tags_count = story.tags.count - 1
@@ -72,9 +79,9 @@ module StoriesHelper
 
   def card_author(story)
     if story.anonymous?
-      content_tag(:span, _('Anonymous'), class: 'text-white')
+      content_tag(:span, _('Anonymous'))
     else
-      link_to(story.commoner.name, commoner_path(story.commoner), class: 'text-white')
+      link_to(story.commoner.name, commoner_path(story.commoner))
     end
   end
 end
