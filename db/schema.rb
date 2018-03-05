@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180202150659) do
+ActiveRecord::Schema.define(version: 20180305151647) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -88,6 +88,7 @@ ActiveRecord::Schema.define(version: 20180202150659) do
     t.boolean "welfare_provision", default: false
     t.boolean "good_practice", default: false
     t.boolean "anonymous", default: false
+    t.json "content_json"
     t.index ["anonymous"], name: "index_stories_on_anonymous"
     t.index ["commoner_id"], name: "index_stories_on_commoner_id"
     t.index ["good_practice"], name: "index_stories_on_good_practice"
@@ -110,6 +111,7 @@ ActiveRecord::Schema.define(version: 20180202150659) do
     t.string "title"
     t.text "content"
     t.string "slug"
+    t.json "content_json"
     t.index ["locale"], name: "index_story_translations_on_locale"
     t.index ["story_id"], name: "index_story_translations_on_story_id"
   end
