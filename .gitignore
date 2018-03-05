@@ -26,3 +26,8 @@ Dockerfile.*
 docker-compose.*.yml
 
 app_variables.env
+/public/packs
+/public/packs-test
+/node_modules
+yarn-debug.log*
+.yarn-integrity

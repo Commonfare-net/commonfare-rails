@@ -5,10 +5,11 @@ services:
     image: commonfare_dev_rails_app
     container_name: commonfare_dev_rails_app
     restart: always
-    command: rails server -p 3000 -b '0.0.0.0'
+    command: rails server -p 3000 -b 0.0.0.0 --pid /app/tmp/pids/development.pid
     volumes:
       - .:/app
       - ~/tmp:/host_tmp
+      - bundle_cache:/bundle
     ports:
       - "3000:3000"
     # links app container to postgres container.
@@ -22,6 +23,19 @@ services:
     # These two allow debug with pry
     tty: true
     stdin_open: true
+  webpack-dev-server:
+    image: commonfare_dev_rails_app
+    container_name: commonfare_dev_webpack
+    restart: always
+    command: ./bin/webpack-dev-server
+    ports:
+      - "3035:3035"
+    volumes:
+      - .:/app
+      - ~/tmp:/host_tmp
+      - bundle_cache:/bundle
+    env_file:
+      - app_variables.env
   mailcatcher:
     image: tophfr/mailcatcher
     container_name: commonfare_mailcatcher
@@ -37,3 +51,6 @@ services:
       - "5432"
     volumes:
       - ./db-data:/var/lib/postgresql/data
+volumes:
+  bundle_cache:
+  # Mount volume with default driver
