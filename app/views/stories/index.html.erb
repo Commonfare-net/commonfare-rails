@@ -2,14 +2,7 @@
 <h2>
   <% if @commoner.present? %>
     <%= (_('Stories by %{author_name}') %{author_name: @commoner.name}) %>
-  <% else %>
-    <%= title_for_stories(@title) %>
   <% end %>
 </h2>
-<div class="row">
-<% @stories.each do |story| %>
-  <div class="col-lg-4 col-md-6">
-    <%= render 'card', story: story %>
-  </div>
-<% end %>
-</div>
+
+<%= render 'stories/types_and_lists', story_types_and_lists: @story_types_and_lists %>

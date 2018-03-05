@@ -1,12 +1,12 @@
 class MainController < ApplicationController
 
   def autocomplete
-    @stories  = Story.with_translations(I18n.locale).ransack(
-                        translations_title_cont: params[:q]
-                      ).result(distinct: true).limit(5)
-    @tags     = Tag.ransack(
-                        name_cont: params[:q]
-                      ).result(distinct: true).limit(5)
+    @stories = Story.with_translations(I18n.locale).ransack(
+      translations_title_cont: params[:q]
+    ).result(distinct: true).limit(5)
+    @tags = Tag.ransack(
+      name_cont: params[:q]
+    ).result(distinct: true).limit(5)
   end
 
   def search
@@ -26,8 +26,8 @@ class MainController < ApplicationController
       welfare_provision: results.welfare_provision.order('created_at DESC')
     }
 
-    @tags     = Tag.ransack(
-                        name_cont: @q
-                      ).result(distinct: true)
+    @tags = Tag.ransack(
+      name_cont: @q
+    ).result(distinct: true)
   end
 end
