@@ -10,7 +10,7 @@
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="d-block d-lg-none d-xl-none">
+  <div class="d-block d-lg-none d-xl-none cf-search-form-container">
     <%= form_with url: search_path, local: true, method: :get, html: { class: 'form-inline my-lg-0' } do |form| %>
     <%= form.text_field :q, placeholder: _('Search'), data: { behavior: 'autocomplete' }, class: 'form-control mr-sm-2' %>
     <%= form.button fa_icon('search'), class: 'btn btn-cf' %>
@@ -37,7 +37,7 @@
       </li>
     </ul>
     <ul class="navbar-nav ml-auto">
-    <li class="nav-item d-none d-lg-block d-xl-block">
+    <li class="nav-item d-none d-lg-block d-xl-block cf-search-form-container">
       <%= form_with url: search_path, local: true, method: :get, html: { class: 'form-inline my-2 my-lg-0' } do |form| %>
       <%= form.text_field :q, placeholder: _('Search'), data: { behavior: 'autocomplete' }, class: 'form-control mr-sm-2' %>
       <%= form.button fa_icon('search'), class: 'btn btn-cf my-2 my-sm-0' %>

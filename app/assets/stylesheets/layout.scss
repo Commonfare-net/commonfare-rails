@@ -106,23 +106,66 @@ body {
     color: inherit;
   }
 }
-// Used in search.js as option to customize easyAutocomplete
-.cf-search-form {
-  // width: 201px !important;
-  z-index: 999;
-  width: unset !important;
-  @media screen and (max-width: 575px) {
-    width: 193px !important;
-    margin-right: 8px;
-  }
-  input {
-    padding: 8px 12px;
-  }
-  .easy-autocomplete-container {
-    width: 193px !important;
-  }
+
+.cf-search-form-container {
+  form.form-inline {
+      margin-right: .6rem;
+      border: 1px solid rgba(255, 255, 255, .5);
+      border-radius: 2px;
+      .form-control {
+        max-width: 100px;
+        transition: all .25s;
+        &:focus {
+          max-width: 200px;
+          background-color: rgba(255, 255, 255, .25);
+          color: white;
+        }
+      }
+      button {
+        background: transparent;
+      }
+    }
+
+  // Used in search.js as option to customize easyAutocomplete
+  .cf-search-form {
+    // width: 201px !important;
+    z-index: 999;
+    width: unset !important;
+    input {
+      padding: 8px 12px;
+      background: transparent;
+      color: white;
+      border: none;
+      border-radius: 0;
+      box-shadow: none;
+      &::placeholder {
+        color: white;
+      }
+    }
+    .easy-autocomplete-container {
+      width: 200px !important;
+      border-top: none;
+      .eac-category {
+        font-size: 1em;
+        text-transform: uppercase;
+        color: $cf-primary-color;
+        font-size: 1.3em;
+        border-top: 1px solid #ddd;
+        strong {
+          font-weight: 500;
+        }
+      }
+    }
+}
 }
 
 .navbar-avatar {
   height: 24px;
+}
+
+@media screen and (max-width: 575px) {
+  .cf-search-form {
+    width: 200px !important;
+    margin-right: 8px;
+  }
 }
