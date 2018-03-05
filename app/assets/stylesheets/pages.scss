@@ -107,6 +107,13 @@
   }
 }
 
+.cf-static-page {
+  p, ul {
+    font-family: "Lora", serif;
+    font-size: 1.1em;
+  }
+}
+
 @media screen and (max-width: 991px) {
   .carousel-control-prev, .carousel-control-next {
     display: none;
