@@ -8,11 +8,35 @@
 <meta name="twitter:card" content="summary" />
 <% end %>
 <% content_for :title, (_("Stories with tag %{tag_name}") %{tag_name: @tag.name}) %>
-<h3><%= _("Stories with tag") %> <%= button_tag @tag.name, class: 'btn btn-lg btn-light' %></h3>
-<div class="row">
-<% @stories.each do |story| %>
-  <div class="col-lg-4 col-md-6">
-    <%= render 'stories/card', story: story %>
+<div class="row my-4">
+  <div class="col">
+    <h3 class="d-inline mr-3"><%= _("Stories with tag") %></h3>
+    <p class="cf-tags d-inline">
+      <%= link_to @tag.name, tag_path(@tag) %>
+    </p>
   </div>
-<% end %>
 </div>
+<% @story_types_and_lists.each do |story_type, story_list| %>
+  <% if story_list.any? %>
+    <div class="row story-type-header">
+      <div class="col">
+        <h2><%= story_type_title(story_type) %></h2>
+      </div>
+    </div>
+    <div class="row">
+    <% if story_type == :welfare_provision %>
+      <div class="col">
+        <% story_list.each do |story| %>
+          <%= render 'stories/wp_row', story: story %>
+        <% end %>
+      </div>
+    <% else %>
+      <% story_list.each do |story| %>
+        <div class="col-lg-4 col-md-6">
+          <%= render 'stories/card', story: story %>
+        </div>
+      <% end %>
+    <% end %>
+    </div>
+  <% end %>
+<% end %>
