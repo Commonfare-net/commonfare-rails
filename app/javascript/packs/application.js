@@ -6,5 +6,12 @@
 //
 // To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
 // layout file, like app/views/layouts/application.html.erb
+import WebpackerReact from 'webpacker-react';
 
-console.log('Hello World from Webpacker')
+// get the damn storybuilder
+import StoryBuilder from 'storybuilder-react';
+
+// expose it to webpacker
+WebpackerReact.setup({
+  StoryBuilder
+});
