@@ -1,0 +1,35 @@
+<% content_for :title, _('Write your Story') %>
+<div class="row justify-content-center pb-2">
+  <div class="col-md-10 col-lg-8">
+    <% Globalize.with_locale(@story_locale) do %>
+      <%= render 'language_choice', story_locale: @story_locale %>
+
+      <% if @story.persisted? %>
+        <%= react_component 'StoryBuilderWrapper', locale: @story_locale, story: @story.content_json || [] %>
+      <% else %>
+        <%= simple_form_for([@commoner, @story], url: stories_path({story_locale: @story_locale})) do |f| %>
+          <%= f.input :title,
+                      label: _('Give a title to your content'),
+                      required: false,
+                      placeholder: _('e.g. There and back again') %>
+          <%= f.input :place,
+                      label: _('Where is this set?'),
+                      required: false,
+                      placeholder: _('e.g. Milan, Italy'),
+                      hint: _('City, Region, Country') %>
+          <%= f.association :tags,
+                      label: _('Tags'),
+                      hint: _('Use comma or press Enter to separate tags') %>
+          <%= f.input :anonymous,
+                      inline_label: _('Publish anonymously') %>
+
+          <%= f.button :submit,
+                  s_('Story form button|Start writing'),
+                  id: 'publish-button',
+                  class: 'btn btn-success btn-block',
+                  data: {'disable-with': _('Publishing...')} %>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+</div>

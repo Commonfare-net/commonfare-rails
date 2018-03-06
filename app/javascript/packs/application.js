@@ -9,9 +9,9 @@
 import WebpackerReact from 'webpacker-react';
 
 // get the damn storybuilder
-import StoryBuilder from 'storybuilder-react';
+import StoryBuilderWrapper from '../story-builder/StoryBuilderWrapper';
 
 // expose it to webpacker
 WebpackerReact.setup({
-  StoryBuilder
+  StoryBuilderWrapper
 });

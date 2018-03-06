@@ -5,10 +5,10 @@ class StoriesController < ApplicationController
 
   # load and authorize are separate to make FriendlyID work
   # with both :id and :slug
-  before_action :set_story, except: [:new, :create, :index] # manual load
+  before_action :set_story, except: [:new, :builder, :create, :index] # manual load
   authorize_resource :story # managed by CanCanCan
 
-  before_action :set_commoner, only: [:new, :create, :edit]
+  before_action :set_commoner, only: [:new, :builder, :create, :edit]
   before_action :set_story_locale
 
   # GET /stories
@@ -49,6 +49,10 @@ class StoriesController < ApplicationController
   def new
     @story = @commoner.stories.build
     #binding.pry
+  end
+
+  def builder
+    @story = @commoner.stories.build
   end
 
   # GET /stories/1/edit

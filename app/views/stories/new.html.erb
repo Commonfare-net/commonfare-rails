@@ -2,21 +2,7 @@
 <div class="row justify-content-center pb-2">
   <div class="col-md-10 col-lg-8">
     <% Globalize.with_locale(@story_locale) do %>
-      <div>
-        <%= _("You are writing in") %>
-        <div class="dropdown d-inline">
-          <button href="#" id="langSelectDropdownMenuButton" type="button" class="btn btn-link btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <%= localised_language_name(I18n.locale, @story_locale) %>
-          </button>
-          <div class="dropdown-menu" aria-labelledby="langSelectDropdownMenuButton">
-            <% other_locales(@story_locale).each do |locale| %>
-              <%= link_to "#{localised_language_name(I18n.locale, locale)}", { story_locale: locale }, class: 'dropdown-item' %>
-            <% end %>
-          </div>
-        </div>
-      </div>
-
-      <%= react_component 'StoryBuilder' %>
+      <%= render 'language_choice', story_locale: @story_locale %>
 
       <%= simple_form_for([@commoner, @story], url: stories_path({story_locale: @story_locale})) do |f| %>
         <%= render 'fields', f: f %>
