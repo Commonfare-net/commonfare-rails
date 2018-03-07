@@ -1,0 +1,15 @@
+---
+
+UtilityFunction:
+  public_methods_only: true
+
+DuplicateMethodCall:
+  enabled: false
+
+"db/migrate":
+  IrresponsibleModule:
+    enabled: false
+  FeatureEnvy:
+    enabled: false
+  UncommunicativeVariableName:
+    enabled: false

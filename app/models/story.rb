@@ -10,7 +10,9 @@ class Story < ApplicationRecord
   translates :title, :content, :content_json, :slug
   friendly_id :title, use: [:slugged, :history, :globalize] # keep this order, see https://stackoverflow.com/a/33652486/1897170
 
-  validates :title, :content, :place, presence: true
+  validates :title, :place, presence: true
+  validates :content, presence: true, unless: :created_with_story_builder
+  validates :content_json, presence: true, if: :created_with_story_builder, on: :update
 
   after_commit :check_welfare_provision_and_good_practice, on: [:create, :update]
 

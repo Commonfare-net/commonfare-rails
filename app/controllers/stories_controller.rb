@@ -52,7 +52,12 @@ class StoriesController < ApplicationController
   end
 
   def builder
-    @story = @commoner.stories.build
+    if params[:story_id].present?
+      @story = Story.find params[:story_id]
+      authorize! :update, @story
+    else
+      @story = @commoner.stories.build
+    end
   end
 
   # GET /stories/1/edit
@@ -69,19 +74,11 @@ class StoriesController < ApplicationController
     current_locale = I18n.locale
     I18n.locale = @story_locale
     @story = @commoner.stories.build(story_params)
-    respond_to do |format|
-      if @story.save
-        @story.images << images_from_content(@story)
-        # I18n.locale back to the original
-        I18n.locale = current_locale
-        format.html { redirect_to story_path(@story, story_locale: @story_locale), notice: _('Story was successfully created.') }
-        format.json { render :show, status: :created, location: @story }
-      else
-        # I18n.locale back to the original
-        I18n.locale = current_locale
-        format.html { render :new }
-        format.json { render json: @story.errors, status: :unprocessable_entity }
-      end
+
+    if params[:story_builder] == 'true'
+      create_with_story_builder(current_locale)
+    else
+      create_with_text_content(current_locale)
     end
   end
 
@@ -135,6 +132,37 @@ class StoriesController < ApplicationController
       @story_locale = I18n.locale
       if params[:story_locale].present? && I18n.available_locales.include?(params[:story_locale].to_sym)
         @story_locale = params[:story_locale].to_sym
+      end
+    end
+
+    def create_with_story_builder(restore_locale)
+      @story.created_with_story_builder = true
+      if @story.save
+        I18n.locale = restore_locale
+        respond_to do |format|
+          format.html { redirect_to story_builder_path(story_id: @story.id, story_locale: @story_locale), notice: _('Story was successfully created.') }
+        end
+      else
+        I18n.locale = restore_locale
+        respond_to do |format|
+          format.html { render :builder }
+        end
+      end
+    end
+
+    # creates a story with a text content
+    def create_with_text_content(restore_locale)
+      if @story.save
+        @story.images << images_from_content(@story)
+        I18n.locale = restore_locale
+        respond_to do |format|
+          format.html { redirect_to story_path(@story, story_locale: @story_locale), notice: _('Story was successfully created.') }
+        end
+      else
+        I18n.locale = restore_locale
+        respond_to do |format|
+          format.html { render :new }
+        end
       end
     end
 

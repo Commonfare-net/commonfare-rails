@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180305151647) do
+ActiveRecord::Schema.define(version: 20180307142354) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -89,6 +89,7 @@ ActiveRecord::Schema.define(version: 20180305151647) do
     t.boolean "good_practice", default: false
     t.boolean "anonymous", default: false
     t.json "content_json"
+    t.boolean "created_with_story_builder", default: false
     t.index ["anonymous"], name: "index_stories_on_anonymous"
     t.index ["commoner_id"], name: "index_stories_on_commoner_id"
     t.index ["good_practice"], name: "index_stories_on_good_practice"
