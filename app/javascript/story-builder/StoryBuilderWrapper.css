@@ -1,3 +1,8 @@
+.story-builder--has-error {
+  text-align: center;
+  font-size: 3rem;
+}
+
 .story-builder-add__button .fa-3x {
   font-size: 30px;
 }
