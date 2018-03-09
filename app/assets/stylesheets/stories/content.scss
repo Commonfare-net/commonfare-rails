@@ -3,6 +3,7 @@
   @extend .col;
   // background-color: snow;
   color: #111;
+  padding-top: 2em;
   padding-bottom: 3.7em;
 
   .story-ribbon {
@@ -34,7 +35,7 @@
       margin-bottom: 0;
     }
     p.story-type {
-      font-size: 1.3em;
+      font-size: 1em;
       text-transform: uppercase;
       margin: 0;
       font-weight: 500;
@@ -61,6 +62,7 @@
 
   .story-info {
     font-size: 1.3em;
+    line-height: 1.5em;
 
     .story-author,
     .story-date,
@@ -85,17 +87,17 @@
 
 
     .story-comments {
-      padding: 2.7em 0 .5em; // TODO: diminuire per schermi piccoli
+      padding: 2.7em 0 .5em;
     }
   }
 
   .story-content {
-    line-height: 1.7em;
+    line-height: 1.5em;
     font-family: "Lora", serif;
     font-size: 1.3em;
     figure {
-      width: 85%; // TODO: allargare per schermi piccoli
-      margin: auto; // TODO: allargare per schermi piccoli
+      width: 85%;
+      margin: auto;
       box-shadow: none;
       border: none;
       img {
@@ -144,6 +146,34 @@ trix-editor {
 }
 
 // Media queries
+
+@media screen and (max-width: 991px) {
+  .story-container {
+    .story-info {
+      .story-comments {
+        padding: 1.3em 0 .5em;
+      }
+      a.btn-block {
+        display: none;
+      }
+    }
+    .story-content {
+      figure {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .story-container {
+    .story-title {
+      h2 {
+        font-size: 2.19em;
+      }
+    }
+  }
+}
 
 @media screen and (max-width: 575px) {
   .story-container .story-content {

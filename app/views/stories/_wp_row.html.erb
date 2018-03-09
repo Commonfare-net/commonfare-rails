@@ -4,7 +4,7 @@
   </div>
   <div class="col-10">
     <div class="row">
-      <div class="col-lg-9 wp-row--title">
+      <div class="col-lg-8 wp-row--title">
         <h3><%= link_to(story.title, story_path(story)) %></h3>
         <% if story.tags.any? %>
         <small class="story-card-tags-text">
@@ -12,12 +12,12 @@
         </small>
         <% end %>
       </div>
-      <div class="col-lg-3">
+      <div class="col-lg-4">
         <div class="row">
-          <div class="col-7 wp-row--place">
+          <div class="col-8 wp-row--place">
             <%= fa_icon('map-marker fw', text: story.place) %>
           </div>
-          <div class="col-5 text-right wp-row--comments">
+          <div class="col-4 text-right wp-row--comments">
             <% if story.comments.any? %>
               <%= link_to story_card_comments_link(story), class: 'story-comments-link' do %>
               <%= fa_icon('comment-o', class: 'story-comments-icon', text: story.comments.count) %>

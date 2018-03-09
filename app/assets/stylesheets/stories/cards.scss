@@ -3,14 +3,18 @@
   @extend .card;
   box-shadow: none;
   border: 0px;
-  margin-bottom: 2rem;
+  margin: 1rem 0;
   .card-body {
-    padding: .5rem 0;
+    padding: .5rem 0 0;
+    .media {
+      padding: .5rem 0;
+    }
   }
 
   .card-title {
-    font-size: 1.4rem;
+    font-size: 1.69rem;
     font-weight: 500;
+    margin-bottom: .25rem;
   }
 
   .media-body {
@@ -18,6 +22,7 @@
     a {
       color: black;
       font-weight: 500;
+      opacity: .7;
     }
     small {
       opacity: .7;
@@ -32,7 +37,7 @@
     @extend .card-footer;
     border-top: 0px;
     background-color: white;
-    padding: 0.75rem 1.25rem .75rem 0;
+    padding: 0.25rem 1.25rem .25rem 0;
   }
 
   .story-card-author-image {

@@ -1,4 +1,4 @@
-<div class="row justify-content-center py-5">
+<div class="row py-5">
   <div class="col-md-8 col-lg-8">
     <%= simple_form_for(comment, url: story_comments_path(story)) do |f| %>
       <%= render 'comments/fields', f: f, btn_text: s_('Button|Comment') %>
