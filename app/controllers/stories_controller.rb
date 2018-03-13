@@ -48,20 +48,30 @@ class StoriesController < ApplicationController
   # GET /stories/new
   def new
     @story = @commoner.stories.build
-    #binding.pry
-  end
-
-  def builder
-    if params[:story_id].present?
-      @story = Story.find params[:story_id]
-      authorize! :update, @story
+    if params[:story_builder] == 'true'
+      @story.created_with_story_builder = true
+      render :builder
     else
-      @story = @commoner.stories.build
+      render :new
     end
   end
 
+  # def builder
+  #   if params[:story_id].present?
+  #     @story = Story.find params[:story_id]
+  #     authorize! :update, @story
+  #   else
+  #     @story = @commoner.stories.build(created_with_story_builder: true)
+  #   end
+  # end
+
   # GET /stories/1/edit
   def edit
+    if @story.created_with_story_builder?
+      render :builder
+    else
+      render :edit
+    end
   end
 
   # POST /stories
@@ -140,12 +150,12 @@ class StoriesController < ApplicationController
       if @story.save
         I18n.locale = restore_locale
         respond_to do |format|
-          format.html { redirect_to story_builder_path(story_id: @story.id, story_locale: @story_locale), notice: _('Story was successfully created.') }
+          format.json
         end
       else
         I18n.locale = restore_locale
         respond_to do |format|
-          format.html { render :builder }
+          format.json { render status: :unprocessable_entity, json: @story.errors }
         end
       end
     end
@@ -169,12 +179,14 @@ class StoriesController < ApplicationController
     # This method creates the not-yet-existing tags and replaces
     # tag_ids with their ids.
     def create_new_tags
-      params[:story][:tag_ids].map! do |tag_id|
-        if Tag.exists? tag_id
-          tag_id
-        else
-          new_tag = Tag.create(name: tag_id.downcase)
-          new_tag.id
+      if params[:story][:tag_ids].present?
+        params[:story][:tag_ids].map! do |tag_id|
+          if Tag.exists? tag_id
+            tag_id
+          else
+            new_tag = Tag.create(name: tag_id.downcase)
+            new_tag.id
+          end
         end
       end
     end
@@ -189,6 +201,6 @@ class StoriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def story_params
-      params.require(:story).permit(:title, :content, :place, :anonymous, tag_ids: [])
+      params.require(:story).permit(:title, :content, :place, :anonymous, content_json: [:type, :content], tag_ids: [])
     end
 end
