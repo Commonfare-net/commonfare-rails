@@ -40,7 +40,7 @@
     <li class="nav-item cf-search-form-container">
       <%= form_with url: search_path, local: true, method: :get, html: { class: 'form-inline my-2 my-lg-0' } do |form| %>
       <%= form.text_field :q, placeholder: _('Search'), data: { behavior: 'autocomplete' }, class: 'form-control mr-sm-2' %>
-      <%= form.button fa_icon('search'), class: 'btn btn-cf my-2 my-sm-0' %>
+      <%= form.button fa_icon('search'), class: 'btn btn-cf my-sm-0' %>
       <% end %>
     </li>
     <li class="nav-item active d-block d-lg-none d-xl-none">
