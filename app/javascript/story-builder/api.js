@@ -22,15 +22,22 @@ export const updateContent = (storyId, story, locale) => {
   }
 }
 
-export const uploadImage = (commonerId, file, onProgress) => {
+export const uploadImage = (story, file, onProgress) => {
   const form = new FormData();
   form.append("Content-Type", file.type);
   form.append("image[picture]", file);
+  form.append("image[imageable_type]", "Story");
+  form.append("image[imageable_id]", story.id)
 
   const options = {
     ...requestConfig(),
     onUploadProgress: progressEvent => onProgress((progressEvent.loaded / progressEvent.total) * 100)
   };
 
-  return axios.post(`/commoners/${commonerId}/images`, form, options);
+  return axios.post(`/commoners/${story.commoner_id}/images`, form, options);
 };
+
+export const deleteImage = (commonerId, imageUrl) => {
+  const imageId = imageUrl.match(new RegExp(`/commoner/${commonerId}/images/(\\d+)`))[1];
+  return axios.delete(`/commoners/${commonerId}/images/${imageId}`, requestConfig());
+}

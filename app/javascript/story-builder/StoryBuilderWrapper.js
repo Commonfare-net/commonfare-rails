@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import StoryBuilder from 'storybuilder-react';
-import { uploadImage, updateContent } from './api';
+import { uploadImage, deleteImage, updateContent } from './api';
 
 import './StoryBuilderWrapper.css';
 
@@ -29,10 +29,10 @@ export default class extends Component {
   }
 
   imageUploadHandler = (file, onProgress) => {
-    const { story: { commoner_id } } = this.props;
+    const { story } = this.props;
     this.setState({ status: 'Uploading...' });
 
-    return uploadImage(commoner_id, file, onProgress)
+    return uploadImage(story, file, onProgress)
            .then(response => new Promise((resolve, reject) => {
              if (response.status === 200) {
                resolve(response.data.url);
@@ -42,6 +42,12 @@ export default class extends Component {
            }))
            .catch(error => this.setState({ status: 'ERROR' }))
            .finally(() => this.setState({ status: undefined }))
+  }
+
+  imageDeleteHandler = ({ content: imageUrl }) => {
+    const { story: { commoner_id } } = this.props;
+    return deleteImage(commoner_id, imageUrl)
+           .catch(error => this.setState({ status: 'ERROR' }));
   }
 
   saveStory = (story) => {
@@ -82,6 +88,7 @@ export default class extends Component {
         <StoryBuilder
           availableTags={availableTags.map(({ id, name }) => ({ id, name }))}
           imageUploadHandler={this.imageUploadHandler}
+          imageDeleteHandler={this.imageDeleteHandler}
           onSave={this.saveStory}
           {...this.props.story} />
       </div>
