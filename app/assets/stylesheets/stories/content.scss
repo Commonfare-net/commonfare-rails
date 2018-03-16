@@ -1,0 +1,182 @@
+// Specific for Story show
+.story-container {
+  @extend .col;
+  // background-color: snow;
+  color: #111;
+  padding-top: 2em;
+  padding-bottom: 3.7em;
+
+  .story-ribbon {
+    float: right;
+    font-size: .9rem;
+    color: white;
+    padding: .2rem 1rem;
+    background-color: black;
+    &.wp-ribbon {
+      background-color: $cf-primary-color;
+    }
+    &.gp-ribbon {
+      background-color: $cf-secondary-color;
+    }
+    box-shadow: 1px 1px 2px #585858;
+  }
+
+  .story-lang-select {
+    @extend .text-muted;
+    font-size: 0.8em;
+    padding: 5px;
+  }
+
+  .story-title {
+    margin: 0;
+    h2 {
+      font-size: 3.7em;
+      font-weight: 400;
+      margin-bottom: 0;
+    }
+    p.story-type {
+      font-size: 1em;
+      text-transform: uppercase;
+      margin: 0;
+      font-weight: 500;
+    }
+  }
+
+  // .story-author {
+  //   font-style: italic;
+  //   h2 {
+  //     font-size: 3.713em;
+  //     font-weight: 400;
+  //     margin-bottom: 0;
+  //   }
+  //   a {
+  //     color: inherit;
+  //   }
+  // }
+
+  // .story-place {
+  //   @extend .text-muted;
+  //   font-size: 0.8em;
+  //   padding: 5px;
+  // }
+
+  .story-info {
+    font-size: 1.3em;
+    line-height: 1.5em;
+
+    .story-author,
+    .story-date,
+    .story-place,
+    .story-comments,
+    .story-lang-select {
+      @extend .text-muted;
+      font-size: 0.8em;
+      padding: 0;
+      i.fa {
+        padding-right: .5em;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+        &:hover {
+          color: inherit;
+          text-decoration: none;
+        }
+      }
+    }
+
+
+    .story-comments {
+      padding: 2.7em 0 .5em;
+    }
+  }
+
+  .story-content {
+    line-height: 1.5em;
+    font-family: "Lora", serif;
+    font-size: 1.3em;
+    figure {
+      width: 85%;
+      margin: auto;
+      box-shadow: none;
+      border: none;
+      img {
+        width: 100%;
+        height: auto;
+      }
+      iframe {
+        width: 100%;
+      }
+      figcaption {
+        background-color: #efefef;
+        // font-style: italic;
+        font-size: .9rem;
+        padding: 0 1em;
+        color: black;
+        &:hover {
+          text-decoration-line: underline;
+        }
+      }
+    }
+  }
+
+  .story-tags {
+    color: $cf-primary-color
+  }
+
+}
+
+// Trix related
+trix-editor {
+  iframe {
+    max-width: 100%;
+  }
+}
+
+.trix-button--image::before {
+  background-image: image-url('retro.svg');
+}
+
+.trix-button--video::before {
+  background-image: image-url('film.svg');
+}
+
+.trix-button-group.trix-button-group--history-tools, .trix-button--icon-code {
+  display: none;
+}
+
+// Media queries
+
+@media screen and (max-width: 991px) {
+  .story-container {
+    .story-info {
+      .story-comments {
+        padding: 1.3em 0 .5em;
+      }
+      a.btn-block {
+        display: none;
+      }
+    }
+    .story-content {
+      figure {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .story-container {
+    .story-title {
+      h2 {
+        font-size: 2.19em;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .story-container .story-content {
+    font-size: 1.1em;
+  }
+}

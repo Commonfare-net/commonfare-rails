@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .cf-jumbotron {
   .gray-layer {
-    background-color: rgba(0, 0, 0, .2);
+    background: linear-gradient(to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5));
     height: 100%;
     width: 100%;
     position: absolute;
@@ -11,13 +11,18 @@
   }
   @extend .jumbotron;
   border-radius: 0;
-  padding: 4rem 0;
-  background: image-url('jumbotron-bg-wall.jpg') no-repeat center center scroll;
+  padding: 6rem 0;
+  background-image: none;
+  background-color: #488580;
+  background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
-  background-size: cover;
   -o-background-size: cover;
-  background-size: cover;
+  .btn-block {
+    display: block;
+    width: 60%;
+    margin: auto;
+  }
   .btn-outline-cf {
     background-color: white;
     &:hover {
@@ -36,6 +41,14 @@
       height: auto;
     }
   }
+  p {
+    color: white;
+    &.jumbotron-text {
+      font-size: 13px;
+      color: white;
+      margin: 1em;
+    }
+  }
 }
 
 .carousel-container {
@@ -44,7 +57,8 @@
 }
 
 .carousel {
-  height: 248px;
+  // height: 248px;
+  height: auto;
   background-color: inherit;
   text-align: left;
   h1 {
@@ -54,9 +68,13 @@
   p {
     @extend .lead;
     color: white;
-    font-weight: 700;
-    font-size: 1.5rem;
+    font-weight: 400;
+    font-size: 2.65rem;
     margin: 1em auto;
+    line-height: 1.35em;
+  }
+  .carousel-control-prev, .carousel-control-next {
+    display: none;
   }
   .carousel-indicators {
     li {
@@ -68,31 +86,68 @@
     }
   }
 }
+
+.story-type-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  border-bottom: 1px solid black;
+  margin-top: 4em;
+  margin-bottom: .25em;
+  padding-bottom: 5px;
+  &:first-of-type {
+    margin-top: 1em;
+  }
+  h2, p {
+    margin: 0 0 -2px 0;
+  }
+  h2 {
+    font-size: 2.19em;
+  }
+}
+
 .story-content-filter {
   .nav-item {
     font-size: 1.5rem;
   }
 }
 
+.cf-static-page {
+  p, ul {
+    font-family: "Lora", serif;
+    font-size: 1.1em;
+  }
+}
+
 @media screen and (max-width: 991px) {
-  .carousel-control-prev, .carousel-control-next {
-    display: none;
+  .carousel-control-prev, .carousel-control-next, .d-lg-none {
+    display: none !important;
+  }
+  .story-type-header {
+    margin-top: 0;
+    border-bottom: none;
+    border-top: 1px solid black;
+    padding-top: 1em;
+    a.btn {
+      margin-top: 1em;
+    }
   }
 }
 
 @media screen and (max-width: 767px) {
   .cf-jumbotron {
-    background-color: white;
-    background-image: none;
+    // background-color: white;
+    // background-image: none;
   }
   .carousel-container {
     background-color: inherit;
     padding: 0;
   }
   .carousel {
-    height: 348px;
+    // height: 348px;
     p {
-      color: black;
+      font-size: 2.19em;
+      // color: black;
     }
     .carousel-indicators {
       li {
@@ -114,6 +169,9 @@
 
 @media screen and (max-width: 575px) {
   .carousel {
-    height: 398px;
+    // height: 398px;
+    p {
+      font-size: 1.69em;
+    }
   }
 }

@@ -1,0 +1,24 @@
+<% story_types_and_lists.each do |story_type, story_list| %>
+  <% if story_list.any? %>
+    <div class="row story-type-header">
+      <div class="col">
+        <h2><%= story_type_title(story_type) %></h2>
+      </div>
+    </div>
+    <div class="row">
+    <% if story_type == :welfare_provision %>
+      <div class="col">
+        <% story_list.each do |story| %>
+          <%= render 'stories/wp_row', story: story %>
+        <% end %>
+      </div>
+    <% else %>
+      <% story_list.each do |story| %>
+        <div class="col-lg-4 col-md-6">
+          <%= render 'stories/card', story: story %>
+        </div>
+      <% end %>
+    <% end %>
+    </div>
+  <% end %>
+<% end %>

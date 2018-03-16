@@ -1,0 +1,59 @@
+// Specific for Story card
+.cv-gp-card {
+  @extend .card;
+  box-shadow: none;
+  border: 0px;
+  margin: 1rem 0;
+  .card-body {
+    padding: .5rem 0 0;
+    .media {
+      padding: .5rem 0;
+    }
+  }
+
+  .card-title {
+    font-size: 1.69rem;
+    font-weight: 500;
+    margin-bottom: .25rem;
+  }
+
+  .media-body {
+    line-height: 1rem;
+    a {
+      color: black;
+      font-weight: 500;
+      opacity: .7;
+    }
+    small {
+      opacity: .7;
+    }
+  }
+  .story-card-title {
+    @extend .card-title;
+    height: 2.2em;
+  }
+
+  .story-card-footer {
+    @extend .card-footer;
+    border-top: 0px;
+    background-color: white;
+    padding: 0.25rem 1.25rem .25rem 0;
+  }
+
+  .story-card-author-image {
+    @extend .d-flex, .mr-3, .rounded-circle;
+    border: 1px solid #ddd;
+    height: 36px;
+    width: 36px;
+    margin-right: .5rem !important;
+  }
+
+  .story-card-title-link {
+    color: inherit;
+    text-decoration: none;
+    &:hover {
+      color: inherit;
+      text-decoration: none;
+    }
+  }
+}

@@ -10,7 +10,7 @@
 <% end %>
 <%= content_for :hero do %>
 <div class="cf-jumbotron">
-  <div class="gray-layer d-none d-md-block d-lg-block d-xl-block">&nbsp;</div>
+  <div class="gray-layer">&nbsp;</div>
   <div class="container-fluid d-block d-lg-none d-xl-none">
     <div class="row justify-content-center">
       <div class="col-lg-8 col-md-6">
@@ -37,16 +37,6 @@
                     <%= s_("Home carousel text|Commonfare is a new and complementary form of welfare provision that is accessible to all and bottom-up. Commonfare is for, with, and by people.") %>
                   </p>
                 </div>
-                <div class="carousel-item">
-                  <p>
-                    <%= s_("Home carousel text|Commonfare proposes an unconditional basic income; proper management of common goods; free access to basic needs, and alternative monetary circuits.") %>
-                  </p>
-                </div>
-                <div class="carousel-item">
-                  <p>
-                    <%= s_("Home carousel text|Commonfare.net is where we share information on existing welfare state provisions, support self-organized welfare initiatives and tell stories to promote collaboration. Join us!") %>
-                  </p>
-                </div>
               </div>
             </div>
           </div>
@@ -65,15 +55,14 @@
   <% unless user_signed_in? %>
   <div class="container-fluid">
     <div class="row justify-content-center mt-2">
-      <div class="col-lg-4 col-md-6">
-        <div class="row">
-          <div class="col">
-            <%= link_to s_('Button|Join'), new_user_registration_path, class: 'btn btn-cf btn-lg btn-block' %>
-          </div>
-          <div class="col">
-            <%= link_to s_('Button|Login'), new_user_session_path, class: 'btn btn-outline-cf btn-lg btn-block'  %>
-          </div>
-        </div>
+      <div class="col-lg-4 col-md-6 text-center">
+        <p class="jumbotron-text">
+          <%= s_('Home text|Do you want to join the community? You will need only an email address, and we will never use it for other purposes.') %>
+        </p>
+        <%= link_to s_('Button|Join'), new_user_registration_path, class: 'btn btn-cf btn-lg btn-block' %>
+        <p class="jumbotron-text">
+          <%= (s_('Home text|Are you already registered? <strong>%{login_link}</strong>') %{login_link: link_to(_('Login'), new_user_session_path)}).html_safe %>
+        </p>
       </div>
     </div>
   </div>
@@ -81,51 +70,33 @@
 </div>
 <% end %>
 
-<nav class="mb-3">
-  <div class="nav nav-pills nav-fill nav-justified story-content-filter flex-column flex-sm-row" role="tablist">
-    <a class="flex-sm-fill text-sm-center nav-item nav-link active" id="pills-stories-tab" data-toggle="pill" href="#pills-stories" role="tab" aria-controls="pills-home" aria-selected="true"><span class="pill-text"><%= _('Stories') %></span></a>
-    <a class="flex-sm-fill text-sm-center nav-item nav-link" id="pills-gp-tab" data-toggle="pill" href="#pills-gp" role="tab" aria-controls="pills-home" aria-selected="true"><span class="pill-text"><%= _('Good Practices') %></span></a>
-    <a class="flex-sm-fill text-sm-center nav-item nav-link" id="pills-wp-tab" data-toggle="pill" href="#pills-wp" role="tab" aria-controls="pills-home" aria-selected="true"><span class="pill-text"><%= _('Welfare Provisions') %></span></a>
-  </div>
-</nav>
-<div class="tab-content" id="pills-tabContent">
-  <div class="tab-pane fade show active" id="pills-stories" role="tabpanel" aria-labelledby="pills-stories-tab">
-    <% if @featured_stories.any? %>
-      <h2 class="text-center"><%= _('Latest Stories') %></h2>
-      <div class="row">
-        <%= render @featured_stories %>
+<% @story_types_and_lists.each do |story_type, story_list| %>
+  <% if story_list.any? %>
+    <div class="row story-type-header">
+      <div class="col-lg-auto">
+        <h2><%= story_type_title(story_type) %></h2>
       </div>
-      <div class="row py-3">
-        <div class="col text-center">
-          <%= link_to _('See all'), stories_path(filter: :normal), class: 'btn btn-outline-cf-secondary' %>
-        </div>
+      <div class="col">
+        <p><%= story_type_subtitle(story_type) %></p>
       </div>
-    <% end %>
-  </div>
-  <div class="tab-pane fade" id="pills-gp" role="tabpanel" aria-labelledby="pills-gp-tab">
-    <% if @featured_gps.any? %>
-    <h2 class="text-center"><%= _('Latest Good Practices') %></h2>
+      <div class="col-lg-auto">
+        <%= link_to _('See all'), stories_path(filter: story_type), class: 'btn btn-outline-cf-secondary' %>
+      </div>
+    </div>
     <div class="row">
-      <%= render @featured_gps %>
-    </div>
-    <div class="row py-3">
-      <div class="col text-center">
-        <%= link_to _('See all'), stories_path(filter: :good_practice), class: 'btn btn-outline-cf-secondary' %>
+    <% if story_type == :welfare_provision %>
+      <div class="col">
+        <% story_list.each do |story| %>
+          <%= render 'stories/wp_row', story: story %>
+        <% end %>
       </div>
-    </div>
-    <% end %>
-  </div>
-  <div class="tab-pane fade" id="pills-wp" role="tabpanel" aria-labelledby="pills-wp-tab">
-    <% if @featured_wps.any? %>
-      <h2 class="text-center"><%= _('Latest Welfare Provisions') %></h2>
-      <div class="row">
-        <%= render @featured_wps %>
-      </div>
-      <div class="row py-3">
-        <div class="col text-center">
-          <%= link_to _('See all'), stories_path(filter: :welfare_provision), class: 'btn btn-outline-cf-secondary' %>
+    <% else %>
+      <% story_list.each do |story| %>
+        <div class="col-lg-4 col-md-6">
+          <%= render 'stories/card', story: story %>
         </div>
-      </div>
+      <% end %>
     <% end %>
-  </div>
-</div>
+    </div>
+  <% end %>
+<% end %>

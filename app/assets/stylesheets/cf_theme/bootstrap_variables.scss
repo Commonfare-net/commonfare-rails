@@ -346,9 +346,9 @@ $link-hover-decoration: underline;
 // $btn-block-spacing-y:            .5rem;
 
 // Allows for customizing button radius independently from global border radius
-// $btn-border-radius:              $border-radius;
-// $btn-border-radius-lg:           $border-radius-lg;
-// $btn-border-radius-sm:           $border-radius-sm;
+$btn-border-radius:              0px;
+$btn-border-radius-lg:           0px;
+$btn-border-radius-sm:           0px;
 
 // $btn-transition:                 all .15s ease-in-out;
 

@@ -2,10 +2,12 @@ html {
   // used for placing the footer
   position: relative;
   min-height: 100%;
+  font-size: 14px;
 }
 body {
   /* Margin bottom by footer height */
-  margin-bottom: 100px;
+  margin-bottom: 300px; // this changes in a media query
+  -webkit-font-smoothing: antialiased;
 }
 
 .hero {
@@ -31,6 +33,13 @@ body {
 
 // White links against a dark background
 .navbar-cf {
+  flex-direction: row;
+  .navbar-cf-divider {
+    width: 0;
+    margin: 0 .5rem;
+    overflow: hidden;
+    border-right: 1px solid $navbar-cf-disabled-color;
+  }
   .navbar-brand {
     color: $navbar-cf-active-color;
 
@@ -40,8 +49,15 @@ body {
   }
 
   .navbar-nav {
+    &.navbar-story-links {
+      .nav-item {
+        font-size: 1.1rem;
+      }
+    }
     .nav-link {
       color: $navbar-cf-color;
+      padding-right: .75em;
+      padding-left: .75em;
 
       @include hover-focus {
         color: $navbar-cf-hover-color;
@@ -86,32 +102,132 @@ body {
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 100px;
   background-color: $cf-primary-color;
+  padding-bottom: 15px;
+  h6 {
+    letter-spacing: .035em;
+  }
   a {
     color: white;
   }
-  a.dropdown-item {
-    color: inherit;
+  .language {
+    a {
+      opacity: .5;
+      &.active {
+        opacity: 1;
+      }
+    }
+  }
+  ul {
+    list-style: none;
+    padding: 0;
   }
 }
-// Used in search.js as option to customize easyAutocomplete
-.cf-search-form {
-  // width: 201px !important;
-  z-index: 999;
-  width: unset !important;
-  @media screen and (max-width: 575px) {
-    width: 193px !important;
-    margin-right: 8px;
-  }
-  input {
-    padding: 8px 12px;
-  }
-  .easy-autocomplete-container {
-    width: 193px !important;
-  }
+
+.cf-search-form-container {
+  form.form-inline {
+      margin-right: .6rem;
+      border: 1px solid rgba(255, 255, 255, .5);
+      border-radius: 2px;
+      justify-content: space-between;
+      .form-control {
+        max-width: 100px;
+        transition: all .25s;
+        &:focus {
+          max-width: 200px;
+          width: 200px;
+          background-color: rgba(255, 255, 255, .25);
+          color: white;
+        }
+      }
+      button {
+        background: transparent;
+      }
+    }
+
+  // Used in search.js as option to customize easyAutocomplete
+  .cf-search-form {
+    // width: 201px !important;
+    z-index: 999;
+    width: unset !important;
+    input {
+      padding: 8px 12px;
+      background: transparent;
+      color: white;
+      border: none;
+      border-radius: 0;
+      box-shadow: none;
+      &::placeholder {
+        color: white;
+      }
+    }
+    .easy-autocomplete-container {
+      width: 200px !important;
+      border-top: none;
+      .eac-category {
+        font-size: 1em;
+        text-transform: uppercase;
+        color: $cf-primary-color;
+        font-style: normal;
+        border-top: 1px solid #ddd;
+        strong {
+          font-weight: 500;
+        }
+      }
+    }
+}
 }
 
 .navbar-avatar {
   height: 24px;
+}
+
+@media screen and (max-width: 991px) {
+  .navbar-cf {
+    flex-direction: row-reverse;
+    .navbar-nav {
+      .nav-link {
+        padding-right: 0;
+        padding-left: 0;
+      }
+    }
+  }
+  .cf-search-form-container {
+    .cf-search-form {
+      width: calc(100% - 36px) !important;
+      .form-control {
+        max-width: none !important;
+        width: 100% !important;
+        &:focus {
+          max-width: none !important;
+          width: 100% !important;
+        }
+      }
+      .easy-autocomplete-container {
+        width: 100% !important;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  body {
+    margin-bottom: 500px;
+  }
+  footer {
+    .row {
+      display: block;
+      .col-6 {
+        max-width: 100%;
+        width: 100%;
+        padding-bottom: 2em;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .cf-search-form {
+    width: 200px !important;
+  }
 }

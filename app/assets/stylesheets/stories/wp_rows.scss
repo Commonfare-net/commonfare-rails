@@ -1,0 +1,20 @@
+.wp-row {
+  padding: 1.25rem 0;
+  border-bottom: 1px solid #ddd;
+  font-size: 1.25rem;
+  .wp-row--date {
+    @extend .text-muted;
+  }
+  .wp-row--title {
+    h3 {
+      font-size: 1.69rem;
+      margin-bottom: .25rem;
+    }
+    a {
+      color: black;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}

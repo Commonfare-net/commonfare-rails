@@ -1,12 +1,12 @@
 class MainController < ApplicationController
 
   def autocomplete
-    @stories  = Story.ransack(
-                        translations_title_cont: params[:q]
-                      ).result(distinct: true).limit(5)
-    @tags     = Tag.ransack(
-                        name_cont: params[:q]
-                      ).result(distinct: true).limit(5)
+    @stories = Story.with_translations(I18n.locale).ransack(
+      translations_title_cont: params[:q]
+    ).result(distinct: true).limit(5)
+    @tags = Tag.ransack(
+      name_cont: params[:q]
+    ).result(distinct: true).limit(5)
   end
 
   def search
@@ -16,11 +16,18 @@ class MainController < ApplicationController
     @q = params[:q]
     # no search key? Get back to where you once belonged (cit. The Beatles)
     redirect_back(fallback_location: root_path) if @q.blank?
-    @stories  = Story.ransack(
-                        translations_title_or_translations_content_or_tags_name_or_place_cont: @q
-                      ).result(distinct: true)
-    @tags     = Tag.ransack(
-                        name_cont: @q
-                      ).result(distinct: true)
+    results = Story.with_translations(I18n.locale).ransack(
+      translations_title_or_translations_content_or_tags_name_or_place_cont: @q
+    ).result(distinct: true)
+
+    @story_types_and_lists = {
+      commoners_voice: results.commoners_voice.order('created_at DESC'),
+      good_practice: results.good_practice.order('created_at DESC'),
+      welfare_provision: results.welfare_provision.order('created_at DESC')
+    }
+
+    @tags = Tag.ransack(
+      name_cont: @q
+    ).result(distinct: true)
   end
 end
