@@ -13,11 +13,7 @@
 </div>
 <% end %>
 <% if @stories.any? %>
-<div class="row">
-<% @stories.each do |story| %>
-  <div class="col-lg-4 col-md-6">
-    <%= render 'stories/card', story: story %>
+  <div class="row">
+    <%= render @stories %>
   </div>
-<% end %>
-</div>
 <% end %>

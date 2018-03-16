@@ -93,11 +93,7 @@
     <% if @featured_stories.any? %>
       <h2 class="text-center"><%= _('Latest Stories') %></h2>
       <div class="row">
-      <% @featured_stories.each do |story| %>
-        <div class="col-lg-4 col-md-6">
-          <%= render 'stories/card', story: story %>
-        </div>
-      <% end %>
+        <%= render @featured_stories %>
       </div>
       <div class="row py-3">
         <div class="col text-center">
@@ -110,11 +106,7 @@
     <% if @featured_gps.any? %>
     <h2 class="text-center"><%= _('Latest Good Practices') %></h2>
     <div class="row">
-      <% @featured_gps.each do |story| %>
-      <div class="col-lg-4 col-md-6">
-        <%= render 'stories/card', story: story %>
-      </div>
-      <% end %>
+      <%= render @featured_gps %>
     </div>
     <div class="row py-3">
       <div class="col text-center">
@@ -127,11 +119,7 @@
     <% if @featured_wps.any? %>
       <h2 class="text-center"><%= _('Latest Welfare Provisions') %></h2>
       <div class="row">
-      <% @featured_wps.each do |story| %>
-        <div class="col-lg-4 col-md-6">
-          <%= render 'stories/card', story: story %>
-        </div>
-      <% end %>
+        <%= render @featured_wps %>
       </div>
       <div class="row py-3">
         <div class="col text-center">

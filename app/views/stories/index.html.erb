@@ -7,9 +7,5 @@
   <% end %>
 </h2>
 <div class="row">
-<% @stories.each do |story| %>
-  <div class="col-lg-4 col-md-6">
-    <%= render 'card', story: story %>
-  </div>
-<% end %>
+  <%= render @stories %>
 </div>
