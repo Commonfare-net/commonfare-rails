@@ -6,6 +6,11 @@
     </span>
     <% end %>
   <% end %>
+  <% unless story.published? %>
+    <div class="story-card__draft-flag badge badge-pill badge-dark">
+      <%= _('Draft') %>
+    </div>
+  <% end %>
   <%= link_to story do %>
     <%= image_tag story_card_image_path(story), alt: 'Story picture', class: 'card-img-top' %>
   <% end %>

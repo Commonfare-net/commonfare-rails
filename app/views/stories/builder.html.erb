@@ -4,36 +4,25 @@
     <% Globalize.with_locale(@story_locale) do %>
       <%= render 'language_choice', story_locale: @story_locale %>
 
-      <%#= simple_form_for([@commoner, @story], url: stories_path(story_builder: true, story_locale: @story_locale)) do |f| %>
-        <%#= f.error_notification %>
-
-        <%#= f.input :title,
-                    label: _('Give a title to your content'),
-                    required: false,
-                    placeholder: _('e.g. There and back again') %>
-        <%#= f.input :place,
-                    label: _('Where is this set?'),
-                    required: false,
-                    placeholder: _('e.g. Milan, Italy'),
-                    hint: _('City, Region, Country') %>
-        <%#= f.association :tags,
-                    label: _('Tags'),
-                    hint: _('Use comma or press Enter to separate tags') %>
-        <%#= f.input :anonymous,
-                    inline_label: _('Publish anonymously') %>
-
-        <%#= f.button :submit,
-                s_('Story form button|Start writing'),
-                id: 'publish-button',
-                class: 'btn btn-success btn-block',
-                data: {'disable-with': _('Publishing...')} %>
-      <%# end %>
-
       <% if @story.persisted? %>
         <%= react_component 'StoryBuilderWrapper',
                             locale: @story_locale,
                             story: JSON.parse(render(template: 'stories/show.json')),
                             availableTags: Tag.all.as_json %>
+      <% end %>
+
+      <% unless @story.published? %>
+        <%= simple_form_for([@commoner, @story], url: story_path(@story)) do |f| %>
+          <%= f.input :published,
+                      as: :hidden,
+                      value: true %>
+
+          <%= f.button :submit,
+                  s_('Story form button|Publish'),
+                  id: 'publish-button',
+                  class: 'btn btn-success btn-block',
+                  data: {'disable-with': _('Publishing...')} %>
+        <% end %>
       <% end %>
     <% end %>
   </div>

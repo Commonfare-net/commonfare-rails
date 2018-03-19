@@ -17,14 +17,16 @@
       <div class="col">
         <div class="story-title">
           <% if can? :edit, @story %>
-          <%= link_to edit_story_path(@story), class: 'mdc-fab mdc-fab--mini material-icons card-fab--absolute', 'aria-label': 'Favorite', data: { 'mdc-auto-init': 'MDCRipple' } do %>
-          <span class="mdc-fab__icon">
-            <%= fa_icon 'pencil lg' %>
-          </span>
-          <% end %>
+            <%= link_to edit_story_path(@story), class: 'mdc-fab mdc-fab--mini material-icons card-fab--absolute', 'aria-label': 'Favorite', data: { 'mdc-auto-init': 'MDCRipple' } do %>
+              <span class="mdc-fab__icon">
+                <%= fa_icon 'pencil lg' %>
+              </span>
+            <% end %>
           <% end %>
           <p class="story-type"><%= title_for_stories(@story.type).upcase %></p>
-          <h2><%= @story.title %></h2>
+          <h2>
+            <%= @story.title %>
+          </h2>
         </div>
       </div>
     </div>

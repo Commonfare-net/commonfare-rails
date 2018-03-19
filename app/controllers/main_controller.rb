@@ -16,7 +16,7 @@ class MainController < ApplicationController
     @q = params[:q]
     # no search key? Get back to where you once belonged (cit. The Beatles)
     redirect_back(fallback_location: root_path) if @q.blank?
-    results = Story.with_translations(I18n.locale).ransack(
+    results = Story.published.with_translations(I18n.locale).ransack(
       translations_title_or_translations_content_or_tags_name_or_place_cont: @q
     ).result(distinct: true)
 

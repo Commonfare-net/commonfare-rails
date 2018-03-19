@@ -7,10 +7,10 @@
       <%= simple_form_for([@commoner, @story], url: stories_path({story_locale: @story_locale})) do |f| %>
         <%= render 'fields', f: f %>
         <%= f.button :submit,
-                s_('Story form button|Publish'),
+                s_('Story form button|Save'),
                 id: 'publish-button',
                 class: 'btn btn-success btn-block',
-                data: {'disable-with': _('Publishing...')} %>
+                data: {'disable-with': _('Saving...')} %>
       <% end %>
     <% end %>
   </div>

@@ -11,8 +11,11 @@ class Story < ApplicationRecord
   friendly_id :title, use: [:slugged, :history, :globalize] # keep this order, see https://stackoverflow.com/a/33652486/1897170
 
   validates :title, :place, presence: true
-  validates :content, presence: true, unless: :created_with_story_builder
-  validates :content_json, presence: true, if: :created_with_story_builder, on: :update
+
+  with_options if: :published? do |story|
+    story.validates :content, presence: true, unless: :created_with_story_builder
+    story.validates :content_json, presence: true, if: :created_with_story_builder
+  end
 
   after_commit :check_welfare_provision_and_good_practice, on: [:create, :update]
 
@@ -20,6 +23,9 @@ class Story < ApplicationRecord
   before_destroy :reload_associations, prepend: true
 
   before_destroy :destroy_lonely_tags
+
+  scope :draft, -> { where(published: false) }
+  scope :published, -> { where(published: true) }
 
   TYPES = %i(welfare_provision good_practice).freeze
   TYPES.each do |type|

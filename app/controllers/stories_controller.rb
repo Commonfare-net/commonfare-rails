@@ -14,26 +14,29 @@ class StoriesController < ApplicationController
   # GET /stories
   # GET /stories.json
   def index
+    accessible_stories = Story.accessible_by(current_ability)
+
     if params[:commoner_id].present? && Commoner.exists?(params[:commoner_id])
       @commoner = Commoner.find params[:commoner_id]
       if current_user == @commoner.user
         stories = @commoner.stories
       else
-        stories = @commoner.stories.where(anonymous: false)
+        stories = @commoner.stories.published.where(anonymous: false)
       end
     elsif params[:filter].present?
       @filter = params[:filter]
       if Story::TYPES.include? @filter.to_sym
-        stories = Story.send(@filter.to_sym)
+        stories = accessible_stories.send(@filter.to_sym)
         @title = @filter.to_sym
       else
-        stories = Story.commoners_voice
+        stories = accessible_stories.commoners_voice
         @title = :commoners_voice
       end
     else
-      stories = Story.order('created_at DESC') # All descending
+      stories = accessible_stories.order('created_at DESC') # All descending
       @title = :all
     end
+
     @story_types_and_lists = {
       commoners_voice: stories.commoners_voice.order('created_at DESC'),
       good_practice: stories.good_practice.order('created_at DESC'),
@@ -206,6 +209,6 @@ class StoriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def story_params
-      params.require(:story).permit(:title, :content, :place, :anonymous, content_json: [:type, :content], tag_ids: [])
+      params.require(:story).permit(:title, :content, :place, :anonymous, :published, content_json: [:type, :content], tag_ids: [])
     end
 end

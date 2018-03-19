@@ -17,6 +17,9 @@
             label: _('Tags'),
             # placeholder: "Managed in JS",
             hint: _('Use comma or press Enter to separate tags') %>
+<%= f.input :published,
+            inline_label: _('Published'),
+            hint: _('Check this to make your story public') %>
 <%= f.input :anonymous,
             inline_label: _('Publish anonymously') %>
 
