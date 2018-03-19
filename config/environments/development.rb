@@ -5,7 +5,7 @@ Rails.application.configure do
 
   # Mailcatcher
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = { :address => 'mailcatcher', :port => 1025 }
+  config.action_mailer.smtp_settings = { :address => 'mailcatcher', :port => 25 }
   config.action_mailer.raise_delivery_errors = false
 
   # In the development environment your application's code is reloaded on

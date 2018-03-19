@@ -27,7 +27,6 @@ services:
     container_name: commonfare_mailcatcher
     restart: always
     ports:
-        - 1025:1025
         - 1080:80
   postgres:
     image: postgres:9.6
