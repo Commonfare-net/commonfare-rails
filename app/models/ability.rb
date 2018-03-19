@@ -12,6 +12,7 @@ class Ability
       can :read, Story
       can :read, Tag
       can :read, Comment
+      can :read, Group
       alias_action :create, :read, :update, :destroy, :to => :crud
       if user.is_commoner?
         commoner = user.meta
@@ -22,6 +23,10 @@ class Ability
         can [:create, :update, :destroy], Story, commoner_id: commoner.id
         can [:create, :update, :destroy], Comment, commoner_id: commoner.id
         can [:create, :destroy], Image, commoner_id: commoner.id
+
+        can [:update, :destroy], Membership, commoner_id: commoner.id
+        can :create, Group
+        can :update, Group, memberships: {commoner_id: commoner.id}
       end
     end
   end

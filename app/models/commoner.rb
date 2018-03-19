@@ -4,6 +4,8 @@ class Commoner < ApplicationRecord
   has_many :images
   has_many :stories
   has_many :comments
+  has_many :memberships
+  has_many :groups, through: :memberships
 
   before_destroy :archive_content
 

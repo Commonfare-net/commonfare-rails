@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  group: one
+  commoner: one
+  role: MyString
+
+two:
+  group: two
+  commoner: two
+  role: MyString

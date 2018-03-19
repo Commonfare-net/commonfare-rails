@@ -52,6 +52,8 @@ Rails.application.routes.draw do
     end
     resources :comments, except: [:new, :show, :index]
     resources :tags, only: :show
+    resources :memberships
+    resources :groups
 
     get :welcome, controller: :commoners
 
