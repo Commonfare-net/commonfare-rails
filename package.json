@@ -15,6 +15,7 @@
     "ellipsis.js": "^0.1.1",
     "prop-types": "^15.6.1",
     "react": "^16.2.0",
+    "react-bootstrap-switch": "^15.5.3",
     "react-dom": "^16.2.0",
     "storybuilder-react": "file:./storybuilder-react",
     "toastr": "^2.1.2",

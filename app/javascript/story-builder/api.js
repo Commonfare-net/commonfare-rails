@@ -16,7 +16,7 @@ export const updateContent = (storyId, story, storyLocale) => {
   }
 
   if (storyId) {
-    return axios.put(`/stories/${storyId}.json?story_locale=${storyLocale}`, { story: normalizedStory }, requestConfig());
+    return axios.put(`/stories/${storyId}.json?story_builder=true&story_locale=${storyLocale}`, { story: normalizedStory }, requestConfig());
   } else {
     return axios.post(`/stories.json?story_builder=true&story_locale=${storyLocale}`, { story: normalizedStory }, requestConfig());
   }
@@ -42,6 +42,6 @@ export const deleteImage = (commonerId, imageUrl) => {
   return axios.delete(`/commoners/${commonerId}/images/${imageId}`, requestConfig());
 }
 
-export const publishStory = (storyId) => {
-  return axios.post(`/stories/${storyId}/publish`, {}, requestConfig());
+export const publishStory = (storyId, options = {}) => {
+  return axios.post(`/stories/${storyId}/publish`, options, requestConfig());
 }

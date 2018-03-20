@@ -71,7 +71,7 @@ export default class extends Component {
   }
 
   render() {
-    const { locale, storyLocale, availableTags, story: { title_draft, place_draft, content_json_draft, tags } } = this.props;
+    const { locale, storyLocale, availableTags, story: { title_draft, place_draft, content_json_draft, tags, anonymous } } = this.props;
     const { status, storyId } = this.state;
 
     if (this.state.hasError) {
@@ -100,7 +100,12 @@ export default class extends Component {
           storyLocale={storyLocale}
         />
         {storyId &&
-          <StoryBuilderActions locale={locale} storyLocale={storyLocale} storyId={storyId} />
+          <StoryBuilderActions
+            locale={locale}
+            storyLocale={storyLocale}
+            storyId={storyId}
+            anonymous={anonymous}
+          />
         }
       </div>
     )

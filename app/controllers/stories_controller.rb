@@ -106,25 +106,17 @@ class StoriesController < ApplicationController
   # PATCH/PUT /stories/1
   # PATCH/PUT /stories/1.json
   def update
-    respond_to do |format|
-      # NOTE: To avoid DEPRECATION WARNING when saving with Globalize attributes
-      # wait for this pull request to be merged https://github.com/globalize/globalize/pull/629
+    # NOTE: To avoid DEPRECATION WARNING when saving with Globalize attributes
+    # wait for this pull request to be merged https://github.com/globalize/globalize/pull/629
 
-      # Temporary change I18n.locale for saving the Story using @story_locale
-      current_locale = I18n.locale
-      I18n.locale = @story_locale
-      if @story.update(story_params)
-        @story.images << images_from_content(@story)
-        # I18n.locale back to the original
-        I18n.locale = current_locale
-        format.html { redirect_to story_path(@story, story_locale: @story_locale), notice: _('Story was successfully updated.') }
-        format.json { render :show, status: :ok, location: @story }
-      else
-        # I18n.locale back to the original
-        I18n.locale = current_locale
-        format.html { render :edit }
-        format.json { render json: @story.errors, status: :unprocessable_entity }
-      end
+    # Temporary change I18n.locale for saving the Story using @story_locale
+    current_locale = I18n.locale
+    I18n.locale = @story_locale
+
+    if params[:story_builder] == 'true'
+      update_with_story_builder(current_locale)
+    else
+      update_with_text_content(current_locale)
     end
   end
 
@@ -139,6 +131,9 @@ class StoriesController < ApplicationController
   end
 
   def publish
+    # set params without saving (used only for anonymous)
+    @story.assign_attributes(publish_params)
+
     if @story.publish!
       respond_to do |format|
         format.html { redirect_to @story }
@@ -183,9 +178,25 @@ class StoriesController < ApplicationController
       end
     end
 
+    def update_with_story_builder(restore_locale)
+      if @story.update(story_params)
+        # I18n.locale back to the original
+        I18n.locale = restore_locale
+        respond_to do |format|
+          format.json { render :show, status: :ok, location: @story }
+        end
+      else
+        # I18n.locale back to the original
+        I18n.locale = restore_locale
+        respond_to do |format|
+          format.json { render json: @story.errors, status: :unprocessable_entity }
+        end
+      end
+    end
+
     # creates a story with a text content
     def create_with_text_content(restore_locale)
-      if @story.save
+      if @story.save && @story.publish!
         @story.images << images_from_content(@story)
         I18n.locale = restore_locale
         respond_to do |format|
@@ -195,6 +206,23 @@ class StoriesController < ApplicationController
         I18n.locale = restore_locale
         respond_to do |format|
           format.html { render :new }
+        end
+      end
+    end
+
+    def update_with_text_content(restore_locale)
+      if @story.update(story_params) && @story.publish!
+        @story.images << images_from_content(@story)
+        # I18n.locale back to the original
+        I18n.locale = restore_locale
+        respond_to do |format|
+          format.html { redirect_to story_path(@story, story_locale: @story_locale), notice: _('Story was successfully updated.') }
+        end
+      else
+        # I18n.locale back to the original
+        I18n.locale = restore_locale
+        respond_to do |format|
+          format.html { render :edit }
         end
       end
     end
@@ -235,5 +263,9 @@ class StoriesController < ApplicationController
       pars[:story][:content_draft] = pars[:story][:content]
       pars[:story][:content_json_draft] = pars[:story][:content_json]
       pars[:story][:place_draft] = pars[:story][:place]
+    end
+
+    def publish_params
+      params.permit(:anonymous)
     end
 end

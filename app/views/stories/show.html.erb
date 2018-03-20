@@ -78,7 +78,7 @@
             <div class="story-content">
               <%= @story.content&.html_safe %>
               <%# TODO: content_json %>
-              <%= @story.content_json&.map{ |item| item['content'] }.join.html_safe %>
+              <%= @story.content_json&.map{ |item| item['content'] }&.join&.html_safe %>
             </div>
           </div>
         </div>

@@ -1,0 +1,13 @@
+.publish-anonymously-wrapper {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.publish-anonymously-wrapper label {
+  display: block;
+  font-weight: 500;
+}
+
+.bootstrap-switch-primary {
+  background: #E7472E !important;
+}

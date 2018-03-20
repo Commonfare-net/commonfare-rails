@@ -6,6 +6,10 @@ UtilityFunction:
 DuplicateMethodCall:
   enabled: false
 
+"app/controllers":
+  TooManyStatements:
+    enabled: false
+
 "db/migrate":
   IrresponsibleModule:
     enabled: false
