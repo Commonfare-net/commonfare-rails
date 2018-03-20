@@ -84,4 +84,9 @@ module StoriesHelper
       link_to(story.commoner.name, commoner_path(story.commoner))
     end
   end
+
+  def og_description_for(story)
+    return strip_tags(@story.content).truncate(42) if story.content.present?
+    strip_tags(@story.content_json.join).truncate(42)
+  end
 end

@@ -69,7 +69,7 @@ export default class extends Component {
   }
 
   render() {
-    const { availableTags } = this.props;
+    const { availableTags, story: { title_draft, place_draft, content_json_draft, tags } } = this.props;
     const { status } = this.state;
 
     if (this.state.hasError) {
@@ -90,7 +90,11 @@ export default class extends Component {
           imageUploadHandler={this.imageUploadHandler}
           imageDeleteHandler={this.imageDeleteHandler}
           onSave={this.saveStory}
-          {...this.props.story} />
+          title={title_draft}
+          place={place_draft}
+          content_json={content_json_draft || []}
+          tags={tags}
+        />
       </div>
     )
   }

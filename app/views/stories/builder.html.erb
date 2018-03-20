@@ -4,26 +4,16 @@
     <% Globalize.with_locale(@story_locale) do %>
       <%= render 'language_choice', story_locale: @story_locale %>
 
-      <% if @story.persisted? %>
-        <%= react_component 'StoryBuilderWrapper',
-                            locale: @story_locale,
-                            story: JSON.parse(render(template: 'stories/show.json')),
-                            availableTags: Tag.all.as_json %>
+      <% unless @story.translated_in?(@story_locale) %>
+        <div class="badge badge-warning">
+          <%= _("You haven't yet saved this Story in %{localised_lang_name}" %{localised_lang_name: localised_language_name(I18n.locale, @story_locale)}) %>
+        </div>
       <% end %>
 
-      <% unless @story.published? %>
-        <%= simple_form_for([@commoner, @story], url: story_path(@story)) do |f| %>
-          <%= f.input :published,
-                      as: :hidden,
-                      value: true %>
-
-          <%= f.button :submit,
-                  s_('Story form button|Publish'),
-                  id: 'publish-button',
-                  class: 'btn btn-success btn-block',
-                  data: {'disable-with': _('Publishing...')} %>
-        <% end %>
-      <% end %>
+      <%= react_component 'StoryBuilderWrapper',
+                          locale: @story_locale,
+                          story: JSON.parse(render(template: 'stories/show.json')),
+                          availableTags: Tag.all.as_json %>
     <% end %>
   </div>
 </div>

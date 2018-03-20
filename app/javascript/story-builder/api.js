@@ -16,9 +16,9 @@ export const updateContent = (storyId, story, locale) => {
   }
 
   if (storyId) {
-    return axios.put(`/stories/${storyId}?story_locale=${locale}`, { story: normalizedStory }, requestConfig());
+    return axios.put(`/stories/${storyId}.json?story_locale=${locale}`, { story: normalizedStory }, requestConfig());
   } else {
-    return axios.post(`/stories?story_locale=${locale}`, { story: normalizedStory }, requestConfig());
+    return axios.post(`/stories.json?story_builder=true&story_locale=${locale}`, { story: normalizedStory }, requestConfig());
   }
 }
 

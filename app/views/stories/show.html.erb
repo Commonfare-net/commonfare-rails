@@ -6,7 +6,7 @@
     <!-- OpenGraph tags -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content='<%= @story.title %> | Commonfare' />
-    <meta property="og:description" content='<%= strip_tags(@story.content).truncate(42) %>' />
+    <meta property="og:description" content='<%= og_description_for(@story) %>' />
     <meta property="og:image" content='<%= story_card_image_url(@story) %>' />
     <meta property="og:url" content='<%= request.url %>' />
     <!-- Twitter tags -->
@@ -84,7 +84,9 @@
         <div class="row">
           <div class="col">
             <div class="story-content">
-              <%= @story.content.html_safe %>
+              <%= @story.content&.html_safe %>
+              <%# TODO: content_json %>
+              <%= @story.content_json&.map{ |item| item['content'] }.join.html_safe %>
             </div>
           </div>
         </div>

@@ -47,6 +47,13 @@ class StoriesController < ApplicationController
   # GET /stories/1
   # GET /stories/1.json
   def show
+    unless @story.published?
+      @story.title = @story.title_draft
+      @story.place = @story.place_draft
+      @story.content = @story.content_draft
+      @story.content_json = @story.content_json_draft
+    end
+
     @comments = @story.comments
     if user_signed_in?
       @comment = current_user.meta.comments.build
@@ -158,7 +165,7 @@ class StoriesController < ApplicationController
       if @story.save
         I18n.locale = restore_locale
         respond_to do |format|
-          format.json
+          format.json { render :show, status: :ok }
         end
       else
         I18n.locale = restore_locale
@@ -209,6 +216,16 @@ class StoriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def story_params
-      params.require(:story).permit(:title, :content, :place, :anonymous, :published, content_json: [:type, :content], tag_ids: [])
+      params.tap { |pars| set_draft_params(pars) }
+            .require(:story)
+            .permit(:title_draft, :content_draft, :place_draft, :anonymous, :published, content_json_draft: [:type, :content], tag_ids: [])
+    end
+
+    # Creates draft params if the client sends title, content or content_json
+    def set_draft_params(pars)
+      pars[:story][:title_draft] = pars[:story][:title]
+      pars[:story][:content_draft] = pars[:story][:content]
+      pars[:story][:content_json_draft] = pars[:story][:content_json]
+      pars[:story][:place_draft] = pars[:story][:place]
     end
 end
