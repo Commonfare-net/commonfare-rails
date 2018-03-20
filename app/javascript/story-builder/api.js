@@ -9,16 +9,16 @@ const requestConfig = () => ({
 
 const normalizeTags = (tags) => tags.map((tag) => tag.id || tag.name);
 
-export const updateContent = (storyId, story, locale) => {
+export const updateContent = (storyId, story, storyLocale) => {
   const normalizedStory = {
     ...story,
     tag_ids: normalizeTags(story.tags)
   }
 
   if (storyId) {
-    return axios.put(`/stories/${storyId}.json?story_locale=${locale}`, { story: normalizedStory }, requestConfig());
+    return axios.put(`/stories/${storyId}.json?story_locale=${storyLocale}`, { story: normalizedStory }, requestConfig());
   } else {
-    return axios.post(`/stories.json?story_builder=true&story_locale=${locale}`, { story: normalizedStory }, requestConfig());
+    return axios.post(`/stories.json?story_builder=true&story_locale=${storyLocale}`, { story: normalizedStory }, requestConfig());
   }
 }
 
@@ -40,4 +40,8 @@ export const uploadImage = (story, file, onProgress) => {
 export const deleteImage = (commonerId, imageUrl) => {
   const imageId = imageUrl.match(new RegExp(`/commoner/${commonerId}/images/(\\d+)`))[1];
   return axios.delete(`/commoners/${commonerId}/images/${imageId}`, requestConfig());
+}
+
+export const publishStory = (storyId) => {
+  return axios.post(`/stories/${storyId}/publish`, {}, requestConfig());
 }

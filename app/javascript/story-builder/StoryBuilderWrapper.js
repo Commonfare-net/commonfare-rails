@@ -2,12 +2,14 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import StoryBuilder from 'storybuilder-react';
 import { uploadImage, deleteImage, updateContent } from './api';
+import StoryBuilderActions from './StoryBuilderActions';
 
 import './StoryBuilderWrapper.css';
 
 export default class extends Component {
   static propTypes = {
     locale: PropTypes.oneOf(['en', 'it', 'hr', 'nl']).isRequired,
+    storyLocale: PropTypes.oneOf(['en', 'it', 'hr', 'nl']).isRequired,
     story: PropTypes.object.isRequired,
     availableTags: PropTypes.array.isRequired
   }
@@ -51,12 +53,12 @@ export default class extends Component {
   }
 
   saveStory = (story) => {
-    const { locale } = this.props;
+    const { storyLocale } = this.props;
     const { storyId } = this.state;
 
     this.setState({ status: 'Saving...' });
 
-    return updateContent(storyId, story, locale)
+    return updateContent(storyId, story, storyLocale)
            .then(({ status, data }) => {
              if (status === 200) {
                this.setState({
@@ -69,8 +71,8 @@ export default class extends Component {
   }
 
   render() {
-    const { availableTags, story: { title_draft, place_draft, content_json_draft, tags } } = this.props;
-    const { status } = this.state;
+    const { locale, storyLocale, availableTags, story: { title_draft, place_draft, content_json_draft, tags } } = this.props;
+    const { status, storyId } = this.state;
 
     if (this.state.hasError) {
       return (
@@ -94,7 +96,12 @@ export default class extends Component {
           place={place_draft}
           content_json={content_json_draft || []}
           tags={tags}
+          locale={locale}
+          storyLocale={storyLocale}
         />
+        {storyId &&
+          <StoryBuilderActions locale={locale} storyLocale={storyLocale} storyId={storyId} />
+        }
       </div>
     )
   }

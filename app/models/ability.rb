@@ -20,6 +20,7 @@ class Ability
           commoner.user.sign_in_count == 1
         end
         can :crud, Story, commoner_id: commoner.id
+        can [:publish, :preview], Story, commoner_id: commoner.id
         can [:create, :update, :destroy], Comment, commoner_id: commoner.id
         can [:create, :destroy], Image, commoner_id: commoner.id
       end

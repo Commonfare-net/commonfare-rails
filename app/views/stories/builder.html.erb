@@ -11,7 +11,8 @@
       <% end %>
 
       <%= react_component 'StoryBuilderWrapper',
-                          locale: @story_locale,
+                          locale: I18n.locale,
+                          storyLocale: @story_locale,
                           story: JSON.parse(render(template: 'stories/show.json')),
                           availableTags: Tag.all.as_json %>
     <% end %>

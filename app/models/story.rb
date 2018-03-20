@@ -74,6 +74,16 @@ class Story < ApplicationRecord
     !saved_change_to_attribute?(:title) || super
   end
 
+  def publish!
+    self.published = true
+    self.title = title_draft
+    self.place = place_draft
+    self.content = content_draft
+    self.content_json = content_json_draft
+
+    save
+  end
+
   private
 
   def check_welfare_provision_and_good_practice

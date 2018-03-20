@@ -47,17 +47,13 @@ class StoriesController < ApplicationController
   # GET /stories/1
   # GET /stories/1.json
   def show
-    unless @story.published?
-      @story.title = @story.title_draft
-      @story.place = @story.place_draft
-      @story.content = @story.content_draft
-      @story.content_json = @story.content_json_draft
-    end
-
     @comments = @story.comments
     if user_signed_in?
       @comment = current_user.meta.comments.build
     end
+  end
+
+  def preview
   end
 
   # GET /stories/new
@@ -139,6 +135,18 @@ class StoriesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to stories_url, notice: _('Story was successfully destroyed.') }
       format.json { head :no_content }
+    end
+  end
+
+  def publish
+    if @story.publish!
+      respond_to do |format|
+        format.html { redirect_to @story }
+      end
+    else
+      respond_to do |format|
+        format.html { redirect_to edit_story_path(@story), notice: _('Could not publish this story') }
+      end
     end
   end
 
