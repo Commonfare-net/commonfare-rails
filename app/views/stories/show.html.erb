@@ -76,9 +76,11 @@
         <div class="row">
           <div class="col">
             <div class="story-content">
-              <%= @story.content&.html_safe %>
-              <%# TODO: content_json %>
-              <%= @story.content_json&.map{ |item| item['content'] }&.join&.html_safe %>
+              <% if @story.created_with_story_builder? %>
+                <%= render('stories/builder_content', content_json: @story.content_json) %>
+              <% else %>
+                <%= @story.content.html_safe %>
+              <% end %>
             </div>
           </div>
         </div>

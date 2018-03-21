@@ -2,13 +2,22 @@
 <div class="row justify-content-center pb-2">
   <div class="col-md-10 col-lg-8">
     <% Globalize.with_locale(@story_locale) do %>
-      <%= render 'language_choice', story_locale: @story_locale %>
-
-      <% unless @story.translated_in?(@story_locale) %>
-        <div class="badge badge-warning">
-          <%= _("You haven't yet saved this Story in %{localised_lang_name}" %{localised_lang_name: localised_language_name(I18n.locale, @story_locale)}) %>
+      <div class="row">
+        <div class="col-12 col-sm-6 order-12 order-sm-1">
+          <%= render 'language_choice', story_locale: @story_locale %>
+          <% unless @story.translated_in?(@story_locale) %>
+            <div class="badge badge-warning">
+              <%= _("You haven't yet saved this Story in %{localised_lang_name}" %{localised_lang_name: localised_language_name(I18n.locale, @story_locale)}) %>
+            </div>
+          <% end %>
         </div>
-      <% end %>
+        <% if action_name == 'new' %>
+          <div class="col-12 col-sm-6 order-1 order-sm-12 text-sm-right">
+            <%= link_to _("Create using the old editor"), new_story_path %>
+          </div>
+        <% end %>
+      </div>
+
 
       <%= react_component 'StoryBuilderWrapper',
                           locale: I18n.locale,
