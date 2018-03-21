@@ -11,6 +11,11 @@ class GroupsController < ApplicationController
   # GET /groups/1
   # GET /groups/1.json
   def show
+    @story_types_and_lists = {
+      commoners_voice: @group.members.first.stories.commoners_voice.order('created_at DESC').first(6),
+      good_practice: @group.members.first.stories.good_practice.order('created_at DESC').first(6),
+      welfare_provision: @group.members.first.stories.welfare_provision.order('created_at DESC').first(6)
+    }
   end
 
   # GET /groups/new
@@ -74,6 +79,6 @@ class GroupsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def group_params
-      params.require(:group).permit(:name, :description)
+      params.require(:group).permit(:name, :description, :avatar)
     end
 end

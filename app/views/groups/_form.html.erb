@@ -1,12 +1,14 @@
 <%= simple_form_for(@group) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
     <%= f.input :name %>
     <%= f.input :description %>
-  </div>
+    <%= f.input :avatar,
+                as: :image_preview,
+                input_html: { preview_version: :profile },
+                label: false,
+                hint: _('Square pictures look better ✨'),
+                wrapper: :vertical_file_input %>
 
-  <div class="form-actions">
     <%= f.button :submit %>
-  </div>
 <% end %>
