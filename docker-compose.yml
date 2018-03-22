@@ -35,7 +35,6 @@ services:
       - .:/app
       - ~/tmp:/host_tmp
       - bundle_cache:/bundle
-      - ./storybuilder-react:/app/node_modules/storybuilder-react
     env_file:
       - ./app_variables.env
   mailcatcher:

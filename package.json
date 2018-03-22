@@ -17,13 +17,13 @@
     "react": "^16.2.0",
     "react-bootstrap-switch": "^15.5.3",
     "react-dom": "^16.2.0",
-    "storybuilder-react": "file:./storybuilder-react",
+    "storybuilder-react": "^1.0.1",
     "toastr": "^2.1.2",
     "webpacker-react": "^0.3.2"
   },
   "version": "1.2.1",
   "devDependencies": {
     "webpack-cli": "^2.0.10",
-    "webpack-dev-server": "^2.11.1"
+    "webpack-dev-server": "@2.11.1"
   }
 }
