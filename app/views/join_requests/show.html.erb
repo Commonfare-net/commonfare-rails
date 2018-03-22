@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Group:</strong>
+  <%= @join_request.group %>
+</p>
+
+<p>
+  <strong>Commoner:</strong>
+  <%= @join_request.commoner %>
+</p>
+
+<%= link_to 'Edit', edit_join_request_path(@join_request) %> |
+<%= link_to 'Back', join_requests_path %>

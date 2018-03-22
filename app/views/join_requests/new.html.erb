@@ -1,0 +1,10 @@
+<h1><%= s_('Title|Request to join %{group_name}') %{group_name: @join_request.group.name} %></h1>
+<p>
+  <%= _('The group members will review your request') %>
+</p>
+<%= simple_form_for(@join_request, url:  group_join_requests_path(@group)) do |f| %>
+  <%= f.association :group, as: :hidden %>
+  <%= f.association :commoner, as: :hidden %>
+
+  <%= f.button :submit, s_('Button|Request to join'), class: 'btn btn-cf btn-block' %>
+<% end %>

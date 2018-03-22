@@ -1,0 +1,6 @@
+<%= simple_form_for(@join_request, url:  group_join_requests_path(@group)) do |f| %>
+  <%= f.association :group, as: :hidden %>
+  <%= f.association :commoner, as: :hidden %>
+
+  <%= f.button :submit, s_('Button|Join'), class: 'btn btn-cf btn-block' %>
+<% end %>

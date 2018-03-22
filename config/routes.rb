@@ -53,7 +53,10 @@ Rails.application.routes.draw do
     resources :comments, except: [:new, :show, :index]
     resources :tags, only: :show
     resources :memberships
-    resources :groups
+    resources :groups do
+      resources :join_requests, only: [:new, :create]
+    end
+    resources :join_requests, except: [:new, :create]
 
     get :welcome, controller: :commoners
 

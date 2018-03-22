@@ -1,5 +1,7 @@
 <%= render 'group', group: @group %>
-
+<% if can? :create, @new_join_request %>
+  <%= link_to 'Join this group', new_group_join_request_path(@group), class: 'btn btn-cf' %>
+<% end %>
 <hr>
 <div class="row">
   <div class="col">
@@ -9,6 +11,9 @@
       </li>
       <li class="nav-item">
         <a class="nav-link" id="pills-members-tab" data-toggle="pill" href="#pills-members" role="tab" aria-controls="pills-members" aria-selected="false"><%= _('Members') %></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="pills-requests-tab" data-toggle="pill" href="#pills-requests" role="tab" aria-controls="pills-requests" aria-selected="false"><%= _('Requests') %></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" id="pills-activities-tab" data-toggle="pill" href="#pills-activities" role="tab" aria-controls="pills-activities" aria-selected="false"><%= _('Activities') %></a>
@@ -30,15 +35,30 @@
       </div>
       <div class="tab-pane fade" id="pills-members" role="tabpanel" aria-labelledby="pills-members-tab">
         <%= link_to s_('Button|Invite member'), '#', class: 'btn btn-outline-cf btn-block' if can? :create, Group  %>
-        <% if @group.members.any? %>
-          <% @group.members.each do |member| %>
+        <% if @members.any? %>
+          <% @members.each do |member| %>
             <p><%= link_to member.name, member %></p>
           <% end %>
         <% else %>
         <div class="row justify-content-center">
           <div class="col text-center">
             <h2 class="text-muted">
-              <%= _("No groups") %>
+              <%= _("No members") %>
+            </h2>
+          </div>
+        </div>
+        <% end %>
+      </div>
+      <div class="tab-pane fade" id="pills-requests" role="tabpanel" aria-labelledby="pills-requests-tab">
+        <% if @join_requests.any? %>
+          <% @join_requests.each do |join_request| %>
+            <p><%= link_to join_request.commoner.name, join_request.commoner %>, <%= join_request.aasm_state %></p>
+          <% end %>
+        <% else %>
+        <div class="row justify-content-center">
+          <div class="col text-center">
+            <h2 class="text-muted">
+              <%= _("No requests") %>
             </h2>
           </div>
         </div>

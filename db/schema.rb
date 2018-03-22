@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180320120128) do
+ActiveRecord::Schema.define(version: 20180321154243) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -83,6 +83,16 @@ ActiveRecord::Schema.define(version: 20180320120128) do
     t.string "imageable_type"
     t.index ["commoner_id"], name: "index_images_on_commoner_id"
     t.index ["imageable_type", "imageable_id"], name: "index_images_on_imageable_type_and_imageable_id"
+  end
+
+  create_table "join_requests", force: :cascade do |t|
+    t.bigint "group_id"
+    t.bigint "commoner_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "aasm_state"
+    t.index ["commoner_id"], name: "index_join_requests_on_commoner_id"
+    t.index ["group_id"], name: "index_join_requests_on_group_id"
   end
 
   create_table "memberships", force: :cascade do |t|
@@ -162,6 +172,8 @@ ActiveRecord::Schema.define(version: 20180320120128) do
 
   add_foreign_key "comments", "commoners"
   add_foreign_key "images", "commoners"
+  add_foreign_key "join_requests", "commoners"
+  add_foreign_key "join_requests", "groups"
   add_foreign_key "memberships", "commoners"
   add_foreign_key "memberships", "groups"
   add_foreign_key "stories", "commoners"

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  group: one
+  commoner: one
+  status: false
+
+two:
+  group: two
+  commoner: two
+  status: false

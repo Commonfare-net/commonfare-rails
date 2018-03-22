@@ -27,6 +27,14 @@ class Ability
         can [:update, :destroy], Membership, commoner_id: commoner.id
         can :create, Group
         can :update, Group, memberships: {commoner_id: commoner.id}
+        can :join, Group do |group|
+          !commoner.member_of? group
+        end
+        can :create, JoinRequest do |join_request|
+          !commoner.member_of? join_request.group
+        end
+        can [:read, :update], JoinRequest, group_id: commoner.group_ids
+        can :read, JoinRequest, commoner_id: commoner.id
       end
     end
   end

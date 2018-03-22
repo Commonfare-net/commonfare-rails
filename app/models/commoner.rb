@@ -6,10 +6,15 @@ class Commoner < ApplicationRecord
   has_many :comments
   has_many :memberships
   has_many :groups, through: :memberships
+  has_many :join_requests
 
   before_destroy :archive_content
 
   validates :name, presence: true, uniqueness: { case_sensitive: false }
+
+  def member_of?(group)
+    self.groups.include? group
+  end
 
   private
   def archive_content

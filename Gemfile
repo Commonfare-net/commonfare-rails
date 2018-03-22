@@ -73,6 +73,9 @@ gem 'lograge'
 # Search
 gem 'ransack'
 
+# State machine
+gem 'aasm'
+
 # FriendlyID
 gem 'friendly_id', '~> 5.2.0'
 gem 'friendly_id-globalize', git: 'https://github.com/norman/friendly_id-globalize'
