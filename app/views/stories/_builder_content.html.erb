@@ -9,9 +9,14 @@
         <%= item['content'] %>
       </h3>
     <% elsif item['type'] == 'image' %>
-      <figure class="story-content-item story-content-item--image">
-        <%= image_tag item['content'] %>
-      </figure>
+      <%= link_to item['content'], target: '_blank' do %>
+        <figure class="story-content-item story-content-item--image">
+          <%= image_tag item['content'] %>
+          <figcaption>
+            <%= item['caption'] %>
+          </figcaption>
+        </figure>
+      <% end %>
     <% elsif item['type'] == 'video' %>
       <figure class="story-content-item story-content-item--video">
         <%= item['content'].html_safe %>
