@@ -50,15 +50,15 @@
         <% end %>
       </div>
       <div class="tab-pane fade" id="pills-requests" role="tabpanel" aria-labelledby="pills-requests-tab">
-        <% if @join_requests.any? %>
-          <% @join_requests.each do |join_request| %>
-            <p><%= link_to join_request.commoner.name, join_request.commoner %>, <%= join_request.aasm_state %></p>
+        <% if @pending_join_requests.any? %>
+          <% @pending_join_requests.each do |join_request| %>
+            <p><%= link_to join_request.commoner.name, join_request %>, <%= join_request.aasm_state %></p>
           <% end %>
         <% else %>
         <div class="row justify-content-center">
           <div class="col text-center">
             <h2 class="text-muted">
-              <%= _("No requests") %>
+              <%= _('No pending requests') %>
             </h2>
           </div>
         </div>

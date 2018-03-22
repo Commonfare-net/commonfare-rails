@@ -1,8 +1,8 @@
 class JoinRequestsController < ApplicationController
   before_action :set_join_request, only: [:show, :edit, :update, :destroy]
 
-  load_and_authorize_resource :group, only: [:new, :create]
-  load_resource through: :group, only: [:new, :create]
+  load_and_authorize_resource :group, only: [:new, :create, :accept, :reject]
+  load_resource through: :group, only: [:new, :create, :accept, :reject]
   authorize_resource
 
 
@@ -15,6 +15,7 @@ class JoinRequestsController < ApplicationController
   # GET /join_requests/1
   # GET /join_requests/1.json
   def show
+    @group = @join_request.group
   end
 
   # GET /join_requests/new
@@ -24,6 +25,27 @@ class JoinRequestsController < ApplicationController
 
   # GET /join_requests/1/edit
   def edit
+  end
+
+  def accept
+    respond_to do |format|
+      if @join_request.accept!
+        @join_request.group.members << @join_request.commoner
+        format.html { redirect_to @join_request.group, notice: _('Join request has been accepted.') }
+      else
+        format.html { redirect_to @join_request, notice: _('There has been a problem with this join request') }
+      end
+    end
+  end
+
+  def reject
+    respond_to do |format|
+      if @join_request.reject!
+        format.html { redirect_to @join_request.group, notice: _('Join request has been rejected.') }
+      else
+        format.html { redirect_to @join_request, notice: _('There has been a problem with this join request') }
+      end
+    end
   end
 
   # POST /join_requests

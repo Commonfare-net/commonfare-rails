@@ -34,6 +34,7 @@ class Ability
           !commoner.member_of? join_request.group
         end
         can [:read, :update], JoinRequest, group_id: commoner.group_ids
+        can [:accept, :reject], JoinRequest, group_id: commoner.group_ids, aasm_state: 'pending'
         can :read, JoinRequest, commoner_id: commoner.id
       end
     end
