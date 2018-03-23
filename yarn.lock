@@ -6835,10 +6835,11 @@ stdout-stream@^1.4.0:
   dependencies:
     readable-stream "^2.0.1"
 
-storybuilder-react@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/storybuilder-react/-/storybuilder-react-1.0.1.tgz#c7a90976088c50c8bf8f178989764500693d0bf9"
+storybuilder-react@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/storybuilder-react/-/storybuilder-react-1.0.2.tgz#e9d0e4912ba00abf47f71c1910a70ece2d2d5cd3"
   dependencies:
+    babel-polyfill "^6.26.0"
     lodash "^4.17.5"
     medium-editor "^5.23.3"
     medium-editor-autofocus "^1.1.1"

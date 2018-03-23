@@ -38,7 +38,7 @@ export const uploadImage = (story, file, onProgress) => {
 };
 
 export const deleteImage = (commonerId, imageUrl) => {
-  const imageId = imageUrl.match(new RegExp(`/commoner/${commonerId}/images/(\\d+)`))[1];
+  const imageId = imageUrl.match(new RegExp(`/images/(\\d+)`))[1];
   return axios.delete(`/commoners/${commonerId}/images/${imageId}`, requestConfig());
 }
 
