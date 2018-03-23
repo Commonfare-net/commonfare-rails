@@ -4,7 +4,7 @@
 set -e
 # Exit on fail
 
-rm -f /app/tmp/pids/${RAILS_ENV:-development}.pid
+# rm -f /app/tmp/pids/${RAILS_ENV:-development}.pid
 
 bundle check || bundle install
 

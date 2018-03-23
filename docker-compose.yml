@@ -5,7 +5,11 @@ services:
     image: commonfare_dev_rails_app
     container_name: commonfare_dev_rails_app
     restart: always
-    command: rails server -p 3000 -b 0.0.0.0 --pid /app/tmp/pids/development.pid
+    command: >
+      bash -c "
+      rm -f /app/tmp/pids/development.pid;
+      rails server -p 3000 -b 0.0.0.0 --pid /app/tmp/pids/development.pid
+      "
     volumes:
       - ~/tmp:/host_tmp
       - bundle_cache:/bundle
