@@ -36,6 +36,8 @@ class Ability
         can [:read, :update], JoinRequest, group_id: commoner.group_ids
         can [:accept, :reject], JoinRequest, group_id: commoner.group_ids, aasm_state: 'pending'
         can :read, JoinRequest, commoner_id: commoner.id
+
+        can :create, Discussion, group_id: commoner.group_ids
       end
     end
   end

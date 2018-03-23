@@ -7,6 +7,7 @@ class Commoner < ApplicationRecord
   has_many :memberships
   has_many :groups, through: :memberships
   has_many :join_requests
+  has_many :messages
 
   before_destroy :archive_content
 

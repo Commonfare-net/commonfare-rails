@@ -54,6 +54,9 @@ Rails.application.routes.draw do
     resources :tags, only: :show
     resources :memberships
     resources :groups do
+      resources :discussions do
+        resources :messages, only: [:new, :create]
+      end
       resources :join_requests, only: [:new, :create] do
         post :accept, on: :member
         post :reject, on: :member

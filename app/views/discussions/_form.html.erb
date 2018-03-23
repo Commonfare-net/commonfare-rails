@@ -1,0 +1,12 @@
+<%= simple_form_for(@discussion) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.association :group %>
+    <%= f.input :title %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
