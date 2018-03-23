@@ -6,11 +6,18 @@
     </span>
     <% end %>
   <% end %>
+  <% unless story.published? %>
+    <div class="story-card__draft-flag badge badge-pill badge-dark">
+      <%= _('Draft') %>
+    </div>
+  <% end %>
   <%= link_to story do %>
     <%= image_tag story_card_image_path(story), alt: 'Story picture', class: 'card-img-top' %>
   <% end %>
   <div class="card-body">
-    <h5 class="card-title"><%= link_to(story.title, story_path(story), class: 'story-card-title-link') %></h5>
+    <h5 class="card-title">
+      <%= link_to(story.title || story.title_draft, story_path(story), class: 'story-card-title-link') %>
+    </h5>
     <% unless story.good_practice? %>
     <div class="media">
       <% if story.anonymous? %>

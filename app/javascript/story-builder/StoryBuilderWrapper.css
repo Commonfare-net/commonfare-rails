@@ -1,0 +1,22 @@
+.story-builder-wrapper {
+  position: relative;
+}
+
+.story-builder-wrapper__status {
+  position: absolute;
+  top: 15px;
+  right: 0;
+}
+
+.story-builder--has-error {
+  text-align: center;
+  font-size: 3rem;
+}
+
+.story-builder-add__button .fa-3x {
+  font-size: 30px;
+}
+
+.story-item__icon {
+  width: 70px;
+}

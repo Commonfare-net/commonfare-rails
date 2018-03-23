@@ -1,17 +1,7 @@
-<% content_for :title, @story.title %>
+<% content_for :title, @story.title_draft %>
 <div class="row justify-content-center">
   <div class="story-container">
     <% Globalize.with_locale(@story_locale) do %>
-    <%= content_for :open_graph_tags do %>
-    <!-- OpenGraph tags -->
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content='<%= @story.title %> | Commonfare' />
-    <meta property="og:description" content='<%= og_description_for(@story) %>' />
-    <meta property="og:image" content='<%= story_card_image_url(@story) %>' />
-    <meta property="og:url" content='<%= request.url %>' />
-    <!-- Twitter tags -->
-    <meta name="twitter:card" content="<%= @story.images.any? ? 'summary_large_image' : 'summary' %>" />
-    <% end %>
 
     <div class="row">
       <div class="col">
@@ -25,7 +15,7 @@
           <% end %>
           <p class="story-type"><%= title_for_stories(@story.type).upcase %></p>
           <h2>
-            <%= @story.title %>
+            <%= @story.title_draft %>
           </h2>
         </div>
       </div>
@@ -47,7 +37,7 @@
                 <%= fa_icon('clock-o fw', text: l(@story.created_at.to_date, format: :long)) %>
               </div>
               <div class="story-place">
-                <%= fa_icon('map-marker fw', text: @story.place) %>
+                <%= fa_icon('map-marker fw', text: @story.place_draft) %>
               </div>
               <% if @story.translated_locales.length > 1 && @story.has_translations_besides(@story_locale) %>
               <div class="row">
@@ -58,16 +48,6 @@
                 </div>
               </div>
               <% end %>
-              <div class="story-comments">
-                <%= link_to '#comments-anchor', class: 'story-comments-link' do %>
-                  <%= fa_icon 'comment-o', text: "#{@comments.count} #{n_('Comment', 'Comments', @comments.count)}" %>
-                <% end %>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col">
-              <%= link_to s_("Button|Share"), '#', class: 'btn btn-cf btn-block', data: { toggle: "modal", target: "#shareModal" } %>
             </div>
           </div>
         </div>
@@ -77,23 +57,11 @@
           <div class="col">
             <div class="story-content">
               <% if @story.created_with_story_builder? %>
-                <%= render('stories/builder_content', content_json: @story.content_json) %>
+                <%= render('stories/builder_content', content_json: @story.content_json_draft) %>
               <% else %>
-                <%= @story.content.html_safe %>
+                <%= @story.content_draft.html_safe %>
               <% end %>
             </div>
-          </div>
-        </div>
-        <div class="row py-5">
-          <div class="col-lg-4">
-            <%= link_to s_("Button|Share"), '#', class: 'btn btn-cf btn-block', data: { toggle: "modal", target: "#shareModal" } %>
-          </div>
-        </div>
-        <%= render('comments/new', story: @story, comment: @comment) if user_signed_in? %>
-        <div class="row">
-          <div class="col-md-8 col-lg-8">
-            <h3 id="comments-anchor" class="red-title text-left"><%= @comments.count %> <%= n_('Comment', 'Comments', @comments.count) %></h3>
-            <%= render 'comments/list', comments: @comments %>
           </div>
         </div>
       </div>
@@ -103,5 +71,3 @@
 
   </div>
 </div>
-
-<%= render 'stories/share_modal' %>

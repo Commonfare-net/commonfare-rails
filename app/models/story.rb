@@ -7,10 +7,15 @@ class Story < ApplicationRecord
 
   # As for the docs, `translates` goes BEFORE `friendly_id`
   # see https://github.com/norman/friendly_id-globalize#translating-slugs-using-globalize
-  translates :title, :content, :slug
+  translates :title_draft, :title, :content_draft, :content, :content_json_draft, :content_json, :slug
   friendly_id :title, use: [:slugged, :history, :globalize] # keep this order, see https://stackoverflow.com/a/33652486/1897170
 
-  validates :title, :content, :place, presence: true
+  validates :title_draft, :place_draft, presence: true
+
+  # with_options if: :published? do |story|
+  validates :content_draft, presence: true, unless: [:created_with_story_builder, :published?]
+  validates :content_json_draft, presence: true, if: [:created_with_story_builder, :published?]
+  # end
 
   after_commit :check_welfare_provision_and_good_practice, on: [:create, :update]
 
@@ -18,6 +23,9 @@ class Story < ApplicationRecord
   before_destroy :reload_associations, prepend: true
 
   before_destroy :destroy_lonely_tags
+
+  scope :draft, -> { where(published: false) }
+  scope :published, -> { where(published: true) }
 
   TYPES = %i(welfare_provision good_practice).freeze
   TYPES.each do |type|
@@ -64,6 +72,16 @@ class Story < ApplicationRecord
   # see http://norman.github.io/friendly_id/file.Guide.html
   def should_generate_new_friendly_id?
     !saved_change_to_attribute?(:title) || super
+  end
+
+  def publish!
+    self.published = true
+    self.title = title_draft
+    self.place = place_draft
+    self.content = content_draft
+    self.content_json = content_json_draft
+
+    save
   end
 
   private

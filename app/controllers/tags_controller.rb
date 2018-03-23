@@ -4,7 +4,8 @@ class TagsController < ApplicationController
   authorize_resource # managed by CanCanCan
   def show
     @tag = Tag.friendly.find params[:id]
-    stories = @tag.stories
+    stories = @tag.stories.accessible_by(current_ability)
+
     @story_types_and_lists = {
       commoners_voice: stories.commoners_voice.order('created_at DESC'),
       good_practice: stories.good_practice.order('created_at DESC'),

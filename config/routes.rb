@@ -43,7 +43,11 @@ Rails.application.routes.draw do
     resources :stories do
       # :index used for stories/42/comments, visible only by story's author
       resources :comments, only: [:index, :create]
+      post :publish, on: :member
+      get :preview, on: :member
     end
+    get 'story_builder', to: 'stories#builder'
+
     resources :commoners do
       resources :stories, only: :index
       # :index used for commoner/42/comments, visible only by comments' author

@@ -3,7 +3,7 @@
     <%#= fa_icon 'pencil lg' %>
   </span>
 </button> -->
-<%= link_to new_story_path, class: 'mdc-fab material-icons app-fab--absolute', 'aria-label': 'Favorite', data: { 'mdc-auto-init': 'MDCRipple' } do %>
+<%= link_to new_story_path(story_builder: true), class: 'mdc-fab material-icons app-fab--absolute', 'aria-label': 'Favorite', data: { 'mdc-auto-init': 'MDCRipple' } do %>
   <span class="mdc-fab__icon">
     <%= fa_icon 'pencil 2x' %>
   </span>

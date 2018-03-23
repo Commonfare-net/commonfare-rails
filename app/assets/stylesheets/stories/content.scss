@@ -95,18 +95,22 @@
     line-height: 1.5em;
     font-family: "Lora", serif;
     font-size: 1.3em;
+
     figure {
       width: 85%;
       margin: auto;
       box-shadow: none;
       border: none;
+
       img {
         width: 100%;
         height: auto;
       }
+
       iframe {
         width: 100%;
       }
+
       figcaption {
         background-color: #efefef;
         // font-style: italic;
@@ -124,6 +128,22 @@
     color: $cf-primary-color
   }
 
+  // Story content made with story builder
+  .story-content-item {
+    //
+  }
+
+  .story-content-item--large-text {
+    @extend .red-title;
+
+    text-align: center;
+    padding: 4rem 0;
+  }
+
+  .story-content-item--image,
+  .story-content-item--video {
+    padding: 1rem 0;
+  }
 }
 
 // Trix related
