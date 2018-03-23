@@ -36,6 +36,10 @@ module StoriesHelper
     end
   end
 
+  def story_show_or_preview_path(story)
+    story.published? ? story_path(story) : preview_story_path(story)
+  end
+
   def story_card_image_url(story)
     relative_path = ""
     if story.images.any?

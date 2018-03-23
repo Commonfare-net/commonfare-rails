@@ -17,10 +17,10 @@ RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
 RUN mkdir -p /app
 WORKDIR /app
 
-ENV BUNDLE_PATH=/bundle \
-    BUNDLE_BIN=/bundle/bin \
-    GEM_HOME=/bundle
-ENV PATH="${BUNDLE_BIN}:${PATH}"
+# ENV BUNDLE_PATH=/bundle \
+#     BUNDLE_BIN=/bundle/bin \
+#     GEM_HOME=/bundle
+# ENV PATH="${BUNDLE_BIN}:${PATH}"
 # Bundle installs with binstubs to our custom /bundle/bin volume path. Let system use those stubs.
 
 # Copy the Gemfile as well as the Gemfile.lock and install

@@ -9,7 +9,7 @@ services:
     volumes:
       - .:/app
       - ~/tmp:/host_tmp
-      - bundle_cache:/bundle
+      # - bundle_cache:/bundle
     ports:
       - "3000:3000"
     # links app container to postgres container.
@@ -34,7 +34,7 @@ services:
     volumes:
       - .:/app
       - ~/tmp:/host_tmp
-      - bundle_cache:/bundle
+      # - bundle_cache:/bundle
     env_file:
       - ./app_variables.env
   mailcatcher:

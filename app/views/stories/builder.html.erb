@@ -24,6 +24,17 @@
                           storyLocale: @story_locale,
                           story: JSON.parse(render(template: 'stories/show.json')),
                           availableTags: Tag.all.as_json %>
+      <% if @story.persisted? %>
+        <p class="text-right">
+          <small>
+            <%= link_to(fa_icon('trash', text: _('Delete this Story')),
+            story_path(@story),
+            method: :delete,
+            class: 'text-danger',
+              data: {confirm: _('Are you sure? This will delete all the comments as well.')}) %>
+          </small>
+        </p>
+      <% end %>
     <% end %>
   </div>
 </div>
