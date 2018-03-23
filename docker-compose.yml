@@ -1,4 +1,4 @@
-version: '3'
+version: '2'
 services:
   app:
     build: .
@@ -7,9 +7,8 @@ services:
     restart: always
     command: rails server -p 3000 -b 0.0.0.0 --pid /app/tmp/pids/development.pid
     volumes:
-      - .:/app
       - ~/tmp:/host_tmp
-      # - bundle_cache:/bundle
+      - bundle_cache:/bundle
     ports:
       - "3000:3000"
     # links app container to postgres container.
@@ -32,9 +31,8 @@ services:
     ports:
       - "3035:3035"
     volumes:
-      - .:/app
       - ~/tmp:/host_tmp
-      # - bundle_cache:/bundle
+      - bundle_cache:/bundle
     env_file:
       - ./app_variables.env
   mailcatcher:
@@ -53,4 +51,3 @@ services:
       - ./db-data:/var/lib/postgresql/data
 volumes:
   bundle_cache:
-  # Mount volume with default driver
