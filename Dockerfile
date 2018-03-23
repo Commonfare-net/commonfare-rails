@@ -34,7 +34,7 @@ RUN gem install bundler \
 # Copy the main application.
 COPY . ./
 
-RUN bin/yarn
+# RUN bin/yarn
 
 # Expose port 3000 to the Docker host, so we can access it
 # from the outside.

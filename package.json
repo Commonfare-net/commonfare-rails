@@ -3,7 +3,7 @@
   "private": true,
   "dependencies": {
     "@material/fab": "^0.26.0",
-    "@rails/webpacker": "^3.3.0",
+    "@rails/webpacker": "3.2.1",
     "autosize": "^4.0.0",
     "axios": "^0.18.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
