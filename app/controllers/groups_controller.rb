@@ -20,6 +20,7 @@ class GroupsController < ApplicationController
     @members = @group.members
     @pending_join_requests = JoinRequest.where(group: @group).pending
     @new_join_request = @group.join_requests.build
+    @discussions = @group.discussions
   end
 
   # GET /groups/new

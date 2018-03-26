@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180321154243) do
+ActiveRecord::Schema.define(version: 20180322164726) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +50,14 @@ ActiveRecord::Schema.define(version: 20180321154243) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "avatar"
+  end
+
+  create_table "discussions", force: :cascade do |t|
+    t.bigint "group_id"
+    t.string "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["group_id"], name: "index_discussions_on_group_id"
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
@@ -103,6 +111,17 @@ ActiveRecord::Schema.define(version: 20180321154243) do
     t.datetime "updated_at", null: false
     t.index ["commoner_id"], name: "index_memberships_on_commoner_id"
     t.index ["group_id"], name: "index_memberships_on_group_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.bigint "commoner_id"
+    t.string "body"
+    t.string "messageable_type"
+    t.bigint "messageable_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["commoner_id"], name: "index_messages_on_commoner_id"
+    t.index ["messageable_type", "messageable_id"], name: "index_messages_on_messageable_type_and_messageable_id"
   end
 
   create_table "stories", force: :cascade do |t|
@@ -182,10 +201,12 @@ ActiveRecord::Schema.define(version: 20180321154243) do
   end
 
   add_foreign_key "comments", "commoners"
+  add_foreign_key "discussions", "groups"
   add_foreign_key "images", "commoners"
   add_foreign_key "join_requests", "commoners"
   add_foreign_key "join_requests", "groups"
   add_foreign_key "memberships", "commoners"
   add_foreign_key "memberships", "groups"
+  add_foreign_key "messages", "commoners"
   add_foreign_key "stories", "commoners"
 end

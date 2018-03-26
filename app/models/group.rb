@@ -3,4 +3,5 @@ class Group < ApplicationRecord
   has_many :memberships
   has_many :members, through: :memberships, source: :commoner
   has_many :join_requests
+  has_many :discussions
 end
