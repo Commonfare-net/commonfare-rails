@@ -1,6 +1,6 @@
 <% if content_json.any? %>
   <% content_json.each do |item| %>
-    <% if item['type'] == 'text' %>
+    <% if (item['type'] == 'text') && (item['content'].present?) %>
       <div class="story-content-item story-content-item--text">
         <%= item['content'].html_safe %>
       </div>
@@ -8,7 +8,7 @@
       <h3 class="story-content-item story-content-item--large-text">
         <%= item['content'] %>
       </h3>
-    <% elsif item['type'] == 'image' %>
+    <% elsif (item['type'] == 'image') && (item['content'].present?) %>
       <%= link_to item['content'], target: '_blank' do %>
         <figure class="story-content-item story-content-item--image">
           <%= image_tag item['content'] %>
@@ -17,7 +17,7 @@
           </figcaption>
         </figure>
       <% end %>
-    <% elsif item['type'] == 'video' %>
+    <% elsif (item['type'] == 'video') && (item['content'].present?) %>
       <figure class="story-content-item story-content-item--video">
         <%= item['content'].html_safe %>
       </figure>
