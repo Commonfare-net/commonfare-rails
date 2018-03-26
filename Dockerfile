@@ -1,12 +1,15 @@
 FROM ruby:2.4
 MAINTAINER pbmolini@fbk.eu
 
-# Install apt based dependencies required to run Rails as
-# well as RubyGems. As the Ruby image itself is based on a
-# Debian image, we use apt-get to install those.
-RUN apt-get update && apt-get install -y \
-  build-essential \
-  nodejs
+# Download all the dependencies including node and yarn. Also, set localtime
+# TODO: do this also in staging and production
+RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
+    && curl -sL https://deb.nodesource.com/setup_9.x | bash - \
+    && echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list \
+    && apt-get update \
+    && apt-get install -qq -y --no-install-recommends build-essential nodejs yarn \
+    && rm -rf /var/lib/apt/lists/* \
+    && cp /usr/share/zoneinfo/Europe/Rome /etc/localtime
 
 # Configure the main working directory. This is the base
 # directory used in any further RUN, COPY, and ENTRYPOINT
@@ -14,25 +17,32 @@ RUN apt-get update && apt-get install -y \
 RUN mkdir -p /app
 WORKDIR /app
 
+ENV BUNDLE_PATH=/bundle \
+    BUNDLE_BIN=/bundle/bin \
+    GEM_HOME=/bundle
+ENV PATH="${BUNDLE_BIN}:${PATH}"
+# Bundle installs with binstubs to our custom /bundle/bin volume path. Let system use those stubs.
+
 # Copy the Gemfile as well as the Gemfile.lock and install
 # the RubyGems. This is a separate step so the dependencies
 # will be cached unless changes to one of those two files
 # are made.
 COPY Gemfile Gemfile.lock ./
-RUN gem install bundler && bundle install --jobs 20 --retry 5
+RUN gem install bundler \
+    && bundle install --jobs 20 --retry 5
 
 # Copy the main application.
 COPY . ./
+
+# RUN bin/yarn
 
 # Expose port 3000 to the Docker host, so we can access it
 # from the outside.
 EXPOSE 3000
 
-# Configure an entry point, so we don't need to specify
-# "bundle exec" for each of our commands.
-ENTRYPOINT ["bundle", "exec"]
+# Entrypoint
+COPY ./docker-entrypoint.sh /
+RUN chmod +x /docker-entrypoint.sh
+ENTRYPOINT ["/docker-entrypoint.sh"]
 
-# The main command to run when the container starts. Also
-# tell the Rails dev server to bind to all interfaces by
-# default.
-CMD ["rails", "server", "-b", "0.0.0.0"]
+CMD bundle exec puma

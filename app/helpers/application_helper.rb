@@ -1,5 +1,5 @@
 module ApplicationHelper
-  ACTION_WITHOUT_FAB = %w(edit new goodbye)
+  ACTION_WITHOUT_FAB = %w(edit new goodbye preview)
 
   def other_locales(current_locale=I18n.locale)
     I18n.available_locales - [ current_locale ]

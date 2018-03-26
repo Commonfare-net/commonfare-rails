@@ -2,13 +2,23 @@
 
 ## Setup the development environment with Docker
 
-Build the image for the Rails app container:
+### docker-sync
 
-```bash
-$ docker build -t commonfare .
+**VERY IMPORTANT FOR macOS** to have reasonable speeds when accessing assets in development.
+
+1. Install the gems
+
+```
+gem install docker-sync docker-compose
 ```
 
-Build the images for Composer and run the containers:
+2. Install OS specific devDependencies: https://github.com/EugenMayer/docker-sync/wiki/1.-Installation#os-specific
+
+3. Build the images following the instructions below
+
+### Building images
+
+Build the images and run the containers:
 
 ```bash
 $ docker-compose build
@@ -29,6 +39,19 @@ $ yarn install
 ```
 
 ### Start and stop containers
+
+#### Using docker-sync (recommended on macOS)
+
+```sh
+docker-sync-stack start
+# CTRL+C to stop
+```
+
+This will take a long time the first time you start.
+
+See https://github.com/EugenMayer/docker-sync/wiki/2.2-sync-stack-commands
+
+#### Using docker-compose
 
 Use **up** and **down** just to start up/shut down the rails server.
 

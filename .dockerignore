@@ -1,8 +1,10 @@
 .git*
 db/*.sqlite3
 db/*.sqlite3-journal
+db-data*
 log/*
 tmp/*
+storybuilder-react
 Dockerfile
 docker-compose.production.yml
 docker-compose.staging.yml

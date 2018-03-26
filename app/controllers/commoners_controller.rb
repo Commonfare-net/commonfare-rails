@@ -18,7 +18,7 @@ class CommonersController < ApplicationController
     if current_user == @commoner.user
       stories = @commoner.stories
     else
-      stories = @commoner.stories.where(anonymous: false)
+      stories = @commoner.stories.published.where(anonymous: false)
     end
     @story_types_and_lists = {
       commoners_voice: stories.commoners_voice.order('created_at DESC').first(6),

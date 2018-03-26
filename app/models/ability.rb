@@ -9,7 +9,7 @@ class Ability
       user ||= User.new # guest user (not logged in)
       # visitors can see Commoners, Stories, Tags
       can :read, Commoner
-      can :read, Story
+      can :read, Story, published: true
       can :read, Tag
       can :read, Comment
       can :read, Group
@@ -20,7 +20,8 @@ class Ability
         can :welcome, Commoner do |commoner|
           commoner.user.sign_in_count == 1
         end
-        can [:create, :update, :destroy], Story, commoner_id: commoner.id
+        can :crud, Story, commoner_id: commoner.id
+        can [:publish, :preview], Story, commoner_id: commoner.id
         can [:create, :update, :destroy], Comment, commoner_id: commoner.id
         can [:create, :destroy], Image, commoner_id: commoner.id
 

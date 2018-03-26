@@ -1,0 +1,73 @@
+<% content_for :title, @story.title_draft %>
+<div class="row justify-content-center">
+  <div class="story-container">
+    <% Globalize.with_locale(@story_locale) do %>
+
+    <div class="row">
+      <div class="col">
+        <div class="story-title">
+          <% if can? :edit, @story %>
+            <%= link_to edit_story_path(@story, story_locale: @story_locale), class: 'mdc-fab mdc-fab--mini material-icons card-fab--absolute', 'aria-label': 'Favorite', data: { 'mdc-auto-init': 'MDCRipple' } do %>
+              <span class="mdc-fab__icon">
+                <%= fa_icon 'pencil lg' %>
+              </span>
+            <% end %>
+          <% end %>
+          <p class="story-type"><%= title_for_stories(@story.type).upcase %></p>
+          <h2>
+            <%= @story.title_draft %>
+          </h2>
+        </div>
+      </div>
+    </div>
+
+    <% if @story.tags.any? %>
+      <%= render 'stories/tags', tags: @story.tags %>
+    <% end %>
+
+    <div class="row">
+      <div class="col-lg-3">
+        <div class="story-info">
+          <div class="row mb-2">
+            <div class="col">
+              <div class="story-author">
+                <%= fa_icon('user fw', text: author_for(@story)) %>
+              </div>
+              <div class="story-date">
+                <%= fa_icon('clock-o fw', text: l(@story.created_at.to_date, format: :long)) %>
+              </div>
+              <div class="story-place">
+                <%= fa_icon('map-marker fw', text: @story.place_draft) %>
+              </div>
+              <% if @story.translated_locales.length > 1 && @story.has_translations_besides(@story_locale) %>
+              <div class="row">
+                <div class="col">
+                  <div class="story-lang-select">
+                    <%= fa_icon('globe', text: other_story_available_translations(@story, @story_locale).html_safe) %>
+                  </div>
+                </div>
+              </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-9">
+        <div class="row">
+          <div class="col">
+            <div class="story-content">
+              <% if @story.created_with_story_builder? %>
+                <%= render('stories/builder_content', content_json: @story.content_json_draft) %>
+              <% else %>
+                <%= @story.content_draft.html_safe %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <% end %> <%# end Globalize block %>
+
+  </div>
+</div>

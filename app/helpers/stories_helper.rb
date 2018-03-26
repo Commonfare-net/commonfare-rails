@@ -36,6 +36,10 @@ module StoriesHelper
     end
   end
 
+  def story_show_or_preview_path(story)
+    story.published? ? story_path(story) : preview_story_path(story)
+  end
+
   def story_card_image_url(story)
     relative_path = ""
     if story.images.any?
@@ -83,5 +87,10 @@ module StoriesHelper
     else
       link_to(story.commoner.name, commoner_path(story.commoner))
     end
+  end
+
+  def og_description_for(story)
+    return strip_tags(@story.content).truncate(42) if story.content.present?
+    strip_tags(@story.content_json.join).truncate(42)
   end
 end

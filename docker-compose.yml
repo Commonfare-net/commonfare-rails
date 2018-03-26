@@ -1,27 +1,44 @@
-version: '3'
+version: '2'
 services:
   app:
     build: .
     image: commonfare_dev_rails_app
     container_name: commonfare_dev_rails_app
     restart: always
-    command: rails server -p 3000 -b '0.0.0.0'
+    command: >
+      bash -c "
+      rm -f /app/tmp/pids/development.pid;
+      rails server -p 3000 -b 0.0.0.0 --pid /app/tmp/pids/development.pid
+      "
     volumes:
-      - .:/app
       - ~/tmp:/host_tmp
+      - bundle_cache:/bundle
     ports:
       - "3000:3000"
     # links app container to postgres container.
     # Containers for the linked service will be reachable at a hostname identical to the alias, or the service name if no alias was specified.
     # see https://docs.docker.com/compose/compose-file/#links
-    links:
+    depends_on:
       - postgres
       - mailcatcher
+      - webpack-dev-server
     env_file:
-      - app_variables.env
+      - ./app_variables.env
     # These two allow debug with pry
     tty: true
     stdin_open: true
+  webpack-dev-server:
+    image: commonfare_dev_rails_app
+    container_name: commonfare_dev_webpack
+    restart: always
+    command: bash -c "rm -rf /app/public/packs; ./bin/webpack-dev-server"
+    ports:
+      - "3035:3035"
+    volumes:
+      - ~/tmp:/host_tmp
+      - bundle_cache:/bundle
+    env_file:
+      - ./app_variables.env
   mailcatcher:
     image: tophfr/mailcatcher
     container_name: commonfare_mailcatcher
@@ -36,3 +53,5 @@ services:
       - "5432"
     volumes:
       - ./db-data:/var/lib/postgresql/data
+volumes:
+  bundle_cache:

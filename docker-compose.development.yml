@@ -1,0 +1,13 @@
+version: "2"
+services:
+  app:
+    volumes:
+      - app-sync:/app:nocopy # nocopy is important
+  webpack-dev-server:
+    # thats the important thing
+    volumes:
+      - app-sync:/app:nocopy #  nocopy is important
+
+volumes:
+  app-sync:
+    external: true

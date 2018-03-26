@@ -23,6 +23,14 @@
 /public/assets
 
 Dockerfile.*
-docker-compose.*.yml
+docker-compose.staging.yml
+docker-compose.production.yml
+
+.docker-sync
 
 app_variables.env
+/public/packs
+/public/packs-test
+/node_modules
+yarn-debug.log*
+.yarn-integrity
