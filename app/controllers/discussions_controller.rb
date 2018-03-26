@@ -13,11 +13,13 @@ class DiscussionsController < ApplicationController
   # GET /discussions/1
   # GET /discussions/1.json
   def show
+    @messages = @discussion.messages
   end
 
   # GET /discussions/new
   def new
-    @discussion = Discussion.new
+    @discussion = @group.discussions.build
+    @discussion.messages.build(commoner: current_user.meta)
   end
 
   # GET /discussions/1/edit
@@ -28,7 +30,7 @@ class DiscussionsController < ApplicationController
   # POST /discussions.json
   def create
     @discussion = Discussion.new(discussion_params)
-
+    binding.pry
     respond_to do |format|
       if @discussion.save
         format.html { redirect_to @discussion, notice: 'Discussion was successfully created.' }
@@ -72,6 +74,6 @@ class DiscussionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def discussion_params
-      params.require(:discussion).permit(:group_id, :title)
+      params.require(:discussion).permit(:group_id, :title, messages_attributes: [:commoner_id, :body])
     end
 end

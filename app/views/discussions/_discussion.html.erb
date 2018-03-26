@@ -1,0 +1,10 @@
+<div class="media mb-3">
+  <div class="media-body">
+    <h5 class="mt-2"><%= link_to discussion.title, group_discussion_path(discussion.group) %></h5>
+    <small class="text-muted">
+      <%= fa_icon('comments-o') %>
+      <%= discussion.messages.count %>
+      <%= n_('message', 'messages', discussion.messages.count) %>
+    </small>
+  </div>
+</div>

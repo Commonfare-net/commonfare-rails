@@ -18,9 +18,12 @@ class GroupsController < ApplicationController
       welfare_provision: group_stories.welfare_provision.order('created_at DESC').first(6)
     }
     @members = @group.members
+
     @pending_join_requests = JoinRequest.where(group: @group).pending
     @new_join_request = @group.join_requests.build
-    @discussions = @group.discussions
+
+    @discussions = Discussion.where(group: @group)
+    @new_discussion = @group.discussions.build
   end
 
   # GET /groups/new
