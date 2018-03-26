@@ -5,6 +5,8 @@ html {
   font-size: 14px;
 }
 body {
+  // Padding top for fixed navbar (necessary for hiding it when scrolling)
+  padding-top: 53px;
   /* Margin bottom by footer height */
   margin-bottom: 300px; // this changes in a media query
   -webkit-font-smoothing: antialiased;
