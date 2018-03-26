@@ -1,0 +1,10 @@
+version: "2"
+
+options:
+  verbose: true
+  compose-dev-file-path: 'docker-compose.development.yml'
+syncs:
+  app-sync: # tip: add -sync and you keep consistent names as a convention
+    src: '.'
+    # sync_strategy: 'native_osx' # not needed, this is the default now
+    sync_excludes: ['db-data', '.git', 'tmp']
