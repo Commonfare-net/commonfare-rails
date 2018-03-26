@@ -59,7 +59,7 @@ Rails.application.routes.draw do
     resources :memberships
     resources :groups do
       resources :discussions do
-        resources :messages, only: [:new, :create]
+        resources :messages, only: [:create, :destroy]
       end
       resources :join_requests, only: [:new, :create] do
         post :accept, on: :member

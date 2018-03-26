@@ -39,6 +39,15 @@ class Ability
         can :read, JoinRequest, commoner_id: commoner.id
 
         can [:read, :create], Discussion, group_id: commoner.group_ids
+        can :create, Message do |message|
+          if message.messageable.respond_to?(:group)
+            commoner.groups.include? message.messageable.group
+          else
+            # TODO: condition for conversations
+            false
+          end
+        end
+        can :destroy, Message, commoner_id: commoner.id
       end
     end
   end

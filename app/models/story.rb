@@ -1,5 +1,6 @@
 class Story < ApplicationRecord
   extend FriendlyId
+  include Authorable
   belongs_to :commoner
   has_and_belongs_to_many :tags
   has_many :comments, as: :commentable, dependent: :destroy
@@ -32,10 +33,6 @@ class Story < ApplicationRecord
     scope type, -> { where(type => true)   }
   end
   scope :commoners_voice, -> { where(good_practice: false, welfare_provision: false) }
-
-  def author
-    commoner
-  end
 
   def type
     if good_practice?

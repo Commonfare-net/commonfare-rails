@@ -1,5 +1,11 @@
 class MessagesController < ApplicationController
-  before_action :set_message, only: [:show, :edit, :update, :destroy]
+  # before_action :set_message, only: [:show, :edit, :update, :destroy]
+
+  load_and_authorize_resource :discussion
+  load_and_authorize_resource :message, through: :discussion
+  # load_and_authorize_resource :message, through: [:discussion, :conversation]
+
+  before_action :set_group
 
   # GET /messages
   # GET /messages.json
@@ -24,14 +30,16 @@ class MessagesController < ApplicationController
   # POST /messages
   # POST /messages.json
   def create
-    @message = Message.new(message_params)
-
+    # @message = Message.new(message_params)
+    # @message is built by CanCanCan
     respond_to do |format|
       if @message.save
-        format.html { redirect_to @message, notice: 'Message was successfully created.' }
+        format.html { redirect_to success_path, notice: _('Message sent') }
         format.json { render :show, status: :created, location: @message }
       else
-        format.html { render :new }
+        @new_message = @message
+        @messages = Message.where(messageable: @discussion)
+        format.html { render 'discussions/show' }
         format.json { render json: @message.errors, status: :unprocessable_entity }
       end
     end
@@ -56,7 +64,7 @@ class MessagesController < ApplicationController
   def destroy
     @message.destroy
     respond_to do |format|
-      format.html { redirect_to messages_url, notice: 'Message was successfully destroyed.' }
+      format.html { redirect_to success_path, notice: _('Message deleted') }
       format.json { head :no_content }
     end
   end
@@ -65,6 +73,20 @@ class MessagesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_message
       @message = Message.find(params[:id])
+    end
+
+    def set_group
+      @group = @discussion.group if @discussion.present?
+    end
+
+    def success_path
+      if @discussion.present?
+        group_discussion_path(@group, @discussion)
+      elsif @conversation.present?
+        # TODO: path for conversation
+      else
+        root_path
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

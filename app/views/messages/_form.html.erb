@@ -1,12 +1,6 @@
-<%= simple_form_for(@message) do |f| %>
+<%= simple_form_for([message.messageable.group, message.messageable, message]) do |f| %>
   <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.association :commoner %>
-    <%= f.input :body %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+  <%= f.association :commoner, as: :hidden %>
+  <%= f.input :body, as: :text, label: false %>
+  <%= f.button :submit %>
 <% end %>
