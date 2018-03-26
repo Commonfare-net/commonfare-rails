@@ -9,8 +9,7 @@
 1. Install the gems
 
 ```
-gem install docker-sync
-gem install docker-compose
+gem install docker-sync docker-compose
 ```
 
 2. Install OS specific devDependencies: https://github.com/EugenMayer/docker-sync/wiki/1.-Installation#os-specific
