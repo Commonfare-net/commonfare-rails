@@ -11,11 +11,12 @@ class GroupsController < ApplicationController
   # GET /groups/1
   # GET /groups/1.json
   def show
-    group_stories = Story.where(commoner: @group.members)
+    # TODO: group_stories will be those published as the group
+    @group_stories = Story.where(commoner: @group.members).published
     @story_types_and_lists = {
-      commoners_voice: group_stories.commoners_voice.order('created_at DESC').first(6),
-      good_practice: group_stories.good_practice.order('created_at DESC').first(6),
-      welfare_provision: group_stories.welfare_provision.order('created_at DESC').first(6)
+      commoners_voice: @group_stories.commoners_voice.order('created_at DESC').first(6),
+      good_practice: @group_stories.good_practice.order('created_at DESC').first(6),
+      welfare_provision: @group_stories.welfare_provision.order('created_at DESC').first(6)
     }
     @members = @group.members
 

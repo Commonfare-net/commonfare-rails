@@ -20,3 +20,15 @@
     border: 2px solid $cf-primary-color;
   }
 }
+
+.commoner-media {
+  @extend .media;
+  padding: .5rem;
+  .media-body h5 {
+    margin-top: .8rem;
+  }
+  .media-body a {
+    text-decoration: none;
+    color: inherit;
+  }
+}
