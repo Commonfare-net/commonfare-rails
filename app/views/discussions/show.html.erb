@@ -1,11 +1,33 @@
-<h3><%= @discussion.title %></h3>
-<small><%= (_('in %{group_name}') %{group_name: link_to(@group.name, @group)}).html_safe %></small>
-<hr>
-<% @messages.each do |message| %>
-  <div>
-    <small><%= message.author.name %></small>
-    <p><%= detect_links_in(message.body) %></p>
-    <small><%= link_to(_('Delete'), group_discussion_message_path(@group, @discussion, message), method: :delete, data: { confirm: _('Are you sure?') }) if can? :destroy, message %></small>
+<div class="row justify-content-center">
+  <div class="col-lg-6 col-md-8">
+    <div class="discussion-header">
+      <h3><%= @discussion.title %></h3>
+      <small><%= (_('in %{group_name}') %{group_name: link_to(@group.name, @group)}).html_safe %></small>
+    </div>
+    <div class="discussion-container d-flex flex-column justify-content-end">
+      <div id="discussion-messages">
+        <% @messages.each do |message| %>
+        <div class="discussion-message d-flex flex-column <%= message.author == current_user.meta ? 'align-items-end' : 'align-items-start' %>">
+          <div class="message <%= message.author == current_user.meta ? 'current-user-message' : 'other-user-message' %>">
+            <div class="message-author <%= message.author == current_user.meta ? 'text-right' : 'text-left' %>"><%= message.author.name %></div>
+            <div class="message-body">
+              <%= detect_links_in(message.body) %>
+            </div>
+            <div class="message-delete <%= message.author == current_user.meta ? 'text-right' : 'text-left' %>"><%= link_to(_('Delete'), group_discussion_message_path(@group, @discussion, message), method: :delete, data: { confirm: _('Are you sure?') }) if can? :destroy, message %></div>
+          </div>
+        </div>
+        <% end %>
+      </div>
+      <div class="discussion-message-form">
+        <%= render 'messages/form', message: (@new_message) %>
+      </div>
+    </div>
   </div>
+</div>
+
+<%= content_for :scripts do %>
+  <script type="text/javascript">
+    var element =  document.getElementById("discussion-messages");
+    element.scrollTop = element.scrollHeight
+  </script>
 <% end %>
-<%= render 'messages/form', message: (@new_message) %>
