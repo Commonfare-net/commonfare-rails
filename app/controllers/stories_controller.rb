@@ -60,6 +60,7 @@ class StoriesController < ApplicationController
   def new
     @story = @commoner.stories.build
     if params[:story_builder] == 'true'
+      @story_builder = true
       @story.created_with_story_builder = true
       render :builder
     else
@@ -79,6 +80,7 @@ class StoriesController < ApplicationController
   # GET /stories/1/edit
   def edit
     if @story.created_with_story_builder?
+      @story_builder = true
       render :builder
     else
       render :edit
