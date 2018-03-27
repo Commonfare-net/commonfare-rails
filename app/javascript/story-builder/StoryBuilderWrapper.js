@@ -10,7 +10,7 @@ import StoryBuilderActions from './StoryBuilderActions';
 import './StoryBuilderWrapper.css';
 
 const locales = ['en', 'it', 'hr', 'nl'];
-import * as translations from './translations';
+import translations from './translations';
 
 export default class extends Component {
   static propTypes = {
