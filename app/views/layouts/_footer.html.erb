@@ -18,7 +18,7 @@
         <ul class="language">
           <% I18n.available_locales.each do |locale| %>
             <li>
-              <%= link_to localised_language_name(locale, locale).capitalize, { locale: locale, story_locale: @story_locale, filter: @filter, q: @q }, class: (locale == I18n.locale ? 'active' : '') %>
+              <%= link_to localised_language_name(locale, locale).capitalize, { locale: locale, story_locale: @story_locale, story_builder: @story_builder, filter: @filter, q: @q }, class: (locale == I18n.locale ? 'active' : '') %>
             </li>
           <% end %>
         </ul>

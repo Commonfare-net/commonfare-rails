@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { FormattedMessage, injectIntl, intlShape } from 'react-intl';
 import { publishStory } from './api';
 
 import Switch from 'react-bootstrap-switch';
 import 'react-bootstrap-switch/dist/css/bootstrap3/react-bootstrap-switch.css';
 import './StoryBuilderActions.css';
 
-export default class StoryBuilderActions extends Component {
+class StoryBuilderActions extends Component {
   static propTypes = {
+    intl: intlShape.isRequired,
     locale: PropTypes.oneOf(['en', 'it', 'hr', 'nl']).isRequired,
     storyLocale: PropTypes.oneOf(['en', 'it', 'hr', 'nl']).isRequired,
     storyId: PropTypes.number.isRequired,
@@ -34,20 +36,25 @@ export default class StoryBuilderActions extends Component {
   }
 
   render() {
-    const { locale, storyLocale, storyId } = this.props;
+    const { intl, locale, storyLocale, storyId } = this.props;
     const { publishing, anonymous } = this.state;
 
     return (
       <div>
         <div className="row justify-content-center">
           <div className="col-12 publish-anonymously-wrapper">
-            <label htmlFor="anonymous">Publish anonymously?</label>
+            <label htmlFor="anonymous">
+              <FormattedMessage
+                id="publish_anonymously"
+                defaultMessage="Publish anonymously?"
+              />
+            </label>
             <Switch
               onChange={(el, state) => this.setState({ anonymous: state })}
               value={anonymous}
               name="anonymous"
-              onText="Yes"
-              offText="No"
+              onText={intl.formatMessage({ id: 'yes' })}
+              offText={intl.formatMessage({ id: 'no' })}
               disabled={publishing}
              />
           </div>
@@ -59,7 +66,10 @@ export default class StoryBuilderActions extends Component {
               className={`btn btn-block btn-outline-cf ${publishing && 'disabled'}`}
               role="button"
               aria-disabled={publishing}>
-              Preview
+              <FormattedMessage
+                id="preview"
+                defaultMessage="Preview"
+              />
             </a>
           </div>
           <div className="col-6">
@@ -68,7 +78,10 @@ export default class StoryBuilderActions extends Component {
               onClick={() => this.setState({ publishing: true })}
               className="btn btn-block btn-cf"
               disabled={publishing}>
-              Publish
+              <FormattedMessage
+                id="publish"
+                defaultMessage="Publish"
+              />
             </button>
           </div>
         </div>
@@ -76,3 +89,5 @@ export default class StoryBuilderActions extends Component {
     )
   }
 }
+
+export default injectIntl(StoryBuilderActions)

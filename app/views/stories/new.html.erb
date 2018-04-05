@@ -2,7 +2,7 @@
 <div class="row justify-content-center pb-2">
   <div class="col-md-10 col-lg-8">
     <% Globalize.with_locale(@story_locale) do %>
-      <%= render 'language_choice', story_locale: @story_locale %>
+      <%= render 'language_choice', story_locale: @story_locale, story_builder: false %>
 
       <%= simple_form_for([@commoner, @story], url: stories_path({story_locale: @story_locale})) do |f| %>
         <%= render 'fields', f: f %>

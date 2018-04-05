@@ -60,6 +60,7 @@ class StoriesController < ApplicationController
   def new
     @story = @commoner.stories.build
     if params[:story_builder] == 'true'
+      @story_builder = true
       @story.created_with_story_builder = true
       render :builder
     else
@@ -79,6 +80,7 @@ class StoriesController < ApplicationController
   # GET /stories/1/edit
   def edit
     if @story.created_with_story_builder?
+      @story_builder = true
       render :builder
     else
       render :edit
@@ -263,7 +265,7 @@ class StoriesController < ApplicationController
     def story_params
       params.tap { |pars| set_draft_params(pars) }
             .require(:story)
-            .permit(:title_draft, :content_draft, :place_draft, :anonymous, :published, content_json_draft: [:id, :type, :content, :caption], tag_ids: [])
+            .permit(:title_draft, :content_draft, :place_draft, :anonymous, :published, content_json_draft: [:id, :type, :content, :caption, :url], tag_ids: [])
     end
 
     # Creates draft params if the client sends title, content or content_json
