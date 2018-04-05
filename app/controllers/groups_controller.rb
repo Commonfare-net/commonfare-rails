@@ -29,6 +29,8 @@ class GroupsController < ApplicationController
 
   # GET /groups/new
   def new
+    clear_session_after_signup
+    @new_group_after_signup = params['new_group_after_signup'] == 'true'
     @group = @commoner.groups.build
   end
 
@@ -89,5 +91,9 @@ class GroupsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def group_params
       params.require(:group).permit(:name, :description, :avatar)
+    end
+
+    def clear_session_after_signup
+      session.delete :create_group
     end
 end
