@@ -14,6 +14,13 @@ gem install docker-sync docker-compose
 
 2. Install OS specific devDependencies: https://github.com/EugenMayer/docker-sync/wiki/1.-Installation#os-specific
 
+  or just if you use MacOS
+
+  ```bash
+  $ brew install unison
+  $ brew install eugenmayer/dockersync/unox
+  ```
+
 3. Build the images following the instructions below
 
 ### Building images
