@@ -1,12 +1,18 @@
-<div class="story-media mb-3">
-  <%= link_to story do %>
-    <%= image_tag 'http://via.placeholder.com/48x48', class: 'rounded-circle mr-3' %>
-  <% end %>
-  <div class="media-body">
-    <h5 class="mt-2"><%= link_to truncate(story.title, length: 84), story, class: 'story-media-title-link' %></h5>
-    <small class="text-muted">
-      <%= l(story.created_at.to_date, format: :short) %>
-      <%= link_to story.author.name, story.author %>
-    </small>
+<div class="story-media-container">
+  <div class="story-media-body">
+    <%= link_to story do %>
+      <%= image_tag 'http://via.placeholder.com/96x96', class: 'mr-3' %>
+    <% end %>
+    <div class="media-body">
+      <h5 class=""><%= link_to story.title, story, class: 'clamp' %></h5>
+      <small class="text-muted">
+        <%= l(story.created_at.to_date, format: :short) %>
+      </small>
+    </div>
+  </div>
+  <div class="story-media-footer">
+    <div class="story-media-footer-comments">
+      <%= fa_icon 'comment-o', text: "#{story.comments.count} #{n_('Comment', 'Comments', story.comments.count)}" %>
+    </div>
   </div>
 </div>

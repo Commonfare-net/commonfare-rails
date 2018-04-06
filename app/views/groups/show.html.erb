@@ -21,7 +21,7 @@
           </li>
           <% end %>
           <li class="nav-item">
-            <a class="nav-link" id="pills-stories-tab" data-toggle="pill" href="#pills-stories" role="tab" aria-controls="pills-stories" aria-selected="true"><%= _('Stories') %></a>
+            <a class="nav-link <%= 'active' if cannot? :create, @new_discussion %>" id="pills-stories-tab" data-toggle="pill" href="#pills-stories" role="tab" aria-controls="pills-stories" aria-selected="true"><%= _('Stories') %></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" id="pills-members-tab" data-toggle="pill" href="#pills-members" role="tab" aria-controls="pills-members" aria-selected="false"><%= _('Members') %></a>
@@ -50,7 +50,7 @@
               <% end %>
             </div>
           <% end %>
-          <div class="tab-pane fade" id="pills-stories" role="tabpanel" aria-labelledby="pills-stories-tab">
+          <div class="tab-pane fade <%= 'show active' if cannot? :create, @new_discussion %>" id="pills-stories" role="tabpanel" aria-labelledby="pills-stories-tab">
             <% if @group_stories.any? %>
               <% @group_stories.each do |story| %>
                 <%= render 'stories/story', story: story %>

@@ -31,8 +31,10 @@
     </ul>
     <div class="tab-content" id="pills-tabContent">
       <div class="tab-pane fade show active" id="pills-stories" role="tabpanel" aria-labelledby="pills-stories-tab">
-        <% if @story_types_and_lists.any? %>
-        <%= render 'stories/types_and_lists', story_types_and_lists: @story_types_and_lists %>
+        <% if @stories.any? %>
+          <% @stories.each do |story| %>
+            <%= render 'stories/story', story: story %>
+          <% end %>
         <% else %>
         <div class="row justify-content-center">
           <div class="col text-center">
@@ -42,7 +44,7 @@
           </div>
         </div>
         <% end %>
-        <% if @commoner.stories.count > 6 %>
+        <% if @stories.count > 6 %>
         <div class="row justify-content-center">
           <div class="col text-center">
             <%= link_to(_('See all'), commoner_stories_path(@commoner), class: 'btn btn-outline-cf-secondary') %>
