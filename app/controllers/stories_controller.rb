@@ -8,7 +8,7 @@ class StoriesController < ApplicationController
   before_action :set_story, except: [:new, :builder, :create, :index] # manual load
   authorize_resource :story # managed by CanCanCan
 
-  before_action :set_commoner, only: [:new, :builder, :create, :edit]
+  before_action :set_commoner, only: [:new, :builder, :create, :edit, :update]
   before_action :set_story_locale
 
   # GET /stories
@@ -83,6 +83,9 @@ class StoriesController < ApplicationController
       @story_builder = true
       render :builder
     else
+      @story.title = @story.title_draft unless @story.title.present?
+      @story.content = @story.content_draft unless @story.content.present?
+      @story.place = @story.place_draft unless @story.place.present?
       render :edit
     end
   end
