@@ -12,7 +12,9 @@
   </div>
   <div class="story-media-footer">
     <div class="story-media-footer-comments">
-      <%= fa_icon 'comment-o', text: "#{story.comments.count} #{n_('Comment', 'Comments', story.comments.count)}" %>
+      <%= link_to story_card_comments_link(story) do %>
+        <%= fa_icon 'comment-o', text: "#{story.comments.count} #{n_('Comment', 'Comments', story.comments.count)}" %>
+      <% end %>
     </div>
   </div>
 </div>
