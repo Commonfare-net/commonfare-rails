@@ -31,7 +31,7 @@
           <div class="row mb-2">
             <div class="col">
               <div class="story-author">
-                <%= fa_icon('user fw', text: author_for(@story)) %>
+                <%= fa_icon('user fw', text: author_link_for(@story)) %>
               </div>
               <div class="story-date">
                 <%= fa_icon('clock-o fw', text: l(@story.created_at.to_date, format: :long)) %>

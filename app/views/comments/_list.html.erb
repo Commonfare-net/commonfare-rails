@@ -3,12 +3,8 @@
 <% end %>
 <% comments.each do |comment| %>
 <div class="media comment-container">
-  <% if comment.anonymous? %>
-    <%= image_tag 'anonymous_avatar.png', class: 'comment-avatar' %>
-  <% else %>
-    <%= link_to commoner_path(comment.author) do %>
-      <%= image_tag comment.author.avatar.card, class: 'comment-avatar' %>
-    <% end %>
+  <%= link_to author_path(comment) do %>
+    <%= image_tag author_image_for(comment), class: 'comment-avatar' %>
   <% end %>
   <div class="media-body ml-2">
     <% if can? :edit, comment %>
@@ -20,7 +16,7 @@
       </div>
     </div>
     <% end %>
-    <p class="comment-author"><%= author_for(comment) %></p>
+    <p class="comment-author"><%= author_link_for(comment) %></p>
     <small>
       <%= l(comment.created_at, format: :comment_timestamp) %>
     </small>
