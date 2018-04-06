@@ -1,12 +1,16 @@
 module Authorable
   extend ActiveSupport::Concern
   included do
-    # code ...
+    belongs_to :commoner
   end
 
   # instance methods go here
   def author
-    commoner
+    if respond_to?(:group) && group.present?
+      group
+    else
+      commoner
+    end
   end
 
   module ClassMethods

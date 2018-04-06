@@ -1,6 +1,5 @@
 class Message < ApplicationRecord
   include Authorable
-  belongs_to :commoner
 
   # optional: true is here until Rails fixes this bug
   # https://github.com/rails/rails/issues/29781

@@ -72,12 +72,13 @@ module StoriesHelper
 
   def author_for(content)
     return unless content.respond_to? :author
-    if current_user == content.author.user
+    if !content.author.is_a?(Group) && current_user == content.author.user
       link_to(_('You'), commoner_path(content.author))
     elsif content.anonymous?
       _('Anonymous')
     else
-      link_to(content.author.name, commoner_path(content.author))
+      # link_to(content.author.name, commoner_path(content.author))
+      link_to(content.author.name, author_path(content))
     end
   end
 
@@ -85,7 +86,7 @@ module StoriesHelper
     if story.anonymous?
       content_tag(:span, _('Anonymous'))
     else
-      link_to(story.commoner.name, commoner_path(story.commoner))
+      link_to(story.author.name, author_path(story))
     end
   end
 

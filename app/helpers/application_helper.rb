@@ -26,6 +26,11 @@ module ApplicationHelper
     !ACTION_WITHOUT_FAB.include?(action_name)
   end
 
+  def author_path(authorable)
+    return group_path(authorable.author) if authorable.author.is_a?(Group)
+    commoner_path(authorable.author)
+  end
+
   # def infohub_url
   #   locale = %i(it nl hr).include?(I18n.locale) ? I18n.locale : ''
   #   language = I18n.locale

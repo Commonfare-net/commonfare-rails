@@ -81,6 +81,14 @@ $ docker-compose up -d
 
 This will recreate only the Rails container from the new image, and not the DB container, that this way persists data.
 
+## Migrations
+
+Use `docker-compose exec` to generate migrations while working with `docker-sync`.
+
+```bash
+$ docker-compose exec app rails generate migration YourMigration
+```
+
 ## Debug with `pry`
 
 From [this gist](https://gist.github.com/briankung/ebfb567d149209d2d308576a6a34e5d8).

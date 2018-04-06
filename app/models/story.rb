@@ -1,7 +1,7 @@
 class Story < ApplicationRecord
   extend FriendlyId
   include Authorable
-  belongs_to :commoner
+  belongs_to :group
   has_and_belongs_to_many :tags
   has_many :comments, as: :commentable, dependent: :destroy
   has_many :images, as: :imageable, dependent: :destroy
@@ -88,7 +88,7 @@ class Story < ApplicationRecord
     gp_authors = ENV['GP_AUTHORS'].split(',')
     wp_authors = ENV['WP_AUTHORS'].split(',')
 
-    is_wp = wp_authors.include?(author.email) && (
+    is_wp = wp_authors.include?(commoner.email) && (
               tag_names.include?('welfare provisions') && (
                 tag_names.include?('misure di welfare') ||
                 tag_names.include?('socijalna zaštita') ||
@@ -96,7 +96,7 @@ class Story < ApplicationRecord
                 )
               )
 
-    is_gp = gp_authors.include?(author.email) && (
+    is_gp = gp_authors.include?(commoner.email) && (
               tag_names.include?('good practices') && (
                 tag_names.include?('buone pratiche') ||
                 tag_names.include?('dobre prakse') ||

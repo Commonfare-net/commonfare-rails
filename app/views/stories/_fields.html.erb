@@ -20,6 +20,14 @@
 <%= f.input :anonymous,
             inline_label: _('Publish anonymously') %>
 
+<% if @commoner.groups.any? %>
+  <%= f.association :group,
+            label: _('Publish as a Group'),
+            required: false,
+            collection: @commoner.groups,
+            prompt: _('Choose one of your groups') %>
+<% end %>
+
 <div class="trix-dialog trix-dialog--link trix-active" data-trix-dialog="embed-video" data-trix-dialog-attribute="embed-video" id="embed-video-dialog">
   <div class="trix-dialog__link-fields">
     <input name="embed-video" class="trix-input trix-input--dialog" placeholder="Paste the embed code" required="" data-trix-input="" type="text">
@@ -133,6 +141,12 @@
     });
     $('#story_tag_ids').on('select2:select', function (e) {
       // console.log(data.text);
+    });
+    // Select2 for groups
+    $('#story_group_id').select2({
+      theme: 'bootstrap',
+      placeholder: "<%= _('e.g. Pregnancy, Food sharing, etc.') %>",
+      minimumResultsForSearch: -1
     });
   </script>
 <% end %>
