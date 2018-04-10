@@ -4,12 +4,17 @@ class Commoner < ApplicationRecord
   has_many :images
   has_many :stories
   has_many :comments
+  has_one :wallet, dependent: :destroy
 
+  after_commit :create_wallet_and_get_income, on: :create
   before_destroy :archive_content
 
   validates :name, presence: true, uniqueness: { case_sensitive: false }
 
   private
+  def create_wallet_and_get_income
+    self.create_wallet(address: Digest::SHA2.hexdigest(self.email + Time.now.to_s))
+  end
   def archive_content
     archive_commoner = User.find_by(email: ENV['ARCHIVE_COMMONER']).meta
     images.each do |image|

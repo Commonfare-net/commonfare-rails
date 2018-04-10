@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180321154243) do
+ActiveRecord::Schema.define(version: 20180409143036) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +50,14 @@ ActiveRecord::Schema.define(version: 20180321154243) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "avatar"
+  end
+
+  create_table "discussions", force: :cascade do |t|
+    t.bigint "group_id"
+    t.string "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["group_id"], name: "index_discussions_on_group_id"
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
@@ -105,6 +113,17 @@ ActiveRecord::Schema.define(version: 20180321154243) do
     t.index ["group_id"], name: "index_memberships_on_group_id"
   end
 
+  create_table "messages", force: :cascade do |t|
+    t.bigint "commoner_id"
+    t.string "body"
+    t.string "messageable_type"
+    t.bigint "messageable_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["commoner_id"], name: "index_messages_on_commoner_id"
+    t.index ["messageable_type", "messageable_id"], name: "index_messages_on_messageable_type_and_messageable_id"
+  end
+
   create_table "stories", force: :cascade do |t|
     t.string "title"
     t.text "content"
@@ -123,9 +142,11 @@ ActiveRecord::Schema.define(version: 20180321154243) do
     t.text "content_draft"
     t.jsonb "content_json_draft"
     t.string "place_draft"
+    t.bigint "group_id"
     t.index ["anonymous"], name: "index_stories_on_anonymous"
     t.index ["commoner_id"], name: "index_stories_on_commoner_id"
     t.index ["good_practice"], name: "index_stories_on_good_practice"
+    t.index ["group_id"], name: "index_stories_on_group_id"
     t.index ["slug"], name: "index_stories_on_slug", unique: true
     t.index ["welfare_provision"], name: "index_stories_on_welfare_provision"
   end
@@ -181,11 +202,24 @@ ActiveRecord::Schema.define(version: 20180321154243) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "wallets", force: :cascade do |t|
+    t.bigint "commoner_id"
+    t.decimal "balance", precision: 18, scale: 6
+    t.string "address", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["commoner_id"], name: "index_wallets_on_commoner_id"
+  end
+
   add_foreign_key "comments", "commoners"
+  add_foreign_key "discussions", "groups"
   add_foreign_key "images", "commoners"
   add_foreign_key "join_requests", "commoners"
   add_foreign_key "join_requests", "groups"
   add_foreign_key "memberships", "commoners"
   add_foreign_key "memberships", "groups"
+  add_foreign_key "messages", "commoners"
   add_foreign_key "stories", "commoners"
+  add_foreign_key "stories", "groups"
+  add_foreign_key "wallets", "commoners"
 end

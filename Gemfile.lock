@@ -131,6 +131,8 @@ GEM
       rails (>= 4.2.0)
       responders
     execjs (2.7.0)
+    faraday (0.14.0)
+      multipart-post (>= 1.2, < 3)
     ffi (1.9.18)
     font-awesome-rails (4.7.0.2)
       railties (>= 3.2, < 5.2)
@@ -197,6 +199,7 @@ GEM
     momentjs-rails (2.17.1)
       railties (>= 3.1)
     multi_json (1.12.1)
+    multipart-post (2.0.0)
     netrc (0.11.0)
     nio4r (2.1.0)
     nokogiri (1.8.0)
@@ -296,6 +299,9 @@ GEM
       rails (>= 4.0.0)
       simple_form (~> 3.1)
     slop (3.6.0)
+    social_wallet (1.0.0)
+      faraday (>= 0.9.1)
+      multi_json (>= 1.11.0)
     spring (2.0.2)
       activesupport (>= 4.2)
     spring-watcher-listen (2.0.1)
@@ -388,6 +394,7 @@ DEPENDENCIES
   selenium-webdriver
   simple_form
   simple_form_fancy_uploads
+  social_wallet
   spring
   spring-watcher-listen (~> 2.0.0)
   translation

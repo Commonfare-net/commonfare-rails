@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+
   # ************* ADMIN START **********
   devise_for :admin_users
   namespace :admin do
@@ -53,6 +54,7 @@ Rails.application.routes.draw do
       # :index used for commoner/42/comments, visible only by comments' author
       resources :comments, only: :index
       resources :images, only: [:create, :destroy]
+      get 'wallet', to: 'wallets#show', as: 'wallet'
     end
     resources :comments, except: [:new, :show, :index]
     resources :tags, only: :show

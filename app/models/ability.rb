@@ -23,6 +23,8 @@ class Ability
         can [:publish, :preview], Story, commoner_id: commoner.id
         can [:create, :update, :destroy], Comment, commoner_id: commoner.id
         can [:create, :destroy], Image, commoner_id: commoner.id
+
+        can :read, Wallet, commoner_id: commoner.id
       end
     end
   end

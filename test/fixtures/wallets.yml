@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  commoner: one
+  balance: 9.99
+
+two:
+  commoner: two
+  balance: 9.99
