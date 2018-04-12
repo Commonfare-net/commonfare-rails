@@ -51,6 +51,9 @@
         <%= link_to current_user.meta.name, commoner_path(current_user.meta), class: 'nav-link' %>
       </li>
       <li class="nav-item">
+        <%= link_to _('Wallet'), commoner_wallet_path(current_user.meta, current_user.meta.wallet), class: 'nav-link' %>
+      </li>
+      <li class="nav-item">
         <%= link_to s_('Navbar|Logout'), destroy_user_session_path, class: 'nav-link', method: :delete %>
       </li>
     <% else %>

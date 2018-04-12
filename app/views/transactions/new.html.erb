@@ -1,0 +1,33 @@
+<%= content_for :title, s_('Title|Send Commoncoins') %>
+<h1><%= s_('Title|Send Commoncoins') %></h1>
+<%= simple_form_for(@transaction, url: commoner_transactions_path(@commoner)) do |f| %>
+  <%= f.error_notification %>
+  <div class="form-row">
+    <div class="col-sm-8">
+      <%= f.association :to_wallet, required: false, placeholder: _('Bilbo Baggins'), label: _('Name of the commoner') %>
+    </div>
+    <div class="col-sm-4">
+      <%= f.input :amount, required: false, placeholder: '42.314', label: _('Amount (CC)'), :input_html => {value: number_with_precision(f.object.amount, precision: 6) } %>
+    </div>
+  </div>
+  <%= f.input :description, required: false, placeholder: _('I like your stories!'), label: _('Description (optional)') %>
+  <%= f.button :submit, s_('Button|Send'), class: 'btn btn-cf btn-block' %>
+
+<% end %>
+
+<%= content_for :scripts do %>
+<script type="text/javascript">
+  autosize($('#transaction_description'));
+
+  // Select2 for tags
+  // TODO: use an AJAX call to filter after the third letter
+  $('#transaction_to_wallet_id').select2({
+    theme: 'bootstrap',
+    placeholder: "<%= _('Bilbo Baggins') %>",
+    minimumResultsForSearch: -1
+  });
+  $('#transaction_to_wallet_id').on('select2:select', function (e) {
+    // console.log(data.text);
+  });
+</script>
+<% end %>

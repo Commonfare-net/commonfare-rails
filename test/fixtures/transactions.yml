@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  wallet: one
+  from_commoner: one
+  to_commoner: one
+  description: MyText
+  txid: MyString
+
+two:
+  wallet: two
+  from_commoner: two
+  to_commoner: two
+  description: MyText
+  txid: MyString

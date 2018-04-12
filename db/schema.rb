@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180409143036) do
+ActiveRecord::Schema.define(version: 20180410134435) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -183,6 +183,18 @@ ActiveRecord::Schema.define(version: 20180409143036) do
     t.index ["slug"], name: "index_tags_on_slug", unique: true
   end
 
+  create_table "transactions", force: :cascade do |t|
+    t.text "description"
+    t.decimal "amount", precision: 18, scale: 6
+    t.string "txid"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "from_wallet_id"
+    t.bigint "to_wallet_id"
+    t.index ["from_wallet_id"], name: "index_transactions_on_from_wallet_id"
+    t.index ["to_wallet_id"], name: "index_transactions_on_to_wallet_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -221,5 +233,7 @@ ActiveRecord::Schema.define(version: 20180409143036) do
   add_foreign_key "messages", "commoners"
   add_foreign_key "stories", "commoners"
   add_foreign_key "stories", "groups"
+  add_foreign_key "transactions", "wallets", column: "from_wallet_id"
+  add_foreign_key "transactions", "wallets", column: "to_wallet_id"
   add_foreign_key "wallets", "commoners"
 end

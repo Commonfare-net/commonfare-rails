@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+
   # ************* ADMIN START **********
   devise_for :admin_users
   namespace :admin do
@@ -49,12 +50,16 @@ Rails.application.routes.draw do
     end
     get 'story_builder', to: 'stories#builder'
 
-    resources :commoners do
+    resources :commoners, except: [:index] do
       resources :stories, only: :index
       # :index used for commoner/42/comments, visible only by comments' author
       resources :comments, only: :index
       resources :images, only: [:create, :destroy]
-      get 'wallet', to: 'wallets#show', as: 'wallet'
+      # get 'wallet', to: 'wallets#show', as: 'wallet'
+      resources :wallets, only: [:show]
+      resources :transactions, except: [:edit, :update, :destroy]  do
+        get :preview, on: :member
+      end
     end
     resources :comments, except: [:new, :show, :index]
     resources :tags, only: :show
