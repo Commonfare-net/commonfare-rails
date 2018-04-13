@@ -1,5 +1,18 @@
 <%= content_for :title, s_('Title|Social wallet') %>
-<h2><%= s_('Title|Social wallet') %></h2>
-<p><%= _('Current balance') %></p>
-<h1><%= number_to_currency(@wallet.balance || 0, precision: 6, locale: I18n.locale, unit: 'CC ') %></h1>
-<%= link_to s_('Button|Send cc'), new_commoner_transaction_path(@commoner), class: 'btn btn-outline-cf-secondary' %>
+<div class="row justify-content-center">
+  <div class="col-md-8 col-lg-6">
+    <h2><%= s_('Title|Social wallet') %></h2>
+    <p><%= _('Current balance') %></p>
+    <h1><%= number_to_currency(@wallet.balance || 0, precision: 6, locale: I18n.locale, unit: 'cc ') %></h1>
+    <p><%= link_to s_('Button|Send cc'), new_commoner_transaction_path(@commoner), class: 'btn btn-outline-cf-secondary' %></p>
+    <% @grouped_transactions.each do |date, transactions| %>
+      <div class="transaction-date">
+        <%= l(date, format: :long) %>
+      </div>
+      <% transactions.each do |transaction| %>
+        <%= render 'transactions/transaction', transaction: transaction %>
+      <% end %>
+    <% end %>
+    <p class="text-center"><%= link_to _('See all'), commoner_transactions_path(@commoner), class: 'btn btn-outline-cf-secondary' %></p>
+  </div>
+</div>

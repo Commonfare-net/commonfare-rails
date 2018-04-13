@@ -14,7 +14,7 @@ class Wallet < ApplicationRecord
   def transactions
    Transaction.where(id: incoming_transaction_ids)
         .or(Transaction.where(id: outgoing_transaction_ids))
-        .order(date: :asc)
+        .order(created_at: :asc)
   end
 
   after_commit :get_initial_income, on: :create

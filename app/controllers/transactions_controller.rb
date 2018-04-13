@@ -4,7 +4,8 @@ class TransactionsController < ApplicationController
   before_action :set_commoner
 
   def index
-    @commoner.wallet.transactions
+    # @transactions = @transactions.order 'created_at DESC'
+    @grouped_transactions = @transactions.order(created_at: :desc).group_by {|t| t.created_at.to_date}
   end
 
   def show

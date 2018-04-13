@@ -16,4 +16,7 @@ body, html {
   &.trix_editor .invalid-feedback {
     display: block;
   }
+  &.transaction_to_wallet .invalid-feedback {
+    display: block;
+  }
 }

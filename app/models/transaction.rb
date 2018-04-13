@@ -7,11 +7,18 @@ class Transaction < ApplicationRecord
     less_than_or_equal_to: (Proc.new { |t| t.from_wallet.balance }),
     greater_than: 0
   }
+  validate :not_to_self
 
   before_save :perform_remote_transaction, on: :create
   after_commit :refresh_wallets_balance, on: :create
 
   private
+
+  def not_to_self
+    if self.from_wallet == self.to_wallet
+      errors.add(:to_wallet, _("can't be you"))
+    end
+  end
 
   def perform_remote_transaction
     begin
