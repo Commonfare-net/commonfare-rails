@@ -57,9 +57,8 @@ Rails.application.routes.draw do
       resources :images, only: [:create, :destroy]
       # get 'wallet', to: 'wallets#show', as: 'wallet'
       resources :wallets, only: [:show]
-      resources :transactions, except: [:edit, :update, :destroy]  do
-        get :preview, on: :member
-      end
+      post 'transaction_confirm', to: 'transactions#confirm', as: 'transaction_confirm'
+      resources :transactions, except: [:edit, :update, :destroy]
     end
     resources :comments, except: [:new, :show, :index]
     resources :tags, only: :show

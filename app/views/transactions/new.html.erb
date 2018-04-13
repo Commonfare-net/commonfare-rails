@@ -1,19 +1,22 @@
 <%= content_for :title, s_('Title|Send Commoncoins') %>
-<h1><%= s_('Title|Send Commoncoins') %></h1>
-<%= simple_form_for(@transaction, url: commoner_transactions_path(@commoner)) do |f| %>
-  <%= f.error_notification %>
-  <div class="form-row">
-    <div class="col-sm-8">
-      <%= f.association :to_wallet, required: false, placeholder: _('Bilbo Baggins'), label: _('Name of the commoner') %>
-    </div>
-    <div class="col-sm-4">
-      <%= f.input :amount, required: false, placeholder: '42.314', label: _('Amount (CC)'), :input_html => {value: number_with_precision(f.object.amount, precision: 6) } %>
-    </div>
+<div class="row justify-content-center">
+  <div class="col-md-10 col-lg-8">
+    <h1><%= s_('Title|Send Commoncoins') %></h1>
+    <%= simple_form_for(@transaction, url: commoner_transaction_confirm_path(@commoner)) do |f| %>
+      <%= f.error_notification %>
+      <div class="form-row">
+        <div class="col-sm-8">
+          <%= f.association :to_wallet, required: false, placeholder: _('Bilbo Baggins'), label: _('Name of the commoner') %>
+        </div>
+        <div class="col-sm-4">
+          <%= f.input :amount, required: false, placeholder: '42.314', label: _('Amount (cc)'), :input_html => {value: number_with_precision(f.object.amount, precision: 6) } %>
+        </div>
+      </div>
+      <%= f.input :description, required: false, placeholder: _('I like your stories!'), label: _('Description (optional)') %>
+      <%= f.button :submit, s_('Button|Send'), class: 'btn btn-cf btn-block' %>
+    <% end %>
   </div>
-  <%= f.input :description, required: false, placeholder: _('I like your stories!'), label: _('Description (optional)') %>
-  <%= f.button :submit, s_('Button|Send'), class: 'btn btn-cf btn-block' %>
-
-<% end %>
+</div>
 
 <%= content_for :scripts do %>
 <script type="text/javascript">

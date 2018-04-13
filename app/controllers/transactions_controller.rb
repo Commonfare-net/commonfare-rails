@@ -15,6 +15,17 @@ class TransactionsController < ApplicationController
     @transaction = @commoner.wallet.outgoing_transactions.build
   end
 
+  def confirm
+    @transaction = @commoner.wallet.outgoing_transactions.build(transaction_params)
+    respond_to do |format|
+      if @transaction.valid?
+        format.html { render :confirm }
+      else
+        format.html { render :new }
+      end
+    end
+  end
+
   def create
     @transaction = @commoner.wallet.outgoing_transactions.build(transaction_params)
     respond_to do |format|
@@ -28,10 +39,6 @@ class TransactionsController < ApplicationController
         end
       end
     end
-  end
-
-  def preview
-    @transaction = @commoner.wallet.outgoing_transactions.build(transaction_params)
   end
 
   private

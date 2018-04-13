@@ -3,7 +3,7 @@ class WalletsController < ApplicationController
   load_and_authorize_resource :wallet, through: :commoner
 
   def show
-    @grouped_transactions = @wallet.transactions.order(created_at: :desc).limit(10).reverse.group_by {|t| t.created_at.to_date}
+    @grouped_transactions = @wallet.transactions.order(created_at: :desc).last(10).reverse.group_by {|t| t.created_at.to_date}
   end
 
   def autocomplete
