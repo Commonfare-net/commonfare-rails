@@ -48,6 +48,6 @@ class TransactionsController < ApplicationController
   end
 
   def transaction_params
-    params.require(:transaction).permit(:amount, :to_wallet_id, :description)
+    params.require(:transaction).permit(:amount, :to_wallet_id, :message)
   end
 end

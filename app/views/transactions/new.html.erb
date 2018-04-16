@@ -12,7 +12,7 @@
           <%= f.input :amount, required: false, placeholder: '42.314', label: _('Amount (cc)'), :input_html => {value: number_with_precision(f.object.amount, precision: 6) } %>
         </div>
       </div>
-      <%= f.input :description, required: false, placeholder: _('I like your stories!'), label: _('Description (optional)') %>
+      <%= f.input :message, required: false, placeholder: _('I like your stories!'), label: _('Message (optional)') %>
       <%= f.button :submit, s_('Button|Send'), class: 'btn btn-cf btn-block' %>
     <% end %>
   </div>
@@ -20,7 +20,7 @@
 
 <%= content_for :scripts do %>
 <script type="text/javascript">
-  autosize($('#transaction_description'));
+  autosize($('#transaction_message'));
 
   // Select2 for tags
   // TODO: use an AJAX call to filter after the third letter

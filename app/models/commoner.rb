@@ -4,7 +4,7 @@ class Commoner < ApplicationRecord
   has_many :images
   has_many :stories
   has_many :comments
-  has_many :wallets, dependent: :destroy
+  has_many :wallets, as: :walletable, dependent: :destroy
 
   after_commit :create_wallet_and_get_income, on: :create
   before_destroy :archive_content
@@ -20,7 +20,7 @@ class Commoner < ApplicationRecord
   private
 
   def create_wallet_and_get_income
-    Wallet.create(commoner: self, address: Digest::SHA2.hexdigest(self.email + Time.now.to_s))
+    Wallet.create(walletable: self, address: Digest::SHA2.hexdigest(self.email + Time.now.to_s))
   end
 
   def archive_content

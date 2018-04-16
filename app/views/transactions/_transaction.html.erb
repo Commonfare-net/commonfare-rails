@@ -5,14 +5,14 @@
       <%= fa_icon('arrow-right', class: 'outgoing-transaction') %>
     </div>
     <div class="p-2">
-      <%= (_('Given to <strong>%{name}</strong>') %{name: transaction.to_wallet.commoner.name}).html_safe %>
+      <%= (_('Given to <strong>%{name}</strong>') %{name: transaction.to_wallet.holder.name}).html_safe %>
     </div>
     <% elsif incoming_transaction?(transaction) %>
     <div class="p-2">
       <%= fa_icon('arrow-left', class: 'incoming-transaction') %>
     </div>
     <div class="p-2">
-      <%= (_('Received from <strong>%{name}</strong>') %{name: transaction.from_wallet.commoner.name}).html_safe %>
+      <%= (_('Received from <strong>%{name}</strong>') %{name: transaction.from_wallet.holder.name}).html_safe %>
     </div>
     <% end %>
     <div class="ml-auto p-2 amount">
@@ -21,8 +21,8 @@
   </div>
   <div class="transaction-details collapse" id="collapseTransaction-<%= transaction.id %>">
     <div class="d-flex align-items-top">
-      <div class="transaction-description">
-        <%= description_for_transaction(transaction.description) %>
+      <div class="transaction-message">
+        <%= message_for_transaction(transaction.message) %>
       </div>
       <div class="transaction-timestamp ml-auto">
         <%= l((transaction.created_at || Time.now.to_date), format: :long) %>

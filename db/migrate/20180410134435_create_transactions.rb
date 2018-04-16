@@ -1,7 +1,7 @@
 class CreateTransactions < ActiveRecord::Migration[5.1]
   def up
     create_table :transactions do |t|
-      t.text :description
+      t.text :message
       t.decimal :amount, precision: 18, scale: 6
       t.string :txid
 

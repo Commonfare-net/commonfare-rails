@@ -1,5 +1,6 @@
 class Wallet < ApplicationRecord
-  belongs_to :commoner
+  # belongs_to :commoner
+  belongs_to :walletable, polymorphic: true
 
   # http://guides.rubyonrails.org/association_basics.html#has-many-association-reference
   has_many :incoming_transactions,
@@ -26,8 +27,12 @@ class Wallet < ApplicationRecord
     update_column(:balance, resp['amount'])
   end
 
+  def holder
+    walletable
+  end
+
   def to_s
-    commoner.name
+    holder.name
   end
 
   private

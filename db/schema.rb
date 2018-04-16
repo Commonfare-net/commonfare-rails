@@ -184,7 +184,7 @@ ActiveRecord::Schema.define(version: 20180410134435) do
   end
 
   create_table "transactions", force: :cascade do |t|
-    t.text "description"
+    t.text "message"
     t.decimal "amount", precision: 18, scale: 6
     t.string "txid"
     t.datetime "created_at", null: false
@@ -215,12 +215,13 @@ ActiveRecord::Schema.define(version: 20180410134435) do
   end
 
   create_table "wallets", force: :cascade do |t|
-    t.bigint "commoner_id"
+    t.string "walletable_type"
+    t.bigint "walletable_id"
     t.decimal "balance", precision: 18, scale: 6
     t.string "address", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["commoner_id"], name: "index_wallets_on_commoner_id"
+    t.index ["walletable_type", "walletable_id"], name: "index_wallets_on_walletable_type_and_walletable_id"
   end
 
   add_foreign_key "comments", "commoners"
@@ -235,5 +236,4 @@ ActiveRecord::Schema.define(version: 20180410134435) do
   add_foreign_key "stories", "groups"
   add_foreign_key "transactions", "wallets", column: "from_wallet_id"
   add_foreign_key "transactions", "wallets", column: "to_wallet_id"
-  add_foreign_key "wallets", "commoners"
 end

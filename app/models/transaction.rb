@@ -22,6 +22,7 @@ class Transaction < ApplicationRecord
 
   def perform_remote_transaction
     begin
+      Rails.logger.info("SWAPI #{Time.now.to_s} Starting transaction from #{self.from_wallet.address}")
       client = SocialWallet::Client.new(api_endpoint: ENV['SWAPI_ENDPOINT'])
       # binding.pry
       resp = client.transactions.new(from_id: self.from_wallet.address,
@@ -29,8 +30,10 @@ class Transaction < ApplicationRecord
                                      amount: self.amount.to_f,
                                      tags: [])
     rescue
+      Rails.logger.info("SWAPI #{Time.now.to_s} Failed transaction from #{self.from_wallet.address}")
       throw(:abort)
     else
+      Rails.logger.info("SWAPI #{Time.now.to_s} Finished transaction from #{self.from_wallet.address}. TXID: #{resp['transaction-id']}")
       self.txid = resp['transaction-id']
     end
   end

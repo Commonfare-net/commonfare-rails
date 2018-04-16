@@ -24,7 +24,7 @@ class Ability
         can [:create, :update, :destroy], Comment, commoner_id: commoner.id
         can [:create, :destroy], Image, commoner_id: commoner.id
 
-        can :read, Wallet, commoner_id: commoner.id
+        can :read, Wallet, walletable_id: commoner.id, walletable_type: commoner.class.name
 
         can :read, Transaction, from_wallet_id: commoner.wallet.id
         can :read, Transaction, to_wallet_id: commoner.wallet.id

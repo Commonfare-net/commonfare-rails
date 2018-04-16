@@ -7,12 +7,12 @@ module TransactionsHelper
     transaction.from_wallet == @commoner.wallet
   end
 
-  def description_for_transaction(description)
-    return description unless description.blank?
-    content_tag :span, _('No description'), class: 'text-muted'
+  def message_for_transaction(message)
+    return message unless message.blank?
+    content_tag :span, _('No message'), class: 'text-muted'
   end
 
   def counterpart_for_transaction(transaction)
-    counterpart = incoming_transaction?(transaction) ? transaction.from_wallet.commoner : transaction.to_wallet.commoner
+    counterpart = incoming_transaction?(transaction) ? transaction.from_wallet.holder : transaction.to_wallet.holder
   end
 end
