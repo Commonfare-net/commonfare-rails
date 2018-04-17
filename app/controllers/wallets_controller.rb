@@ -8,7 +8,7 @@ class WalletsController < ApplicationController
 
   def autocomplete
     @wallets = Wallet.ransack(
-      commoner_name_cont: params[:q]
+      walletable_of_Commoner_type_name_cont: params[:q]
     ).result(distinct: true).limit(5)
   end
 end

@@ -6,7 +6,7 @@
       <%= f.error_notification %>
       <div class="form-row">
         <div class="col-sm-8">
-          <%= f.association :to_wallet, required: false, placeholder: _('Bilbo Baggins'), label: _('Name of the commoner') %>
+          <%= f.association :to_wallet, required: false, placeholder: _('Bilbo Baggins'), label: _('Name of the commoner'), collection: [] %>
         </div>
         <div class="col-sm-4">
           <%= f.input :amount, required: false, placeholder: '42.314', label: _('Amount (cc)'), :input_html => {value: number_with_precision(f.object.amount, precision: 6) } %>
@@ -25,9 +25,27 @@
   // Select2 for tags
   // TODO: use an AJAX call to filter after the third letter
   $('#transaction_to_wallet_id').select2({
+    ajax: {
+      url: '<%= autocomplete_commoner_wallets_path %>',
+      dataType: 'json',
+      processResults: function (data) {
+        // Tranforms the top-level key of the response object from 'items' to 'results'
+        return {
+          results: data.wallets
+        };
+      }
+      // Additional AJAX parameters go here; see the end of this chapter for the full code of this example
+    },
+    minimumInputLength: 3,
     theme: 'bootstrap',
     placeholder: "<%= _('Bilbo Baggins') %>",
-    minimumResultsForSearch: -1
+    escapeMarkup: function (markup) { return markup; }, // let our custom formatter work
+    templateResult: function (wallet) {
+      return '<div class="media">' +
+      '<img class="rounded-circle mr-3" height="28" src="' + wallet.avatar_url + '" alt="avatar_url"/>' +
+      '<div class="media-body pt-1">' + wallet.text + '</div>' +
+      '</div>';
+    }
   });
   $('#transaction_to_wallet_id').on('select2:select', function (e) {
     // console.log(data.text);

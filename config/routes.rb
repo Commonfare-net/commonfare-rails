@@ -56,7 +56,9 @@ Rails.application.routes.draw do
       resources :comments, only: :index
       resources :images, only: [:create, :destroy]
       # get 'wallet', to: 'wallets#show', as: 'wallet'
-      resources :wallets, only: [:show]
+      resources :wallets, only: [:show] do
+        get 'autocomplete', on: :collection, defaults: { format: :json }
+      end
       post 'transaction_confirm', to: 'transactions#confirm', as: 'transaction_confirm'
       resources :transactions, except: [:edit, :update, :destroy]
     end
