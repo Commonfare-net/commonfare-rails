@@ -22,19 +22,17 @@
 <script type="text/javascript">
   autosize($('#transaction_message'));
 
-  // Select2 for tags
-  // TODO: use an AJAX call to filter after the third letter
+  // Select2 for wallet holders
   $('#transaction_to_wallet_id').select2({
+    language: '<%= I18n.locale.to_s %>',
     ajax: {
       url: '<%= autocomplete_commoner_wallets_path %>',
       dataType: 'json',
       processResults: function (data) {
-        // Tranforms the top-level key of the response object from 'items' to 'results'
         return {
           results: data.wallets
         };
       }
-      // Additional AJAX parameters go here; see the end of this chapter for the full code of this example
     },
     minimumInputLength: 3,
     theme: 'bootstrap',

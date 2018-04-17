@@ -18,6 +18,9 @@
 //= require axios/dist/axios
 //= require trix
 //= require select2
+//= require select2_locale_it
+//= require select2_locale_hr
+//= require select2_locale_nl
 //= require easy-autocomplete/dist/jquery.easy-autocomplete
 //= require autosize/dist/autosize
 //= require ellipsis.js/ellipsis.min.js
