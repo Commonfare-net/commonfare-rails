@@ -1,0 +1,29 @@
+.story-media-container {
+  margin-bottom: 1rem;
+  border: 1px solid lightgray;
+}
+
+.story-media-body {
+  @extend .media;
+  padding: .5rem;
+}
+.story-media-footer {
+  padding: .5rem;
+  border-top: 1px solid lightgray;
+  .story-media-footer-comments {
+    @extend .text-muted;
+    font-size: 0.8em;
+    padding: 0;
+    i.fa {
+      padding-right: .5em;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+      &:hover {
+        color: inherit;
+        text-decoration: none;
+      }
+    }
+  }
+}

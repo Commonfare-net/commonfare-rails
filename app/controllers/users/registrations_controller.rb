@@ -10,6 +10,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     super
+    if params['create_group'] == 'true'
+      # The session will be cleared in the groups#new
+      session[:create_group] = true
+    end
     Commoner.create name: generate_name, user: resource
   end
 
@@ -56,7 +60,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # The path used after sign up.
   def after_sign_up_path_for(resource)
     # super(resource)
-    welcome_path
+    if session[:create_group]
+      new_group_path(new_group_after_signup: true)
+    else
+      welcome_path
+    end
   end
 
   # The path used after sign up for inactive accounts.

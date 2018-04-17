@@ -1,0 +1,8 @@
+<div class="commoner-media mb-3">
+  <%= link_to commoner do %>
+    <%= image_tag commoner.avatar.card, class: 'rounded-circle mr-3' %>
+  <% end %>
+  <div class="media-body">
+    <h5><%= link_to commoner.name, commoner %></h5>
+  </div>
+</div>

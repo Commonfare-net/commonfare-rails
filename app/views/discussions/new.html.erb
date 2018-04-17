@@ -1,0 +1,17 @@
+<h3><%= s_('Title|New discussion in %{group_name}') %{group_name: @group.name} %></h3>
+
+<%= simple_form_for([@group, @discussion]) do |f| %>
+  <%= f.error_notification %>
+  <%= f.association :group, as: :hidden %>
+  <%= f.input :title %>
+  <% @discussion.messages.each do |message| %>
+    <%= field_set_tag 'Message' do %>
+      <%= f.simple_fields_for :messages, message do |msg| %>
+        <%= msg.association :commoner, as: :hidden %>
+        <%= msg.input :body, as: :text %>
+      <% end %>
+    <% end %>
+  <% end %>
+
+  <%= f.button :submit, s_('Button|Start discussion'), class: 'btn btn-cf btn-block' %>
+<% end %>

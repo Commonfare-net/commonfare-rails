@@ -1,48 +1,19 @@
-<div class="col-lg-4 col-md-6">
-  <div class="story-card text-white my-2" >
-    <% if story.welfare_provision? %>
-      <div class="card-ribbon wp-ribbon"><%= _("Welfare Provision") %></div>
+<div class="story-media-container">
+  <div class="story-media-body">
+    <%= link_to story do %>
+      <%= image_tag 'http://via.placeholder.com/96x96', class: 'mr-3' %>
     <% end %>
-    <% if story.good_practice? %>
-      <div class="card-ribbon gp-ribbon"><%= _("Good Practice") %></div>
-    <% end %>
-    <%= image_tag story_card_image_path(story), alt: 'Story picture', class: 'card-img-top' %>
-    <div class="story-card-img-overlay">
-      <div class="story-card-title-container">
-        <h4 class="card-title"><%= link_to(story.title, story_path(story), class: 'story-card-title-link') %></h4>
-      </div>
-      <div class="media">
-        <% if story.anonymous? %>
-          <%= image_tag 'anonymous_avatar.png', class: 'story-card-author-image' %>
-        <% else %>
-          <%= image_tag story.commoner.avatar.card, class: 'story-card-author-image' %>
-        <% end %>
-        <div class="media-body">
-          <p class="my-0 text-white"><%= card_author(story) %></p>
-          <small class="text-white"><%= l(story.created_at.to_date, format: :short) %></small>
-        </div>
-        <%#= link_to(fa_icon('edit'), edit_story_path(story, story_locale: @story_locale), class: 'btn btn-info align-self-end') if can? :edit, story %>
-      </div>
-      <% if can? :edit, story %>
-        <%= link_to edit_story_path(story), class: 'mdc-fab mdc-fab--mini material-icons card-fab--absolute', 'aria-label': 'Favorite', data: { 'mdc-auto-init': 'MDCRipple' } do %>
-        <span class="mdc-fab__icon">
-          <%= fa_icon 'pencil lg' %>
-        </span>
-        <% end %>
-      <% end %>
+    <div class="media-body">
+      <h5 class=""><%= link_to story.title, story, class: 'clamp' %></h5>
+      <small class="text-muted">
+        <%= l(story.created_at.to_date, format: :short) %>
+      </small>
     </div>
-    <div class="story-card-footer">
-      <% if story.tags.any? %>
-      <small class="story-card-tags-text text-muted">
-        <%= fa_icon('tags') %> <%= story_card_tags_links(story) %>
-      </small>
-      <% end %>
-      <% if story.comments.any? %>
-      <small class="float-right text-muted">
-        <%= link_to story_card_comments_link(story), class: 'story-comments-link' do %>
-          <%= fa_icon 'comment-o', class: 'story-comments-icon' %> <%= story.comments.count %>
-        <% end %>
-      </small>
+  </div>
+  <div class="story-media-footer">
+    <div class="story-media-footer-comments">
+      <%= link_to story_card_comments_link(story) do %>
+        <%= fa_icon 'comment-o', text: "#{story.comments.count} #{n_('Comment', 'Comments', story.comments.count)}" %>
       <% end %>
     </div>
   </div>

@@ -14,6 +14,13 @@ gem install docker-sync docker-compose
 
 2. Install OS specific devDependencies: https://github.com/EugenMayer/docker-sync/wiki/1.-Installation#os-specific
 
+  or just if you use MacOS
+
+  ```bash
+  $ brew install unison
+  $ brew install eugenmayer/dockersync/unox
+  ```
+
 3. Build the images following the instructions below
 
 ### Building images
@@ -80,6 +87,14 @@ $ docker-compose up -d
 *This will re-create the image so the `bundle` will take quite some time.*
 
 This will recreate only the Rails container from the new image, and not the DB container, that this way persists data.
+
+## Migrations
+
+Use `docker-compose exec` to generate migrations while working with `docker-sync`.
+
+```bash
+$ docker-compose exec app rails generate migration YourMigration
+```
 
 ## Debug with `pry`
 

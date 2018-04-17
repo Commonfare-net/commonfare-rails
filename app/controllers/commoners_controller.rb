@@ -16,14 +16,14 @@ class CommonersController < ApplicationController
   # GET /commoners/1.json
   def show
     if current_user == @commoner.user
-      stories = @commoner.stories
+      @stories = @commoner.stories
     else
-      stories = @commoner.stories.published.where(anonymous: false)
+      @stories = @commoner.stories.published.where(anonymous: false, group: nil)
     end
     @story_types_and_lists = {
-      commoners_voice: stories.commoners_voice.order('created_at DESC').first(6),
-      good_practice: stories.good_practice.order('created_at DESC').first(6),
-      welfare_provision: stories.welfare_provision.order('created_at DESC').first(6)
+      commoners_voice: @stories.commoners_voice.order('created_at DESC').first(6),
+      good_practice: @stories.good_practice.order('created_at DESC').first(6),
+      welfare_provision: @stories.welfare_provision.order('created_at DESC').first(6)
     }
   end
 

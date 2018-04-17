@@ -1,0 +1,13 @@
+<%= simple_form_for(@membership) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.association :group %>
+    <%= f.association :commoner %>
+    <%= f.input :role %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

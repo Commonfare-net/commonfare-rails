@@ -64,6 +64,17 @@ Rails.application.routes.draw do
     end
     resources :comments, except: [:new, :show, :index]
     resources :tags, only: :show
+    resources :memberships
+    resources :groups do
+      resources :discussions do
+        resources :messages, only: [:create, :destroy]
+      end
+      resources :join_requests, only: [:new, :create] do
+        post :accept, on: :member
+        post :reject, on: :member
+      end
+    end
+    resources :join_requests, except: [:new, :create]
 
     get :welcome, controller: :commoners
 

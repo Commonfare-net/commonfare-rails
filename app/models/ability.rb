@@ -12,6 +12,7 @@ class Ability
       can :read, Story, published: true
       can :read, Tag
       can :read, Comment
+      can :read, Group
       alias_action :create, :read, :update, :destroy, :to => :crud
       if user.is_commoner?
         commoner = user.meta
@@ -24,6 +25,29 @@ class Ability
         can [:create, :update, :destroy], Comment, commoner_id: commoner.id
         can [:create, :destroy], Image, commoner_id: commoner.id
 
+        can [:update, :destroy], Membership, commoner_id: commoner.id
+        can :create, Group
+        can :update, Group, memberships: {commoner_id: commoner.id}
+        can :join, Group do |group|
+          !commoner.member_of? group
+        end
+        can :create, JoinRequest do |join_request|
+          !commoner.member_of? join_request.group
+        end
+        can [:read, :update], JoinRequest, group_id: commoner.group_ids
+        can [:accept, :reject], JoinRequest, group_id: commoner.group_ids, aasm_state: 'pending'
+        can :read, JoinRequest, commoner_id: commoner.id
+
+        can [:read, :create], Discussion, group_id: commoner.group_ids
+        can :create, Message do |message|
+          if message.messageable.respond_to?(:group)
+            commoner.groups.include? message.messageable.group
+          else
+            # TODO: condition for conversations
+            false
+          end
+        end
+        can :destroy, Message, commoner_id: commoner.id
         can :read, Wallet, walletable_id: commoner.id, walletable_type: commoner.class.name
         can :autocomplete, Wallet
 

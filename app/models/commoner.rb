@@ -4,6 +4,10 @@ class Commoner < ApplicationRecord
   has_many :images
   has_many :stories
   has_many :comments
+  has_many :memberships
+  has_many :groups, through: :memberships
+  has_many :join_requests
+  has_many :messages
   has_many :wallets, as: :walletable, dependent: :destroy
 
   after_commit :create_wallet_and_get_income, on: :create
@@ -11,6 +15,10 @@ class Commoner < ApplicationRecord
 
   validates :name, presence: true, uniqueness: { case_sensitive: false }
 
+  def member_of?(group)
+    self.groups.include? group
+  end
+  
   # Returns the default wallet, in Commoncoin
   def wallet
     # TODO: this will be wallets.where(group: nil)

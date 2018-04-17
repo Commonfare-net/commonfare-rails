@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Join Requests</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Group</th>
+      <th>Commoner</th>
+      <th>Status</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @join_requests.each do |join_request| %>
+      <tr>
+        <td><%= join_request.group %></td>
+        <td><%= join_request.commoner %></td>
+        <td><%= join_request.status %></td>
+        <td><%= link_to 'Show', join_request %></td>
+        <td><%= link_to 'Edit', edit_join_request_path(join_request) %></td>
+        <td><%= link_to 'Destroy', join_request, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Join Request', new_join_request_path %>

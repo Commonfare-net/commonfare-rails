@@ -20,10 +20,8 @@
     </h5>
     <% unless story.good_practice? %>
     <div class="media">
-      <% if story.anonymous? %>
-        <%= image_tag 'anonymous_avatar.png', class: 'story-card-author-image' %>
-      <% else %>
-        <%= image_tag story.commoner.avatar.card, class: 'story-card-author-image' %>
+      <%= link_to author_path(story) do %>
+        <%= image_tag author_image_for(story), class: 'story-card-author-image' %>
       <% end %>
       <div class="media-body">
         <p class="my-0"><%= card_author(story) %></p>

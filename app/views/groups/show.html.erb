@@ -1,0 +1,115 @@
+<div class="row justify-content-center">
+  <div class="col-lg-8 col-md-10">
+    <div class="row">
+      <div class="col-md-3">
+        <%= render 'group', group: @group %>
+      </div>
+      <div class="col-md-9">
+        <p><%= @group.description %></p>
+      </div>
+    </div>
+    <% if can? :create, @new_join_request %>
+      <%= link_to 'Join this group', new_group_join_request_path(@group), class: 'btn btn-cf' %>
+    <% end %>
+    <hr>
+    <div class="row">
+      <div class="col">
+        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+          <% if can? :create, @new_discussion %>
+          <li class="nav-item">
+            <a class="nav-link active" id="pills-discussions-tab" data-toggle="pill" href="#pills-discussions" role="tab" aria-controls="pills-discussions" aria-selected="true"><%= _('Discussions') %></a>
+          </li>
+          <% end %>
+          <li class="nav-item">
+            <a class="nav-link <%= 'active' if cannot? :create, @new_discussion %>" id="pills-stories-tab" data-toggle="pill" href="#pills-stories" role="tab" aria-controls="pills-stories" aria-selected="true"><%= _('Stories') %></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="pills-members-tab" data-toggle="pill" href="#pills-members" role="tab" aria-controls="pills-members" aria-selected="false"><%= _('Members') %></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="pills-requests-tab" data-toggle="pill" href="#pills-requests" role="tab" aria-controls="pills-requests" aria-selected="false"><%= _('Requests') %></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="pills-activities-tab" data-toggle="pill" href="#pills-activities" role="tab" aria-controls="pills-activities" aria-selected="false"><%= _('Activities') %></a>
+          </li>
+        </ul>
+        <div class="tab-content" id="pills-tabContent">
+          <% if can? :create, @new_discussion %>
+            <div class="tab-pane fade show active" id="pills-discussions" role="tabpanel" aria-labelledby="pills-discussions-tab">
+              <%= link_to s_('Button|Start a new discussion'), new_group_discussion_path(@group), class: 'btn btn-outline-cf btn-block'  %>
+              <% if @discussions.any? %>
+                <%= render @discussions %>
+              <% else %>
+              <div class="row justify-content-center">
+                <div class="col text-center">
+                  <h2 class="text-muted">
+                    <%= _("No discussions yet") %>
+                  </h2>
+                </div>
+              </div>
+              <% end %>
+            </div>
+          <% end %>
+          <div class="tab-pane fade <%= 'show active' if cannot? :create, @new_discussion %>" id="pills-stories" role="tabpanel" aria-labelledby="pills-stories-tab">
+            <% if @group_stories.any? %>
+              <% @group_stories.each do |story| %>
+                <%= render 'stories/story', story: story %>
+              <% end %>
+            <% else %>
+            <%# if @story_types_and_lists.any? %>
+            <%#= render 'stories/types_and_lists', story_types_and_lists: @story_types_and_lists %>
+            <%# else %>
+            <div class="row justify-content-center">
+              <div class="col text-center">
+                <h2 class="text-muted">
+                  <%= _("No stories yet") %>
+                </h2>
+              </div>
+            </div>
+            <% end %>
+          </div>
+          <div class="tab-pane fade" id="pills-members" role="tabpanel" aria-labelledby="pills-members-tab">
+            <%= link_to s_('Button|Invite member'), '#', class: 'btn btn-outline-cf btn-block' if can? :create, JoinRequest  %>
+            <% if @members.any? %>
+              <% @members.each do |member| %>
+                <%= render 'commoners/commoner', commoner: member %>
+              <% end %>
+            <% else %>
+            <div class="row justify-content-center">
+              <div class="col text-center">
+                <h2 class="text-muted">
+                  <%= _("No members") %>
+                </h2>
+              </div>
+            </div>
+            <% end %>
+          </div>
+          <div class="tab-pane fade" id="pills-requests" role="tabpanel" aria-labelledby="pills-requests-tab">
+            <% if @pending_join_requests.any? %>
+              <% @pending_join_requests.each do |join_request| %>
+                <p><%= link_to join_request.commoner.name, join_request %>, <%= join_request.aasm_state %></p>
+              <% end %>
+            <% else %>
+            <div class="row justify-content-center">
+              <div class="col text-center">
+                <h2 class="text-muted">
+                  <%= _('No pending requests') %>
+                </h2>
+              </div>
+            </div>
+            <% end %>
+          </div>
+          <div class="tab-pane fade" id="pills-activities" role="tabpanel" aria-labelledby="pills-activities-tab">
+            <div class="row justify-content-center">
+              <div class="col text-center">
+                <h2 class="text-muted">
+                  <%= _("No activities yet") %>
+                </h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

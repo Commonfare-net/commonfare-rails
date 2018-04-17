@@ -26,6 +26,27 @@ module ApplicationHelper
     !ACTION_WITHOUT_FAB.include?(action_name)
   end
 
+  # Returns a path string to the author of the authorable
+  def author_path(authorable)
+    return '#' if authorable.respond_to?(:anonymous?) && authorable.anonymous?
+    return group_path(authorable.author) if authorable.author.is_a?(Group)
+    commoner_path(authorable.author)
+  end
+
+  # Returns a link to the content author page
+  # except when the content is anonymous
+  def author_link_for(content)
+    return unless content.respond_to? :author
+    if !content.author.is_a?(Group) && current_user == content.author.user
+      link_to(_('You'), commoner_path(content.author))
+    elsif content.anonymous?
+      _('Anonymous')
+    else
+      # link_to(content.author.name, commoner_path(content.author))
+      link_to(content.author.name, author_path(content))
+    end
+  end
+
   # def infohub_url
   #   locale = %i(it nl hr).include?(I18n.locale) ? I18n.locale : ''
   #   language = I18n.locale
