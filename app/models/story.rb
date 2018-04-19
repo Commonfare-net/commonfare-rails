@@ -1,7 +1,7 @@
 class Story < ApplicationRecord
   extend FriendlyId
   include Authorable
-  belongs_to :group
+  belongs_to :group, optional: true
   has_and_belongs_to_many :tags
   has_many :comments, as: :commentable, dependent: :destroy
   has_many :images, as: :imageable, dependent: :destroy
@@ -73,10 +73,14 @@ class Story < ApplicationRecord
 
   def publish!
     self.published = true
-    self.title = title_draft
     self.place = place_draft
-    self.content = content_draft
-    self.content_json = content_json_draft
+    translated_locales.each do |locale|
+      I18n.with_locale(locale) do
+        self.title = title_draft
+        self.content = content_draft
+        self.content_json = content_json_draft      
+      end
+    end
 
     save
   end

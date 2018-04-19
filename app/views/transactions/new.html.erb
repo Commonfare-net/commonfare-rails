@@ -9,7 +9,7 @@
           <%= f.association :to_wallet, required: false, placeholder: _('Bilbo Baggins'), label: _('Name of the commoner'), collection: [] %>
         </div>
         <div class="col-sm-4">
-          <%= f.input :amount, required: false, placeholder: '42.314', label: _('Amount (cc)'), :input_html => {value: number_with_precision(f.object.amount, precision: 6) } %>
+          <%= f.input :amount, required: false, placeholder: number_with_precision(42.314, precision: 3), label: _('Amount (cc)'), :input_html => { value: number_with_precision(f.object.amount, precision: 6) } %>
         </div>
       </div>
       <%= f.input :message, required: false, placeholder: _('I like your stories!'), label: _('Message (optional)') %>
