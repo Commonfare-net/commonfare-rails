@@ -1,10 +1,10 @@
 <div class="story-media-container">
   <div class="story-media-body">
-    <%= link_to story do %>
+    <%= link_to story_show_or_preview_path(story) do %>
       <%= image_tag 'http://via.placeholder.com/96x96', class: 'mr-3' %>
     <% end %>
     <div class="media-body">
-      <h5 class=""><%= link_to story.title, story, class: 'clamp' %></h5>
+      <h5 class=""><%= link_to story.title, story_show_or_preview_path(story), class: 'clamp' %></h5>
       <small class="text-muted">
         <%= l(story.created_at.to_date, format: :short) %>
       </small>
