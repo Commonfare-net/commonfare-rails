@@ -3,10 +3,12 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .comment-container {
   margin-top: 1rem;
+  padding: 10px;
+  background: $white;
+  border-bottom: 1px solid $lightgreen;
   .comment-avatar {
     @extend .rounded-circle;
-    margin-top: .5rem;
-    border: 2px solid lightgray;
+    border: 2px solid $lightgreen;
     height: 48px;
     width: 48px;
   }
@@ -15,16 +17,19 @@
       color: black;
     }
     margin-bottom: 0;
-    font-weight: 700;
+    font-weight: 500;
+    margin: 0;
+    padding: .5rem 0 0;
+    line-height: 1em;
   }
   #commentDropdownMenuLink {
     color: inherit;
   }
   p.comment-body {
-    margin-top: 1rem;
+    margin: .5rem 0;
   }
 }
 
 textarea#comment_body {
-  padding: 1rem;
+  padding: .75rem;
 }

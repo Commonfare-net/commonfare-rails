@@ -1,8 +1,8 @@
 <div class="row justify-content-center">
-  <div class="col-lg-6 col-md-8">
+  <div class="col-lg-8 col-md-8 bg-white">
     <div class="discussion-header">
-      <h3><%= @discussion.title %></h3>
-      <small><%= (_('in %{group_name}') %{group_name: link_to(@group.name, @group)}).html_safe %></small>
+      <%= (_('back to %{group_name}') %{group_name: link_to(@group.name, @group)}).html_safe %>
+      <h3 class="mb-0"><%= @discussion.title %></h3>
     </div>
     <div class="discussion-container d-flex flex-column justify-content-end">
       <div id="discussion-messages">
@@ -13,7 +13,7 @@
             <div class="message-body">
               <%= detect_links_in(message.body) %>
             </div>
-            <div class="message-delete <%= message.author == current_user.meta ? 'text-right' : 'text-left' %>"><%= link_to(_('Delete'), group_discussion_message_path(@group, @discussion, message), method: :delete, data: { confirm: _('Are you sure?') }) if can? :destroy, message %></div>
+            <div class="message-delete <%= message.author == current_user.meta ? 'text-right' : 'text-left' %>"><%= link_to(_(fa_icon 'trash'), group_discussion_message_path(@group, @discussion, message), method: :delete, data: { confirm: _('Are you sure?') }) if can? :destroy, message %></div>
           </div>
         </div>
         <% end %>

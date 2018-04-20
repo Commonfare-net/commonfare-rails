@@ -1,7 +1,13 @@
 .wp-row {
-  padding: 1.25rem 0;
-  border-bottom: 1px solid #ddd;
   font-size: 1.25rem;
+  background-color: $white;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid $lightgreen;
+  box-shadow: 0 1px 4px -2px rgba(0, 0, 0, .35);
+  transition: box-shadow .25s;
+  &:hover {
+    box-shadow: 0 1px 4px 0px rgba(0, 0, 0, 0.25);
+  }
   .wp-row--date {
     @extend .text-muted;
   }

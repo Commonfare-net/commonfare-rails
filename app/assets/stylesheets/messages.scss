@@ -2,24 +2,28 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.message-author {
-  font-weight: bold;
-}
-
 .message {
   margin: .5rem 0;
   padding: .5rem 1rem;
-  border-radius: 5px;
+  border-radius: 2px;
+  .message-author {
+    font-weight: 500;
+  }
+  .message-delete {
+    a {
+      color: $cf-secondary-color;
+    }
+  }
 }
 
 .current-user-message {
   margin-left: 2rem;
-  background-color: aliceblue;
-  border: 1px solid lightsteelblue;
+  background-color: $lightgreen;
+  // border: 1px solid $lightgreen;
 }
 
 .other-user-message {
   margin-right: 2rem;
-  background-color: antiquewhite;
-  border: 1px solid burlywood;
+  background-color: $white;
+  border: 1px solid $lightgreen;
 }
