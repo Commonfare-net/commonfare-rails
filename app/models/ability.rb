@@ -40,11 +40,13 @@ class Ability
 
         can [:read, :create], Discussion, group_id: commoner.group_ids
         can :create, Message do |message|
+          binding.pry
           if message.messageable.respond_to?(:group)
             commoner.groups.include? message.messageable.group
           else
             # TODO: condition for conversations
-            false
+            message.conversation.sender.id == commoner.id ||
+            message.conversation.recipient.id == commoner.id
           end
         end
         can :destroy, Message, commoner_id: commoner.id
@@ -54,6 +56,10 @@ class Ability
         can :read, Transaction, from_wallet_id: commoner.wallet.id
         can :read, Transaction, to_wallet_id: commoner.wallet.id
         can [:create, :confirm], Transaction, from_wallet_id: commoner.wallet.id
+
+        can :create, Conversation
+        can :read, Conversation, sender_id: commoner.id
+        can :read, Conversation, recipient_id: commoner.id
       end
     end
   end

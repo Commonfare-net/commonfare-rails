@@ -1,0 +1,20 @@
+<%= content_for :title, s_('Title|Conversation') %>
+<div class="row justify-content-center">
+  <div class="col-md-10 col-lg-8">
+    <h1><%= s_('Title|Start a conversation') %></h1>
+    <%= simple_form_for(@conversation) do |f| %>
+      <%= f.error_notification %>
+      <%= f.association :sender, as: :hidden %>
+      <%= f.association :recipient, as: :hidden %>
+      <% @conversation.messages.each do |message| %>
+        <%= field_set_tag 'Message' do %>
+          <%= f.simple_fields_for :messages, message do |msg| %>
+            <%= msg.association :commoner, as: :hidden %>
+            <%= msg.input :body, as: :text %>
+          <% end %>
+        <% end %>
+      <% end %>
+      <%= f.button :submit, s_('Button|Send'), class: 'btn btn-cf btn-block' %>
+    <% end %>
+  </div>
+</div>

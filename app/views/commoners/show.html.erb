@@ -10,6 +10,7 @@
     </div>
   </div>
 </div>
+<%= link_to(_('Start a conversation'), new_conversation_path(recipient_id: @commoner.id), class: 'btn btn-outline-cf') unless (user_signed_in? && current_user.meta == @commoner)%>
 <hr>
 <div class="row">
   <div class="col">

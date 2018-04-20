@@ -1,4 +1,4 @@
-<%= simple_form_for([message.messageable.group, message.messageable, message]) do |f| %>
+<%= simple_form_for(message_form_args(message)) do |f| %>
   <%= f.error_notification %>
   <%= f.association :commoner, as: :hidden %>
   <%= f.input :body, as: :text, label: false %>

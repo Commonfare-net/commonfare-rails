@@ -1,0 +1,11 @@
+// Place all the styles related to the Conversations controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#conversation-messages {
+  max-height: calc(100vh - 300px);
+  overflow-y: scroll;
+  .conversation-message {
+
+  }
+}

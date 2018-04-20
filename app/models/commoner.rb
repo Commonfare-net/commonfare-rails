@@ -10,6 +10,22 @@ class Commoner < ApplicationRecord
   has_many :messages
   has_many :wallets, as: :walletable, dependent: :destroy
 
+  # http://guides.rubyonrails.org/association_basics.html#has-many-association-reference
+  has_many :sender_conversations,
+           inverse_of:  :sender,
+           class_name:  'Conversation',
+           foreign_key: :sender_id
+  has_many :recipient_conversations,
+          inverse_of:  :recipient,
+          class_name:  'Conversation',
+          foreign_key: :recipient_id
+
+  def conversations
+   Transaction.where(id: sender_conversation_ids)
+        .or(Transaction.where(id: recipient_conversation_ids))
+        .order(created_at: :asc)
+  end
+
   after_commit :create_wallet_and_get_income, on: :create
   before_destroy :archive_content
 
@@ -18,7 +34,7 @@ class Commoner < ApplicationRecord
   def member_of?(group)
     self.groups.include? group
   end
-  
+
   # Returns the default wallet, in Commoncoin
   def wallet
     # TODO: this will be wallets.where(group: nil)
