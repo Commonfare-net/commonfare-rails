@@ -3,9 +3,38 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 #discussion-messages {
+  min-height: calc(100vh - 300px);
   max-height: calc(100vh - 300px);
   overflow-y: scroll;
   .discussion-message {
     
   }
+}
+
+.discussion-media {
+  background-color: $white;
+  padding: .5rem;
+  box-shadow: 0 1px 4px -2px rgba(0, 0, 0, 0.35);
+  h5 {
+    a {
+      color: $black;
+    }
+  }
+  .comments {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    p {
+      margin: 0 .5rem 0 0;
+    }
+  }
+}
+
+.discussion-header {
+  padding-top: 2em;
+  padding-bottom: .5em;
+}
+
+.discussion-container {
+  padding-bottom: 1em;
 }

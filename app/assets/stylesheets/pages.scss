@@ -2,9 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .cf-jumbotron {
+  margin-bottom: 0;
   .gray-layer {
     background: linear-gradient(to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5));
-    height: 100%;
+    height: 120%;
     width: 100%;
     position: absolute;
     top: -2rem;
@@ -13,7 +14,7 @@
   border-radius: 0;
   padding: 3rem 0;
   background-image: none;
-  background-color: #488580;
+  background-color: $cf-secondary-color;
   background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -67,6 +68,7 @@
   }
   p {
     @extend .lead;
+    max-width: 1000px;
     color: white;
     font-weight: 400;
     font-size: 2.65rem;
@@ -92,11 +94,11 @@
   align-items: flex-end;
   justify-content: space-between;
   border-bottom: 1px solid black;
-  margin-top: 4em;
-  margin-bottom: .25em;
-  padding-bottom: 5px;
+  margin-top: 5em;
+  margin-bottom: 0;
+  padding-bottom: 3px;
   &:first-of-type {
-    margin-top: 1em;
+    margin-top: 2em;
   }
   h2, p {
     margin: 0 0 -2px 0;
@@ -124,10 +126,14 @@
     display: none !important;
   }
   .story-type-header {
-    margin-top: 0;
+    margin-top: 0.5em;
+    padding-top: 2.5em;
+    padding-bottom: 1.5em;
     border-bottom: none;
     border-top: 1px solid black;
-    padding-top: 1em;
+    &:first-of-type {
+      margin-top: 0;
+    }
     a.btn {
       margin-top: 1em;
     }

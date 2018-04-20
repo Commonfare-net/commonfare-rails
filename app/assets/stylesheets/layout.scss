@@ -5,11 +5,20 @@ html {
   font-size: 14px;
 }
 body {
+  background-color: $backgroundgrey;
   // Padding top for fixed navbar (necessary for hiding it when scrolling)
   padding-top: 53px;
   /* Margin bottom by footer height */
   margin-bottom: 300px; // this changes in a media query
   -webkit-font-smoothing: antialiased;
+}
+
+.bg-white {
+  background-color: $white;
+}
+
+.bg-grey {
+  background-color: $backgroundgrey;
 }
 
 .hero {
@@ -20,9 +29,9 @@ body {
 }
 
 .red-title {
-  color: $cf-primary-color;
+  // color: $cf-primary-color;
   text-align: center;
-  font-weight: 700;
+  font-weight: 500;
   margin: .5em auto;
 }
 

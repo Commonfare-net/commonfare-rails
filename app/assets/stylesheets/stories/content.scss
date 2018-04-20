@@ -3,8 +3,9 @@
   @extend .col;
   // background-color: snow;
   color: #111;
-  padding-top: 2em;
-  padding-bottom: 3.7em;
+  background-color: $white;
+  padding-top: 2.5em;
+  // padding-bottom: 3.7em;
 
   // .story-ribbon {
   //   float: right;
@@ -20,7 +21,9 @@
   //   }
   //   box-shadow: 1px 1px 2px #585858;
   // }
-
+  .grey-bg {
+    background-color: $backgroundgrey;
+  }
   .story-lang-select {
     @extend .text-muted;
     font-size: 0.8em;
@@ -30,6 +33,7 @@
   .story-title {
     margin: 0;
     h2 {
+      max-width: 920px;
       font-size: 3.7em;
       font-weight: 400;
       margin-bottom: 0;
@@ -70,9 +74,11 @@
     .story-comments,
     .story-share,
     .story-lang-select {
-      @extend .text-muted;
+      // @extend .text-muted;
+      color: $cf-secondary-color;
       font-size: 0.8em;
-      padding: 0;
+      padding: 0.25rem;
+      border-bottom: 1px solid #e1e8e7;
       i.fa {
         padding-right: .5em;
       }
@@ -85,10 +91,8 @@
         }
       }
     }
-
-
     .story-comments {
-      padding: 2.7em 0 .5em;
+      // padding: 2.7em 0 .5em;
     }
   }
 
@@ -96,6 +100,7 @@
     line-height: 1.5em;
     font-family: "Lora", serif;
     font-size: 1.3em;
+    min-height: 240px;
 
     figure {
       width: 85%;
@@ -145,6 +150,10 @@
   .story-content-item--video {
     padding: 1rem 0;
   }
+  #comments-anchor {
+    padding-top: 2em;
+  }
+
 }
 
 // Trix related

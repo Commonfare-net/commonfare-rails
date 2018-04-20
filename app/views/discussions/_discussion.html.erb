@@ -1,10 +1,17 @@
-<div class="media mb-3">
-  <div class="media-body">
-    <h5 class="mt-2"><%= link_to discussion.title, group_discussion_path(discussion.group, discussion) %></h5>
-    <small class="text-muted">
-      <%= fa_icon('comments-o') %>
-      <%= discussion.messages.count %>
-      <%= n_('message', 'messages', discussion.messages.count) %>
-    </small>
+<div class="discussion-media mt-3 mb-3">
+  <div class="row media-body">
+    <div class="col col-lg-10">
+      <h5 class="mt-2 mb-0"><%= link_to discussion.title, group_discussion_path(discussion.group, discussion) %></h5>
+      <small>
+        <span class="text-muted">{MMM DD}, by</span> {AUTHOR}
+      </small>
+    </div>
+    <div class="col col-lg-2 comments">
+      <p class="text-muted">
+        <%= fa_icon('comments-o') %>
+        <%= discussion.messages.count %>
+        <!-- <%= n_('message', 'messages', discussion.messages.count) %> -->
+      </p>
+    </div>
   </div>
 </div>

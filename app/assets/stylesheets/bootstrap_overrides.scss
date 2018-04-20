@@ -17,3 +17,101 @@ body, html {
     display: block;
   }
 }
+
+// External container
+.py-2 {
+  padding-top: 0 !important;
+}
+
+hr {
+  border-color: $lightgreen;
+}
+
+// Buttons
+.btn {
+  max-width: 360px;
+  margin: auto;
+  cursor: pointer;
+}
+.btn-cf {
+  color: $white;
+  background-color: $darkgreen;
+  border-color: transparent;
+  cursor: pointer;
+  &:hover {
+    color: $white;
+    background-color: $darkergreen;
+    border-color: transparent;
+  }
+}
+.btn-cf-alt {
+  color: $white;
+  background-color: $cf-primary-color;
+  border-color: transparent;
+  &:hover {
+    color: $white;
+    background-color: $darkorange;
+    border-color: transparent;
+  }
+}
+.btn-outline-cf {
+  color: $darkgreen;
+  background-color: transparent;
+  border-color: $lightgreen;
+  padding: 0.3rem 1.5rem;
+  &:hover {
+    border-color: $darkgreen;
+    background-color: transparent;
+    color: $darkgreen;
+  }
+}
+.btn-cf:focus, .btn-cf.focus {
+  box-shadow: none;
+}
+.btn-cf:active, .btn-cf.active, .show > .btn-cf.dropdown-toggle {
+  background-color: auto;
+  background-image: auto;
+  border-color: auto;
+}
+
+// Tabs
+.nav-pills-container {
+  background-color: $white;
+  border-top: 1px solid $lightgreen;
+  border-bottom: 1px solid $lightgreen;
+  white-space: nowrap;
+  overflow-x: scroll;
+  .nav-pills {
+    display: -webkit-inline-box;
+    height: 40px;
+    width: 100%;
+    .nav-link {
+      color: $grey1;
+      padding: 0.8rem 1rem 0.425rem;
+      border-radius: 0;
+      &:hover{
+        border-bottom: 2px solid $lightgreen;
+      }
+      &.active {
+        color: $black;
+        border-bottom: 2px solid $cf-primary-color;
+      }
+    }
+  }  
+}
+
+
+// Forms
+.form-control {
+  border-radius: 2px;
+  &:focus {
+    border-color: $cf-secondary-color
+  }
+}
+.form-group {
+  margin-bottom: 2rem;
+}
+label {
+  font-size: .9em;
+  font-weight: 500;
+}

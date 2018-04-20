@@ -1,6 +1,6 @@
 <div class="row pb-3">
-  <div class="col-md-8 col-lg-6">
-    <h3 class="red-title"><%= _('Edit your comment') %></h3>
+  <div class="col-md-8 col-lg-8 mt-4">
+    <h3 class=""><%= _('Edit your comment') %></h3>
     <%= simple_form_for(@comment) do |f| %>
       <%= render 'comments/fields', f: f, btn_text: s_('Edit') %>
     <% end %>
