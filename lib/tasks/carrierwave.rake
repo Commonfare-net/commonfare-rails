@@ -12,4 +12,11 @@ namespace :carrierwave do
       FileUtils.copy_entry src_path, dest_path if Dir.exists?(src_path)
     end
   end
+
+  desc "Create version 'card-square' for existing story pictures"
+  task create_card_square: :environment do
+    Story.find_each do |story|
+      story.images.each {|image| image.picture.recreate_versions! if image.picture}
+    end
+  end
 end
