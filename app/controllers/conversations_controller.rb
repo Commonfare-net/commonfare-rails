@@ -33,7 +33,7 @@ class ConversationsController < ApplicationController
   private
 
   def conversation_params
-    params.require(:conversation).permit(:sender_id, :recipient_id)
+    params.require(:conversation).permit(:sender_id, :recipient_id, messages_attributes: [:commoner_id, :body])
   end
 
   def set_sender_and_recipient

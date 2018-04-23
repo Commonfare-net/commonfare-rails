@@ -9,3 +9,16 @@
 
   }
 }
+
+a.conversation-media-container:hover {
+  text-decoration: none;
+}
+
+.conversation-media {
+  @extend .media;
+  border: 1px solid lightgrey;
+  padding: .5rem 1rem .5rem 1rem;
+  .conversation-counterpart {
+    color: black;
+  }
+}

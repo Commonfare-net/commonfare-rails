@@ -1,7 +1,7 @@
 <div class="row justify-content-center">
   <div class="col-lg-6 col-md-8">
     <div class="conversation-header">
-      <h3><%= 'Converstation with' %></h3>
+      <h3><%= counterpart_for_conversation(@conversation).name %></h3>
     </div>
     <div class="conversation-container d-flex flex-column justify-content-end">
       <div id="conversation-messages">

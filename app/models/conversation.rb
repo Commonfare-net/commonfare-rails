@@ -3,6 +3,7 @@ class Conversation < ApplicationRecord
   belongs_to :recipient, class_name: 'Commoner'
 
   has_many :messages, as: :messageable, dependent: :destroy
+  accepts_nested_attributes_for :messages
 
   validates_uniqueness_of :sender_id, scope: :recipient_id
 

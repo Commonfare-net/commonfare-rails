@@ -10,7 +10,13 @@
     </div>
   </div>
 </div>
-<%= link_to(_('Start a conversation'), new_conversation_path(recipient_id: @commoner.id), class: 'btn btn-outline-cf') unless (user_signed_in? && current_user.meta == @commoner)%>
+<% if user_signed_in? && current_user.meta != @commoner %>
+  <% if conversation_with(@commoner).present? %>
+    <%= link_to(_('Continue conversation'), conversation_path(conversation_with(@commoner)), class: 'btn btn-outline-cf') %>
+  <% else %>
+    <%= link_to(_('Start a conversation'), new_conversation_path(recipient_id: @commoner.id), class: 'btn btn-outline-cf') %>
+  <% end %>
+<% end %>
 <hr>
 <div class="row">
   <div class="col">

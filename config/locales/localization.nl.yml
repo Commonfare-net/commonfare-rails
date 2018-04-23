@@ -16,6 +16,7 @@ nl:
       default: "%d-%m-%Y"
       long: "%e %B %Y"
       short: "%e %b"
+      message_time: "%d-%m-%Y"
     order:
     - :day
     - :month
@@ -65,3 +66,4 @@ nl:
       default: "%a %d %b %Y %H:%M:%S %Z"
       long: "%d %B %Y %H:%M"
       short: "%d %b %H:%M"
+      message_time: "%d-%m-%Y"

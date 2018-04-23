@@ -21,9 +21,9 @@ class Commoner < ApplicationRecord
           foreign_key: :recipient_id
 
   def conversations
-   Transaction.where(id: sender_conversation_ids)
-        .or(Transaction.where(id: recipient_conversation_ids))
-        .order(created_at: :asc)
+   Conversation.where(id: sender_conversation_ids)
+        .or(Conversation.where(id: recipient_conversation_ids))
+        .order(created_at: :desc)
   end
 
   after_commit :create_wallet_and_get_income, on: :create

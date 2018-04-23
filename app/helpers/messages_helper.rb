@@ -7,4 +7,12 @@ module MessagesHelper
     return [message.messageable, message] if message.messageable.is_a? Conversation
     [message.messageable.group, message.messageable, message]
   end
+
+  def last_message_time(message)
+    format = :message_time
+    message_age = Time.now - message.created_at
+    format = '%A' if message_age < 1.week
+    format = '%H:%M' if message_age < 24.hours
+    l(message.created_at, format: format)
+  end
 end

@@ -40,7 +40,6 @@ class Ability
 
         can [:read, :create], Discussion, group_id: commoner.group_ids
         can :create, Message do |message|
-          binding.pry
           if message.messageable.respond_to?(:group)
             commoner.groups.include? message.messageable.group
           else

@@ -17,7 +17,7 @@ en:
     - Fri
     - Sat
     abbr_month_names:
-    - 
+    -
     - Jan
     - Feb
     - Mar
@@ -40,10 +40,11 @@ en:
     - Saturday
     formats:
       default: "%Y-%m-%d"
+      message_time: "%Y-%m-%d"
       long: "%B %d, %Y"
       short: "%b %d"
     month_names:
-    - 
+    -
     - January
     - February
     - March
@@ -211,4 +212,5 @@ en:
       long: "%B %d, %Y %H:%M"
       comment_timestamp: "%B %d, %Y at %H:%M"
       short: "%d %b %H:%M"
+      message_time: "%Y-%m-%d"
     pm: pm
