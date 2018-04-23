@@ -60,7 +60,7 @@ hr {
 .btn-outline-cf {
   color: $darkgreen;
   background-color: transparent;
-  border-color: $lightgreen;
+  border-color: rgba($darkgreen, .2);
   padding: 0.3rem 1.5rem;
   &:hover {
     border-color: $darkgreen;

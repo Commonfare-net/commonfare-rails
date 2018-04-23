@@ -4,14 +4,14 @@
     <div class="p-2">
       <%= fa_icon('arrow-right', class: 'outgoing-transaction') %>
     </div>
-    <div class="p-2">
+    <div class="p-2 target">
       <%= (_('Given to <strong>%{name}</strong>') %{name: transaction.to_wallet.holder.name}).html_safe %>
     </div>
     <% elsif incoming_transaction?(transaction) %>
     <div class="p-2">
       <%= fa_icon('arrow-left', class: 'incoming-transaction') %>
     </div>
-    <div class="p-2">
+    <div class="p-2 target">
       <%= (_('Received from <strong>%{name}</strong>') %{name: transaction.from_wallet.holder.name}).html_safe %>
     </div>
     <% end %>

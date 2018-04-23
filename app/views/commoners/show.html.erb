@@ -1,92 +1,98 @@
-<% content_for :title, @commoner.name %>
-<div class="row commoner-header">
-  <div class="col commoner-profile">
-    <%= image_tag @commoner.avatar.profile, class: 'mb-1' %>
-    <p><%= @commoner.name %></p>
-    <!-- The edit-profile should be an icon -->
-    <%= link_to s_('Button|Edit profile'), edit_commoner_path(@commoner), class: 'btn btn-outline-cf edit-profile' if can? :edit, @commoner %>
-  </div>
-</div>
-<div class="row">
-  <div class="col">
-    <div class="row nav-pills-container mb-3">
-      <ul class="nav nav-pills" id="pills-tab" role="tablist">
-        <li class="nav-item">
-          <a class="nav-link active" id="pills-stories-tab" data-toggle="pill" href="#pills-stories" role="tab" aria-controls="pills-stories" aria-selected="true"><%= _('Stories') %></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" id="pills-groups-tab" data-toggle="pill" href="#pills-groups" role="tab" aria-controls="pills-groups" aria-selected="false"><%= _('Groups') %></a>
-        </li>
-        <% if @commoner.user == current_user %>
-          <li class="nav-item">
-            <a class="nav-link" id="pills-requests-tab" data-toggle="pill" href="#pills-requests" role="tab" aria-controls="pills-requests" aria-selected="false"><%= _('Requests') %></a>
-          </li>
-        <% end %>
-        <li class="nav-item">
-          <a class="nav-link" id="pills-activities-tab" data-toggle="pill" href="#pills-activities" role="tab" aria-controls="pills-activities" aria-selected="false"><%= _('Activities') %></a>
-        </li>
-      </ul>
+<div class="row justify-content-center">
+  <div class="col-md-10 col-lg-10">
+    <% content_for :title, @commoner.name %>
+    <div class="row commoner-header pt-4 bg-white">
+      <div class="col-lg-9 commoner-profile">
+        <%= image_tag @commoner.avatar.profile, class: 'mb-1' %>
+        <p><%= @commoner.name %></p>
+        <!-- The edit-profile should be an icon -->
+      </div>
+      <div class="col-lg-3 text-right">
+        <%= link_to s_('Button|Edit profile'), edit_commoner_path(@commoner), class: 'btn btn-outline-cf edit-profile' if can? :edit, @commoner %>
+      </div>
     </div>
-    <div class="tab-content" id="pills-tabContent">
-      <div class="tab-pane fade show active" id="pills-stories" role="tabpanel" aria-labelledby="pills-stories-tab">
-        <% if @stories.any? %>
-          <% @stories.each do |story| %>
-            <%= render 'stories/story', story: story %>
-          <% end %>
-        <% else %>
-        <div class="row justify-content-center">
-          <div class="col text-center">
-            <h3 class="text-muted">
-              <%= _("No stories yet") %>
-            </h3>
-          </div>
-        </div>
-        <% end %>
-        <% if @stories.count > 6 %>
-        <div class="row justify-content-center">
-          <div class="col text-center">
-            <%= link_to(_('See all'), commoner_stories_path(@commoner), class: 'btn btn-outline-cf') %>
-          </div>
-        </div>
-        <% end %>
-      </div>
-      <div class="tab-pane fade" id="pills-groups" role="tabpanel" aria-labelledby="pills-groups-tab">
-        <%= link_to s_('Button|Start a group'), new_group_path, class: 'btn btn-cf btn-block' if can? :create, Group  %>
-        <% if @commoner.groups.any? %>
-        <%= render @commoner.groups %>
-        <% else %>
-        <div class="row justify-content-center">
-          <div class="col text-center">
-            <h3 class="text-muted">
-              <%= _("No groups") %>
-            </h3>
-          </div>
-        </div>
-        <% end %>
-      </div>
-      <% if @commoner.user == current_user %>
-        <div class="tab-pane fade" id="pills-requests" role="tabpanel" aria-labelledby="pills-requests-tab">
-          <% if @commoner.join_requests.any? %>
-            <% @commoner.join_requests.each do |join_request| %>
-              <p><%= link_to join_request.group.name, join_request %>, <%= join_request.aasm_state %></p>
+    <div class="row">
+      <div class="col">
+        <div class="row nav-pills-container mb-3">
+          <ul class="nav nav-pills" id="pills-tab" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active" id="pills-stories-tab" data-toggle="pill" href="#pills-stories" role="tab" aria-controls="pills-stories" aria-selected="true"><%= _('Stories') %></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="pills-groups-tab" data-toggle="pill" href="#pills-groups" role="tab" aria-controls="pills-groups" aria-selected="false"><%= _('Groups') %></a>
+            </li>
+            <% if @commoner.user == current_user %>
+              <li class="nav-item">
+                <a class="nav-link" id="pills-requests-tab" data-toggle="pill" href="#pills-requests" role="tab" aria-controls="pills-requests" aria-selected="false"><%= _('Requests') %></a>
+              </li>
             <% end %>
-          <% else %>
-          <div class="row justify-content-center">
-            <div class="col text-center">
-              <h3 class="text-muted">
-                <%= _("No requests") %>
-              </h3>
-            </div>
-          </div>
-          <% end %>
+            <li class="nav-item">
+              <a class="nav-link" id="pills-activities-tab" data-toggle="pill" href="#pills-activities" role="tab" aria-controls="pills-activities" aria-selected="false"><%= _('Activities') %></a>
+            </li>
+          </ul>
         </div>
-      <% end %>
-      <div class="tab-pane fade" id="pills-activities" role="tabpanel" aria-labelledby="pills-activities-tab">
-        <div class="row justify-content-center">
-          <div class="col text-center">
-            <h3 class="text-muted">
-              <%= _("No activities yet") %>
-            </h3>
+        <div class="tab-content" id="pills-tabContent">
+          <div class="tab-pane fade show active" id="pills-stories" role="tabpanel" aria-labelledby="pills-stories-tab">
+            <% if @stories.any? %>
+              <% @stories.each do |story| %>
+                <%= render 'stories/story', story: story %>
+              <% end %>
+            <% else %>
+            <div class="row justify-content-center">
+              <div class="col text-center">
+                <h3 class="text-muted">
+                  <%= _("No stories yet") %>
+                </h3>
+              </div>
+            </div>
+            <% end %>
+            <% if @stories.count > 6 %>
+            <div class="row justify-content-center">
+              <div class="col text-center">
+                <%= link_to(_('See all'), commoner_stories_path(@commoner), class: 'btn btn-outline-cf') %>
+              </div>
+            </div>
+            <% end %>
+          </div>
+          <div class="tab-pane fade" id="pills-groups" role="tabpanel" aria-labelledby="pills-groups-tab">
+            <%= link_to s_('Button|Start a group'), new_group_path, class: 'btn btn-cf btn-block' if can? :create, Group  %>
+            <% if @commoner.groups.any? %>
+            <%= render @commoner.groups %>
+            <% else %>
+            <div class="row justify-content-center">
+              <div class="col text-center">
+                <h3 class="text-muted">
+                  <%= _("No groups") %>
+                </h3>
+              </div>
+            </div>
+            <% end %>
+          </div>
+          <% if @commoner.user == current_user %>
+            <div class="tab-pane fade" id="pills-requests" role="tabpanel" aria-labelledby="pills-requests-tab">
+              <% if @commoner.join_requests.any? %>
+                <% @commoner.join_requests.each do |join_request| %>
+                  <p><%= link_to join_request.group.name, join_request %>, <%= join_request.aasm_state %></p>
+                <% end %>
+              <% else %>
+              <div class="row justify-content-center">
+                <div class="col text-center">
+                  <h3 class="text-muted">
+                    <%= _("No requests") %>
+                  </h3>
+                </div>
+              </div>
+              <% end %>
+            </div>
+          <% end %>
+          <div class="tab-pane fade" id="pills-activities" role="tabpanel" aria-labelledby="pills-activities-tab">
+            <div class="row justify-content-center">
+              <div class="col text-center">
+                <h3 class="text-muted">
+                  <%= _("No activities yet") %>
+                </h3>
+              </div>
+            </div>
           </div>
         </div>
       </div>

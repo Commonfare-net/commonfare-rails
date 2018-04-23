@@ -11,15 +11,12 @@
 }
 
 .commoner-header {
-  background-color: $white;
-  margin-top: -10px;
-  padding-bottom: 25px;
+  padding-bottom: 1em;
 }
 .commoner-profile {
   position: relative;
   display: flex;
   // @extend .text-center;
-  margin-top: 2rem;
   p {
     font-weight: 500;
     font-size: 2.17em;
@@ -31,9 +28,6 @@
     border: 1px solid $lightgreen;
   }
   .edit-profile {
-    position: absolute;
-    top: 0;
-    right: 15px;
   }
 }
 
@@ -58,5 +52,18 @@
   .commoner-profile {
   // @extend .text-center;
     flex-direction: column;
+    img {
+      width: 96px;
+      margin: auto;
+    }
+    p {
+      text-align: center;
+      padding-top: 0;
+    }
+  }
+  .commoner-header {
+    .text-right {
+      text-align: center !important;
+    }
   }
 }

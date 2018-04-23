@@ -1,7 +1,7 @@
 <%= content_for :title, s_('Title|Send Commoncoins') %>
 <div class="row justify-content-center">
-  <div class="col-md-10 col-lg-8">
-    <h1><%= s_('Title|Send Commoncoins') %></h1>
+  <div class="col-md-8 col-lg-8 mt-4">
+    <h1 class='mb-4'><%= s_('Title|Send Commoncoins') %></h1>
     <%= simple_form_for(@transaction, url: commoner_transaction_confirm_path(@commoner)) do |f| %>
       <%= f.error_notification %>
       <div class="form-row">
