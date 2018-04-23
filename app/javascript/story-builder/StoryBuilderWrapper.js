@@ -55,8 +55,9 @@ export default class extends Component {
 
   imageDeleteHandler = ({ content: imageUrl }) => {
     const { story: { commoner_id } } = this.props;
-    return deleteImage(commoner_id, imageUrl)
-           .catch(error => this.setState({ status: 'error' }));
+    return Promise.resolve(true); // do nothing
+    // return deleteImage(commoner_id, imageUrl)
+    //        .catch(error => this.setState({ status: 'error' }));
   }
 
   saveStory = (story) => {

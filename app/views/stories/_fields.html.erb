@@ -40,7 +40,9 @@
 <%= content_for :scripts do %>
   <script type="text/javascript">
     (function() {
-      var createStorageKey, host, uploadAttachment, deleteAttachment;
+      var createStorageKey, uploadAttachment, deleteAttachment;
+      var host = "<%= commoner_images_url(@commoner) %>";
+
       publishButton = $('#publish-button');
 
       Trix.config.attachments.preview.caption = {
@@ -56,30 +58,30 @@
         }
       });
 
-      document.addEventListener("trix-attachment-remove", function(event) {
-        var attachment;
-        attachment = event.attachment;
-        var url = attachment.attachment.previewURL
-        var image_id = /images\/(\d+)/.exec(url)[1]
-        return deleteAttachment(attachment, image_id);
-      });
+      // document.addEventListener("trix-attachment-remove", function(event) {
+      //   var attachment;
+      //   attachment = event.attachment;
+      //   var url = attachment.attachment.previewURL
+      //   var image_id = /images\/(\d+)/.exec(url)[1]
+      //   return deleteAttachment(attachment, image_id);
+      // });
+      //
 
-      host = "<%= commoner_images_url(@commoner) %>";
-
-      deleteAttachment = function(attachment, image_id) {
-        var config = {
-          headers: {
-            'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content'),
-            'X-Requested-With': 'XMLHttpRequest'
-          }
-        }
-        axios.delete(host + "/" + image_id, config)
-          .then(function(response) {
-            if (response.status != 204) {
-              // TODO: Show some message and handle this
-            }
-          })
-      }
+      //
+      // deleteAttachment = function(attachment, image_id) {
+        // var config = {
+        //   headers: {
+        //     'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content'),
+        //     'X-Requested-With': 'XMLHttpRequest'
+        //   }
+        // }
+        // axios.delete(host + "/" + image_id, config)
+        //   .then(function(response) {
+        //     if (response.status != 204) {
+        //       // TODO: Show some message and handle this
+        //     }
+        //   })
+      // }
 
       uploadAttachment = function(attachment) {
         var file, form, key, xhr;
