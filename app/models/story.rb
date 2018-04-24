@@ -137,7 +137,7 @@ class Story < ApplicationRecord
   def images_from_content_draft
     ids = translations.each_with_object([]) do |translation, acc|
       cont = Nokogiri::HTML(translation.content_draft)
-      acc << cont.css('img').map { |img| img['src'].scan(/images\/(?<id>\d+)\//); id }
+      acc << cont.css('img').map { |img| img['src'].scan(/images\/(\d+)\//) }
     end
 
     Image.where(id: ids.flatten.uniq)

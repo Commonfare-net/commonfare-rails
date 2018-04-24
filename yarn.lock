@@ -6012,9 +6012,9 @@ react-motion@^0.5.2:
     prop-types "^15.5.8"
     raf "^3.1.0"
 
-react-quill@^1.2.6:
-  version "1.2.6"
-  resolved "https://registry.yarnpkg.com/react-quill/-/react-quill-1.2.6.tgz#4192b3fc8a446363605d2c48f7fb6a1d32a00eb4"
+react-quill@^1.2.7:
+  version "1.2.7"
+  resolved "https://registry.yarnpkg.com/react-quill/-/react-quill-1.2.7.tgz#3e74fadbb30dce915733ad230f92415894437c16"
   dependencies:
     "@types/quill" "*"
     "@types/react" "*"
@@ -6943,9 +6943,9 @@ stdout-stream@^1.4.0:
   dependencies:
     readable-stream "^2.0.1"
 
-storybuilder-react@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/storybuilder-react/-/storybuilder-react-1.2.0.tgz#6218c0f68a0f8fbf49d6aac612169c5aa668c094"
+storybuilder-react@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/storybuilder-react/-/storybuilder-react-1.2.1.tgz#b75f9052f556c380ead904ec46ca283688f8b157"
   dependencies:
     babel-plugin-react-intl "^2.4.0"
     babel-polyfill "^6.26.0"
@@ -6959,7 +6959,7 @@ storybuilder-react@^1.2.0:
     react-dotdotdot "^1.2.2"
     react-fontawesome "^1.6.1"
     react-intl "^2.4.0"
-    react-quill "^1.2.6"
+    react-quill "^1.2.7"
     react-tagsinput "^3.19.0"
     sanitize-html "^1.18.2"
 
