@@ -15,4 +15,8 @@ module MessagesHelper
     format = '%H:%M' if message_age < 24.hours
     l(message.created_at, format: format)
   end
+
+  def unread_class(message)
+    'unread' if message.author != current_user.meta && !message.read
+  end
 end

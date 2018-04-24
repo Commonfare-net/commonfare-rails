@@ -2,6 +2,7 @@ class ConversationsController < ApplicationController
   load_and_authorize_resource
   before_action :set_sender_and_recipient, except: :index
   before_action :set_commoner, only: [:index, :show]
+  after_action :mark_as_read, only: :show
 
   def index
     @conversations = @commoner.conversations
@@ -48,5 +49,14 @@ class ConversationsController < ApplicationController
 
   def set_commoner
     @commoner = current_user.meta
+  end
+
+  def mark_as_read
+    @messages.where(read: false).find_each do |message|
+      if current_user.meta != message.author
+        message.read = true
+        message.save
+      end
+    end
   end
 end

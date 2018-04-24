@@ -1,17 +1,21 @@
-<h3><%= s_('Title|New discussion in %{group_name}') %{group_name: @group.name} %></h3>
-
-<%= simple_form_for([@group, @discussion]) do |f| %>
-  <%= f.error_notification %>
-  <%= f.association :group, as: :hidden %>
-  <%= f.input :title %>
-  <% @discussion.messages.each do |message| %>
-    <%= field_set_tag 'Message' do %>
-      <%= f.simple_fields_for :messages, message do |msg| %>
-        <%= msg.association :commoner, as: :hidden %>
-        <%= msg.input :body, as: :text %>
+<%= content_for :title, s_('Title|Start a discussion') %>
+<div class="row justify-content-center">
+  <div class="col-md-10 col-lg-8">
+    <h3><%= s_('Title|New discussion in %{group_name}') %{group_name: @group.name} %></h3>
+    <%= simple_form_for([@group, @discussion]) do |f| %>
+      <%= f.error_notification %>
+      <%= f.association :group, as: :hidden %>
+      <%= f.input :title, label: _('Title'), required: false, placeholder: _("What's up?") %>
+      <% @discussion.messages.each do |message| %>
+        <%= field_set_tag do %>
+          <%= f.simple_fields_for :messages, message do |msg| %>
+            <%= msg.association :commoner, as: :hidden %>
+            <%= msg.input :body, as: :text, required: false, label: _('Enter the first message') %>
+          <% end %>
+        <% end %>
       <% end %>
-    <% end %>
-  <% end %>
 
-  <%= f.button :submit, s_('Button|Start discussion'), class: 'btn btn-cf btn-block' %>
-<% end %>
+      <%= f.button :submit, s_('Button|Start discussion'), class: 'btn btn-cf btn-block' %>
+    <% end %>
+  </div>
+</div>

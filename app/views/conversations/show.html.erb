@@ -1,3 +1,4 @@
+<%= content_for :title, (_('Conversation with %{commoner_name}') %{commoner_name: counterpart_for_conversation(@conversation).name}) %>
 <div class="row justify-content-center">
   <div class="col-lg-6 col-md-8">
     <div class="conversation-header">
@@ -9,7 +10,7 @@
         <div class="conversation-message d-flex flex-column <%= message.author == current_user.meta ? 'align-items-end' : 'align-items-start' %>">
           <div class="message <%= message.author == current_user.meta ? 'current-user-message' : 'other-user-message' %>">
             <div class="message-author <%= message.author == current_user.meta ? 'text-right' : 'text-left' %>"><%= message.author.name %></div>
-            <div class="message-body">
+            <div class="message-body <%= unread_class(message) %>">
               <%= detect_links_in(message.body) %>
             </div>
           </div>
