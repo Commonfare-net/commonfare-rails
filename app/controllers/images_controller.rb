@@ -15,12 +15,12 @@ class ImagesController < ApplicationController
 
   end
 
-  def destroy
-    @image.destroy
-    respond_to do |format|
-      format.json { head :no_content }
-    end
-  end
+  # def destroy
+  #   @image.update(to_be_deleted: true) if @image.removed_from_all_locales?
+  #   respond_to do |format|
+  #     format.json { head :no_content }
+  #   end
+  # end
 
   private
 
