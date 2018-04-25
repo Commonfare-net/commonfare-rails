@@ -13,4 +13,10 @@ module ListingsHelper
     return "#{listing.min_price}-#{listing.max_price}cc"
     "#{listing.min_price}cc"
   end
+
+  def listing_media_image_path(listing)
+    return listing.images.first.picture.card_square.url if listing.images.any?
+    image_path 'card_square_default_img.jpg'
+    # 'http://placebear.com/318/150'
+  end
 end

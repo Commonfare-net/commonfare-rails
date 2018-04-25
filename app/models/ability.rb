@@ -13,7 +13,7 @@ class Ability
       can :read, Tag
       can :read, Comment
       can :read, Group
-      can :read, Listing
+      can [:read, :commonplace], Listing
       alias_action :create, :read, :update, :destroy, :to => :crud
       if user.is_commoner?
         commoner = user.meta

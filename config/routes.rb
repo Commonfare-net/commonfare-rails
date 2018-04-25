@@ -79,6 +79,7 @@ Rails.application.routes.draw do
     resources :join_requests, except: [:new, :create]
 
     resources :listings
+    get :commonplace, controller: :listings
 
     get :welcome, controller: :commoners
 

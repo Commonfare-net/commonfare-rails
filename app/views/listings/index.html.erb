@@ -1,37 +1,6 @@
-<p id="notice"><%= notice %></p>
+<% content_for :title, 'Commonplace' %>
 
 <h1>Listings</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Commoner</th>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Place</th>
-      <th>Min price</th>
-      <th>Max price</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @listings.each do |listing| %>
-      <tr>
-        <td><%= listing.commoner %></td>
-        <td><%= listing.title %></td>
-        <td><%= listing.description %></td>
-        <td><%= listing.place %></td>
-        <td><%= listing.min_price %></td>
-        <td><%= listing.max_price %></td>
-        <td><%= link_to 'Show', listing %></td>
-        <td><%= link_to 'Edit', edit_listing_path(listing) %></td>
-        <td><%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
+<%= render @listings %>
 
 <%= link_to 'New Listing', new_listing_path %>
