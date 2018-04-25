@@ -19,10 +19,6 @@
   }
 }
 
-.story-share-url {
-  font-family: monospace;
-}
-
 .story-card-tag-link {
   font-size: .75rem;
   display: inline-block;
@@ -42,7 +38,7 @@ button#langSelectDropdownMenuButton {
   padding-top: 0;
 }
 
-input#story-share-url {
+input#story-share-url, input#listing-share-url {
   font-family: monospace;
   width: 100%;
   border: 0;

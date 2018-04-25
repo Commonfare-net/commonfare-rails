@@ -1,0 +1,46 @@
+<%= f.input :title,
+            required: false,
+            label: _('Title') %>
+<%= f.input :place,
+            required: false,
+            label: _('Place') %>
+<div class="row">
+  <div class="col">
+    <%= f.input :min_price,
+                required: false,
+                label: _('Minimum price (in CC)'),
+                placeholder: _('Specify an amount') %>
+  </div>
+  <div class="col">
+    <%= f.input :max_price,
+                label: _('Maximum price (in CC)'),
+                placeholder: _('Specify an amount') %>
+  </div>
+</div>
+<%= f.input :description,
+            as: :text,
+            required: false,
+            label: _('Description') %>
+<%= f.association :tags,
+                  label: _('Tags'),
+                  # placeholder: "Managed in JS",
+                  hint: _('Use comma or press Enter to separate tags') %>
+<%= f.association :images, as: :file %>
+
+<%= content_for :scripts do %>
+  <script type="text/javascript">
+    autosize($('#listing_description'));
+
+    // Select2 for tags
+    $('#listing_tag_ids').select2({
+      theme: 'bootstrap',
+      placeholder: "<%= _('e.g. Lessons, Babysitting, etc.') %>",
+      minimumResultsForSearch: -1,
+      tags: true,
+      tokenSeparators: [',']
+    });
+    $('#listing_tag_ids').on('select2:select', function (e) {
+      // console.log(data.text);
+    });
+  </script>
+<% end %>

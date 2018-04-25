@@ -1,0 +1,29 @@
+<!-- Modal -->
+<div class="modal fade" id="shareModal" tabindex="-1" role="dialog" aria-labelledby="shareModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title red-title" id="shareModalLabel"><%= s_('Modal title|Share this Listing') %></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <%= text_field_tag 'listing-share-url', request.url, { onClick: "this.setSelectionRange(0, this.value.length)" } %>
+        <p class="text-muted">
+          <small onClick="this.select();"><%= _('Commonfare.net is not linked to any external platform, so to share this listing on Facebook, Twitter, etc. you can copy the URL and paste it there.') %></small>
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-cf" data-clipboard-target="#listing-share-url" data-dismiss="modal"><%= _('Copy and close') %></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= content_for :scripts do %>
+<script type="text/javascript">
+  // Instantiate ClipboardJs on the buttons
+  new Clipboard('.btn');
+</script>
+<% end %>

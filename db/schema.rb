@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180424073956) do
+ActiveRecord::Schema.define(version: 20180424122451) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -110,6 +110,25 @@ ActiveRecord::Schema.define(version: 20180424073956) do
     t.string "aasm_state"
     t.index ["commoner_id"], name: "index_join_requests_on_commoner_id"
     t.index ["group_id"], name: "index_join_requests_on_group_id"
+  end
+
+  create_table "listings", force: :cascade do |t|
+    t.bigint "commoner_id"
+    t.string "title"
+    t.text "description"
+    t.string "place"
+    t.decimal "min_price", precision: 18, scale: 6
+    t.decimal "max_price", precision: 18, scale: 6
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["commoner_id"], name: "index_listings_on_commoner_id"
+  end
+
+  create_table "listings_tags", id: false, force: :cascade do |t|
+    t.bigint "listing_id", null: false
+    t.bigint "tag_id", null: false
+    t.index ["listing_id", "tag_id"], name: "index_listings_tags_on_listing_id_and_tag_id", unique: true
+    t.index ["tag_id", "listing_id"], name: "index_listings_tags_on_tag_id_and_listing_id", unique: true
   end
 
   create_table "memberships", force: :cascade do |t|
@@ -241,6 +260,7 @@ ActiveRecord::Schema.define(version: 20180424073956) do
   add_foreign_key "images", "commoners"
   add_foreign_key "join_requests", "commoners"
   add_foreign_key "join_requests", "groups"
+  add_foreign_key "listings", "commoners"
   add_foreign_key "memberships", "commoners"
   add_foreign_key "memberships", "groups"
   add_foreign_key "messages", "commoners"

@@ -1,0 +1,16 @@
+module ListingsHelper
+  def listing_card_image_url(listing)
+    relative_path = ''
+    if listing.images.any?
+      relative_path = listing.images.first.picture.card.url
+    else
+      relative_path = image_path 'card_default_img.jpg'
+    end
+    root_url(locale: nil) + relative_path
+  end
+
+  def listing_price(listing)
+    return "#{listing.min_price}-#{listing.max_price}cc"
+    "#{listing.min_price}cc"
+  end
+end

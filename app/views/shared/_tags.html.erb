@@ -1,0 +1,9 @@
+<div class="row">
+  <div class="col my-2">
+    <p id="tags-anchor" class="cf-tags">
+      <% tags.each do |tag| %>
+        <%= link_to tag.name, tag_path(tag) %>
+      <% end %>
+    </p>
+  </div>
+</div>

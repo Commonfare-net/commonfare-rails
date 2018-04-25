@@ -59,6 +59,7 @@ Rails.application.routes.draw do
       end
       post 'transaction_confirm', to: 'transactions#confirm', as: 'transaction_confirm'
       resources :transactions, except: [:edit, :update, :destroy]
+      resources :listings, only: :index
     end
     resources :comments, except: [:new, :show, :index]
     resources :tags, only: :show
@@ -76,6 +77,8 @@ Rails.application.routes.draw do
       resources :messages, only: [:create, :destroy]
     end
     resources :join_requests, except: [:new, :create]
+
+    resources :listings
 
     get :welcome, controller: :commoners
 

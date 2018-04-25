@@ -9,6 +9,7 @@ class Commoner < ApplicationRecord
   has_many :join_requests
   has_many :messages
   has_many :wallets, as: :walletable, dependent: :destroy
+  has_many :listings
 
   # http://guides.rubyonrails.org/association_basics.html#has-many-association-reference
   has_many :sender_conversations,

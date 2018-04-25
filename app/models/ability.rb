@@ -13,6 +13,7 @@ class Ability
       can :read, Tag
       can :read, Comment
       can :read, Group
+      can :read, Listing
       alias_action :create, :read, :update, :destroy, :to => :crud
       if user.is_commoner?
         commoner = user.meta
@@ -59,6 +60,8 @@ class Ability
         can :create, Conversation
         can :read, Conversation, sender_id: commoner.id
         can :read, Conversation, recipient_id: commoner.id
+
+        can [:create, :update, :destroy], Listing
       end
     end
   end

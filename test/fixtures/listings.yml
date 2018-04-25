@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  commoner: one
+  title: MyString
+  description: MyText
+  place: MyString
+  min_price: 9.99
+  max_price: 9.99
+
+two:
+  commoner: two
+  title: MyString
+  description: MyText
+  place: MyString
+  min_price: 9.99
+  max_price: 9.99

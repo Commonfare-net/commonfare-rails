@@ -1,0 +1,78 @@
+<% content_for :title, @listing.title %>
+<div class="row justify-content-center">
+  <div class="listing-container">
+    <%= content_for :open_graph_tags do %>
+    <!-- OpenGraph tags -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content='<%= @listing.title %> | Commonfare' />
+    <meta property="og:description" content='<%= og_description_for(@listing) %>' />
+    <meta property="og:image" content='<%= listing_card_image_url(@listing) %>' />
+    <meta property="og:url" content='<%= request.url %>' />
+    <!-- Twitter tags -->
+    <meta name="twitter:card" content="<%= @listing.images.any? ? 'summary_large_image' : 'summary' %>" />
+    <% end %>
+
+    <div class="row">
+      <% if can? :edit, @listing %>
+      <%= link_to edit_listing_path(@listing), class: 'mdc-fab mdc-fab--mini material-icons card-fab--absolute', 'aria-label': 'Favorite', data: { 'mdc-auto-init': 'MDCRipple' } do %>
+      <span class="mdc-fab__icon">
+        <%= fa_icon 'pencil lg' %>
+      </span>
+      <% end %>
+      <% end %>
+      <div class="col-auto">
+        <div class="listing-title">
+          <h2>
+            <%= @listing.title %>
+          </h2>
+        </div>
+      </div>
+      <div class="col-auto ml-auto">
+        <div class="listing-price">
+          <h2>
+            <%= listing_price(@listing) %>
+          </h2>
+        </div>
+      </div>
+    </div>
+
+    <% if @listing.tags.any? %>
+      <%= render 'shared/tags', tags: @listing.tags %>
+    <% end %>
+
+    <div class="row">
+      <div class="col-lg-3 order-12 order-lg-1">
+        <div class="listing-info">
+          <div class="row mb-2">
+            <div class="col">
+              <div class="listing-author">
+                <%= fa_icon('user fw', text: link_to(@listing.commoner.name, @listing.commoner)) %>
+              </div>
+              <div class="listing-date">
+                <%= fa_icon('clock-o fw', text: l(@listing.created_at.to_date, format: :long)) %>
+              </div>
+              <div class="listing-place">
+                <%= fa_icon('map-marker fw', text: @listing.place) %>
+              </div>
+              <div class="listing-share">
+                <%= fa_icon('share-alt', text: link_to(s_("Share"), '#', data: { toggle: "modal", target: "#shareModal" })) %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-9 order-1 order-lg-12">
+        <div class="row">
+          <div class="col">
+            <div class="listing-description">
+              <%= @listing.description %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<%= render 'listings/share_modal' %>

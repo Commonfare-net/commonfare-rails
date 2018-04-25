@@ -1,0 +1,11 @@
+<%= content_for :title, s_('Title|New listing') %>
+<div class="row justify-content-center">
+  <div class="col-md-10 col-lg-8">
+    <h2><%= s_('Title|New listing') %></h2>
+    <%= simple_form_for(@listing) do |f| %>
+      <%= f.error_notification %>
+      <%= render 'fields', f: f %>
+      <%= f.button :submit, s_('Button|Create listing'), class: 'btn btn-cf btn-block' %>
+    <% end %>
+  </div>
+</div>
