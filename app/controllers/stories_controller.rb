@@ -171,7 +171,6 @@ class StoriesController < ApplicationController
     def create_with_story_builder(restore_locale)
       @story.created_with_story_builder = true
       if @story.save
-        @story.images << images_from_content_json_draft(@story)
         I18n.locale = restore_locale
         respond_to do |format|
           format.json { render :show, status: :ok }
@@ -186,7 +185,6 @@ class StoriesController < ApplicationController
 
     def update_with_story_builder(restore_locale)
       if @story.update(story_params)
-        @story.images << images_from_content_json_draft(@story)
         # I18n.locale back to the original
         I18n.locale = restore_locale
         respond_to do |format|
@@ -204,7 +202,6 @@ class StoriesController < ApplicationController
     # creates a story with a text content
     def create_with_text_content(restore_locale)
       if @story.save && @story.publish!
-        @story.images << images_from_content(@story)
         I18n.locale = restore_locale
         respond_to do |format|
           format.html { redirect_to story_path(@story, story_locale: @story_locale), notice: _('Story was successfully created.') }
@@ -219,7 +216,6 @@ class StoriesController < ApplicationController
 
     def update_with_text_content(restore_locale)
       if @story.update(story_params) && @story.publish!
-        @story.images << images_from_content(@story)
         # I18n.locale back to the original
         I18n.locale = restore_locale
         respond_to do |format|
@@ -249,20 +245,20 @@ class StoriesController < ApplicationController
       end
     end
 
+    # MOVED TO THE MODEL
     # This always returns an array, even if content is nil or ""
     # or if there is an embedded video (with iframe)
-    def images_from_content(story)
-      content = Nokogiri::HTML(story.content)
-      ids = content.css('figure').map { |fig_ns| fig_ns.css('img').first['src'].scan(/images\/(\d+)\//).last.first.to_i if fig_ns.css('img').present? }.compact
-      Image.find(ids)
-    end
-
-    def images_from_content_json_draft(story)
-      ids = story.content_json_draft
-                 .select { |item| item['type'] == 'image' }
-                 .map { |item| /images\/(?<id>\d+)/ =~ item['content']; id }
-      Image.find(ids)
-    end
+    # def images_from_content(story)
+    #   content = Nokogiri::HTML(story.content)
+    #   ids = content.css('figure').map { |fig_ns| fig_ns.css('img').first['src'].scan(/images\/(\d+)\//).last.first.to_i if fig_ns.css('img').present? }.compact
+    #   Image.find(ids)
+    # end
+    # def images_from_content_json_draft(story)
+    #   ids = story.content_json_draft
+    #              .select { |item| item['type'] == 'image' }
+    #              .map { |item| /images\/(?<id>\d+)/ =~ item['content']; id }
+    #   Image.find(ids)
+    # end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def story_params

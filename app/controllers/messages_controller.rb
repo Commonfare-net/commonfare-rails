@@ -2,8 +2,9 @@ class MessagesController < ApplicationController
   # before_action :set_message, only: [:show, :edit, :update, :destroy]
 
   load_and_authorize_resource :discussion
-  load_and_authorize_resource :message, through: :discussion
-  # load_and_authorize_resource :message, through: [:discussion, :conversation]
+  load_and_authorize_resource :conversation
+  # load_and_authorize_resource :message, through: :discussion
+  load_and_authorize_resource :message, through: [:discussion, :conversation]
 
   before_action :set_group
 
@@ -83,7 +84,7 @@ class MessagesController < ApplicationController
       if @discussion.present?
         group_discussion_path(@group, @discussion)
       elsif @conversation.present?
-        # TODO: path for conversation
+        conversation_path(@conversation)
       else
         root_path
       end

@@ -1,0 +1,18 @@
+<%= link_to conversation, class: 'conversation-media-container' do %>
+<div class="conversation-media mb-3">
+    <%= image_tag counterpart_for_conversation(conversation).avatar.card, class: 'rounded-circle border mr-3' %>
+  <div class="media-body">
+    <div class="d-flex d-flex-row">
+      <div>
+        <h5 class="conversation-counterpart mt-2"><%= counterpart_for_conversation(conversation).name %></h5>
+      </div>
+      <div class="ml-auto">
+        <small class="text-muted"><%= last_message_time(conversation.messages.last) %></small>
+      </div>
+    </div>
+    <small class="text-muted single-line">
+      <%= conversation.messages.last.body %>
+    </small>
+  </div>
+</div>
+<% end %>

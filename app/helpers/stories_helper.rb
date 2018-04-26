@@ -36,6 +36,15 @@ module StoriesHelper
     end
   end
 
+  def story_card_square_image_path(story)
+    if story.images.any?
+      story.images.first.picture.card_square.url
+    else
+      image_path 'card_square_default_img.jpg'
+      # 'http://placebear.com/318/150'
+    end
+  end
+
   def story_show_or_preview_path(story)
     story.published? ? story_path(story) : preview_story_path(story)
   end

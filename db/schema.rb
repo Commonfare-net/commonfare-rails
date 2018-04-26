@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180410134435) do
+ActiveRecord::Schema.define(version: 20180424073956) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +50,15 @@ ActiveRecord::Schema.define(version: 20180410134435) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "avatar"
+  end
+
+  create_table "conversations", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "sender_id"
+    t.bigint "recipient_id"
+    t.index ["recipient_id"], name: "index_conversations_on_recipient_id"
+    t.index ["sender_id"], name: "index_conversations_on_sender_id"
   end
 
   create_table "discussions", force: :cascade do |t|
@@ -120,6 +129,7 @@ ActiveRecord::Schema.define(version: 20180410134435) do
     t.bigint "messageable_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "read", default: false
     t.index ["commoner_id"], name: "index_messages_on_commoner_id"
     t.index ["messageable_type", "messageable_id"], name: "index_messages_on_messageable_type_and_messageable_id"
   end
@@ -225,6 +235,8 @@ ActiveRecord::Schema.define(version: 20180410134435) do
   end
 
   add_foreign_key "comments", "commoners"
+  add_foreign_key "conversations", "commoners", column: "recipient_id"
+  add_foreign_key "conversations", "commoners", column: "sender_id"
   add_foreign_key "discussions", "groups"
   add_foreign_key "images", "commoners"
   add_foreign_key "join_requests", "commoners"

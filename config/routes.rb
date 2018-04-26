@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-
-
   # ************* ADMIN START **********
   devise_for :admin_users
   namespace :admin do
@@ -73,6 +71,9 @@ Rails.application.routes.draw do
         post :accept, on: :member
         post :reject, on: :member
       end
+    end
+    resources :conversations, except: [:edit, :update, :destroy] do
+      resources :messages, only: [:create, :destroy]
     end
     resources :join_requests, except: [:new, :create]
 

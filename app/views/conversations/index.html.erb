@@ -1,0 +1,17 @@
+<%= content_for :title, s_('Title|My conversations') %>
+<div class="row justify-content-center">
+  <div class="col-md-8 col-lg-6">
+    <h2><%= s_('Title|My conversations') %></h2>
+    <% if @conversations.any? %>
+      <%= render @conversations %>
+    <% else %>
+    <div class="row justify-content-center">
+      <div class="col text-center">
+        <h2 class="text-muted">
+          <%= _("No conversations") %>
+        </h2>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
