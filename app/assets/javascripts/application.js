@@ -26,6 +26,7 @@
 //= require ellipsis.js/ellipsis.min.js
 //= require toastr/build/toastr.min
 //= require clipboard/dist/clipboard.min
+//= require blueimp-gallery/js/blueimp-gallery.min.js
 //= require cookies_eu
 //= require search
 //= require cocoon

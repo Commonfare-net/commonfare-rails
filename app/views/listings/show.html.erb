@@ -64,6 +64,26 @@
       <div class="col-lg-9 order-1 order-lg-12">
         <div class="row">
           <div class="col">
+            <div id="blueimp-gallery" class="blueimp-gallery">
+              <div class="slides"></div>
+              <h3 class="title"></h3>
+              <a class="prev">‹</a>
+              <a class="next">›</a>
+              <a class="close">×</a>
+              <a class="play-pause"></a>
+              <ol class="indicator"></ol>
+            </div>
+            <div id="blueimp-gallery-links">
+              <% @listing.images.each do |image| %>
+              <%= link_to image.picture.url do %>
+              <%= image_tag image.picture.card_square.url %>
+              <% end %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
             <div class="listing-description">
               <%= @listing.description %>
             </div>
@@ -82,3 +102,16 @@
 </div>
 
 <%= render 'listings/share_modal' %>
+
+<% content_for :scripts do %>
+  <script type="text/javascript">
+  document.getElementById('blueimp-gallery-links').onclick = function (event) {
+    event = event || window.event;
+    var target = event.target || event.srcElement,
+        link = target.src ? target.parentNode : target,
+        options = {index: link, event: event},
+        links = this.getElementsByTagName('a');
+    blueimp.Gallery(links, options);
+  };
+  </script>
+<% end %>
