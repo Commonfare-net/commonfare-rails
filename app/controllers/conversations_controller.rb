@@ -15,7 +15,8 @@ class ConversationsController < ApplicationController
 
   def new
     @conversation = Conversation.new(sender: @sender, recipient: @recipient)
-    @conversation.messages.build(commoner: @sender)
+    @listing = Listing.find_by(id: params[:listing_id])
+    @conversation.messages.build(commoner: @sender, body: first_message)
   end
 
   def create
@@ -57,6 +58,14 @@ class ConversationsController < ApplicationController
         message.read = true
         message.save
       end
+    end
+  end
+
+  def first_message
+    if @listing.present?
+      (s_('Conversation|Hello %{recipient_name}, I am intersted in %{listing_title}, %{listing_url}, ') %{recipient_name: @recipient.name, listing_title: @listing.title, listing_url: listing_url(@listing)})
+    else
+      (s_('Conversation|Hello %{recipient_name}, ') %{recipient_name: @recipient.name})
     end
   end
 end

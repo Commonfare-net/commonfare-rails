@@ -19,4 +19,13 @@ module ListingsHelper
     image_path 'card_square_default_img.jpg'
     # 'http://placebear.com/318/150'
   end
+
+  def can_get_in_touch_for_listing?(listing)
+    user_signed_in? && current_user.meta != listing.commoner
+  end
+
+  def conversation_path_for_listing(listing)
+    return conversation_path(conversation_with(listing.commoner)) if conversation_with(listing.commoner).present?
+    new_conversation_path(recipient_id: listing.commoner.id, listing_id: listing.id)
+  end
 end

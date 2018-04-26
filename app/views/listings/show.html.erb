@@ -71,7 +71,13 @@
         </div>
       </div>
     </div>
-
+    <div class="row justify-content-center py-5">
+      <div class="col-md-4">
+        <% if can_get_in_touch_for_listing?(@listing) %>
+          <%= link_to(_('Get in touch'), conversation_path_for_listing(@listing), class: 'btn btn-outline-cf btn-lg btn-block') %>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
 
