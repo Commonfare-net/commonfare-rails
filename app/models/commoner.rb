@@ -1,7 +1,7 @@
 class Commoner < ApplicationRecord
   include Authenticatable
   mount_uploader :avatar, AvatarUploader
-  has_many :images
+  has_many :images, inverse_of: :commoner # needed by cocoon for nested attributes
   has_many :stories
   has_many :comments
   has_many :memberships

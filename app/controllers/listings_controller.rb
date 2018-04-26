@@ -4,7 +4,7 @@ class ListingsController < ApplicationController
   before_action :create_new_tags, only: [:create, :update]
 
   load_and_authorize_resource
-  before_action :set_commoner, only: [:new, :create, :destroy]
+  before_action :set_commoner, except: [:index, :show]
 
   # GET /listings
   # GET /listings.json
@@ -77,7 +77,9 @@ class ListingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def listing_params
-      params.require(:listing).permit(:title, :description, :place, :min_price, :max_price, tag_ids: [])
+      params.require(:listing).permit(:title, :description, :place, :min_price, :max_price, tag_ids: [], images_attributes: [:id, :commoner_id, :picture, :imageable_id, :imageable_type, :picture_cache, :_destroy]).tap do |lp|
+        lp.merge images_attributes: lp[:images_attributes].transform_values! {|v| v.merge(commoner_id: current_user.meta.id)}
+      end
     end
 
     def set_commoner

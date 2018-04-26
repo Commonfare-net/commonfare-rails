@@ -28,4 +28,5 @@
 //= require clipboard/dist/clipboard.min
 //= require cookies_eu
 //= require search
+//= require cocoon
 //= require_tree .

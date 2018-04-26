@@ -25,7 +25,18 @@
                   label: _('Tags'),
                   # placeholder: "Managed in JS",
                   hint: _('Use comma or press Enter to separate tags') %>
-<%= f.association :images, as: :file %>
+
+
+<div id="images">
+  <%= f.simple_fields_for :images do |img| %>
+  <%= render 'image_fields', f: img %>
+  <% end %>
+  <div class="links">
+    <%= link_to_add_association _('Add image'), f, :images %>
+  </div>
+</div>
+
+
 
 <%= content_for :scripts do %>
   <script type="text/javascript">

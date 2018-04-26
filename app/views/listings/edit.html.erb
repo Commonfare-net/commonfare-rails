@@ -7,5 +7,14 @@
       <%= render 'fields', f: f %>
       <%= f.button :submit, s_('Button|Edit listing'), class: 'btn btn-cf btn-block' %>
     <% end %>
+    <p class="text-right">
+      <small>
+        <%= link_to(fa_icon('trash', text: _('Delete this listing')),
+        listing_path(@listing),
+        method: :delete,
+        class: 'text-danger',
+          data: {confirm: _('Are you sure?')}) %>
+      </small>
+    </p>
   </div>
 </div>

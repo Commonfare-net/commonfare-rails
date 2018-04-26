@@ -46,7 +46,7 @@ gem 'inline_svg'
 
 # Forms
 gem 'simple_form'
-
+gem 'cocoon'
 # Auth
 gem 'cancancan'
 gem 'devise'

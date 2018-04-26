@@ -10,7 +10,7 @@ module ListingsHelper
   end
 
   def listing_price(listing)
-    return "#{listing.min_price}-#{listing.max_price}cc"
+    return "#{listing.min_price}-#{listing.max_price}cc" if listing.max_price.present?
     "#{listing.min_price}cc"
   end
 
