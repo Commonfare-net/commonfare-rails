@@ -9,7 +9,7 @@
     <meta property="og:image" content='<%= listing_card_image_url(@listing) %>' />
     <meta property="og:url" content='<%= request.url %>' />
     <!-- Twitter tags -->
-    <meta name="twitter:card" content="<%= @listing.images.any? ? 'summary_large_image' : 'summary' %>" />
+    <meta name="twitter:card" content="<%= @images.any? ? 'summary_large_image' : 'summary' %>" />
     <% end %>
 
     <div class="row">
@@ -35,6 +35,13 @@
         </div>
       </div>
     </div>
+    <div class="row">
+      <div class="col">
+        <div class="listing-author">
+          <%= (_('by <strong>%{commoner_name}</strong>') %{commoner_name: link_to(@listing.commoner.name, @listing.commoner)}).html_safe %>
+        </div>
+      </div>
+    </div>
 
     <% if @listing.tags.any? %>
       <%= render 'shared/tags', tags: @listing.tags %>
@@ -45,11 +52,8 @@
         <div class="listing-info">
           <div class="row mb-2">
             <div class="col">
-              <div class="listing-author">
-                <%= fa_icon('user fw', text: link_to(@listing.commoner.name, @listing.commoner)) %>
-              </div>
               <div class="listing-date">
-                <%= fa_icon('clock-o fw', text: l(@listing.created_at.to_date, format: :long)) %>
+                <%= fa_icon('clock-o fw', text: (_('Added on %{date}') %{date: l(@listing.created_at.to_date, format: :long)})) %>
               </div>
               <div class="listing-place">
                 <%= fa_icon('map-marker fw', text: @listing.place) %>
@@ -62,6 +66,15 @@
         </div>
       </div>
       <div class="col-lg-9 order-1 order-lg-12">
+        <% if @images.any? %>
+          <div class="row justify-content-center">
+            <div class="col text-center" id="listing-cover-image-link">
+              <%= link_to @images.first.picture.url do %>
+              <%= image_tag(@images.first.picture.url, class: 'listing-cover-image') %>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
         <div class="row">
           <div class="col">
             <div id="blueimp-gallery" class="blueimp-gallery">
@@ -70,14 +83,13 @@
               <a class="prev">‹</a>
               <a class="next">›</a>
               <a class="close">×</a>
-              <a class="play-pause"></a>
               <ol class="indicator"></ol>
             </div>
-            <div id="blueimp-gallery-links">
-              <% @listing.images.each do |image| %>
-              <%= link_to image.picture.url do %>
-              <%= image_tag image.picture.card_square.url %>
-              <% end %>
+            <div id="blueimp-gallery-links" class="my-3">
+              <% @images.each do |image| %>
+                <%= link_to image.picture.url do %>
+                  <%= image_tag image.picture.card_square.url %>
+                <% end %>
               <% end %>
             </div>
           </div>
@@ -112,6 +124,10 @@
         options = {index: link, event: event},
         links = this.getElementsByTagName('a');
     blueimp.Gallery(links, options);
+  };
+  document.getElementById('listing-cover-image-link').onclick = function (event) {
+    event.preventDefault();
+    $('#blueimp-gallery-links a:first-child').click();
   };
   </script>
 <% end %>
