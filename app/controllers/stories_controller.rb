@@ -26,14 +26,14 @@ class StoriesController < ApplicationController
     elsif params[:filter].present?
       @filter = params[:filter]
       if Story::TYPES.include? @filter.to_sym
-        stories = accessible_stories.send(@filter.to_sym)
+        stories = accessible_stories.send(@filter.to_sym).includes(:commoner, :tags, :comments, :images, :translations)
         @title = @filter.to_sym
       else
-        stories = accessible_stories.commoners_voice
+        stories = accessible_stories.commoners_voice.includes(:commoner, :tags, :comments, :images, :translations)
         @title = :commoners_voice
       end
     else
-      stories = accessible_stories.order('created_at DESC') # All descending
+      stories = accessible_stories.includes(:commoner, :tags, :comments, :images, :translations).order('created_at DESC') # All descending
       @title = :all
     end
 

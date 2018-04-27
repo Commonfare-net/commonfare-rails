@@ -13,11 +13,11 @@ class ListingsController < ApplicationController
   # GET /listings
   # GET /listings.json
   def index
-    @listings = Listing.all
+    @listings = Listing.order(created_at: :desc).includes(:commoner, :tags, :comments, :images)
   end
 
   def commonplace
-    @listings = Listing.all
+    @listings = Listing.order(created_at: :desc).includes(:commoner, :tags, :comments, :images)
   end
 
   # GET /listings/1

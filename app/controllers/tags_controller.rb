@@ -7,9 +7,9 @@ class TagsController < ApplicationController
     stories = @tag.stories.accessible_by(current_ability)
 
     @story_types_and_lists = {
-      commoners_voice: stories.commoners_voice.order('created_at DESC'),
-      good_practice: stories.good_practice.order('created_at DESC'),
-      welfare_provision: stories.welfare_provision.order('created_at DESC')
+      commoners_voice: stories.commoners_voice.order('created_at DESC').includes(:commoner, :tags, :comments, :images, :translations),
+      good_practice: stories.good_practice.order('created_at DESC').includes(:commoner, :tags, :comments, :images, :translations),
+      welfare_provision: stories.welfare_provision.order('created_at DESC').includes(:commoner, :tags, :comments, :images, :translations)
     }
   end
 end

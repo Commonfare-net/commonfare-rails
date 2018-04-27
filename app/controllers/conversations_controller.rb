@@ -5,7 +5,7 @@ class ConversationsController < ApplicationController
   after_action :mark_as_read, only: :show
 
   def index
-    @conversations = @commoner.conversations
+    @conversations = @commoner.conversations.includes(:messages)
   end
 
   def show
