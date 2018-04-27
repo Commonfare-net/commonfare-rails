@@ -61,6 +61,11 @@
               <div class="listing-share">
                 <%= fa_icon('share-alt', text: link_to(s_("Share"), '#', data: { toggle: "modal", target: "#shareModal" })) %>
               </div>
+              <div class="listing-comments">
+                <%= link_to '#comments-anchor', class: 'listing-comments-link' do %>
+                  <%= fa_icon 'comment-o', text: "#{@comments.count} #{n_('Comment', 'Comments', @comments.count)}" %>
+                <% end %>
+              </div>
             </div>
           </div>
         </div>
@@ -108,6 +113,17 @@
         <% if can_get_in_touch_for_listing?(@listing) %>
           <%= link_to(_('Get in touch'), conversation_path_for_listing(@listing), class: 'btn btn-outline-cf btn-lg btn-block') %>
         <% end %>
+      </div>
+    </div>
+    <div class="row py-5">
+      <div class="col-lg-9 ml-auto">
+        <%= render('comments/new', commentable: @listing, comment: @comment) if user_signed_in? %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-9 ml-auto">
+        <h3 id="comments-anchor" class="red-title text-left"><%= @comments.count %> <%= n_('Comment', 'Comments', @comments.count) %></h3>
+        <%= render 'comments/list', comments: @comments %>
       </div>
     </div>
   </div>

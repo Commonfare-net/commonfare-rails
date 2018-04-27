@@ -3,7 +3,11 @@ class ListingsController < ApplicationController
   # but new tags break it
   before_action :create_new_tags, only: [:create, :update]
 
-  load_and_authorize_resource
+  # load and authorize are separate to make FriendlyID work
+  # with both :id and :slug
+  before_action :set_listing, except: [:new, :create, :index, :commonplace] # manual load
+  authorize_resource :listing # managed by CanCanCan
+
   before_action :set_commoner, except: [:index, :show]
 
   # GET /listings
@@ -20,6 +24,10 @@ class ListingsController < ApplicationController
   # GET /listings/1.json
   def show
     @images = @listing.images.order(created_at: :asc)
+    @comments = @listing.comments
+    if user_signed_in?
+      @comment = current_user.meta.comments.build
+    end
   end
 
   # GET /listings/new
@@ -73,7 +81,7 @@ class ListingsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_listing
-      @listing = Listing.find(params[:id])
+      @listing = Listing.friendly.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

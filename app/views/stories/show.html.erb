@@ -87,7 +87,11 @@
             <%= link_to s_("Button|Share"), '#', class: 'btn btn-cf btn-block', data: { toggle: "modal", target: "#shareModal" } %>
           </div>
         </div>
-        <%= render('comments/new', story: @story, comment: @comment) if user_signed_in? %>
+        <div class="row py-5">
+          <div class="col-md-8 col-lg-8">
+            <%= render('comments/new', commentable: @story, comment: @comment) if user_signed_in? %>
+          </div>
+        </div>
         <div class="row">
           <div class="col-md-8 col-lg-8">
             <h3 id="comments-anchor" class="red-title text-left"><%= @comments.count %> <%= n_('Comment', 'Comments', @comments.count) %></h3>

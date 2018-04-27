@@ -13,6 +13,9 @@ class CommentsController < ApplicationController
     if params[:story_id].present?
       @story = Story.friendly.find(params[:story_id])
       @comments = @story.comments
+    elsif params[:listing_id].present?
+      @listing = Listing.friendly.find(params[:listing_id])
+      @comments = @listing.comments
     elsif params[:commoner_id].present?
       @commoner = Commoner.find(params[:commoner_id])
       if current_user == @commoner.user
