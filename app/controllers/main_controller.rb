@@ -7,6 +7,9 @@ class MainController < ApplicationController
     @tags = Tag.ransack(
       name_cont: params[:q]
     ).result(distinct: true).limit(5)
+    @listings = Listing.ransack(
+      title_cont: params[:q]
+    ).result(distinct: true).limit(5)
   end
 
   def search
@@ -28,6 +31,10 @@ class MainController < ApplicationController
 
     @tags = Tag.ransack(
       name_cont: @q
+    ).result(distinct: true)
+
+    @listings = Listing.ransack(
+      title_or_description_or_place_cont: @q
     ).result(distinct: true)
   end
 end

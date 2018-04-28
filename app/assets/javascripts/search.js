@@ -1,4 +1,4 @@
-function optionsFor(input, locale) {
+function optionsFor(input, locale, localizedCategoryNames) {
   return {
     getValue: "name",
     url: function(phrase) {
@@ -7,11 +7,15 @@ function optionsFor(input, locale) {
     categories: [
       {
         listLocation: 'tags',
-        header: "<strong>Tags</strong>"
+        header: "<strong>" + localizedCategoryNames.tags + "</strong>"
       },
       {
         listLocation: 'stories',
-        header: "<strong>Stories</strong>"
+        header: "<strong>" + localizedCategoryNames.stories + "</strong>"
+      },
+      {
+        listLocation: 'listings',
+        header: "<strong>" + localizedCategoryNames.listings + "</strong>"
       },
     ],
     requestDelay: 200,
@@ -26,8 +30,8 @@ function optionsFor(input, locale) {
   }
 }
 
-function autocomplete(locale) {
+function autocomplete(locale, localizedCategoryNames) {
   $("[data-behavior='autocomplete']").each(function(index) {
-    $(this).easyAutocomplete(optionsFor(this, locale));
+    $(this).easyAutocomplete(optionsFor(this, locale, localizedCategoryNames));
   })
 }

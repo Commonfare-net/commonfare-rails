@@ -12,3 +12,10 @@ json.tags do
     json.url tag_path(tag, {locale: I18n.locale})
   end
 end
+
+json.listings do
+  json.array!(@listings) do |listing|
+    json.name listing.title
+    json.url listing_path(listing, {locale: I18n.locale})
+  end
+end
