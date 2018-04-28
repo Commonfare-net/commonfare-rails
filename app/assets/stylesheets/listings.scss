@@ -92,6 +92,20 @@
   }
 }
 
+// Style for #edit
+.nested-fields {
+  position: relative;
+  input.image_preview {
+    width: 78%;
+    overflow: hidden;
+  }
+  .remove_fields {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
+}
+
 // Style for _listing
 a.listing-media-container:hover {
   text-decoration: none;

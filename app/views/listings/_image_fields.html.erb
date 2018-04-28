@@ -1,7 +1,5 @@
+<%# style for these fields is set in CSS with class %>
 <div class="nested-fields">
-  <%#= f.association :commoner, as: :hidden %>
-  <%#= f.input :imageable_type, as: :hidden %>
-  <%#= f.input :imageable_id, as: :hidden %>
   <%= f.input :picture, as: :image_preview, input_html: { preview_version: :card_square }, label: false, required: false %>
   <%= link_to_remove_association _('Remove'), f %>
 </div>

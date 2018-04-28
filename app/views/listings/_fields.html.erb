@@ -29,7 +29,7 @@
 
 <div id="images">
   <%= f.simple_fields_for :images do |img| %>
-  <%= render 'image_fields', f: img %>
+    <%= render 'image_fields', f: img %>
   <% end %>
   <div class="links">
     <%= link_to_add_association _('Add image'), f, :images %>

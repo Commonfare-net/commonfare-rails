@@ -87,7 +87,9 @@ class ListingsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def listing_params
       params.require(:listing).permit(:title, :description, :place, :min_price, :max_price, tag_ids: [], images_attributes: [:id, :commoner_id, :picture, :imageable_id, :imageable_type, :picture_cache, :_destroy]).tap do |lp|
-        lp.merge images_attributes: lp[:images_attributes].transform_values! {|v| v.merge(commoner_id: current_user.meta.id)}
+        if lp[:images_attributes].present?
+          lp.merge images_attributes: lp[:images_attributes].transform_values! {|v| v.merge(commoner_id: current_user.meta.id)}
+        end
       end
     end
 
