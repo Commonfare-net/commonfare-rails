@@ -13,7 +13,7 @@ class DiscussionsController < ApplicationController
   # GET /discussions/1
   # GET /discussions/1.json
   def show
-    @messages = Message.where(messageable: @discussion).order(created_at: 'asc')
+    @messages = Message.where(messageable: @discussion).order(created_at: 'asc').includes(:commoner)
     @new_message = @discussion.messages.build(commoner: current_user.meta)
   end
 

@@ -1,5 +1,8 @@
 <div class="row justify-content-center">
   <div class="col-lg-6 col-md-8">
+    <div class="discussion-back mb-2">
+      <%= link_to((_("%{icon} Back to %{group_name}") %{group_name: @group.name, icon: fa_icon('chevron-left fw')}).html_safe, group_path(@group), class: 'btn btn-sm btn-outline-cf') %>
+    </div>
     <div class="discussion-header">
       <h3><%= @discussion.title %></h3>
       <small><%= (_('in %{group_name}') %{group_name: link_to(@group.name, @group)}).html_safe %></small>

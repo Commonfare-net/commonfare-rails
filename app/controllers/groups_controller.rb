@@ -24,7 +24,7 @@ class GroupsController < ApplicationController
     @pending_join_requests = JoinRequest.where(group: @group).pending
     @new_join_request = @group.join_requests.build
 
-    @discussions = Discussion.where(group: @group)
+    @discussions = Discussion.where(group: @group).includes(:messages)
     @new_discussion = @group.discussions.build
   end
 
