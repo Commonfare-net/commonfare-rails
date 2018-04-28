@@ -7,13 +7,30 @@
 <!-- Twitter tags -->
 <meta name="twitter:card" content="summary" />
 <% end %>
-<% content_for :title, (_("Stories with tag %{tag_name}") %{tag_name: @tag.name}) %>
-<div class="row my-4">
-  <div class="col">
-    <h3 class="d-inline mr-3"><%= _("Stories with tag") %></h3>
-    <p class="cf-tags d-inline">
-      <%= link_to @tag.name, tag_path(@tag) %>
-    </p>
+<% content_for :title, (_("Content with tag %{tag_name}") %{tag_name: @tag.name}) %>
+<% if @story_types_and_lists.any? %>
+  <div class="row my-4">
+    <div class="col">
+      <h3 class="d-inline mr-3"><%= _("Stories with tag") %></h3>
+      <p class="cf-tags d-inline">
+        <%= link_to @tag.name, tag_path(@tag) %>
+      </p>
+      <%= render 'stories/types_and_lists', story_types_and_lists: @story_types_and_lists %>
+    </div>
   </div>
-</div>
-<%= render 'stories/types_and_lists', story_types_and_lists: @story_types_and_lists %>
+<% end %>
+<% if @listings.any? %>
+  <div class="row my-4">
+    <div class="col">
+      <h3 class="d-inline mr-3"><%= _("Listings with tag") %></h3>
+      <p class="cf-tags d-inline">
+        <%= link_to @tag.name, tag_path(@tag) %>
+      </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <%= render @listings %>
+    </div>
+  </div>
+<% end %>

@@ -11,5 +11,7 @@ class TagsController < ApplicationController
       good_practice: stories.good_practice.order('created_at DESC').includes(:commoner, :tags, :comments, :images, :translations),
       welfare_provision: stories.welfare_provision.order('created_at DESC').includes(:commoner, :tags, :comments, :images, :translations)
     }
+
+    @listings = @tag.listings.includes(:commoner, :tags, :comments, :images)
   end
 end
