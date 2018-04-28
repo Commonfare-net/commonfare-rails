@@ -8,7 +8,7 @@ class ListingsController < ApplicationController
   before_action :set_listing, except: [:new, :create, :index, :commonplace] # manual load
   authorize_resource :listing # managed by CanCanCan
 
-  before_action :set_commoner, except: [:index, :show]
+  before_action :set_commoner, except: [:index, :commonplace, :show]
 
   # GET /listings
   # GET /listings.json

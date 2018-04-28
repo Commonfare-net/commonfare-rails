@@ -28,4 +28,14 @@ module ListingsHelper
     return conversation_path(conversation_with(listing.commoner)) if conversation_with(listing.commoner).present?
     new_conversation_path(recipient_id: listing.commoner.id, listing_id: listing.id)
   end
+
+  # The listing's author sees only the comments
+  # All the others see the commments after the listing
+  def listing_media_comments_link(listing)
+    if can? :edit, listing
+      listing_comments_path(listing)
+    else
+      listing_path(listing, anchor: 'comments-anchor')
+    end
+  end
 end

@@ -1,29 +1,33 @@
-<%= link_to listing, class: 'listing-media-container' do %>
-<div class="listing-media">
-  <%= image_tag listing_media_image_path(listing), class: 'mr-3' %>
-  <div class="listing-media-body d-flex flex-column">
-    <div class="d-flex flex-row">
-      <div class="listing-media-title">
-        <h5 class="clamp"><%= listing.title %></h5>
+<div class="listing-media-container">
+  <%= link_to listing do %>
+  <div class="listing-media">
+    <%= image_tag listing_media_image_path(listing), class: 'mr-3' %>
+    <div class="listing-media-body d-flex flex-column">
+      <div class="d-flex flex-row">
+        <div class="listing-media-title">
+          <h5 class="clamp"><%= listing.title %></h5>
+        </div>
+        <div class="listing-media-price ml-auto">
+          <h5><%= listing_price(listing) %></h5>
+        </div>
       </div>
-      <div class="listing-media-price ml-auto">
-        <h5><%= listing_price(listing) %></h5>
+      <div class="listing-media-place">
+        <%= fa_icon('map-marker', text: listing.place) %>
       </div>
-    </div>
-    <div class="listing-media-place">
-      <%= fa_icon('map-marker', text: listing.place) %>
-    </div>
-    <div class="listing-media-date-commoner mt-auto">
-      <small class="text-muted">
-        <%= l(listing.created_at.to_date, format: :short) %>,
-        <%= (_('by <strong>%{commoner_name}</strong>') %{commoner_name: listing.commoner.name}).html_safe %>
-      </small>
+      <div class="listing-media-date-commoner mt-auto">
+        <small class="text-muted">
+          <%= l(listing.created_at.to_date, format: :short) %>,
+          <%= (_('by <strong>%{commoner_name}</strong>') %{commoner_name: listing.commoner.name}).html_safe %>
+        </small>
+      </div>
     </div>
   </div>
-</div>
-<div class="listing-media-footer">
-  <div class="listing-media-footer-comments">
-    Other things
+  <div class="listing-media-footer">
+    <div class="listing-media-footer-comments">
+      <%= link_to listing_media_comments_link(listing) do %>
+        <%= fa_icon 'comment-o', text: "#{listing.comments.count} #{n_('Comment', 'Comments', listing.comments.count)}" %>
+      <% end %>
+    </div>
   </div>
+  <% end %>
 </div>
-<% end %>
