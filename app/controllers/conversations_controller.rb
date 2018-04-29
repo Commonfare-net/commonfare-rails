@@ -63,7 +63,7 @@ class ConversationsController < ApplicationController
 
   def first_message
     if @listing.present?
-      (s_('Conversation|Hello %{recipient_name}, I am intersted in %{listing_title}, %{listing_url}, ') %{recipient_name: @recipient.name, listing_title: @listing.title, listing_url: listing_url(@listing)})
+      (s_('Conversation|Hello %{recipient_name}, I am intersted in %{listing_title} ( %{listing_url} ) ') %{recipient_name: @recipient.name, listing_title: @listing.title, listing_url: listing_url(@listing)})
     else
       (s_('Conversation|Hello %{recipient_name}, ') %{recipient_name: @recipient.name})
     end

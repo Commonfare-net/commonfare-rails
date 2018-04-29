@@ -23,13 +23,13 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto navbar-story-links">
       <li class="nav-item active">
-        <%= link_to s_('Navbar|Commoners Voices'), stories_path(filter: :commoners_voice), class: 'nav-link' %>
+        <%= link_to s_('Navbar|Commoners Voices'), stories_path(filter: :commoners_voice), class: 'nav-link nav-item--single-line' %>
       </li>
       <li class="nav-item active">
-        <%= link_to s_('Navbar|Good Practices'), stories_path(filter: :good_practice), class: 'nav-link' %>
+        <%= link_to s_('Navbar|Good Practices'), stories_path(filter: :good_practice), class: 'nav-link nav-item--single-line' %>
       </li>
       <li class="nav-item active">
-        <%= link_to s_('Navbar|Public Benefits'), stories_path(filter: :welfare_provision), class: 'nav-link' %>
+        <%= link_to s_('Navbar|Public Benefits'), stories_path(filter: :welfare_provision), class: 'nav-link nav-item--single-line' %>
       </li>
       <li class="nav-item active">
         <%= link_to s_('Navbar|Commonplace'), commonplace_path, class: 'nav-link'  %>
@@ -50,17 +50,17 @@
       <%= link_to s_('Navbar|Home'), root_path, class: 'nav-link'  %>
     </li>
     <% if user_signed_in? %>
-      <li class="nav-item active">
-        <%= link_to current_user.meta.name, commoner_path(current_user.meta), class: 'nav-link' %>
-      </li>
-      <li class="nav-item">
-        <%= link_to _('Conversations'), conversations_path, class: 'nav-link' %>
-      </li>
-      <li class="nav-item">
-        <%= link_to _('Wallet'), commoner_wallet_path(current_user.meta, current_user.meta.wallet), class: 'nav-link' %>
-      </li>
-      <li class="nav-item">
-        <%= link_to s_('Navbar|Logout'), destroy_user_session_path, class: 'nav-link', method: :delete %>
+      <li class="nav-item dropdown">
+        <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <%= current_user.meta.name %>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <%= link_to _('Profile'), commoner_path(current_user.meta), class: 'dropdown-item' %>
+          <%= link_to _('Wallet'), commoner_wallet_path(current_user.meta, current_user.meta.wallet), class: 'dropdown-item' %>
+          <%= link_to _('Conversations'), conversations_path, class: 'dropdown-item' %>
+          <div class="dropdown-divider"></div>
+          <%= link_to s_('Navbar|Logout'), destroy_user_session_path, class: 'dropdown-item', method: :delete %>
+        </div>
       </li>
     <% else %>
       <li class="nav-item ">

@@ -16,7 +16,7 @@
     </div>
     <% end %>
     <div class="ml-auto p-2 amount">
-      <%= number_to_currency(transaction.amount, precision: 6, locale: I18n.locale, unit: 'cc ') %>
+      <%= number_to_currency(transaction.amount, precision: 6, locale: I18n.locale, unit: 'cc ', strip_insignificant_zeros: true) %>
     </div>
   </div>
   <div class="transaction-details collapse" id="collapseTransaction-<%= transaction.id %>">
