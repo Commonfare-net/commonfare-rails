@@ -1,4 +1,8 @@
 class CommonersController < ApplicationController
+  # This must stay **before** cancan methods, because they do a Commoner.new(commoner_params)
+  # but new tags break it
+  before_action :create_new_tags, only: :update
+
   load_and_authorize_resource
   # before_action :set_commoner, only: [:show, :edit, :update, :destroy]
 
@@ -84,6 +88,21 @@ class CommonersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def commoner_params
-      params.require(:commoner).permit(:name, :avatar, :description)
+      params.require(:commoner).permit(:name, :avatar, :description, tag_ids: [])
+    end
+
+    # This method creates the not-yet-existing tags and replaces
+    # tag_ids with their ids.
+    def create_new_tags
+      if params[:commoner][:tag_ids].present?
+        params[:commoner][:tag_ids].map! do |tag_id|
+          if Tag.exists? tag_id
+            tag_id
+          else
+            new_tag = Tag.create(name: tag_id.downcase)
+            new_tag.id
+          end
+        end
+      end
     end
 end

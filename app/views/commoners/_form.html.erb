@@ -15,11 +15,26 @@
                 required: false,
                 label: _('Description'),
                 placeholder: _('Few words about yourself') %>
+    <%= f.association :tags,
+                      label: _('Interests'),
+                      # placeholder: "Managed in JS",
+                      hint: _('Use comma or press Enter to separate interests') %>
     <%= render 'shared/back_and_save_buttons', f: f, cancel_path: commoner_path(@commoner) %>
 <% end %>
 
 <% content_for :scripts do %>
   <script type="text/javascript">
     autosize($('#commoner_description'));
+    // Select2 for tags
+    $('#commoner_tag_ids').select2({
+      theme: 'bootstrap',
+      placeholder: "<%= _('Skills, services or goods') %>",
+      minimumResultsForSearch: -1,
+      tags: true,
+      tokenSeparators: [',']
+    });
+    $('#commoner_tag_ids').on('select2:select', function (e) {
+      // console.log(data.text);
+    });
   </script>
 <% end %>

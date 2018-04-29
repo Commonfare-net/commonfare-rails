@@ -10,6 +10,8 @@ class Commoner < ApplicationRecord
   has_many :messages, dependent: :destroy
   has_many :wallets, as: :walletable #, dependent: :destroy
   has_many :listings
+  has_and_belongs_to_many :tags
+  alias_method :interests, :tags
 
   # http://guides.rubyonrails.org/association_basics.html#has-many-association-reference
   has_many :sender_conversations,

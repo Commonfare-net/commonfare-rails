@@ -10,6 +10,9 @@
     </div>
   </div>
 </div>
+<% if @commoner.interests.any? %>
+  <%= render 'shared/tags', tags: @commoner.interests %>
+<% end %>
 <% if user_signed_in? && current_user.meta != @commoner %>
   <% if conversation_with(@commoner).present? %>
     <%= link_to(_('Continue conversation'), conversation_path(conversation_with(@commoner)), class: 'btn btn-outline-cf') %>

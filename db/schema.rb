@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180429190312) do
+ActiveRecord::Schema.define(version: 20180429200343) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,6 +51,13 @@ ActiveRecord::Schema.define(version: 20180429190312) do
     t.datetime "updated_at", null: false
     t.string "avatar"
     t.text "description"
+  end
+
+  create_table "commoners_tags", id: false, force: :cascade do |t|
+    t.bigint "commoner_id", null: false
+    t.bigint "tag_id", null: false
+    t.index ["commoner_id", "tag_id"], name: "index_commoners_tags_on_commoner_id_and_tag_id", unique: true
+    t.index ["tag_id", "commoner_id"], name: "index_commoners_tags_on_tag_id_and_commoner_id", unique: true
   end
 
   create_table "conversations", force: :cascade do |t|
