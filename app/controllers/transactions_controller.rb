@@ -5,7 +5,7 @@ class TransactionsController < ApplicationController
 
   def index
     # @transactions = @transactions.order 'created_at DESC'
-    @grouped_transactions = @transactions.order(created_at: :desc).group_by {|t| t.created_at.to_date}
+    @grouped_transactions = @transactions.order(created_at: :desc).includes(:from_wallet, :to_wallet).group_by {|t| t.created_at.to_date}
   end
 
   def show

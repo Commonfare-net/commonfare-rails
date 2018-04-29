@@ -29,11 +29,13 @@
       </div>
     </div>
     <div class="d-flex align-items-top">
-      <div class="transaction-counterpart">
-        <%= link_to commoner_path(counterpart_for_transaction(transaction)) do %>
+      <% if counterpart_for_transaction(transaction).persisted? %>
+        <div class="transaction-counterpart">
+          <%= link_to commoner_path(counterpart_for_transaction(transaction)) do %>
           <%= fa_icon('user fw', text: counterpart_for_transaction(transaction).name) %>
-        <% end %>
-      </div>
+          <% end %>
+        </div>
+      <% end %>
       <div class="transaction-collapse ml-auto" data-toggle="collapse" data-target="#collapseTransaction-<%= transaction.id %>">
         <%= fa_icon('caret-up') %>
       </div>

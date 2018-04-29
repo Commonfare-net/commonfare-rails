@@ -5,11 +5,25 @@
     <p>
       <%= _('Your profile will be permanently removed from Commonfare.net, along with all personal data associated with it, such as your email, password, avatar, etc.') %>
     </p>
+    <h4><%= _('Stories and comments') %></h4>
     <p>
       <%= (_("The stories and comments you have already shared here are part of the commons on Commonfare.net and they could still benefit other Commoners. On deletion of your profile, they will be moved to the account %{archive_commoner}. In this way, they will remain available for others to read but reference to your account will be deleted.") %{archive_commoner: link_to(@archive_commoner.name, commoner_path(@archive_commoner))}).html_safe %>
     </p>
     <p>
       <%= _('Remember that while you have a Commonfare.net account, you can always delete any stories or comments you have posted, so if there is a story or comment you do not want to be made available through the archive, you can go back now and do so before deleting your profile.') %>
+    </p>
+    <h4>Listings and conversations</h4>
+    <p>
+      The listings will be permanently deleted from Commonfare.net along with the related comments.
+      <br>
+      Also the conversations will be permanently deleted from Commonfare.net, and neither you nor the other commoners you have chatted with will be able to get them back.
+    </p>
+    <h4>Wallet and transactions</h4>
+    <p>
+      Your wallet will be emptied and all the coins will be transferred to the Commonfare.net account, that will use them to generate basic income for all the commoners. If you want to give your coins to some other commoner, do it before leaving.
+    </p>
+    <p>
+      All the transactions you have made with other commoners will not be deleted, as each of them must remain visible to the respective counterpart. We will anyway delete any reference to you, so the counterpart will not be able to trace back to you.
     </p>
     <p>
       <%= _(("<em>Both profile deletion and transfer of your content to the Commonfare Archive are irreversible</em> - if you make a new commonfare.net account in the future, you will not be able to reclaim content generated under a cancelled account.")).html_safe %>

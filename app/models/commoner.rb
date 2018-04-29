@@ -7,19 +7,21 @@ class Commoner < ApplicationRecord
   has_many :memberships
   has_many :groups, through: :memberships
   has_many :join_requests
-  has_many :messages
-  has_many :wallets, as: :walletable, dependent: :destroy
+  has_many :messages, dependent: :destroy
+  has_many :wallets, as: :walletable #, dependent: :destroy
   has_many :listings
 
   # http://guides.rubyonrails.org/association_basics.html#has-many-association-reference
   has_many :sender_conversations,
            inverse_of:  :sender,
            class_name:  'Conversation',
-           foreign_key: :sender_id
+           foreign_key: :sender_id,
+           dependent: :destroy
   has_many :recipient_conversations,
           inverse_of:  :recipient,
           class_name:  'Conversation',
-          foreign_key: :recipient_id
+          foreign_key: :recipient_id,
+          dependent: :destroy
 
   def conversations
    Conversation.where(id: sender_conversation_ids)
@@ -29,6 +31,7 @@ class Commoner < ApplicationRecord
 
   after_commit :create_wallet_and_get_income, on: :create
   before_destroy :archive_content
+  before_destroy :empty_wallet_and_give_back
 
   validates :name, presence: true, uniqueness: { case_sensitive: false }
 
@@ -46,6 +49,10 @@ class Commoner < ApplicationRecord
 
   def create_wallet_and_get_income
     Wallet.create(walletable: self, address: Digest::SHA2.hexdigest(self.email + Time.now.to_s))
+  end
+
+  def empty_wallet_and_give_back
+    wallet.empty_and_give_back
   end
 
   def archive_content

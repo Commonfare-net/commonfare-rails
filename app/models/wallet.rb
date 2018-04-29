@@ -19,7 +19,7 @@ class Wallet < ApplicationRecord
   end
 
   after_commit :get_initial_income, on: :create
-  before_destroy :empty_wallet_and_give_back
+  # before_destroy :empty_and_give_back
 
   def refresh_balance
     client = SocialWallet::Client.new(api_endpoint: ENV['SWAPI_ENDPOINT'])
@@ -27,12 +27,21 @@ class Wallet < ApplicationRecord
     update_column(:balance, resp['amount'])
   end
 
+  # Checks if the walletable exists and if not returns a new Commoner,
+  # to be consistent with transactions views
   def holder
+    return Commoner.new(name: _('Unregistered commoner')) if walletable.nil?
     walletable
   end
 
   def to_s
     holder.name
+  end
+
+  def empty_and_give_back
+    client = SocialWallet::Client.new(api_endpoint: ENV['SWAPI_ENDPOINT'])
+    resp = client.transactions.new(from_id: self.address, to_id: '', amount: self.balance.to_f, tags: ['leaving_commoner'])
+    self.refresh_balance
   end
 
   private
@@ -42,8 +51,4 @@ class Wallet < ApplicationRecord
     refresh_balance if resp['amount'] == 10
   end
 
-  def empty_wallet_and_give_back
-    client = SocialWallet::Client.new(api_endpoint: ENV['SWAPI_ENDPOINT'])
-    resp = client.transactions.new(from_id: self.address, to_id: '', amount: self.balance, tags: ['leaving_commoner'])
-  end
 end
