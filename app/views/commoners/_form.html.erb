@@ -11,5 +11,15 @@
                 label: _('Your name on Commonfare.net'),
                 placeholder: _('e.g. Bungo Baggins, pbm42, etc.'),
                 hint: _('It must be unique') %>
+    <%= f.input :description,
+                required: false,
+                label: _('Description'),
+                placeholder: _('Few words about yourself') %>
     <%= render 'shared/back_and_save_buttons', f: f, cancel_path: commoner_path(@commoner) %>
+<% end %>
+
+<% content_for :scripts do %>
+  <script type="text/javascript">
+    autosize($('#commoner_description'));
+  </script>
 <% end %>
