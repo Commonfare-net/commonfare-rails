@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0\n"
 "Report-Msgid-Bugs-To: contact@translation.io\n"
-"POT-Creation-Date: 2018-02-20 12:52+0000\n"
-"PO-Revision-Date: 2018-02-20 13:52+0100\n"
+"POT-Creation-Date: 2018-04-30 21:18+0200\n"
+"PO-Revision-Date: 2018-04-30 21:18+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Italian\n"
 "Language: it\n"
@@ -18,11 +18,11 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "\n"
 
-#: ../app/assets/javascripts/stories.js.erb:24
+#: ../app/assets/javascripts/stories.js.erb:32
 msgid "Attach a file"
 msgstr "Allega un file"
 
-#: ../app/assets/javascripts/stories.js.erb:38
+#: ../app/assets/javascripts/stories.js.erb:46
 msgid "Embed a video"
 msgstr "Incorpora un video"
 
@@ -30,58 +30,150 @@ msgstr "Incorpora un video"
 msgid "You have to log in to continue"
 msgstr "Devi eseguire l’accesso per continuare"
 
-#: ../app/controllers/comments_controller.rb:46
+#: ../app/controllers/comments_controller.rb:49
 msgid "Comment was successfully created."
 msgstr "Il commento è stato creato."
 
-#: ../app/controllers/comments_controller.rb:63
+#: ../app/controllers/comments_controller.rb:66
 msgid "Comment was successfully updated."
 msgstr "Il commento è stato aggiornato."
 
-#: ../app/controllers/comments_controller.rb:78
+#: ../app/controllers/comments_controller.rb:81
 msgid "Comment was successfully destroyed."
 msgstr "Il commento è stato eliminato."
 
-#: ../app/controllers/stories_controller.rb:73
-msgid "Story was successfully created."
-msgstr "La storia è stata creata con successo."
+#: ../app/controllers/conversations_controller.rb:66
+msgid ""
+"Conversation|Hello %{recipient_name}, I am intersted in %{listing_title} ( %{l"
+"isting_url} ) "
+msgstr ""
 
-#: ../app/controllers/stories_controller.rb:98
-msgid "Story was successfully updated."
-msgstr "La storia è stata aggiornata con successo."
+#: ../app/controllers/conversations_controller.rb:68
+msgid "Conversation|Hello %{recipient_name}, "
+msgstr ""
 
-#: ../app/controllers/stories_controller.rb:114
+#: ../app/controllers/discussions_controller.rb:36
+msgid "Discussion was successfully created."
+msgstr ""
+
+#: ../app/controllers/join_requests_controller.rb:34
+msgid "Join request has been accepted."
+msgstr ""
+
+#: ../app/controllers/join_requests_controller.rb:36
+#: ../app/controllers/join_requests_controller.rb:46
+msgid "There has been a problem with this join request"
+msgstr ""
+
+#: ../app/controllers/join_requests_controller.rb:44
+msgid "Join request has been rejected."
+msgstr ""
+
+#: ../app/controllers/messages_controller.rb:38
+msgid "Message sent"
+msgstr ""
+
+#: ../app/controllers/messages_controller.rb:68
+msgid "Message deleted"
+msgstr ""
+
+#: ../app/controllers/stories_controller.rb:133
 msgid "Story was successfully destroyed."
 msgstr "La storia è stata eliminata con successo."
 
-#: ../app/helpers/stories_helper.rb:6
-msgid "+ %{other_tags_count} more"
-msgstr "+ altri %{other_tags_count}"
+#: ../app/controllers/stories_controller.rb:148
+msgid "Could not publish this story"
+msgstr ""
 
-#: ../app/helpers/stories_helper.rb:54
-#: ../app/views/commoners/welcome.html.erb:9
-#: ../app/views/pages/home.html.erb:87
-msgid "Good Practices"
-msgstr "Buone pratiche"
+#: ../app/controllers/stories_controller.rb:207
+msgid "Story was successfully created."
+msgstr "La storia è stata creata con successo."
 
-#: ../app/helpers/stories_helper.rb:56
-#: ../app/views/commoners/welcome.html.erb:9
-#: ../app/views/pages/home.html.erb:88
-msgid "Welfare Provisions"
-msgstr "Misure di welfare"
+#: ../app/controllers/stories_controller.rb:222
+msgid "Story was successfully updated."
+msgstr "La storia è stata aggiornata con successo."
 
-#: ../app/helpers/stories_helper.rb:58 ../app/views/pages/home.html.erb:86
-msgid "Stories"
-msgstr "Storie"
+#: ../app/controllers/transactions_controller.rb:33
+msgid "Transaction successful"
+msgstr ""
 
-#: ../app/helpers/stories_helper.rb:65
+#: ../app/controllers/transactions_controller.rb:38
+msgid "There has been a problem processing the transaction"
+msgstr ""
+
+#: ../app/helpers/application_helper.rb:41
 msgid "You"
 msgstr "Tu"
 
-#: ../app/helpers/stories_helper.rb:67 ../app/helpers/stories_helper.rb:75
-#: ../app/views/stories/_comments.html.erb:23
+#: ../app/helpers/application_helper.rb:43 ../app/helpers/stories_helper.rb:84
 msgid "Anonymous"
 msgstr "Anonimo"
+
+#: ../app/helpers/groups_helper.rb:3
+msgid "Button|Confirm and create profile"
+msgstr ""
+
+#: ../app/helpers/groups_helper.rb:3
+msgid "Button|Create"
+msgstr ""
+
+#: ../app/helpers/pages_helper.rb:10
+msgid "Home title|Commoners Voices"
+msgstr ""
+
+#: ../app/helpers/pages_helper.rb:12
+msgid "Home title|Good Practices"
+msgstr ""
+
+#: ../app/helpers/pages_helper.rb:14
+msgid "Home title|Public Benefits"
+msgstr ""
+
+#: ../app/helpers/pages_helper.rb:21
+msgid "Home text|A collection of stories for, with and by people."
+msgstr ""
+
+#: ../app/helpers/pages_helper.rb:23
+msgid "Home text|Bottom-up initiatives to connect and inspire."
+msgstr ""
+
+#: ../app/helpers/pages_helper.rb:25
+msgid "Home text|Get informed about local welfare provisions."
+msgstr ""
+
+#: ../app/helpers/stories_helper.rb:13
+msgid "+ %{other_tags_count} more"
+msgstr "+ altri %{other_tags_count}"
+
+#: ../app/helpers/stories_helper.rb:74
+#: ../app/views/commoners/welcome.html.erb:9
+msgid "Good Practices"
+msgstr "Buone pratiche"
+
+#: ../app/helpers/stories_helper.rb:76
+#: ../app/views/commoners/welcome.html.erb:9
+msgid "Welfare Provisions"
+msgstr "Misure di welfare"
+
+#: ../app/helpers/stories_helper.rb:78
+msgid "Commoners Voices"
+msgstr ""
+
+#: ../app/helpers/transactions_helper.rb:12
+msgid "No message"
+msgstr ""
+
+#: ../app/models/listing.rb:19
+msgid "ValidationError|doesn't seem to be a valid place"
+msgstr ""
+
+#: ../app/models/transaction.rb:19
+msgid "can't be you"
+msgstr ""
+
+#: ../app/models/wallet.rb:33
+msgid "Unregistered commoner"
+msgstr ""
 
 #: ../app/views/comments/_fields.html.erb:2
 msgid "Add a comment"
@@ -92,15 +184,19 @@ msgid "Comment anonymously"
 msgstr "Commenta in modo anonimo"
 
 #: ../app/views/comments/_list.html.erb:2
+msgid "There are no comments"
+msgstr ""
+
+#: ../app/views/comments/_list.html.erb:2
 #: ../app/views/stories/_comments.html.erb:16
 msgid "There are no comments for this Story"
 msgstr "Non ci sono commenti per questa storia"
 
-#: ../app/views/comments/_list.html.erb:19
+#: ../app/views/comments/_list.html.erb:15
 msgid "Edit comment"
 msgstr "Modifica il commento"
 
-#: ../app/views/comments/_new.html.erb:4
+#: ../app/views/comments/_new.html.erb:2
 msgid "Button|Comment"
 msgstr "Commenta"
 
@@ -109,42 +205,69 @@ msgid "Edit your comment"
 msgstr "Modifica il tuo commento"
 
 #: ../app/views/comments/edit.html.erb:5
-#: ../app/views/stories/_comments.html.erb:34
 msgid "Edit"
 msgstr "Modifica"
+
+#: ../app/views/comments/edit.html.erb:8
+#: ../app/views/discussions/show.html.erb:19
+#: ../app/views/listings/edit.html.erb:16
+#: ../app/views/users/registrations/goodbye.html.erb:39
+msgid "Are you sure?"
+msgstr "Sei sicuro/a?"
 
 #: ../app/views/comments/edit.html.erb:8
 msgid "Delete this comment"
 msgstr "Elimina questo commento"
 
-#: ../app/views/comments/edit.html.erb:8
-#: ../app/views/users/registrations/goodbye.html.erb:25
-msgid "Are you sure?"
-msgstr "Sei sicuro/a?"
-
 #: ../app/views/comments/index.html.erb:4
+#: ../app/views/comments/index.html.erb:10
 msgid "All comments for"
 msgstr "Tutti i comment per"
 
-#: ../app/views/comments/index.html.erb:10
+#: ../app/views/comments/index.html.erb:16
 msgid "All comments by %{commoner_name}"
 msgstr "Tutti i commenti di %{commoner_name}"
 
-#: ../app/views/commoners/_form.html.erb:7
-msgid "Square pictures look better ✨"
-msgstr "Le immagini quadrate hanno un aspetto migliore ✨"
-
-#: ../app/views/commoners/_form.html.erb:11
+#: ../app/views/commoners/_form.html.erb:5
+#: ../app/views/commoners/_form.html.erb:16
 msgid "Your name on Commonfare.net"
 msgstr "Il tuo nome su Commonfare.net"
 
-#: ../app/views/commoners/_form.html.erb:12
+#: ../app/views/commoners/_form.html.erb:6
+#: ../app/views/commoners/_form.html.erb:17
 msgid "e.g. Bungo Baggins, pbm42, etc."
 msgstr "es. Bungo Baggins, pbm42, ecc."
 
-#: ../app/views/commoners/_form.html.erb:13
+#: ../app/views/commoners/_form.html.erb:7
+#: ../app/views/commoners/_form.html.erb:18
 msgid "It must be unique"
 msgstr "Deve essere unico"
+
+#: ../app/views/commoners/_form.html.erb:12
+#: ../app/views/groups/_fields.html.erb:7
+msgid "Square pictures look better ✨"
+msgstr "Le immagini quadrate hanno un aspetto migliore ✨"
+
+#: ../app/views/commoners/_form.html.erb:21
+#: ../app/views/listings/_fields.html.erb:23
+msgid "Description"
+msgstr ""
+
+#: ../app/views/commoners/_form.html.erb:22
+msgid "Few words about yourself"
+msgstr ""
+
+#: ../app/views/commoners/_form.html.erb:24
+msgid "Interests"
+msgstr ""
+
+#: ../app/views/commoners/_form.html.erb:26
+msgid "Use comma or press Enter to separate interests"
+msgstr ""
+
+#: ../app/views/commoners/_form.html.erb:36
+msgid "Skills, services or goods"
+msgstr ""
 
 #: ../app/views/commoners/edit.html.erb:1
 #: ../app/views/commoners/edit.html.erb:4
@@ -155,22 +278,64 @@ msgstr "Modifica profilo"
 msgid "Edit your email or password"
 msgstr "Modifica la tua email o password"
 
-#: ../app/views/commoners/show.html.erb:8
-msgid "Button|Edit profile"
-msgstr "Modifica profilo"
-
 #: ../app/views/commoners/show.html.erb:15
 msgid "%{commoner_name}'s stories"
 msgstr "Storie di %{commoner_name}"
 
-#: ../app/views/commoners/show.html.erb:27
+#: ../app/views/commoners/show.html.erb:19
+msgid "Continue conversation"
+msgstr ""
+
+#: ../app/views/commoners/show.html.erb:21
+msgid "Start a conversation"
+msgstr ""
+
+#: ../app/views/commoners/show.html.erb:24
+msgid "Button|Edit profile"
+msgstr "Modifica profilo"
+
+#: ../app/views/commoners/show.html.erb:32 ../app/views/groups/show.html.erb:31
+#: ../app/views/layouts/_navbar.html.erb:94
+msgid "Stories"
+msgstr "Storie"
+
+#: ../app/views/commoners/show.html.erb:35
+msgid "Groups"
+msgstr ""
+
+#: ../app/views/commoners/show.html.erb:39 ../app/views/groups/show.html.erb:37
+msgid "Requests"
+msgstr ""
+
+#: ../app/views/commoners/show.html.erb:43 ../app/views/groups/show.html.erb:40
+msgid "Activities"
+msgstr ""
+
+#: ../app/views/commoners/show.html.erb:55 ../app/views/groups/show.html.erb:71
 msgid "No stories yet"
 msgstr "Non ci sono storie presenti"
 
-#: ../app/views/commoners/show.html.erb:35 ../app/views/pages/home.html.erb:104
-#: ../app/views/pages/home.html.erb:121 ../app/views/pages/home.html.erb:138
+#: ../app/views/commoners/show.html.erb:63 ../app/views/pages/home.html.erb:85
+#: ../app/views/wallets/show.html.erb:26
 msgid "See all"
 msgstr "Vedi tutte"
+
+#: ../app/views/commoners/show.html.erb:69
+msgid "Button|Start a group"
+msgstr ""
+
+#: ../app/views/commoners/show.html.erb:76
+msgid "No groups"
+msgstr ""
+
+#: ../app/views/commoners/show.html.erb:90
+msgid "No requests"
+msgstr ""
+
+#: ../app/views/commoners/show.html.erb:101
+#: ../app/views/groups/show.html.erb:108
+msgid "Coming soon"
+msgstr ""
 
 #: ../app/views/commoners/welcome.html.erb:1
 #: ../app/views/commoners/welcome.html.erb:4
@@ -235,6 +400,69 @@ msgstr ""
 msgid "Welcome page text|About page"
 msgstr "su di noi"
 
+#: ../app/views/conversations/index.html.erb:1
+#: ../app/views/conversations/index.html.erb:4
+msgid "Title|My conversations"
+msgstr ""
+
+#: ../app/views/conversations/index.html.erb:11
+msgid "No conversations"
+msgstr ""
+
+#: ../app/views/conversations/new.html.erb:1
+#: ../app/views/conversations/new.html.erb:4
+msgid "Title|Start a conversation"
+msgstr ""
+
+#: ../app/views/conversations/new.html.erb:17
+#: ../app/views/messages/_form.html.erb:5
+#: ../app/views/transactions/new.html.erb:16
+msgid "Button|Send"
+msgstr ""
+
+#: ../app/views/conversations/show.html.erb:1
+msgid "Conversation with %{commoner_name}"
+msgstr ""
+
+#: ../app/views/discussions/_discussion.html.erb:6
+msgid "%{last_msg_time}, by"
+msgstr ""
+
+#: ../app/views/discussions/_discussion.html.erb:14
+msgid "message"
+msgid_plural "messages"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../app/views/discussions/new.html.erb:1
+msgid "Title|Start a discussion"
+msgstr ""
+
+#: ../app/views/discussions/new.html.erb:4
+msgid "Title|New discussion in %{group_name}"
+msgstr ""
+
+#: ../app/views/discussions/new.html.erb:8
+#: ../app/views/listings/_fields.html.erb:3
+msgid "Title"
+msgstr ""
+
+#: ../app/views/discussions/new.html.erb:8
+msgid "What's up?"
+msgstr ""
+
+#: ../app/views/discussions/new.html.erb:13
+msgid "Enter the first message"
+msgstr ""
+
+#: ../app/views/discussions/new.html.erb:17
+msgid "Button|Start discussion"
+msgstr ""
+
+#: ../app/views/discussions/show.html.erb:5
+msgid "%{icon} Back to %{group_name}"
+msgstr ""
+
 #: ../app/views/exception_handler/exceptions/show.html.erb:1
 msgid "Error"
 msgstr "Errore"
@@ -252,46 +480,298 @@ msgid "Error code: %{err_code}"
 msgstr "Codice errore: %{err_code}"
 
 #: ../app/views/exception_handler/exceptions/show.html.erb:22
-#: ../app/views/layouts/_footer.html.erb:16
 msgid "Homepage"
 msgstr "Homepage"
 
-#: ../app/views/layouts/_footer.html.erb:25
+#: ../app/views/groups/_group.html.erb:10
+msgid "member"
+msgid_plural "members"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../app/views/groups/edit.html.erb:1 ../app/views/groups/edit.html.erb:4
+msgid "Title|Edit group"
+msgstr ""
+
+#: ../app/views/groups/edit.html.erb:8
+msgid "Title|Edit"
+msgstr ""
+
+#: ../app/views/groups/new.html.erb:1 ../app/views/groups/new.html.erb:4
+msgid "Title|Create group"
+msgstr ""
+
+#: ../app/views/groups/show.html.erb:27
+msgid "Discussions"
+msgstr ""
+
+#: ../app/views/groups/show.html.erb:34
+msgid "Members"
+msgstr ""
+
+#: ../app/views/groups/show.html.erb:47
+msgid "Button|Start a new discussion"
+msgstr ""
+
+#: ../app/views/groups/show.html.erb:54
+msgid "No discussions yet"
+msgstr ""
+
+#: ../app/views/groups/show.html.erb:78
+msgid "Button|Invite member"
+msgstr ""
+
+#: ../app/views/groups/show.html.erb:85
+msgid "No members"
+msgstr ""
+
+#: ../app/views/groups/show.html.erb:98
+msgid "No pending requests"
+msgstr ""
+
+#: ../app/views/join_requests/_form.html.erb:5
+#: ../app/views/pages/home.html.erb:64
+msgid "Button|Join"
+msgstr "Partecipa"
+
+#: ../app/views/join_requests/new.html.erb:1
+#: ../app/views/join_requests/new.html.erb:4
+msgid "Title|Request to join %{group_name}"
+msgstr ""
+
+#: ../app/views/join_requests/new.html.erb:6
+msgid "The group members will review your request"
+msgstr ""
+
+#: ../app/views/join_requests/new.html.erb:12
+msgid "Button|Request to join"
+msgstr ""
+
+#: ../app/views/join_requests/show.html.erb:1
+#: ../app/views/join_requests/show.html.erb:4
+msgid "Title|Join request"
+msgstr ""
+
+#: ../app/views/join_requests/show.html.erb:11
+msgid "Requested on %{date}"
+msgstr ""
+
+#: ../app/views/join_requests/show.html.erb:15
+msgid "Button|Accept"
+msgstr ""
+
+#: ../app/views/join_requests/show.html.erb:20
+msgid "Button|Reject"
+msgstr ""
+
+#: ../app/views/layouts/_footer.html.erb:7
+msgid ""
+"Footer|Commonfare is an idea of welfare based on the valorization of social co"
+"operation. In a time in which precarity, insecurity and loneliness are experie"
+"nced by an increasing amount of people, Commonfare wants to value the power of"
+" social relations and claim back the right to joy."
+msgstr ""
+
+#: ../app/views/layouts/_footer.html.erb:10
+msgid "Footer| For info write at"
+msgstr ""
+
+#: ../app/views/layouts/_footer.html.erb:16
+msgid "Footer|Language"
+msgstr ""
+
+#: ../app/views/layouts/_footer.html.erb:29
 msgid "Footer|About"
 msgstr "About"
 
-#: ../app/views/layouts/_footer.html.erb:26
+#: ../app/views/layouts/_footer.html.erb:30
 msgid "Footer|Terms of Service"
 msgstr "Termini di Servizio"
 
-#: ../app/views/layouts/_footer.html.erb:27
+#: ../app/views/layouts/_footer.html.erb:31
 msgid "Footer|Privacy"
 msgstr "Privacy"
 
 #: ../app/views/layouts/_navbar.html.erb:15
-#: ../app/views/layouts/_navbar.html.erb:27
+#: ../app/views/layouts/_navbar.html.erb:45
 msgid "Search"
 msgstr "Cerca"
 
+#: ../app/views/layouts/_navbar.html.erb:26
+msgid "Navbar|Commoners Voices"
+msgstr ""
+
+#: ../app/views/layouts/_navbar.html.erb:29
+msgid "Navbar|Good Practices"
+msgstr ""
+
 #: ../app/views/layouts/_navbar.html.erb:32
+msgid "Navbar|Public Benefits"
+msgstr ""
+
+#: ../app/views/layouts/_navbar.html.erb:35
+msgid "Navbar|Commonplace"
+msgstr ""
+
+#: ../app/views/layouts/_navbar.html.erb:39
+msgid "Navbar|About"
+msgstr ""
+
+#: ../app/views/layouts/_navbar.html.erb:50
 msgid "Navbar|Home"
 msgstr "Home"
 
-#: ../app/views/layouts/_navbar.html.erb:39
+#: ../app/views/layouts/_navbar.html.erb:58
+msgid "Profile"
+msgstr ""
+
+#: ../app/views/layouts/_navbar.html.erb:60
+msgid "Wallet"
+msgstr ""
+
+#: ../app/views/layouts/_navbar.html.erb:61
+msgid "Conversations"
+msgstr ""
+
+#: ../app/views/layouts/_navbar.html.erb:63
 msgid "Navbar|Logout"
 msgstr "Esci"
 
-#: ../app/views/layouts/_navbar.html.erb:43
+#: ../app/views/layouts/_navbar.html.erb:68
 msgid "Navbar|Login"
 msgstr "Accedi"
 
-#: ../app/views/layouts/_navbar.html.erb:46
+#: ../app/views/layouts/_navbar.html.erb:71
 msgid "Navbar|Join"
 msgstr "Partecipa"
+
+#: ../app/views/layouts/_navbar.html.erb:95
+#: ../app/views/listings/_fields.html.erb:25
+#: ../app/views/stories/_fields.html.erb:17
+msgid "Tags"
+msgstr "Tags"
+
+#: ../app/views/layouts/_navbar.html.erb:96
+#: ../app/views/main/search.html.erb:20
+msgid "Listings"
+msgstr ""
 
 #: ../app/views/layouts/application.html.erb:4
 msgid "Welcome"
 msgstr "Benvenuto/a"
+
+#: ../app/views/listings/_fields.html.erb:6
+msgid "Place"
+msgstr ""
+
+#: ../app/views/listings/_fields.html.erb:11
+msgid "Minimum price (in CC)"
+msgstr ""
+
+#: ../app/views/listings/_fields.html.erb:12
+#: ../app/views/listings/_fields.html.erb:17
+msgid "Specify an amount"
+msgstr ""
+
+#: ../app/views/listings/_fields.html.erb:16
+msgid "Maximum price (in CC)"
+msgstr ""
+
+#: ../app/views/listings/_fields.html.erb:27
+#: ../app/views/stories/_fields.html.erb:19
+msgid "Use comma or press Enter to separate tags"
+msgstr "Utilizza la virgola o premi ‘Invio’ per separare i tag"
+
+#: ../app/views/listings/_fields.html.erb:35
+msgid "Add image"
+msgstr ""
+
+#: ../app/views/listings/_fields.html.erb:48
+msgid "e.g. Lessons, Babysitting, etc."
+msgstr ""
+
+#: ../app/views/listings/_image_fields.html.erb:4
+msgid "Remove"
+msgstr ""
+
+#: ../app/views/listings/_listing.html.erb:20
+#: ../app/views/listings/show.html.erb:41
+msgid "by <strong>%{commoner_name}</strong>"
+msgstr ""
+
+#: ../app/views/listings/_share_modal.html.erb:6
+msgid "Modal title|Share this Listing"
+msgstr ""
+
+#: ../app/views/listings/_share_modal.html.erb:14
+msgid ""
+"Commonfare.net is not linked to any external platform, so to share this listin"
+"g on Facebook, Twitter, etc. you can copy the URL and paste it there."
+msgstr ""
+
+#: ../app/views/listings/_share_modal.html.erb:18
+#: ../app/views/stories/_share_modal.html.erb:18
+msgid "Copy and close"
+msgstr "Copia e chiudi"
+
+#: ../app/views/listings/commonplace.html.erb:9
+msgid "Latest listings"
+msgstr ""
+
+#: ../app/views/listings/commonplace.html.erb:13
+msgid "My Listings"
+msgstr ""
+
+#: ../app/views/listings/commonplace.html.erb:25
+msgid "No Listings yet"
+msgstr ""
+
+#: ../app/views/listings/commonplace.html.erb:35
+msgid "Button|New listing"
+msgstr ""
+
+#: ../app/views/listings/commonplace.html.erb:48
+msgid "No listings"
+msgstr ""
+
+#: ../app/views/listings/edit.html.erb:1 ../app/views/listings/edit.html.erb:4
+msgid "Title|Edit listing"
+msgstr ""
+
+#: ../app/views/listings/edit.html.erb:8
+msgid "Button|Edit listing"
+msgstr ""
+
+#: ../app/views/listings/edit.html.erb:12
+msgid "Delete this listing"
+msgstr ""
+
+#: ../app/views/listings/new.html.erb:1 ../app/views/listings/new.html.erb:4
+msgid "Title|New listing"
+msgstr ""
+
+#: ../app/views/listings/new.html.erb:8
+msgid "Button|Create listing"
+msgstr ""
+
+#: ../app/views/listings/show.html.erb:56
+msgid "Added on %{date}"
+msgstr ""
+
+#: ../app/views/listings/show.html.erb:62 ../app/views/stories/show.html.erb:55
+msgid "Share"
+msgstr ""
+
+#: ../app/views/listings/show.html.erb:114
+msgid "Get in touch"
+msgstr ""
+
+#: ../app/views/listings/show.html.erb:125
+#: ../app/views/stories/show.html.erb:99
+msgid "Comment"
+msgid_plural "Comments"
+msgstr[0] "Commento"
+msgstr[1] "Commenti"
 
 #: ../app/views/main/search.html.erb:1
 msgid "Results for %{search_term}"
@@ -301,9 +781,20 @@ msgstr "Risultati per %{search_term}"
 msgid "Results for '%{search_term}'"
 msgstr "Risultati per ‘%{search_term}’"
 
+#: ../app/views/main/search.html.erb:6
+msgid "Tags with '%{search_term}'"
+msgstr ""
+
 #: ../app/views/pages/about.html.erb:1
 msgid "About"
 msgstr "About"
+
+#: ../app/views/pages/home.html.erb:37
+msgid ""
+"Home carousel text|Commonfare.net is where we share information on existing we"
+"lfare state provisions, support self-organized welfare initiatives, tell stori"
+"es to promote collaboration and develop a complementary economy."
+msgstr ""
 
 #: ../app/views/pages/home.html.erb:37
 msgid ""
@@ -335,9 +826,23 @@ msgstr ""
 " cui raccontiamo storie che promuovono la collaborazione tra le persone. Parte"
 "cipa e unisciti a noi!"
 
-#: ../app/views/pages/home.html.erb:71
-msgid "Button|Join"
-msgstr "Partecipa"
+#: ../app/views/pages/home.html.erb:60
+msgid "Home text|Commonfare.net if for, with, and by people."
+msgstr ""
+
+#: ../app/views/pages/home.html.erb:62
+msgid ""
+"Home text|Do you want to join? You will need only an email address, and we wil"
+"l never use it for other purposes."
+msgstr ""
+
+#: ../app/views/pages/home.html.erb:66
+msgid "Home text|Are you already registered? <strong>%{login_link}</strong>"
+msgstr ""
+
+#: ../app/views/pages/home.html.erb:66
+msgid "Login"
+msgstr ""
 
 #: ../app/views/pages/home.html.erb:74
 msgid "Button|Login"
@@ -366,12 +871,17 @@ msgid "Terms of Service"
 msgstr "Termini di Servizio"
 
 #: ../app/views/shared/_back_and_save_buttons.html.erb:5
+#: ../app/views/transactions/confirm.html.erb:26
 msgid "Button|Cancel"
 msgstr "Annulla"
 
 #: ../app/views/shared/_back_and_save_buttons.html.erb:8
 msgid "Button|Save"
 msgstr "Salva"
+
+#: ../app/views/stories/_builder_content.html.erb:27
+msgid "This story has no content yet"
+msgstr ""
 
 #: ../app/views/stories/_card.html.erb:3 ../app/views/stories/show.html.erb:28
 msgid "Welfare Provision"
@@ -380,6 +890,10 @@ msgstr "Misura di welfare"
 #: ../app/views/stories/_card.html.erb:6 ../app/views/stories/show.html.erb:33
 msgid "Good Practice"
 msgstr "Buona pratica"
+
+#: ../app/views/stories/_card.html.erb:11
+msgid "Draft"
+msgstr ""
 
 #: ../app/views/stories/_comments.html.erb:5
 msgid "Write a comment"
@@ -426,28 +940,29 @@ msgstr "es. Milano, Italia"
 msgid "City, Region, Country"
 msgstr "Città, Provincia, Nazione"
 
-#: ../app/views/stories/_fields.html.erb:17
-msgid "Tags"
-msgstr "Tags"
-
-#: ../app/views/stories/_fields.html.erb:19
-msgid "Use comma or press Enter to separate tags"
-msgstr "Utilizza la virgola o premi ‘Invio’ per separare i tag"
-
 #: ../app/views/stories/_fields.html.erb:21
 msgid "Publish anonymously"
 msgstr "Pubblica in modo anonimo"
 
-#: ../app/views/stories/_fields.html.erb:98
+#: ../app/views/stories/_fields.html.erb:25
+msgid "Publish as a Group"
+msgstr ""
+
+#: ../app/views/stories/_fields.html.erb:28
+#: ../app/views/stories/_fields.html.erb:150
+msgid "Choose one of your groups"
+msgstr ""
+
+#: ../app/views/stories/_fields.html.erb:108
 msgid "Uploading image, please wait..."
 msgstr "Caricamento dell’immagine in corso, attendere per favore…"
 
-#: ../app/views/stories/_fields.html.erb:107
 #: ../app/views/stories/_fields.html.erb:117
+#: ../app/views/stories/_fields.html.erb:127
 msgid "Publish"
 msgstr "Pubblica"
 
-#: ../app/views/stories/_fields.html.erb:129
+#: ../app/views/stories/_fields.html.erb:139
 msgid "e.g. Pregnancy, Food sharing, etc."
 msgstr "es. Gravidanza, Consumo critico, ecc."
 
@@ -467,6 +982,10 @@ msgstr "Città, provincia o nazione della tua storia"
 msgid "Story form button|Share your Story"
 msgstr "Condividi la tua storia"
 
+#: ../app/views/stories/_language_choice.html.erb:2
+msgid "You are writing in"
+msgstr "Stai scrivendo in"
+
 #: ../app/views/stories/_share_modal.html.erb:6
 msgid "Modal title|Share this Story"
 msgstr "Condividi questa storia"
@@ -480,9 +999,19 @@ msgstr ""
 "videre questa storia su Facebook, Twitter, ecc. puoi copiare l'URL e incollarl"
 "o lì."
 
-#: ../app/views/stories/_share_modal.html.erb:18
-msgid "Copy and close"
-msgstr "Copia e chiudi"
+#: ../app/views/stories/builder.html.erb:1 ../app/views/stories/new.html.erb:1
+msgid "Write your Story"
+msgstr "Scrivi la tua storia"
+
+#: ../app/views/stories/builder.html.erb:13
+#: ../app/views/stories/edit.html.erb:34
+msgid "Delete this Story"
+msgstr "Elimina questa storia"
+
+#: ../app/views/stories/builder.html.erb:17
+#: ../app/views/stories/edit.html.erb:38
+msgid "Are you sure? This will delete all the comments as well."
+msgstr "Sei sicuro/a? Questa azione cancellerà anche tutti i commenti."
 
 #: ../app/views/stories/edit.html.erb:1
 msgid "Edit your Story"
@@ -496,33 +1025,25 @@ msgstr "Stai modificando in"
 msgid "You haven't yet saved this Story in %{localised_lang_name}"
 msgstr "Non hai ancora salvato questa storia in %{localised_lang_name}"
 
+#: ../app/views/stories/edit.html.erb:27 ../app/views/stories/new.html.erb:10
+msgid "Story form button|Save"
+msgstr ""
+
 #: ../app/views/stories/edit.html.erb:27
 msgid "Story form button|Edit"
 msgstr "Modifica"
+
+#: ../app/views/stories/edit.html.erb:30 ../app/views/stories/new.html.erb:13
+msgid "Saving..."
+msgstr ""
 
 #: ../app/views/stories/edit.html.erb:30 ../app/views/stories/new.html.erb:24
 msgid "Publishing..."
 msgstr "Pubblicazione in corso…"
 
-#: ../app/views/stories/edit.html.erb:34
-msgid "Delete this Story"
-msgstr "Elimina questa storia"
-
-#: ../app/views/stories/edit.html.erb:38
-msgid "Are you sure? This will delete all the comments as well."
-msgstr "Sei sicuro/a? Questa azione cancellerà anche tutti i commenti."
-
 #: ../app/views/stories/index.html.erb:4
 msgid "Stories by %{author_name}"
 msgstr "Storie di %{author_name}"
-
-#: ../app/views/stories/new.html.erb:1
-msgid "Write your Story"
-msgstr "Scrivi la tua storia"
-
-#: ../app/views/stories/new.html.erb:6
-msgid "You are writing in"
-msgstr "Stai scrivendo in"
 
 #: ../app/views/stories/new.html.erb:21
 msgid "Story form button|Publish"
@@ -532,23 +1053,85 @@ msgstr "Pubblica"
 msgid "Read in %{other_languages}"
 msgstr "Leggi %{other_languages}"
 
-#: ../app/views/stories/show.html.erb:113
+#: ../app/views/stories/show.html.erb:89
 msgid "Button|Share"
 msgstr "Condividi"
 
-#: ../app/views/stories/show.html.erb:124
-msgid "Comment"
-msgid_plural "Comments"
-msgstr[0] "Commento"
-msgstr[1] "Commenti"
-
-#: ../app/views/tags/show.html.erb:5 ../app/views/tags/show.html.erb:10
+#: ../app/views/tags/show.html.erb:5
 msgid "Stories with tag %{tag_name}"
 msgstr "Storie con tag %{tag_name}"
 
-#: ../app/views/tags/show.html.erb:11
+#: ../app/views/tags/show.html.erb:10
+msgid "Content with tag %{tag_name}"
+msgstr ""
+
+#: ../app/views/tags/show.html.erb:14
 msgid "Stories with tag"
 msgstr "Storie con tag"
+
+#: ../app/views/tags/show.html.erb:25
+msgid "Listings with tag"
+msgstr ""
+
+#: ../app/views/transactions/_transaction.html.erb:8
+msgid "Given to <strong>%{name}</strong>"
+msgstr ""
+
+#: ../app/views/transactions/_transaction.html.erb:15
+msgid "Received from <strong>%{name}</strong>"
+msgstr ""
+
+#: ../app/views/transactions/confirm.html.erb:1
+#: ../app/views/transactions/confirm.html.erb:4
+msgid "Title|Confirm transaction"
+msgstr ""
+
+#: ../app/views/transactions/confirm.html.erb:6
+msgid "Send to"
+msgstr ""
+
+#: ../app/views/transactions/confirm.html.erb:11
+msgid "Amount"
+msgstr ""
+
+#: ../app/views/transactions/confirm.html.erb:16
+msgid "Message"
+msgstr ""
+
+#: ../app/views/transactions/confirm.html.erb:29
+msgid "Button|Confirm"
+msgstr ""
+
+#: ../app/views/transactions/index.html.erb:1
+#: ../app/views/transactions/index.html.erb:4
+msgid "Title|All transactions"
+msgstr ""
+
+#: ../app/views/transactions/new.html.erb:1
+#: ../app/views/transactions/new.html.erb:4
+msgid "Title|Send Commoncoins"
+msgstr ""
+
+#: ../app/views/transactions/new.html.erb:9
+#: ../app/views/transactions/new.html.erb:39
+msgid "Bilbo Baggins"
+msgstr ""
+
+#: ../app/views/transactions/new.html.erb:9
+msgid "Name of the commoner"
+msgstr ""
+
+#: ../app/views/transactions/new.html.erb:12
+msgid "Amount (cc)"
+msgstr ""
+
+#: ../app/views/transactions/new.html.erb:15
+msgid "I like your stories!"
+msgstr ""
+
+#: ../app/views/transactions/new.html.erb:15
+msgid "Message (optional)"
+msgstr ""
 
 #: ../app/views/users/passwords/edit.html.erb:1
 #: ../app/views/users/passwords/edit.html.erb:4
@@ -641,7 +1224,11 @@ msgstr ""
 "Il tuo profilo verrà rimosso definitivamente da Commonfare.net, insieme a tutt"
 "i i dati personali ad esso associati, come email, password, avatar, ecc."
 
-#: ../app/views/users/registrations/goodbye.html.erb:9
+#: ../app/views/users/registrations/goodbye.html.erb:8
+msgid "Stories and comments"
+msgstr ""
+
+#: ../app/views/users/registrations/goodbye.html.erb:10
 msgid ""
 "The stories and comments you have already shared here are part of the commons "
 "on Commonfare.net and they could still benefit other Commoners. On deletion of"
@@ -656,7 +1243,7 @@ msgstr ""
 "ponibili per essere letti da altri, ma il riferimento al tuo account verrà eli"
 "minato."
 
-#: ../app/views/users/registrations/goodbye.html.erb:12
+#: ../app/views/users/registrations/goodbye.html.erb:13
 msgid ""
 "Remember that while you have a Commonfare.net account, you can always delete a"
 "ny stories or comments you have posted, so if there is a story or comment you "
@@ -669,7 +1256,7 @@ msgstr ""
 "ellare i contenuti che non vuoi rendere disponibili prima di eliminare il tuo "
 "profilo."
 
-#: ../app/views/users/registrations/goodbye.html.erb:15
+#: ../app/views/users/registrations/goodbye.html.erb:29
 msgid ""
 "<em>Both profile deletion and transfer of your content to the Commonfare Archi"
 "ve are irreversible</em> - if you make a new commonfare.net account in the fut"
@@ -681,11 +1268,11 @@ msgstr ""
 ".net, non potrai più recuperare i contenuti generati con il tuo vecchio accoun"
 "t cancellato."
 
-#: ../app/views/users/registrations/goodbye.html.erb:19
+#: ../app/views/users/registrations/goodbye.html.erb:33
 msgid "Button|I've changed my mind"
 msgstr "Ho cambiato idea"
 
-#: ../app/views/users/registrations/goodbye.html.erb:22
+#: ../app/views/users/registrations/goodbye.html.erb:36
 msgid "Button|Go ahead, cancel my account"
 msgstr "Continua e cancella il mio account"
 
@@ -719,6 +1306,10 @@ msgstr "Registrandoti aderirai ai nostri %{tos} e %{privacy}."
 msgid "Sign up page button|Join Commonfare"
 msgstr "Partecipa a Commonfare"
 
+#: ../app/views/users/registrations/new.html.erb:21
+msgid "Sign up page button|Join and create a group"
+msgstr ""
+
 #: ../app/views/users/sessions/new.html.erb:4
 msgid "Login page header|Log in"
 msgstr "Accedi"
@@ -747,3 +1338,15 @@ msgstr "Accedi"
 #: ../app/views/users/shared/_links.html.erb:6
 msgid "Auth Button title|Sign up"
 msgstr "Registrati"
+
+#: ../app/views/wallets/show.html.erb:1 ../app/views/wallets/show.html.erb:6
+msgid "Title|Social wallet"
+msgstr ""
+
+#: ../app/views/wallets/show.html.erb:8
+msgid "Current balance"
+msgstr ""
+
+#: ../app/views/wallets/show.html.erb:12
+msgid "Button|Send cc"
+msgstr ""

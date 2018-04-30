@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0\n"
 "Report-Msgid-Bugs-To: contact@translation.io\n"
-"POT-Creation-Date: 2018-02-20 12:52+0000\n"
-"PO-Revision-Date: 2018-02-20 13:52+0100\n"
+"POT-Creation-Date: 2018-04-30 21:18+0200\n"
+"PO-Revision-Date: 2018-04-30 21:18+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Dutch\n"
 "Language: nl\n"
@@ -18,11 +18,11 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "\n"
 
-#: ../app/assets/javascripts/stories.js.erb:24
+#: ../app/assets/javascripts/stories.js.erb:32
 msgid "Attach a file"
 msgstr "Voeg een bestand toe"
 
-#: ../app/assets/javascripts/stories.js.erb:38
+#: ../app/assets/javascripts/stories.js.erb:46
 msgid "Embed a video"
 msgstr "Video insluiten"
 
@@ -30,58 +30,150 @@ msgstr "Video insluiten"
 msgid "You have to log in to continue"
 msgstr "Je moet inloggen om door te gaan"
 
-#: ../app/controllers/comments_controller.rb:46
+#: ../app/controllers/comments_controller.rb:49
 msgid "Comment was successfully created."
 msgstr "Reactie is geplaatst."
 
-#: ../app/controllers/comments_controller.rb:63
+#: ../app/controllers/comments_controller.rb:66
 msgid "Comment was successfully updated."
 msgstr "Reactie is gewijzigd."
 
-#: ../app/controllers/comments_controller.rb:78
+#: ../app/controllers/comments_controller.rb:81
 msgid "Comment was successfully destroyed."
 msgstr "Reactie is verwijderd."
 
-#: ../app/controllers/stories_controller.rb:73
-msgid "Story was successfully created."
-msgstr "Verhaal is geplaatst."
+#: ../app/controllers/conversations_controller.rb:66
+msgid ""
+"Conversation|Hello %{recipient_name}, I am intersted in %{listing_title} ( %{l"
+"isting_url} ) "
+msgstr ""
 
-#: ../app/controllers/stories_controller.rb:98
-msgid "Story was successfully updated."
-msgstr "Verhaal is gewijzigd."
+#: ../app/controllers/conversations_controller.rb:68
+msgid "Conversation|Hello %{recipient_name}, "
+msgstr ""
 
-#: ../app/controllers/stories_controller.rb:114
+#: ../app/controllers/discussions_controller.rb:36
+msgid "Discussion was successfully created."
+msgstr ""
+
+#: ../app/controllers/join_requests_controller.rb:34
+msgid "Join request has been accepted."
+msgstr ""
+
+#: ../app/controllers/join_requests_controller.rb:36
+#: ../app/controllers/join_requests_controller.rb:46
+msgid "There has been a problem with this join request"
+msgstr ""
+
+#: ../app/controllers/join_requests_controller.rb:44
+msgid "Join request has been rejected."
+msgstr ""
+
+#: ../app/controllers/messages_controller.rb:38
+msgid "Message sent"
+msgstr ""
+
+#: ../app/controllers/messages_controller.rb:68
+msgid "Message deleted"
+msgstr ""
+
+#: ../app/controllers/stories_controller.rb:133
 msgid "Story was successfully destroyed."
 msgstr "Verhaal is verwijderd."
 
-#: ../app/helpers/stories_helper.rb:6
-msgid "+ %{other_tags_count} more"
-msgstr "+ %{other_tags_count} meer"
+#: ../app/controllers/stories_controller.rb:148
+msgid "Could not publish this story"
+msgstr ""
 
-#: ../app/helpers/stories_helper.rb:54
-#: ../app/views/commoners/welcome.html.erb:9
-#: ../app/views/pages/home.html.erb:87
-msgid "Good Practices"
-msgstr "Goede Voorbeelden"
+#: ../app/controllers/stories_controller.rb:207
+msgid "Story was successfully created."
+msgstr "Verhaal is geplaatst."
 
-#: ../app/helpers/stories_helper.rb:56
-#: ../app/views/commoners/welcome.html.erb:9
-#: ../app/views/pages/home.html.erb:88
-msgid "Welfare Provisions"
-msgstr "Sociale Voorzieningen"
+#: ../app/controllers/stories_controller.rb:222
+msgid "Story was successfully updated."
+msgstr "Verhaal is gewijzigd."
 
-#: ../app/helpers/stories_helper.rb:58 ../app/views/pages/home.html.erb:86
-msgid "Stories"
-msgstr "Verhalen"
+#: ../app/controllers/transactions_controller.rb:33
+msgid "Transaction successful"
+msgstr ""
 
-#: ../app/helpers/stories_helper.rb:65
+#: ../app/controllers/transactions_controller.rb:38
+msgid "There has been a problem processing the transaction"
+msgstr ""
+
+#: ../app/helpers/application_helper.rb:41
 msgid "You"
 msgstr "Van jou"
 
-#: ../app/helpers/stories_helper.rb:67 ../app/helpers/stories_helper.rb:75
-#: ../app/views/stories/_comments.html.erb:23
+#: ../app/helpers/application_helper.rb:43 ../app/helpers/stories_helper.rb:84
 msgid "Anonymous"
 msgstr "Anoniem"
+
+#: ../app/helpers/groups_helper.rb:3
+msgid "Button|Confirm and create profile"
+msgstr ""
+
+#: ../app/helpers/groups_helper.rb:3
+msgid "Button|Create"
+msgstr ""
+
+#: ../app/helpers/pages_helper.rb:10
+msgid "Home title|Commoners Voices"
+msgstr ""
+
+#: ../app/helpers/pages_helper.rb:12
+msgid "Home title|Good Practices"
+msgstr ""
+
+#: ../app/helpers/pages_helper.rb:14
+msgid "Home title|Public Benefits"
+msgstr ""
+
+#: ../app/helpers/pages_helper.rb:21
+msgid "Home text|A collection of stories for, with and by people."
+msgstr ""
+
+#: ../app/helpers/pages_helper.rb:23
+msgid "Home text|Bottom-up initiatives to connect and inspire."
+msgstr ""
+
+#: ../app/helpers/pages_helper.rb:25
+msgid "Home text|Get informed about local welfare provisions."
+msgstr ""
+
+#: ../app/helpers/stories_helper.rb:13
+msgid "+ %{other_tags_count} more"
+msgstr "+ %{other_tags_count} meer"
+
+#: ../app/helpers/stories_helper.rb:74
+#: ../app/views/commoners/welcome.html.erb:9
+msgid "Good Practices"
+msgstr "Goede Voorbeelden"
+
+#: ../app/helpers/stories_helper.rb:76
+#: ../app/views/commoners/welcome.html.erb:9
+msgid "Welfare Provisions"
+msgstr "Sociale Voorzieningen"
+
+#: ../app/helpers/stories_helper.rb:78
+msgid "Commoners Voices"
+msgstr ""
+
+#: ../app/helpers/transactions_helper.rb:12
+msgid "No message"
+msgstr ""
+
+#: ../app/models/listing.rb:19
+msgid "ValidationError|doesn't seem to be a valid place"
+msgstr ""
+
+#: ../app/models/transaction.rb:19
+msgid "can't be you"
+msgstr ""
+
+#: ../app/models/wallet.rb:33
+msgid "Unregistered commoner"
+msgstr ""
 
 #: ../app/views/comments/_fields.html.erb:2
 msgid "Add a comment"
@@ -92,15 +184,19 @@ msgid "Comment anonymously"
 msgstr "Reageer anoniem"
 
 #: ../app/views/comments/_list.html.erb:2
+msgid "There are no comments"
+msgstr ""
+
+#: ../app/views/comments/_list.html.erb:2
 #: ../app/views/stories/_comments.html.erb:16
 msgid "There are no comments for this Story"
 msgstr "Er zijn geen reacties op dit verhaal"
 
-#: ../app/views/comments/_list.html.erb:19
+#: ../app/views/comments/_list.html.erb:15
 msgid "Edit comment"
 msgstr "Bewerk reactie"
 
-#: ../app/views/comments/_new.html.erb:4
+#: ../app/views/comments/_new.html.erb:2
 msgid "Button|Comment"
 msgstr "Reageer"
 
@@ -109,42 +205,69 @@ msgid "Edit your comment"
 msgstr "Bewerk je reactie"
 
 #: ../app/views/comments/edit.html.erb:5
-#: ../app/views/stories/_comments.html.erb:34
 msgid "Edit"
 msgstr "Bewerk"
+
+#: ../app/views/comments/edit.html.erb:8
+#: ../app/views/discussions/show.html.erb:19
+#: ../app/views/listings/edit.html.erb:16
+#: ../app/views/users/registrations/goodbye.html.erb:39
+msgid "Are you sure?"
+msgstr "Weet je het zeker?"
 
 #: ../app/views/comments/edit.html.erb:8
 msgid "Delete this comment"
 msgstr "Verwijder deze reactie"
 
-#: ../app/views/comments/edit.html.erb:8
-#: ../app/views/users/registrations/goodbye.html.erb:25
-msgid "Are you sure?"
-msgstr "Weet je het zeker?"
-
 #: ../app/views/comments/index.html.erb:4
+#: ../app/views/comments/index.html.erb:10
 msgid "All comments for"
 msgstr "Alle reacties op"
 
-#: ../app/views/comments/index.html.erb:10
+#: ../app/views/comments/index.html.erb:16
 msgid "All comments by %{commoner_name}"
 msgstr "Alle reacties van %{commoner_name}"
 
-#: ../app/views/commoners/_form.html.erb:7
-msgid "Square pictures look better ✨"
-msgstr "Vierkante plaatjes zien er beter uit ✨"
-
-#: ../app/views/commoners/_form.html.erb:11
+#: ../app/views/commoners/_form.html.erb:5
+#: ../app/views/commoners/_form.html.erb:16
 msgid "Your name on Commonfare.net"
 msgstr "Jouw naam op Commonfare.net"
 
-#: ../app/views/commoners/_form.html.erb:12
+#: ../app/views/commoners/_form.html.erb:6
+#: ../app/views/commoners/_form.html.erb:17
 msgid "e.g. Bungo Baggins, pbm42, etc."
 msgstr "bijv. Anna Muggen, msc11, etc."
 
-#: ../app/views/commoners/_form.html.erb:13
+#: ../app/views/commoners/_form.html.erb:7
+#: ../app/views/commoners/_form.html.erb:18
 msgid "It must be unique"
 msgstr "Moet uniek zijn"
+
+#: ../app/views/commoners/_form.html.erb:12
+#: ../app/views/groups/_fields.html.erb:7
+msgid "Square pictures look better ✨"
+msgstr "Vierkante plaatjes zien er beter uit ✨"
+
+#: ../app/views/commoners/_form.html.erb:21
+#: ../app/views/listings/_fields.html.erb:23
+msgid "Description"
+msgstr ""
+
+#: ../app/views/commoners/_form.html.erb:22
+msgid "Few words about yourself"
+msgstr ""
+
+#: ../app/views/commoners/_form.html.erb:24
+msgid "Interests"
+msgstr ""
+
+#: ../app/views/commoners/_form.html.erb:26
+msgid "Use comma or press Enter to separate interests"
+msgstr ""
+
+#: ../app/views/commoners/_form.html.erb:36
+msgid "Skills, services or goods"
+msgstr ""
 
 #: ../app/views/commoners/edit.html.erb:1
 #: ../app/views/commoners/edit.html.erb:4
@@ -155,22 +278,64 @@ msgstr "Profiel wijzigen"
 msgid "Edit your email or password"
 msgstr "Wijzig je e-mailadres of wachtwoord"
 
-#: ../app/views/commoners/show.html.erb:8
-msgid "Button|Edit profile"
-msgstr "Bewerk profiel"
-
 #: ../app/views/commoners/show.html.erb:15
 msgid "%{commoner_name}'s stories"
 msgstr "Verhaal van %{commoner_name}"
 
-#: ../app/views/commoners/show.html.erb:27
+#: ../app/views/commoners/show.html.erb:19
+msgid "Continue conversation"
+msgstr ""
+
+#: ../app/views/commoners/show.html.erb:21
+msgid "Start a conversation"
+msgstr ""
+
+#: ../app/views/commoners/show.html.erb:24
+msgid "Button|Edit profile"
+msgstr "Bewerk profiel"
+
+#: ../app/views/commoners/show.html.erb:32 ../app/views/groups/show.html.erb:31
+#: ../app/views/layouts/_navbar.html.erb:94
+msgid "Stories"
+msgstr "Verhalen"
+
+#: ../app/views/commoners/show.html.erb:35
+msgid "Groups"
+msgstr ""
+
+#: ../app/views/commoners/show.html.erb:39 ../app/views/groups/show.html.erb:37
+msgid "Requests"
+msgstr ""
+
+#: ../app/views/commoners/show.html.erb:43 ../app/views/groups/show.html.erb:40
+msgid "Activities"
+msgstr ""
+
+#: ../app/views/commoners/show.html.erb:55 ../app/views/groups/show.html.erb:71
 msgid "No stories yet"
 msgstr "Nog geen verhalen"
 
-#: ../app/views/commoners/show.html.erb:35 ../app/views/pages/home.html.erb:104
-#: ../app/views/pages/home.html.erb:121 ../app/views/pages/home.html.erb:138
+#: ../app/views/commoners/show.html.erb:63 ../app/views/pages/home.html.erb:85
+#: ../app/views/wallets/show.html.erb:26
 msgid "See all"
 msgstr "Bekijk alles"
+
+#: ../app/views/commoners/show.html.erb:69
+msgid "Button|Start a group"
+msgstr ""
+
+#: ../app/views/commoners/show.html.erb:76
+msgid "No groups"
+msgstr ""
+
+#: ../app/views/commoners/show.html.erb:90
+msgid "No requests"
+msgstr ""
+
+#: ../app/views/commoners/show.html.erb:101
+#: ../app/views/groups/show.html.erb:108
+msgid "Coming soon"
+msgstr ""
 
 #: ../app/views/commoners/welcome.html.erb:1
 #: ../app/views/commoners/welcome.html.erb:4
@@ -233,6 +398,69 @@ msgstr ""
 msgid "Welcome page text|About page"
 msgstr "‘Over’ pagina"
 
+#: ../app/views/conversations/index.html.erb:1
+#: ../app/views/conversations/index.html.erb:4
+msgid "Title|My conversations"
+msgstr ""
+
+#: ../app/views/conversations/index.html.erb:11
+msgid "No conversations"
+msgstr ""
+
+#: ../app/views/conversations/new.html.erb:1
+#: ../app/views/conversations/new.html.erb:4
+msgid "Title|Start a conversation"
+msgstr ""
+
+#: ../app/views/conversations/new.html.erb:17
+#: ../app/views/messages/_form.html.erb:5
+#: ../app/views/transactions/new.html.erb:16
+msgid "Button|Send"
+msgstr ""
+
+#: ../app/views/conversations/show.html.erb:1
+msgid "Conversation with %{commoner_name}"
+msgstr ""
+
+#: ../app/views/discussions/_discussion.html.erb:6
+msgid "%{last_msg_time}, by"
+msgstr ""
+
+#: ../app/views/discussions/_discussion.html.erb:14
+msgid "message"
+msgid_plural "messages"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../app/views/discussions/new.html.erb:1
+msgid "Title|Start a discussion"
+msgstr ""
+
+#: ../app/views/discussions/new.html.erb:4
+msgid "Title|New discussion in %{group_name}"
+msgstr ""
+
+#: ../app/views/discussions/new.html.erb:8
+#: ../app/views/listings/_fields.html.erb:3
+msgid "Title"
+msgstr ""
+
+#: ../app/views/discussions/new.html.erb:8
+msgid "What's up?"
+msgstr ""
+
+#: ../app/views/discussions/new.html.erb:13
+msgid "Enter the first message"
+msgstr ""
+
+#: ../app/views/discussions/new.html.erb:17
+msgid "Button|Start discussion"
+msgstr ""
+
+#: ../app/views/discussions/show.html.erb:5
+msgid "%{icon} Back to %{group_name}"
+msgstr ""
+
 #: ../app/views/exception_handler/exceptions/show.html.erb:1
 msgid "Error"
 msgstr "Fout"
@@ -250,46 +478,298 @@ msgid "Error code: %{err_code}"
 msgstr "Foutmelding: %{err_code}"
 
 #: ../app/views/exception_handler/exceptions/show.html.erb:22
-#: ../app/views/layouts/_footer.html.erb:16
 msgid "Homepage"
 msgstr "Homepage"
 
-#: ../app/views/layouts/_footer.html.erb:25
+#: ../app/views/groups/_group.html.erb:10
+msgid "member"
+msgid_plural "members"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../app/views/groups/edit.html.erb:1 ../app/views/groups/edit.html.erb:4
+msgid "Title|Edit group"
+msgstr ""
+
+#: ../app/views/groups/edit.html.erb:8
+msgid "Title|Edit"
+msgstr ""
+
+#: ../app/views/groups/new.html.erb:1 ../app/views/groups/new.html.erb:4
+msgid "Title|Create group"
+msgstr ""
+
+#: ../app/views/groups/show.html.erb:27
+msgid "Discussions"
+msgstr ""
+
+#: ../app/views/groups/show.html.erb:34
+msgid "Members"
+msgstr ""
+
+#: ../app/views/groups/show.html.erb:47
+msgid "Button|Start a new discussion"
+msgstr ""
+
+#: ../app/views/groups/show.html.erb:54
+msgid "No discussions yet"
+msgstr ""
+
+#: ../app/views/groups/show.html.erb:78
+msgid "Button|Invite member"
+msgstr ""
+
+#: ../app/views/groups/show.html.erb:85
+msgid "No members"
+msgstr ""
+
+#: ../app/views/groups/show.html.erb:98
+msgid "No pending requests"
+msgstr ""
+
+#: ../app/views/join_requests/_form.html.erb:5
+#: ../app/views/pages/home.html.erb:64
+msgid "Button|Join"
+msgstr "Registreer"
+
+#: ../app/views/join_requests/new.html.erb:1
+#: ../app/views/join_requests/new.html.erb:4
+msgid "Title|Request to join %{group_name}"
+msgstr ""
+
+#: ../app/views/join_requests/new.html.erb:6
+msgid "The group members will review your request"
+msgstr ""
+
+#: ../app/views/join_requests/new.html.erb:12
+msgid "Button|Request to join"
+msgstr ""
+
+#: ../app/views/join_requests/show.html.erb:1
+#: ../app/views/join_requests/show.html.erb:4
+msgid "Title|Join request"
+msgstr ""
+
+#: ../app/views/join_requests/show.html.erb:11
+msgid "Requested on %{date}"
+msgstr ""
+
+#: ../app/views/join_requests/show.html.erb:15
+msgid "Button|Accept"
+msgstr ""
+
+#: ../app/views/join_requests/show.html.erb:20
+msgid "Button|Reject"
+msgstr ""
+
+#: ../app/views/layouts/_footer.html.erb:7
+msgid ""
+"Footer|Commonfare is an idea of welfare based on the valorization of social co"
+"operation. In a time in which precarity, insecurity and loneliness are experie"
+"nced by an increasing amount of people, Commonfare wants to value the power of"
+" social relations and claim back the right to joy."
+msgstr ""
+
+#: ../app/views/layouts/_footer.html.erb:10
+msgid "Footer| For info write at"
+msgstr ""
+
+#: ../app/views/layouts/_footer.html.erb:16
+msgid "Footer|Language"
+msgstr ""
+
+#: ../app/views/layouts/_footer.html.erb:29
 msgid "Footer|About"
 msgstr "Over"
 
-#: ../app/views/layouts/_footer.html.erb:26
+#: ../app/views/layouts/_footer.html.erb:30
 msgid "Footer|Terms of Service"
 msgstr "Algemene voorwaarden"
 
-#: ../app/views/layouts/_footer.html.erb:27
+#: ../app/views/layouts/_footer.html.erb:31
 msgid "Footer|Privacy"
 msgstr "Privacy"
 
 #: ../app/views/layouts/_navbar.html.erb:15
-#: ../app/views/layouts/_navbar.html.erb:27
+#: ../app/views/layouts/_navbar.html.erb:45
 msgid "Search"
 msgstr "Zoek"
 
+#: ../app/views/layouts/_navbar.html.erb:26
+msgid "Navbar|Commoners Voices"
+msgstr ""
+
+#: ../app/views/layouts/_navbar.html.erb:29
+msgid "Navbar|Good Practices"
+msgstr ""
+
 #: ../app/views/layouts/_navbar.html.erb:32
+msgid "Navbar|Public Benefits"
+msgstr ""
+
+#: ../app/views/layouts/_navbar.html.erb:35
+msgid "Navbar|Commonplace"
+msgstr ""
+
+#: ../app/views/layouts/_navbar.html.erb:39
+msgid "Navbar|About"
+msgstr ""
+
+#: ../app/views/layouts/_navbar.html.erb:50
 msgid "Navbar|Home"
 msgstr "Home"
 
-#: ../app/views/layouts/_navbar.html.erb:39
+#: ../app/views/layouts/_navbar.html.erb:58
+msgid "Profile"
+msgstr ""
+
+#: ../app/views/layouts/_navbar.html.erb:60
+msgid "Wallet"
+msgstr ""
+
+#: ../app/views/layouts/_navbar.html.erb:61
+msgid "Conversations"
+msgstr ""
+
+#: ../app/views/layouts/_navbar.html.erb:63
 msgid "Navbar|Logout"
 msgstr "Uitloggen"
 
-#: ../app/views/layouts/_navbar.html.erb:43
+#: ../app/views/layouts/_navbar.html.erb:68
 msgid "Navbar|Login"
 msgstr "Inloggen"
 
-#: ../app/views/layouts/_navbar.html.erb:46
+#: ../app/views/layouts/_navbar.html.erb:71
 msgid "Navbar|Join"
 msgstr "Registreer"
+
+#: ../app/views/layouts/_navbar.html.erb:95
+#: ../app/views/listings/_fields.html.erb:25
+#: ../app/views/stories/_fields.html.erb:17
+msgid "Tags"
+msgstr "Tags"
+
+#: ../app/views/layouts/_navbar.html.erb:96
+#: ../app/views/main/search.html.erb:20
+msgid "Listings"
+msgstr ""
 
 #: ../app/views/layouts/application.html.erb:4
 msgid "Welcome"
 msgstr "Welkom"
+
+#: ../app/views/listings/_fields.html.erb:6
+msgid "Place"
+msgstr ""
+
+#: ../app/views/listings/_fields.html.erb:11
+msgid "Minimum price (in CC)"
+msgstr ""
+
+#: ../app/views/listings/_fields.html.erb:12
+#: ../app/views/listings/_fields.html.erb:17
+msgid "Specify an amount"
+msgstr ""
+
+#: ../app/views/listings/_fields.html.erb:16
+msgid "Maximum price (in CC)"
+msgstr ""
+
+#: ../app/views/listings/_fields.html.erb:27
+#: ../app/views/stories/_fields.html.erb:19
+msgid "Use comma or press Enter to separate tags"
+msgstr "Gebruik een komma of druk op ‘enter’ om tags te scheiden"
+
+#: ../app/views/listings/_fields.html.erb:35
+msgid "Add image"
+msgstr ""
+
+#: ../app/views/listings/_fields.html.erb:48
+msgid "e.g. Lessons, Babysitting, etc."
+msgstr ""
+
+#: ../app/views/listings/_image_fields.html.erb:4
+msgid "Remove"
+msgstr ""
+
+#: ../app/views/listings/_listing.html.erb:20
+#: ../app/views/listings/show.html.erb:41
+msgid "by <strong>%{commoner_name}</strong>"
+msgstr ""
+
+#: ../app/views/listings/_share_modal.html.erb:6
+msgid "Modal title|Share this Listing"
+msgstr ""
+
+#: ../app/views/listings/_share_modal.html.erb:14
+msgid ""
+"Commonfare.net is not linked to any external platform, so to share this listin"
+"g on Facebook, Twitter, etc. you can copy the URL and paste it there."
+msgstr ""
+
+#: ../app/views/listings/_share_modal.html.erb:18
+#: ../app/views/stories/_share_modal.html.erb:18
+msgid "Copy and close"
+msgstr "Kopieer en sluit"
+
+#: ../app/views/listings/commonplace.html.erb:9
+msgid "Latest listings"
+msgstr ""
+
+#: ../app/views/listings/commonplace.html.erb:13
+msgid "My Listings"
+msgstr ""
+
+#: ../app/views/listings/commonplace.html.erb:25
+msgid "No Listings yet"
+msgstr ""
+
+#: ../app/views/listings/commonplace.html.erb:35
+msgid "Button|New listing"
+msgstr ""
+
+#: ../app/views/listings/commonplace.html.erb:48
+msgid "No listings"
+msgstr ""
+
+#: ../app/views/listings/edit.html.erb:1 ../app/views/listings/edit.html.erb:4
+msgid "Title|Edit listing"
+msgstr ""
+
+#: ../app/views/listings/edit.html.erb:8
+msgid "Button|Edit listing"
+msgstr ""
+
+#: ../app/views/listings/edit.html.erb:12
+msgid "Delete this listing"
+msgstr ""
+
+#: ../app/views/listings/new.html.erb:1 ../app/views/listings/new.html.erb:4
+msgid "Title|New listing"
+msgstr ""
+
+#: ../app/views/listings/new.html.erb:8
+msgid "Button|Create listing"
+msgstr ""
+
+#: ../app/views/listings/show.html.erb:56
+msgid "Added on %{date}"
+msgstr ""
+
+#: ../app/views/listings/show.html.erb:62 ../app/views/stories/show.html.erb:55
+msgid "Share"
+msgstr ""
+
+#: ../app/views/listings/show.html.erb:114
+msgid "Get in touch"
+msgstr ""
+
+#: ../app/views/listings/show.html.erb:125
+#: ../app/views/stories/show.html.erb:99
+msgid "Comment"
+msgid_plural "Comments"
+msgstr[0] "Reactie"
+msgstr[1] "Reacties"
 
 #: ../app/views/main/search.html.erb:1
 msgid "Results for %{search_term}"
@@ -299,9 +779,20 @@ msgstr "Resultaten voor %{search_term}"
 msgid "Results for '%{search_term}'"
 msgstr "Resultaten voor ‘%{search_term}’"
 
+#: ../app/views/main/search.html.erb:6
+msgid "Tags with '%{search_term}'"
+msgstr ""
+
 #: ../app/views/pages/about.html.erb:1
 msgid "About"
 msgstr "Over"
+
+#: ../app/views/pages/home.html.erb:37
+msgid ""
+"Home carousel text|Commonfare.net is where we share information on existing we"
+"lfare state provisions, support self-organized welfare initiatives, tell stori"
+"es to promote collaboration and develop a complementary economy."
+msgstr ""
 
 #: ../app/views/pages/home.html.erb:37
 msgid ""
@@ -333,9 +824,23 @@ msgstr ""
 "n, zelf georganiseerde initiatieven op het gebied van sociale welvaart steuren"
 " en verhalen vertellen om samenwerking te stimuleren. Doe mee!"
 
-#: ../app/views/pages/home.html.erb:71
-msgid "Button|Join"
-msgstr "Registreer"
+#: ../app/views/pages/home.html.erb:60
+msgid "Home text|Commonfare.net if for, with, and by people."
+msgstr ""
+
+#: ../app/views/pages/home.html.erb:62
+msgid ""
+"Home text|Do you want to join? You will need only an email address, and we wil"
+"l never use it for other purposes."
+msgstr ""
+
+#: ../app/views/pages/home.html.erb:66
+msgid "Home text|Are you already registered? <strong>%{login_link}</strong>"
+msgstr ""
+
+#: ../app/views/pages/home.html.erb:66
+msgid "Login"
+msgstr ""
 
 #: ../app/views/pages/home.html.erb:74
 msgid "Button|Login"
@@ -364,12 +869,17 @@ msgid "Terms of Service"
 msgstr "Algemene voorwaarden"
 
 #: ../app/views/shared/_back_and_save_buttons.html.erb:5
+#: ../app/views/transactions/confirm.html.erb:26
 msgid "Button|Cancel"
 msgstr "Annuleer"
 
 #: ../app/views/shared/_back_and_save_buttons.html.erb:8
 msgid "Button|Save"
 msgstr "Bewaar"
+
+#: ../app/views/stories/_builder_content.html.erb:27
+msgid "This story has no content yet"
+msgstr ""
 
 #: ../app/views/stories/_card.html.erb:3 ../app/views/stories/show.html.erb:28
 msgid "Welfare Provision"
@@ -378,6 +888,10 @@ msgstr "Sociale Voorziening"
 #: ../app/views/stories/_card.html.erb:6 ../app/views/stories/show.html.erb:33
 msgid "Good Practice"
 msgstr "Goed Voorbeeld"
+
+#: ../app/views/stories/_card.html.erb:11
+msgid "Draft"
+msgstr ""
 
 #: ../app/views/stories/_comments.html.erb:5
 msgid "Write a comment"
@@ -424,28 +938,29 @@ msgstr "bijv. Rotterdam, Nederland"
 msgid "City, Region, Country"
 msgstr "Stad, Provincie, Land"
 
-#: ../app/views/stories/_fields.html.erb:17
-msgid "Tags"
-msgstr "Tags"
-
-#: ../app/views/stories/_fields.html.erb:19
-msgid "Use comma or press Enter to separate tags"
-msgstr "Gebruik een komma of druk op ‘enter’ om tags te scheiden"
-
 #: ../app/views/stories/_fields.html.erb:21
 msgid "Publish anonymously"
 msgstr "Publiceer anoniem"
 
-#: ../app/views/stories/_fields.html.erb:98
+#: ../app/views/stories/_fields.html.erb:25
+msgid "Publish as a Group"
+msgstr ""
+
+#: ../app/views/stories/_fields.html.erb:28
+#: ../app/views/stories/_fields.html.erb:150
+msgid "Choose one of your groups"
+msgstr ""
+
+#: ../app/views/stories/_fields.html.erb:108
 msgid "Uploading image, please wait..."
 msgstr "Afbeelding uploaden, even geduld…"
 
-#: ../app/views/stories/_fields.html.erb:107
 #: ../app/views/stories/_fields.html.erb:117
+#: ../app/views/stories/_fields.html.erb:127
 msgid "Publish"
 msgstr "Plaats je verhaal"
 
-#: ../app/views/stories/_fields.html.erb:129
+#: ../app/views/stories/_fields.html.erb:139
 msgid "e.g. Pregnancy, Food sharing, etc."
 msgstr "bijv. Zwangerschap, gratis internet, etc."
 
@@ -465,6 +980,10 @@ msgstr "De stad, provincie of het land waar jouw verhaal plaatsvindt"
 msgid "Story form button|Share your Story"
 msgstr "Deel je Verhaal"
 
+#: ../app/views/stories/_language_choice.html.erb:2
+msgid "You are writing in"
+msgstr "Je schrijft in het"
+
 #: ../app/views/stories/_share_modal.html.erb:6
 msgid "Modal title|Share this Story"
 msgstr "Deel dit verhaal"
@@ -477,9 +996,19 @@ msgstr ""
 "Commonfare.net is niet gekoppeld aan een extern platform, dus om dit verhaal t"
 "e delen op Facebook, Twitter, etc., kan je de URL kopiëren en daar plakken."
 
-#: ../app/views/stories/_share_modal.html.erb:18
-msgid "Copy and close"
-msgstr "Kopieer en sluit"
+#: ../app/views/stories/builder.html.erb:1 ../app/views/stories/new.html.erb:1
+msgid "Write your Story"
+msgstr "Schrijf je Verhaal"
+
+#: ../app/views/stories/builder.html.erb:13
+#: ../app/views/stories/edit.html.erb:34
+msgid "Delete this Story"
+msgstr "Verwijder dit verhaal"
+
+#: ../app/views/stories/builder.html.erb:17
+#: ../app/views/stories/edit.html.erb:38
+msgid "Are you sure? This will delete all the comments as well."
+msgstr "Weet je het zeker? Ook alle reacties worden verwijderd."
 
 #: ../app/views/stories/edit.html.erb:1
 msgid "Edit your Story"
@@ -493,33 +1022,25 @@ msgstr "Je bewerkt in het"
 msgid "You haven't yet saved this Story in %{localised_lang_name}"
 msgstr "Je hebt dit verhaal nog niet opgeslagen in het %{localised_lang_name}"
 
+#: ../app/views/stories/edit.html.erb:27 ../app/views/stories/new.html.erb:10
+msgid "Story form button|Save"
+msgstr ""
+
 #: ../app/views/stories/edit.html.erb:27
 msgid "Story form button|Edit"
 msgstr "Bewerk"
+
+#: ../app/views/stories/edit.html.erb:30 ../app/views/stories/new.html.erb:13
+msgid "Saving..."
+msgstr ""
 
 #: ../app/views/stories/edit.html.erb:30 ../app/views/stories/new.html.erb:24
 msgid "Publishing..."
 msgstr "Een momentje…"
 
-#: ../app/views/stories/edit.html.erb:34
-msgid "Delete this Story"
-msgstr "Verwijder dit verhaal"
-
-#: ../app/views/stories/edit.html.erb:38
-msgid "Are you sure? This will delete all the comments as well."
-msgstr "Weet je het zeker? Ook alle reacties worden verwijderd."
-
 #: ../app/views/stories/index.html.erb:4
 msgid "Stories by %{author_name}"
 msgstr "Verhalen van %{author_name}"
-
-#: ../app/views/stories/new.html.erb:1
-msgid "Write your Story"
-msgstr "Schrijf je Verhaal"
-
-#: ../app/views/stories/new.html.erb:6
-msgid "You are writing in"
-msgstr "Je schrijft in het"
 
 #: ../app/views/stories/new.html.erb:21
 msgid "Story form button|Publish"
@@ -529,23 +1050,85 @@ msgstr "Publiceren"
 msgid "Read in %{other_languages}"
 msgstr "Lees in het %{other_languages}"
 
-#: ../app/views/stories/show.html.erb:113
+#: ../app/views/stories/show.html.erb:89
 msgid "Button|Share"
 msgstr "Deel"
 
-#: ../app/views/stories/show.html.erb:124
-msgid "Comment"
-msgid_plural "Comments"
-msgstr[0] "Reactie"
-msgstr[1] "Reacties"
-
-#: ../app/views/tags/show.html.erb:5 ../app/views/tags/show.html.erb:10
+#: ../app/views/tags/show.html.erb:5
 msgid "Stories with tag %{tag_name}"
 msgstr "Verhalen met de tag %{tag_name}"
 
-#: ../app/views/tags/show.html.erb:11
+#: ../app/views/tags/show.html.erb:10
+msgid "Content with tag %{tag_name}"
+msgstr ""
+
+#: ../app/views/tags/show.html.erb:14
 msgid "Stories with tag"
 msgstr "Verhalen met de tag"
+
+#: ../app/views/tags/show.html.erb:25
+msgid "Listings with tag"
+msgstr ""
+
+#: ../app/views/transactions/_transaction.html.erb:8
+msgid "Given to <strong>%{name}</strong>"
+msgstr ""
+
+#: ../app/views/transactions/_transaction.html.erb:15
+msgid "Received from <strong>%{name}</strong>"
+msgstr ""
+
+#: ../app/views/transactions/confirm.html.erb:1
+#: ../app/views/transactions/confirm.html.erb:4
+msgid "Title|Confirm transaction"
+msgstr ""
+
+#: ../app/views/transactions/confirm.html.erb:6
+msgid "Send to"
+msgstr ""
+
+#: ../app/views/transactions/confirm.html.erb:11
+msgid "Amount"
+msgstr ""
+
+#: ../app/views/transactions/confirm.html.erb:16
+msgid "Message"
+msgstr ""
+
+#: ../app/views/transactions/confirm.html.erb:29
+msgid "Button|Confirm"
+msgstr ""
+
+#: ../app/views/transactions/index.html.erb:1
+#: ../app/views/transactions/index.html.erb:4
+msgid "Title|All transactions"
+msgstr ""
+
+#: ../app/views/transactions/new.html.erb:1
+#: ../app/views/transactions/new.html.erb:4
+msgid "Title|Send Commoncoins"
+msgstr ""
+
+#: ../app/views/transactions/new.html.erb:9
+#: ../app/views/transactions/new.html.erb:39
+msgid "Bilbo Baggins"
+msgstr ""
+
+#: ../app/views/transactions/new.html.erb:9
+msgid "Name of the commoner"
+msgstr ""
+
+#: ../app/views/transactions/new.html.erb:12
+msgid "Amount (cc)"
+msgstr ""
+
+#: ../app/views/transactions/new.html.erb:15
+msgid "I like your stories!"
+msgstr ""
+
+#: ../app/views/transactions/new.html.erb:15
+msgid "Message (optional)"
+msgstr ""
 
 #: ../app/views/users/passwords/edit.html.erb:1
 #: ../app/views/users/passwords/edit.html.erb:4
@@ -639,7 +1222,11 @@ msgstr ""
 "onlijke gegevens die eraan zijn gekoppeld, zoals je e-mailadres, wachtwoord, a"
 "vatar, etc."
 
-#: ../app/views/users/registrations/goodbye.html.erb:9
+#: ../app/views/users/registrations/goodbye.html.erb:8
+msgid "Stories and comments"
+msgstr ""
+
+#: ../app/views/users/registrations/goodbye.html.erb:10
 msgid ""
 "The stories and comments you have already shared here are part of the commons "
 "on Commonfare.net and they could still benefit other Commoners. On deletion of"
@@ -653,7 +1240,7 @@ msgstr ""
 "Op deze manier blijven ze beschikbaar voor anderen, maar zijn ze niet meer aan"
 " jouw profiel gelinkt."
 
-#: ../app/views/users/registrations/goodbye.html.erb:12
+#: ../app/views/users/registrations/goodbye.html.erb:13
 msgid ""
 "Remember that while you have a Commonfare.net account, you can always delete a"
 "ny stories or comments you have posted, so if there is a story or comment you "
@@ -665,7 +1252,7 @@ msgstr ""
 "haal of opmerking is die je niet via het archief beschikbaar wilt stellen, kan"
 " je nu teruggaan en dat doen voordat je je profiel verwijdert."
 
-#: ../app/views/users/registrations/goodbye.html.erb:15
+#: ../app/views/users/registrations/goodbye.html.erb:29
 msgid ""
 "<em>Both profile deletion and transfer of your content to the Commonfare Archi"
 "ve are irreversible</em> - if you make a new commonfare.net account in the fut"
@@ -676,11 +1263,11 @@ msgstr ""
 "omkeerbaar </ em> - als je in de toekomst een nieuw profiel op commonfare.net "
 "aanmaakt, kan je jouw oude verhalen en reacties niet terugkrijgen. "
 
-#: ../app/views/users/registrations/goodbye.html.erb:19
+#: ../app/views/users/registrations/goodbye.html.erb:33
 msgid "Button|I've changed my mind"
 msgstr "Ik ben van gedachten veranderd"
 
-#: ../app/views/users/registrations/goodbye.html.erb:22
+#: ../app/views/users/registrations/goodbye.html.erb:36
 msgid "Button|Go ahead, cancel my account"
 msgstr "Ga door, annuleer mijn account"
 
@@ -714,6 +1301,10 @@ msgstr "Door te registreren ga je akkoord met onze %{tos} en %{privacy}."
 msgid "Sign up page button|Join Commonfare"
 msgstr "Registreer op Commonfare"
 
+#: ../app/views/users/registrations/new.html.erb:21
+msgid "Sign up page button|Join and create a group"
+msgstr ""
+
 #: ../app/views/users/sessions/new.html.erb:4
 msgid "Login page header|Log in"
 msgstr "Inloggen"
@@ -742,3 +1333,15 @@ msgstr "Inloggen"
 #: ../app/views/users/shared/_links.html.erb:6
 msgid "Auth Button title|Sign up"
 msgstr "Registreren"
+
+#: ../app/views/wallets/show.html.erb:1 ../app/views/wallets/show.html.erb:6
+msgid "Title|Social wallet"
+msgstr ""
+
+#: ../app/views/wallets/show.html.erb:8
+msgid "Current balance"
+msgstr ""
+
+#: ../app/views/wallets/show.html.erb:12
+msgid "Button|Send cc"
+msgstr ""
