@@ -1,23 +1,26 @@
+<% content_for :title, @commoner.name %>
 <div class="row justify-content-center">
   <div class="col-md-10 col-lg-10">
-    <% content_for :title, @commoner.name %>
     <div class="row commoner-header pt-4 bg-white">
       <div class="col-lg-9 commoner-profile">
         <%= image_tag @commoner.avatar.profile, class: 'mb-1' %>
-        <p><%= @commoner.name %></p>
+        <div>
+          <p class="commoner-name"><%= @commoner.name %></p>
+          <p><%= @commoner.description %></p>
+          <% if @commoner.interests.any? %>
+            <%= render 'shared/tags', tags: @commoner.interests %>
+          <% end %>
+        </div>
         <!-- The edit-profile should be an icon -->
       </div>
-      <% if @commoner.interests.any? %>
-        <%= render 'shared/tags', tags: @commoner.interests %>
-      <% end %>
-      <% if user_signed_in? && current_user.meta != @commoner %>
-        <% if conversation_with(@commoner).present? %>
-          <%= link_to(_('Continue conversation'), conversation_path(conversation_with(@commoner)), class: 'btn btn-outline-cf') %>
-        <% else %>
-          <%= link_to(_('Start a conversation'), new_conversation_path(recipient_id: @commoner.id), class: 'btn btn-outline-cf') %>
+      <div class="col-lg-3 commoner-actions">
+        <% if user_signed_in? && current_user.meta != @commoner %>
+          <% if conversation_with(@commoner).present? %>
+            <%= link_to(_('Continue conversation'), conversation_path(conversation_with(@commoner)), class: 'btn btn-outline-cf') %>
+          <% else %>
+            <%= link_to(_('Start a conversation'), new_conversation_path(recipient_id: @commoner.id), class: 'btn btn-outline-cf') %>
+          <% end %>
         <% end %>
-      <% end %>
-      <div class="col-lg-3 text-right">
         <%= link_to s_('Button|Edit profile'), edit_commoner_path(@commoner), class: 'btn btn-outline-cf edit-profile' if can? :edit, @commoner %>
       </div>
     </div>

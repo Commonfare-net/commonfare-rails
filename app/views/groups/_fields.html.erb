@@ -6,3 +6,9 @@
             label: false,
             hint: _('Square pictures look better ✨'),
             wrapper: :vertical_file_input %>
+
+<% content_for :scripts do %>
+  <script type="text/javascript">
+    autosize($('#group_description'));
+  </script>
+<% end %>

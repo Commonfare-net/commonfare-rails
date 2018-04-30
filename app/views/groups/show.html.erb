@@ -1,12 +1,19 @@
 <%= content_for :title, @group.name %>
 <div class="row justify-content-center">
   <div class="col">
-    <div class="row group-profile">
-      <%= render 'group', group: @group %>
-      <p><%= @group.description %></p>
-      <% if can? :create, @new_join_request %>
+    <div class="row group-header pt-4 bg-white">
+      <div class="col-md-9 group-profile">
+        <%= image_tag @group.avatar.profile, class: 'mb-1' %>
+        <div>
+          <p class="group-name"><%= @group.name %></p>
+          <p><%= @group.description %></p>
+        </div>
+      </div>
+      <div class="col-md-3 group-actions">
+        <%# if can? :create, @new_join_request %>
         <%= link_to 'Join this group', new_group_join_request_path(@group), class: 'btn btn-cf' %>
-      <% end %>
+        <%# end %>
+      </div>
     </div>
     <div class="row">
       <div class="col">

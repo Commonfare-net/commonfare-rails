@@ -7,7 +7,25 @@
   background-color: $white;
   padding-top: 2rem;
   padding-bottom: 25px;
+  p.group-name {
+    font-weight: 500;
+    font-size: 2.17em;
+    padding-top: 10px;
+  }
+  img {
+    @extend .rounded-circle;
+    margin-right: 20px;
+    border: 1px solid $lightgreen;
+    height: 100px;
+  }
 }
+
+.group-actions {
+  @extend .text-right;
+  padding-top: 2rem;
+  padding-bottom: 25px;
+}
+
 .group-media {
   background-color: $white;
   box-shadow: 0 1px 4px -2px rgba(0, 0, 0, 0.35);
@@ -18,5 +36,28 @@
     .rounded-circle {
       border: 1px solid $lightgreen;
     }
+  }
+}
+
+@media screen and (max-width: 991px) {
+
+}
+
+@media screen and (max-width: 767px) {
+  .group-profile {
+    flex-direction: column;
+    padding-bottom: 0;
+    img {
+      width: 96px;
+      margin: auto;
+    }
+    p {
+      text-align: center;
+      padding-top: 0;
+    }
+  }
+  .group-actions {
+    text-align: center !important;
+    padding-top: 0;
   }
 }

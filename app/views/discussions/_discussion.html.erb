@@ -3,7 +3,8 @@
     <div class="col col-lg-10">
       <h5 class="mt-2 mb-0"><%= link_to discussion.title, group_discussion_path(discussion.group, discussion) %></h5>
       <small>
-        <span class="text-muted">{MMM DD}, by</span> {AUTHOR}
+        <span class="text-muted"><%= _('%{last_msg_time}, by') %{last_msg_time: last_message_time(discussion.messages.last)} %></span>
+        <%= discussion.messages.last.author.name %>
       </small>
     </div>
     <div class="col col-lg-2 comments">

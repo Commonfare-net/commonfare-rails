@@ -13,22 +13,30 @@
 .commoner-header {
   padding-bottom: 1em;
 }
+
 .commoner-profile {
   position: relative;
   display: flex;
   // @extend .text-center;
-  p {
+  p.commoner-name {
     font-weight: 500;
     font-size: 2.17em;
     padding-top: 10px;
   }
   img {
-    margin-right: 20px;
     @extend .rounded-circle;
+    margin-right: 20px;
     border: 1px solid $lightgreen;
+    height: 100px;
   }
   .edit-profile {
   }
+}
+
+.commoner-actions {
+  @extend .text-right;
+  padding-top: 2rem;
+  padding-bottom: 25px;
 }
 
 .commoner-media {
@@ -48,9 +56,16 @@
   }
 }
 
-@media screen and (max-width: 800px){
+@media screen and (max-width: 991px) {
+  .commoner-actions {
+    text-align: center !important;
+    padding-bottom: 0;
+    padding-top: 0;
+  }
+}
+
+@media screen and (max-width: 767px) {
   .commoner-profile {
-  // @extend .text-center;
     flex-direction: column;
     img {
       width: 96px;
@@ -59,11 +74,6 @@
     p {
       text-align: center;
       padding-top: 0;
-    }
-  }
-  .commoner-header {
-    .text-right {
-      text-align: center !important;
     }
   }
 }
