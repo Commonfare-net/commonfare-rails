@@ -29,6 +29,7 @@ class CommonersController < ApplicationController
       good_practice: @stories.good_practice.order('created_at DESC').first(6),
       welfare_provision: @stories.welfare_provision.order('created_at DESC').first(6)
     }
+    @join_requests = JoinRequest.where(commoner: @commoner).includes(:group)
   end
 
   # GET /commoners/new

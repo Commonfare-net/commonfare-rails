@@ -57,9 +57,7 @@
           <% end %>
           <div class="tab-pane fade <%= 'show active' if cannot? :create, @new_discussion %>" id="pills-stories" role="tabpanel" aria-labelledby="pills-stories-tab">
             <% if @group_stories.any? %>
-              <% @group_stories.each do |story| %>
-                <%= render 'stories/story', story: story %>
-              <% end %>
+              <%= render partial: 'stories/story', collection: @group_stories, as: :story %>
             <% else %>
             <%# if @story_types_and_lists.any? %>
             <%#= render 'stories/types_and_lists', story_types_and_lists: @story_types_and_lists %>
@@ -76,9 +74,7 @@
           <div class="tab-pane fade" id="pills-members" role="tabpanel" aria-labelledby="pills-members-tab">
             <%= link_to s_('Button|Invite member'), '#', class: 'btn btn-cf btn-block' if can? :create, JoinRequest  %>
             <% if @members.any? %>
-              <% @members.each do |member| %>
-                <%= render 'commoners/commoner', commoner: member %>
-              <% end %>
+              <%= render partial: 'commoners/commoner', collection: @members, as: :commoner %>
             <% else %>
             <div class="row justify-content-center">
               <div class="col text-center">
@@ -91,9 +87,7 @@
           </div>
           <div class="tab-pane fade" id="pills-requests" role="tabpanel" aria-labelledby="pills-requests-tab">
             <% if @pending_join_requests.any? %>
-              <% @pending_join_requests.each do |join_request| %>
-                <p><%= link_to join_request.commoner.name, join_request %>, <%= join_request.aasm_state %></p>
-              <% end %>
+              <%= render partial: 'join_requests/join_request', collection: @pending_join_requests, as: :join_request %>
             <% else %>
             <div class="row justify-content-center">
               <div class="col text-center">
@@ -108,7 +102,7 @@
             <div class="row justify-content-center">
               <div class="col text-center">
                 <h3 class="text-muted">
-                  <%= _("No activities yet") %>
+                  <%= _("Coming soon") %>
                 </h3>
               </div>
             </div>

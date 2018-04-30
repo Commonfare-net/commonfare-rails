@@ -7,7 +7,7 @@
         <div class="wallet-balance">
           <h6><%= _('Current balance') %></h6>
           <h1><%= number_to_currency(@wallet.balance || 0, precision: 6, locale: I18n.locale, unit: 'cc ') %></h1>
-          <small class="text-muted">{Next payment expected on date: --/--/----}</small>
+          <!-- <small class="text-muted">{Next payment expected on date: --/--/----}</small> -->
         </div>
         <p><%= link_to s_('Button|Send cc'), new_commoner_transaction_path(@commoner), class: 'btn btn-outline-cf' %></p>
       </div>

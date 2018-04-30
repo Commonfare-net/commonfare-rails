@@ -1,0 +1,14 @@
+<%= link_to join_request, class: 'join-request-card' do %>
+<div class="join-request-media mt-3 mb-3">
+    <%= image_tag join_request_image_path(join_request), class: 'rounded-circle mr-3' %>
+  <div class="media-body">
+    <h5 class="mt-2 mb-0"><%= join_request_title(join_request) %></h5>
+    <small class="text-muted">
+      <%= join_request_description(join_request) %>
+    </small>
+  </div>
+  <div class="join-request-status">
+    <%= join_request_status_icon(join_request) %>
+  </div>
+</div>
+<% end %>

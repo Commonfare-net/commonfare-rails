@@ -6,7 +6,7 @@ class Commoner < ApplicationRecord
   has_many :comments
   has_many :memberships
   has_many :groups, through: :memberships
-  has_many :join_requests
+  has_many :join_requests, dependent: :destroy
   has_many :messages, dependent: :destroy
   has_many :wallets, as: :walletable #, dependent: :destroy
   has_many :listings
@@ -32,10 +32,10 @@ class Commoner < ApplicationRecord
   end
 
   # NOTE: uncomment to enable wallet
-  # after_commit :create_wallet_and_get_income, on: :create
+  after_commit :create_wallet_and_get_income, on: :create
   before_destroy :archive_content
   # NOTE: uncomment to enable wallet
-  # before_destroy :empty_wallet_and_give_back
+  before_destroy :empty_wallet_and_give_back
 
   validates :name, presence: true, uniqueness: { case_sensitive: false }
 

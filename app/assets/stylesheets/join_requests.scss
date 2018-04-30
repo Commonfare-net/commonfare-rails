@@ -1,3 +1,20 @@
 // Place all the styles related to the JoinRequests controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+a.join-request-card {
+  color: black;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.join-request-media {
+  @extend .media;
+  background-color: $white;
+  box-shadow: 0 1px 4px -2px rgba(0, 0, 0, 0.35);
+  padding: .5rem;
+}
+
+.join-request-status {
+  font-size: 2.3rem;
+}

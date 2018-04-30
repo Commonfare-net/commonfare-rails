@@ -47,9 +47,7 @@
         <div class="tab-content" id="pills-tabContent">
           <div class="tab-pane fade show active" id="pills-stories" role="tabpanel" aria-labelledby="pills-stories-tab">
             <% if @stories.any? %>
-              <% @stories.each do |story| %>
-                <%= render 'stories/story', story: story %>
-              <% end %>
+              <%= render partial: 'stories/story', collection: @stories, as: :story %>
             <% else %>
             <div class="row justify-content-center">
               <div class="col text-center">
@@ -70,7 +68,7 @@
           <div class="tab-pane fade" id="pills-groups" role="tabpanel" aria-labelledby="pills-groups-tab">
             <%= link_to s_('Button|Start a group'), new_group_path, class: 'btn btn-cf btn-block' if can? :create, Group  %>
             <% if @commoner.groups.any? %>
-            <%= render @commoner.groups %>
+              <%= render @commoner.groups %>
             <% else %>
             <div class="row justify-content-center">
               <div class="col text-center">
@@ -83,10 +81,8 @@
           </div>
           <% if @commoner.user == current_user %>
             <div class="tab-pane fade" id="pills-requests" role="tabpanel" aria-labelledby="pills-requests-tab">
-              <% if @commoner.join_requests.any? %>
-                <% @commoner.join_requests.each do |join_request| %>
-                  <p><%= link_to join_request.group.name, join_request %>, <%= join_request.aasm_state %></p>
-                <% end %>
+              <% if @join_requests.any? %>
+                <%= render partial: 'join_requests/join_request', collection: @join_requests, as: :join_request %>
               <% else %>
               <div class="row justify-content-center">
                 <div class="col text-center">
@@ -102,7 +98,7 @@
             <div class="row justify-content-center">
               <div class="col text-center">
                 <h3 class="text-muted">
-                  <%= _("No activities yet") %>
+                  <%= _("Coming soon") %>
                 </h3>
               </div>
             </div>

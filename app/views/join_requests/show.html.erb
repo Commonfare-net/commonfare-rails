@@ -1,19 +1,26 @@
-<h2><%= s_('Title|Join request by %{commoner_name}') %{commoner_name: @join_request.commoner.name} %></h2>
-<p>
-  <%= _("Requested on %{date}") %{date: l(@join_request.created_at, format: :short)} %>
-</p>
-<p>
-  <%= link_to (_("View profile of %{commoner_name}") %{commoner_name: @join_request.commoner.name}), @join_request.commoner %>
-</p>
-<div class="row">
-  <div class="col">
-    <%= button_to s_('Button|Accept'),
-                  accept_group_join_request_path(@group, @join_request),
-                  class: 'btn btn-cf btn-block' if can? :accept, @join_request%>
-  </div>
-  <div class="col">
-    <%= button_to s_('Button|Reject'),
-                  reject_group_join_request_path(@group, @join_request),
-                  class: 'btn btn-outline-cf btn-block' if can? :reject, @join_request%>
+<%= content_for :title, s_('Title|Join request') %>
+<div class="row justify-content-center">
+  <div class="col-md-8 bg-white py-4">
+    <h2><%= s_('Title|Join request') %></h2>
+    <% if @join_request.commoner == current_user.meta %>
+      <%= render 'groups/group', group: @join_request.group %>
+    <% else %>
+      <%= render 'commoners/commoner', commoner: @join_request.commoner %>
+    <% end %>
+    <p>
+      <%= _("Requested on %{date}") %{date: l(@join_request.created_at, format: :short)} %>
+    </p>
+    <div class="row">
+      <div class="col">
+        <%= button_to s_('Button|Accept'),
+        accept_group_join_request_path(@group, @join_request),
+        class: 'btn btn-cf btn-block' if can? :accept, @join_request%>
+      </div>
+      <div class="col">
+        <%= button_to s_('Button|Reject'),
+        reject_group_join_request_path(@group, @join_request),
+        class: 'btn btn-outline-cf-secondary btn-block' if can? :reject, @join_request%>
+      </div>
+    </div>
   </div>
 </div>
