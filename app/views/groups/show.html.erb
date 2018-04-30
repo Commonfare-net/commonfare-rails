@@ -10,9 +10,12 @@
         </div>
       </div>
       <div class="col-md-3 group-actions">
-        <%# if can? :create, @new_join_request %>
-        <%= link_to 'Join this group', new_group_join_request_path(@group), class: 'btn btn-cf' %>
-        <%# end %>
+        <% if can? :create, @new_join_request %>
+          <%= link_to 'Join this group', new_group_join_request_path(@group), class: 'btn btn-cf' %>
+        <% end %>
+        <% if can? :edit, @group %>
+          <%= link_to 'Edit group', edit_group_path(@group), class: 'btn btn-cf' %>
+        <% end %>
       </div>
     </div>
     <div class="row">
