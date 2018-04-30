@@ -53,9 +53,11 @@ class Ability
         can :read, Wallet, walletable_id: commoner.id, walletable_type: commoner.class.name
         can :autocomplete, Wallet
 
-        can :read, Transaction, from_wallet_id: commoner.wallet.id
-        can :read, Transaction, to_wallet_id: commoner.wallet.id
-        can [:create, :confirm], Transaction, from_wallet_id: commoner.wallet.id
+        if commoner.wallet.present?
+          can :read, Transaction, from_wallet_id: commoner.wallet.id
+          can :read, Transaction, to_wallet_id: commoner.wallet.id
+          can [:create, :confirm], Transaction, from_wallet_id: commoner.wallet.id
+        end
 
         can :create, Conversation
         can :read, Conversation, sender_id: commoner.id
