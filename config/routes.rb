@@ -53,10 +53,10 @@ Rails.application.routes.draw do
       # :index used for commoner/42/comments, visible only by comments' author
       resources :comments, only: :index
       resources :images, only: [:create, :destroy]
-      # get 'wallet', to: 'wallets#show', as: 'wallet'
-      resources :wallets, only: [:show] do
-        get 'autocomplete', on: :collection, defaults: { format: :json }
-      end
+      # NOTE: uncomment to enable wallet
+      # resources :wallets, only: [:show] do
+      #   get 'autocomplete', on: :collection, defaults: { format: :json }
+      # end
       post 'transaction_confirm', to: 'transactions#confirm', as: 'transaction_confirm'
       resources :transactions, except: [:edit, :update, :destroy]
       resources :listings, only: :index

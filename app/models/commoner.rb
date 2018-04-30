@@ -31,9 +31,11 @@ class Commoner < ApplicationRecord
         .order(created_at: :desc)
   end
 
-  after_commit :create_wallet_and_get_income, on: :create
+  # NOTE: uncomment to enable wallet
+  # after_commit :create_wallet_and_get_income, on: :create
   before_destroy :archive_content
-  before_destroy :empty_wallet_and_give_back
+  # NOTE: uncomment to enable wallet
+  # before_destroy :empty_wallet_and_give_back
 
   validates :name, presence: true, uniqueness: { case_sensitive: false }
 

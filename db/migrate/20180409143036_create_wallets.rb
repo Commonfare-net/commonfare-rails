@@ -9,8 +9,8 @@ class CreateWallets < ActiveRecord::Migration[5.1]
       t.timestamps
 
     end
-    Commoner.find_each do |commoner|
-      Wallet.create(walletable: commoner, address: Digest::SHA2.hexdigest(commoner.email + Time.now.to_s))
-    end
+    # Commoner.find_each do |commoner|
+    #   Wallet.create(walletable: commoner, address: Digest::SHA2.hexdigest(commoner.email + Time.now.to_s))
+    # end
   end
 end
