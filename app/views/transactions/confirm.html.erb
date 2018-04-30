@@ -1,19 +1,19 @@
 <%= content_for :title, s_('Title|Confirm transaction') %>
 <div class="row justify-content-center">
-  <div class="col-md-8 col-lg-6">
-    <h1><%= s_('Title|Confirm transaction') %></h1>
+  <div class="col-md-8 col-lg-6 pb-4 bg-white">
+    <h1 class='my-4'><%= s_('Title|Confirm transaction') %></h1>
     <div class="transaction-confirm-to">
-      <small><%= _('Send to') %></small>
+      <label class="mb-0"><%= _('Send to') %></label>
       <%# TODO: this will be _commoner partial %>
       <p><%= @transaction.to_wallet %></p>
     </div>
     <div class="transaction-confirm-amount">
-      <small><%= _('Amount') %></small>
+      <label class="mb-0"><%= _('Amount') %></label>
       <p><%= number_to_currency(@transaction.amount, precision: 6, locale: I18n.locale, unit: 'cc ') %></p>
     </div>
     <% unless @transaction.message.blank? %>
       <div class="transaction-confirm-message">
-        <small><%= _('Message') %></small>
+        <label class="mb-0"><%= _('Message') %></label>
         <p><%= @transaction.message %></p>
       </div>
     <% end %>

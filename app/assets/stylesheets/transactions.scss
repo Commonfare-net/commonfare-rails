@@ -2,13 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .transaction-date {
-  padding: 2px 10px;
-  background-color: rgba(72, 133, 128, 0.3);
+  padding: 4px 10px 2px;
+  line-height: 1em;
+  font-size: 85%;
+  background-color: $lightgreen;
   color: $cf-secondary-color;
 }
 .transaction {
-  margin-bottom: 2px;
-  border: 1px solid lightgray;
+  // margin-bottom: 2px;
+  background-color: $white;
+  border-bottom: 1px solid $lightgreen;
   .transaction-header {
     &:hover {
       cursor: pointer;
@@ -23,6 +26,12 @@
 
   .incoming-transaction {
     color: green;
+  }
+
+  .target {
+    strong {
+      font-weight: 500;
+    }
   }
 
   .amount {
@@ -67,3 +76,16 @@
     }
   }
 }
+
+
+@media screen and (max-width: 800px) {
+  .transaction {
+    .target {
+      font-size: 85%;
+    }
+    .amount {
+      font-size: 1rem;
+    }
+  }
+}
+

@@ -2,11 +2,11 @@
   <p class="text-muted"><%= _('There are no comments') %></p>
 <% end %>
 <% comments.each do |comment| %>
-<div class="media comment-container">
+<div class="col-md-8 col-lg-8 media comment-container">
   <%= link_to author_path(comment) do %>
     <%= image_tag author_image_for(comment), class: 'comment-avatar' %>
   <% end %>
-  <div class="media-body ml-2">
+  <div class="media-body ml-3">
     <% if can? :edit, comment %>
     <div class="dropdown d-inline float-right">
       <%= link_to(fa_icon('ellipsis-h lg'), '#', id: 'commentDropdownMenuLink', data: { toggle: 'dropdown' }, aria: { haspopup: true, expanded: false } ) %>
@@ -17,7 +17,7 @@
     </div>
     <% end %>
     <p class="comment-author"><%= author_link_for(comment) %></p>
-    <small>
+    <small class="text-muted">
       <%= l(comment.created_at, format: :comment_timestamp) %>
     </small>
     <p class="comment-body">

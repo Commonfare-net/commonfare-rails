@@ -1,20 +1,30 @@
 <%= content_for :title, s_('Title|Social wallet') %>
 <div class="row justify-content-center">
-  <div class="col-md-10 col-lg-8">
-    <h2><%= s_('Title|Social wallet') %></h2>
-    <p><%= _('Current balance') %></p>
-    <h1><%= number_to_currency(@wallet.balance || 0, precision: 6, locale: I18n.locale, unit: 'cc ') %></h1>
-    <p><%= link_to s_('Button|Send cc'), new_commoner_transaction_path(@commoner), class: 'btn btn-outline-cf-secondary' %></p>
-    <% @grouped_transactions.each do |date, transactions| %>
-      <div class="transaction-date">
-        <%= l(date, format: :long) %>
+  <div class="col-md-10 col-lg-10">
+    <div class="row pt-4 bg-white">
+      <div class="col wallet-header">
+        <h2><%= s_('Title|Social wallet') %></h2>
+        <div class="wallet-balance">
+          <h6><%= _('Current balance') %></h6>
+          <h1><%= number_to_currency(@wallet.balance || 0, precision: 6, locale: I18n.locale, unit: 'cc ') %></h1>
+          <small class="text-muted">{Next payment expected on date: --/--/----}</small>
+        </div>
+        <p><%= link_to s_('Button|Send cc'), new_commoner_transaction_path(@commoner), class: 'btn btn-outline-cf' %></p>
       </div>
-      <% transactions.each do |transaction| %>
-        <%= render 'transactions/transaction', transaction: transaction %>
+    </div>
+    <div class="wallet-transactions mt-4">
+      <h6>Transactions</h6>
+      <% @grouped_transactions.each do |date, transactions| %>
+        <div class="transaction-date">
+          <%= l(date, format: :long) %>
+        </div>
+        <% transactions.each do |transaction| %>
+          <%= render 'transactions/transaction', transaction: transaction %>
+        <% end %>
       <% end %>
-    <% end %>
-    <% if @wallet.transactions.count > 10 %>
-      <p class="text-center"><%= link_to _('See all'), commoner_transactions_path(@commoner), class: 'btn btn-outline-cf-secondary' %></p>
-    <% end %>
+      <% if @wallet.transactions.count > 10 %>
+        <p class="text-center"><%= link_to _('See all'), commoner_transactions_path(@commoner), class: 'btn btn-outline-cf-secondary' %></p>
+      <% end %>
+    </div>
   </div>
 </div>

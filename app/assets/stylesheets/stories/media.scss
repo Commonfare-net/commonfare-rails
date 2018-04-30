@@ -1,15 +1,26 @@
 .story-media-container {
   margin-bottom: 1rem;
-  border: 1px solid lightgray;
+  background-color: $white;
+  box-shadow: 0 1px 4px -2px rgba(0, 0, 0, 0.35);
+  transition: box-shadow .25s;
+  &:hover {
+    box-shadow: 0 1px 4px 0px rgba(0, 0, 0, 0.25);
+  }
+  a {
+    text-decoration: none;
+  }
 }
 
 .story-media-body {
   @extend .media;
   padding: .5rem;
+  a {
+    color: $black;
+  }
 }
 .story-media-footer {
   padding: .5rem;
-  border-top: 1px solid lightgray;
+  border-top: 1px solid $lightgreen;
   .story-media-footer-comments {
     @extend .text-muted;
     font-size: 0.8em;

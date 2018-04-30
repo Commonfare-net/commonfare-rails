@@ -1,5 +1,10 @@
 <%= simple_form_for(@commoner) do |f| %>
   <%= f.error_notification %>
+    <%= f.input :name,
+                required: false,
+                label: _('Your name on Commonfare.net'),
+                placeholder: _('e.g. Bungo Baggins, pbm42, etc.'),
+                hint: _('It must be unique') %>
     <%= f.input :avatar,
                 as: :image_preview,
                 input_html: { preview_version: :profile },

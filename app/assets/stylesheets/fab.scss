@@ -3,15 +3,31 @@
   position: fixed;
   bottom: 1rem;
   right: 1rem;
-  background-color: white;
-  border: 1px solid $cf-primary-color;
+  color: $white;
+  background-color: $darkgreen;
+  // border: 1px solid $cf-primary-color;
   z-index: 999;
   &:hover {
     color: inherit;
     text-decoration: none;
   }
   .mdc-fab__icon {
-    color: $cf-primary-color;
+    color: $white;
+  }
+}
+
+.story-title {
+  .card-fab--absolute {
+    background-color: transparent;
+    box-shadow: none;
+    border: 1px solid $lightgreen;
+    transition: border .25s;
+    &:hover {
+      border-color: $darkgreen;
+    }
+    .mdc-fab__icon {
+      color: $cf-secondary-color;
+    }
   }
 }
 
@@ -19,15 +35,15 @@
   position: absolute;
   top: .75rem;
   right: .75rem;
-  background-color: white;
-  border: 1px solid $cf-secondary-color;
+  background-color: $darkgreen;
+  // border: 1px solid $cf-secondary-color;
   z-index: 998; // one less than the add fab
   &:hover {
     color: inherit;
     text-decoration: none;
   }
   .mdc-fab__icon {
-    color: $cf-secondary-color;
+    color: $white;
   }
 }
 

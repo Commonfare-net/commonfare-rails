@@ -1,10 +1,10 @@
 <%= content_for :title, _('Edit profile') %>
 <div class="row justify-content-center">
-  <div class="col-md-6 col-lg-4">
-    <h2 class="red-title"><%= _('Edit profile') %></h2>
+  <div class="col-md-8 col-lg-6 pt-4">
+    <h2 class=""><%= _('Edit profile') %></h2>
 
     <%= render 'form', commoner: @commoner %>
-    <p class="py-3 font-weight-bold">
+    <p class="py-3">
       <%= link_to _('Edit your email or password'), edit_user_registration_path %>
     </p>
   </div>

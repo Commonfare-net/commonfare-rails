@@ -1,7 +1,22 @@
 // Place all the styles related to the Groups controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.group-profile {
+  position: relative;
+  display: flex;
+  background-color: $white;
+  padding-top: 2rem;
+  padding-bottom: 25px;
+}
 .group-media {
+  background-color: $white;
+  box-shadow: 0 1px 4px -2px rgba(0, 0, 0, 0.35);
   @extend .media;
   padding: .5rem;
+  a {
+    color: $black;
+    .rounded-circle {
+      border: 1px solid $lightgreen;
+    }
+  }
 }
