@@ -29,7 +29,7 @@ class StoryBuilderActions extends Component {
       const { locale, storyLocale, storyId } = this.props;
       const { anonymous } = this.state;
 
-      publishStory(storyId, { anonymous })
+      publishStory(storyId, locale, { anonymous })
       .then(response => Turbolinks.visit(`/${locale}/stories/${storyId}?story_locale=${storyLocale}`))
       .catch(() => this.setState({ publishing: false }))
     }

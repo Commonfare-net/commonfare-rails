@@ -149,9 +149,11 @@ class Story < ApplicationRecord
 
   def images_from_content_json_draft
     ids = translations.each_with_object([]) do |translation, acc|
-      acc << translation.content_json_draft
-                        .select { |item| item['type'] == 'image' }
-                        .map { |item| /images\/(?<id>\d+)/ =~ item['content']; id }
+      if translation.content_json_draft.present?
+        acc << translation.content_json_draft
+                          .select { |item| item['type'] == 'image' }
+                          .map { |item| /images\/(?<id>\d+)/ =~ item['content']; id }
+      end
     end
 
     Image.where(id: ids.flatten.uniq)

@@ -90,11 +90,12 @@ module StoriesHelper
   def og_description_for(obj)
     if obj.is_a? Story
       return strip_tags(obj.content).truncate(42) if obj.content.present?
-      strip_tags(obj.content_json.join).truncate(42)
+      return strip_tags(obj.content_json.join).truncate(42) if obj.content_json.present?
     elsif obj.is_a? Listing
-      obj.description.truncate(42) if obj.description.present?
+      return obj.description.truncate(42) if obj.description.present?
     else
       ''
     end
+    ''
   end
 end

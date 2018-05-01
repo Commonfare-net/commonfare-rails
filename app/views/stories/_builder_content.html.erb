@@ -1,4 +1,4 @@
-<% if content_json.any? %>
+<% if content_json.present? && content_json.any? %>
   <% content_json.each do |item| %>
     <% if (item['type'] == 'text') && (item['content'].present?) %>
       <div class="story-content-item story-content-item--text">

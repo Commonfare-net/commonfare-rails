@@ -138,7 +138,7 @@ class StoriesController < ApplicationController
   def publish
     # set params without saving (used only for anonymous)
     @story.assign_attributes(publish_params)
-
+    
     if @story.publish!
       respond_to do |format|
         format.html { redirect_to @story }

@@ -42,6 +42,6 @@ export const deleteImage = (commonerId, imageUrl) => {
   return axios.delete(`/commoners/${commonerId}/images/${imageId}`, requestConfig());
 }
 
-export const publishStory = (storyId, options = {}) => {
-  return axios.post(`/stories/${storyId}/publish`, options, requestConfig());
+export const publishStory = (storyId, locale, options = {}) => {
+  return axios.post(`/${locale}/stories/${storyId}/publish`, options, requestConfig());
 }
