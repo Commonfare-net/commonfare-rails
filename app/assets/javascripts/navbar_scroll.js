@@ -47,19 +47,22 @@ document.addEventListener("turbolinks:load", function() {
   $(function () {
     var lastScrollTop = 0;
     var $navbar = $('.navbar');
+    var navbarHeight = $navbar.outerHeight();
     var movement = 0;
 
     $(window).scroll(function(event){
       var st = $(this).scrollTop();
       movement += st - lastScrollTop;
 
-    // on scroll down
-      if (st > lastScrollTop) { 
-        $navbar.addClass('hidden');
-      }
-    // on scroll up
-      else {
-        $navbar.removeClass('hidden');
+      if (st > (navbarHeight * 1.5)) {
+      // on scroll down
+        if (st > lastScrollTop && !$navbar.hasClass('hidden')) { 
+          $navbar.addClass('hidden');
+        }
+      // on scroll up
+        else if (st < lastScrollTop && $navbar.hasClass('hidden')) {
+          $navbar.removeClass('hidden');
+        }
       }
 
       lastScrollTop = st;
