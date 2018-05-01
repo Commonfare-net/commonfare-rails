@@ -27,13 +27,6 @@
           </h2>
         </div>
       </div>
-      <div class="col-auto ml-auto">
-        <div class="listing-price">
-          <h2>
-            <%= listing_price(@listing) %>
-          </h2>
-        </div>
-      </div>
     </div>
     <div class="row">
       <div class="col">
@@ -71,6 +64,18 @@
         </div>
       </div>
       <div class="col-lg-9 order-1 order-lg-12">
+        <div class="row">
+          <div class="col">
+            <div class="listing-price">
+              <h2>
+                <%= listing_price(@listing) %>
+              </h2>
+            </div>
+            <div class="listing-description">
+              <%= @listing.description %>
+            </div>
+          </div>
+        </div>
         <% if @images.any? %>
           <div class="row justify-content-center">
             <div class="col text-center" id="listing-cover-image-link">
@@ -96,13 +101,6 @@
                   <%= image_tag image.picture.card_square.url %>
                 <% end %>
               <% end %>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col">
-            <div class="listing-description">
-              <%= @listing.description %>
             </div>
           </div>
         </div>

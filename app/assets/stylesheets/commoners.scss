@@ -22,6 +22,7 @@
     font-weight: 500;
     font-size: 2.17em;
     padding-top: 10px;
+    margin-bottom: 0;
   }
   img {
     @extend .rounded-circle;
@@ -35,8 +36,6 @@
 
 .commoner-actions {
   @extend .text-right;
-  padding-top: 2rem;
-  padding-bottom: 25px;
 }
 
 .commoner-media {

@@ -30,6 +30,14 @@ hr {
   border-color: $lightgreen;
 }
 
+// Nav
+  .navbar-nav {
+    .dropdown-menu {
+      top: 42px;
+      border-radius: 0;
+    }
+  }
+
 // Buttons
 .btn {
   max-width: 360px;
@@ -79,6 +87,7 @@ hr {
 
 // Tabs
 .nav-pills-container {
+  display: block;
   background-color: $white;
   border-top: 1px solid $lightgreen;
   border-bottom: 1px solid $lightgreen;
@@ -113,8 +122,40 @@ hr {
 }
 .form-group {
   margin-bottom: 2rem;
+  &.image_preview {
+    img {
+      margin-right: 1em;
+      border: 2px solid $lightgreen;
+      border-radius: 100%
+    }
+  }
 }
 label {
   font-size: .9em;
   font-weight: 500;
+}
+
+
+
+
+@media screen and (max-width: 991px) {
+  // Nav
+  #navbarDropdown {
+    padding: 1rem 0;
+  }
+  .navbar-nav {
+    .dropdown-menu {
+      background-color: darken($cf-primary-color, 8%);
+      border: none;
+      margin: 0 -1rem -0.5rem;
+      border-radius: 0;
+      .dropdown-item {
+        color: $white;
+        padding: .5rem 1rem;
+        &:focus, &:hover, &:active {
+          background-color: transparent;
+        }
+      }
+    }
+  }
 }

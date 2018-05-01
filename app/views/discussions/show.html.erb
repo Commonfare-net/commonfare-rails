@@ -1,7 +1,7 @@
 <% content_for :title, @discussion.title %>
 <div class="row justify-content-center">
   <div class="col-lg-8 col-md-8 bg-white">
-    <div class="discussion-back mb-2">
+    <div class="discussion-back mt-3">
       <%= link_to((_("%{icon} Back to %{group_name}") %{group_name: @group.name, icon: fa_icon('chevron-left fw')}).html_safe, group_path(@group), class: 'btn btn-sm btn-outline-cf') %>
     </div>
     <div class="discussion-header">

@@ -1,25 +1,25 @@
 <%= content_for :title, s_('Title|Join request') %>
 <div class="row justify-content-center">
-  <div class="col-md-8 bg-white py-4">
+  <div class="col-md-6 col-lg-6 py-4">
     <h2><%= s_('Title|Join request') %></h2>
     <% if @join_request.commoner == current_user.meta %>
       <%= render 'groups/group', group: @join_request.group %>
     <% else %>
       <%= render 'commoners/commoner', commoner: @join_request.commoner %>
     <% end %>
-    <p>
+    <p class="text-muted">
       <%= _("Requested on %{date}") %{date: l(@join_request.created_at, format: :short)} %>
     </p>
     <div class="row">
       <div class="col">
-        <%= button_to s_('Button|Accept'),
-        accept_group_join_request_path(@group, @join_request),
-        class: 'btn btn-cf btn-block' if can? :accept, @join_request%>
-      </div>
-      <div class="col">
         <%= button_to s_('Button|Reject'),
         reject_group_join_request_path(@group, @join_request),
-        class: 'btn btn-outline-cf-secondary btn-block' if can? :reject, @join_request%>
+        class: 'btn btn-outline-secondary btn-lg btn-block' if can? :reject, @join_request%>
+      </div>
+      <div class="col">
+        <%= button_to s_('Button|Accept'),
+        accept_group_join_request_path(@group, @join_request),
+        class: 'btn btn-cf btn-lg btn-block' if can? :accept, @join_request%>
       </div>
     </div>
   </div>

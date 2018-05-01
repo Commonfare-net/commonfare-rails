@@ -1,8 +1,10 @@
 <%= content_for :title, (_('Conversation with %{commoner_name}') %{commoner_name: counterpart_for_conversation(@conversation).name}) %>
 <div class="row justify-content-center">
-  <div class="col-lg-6 col-md-8">
-    <div class="conversation-header">
-      <h3><%= counterpart_for_conversation(@conversation).name %></h3>
+  <div class="col-md-10 col-lg-10">
+    <div class="row conversation-header pt-5 pb-2 bg-white">
+      <div class="col">
+        <h3><%= counterpart_for_conversation(@conversation).name %></h3>
+      </div>
     </div>
     <div class="conversation-container d-flex flex-column justify-content-end">
       <div id="conversation-messages">
