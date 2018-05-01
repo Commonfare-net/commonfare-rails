@@ -53,7 +53,7 @@ class Ability
         can :read, Wallet, walletable_id: commoner.id, walletable_type: commoner.class.name
         can :autocomplete, Wallet
 
-        if commoner.wallet.present?
+        if ENV['WALLET_ENABLED'] == 'true' && commoner.wallet.present?
           can :read, Transaction, from_wallet_id: commoner.wallet.id
           can :read, Transaction, to_wallet_id: commoner.wallet.id
           can [:create, :confirm], Transaction, from_wallet_id: commoner.wallet.id
