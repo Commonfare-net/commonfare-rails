@@ -57,7 +57,7 @@
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
           <%= link_to _('Profile'), commoner_path(current_user.meta), class: 'dropdown-item' %>
           <%# NOTE: uncomment to enable wallet %>
-          <%= link_to _('Wallet'), commoner_wallet_path(current_user.meta, current_user.meta.wallet), class: 'dropdown-item' %>
+          <%= link_to(_('Wallet'), commoner_wallet_path(current_user.meta, current_user.meta.wallet), class: 'dropdown-item') if ENV['WALLET_ENABLED'] == 'true' %>
           <%= link_to _('Conversations'), conversations_path, class: 'dropdown-item' %>
           <div class="dropdown-divider"></div>
           <%= link_to s_('Navbar|Logout'), destroy_user_session_path, class: 'dropdown-item', method: :delete %>
