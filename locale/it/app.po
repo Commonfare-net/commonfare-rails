@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0\n"
 "Report-Msgid-Bugs-To: contact@translation.io\n"
-"POT-Creation-Date: 2018-04-30 21:18+0200\n"
-"PO-Revision-Date: 2018-04-30 21:18+0200\n"
+"POT-Creation-Date: 2018-05-01 17:26+0200\n"
+"PO-Revision-Date: 2018-05-01 17:26+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Italian\n"
 "Language: it\n"
@@ -42,7 +42,7 @@ msgstr "Il commento è stato aggiornato."
 msgid "Comment was successfully destroyed."
 msgstr "Il commento è stato eliminato."
 
-#: ../app/controllers/conversations_controller.rb:66
+#: ../app/controllers/conversations_controller.rb:67
 msgid ""
 "Conversation|Hello %{recipient_name}, I am intersted in %{listing_title} ( %{l"
 "isting_url} ) "
@@ -50,6 +50,16 @@ msgstr ""
 
 #: ../app/controllers/conversations_controller.rb:68
 msgid "Conversation|Hello %{recipient_name}, "
+msgstr ""
+
+#: ../app/controllers/conversations_controller.rb:69
+msgid ""
+"Conversation|Hello, would you like to join the group %{group_name} ( %{group_u"
+"rl} )? "
+msgstr ""
+
+#: ../app/controllers/conversations_controller.rb:71
+msgid "Conversation|Hello, "
 msgstr ""
 
 #: ../app/controllers/discussions_controller.rb:36
@@ -229,43 +239,44 @@ msgid "All comments by %{commoner_name}"
 msgstr "Tutti i commenti di %{commoner_name}"
 
 #: ../app/views/commoners/_form.html.erb:5
-#: ../app/views/commoners/_form.html.erb:16
 msgid "Your name on Commonfare.net"
 msgstr "Il tuo nome su Commonfare.net"
 
 #: ../app/views/commoners/_form.html.erb:6
-#: ../app/views/commoners/_form.html.erb:17
 msgid "e.g. Bungo Baggins, pbm42, etc."
 msgstr "es. Bungo Baggins, pbm42, ecc."
 
 #: ../app/views/commoners/_form.html.erb:7
-#: ../app/views/commoners/_form.html.erb:18
 msgid "It must be unique"
 msgstr "Deve essere unico"
+
+#: ../app/views/commoners/_form.html.erb:11
+msgid "Your avatar"
+msgstr ""
 
 #: ../app/views/commoners/_form.html.erb:12
 #: ../app/views/groups/_fields.html.erb:7
 msgid "Square pictures look better ✨"
 msgstr "Le immagini quadrate hanno un aspetto migliore ✨"
 
-#: ../app/views/commoners/_form.html.erb:21
+#: ../app/views/commoners/_form.html.erb:16
 #: ../app/views/listings/_fields.html.erb:23
 msgid "Description"
 msgstr ""
 
-#: ../app/views/commoners/_form.html.erb:22
+#: ../app/views/commoners/_form.html.erb:17
 msgid "Few words about yourself"
 msgstr ""
 
-#: ../app/views/commoners/_form.html.erb:24
+#: ../app/views/commoners/_form.html.erb:19
 msgid "Interests"
 msgstr ""
 
-#: ../app/views/commoners/_form.html.erb:26
+#: ../app/views/commoners/_form.html.erb:21
 msgid "Use comma or press Enter to separate interests"
 msgstr ""
 
-#: ../app/views/commoners/_form.html.erb:36
+#: ../app/views/commoners/_form.html.erb:31
 msgid "Skills, services or goods"
 msgstr ""
 
@@ -316,7 +327,7 @@ msgid "No stories yet"
 msgstr "Non ci sono storie presenti"
 
 #: ../app/views/commoners/show.html.erb:63 ../app/views/pages/home.html.erb:85
-#: ../app/views/wallets/show.html.erb:26
+#: ../app/views/wallets/show.html.erb:28
 msgid "See all"
 msgstr "Vedi tutte"
 
@@ -401,11 +412,11 @@ msgid "Welcome page text|About page"
 msgstr "su di noi"
 
 #: ../app/views/conversations/index.html.erb:1
-#: ../app/views/conversations/index.html.erb:4
+#: ../app/views/conversations/index.html.erb:6
 msgid "Title|My conversations"
 msgstr ""
 
-#: ../app/views/conversations/index.html.erb:11
+#: ../app/views/conversations/index.html.erb:15
 msgid "No conversations"
 msgstr ""
 
@@ -422,6 +433,10 @@ msgstr ""
 
 #: ../app/views/conversations/show.html.erb:1
 msgid "Conversation with %{commoner_name}"
+msgstr ""
+
+#: ../app/views/conversations/show.html.erb:5
+msgid "%{icon} Back to My conversations"
 msgstr ""
 
 #: ../app/views/discussions/_discussion.html.erb:6
@@ -489,6 +504,23 @@ msgid_plural "members"
 msgstr[0] ""
 msgstr[1] ""
 
+#: ../app/views/groups/_inviteModal.html.erb:6
+msgid "Title|Invite member"
+msgstr ""
+
+#: ../app/views/groups/_inviteModal.html.erb:13
+msgid ""
+"To invite a new member to a group, contact the person directly by visiting her"
+"/his profile page and starting a conversation. You can copy the URL of the gro"
+"up and paste it there."
+msgstr ""
+
+#: ../app/views/groups/_inviteModal.html.erb:18
+#: ../app/views/listings/_share_modal.html.erb:18
+#: ../app/views/stories/_share_modal.html.erb:18
+msgid "Copy and close"
+msgstr "Copia e chiudi"
+
 #: ../app/views/groups/edit.html.erb:1 ../app/views/groups/edit.html.erb:4
 msgid "Title|Edit group"
 msgstr ""
@@ -535,8 +567,11 @@ msgid "Button|Join"
 msgstr "Partecipa"
 
 #: ../app/views/join_requests/new.html.erb:1
-#: ../app/views/join_requests/new.html.erb:4
 msgid "Title|Request to join %{group_name}"
+msgstr ""
+
+#: ../app/views/join_requests/new.html.erb:4
+msgid "Title|Do you want to join %{group_name}?"
 msgstr ""
 
 #: ../app/views/join_requests/new.html.erb:6
@@ -557,11 +592,11 @@ msgid "Requested on %{date}"
 msgstr ""
 
 #: ../app/views/join_requests/show.html.erb:15
-msgid "Button|Accept"
+msgid "Button|Reject"
 msgstr ""
 
 #: ../app/views/join_requests/show.html.erb:20
-msgid "Button|Reject"
+msgid "Button|Accept"
 msgstr ""
 
 #: ../app/views/layouts/_footer.html.erb:7
@@ -695,7 +730,6 @@ msgid "Remove"
 msgstr ""
 
 #: ../app/views/listings/_listing.html.erb:20
-#: ../app/views/listings/show.html.erb:41
 msgid "by <strong>%{commoner_name}</strong>"
 msgstr ""
 
@@ -709,28 +743,23 @@ msgid ""
 "g on Facebook, Twitter, etc. you can copy the URL and paste it there."
 msgstr ""
 
-#: ../app/views/listings/_share_modal.html.erb:18
-#: ../app/views/stories/_share_modal.html.erb:18
-msgid "Copy and close"
-msgstr "Copia e chiudi"
-
-#: ../app/views/listings/commonplace.html.erb:9
+#: ../app/views/listings/commonplace.html.erb:14
 msgid "Latest listings"
 msgstr ""
 
-#: ../app/views/listings/commonplace.html.erb:13
+#: ../app/views/listings/commonplace.html.erb:18
 msgid "My Listings"
 msgstr ""
 
-#: ../app/views/listings/commonplace.html.erb:25
+#: ../app/views/listings/commonplace.html.erb:31
 msgid "No Listings yet"
 msgstr ""
 
-#: ../app/views/listings/commonplace.html.erb:35
+#: ../app/views/listings/commonplace.html.erb:41
 msgid "Button|New listing"
 msgstr ""
 
-#: ../app/views/listings/commonplace.html.erb:48
+#: ../app/views/listings/commonplace.html.erb:54
 msgid "No listings"
 msgstr ""
 
@@ -754,20 +783,20 @@ msgstr ""
 msgid "Button|Create listing"
 msgstr ""
 
-#: ../app/views/listings/show.html.erb:56
+#: ../app/views/listings/show.html.erb:63
 msgid "Added on %{date}"
 msgstr ""
 
-#: ../app/views/listings/show.html.erb:62 ../app/views/stories/show.html.erb:55
+#: ../app/views/listings/show.html.erb:69 ../app/views/stories/show.html.erb:58
 msgid "Share"
 msgstr ""
 
-#: ../app/views/listings/show.html.erb:114
+#: ../app/views/listings/show.html.erb:122
 msgid "Get in touch"
 msgstr ""
 
-#: ../app/views/listings/show.html.erb:125
-#: ../app/views/stories/show.html.erb:99
+#: ../app/views/listings/show.html.erb:133
+#: ../app/views/stories/show.html.erb:102
 msgid "Comment"
 msgid_plural "Comments"
 msgstr[0] "Commento"
@@ -1053,7 +1082,7 @@ msgstr "Pubblica"
 msgid "Read in %{other_languages}"
 msgstr "Leggi %{other_languages}"
 
-#: ../app/views/stories/show.html.erb:89
+#: ../app/views/stories/show.html.erb:92
 msgid "Button|Share"
 msgstr "Condividi"
 
@@ -1343,10 +1372,10 @@ msgstr "Registrati"
 msgid "Title|Social wallet"
 msgstr ""
 
-#: ../app/views/wallets/show.html.erb:8
+#: ../app/views/wallets/show.html.erb:11
 msgid "Current balance"
 msgstr ""
 
-#: ../app/views/wallets/show.html.erb:12
+#: ../app/views/wallets/show.html.erb:14
 msgid "Button|Send cc"
 msgstr ""
