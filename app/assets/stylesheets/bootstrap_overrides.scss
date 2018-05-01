@@ -30,6 +30,21 @@ hr {
   border-color: $lightgreen;
 }
 
+// Nav
+.navbar {
+  transition: transform .35s;
+}
+.navbar.hidden {
+  transform: translateY(-100%);
+  -webkit-transform: translateY(-100%);
+}
+.navbar-nav {
+  .dropdown-menu {
+    top: 42px;
+    border-radius: 0;
+  }
+}
+
 // Buttons
 .btn {
   max-width: 360px;
@@ -60,7 +75,7 @@ hr {
 .btn-outline-cf {
   color: $darkgreen;
   background-color: transparent;
-  border-color: rgba($darkgreen, .2);
+  border-color: rgba($darkgreen, .15);
   padding: 0.3rem 1.5rem;
   &:hover {
     border-color: $darkgreen;
@@ -79,6 +94,7 @@ hr {
 
 // Tabs
 .nav-pills-container {
+  display: block;
   background-color: $white;
   border-top: 1px solid $lightgreen;
   border-bottom: 1px solid $lightgreen;
@@ -112,9 +128,50 @@ hr {
   }
 }
 .form-group {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
+  &.image_preview {
+    img {
+      margin-right: 1em;
+      border: 2px solid $lightgreen;
+      border-radius: 100%
+    }
+  }
 }
 label {
   font-size: .9em;
   font-weight: 500;
 }
+
+
+
+
+@media screen and (max-width: 991px) {
+  // Nav
+  #navbarDropdown {
+    padding: 1rem 0;
+  }
+  .navbar-nav {
+    .dropdown-menu {
+      background-color: darken($cf-primary-color, 8%);
+      border: none;
+      margin: 0 -1rem -0.5rem;
+      border-radius: 0;
+      .dropdown-item {
+        color: $white;
+        padding: .5rem 1rem;
+        &:focus, &:hover, &:active {
+          background-color: transparent;
+        }
+      }
+    }
+  }
+}
+
+
+
+// Extend row to full window width (to use on headers)
+// .$ {
+//   margin-left: calc(( 100vw - 100%) * -0.5);
+//   margin-right: calc(( 100vw - 100%) * -0.5);
+// }
+

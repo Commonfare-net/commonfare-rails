@@ -5,12 +5,12 @@
   position: relative;
   display: flex;
   background-color: $white;
-  padding-top: 2rem;
-  padding-bottom: 25px;
+  padding-bottom: 1em;
   p.group-name {
     font-weight: 500;
     font-size: 2.17em;
     padding-top: 10px;
+    margin-bottom: 0;
   }
   img {
     @extend .rounded-circle;
@@ -22,8 +22,6 @@
 
 .group-actions {
   @extend .text-right;
-  padding-top: 2rem;
-  padding-bottom: 25px;
 }
 
 .group-media {

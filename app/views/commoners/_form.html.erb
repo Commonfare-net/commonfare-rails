@@ -8,14 +8,9 @@
     <%= f.input :avatar,
                 as: :image_preview,
                 input_html: { preview_version: :profile },
-                label: false,
+                label:_('Your avatar'),
                 hint: _('Square pictures look better ✨'),
                 wrapper: :vertical_file_input %>
-    <%= f.input :name,
-                required: false,
-                label: _('Your name on Commonfare.net'),
-                placeholder: _('e.g. Bungo Baggins, pbm42, etc.'),
-                hint: _('It must be unique') %>
     <%= f.input :description,
                 required: false,
                 label: _('Description'),

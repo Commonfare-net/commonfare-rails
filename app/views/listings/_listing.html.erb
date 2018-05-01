@@ -5,7 +5,7 @@
     <div class="listing-media-body d-flex flex-column">
       <div class="d-flex flex-row">
         <div class="listing-media-title">
-          <h5 class="clamp"><%= listing.title %></h5>
+          <h4 class="clamp"><%= listing.title %></h4>
         </div>
         <div class="listing-media-price ml-auto">
           <h5><%= listing_price(listing) %></h5>
@@ -15,8 +15,8 @@
         <%= fa_icon('map-marker', text: listing.place) %>
       </div>
       <div class="listing-media-date-commoner mt-auto">
-        <small class="text-muted">
-          <%= l(listing.created_at.to_date, format: :short) %>,
+        <small>
+          <span class="text-muted"><%= l(listing.created_at.to_date, format: :short) %>,</span>
           <%= (_('by <strong>%{commoner_name}</strong>') %{commoner_name: listing.commoner.name}).html_safe %>
         </small>
       </div>

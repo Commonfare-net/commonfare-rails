@@ -12,46 +12,53 @@
     <meta name="twitter:card" content="<%= @images.any? ? 'summary_large_image' : 'summary' %>" />
     <% end %>
 
-    <div class="row">
-      <% if can? :edit, @listing %>
-      <%= link_to edit_listing_path(@listing), class: 'mdc-fab mdc-fab--mini material-icons card-fab--absolute', 'aria-label': 'Favorite', data: { 'mdc-auto-init': 'MDCRipple' } do %>
-      <span class="mdc-fab__icon">
-        <%= fa_icon 'pencil lg' %>
-      </span>
-      <% end %>
-      <% end %>
-      <div class="col-auto">
-        <div class="listing-title">
-          <h2>
-            <%= @listing.title %>
-          </h2>
-        </div>
-      </div>
-      <div class="col-auto ml-auto">
-        <div class="listing-price">
-          <h2>
-            <%= listing_price(@listing) %>
-          </h2>
-        </div>
-      </div>
-    </div>
-    <div class="row">
+    <div class="row listing-header pt-5 pb-3 bg-white">
       <div class="col">
-        <div class="listing-author">
-          <%= (_('by <strong>%{commoner_name}</strong>') %{commoner_name: link_to(@listing.commoner.name, @listing.commoner)}).html_safe %>
+        <div class="row">
+          <% if can? :edit, @listing %>
+          <%= link_to edit_listing_path(@listing), class: 'mdc-fab mdc-fab--mini material-icons card-fab--absolute', 'aria-label': 'Favorite', data: { 'mdc-auto-init': 'MDCRipple' } do %>
+          <span class="mdc-fab__icon">
+            <%= fa_icon 'pencil lg' %>
+          </span>
+          <% end %>
+          <% end %>
+          <div class="col-auto">
+            <div class="listing-title">
+              <h2>
+                <%= @listing.title %>
+              </h2>
+            </div>
+          </div>
         </div>
+
+        <div class="row">
+          <div class="col">
+            <div class="listing-price">
+              <h4>
+                <%= listing_price(@listing) %>
+              </h4>
+            </div>
+          </div>
+        </div>
+
+        <% if @listing.tags.any? %>
+          <%= render 'shared/tags', tags: @listing.tags %>
+        <% end %>
       </div>
     </div>
 
-    <% if @listing.tags.any? %>
-      <%= render 'shared/tags', tags: @listing.tags %>
-    <% end %>
-
-    <div class="row">
+    <div class="row listing-content-wrap">
       <div class="col-lg-3 order-12 order-lg-1">
         <div class="listing-info">
-          <div class="row mb-2">
+          <div class="row my-3">
             <div class="col">
+              <div class="listing-author">
+                <!-- TODO: Link to commoner
+                  previous:
+                  (_('by %{commoner_name}') %{commoner_name: link_to(@listing.commoner.name, @listing.commoner)})
+                 -->
+                <%= fa_icon('user fw', text: @listing.commoner.name).html_safe %>
+              </div>
               <div class="listing-date">
                 <%= fa_icon('clock-o fw', text: (_('Added on %{date}') %{date: l(@listing.created_at.to_date, format: :long)})) %>
               </div>
@@ -70,10 +77,18 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-9 order-1 order-lg-12">
+
+      <div class="col-lg-9 order-1 order-lg-12 bg-white py-3">
+        <div class="row">
+          <div class="col">
+            <div class="listing-description">
+              <%= @listing.description %>
+            </div>
+          </div>
+        </div>
         <% if @images.any? %>
           <div class="row justify-content-center">
-            <div class="col text-center" id="listing-cover-image-link">
+            <div class="col" id="listing-cover-image-link">
               <%= link_to @images.first.picture.url do %>
               <%= image_tag(@images.first.picture.url, class: 'listing-cover-image') %>
               <% end %>
@@ -99,19 +114,12 @@
             </div>
           </div>
         </div>
-        <div class="row">
-          <div class="col">
-            <div class="listing-description">
-              <%= @listing.description %>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
     <div class="row justify-content-center py-5">
       <div class="col-md-4">
         <% if can_get_in_touch_for_listing?(@listing) %>
-          <%= link_to(_('Get in touch'), conversation_path_for_listing(@listing), class: 'btn btn-outline-cf btn-lg btn-block') %>
+          <%= link_to(_('Get in touch'), conversation_path_for_listing(@listing), class: 'btn btn-cf btn-lg btn-block') %>
         <% end %>
       </div>
     </div>
