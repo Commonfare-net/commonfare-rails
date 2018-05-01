@@ -52,11 +52,11 @@ class Commoner < ApplicationRecord
   private
 
   def create_wallet_and_get_income
-    Wallet.create(walletable: self, address: Digest::SHA2.hexdigest(self.email + Time.now.to_s))
+    Wallet.create(walletable: self, address: Digest::SHA2.hexdigest(self.email + Time.now.to_s)) if ENV['WALLET_ENABLED'] == 'true'
   end
 
   def empty_wallet_and_give_back
-    wallet.empty_and_give_back
+    wallet.empty_and_give_back if ENV['WALLET_ENABLED'] == 'true'
   end
 
   def archive_content

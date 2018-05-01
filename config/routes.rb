@@ -54,11 +54,13 @@ Rails.application.routes.draw do
       resources :comments, only: :index
       resources :images, only: [:create, :destroy]
       # NOTE: uncomment to enable wallet
-      resources :wallets, only: [:show] do
-        get 'autocomplete', on: :collection, defaults: { format: :json }
+      if ENV['WALLET_ENABLED'] == 'true'
+        resources :wallets, only: [:show] do
+          get 'autocomplete', on: :collection, defaults: { format: :json }
+        end
+        post 'transaction_confirm', to: 'transactions#confirm', as: 'transaction_confirm'
+        resources :transactions, except: [:edit, :update, :destroy]
       end
-      post 'transaction_confirm', to: 'transactions#confirm', as: 'transaction_confirm'
-      resources :transactions, except: [:edit, :update, :destroy]
       resources :listings, only: :index
     end
     resources :comments, except: [:new, :show, :index]

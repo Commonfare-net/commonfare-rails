@@ -16,7 +16,10 @@ namespace :carrierwave do
   desc "Create version 'card-square' for existing story pictures"
   task create_card_square: :environment do
     Story.find_each do |story|
-      story.images.each {|image| image.picture.recreate_versions! if image.picture}
+      story.images.each do |image|
+        src_path = Rails.root.join('public', image.picture.store_dir)
+        image.picture.recreate_versions! if image.picture && Dir.exists?(src_path)
+      end
     end
   end
 end
