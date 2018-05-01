@@ -15,7 +15,8 @@ class ConversationsController < ApplicationController
 
   def new
     @conversation = Conversation.new(sender: @sender, recipient: @recipient)
-    @listing = Listing.find_by(id: params[:listing_id])
+    @listing = Listing.find_by(id: params[:listing_id]) if params[:listing_id].present?
+    @group = Group.find_by(id: params[:group_id]) if params[:group_id].present?
     @conversation.messages.build(commoner: @sender, body: first_message)
   end
 
@@ -64,8 +65,10 @@ class ConversationsController < ApplicationController
   def first_message
     if @listing.present?
       (s_('Conversation|Hello %{recipient_name}, I am intersted in %{listing_title} ( %{listing_url} ) ') %{recipient_name: @recipient.name, listing_title: @listing.title, listing_url: listing_url(@listing)})
+    elsif @group.present?
+      (s_('Conversation|Hello, would you like to join the group %{group_name} ( %{group_url} )? ') %{group_name: @group.name, group_url: group_url(@group)})
     else
-      (s_('Conversation|Hello %{recipient_name}, ') %{recipient_name: @recipient.name})
+      (s_('Conversation|Hello, '))
     end
   end
 end

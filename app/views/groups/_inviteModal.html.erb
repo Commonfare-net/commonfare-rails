@@ -1,0 +1,29 @@
+<!-- inviteMemberModal -->
+<div class="modal fade" id="inviteMemberModal" tabindex="-1" role="dialog" aria-labelledby="inviteMemberModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="inviteMemberModalLabel"><%= s_('Title|Invite member') %></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>
+          <%= _('To invite a new member to a group, contact the person directly by visiting her/his profile page and starting a conversation. You can copy the URL of the group and paste it there.') %>
+        </p>
+        <%= text_field_tag 'group-share-url', request.url, { onClick: "this.setSelectionRange(0, this.value.length)" } %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-cf" data-clipboard-target="#group-share-url" data-dismiss="modal"><%= _('Copy and close') %></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= content_for :scripts do %>
+<script type="text/javascript">
+  // Instantiate ClipboardJs on the buttons
+  new Clipboard('.btn');
+</script>
+<% end %>

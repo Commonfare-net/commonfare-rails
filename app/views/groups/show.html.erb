@@ -75,7 +75,7 @@
             <% end %>
           </div>
           <div class="tab-pane fade" id="pills-members" role="tabpanel" aria-labelledby="pills-members-tab">
-            <%= link_to s_('Button|Invite member'), '#', class: 'btn btn-cf btn-block' if can? :create, JoinRequest  %>
+            <%= link_to(s_('Button|Invite member'), '#', class: 'btn btn-cf btn-block', data: { toggle: "modal", target: "#inviteMemberModal" }) if can? :create, JoinRequest  %>
             <% if @members.any? %>
               <%= render partial: 'commoners/commoner', collection: @members, as: :commoner %>
             <% else %>
@@ -115,3 +115,5 @@
     </div>
   </div>
 </div>
+
+<%= render 'inviteModal' %>
