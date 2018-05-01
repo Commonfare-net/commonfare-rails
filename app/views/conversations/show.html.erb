@@ -1,9 +1,15 @@
 <%= content_for :title, (_('Conversation with %{commoner_name}') %{commoner_name: counterpart_for_conversation(@conversation).name}) %>
 <div class="row justify-content-center">
-  <div class="col-md-10 col-lg-10">
-    <div class="row conversation-header pt-5 pb-2 bg-white">
-      <div class="col">
+  <div class="col-lg-8 col-md-8 bg-white">
+    <div class="conversation-back mt-3">
+      <%= link_to((_("%{icon} Back to My conversations") %{icon: fa_icon('chevron-left fw')}).html_safe, conversations_path(@conversations), class: 'btn btn-outline-cf') %>
+    </div>
+    <div class="row conversation-header pt-4 pb-2">
+      <div class="col-md-8">
         <h3><%= counterpart_for_conversation(@conversation).name %></h3>
+      </div>
+      <div class="col-md-4 align-right">
+        <small class='text-muted'>{Dropdown menu with: Profile page, transfer}</small>
       </div>
     </div>
     <div class="conversation-container d-flex flex-column justify-content-end">

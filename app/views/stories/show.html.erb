@@ -13,34 +13,37 @@
     <meta name="twitter:card" content="<%= @story.images.any? ? 'summary_large_image' : 'summary' %>" />
     <% end %>
 
-    <div class="row">
+    <div class="row story-header pt-5 pb-3 bg-white">
       <div class="col">
-        <div class="story-title">
-          <% if can? :edit, @story %>
-            <%= link_to edit_story_path(@story, story_locale: @story_locale), class: 'mdc-fab mdc-fab--mini material-icons card-fab--absolute', 'aria-label': 'Favorite', data: { 'mdc-auto-init': 'MDCRipple' } do %>
-              <span class="mdc-fab__icon">
-                <%= fa_icon 'pencil lg' %>
-              </span>
-            <% end %>
-          <% end %>
-          <p class="story-type"><%= title_for_stories(@story.type).upcase %></p>
-          <h2>
-            <%= @story.title %>
-          </h2>
+        <div class="row">
+          <div class="col">
+            <div class="story-title">
+              <% if can? :edit, @story %>
+                <%= link_to edit_story_path(@story, story_locale: @story_locale), class: 'mdc-fab mdc-fab--mini material-icons card-fab--absolute', 'aria-label': 'Favorite', data: { 'mdc-auto-init': 'MDCRipple' } do %>
+                  <span class="mdc-fab__icon">
+                    <%= fa_icon 'pencil lg' %>
+                  </span>
+                <% end %>
+              <% end %>
+              <p class="story-type"><%= title_for_stories(@story.type).upcase %></p>
+              <h2>
+                <%= @story.title %>
+              </h2>
+            </div>
+          </div>
         </div>
+
+        <% if @story.tags.any? %>
+          <%= render 'stories/tags', tags: @story.tags %>
+        <% end %>
       </div>
     </div>
 
-    <% if @story.tags.any? %>
-      <%= render 'stories/tags', tags: @story.tags %>
-    <% end %>
 
-    <hr>
-
-    <div class="row">
+    <div class="row story-content-wrap">
       <div class="col-lg-3">
         <div class="story-info">
-          <div class="row mb-2">
+          <div class="row my-3">
             <div class="col">
               <div class="story-author">
                 <%= fa_icon('user fw', text: author_link_for(@story)) %>
@@ -72,7 +75,7 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-9">
+      <div class="col-lg-9 pt-3 bg-white">
         <div class="row">
           <div class="col">
             <div class="story-content">
@@ -92,7 +95,7 @@
       </div>
     </div>
 
-    <div class="row grey-bg">
+    <div class="row grey-bg pt-3">
       <div class="col-lg-3"></div>
       <div class="col-lg-9">
         <%= render('comments/new', commentable: @story, comment: @comment) if user_signed_in? %>

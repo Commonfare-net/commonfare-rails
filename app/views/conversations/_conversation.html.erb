@@ -4,7 +4,7 @@
   <div class="media-body">
     <div class="d-flex d-flex-row">
       <div>
-        <h5 class="conversation-counterpart mt-2"><%= counterpart_for_conversation(conversation).name %></h5>
+        <h5 class="conversation-counterpart mt-2 mb-0"><%= counterpart_for_conversation(conversation).name %></h5>
       </div>
       <div class="ml-auto">
         <small class="text-muted"><%= last_message_time(conversation.messages.last) %></small>

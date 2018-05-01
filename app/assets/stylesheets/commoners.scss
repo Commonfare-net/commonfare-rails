@@ -5,7 +5,8 @@
 .image_preview.commoner_avatar {
   img {
     @extend .rounded-circle;
-    margin: 1em auto;
+    display: block;
+    margin-bottom: .5em;
     border: 1px solid $lightgreen;
   }
 }

@@ -31,12 +31,19 @@ hr {
 }
 
 // Nav
-  .navbar-nav {
-    .dropdown-menu {
-      top: 42px;
-      border-radius: 0;
-    }
+.navbar {
+  transition: transform .35s;
+}
+.navbar.hidden {
+  transform: translateY(-100%);
+  -webkit-transform: translateY(-100%);
+}
+.navbar-nav {
+  .dropdown-menu {
+    top: 42px;
+    border-radius: 0;
   }
+}
 
 // Buttons
 .btn {
@@ -68,7 +75,7 @@ hr {
 .btn-outline-cf {
   color: $darkgreen;
   background-color: transparent;
-  border-color: rgba($darkgreen, .2);
+  border-color: rgba($darkgreen, .15);
   padding: 0.3rem 1.5rem;
   &:hover {
     border-color: $darkgreen;
@@ -121,7 +128,7 @@ hr {
   }
 }
 .form-group {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   &.image_preview {
     img {
       margin-right: 1em;
@@ -159,3 +166,12 @@ label {
     }
   }
 }
+
+
+
+// Extend row to full window width (to use on headers)
+// .$ {
+//   margin-left: calc(( 100vw - 100%) * -0.5);
+//   margin-right: calc(( 100vw - 100%) * -0.5);
+// }
+

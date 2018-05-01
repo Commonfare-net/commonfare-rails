@@ -2,7 +2,7 @@
 <div class="row justify-content-center">
   <div class="col-lg-8 col-md-8 bg-white">
     <div class="discussion-back mt-3">
-      <%= link_to((_("%{icon} Back to %{group_name}") %{group_name: @group.name, icon: fa_icon('chevron-left fw')}).html_safe, group_path(@group), class: 'btn btn-sm btn-outline-cf') %>
+      <%= link_to((_("%{icon} Back to %{group_name}") %{group_name: @group.name, icon: fa_icon('chevron-left fw')}).html_safe, group_path(@group), class: 'btn btn-outline-cf') %>
     </div>
     <div class="discussion-header">
       <h3 class="mb-0"><%= @discussion.title %></h3>

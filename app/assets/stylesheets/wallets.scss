@@ -2,24 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .wallet-header {
-  h2 {
-    margin-bottom: 2rem;
-  }
+  border-bottom: 1px solid $lightgreen;
 }
 
 .wallet-balance {
-  margin-bottom: 2rem;
   h6 {
     margin-bottom: 0;
   }
   h1 {
     color: $cf-secondary-color;
-    margin-bottom: 0;
-  }
-}
-
-.wallet-transactions {
-  h6 {
-    // margin-bottom: 1rem;
+    margin-bottom: 2rem;
   }
 }

@@ -1,8 +1,11 @@
 <% story_types_and_lists.each do |story_type, story_list| %>
   <% if story_list.any? %>
     <div class="row story-type-header">
-      <div class="col">
+      <div class="col-lg-auto">
         <h2><%= story_type_title(story_type) %></h2>
+      </div>
+      <div class="col">
+        <p class="text-muted"><%= story_type_subtitle(story_type) %></p>
       </div>
     </div>
     <div class="row">
