@@ -1,6 +1,6 @@
 class GroupsController < ApplicationController
-  before_action :set_group, only: [:show, :edit, :update, :destroy]
-  before_action :set_commoner, only: [:new, :create]
+  before_action :set_group, only: [:show, :edit, :update, :destroy, :leave]
+  before_action :set_commoner, only: [:new, :create, :leave]
 
   # GET /groups
   # GET /groups.json
@@ -37,6 +37,10 @@ class GroupsController < ApplicationController
 
   # GET /groups/1/edit
   def edit
+  end
+
+  def leave
+    @membership = Membership.find_by(group: @group, commoner: @commoner)
   end
 
   # POST /groups

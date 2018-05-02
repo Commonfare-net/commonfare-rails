@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0\n"
 "Report-Msgid-Bugs-To: contact@translation.io\n"
-"POT-Creation-Date: 2018-05-01 17:26+0200\n"
-"PO-Revision-Date: 2018-05-01 17:26+0200\n"
+"POT-Creation-Date: 2018-05-02 21:39+0200\n"
+"PO-Revision-Date: 2018-05-02 21:39+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -73,6 +73,10 @@ msgstr ""
 
 #: ../app/controllers/join_requests_controller.rb:44
 msgid "Join request has been rejected."
+msgstr ""
+
+#: ../app/controllers/memberships_controller.rb:60
+msgid "You have left this group"
 msgstr ""
 
 #: ../app/controllers/messages_controller.rb:38
@@ -211,7 +215,7 @@ msgstr ""
 
 #: ../app/views/comments/edit.html.erb:8
 #: ../app/views/discussions/show.html.erb:19
-#: ../app/views/listings/edit.html.erb:16
+#: ../app/views/groups/leave.html.erb:26 ../app/views/listings/edit.html.erb:16
 #: ../app/views/users/registrations/goodbye.html.erb:39
 msgid "Are you sure?"
 msgstr ""
@@ -292,7 +296,7 @@ msgstr ""
 msgid "Button|Edit profile"
 msgstr ""
 
-#: ../app/views/commoners/show.html.erb:32 ../app/views/groups/show.html.erb:31
+#: ../app/views/commoners/show.html.erb:32 ../app/views/groups/show.html.erb:35
 #: ../app/views/layouts/_navbar.html.erb:94
 msgid "Stories"
 msgstr ""
@@ -301,15 +305,15 @@ msgstr ""
 msgid "Groups"
 msgstr ""
 
-#: ../app/views/commoners/show.html.erb:39 ../app/views/groups/show.html.erb:37
+#: ../app/views/commoners/show.html.erb:39 ../app/views/groups/show.html.erb:42
 msgid "Requests"
 msgstr ""
 
-#: ../app/views/commoners/show.html.erb:43 ../app/views/groups/show.html.erb:40
+#: ../app/views/commoners/show.html.erb:43 ../app/views/groups/show.html.erb:46
 msgid "Activities"
 msgstr ""
 
-#: ../app/views/commoners/show.html.erb:55 ../app/views/groups/show.html.erb:71
+#: ../app/views/commoners/show.html.erb:55 ../app/views/groups/show.html.erb:77
 msgid "No stories yet"
 msgstr ""
 
@@ -331,7 +335,7 @@ msgid "No requests"
 msgstr ""
 
 #: ../app/views/commoners/show.html.erb:101
-#: ../app/views/groups/show.html.erb:108
+#: ../app/views/groups/show.html.erb:116
 msgid "Coming soon"
 msgstr ""
 
@@ -499,35 +503,81 @@ msgstr ""
 msgid "Title|Edit"
 msgstr ""
 
+#: ../app/views/groups/leave.html.erb:1
+msgid "Title|Leave %{group_name}"
+msgstr ""
+
+#: ../app/views/groups/leave.html.erb:4
+msgid "Leave group title|Do you want to leave %{group_name}?"
+msgstr ""
+
+#: ../app/views/groups/leave.html.erb:5
+msgid "Leave group title|Discussions and messages"
+msgstr ""
+
+#: ../app/views/groups/leave.html.erb:7
+msgid ""
+"Leave group text|When you leave a group, you will no longer be able to partici"
+"pate to the group discussions, but the messages you have left in such discussi"
+"ons will remain there, so other members can read them."
+msgstr ""
+
+#: ../app/views/groups/leave.html.erb:10
+msgid "Leave group title|Group wallet"
+msgstr ""
+
+#: ../app/views/groups/leave.html.erb:12
+msgid ""
+"Leave group text|Your group wallet will be emptied and all the coins will retu"
+"rn to the group wallet. If you want to give your coins to some other group mem"
+"ber, do it before leaving. "
+msgstr ""
+
+#: ../app/views/groups/leave.html.erb:15
+msgid ""
+"Leave group text|All the transactions you have made with other group members w"
+"ill not be deleted, as each of them must remain visible to the respective coun"
+"terpart."
+msgstr ""
+
+#: ../app/views/groups/leave.html.erb:20
+#: ../app/views/users/registrations/goodbye.html.erb:33
+msgid "Button|I've changed my mind"
+msgstr ""
+
+#: ../app/views/groups/leave.html.erb:23
+msgid "Button|Go ahead, leave this group"
+msgstr ""
+
 #: ../app/views/groups/new.html.erb:1 ../app/views/groups/new.html.erb:4
 msgid "Title|Create group"
 msgstr ""
 
-#: ../app/views/groups/show.html.erb:27
+#: ../app/views/groups/show.html.erb:31
 msgid "Discussions"
 msgstr ""
 
-#: ../app/views/groups/show.html.erb:34
+#: ../app/views/groups/show.html.erb:38
 msgid "Members"
 msgstr ""
 
-#: ../app/views/groups/show.html.erb:47
+#: ../app/views/groups/show.html.erb:53
 msgid "Button|Start a new discussion"
 msgstr ""
 
-#: ../app/views/groups/show.html.erb:54
+#: ../app/views/groups/show.html.erb:60
 msgid "No discussions yet"
 msgstr ""
 
-#: ../app/views/groups/show.html.erb:78
+#: ../app/views/groups/show.html.erb:84
 msgid "Button|Invite member"
 msgstr ""
 
-#: ../app/views/groups/show.html.erb:85
+#: ../app/views/groups/show.html.erb:91
 msgid "No members"
 msgstr ""
 
-#: ../app/views/groups/show.html.erb:98
+#: ../app/views/groups/show.html.erb:105
 msgid "No pending requests"
 msgstr ""
 
@@ -1157,10 +1207,6 @@ msgid ""
 "ve are irreversible</em> - if you make a new commonfare.net account in the fut"
 "ure, you will not be able to reclaim content generated under a cancelled accou"
 "nt."
-msgstr ""
-
-#: ../app/views/users/registrations/goodbye.html.erb:33
-msgid "Button|I've changed my mind"
 msgstr ""
 
 #: ../app/views/users/registrations/goodbye.html.erb:36

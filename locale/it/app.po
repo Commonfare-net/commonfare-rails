@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0\n"
 "Report-Msgid-Bugs-To: contact@translation.io\n"
-"POT-Creation-Date: 2018-05-01 17:26+0200\n"
-"PO-Revision-Date: 2018-05-01 17:26+0200\n"
+"POT-Creation-Date: 2018-05-02 21:39+0200\n"
+"PO-Revision-Date: 2018-05-02 21:39+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Italian\n"
 "Language: it\n"
@@ -77,6 +77,10 @@ msgstr ""
 
 #: ../app/controllers/join_requests_controller.rb:44
 msgid "Join request has been rejected."
+msgstr ""
+
+#: ../app/controllers/memberships_controller.rb:60
+msgid "You have left this group"
 msgstr ""
 
 #: ../app/controllers/messages_controller.rb:38
@@ -220,7 +224,7 @@ msgstr "Modifica"
 
 #: ../app/views/comments/edit.html.erb:8
 #: ../app/views/discussions/show.html.erb:19
-#: ../app/views/listings/edit.html.erb:16
+#: ../app/views/groups/leave.html.erb:26 ../app/views/listings/edit.html.erb:16
 #: ../app/views/users/registrations/goodbye.html.erb:39
 msgid "Are you sure?"
 msgstr "Sei sicuro/a?"
@@ -305,7 +309,7 @@ msgstr ""
 msgid "Button|Edit profile"
 msgstr "Modifica profilo"
 
-#: ../app/views/commoners/show.html.erb:32 ../app/views/groups/show.html.erb:31
+#: ../app/views/commoners/show.html.erb:32 ../app/views/groups/show.html.erb:35
 #: ../app/views/layouts/_navbar.html.erb:94
 msgid "Stories"
 msgstr "Storie"
@@ -314,15 +318,15 @@ msgstr "Storie"
 msgid "Groups"
 msgstr ""
 
-#: ../app/views/commoners/show.html.erb:39 ../app/views/groups/show.html.erb:37
+#: ../app/views/commoners/show.html.erb:39 ../app/views/groups/show.html.erb:42
 msgid "Requests"
 msgstr ""
 
-#: ../app/views/commoners/show.html.erb:43 ../app/views/groups/show.html.erb:40
+#: ../app/views/commoners/show.html.erb:43 ../app/views/groups/show.html.erb:46
 msgid "Activities"
 msgstr ""
 
-#: ../app/views/commoners/show.html.erb:55 ../app/views/groups/show.html.erb:71
+#: ../app/views/commoners/show.html.erb:55 ../app/views/groups/show.html.erb:77
 msgid "No stories yet"
 msgstr "Non ci sono storie presenti"
 
@@ -344,7 +348,7 @@ msgid "No requests"
 msgstr ""
 
 #: ../app/views/commoners/show.html.erb:101
-#: ../app/views/groups/show.html.erb:108
+#: ../app/views/groups/show.html.erb:116
 msgid "Coming soon"
 msgstr ""
 
@@ -529,35 +533,81 @@ msgstr ""
 msgid "Title|Edit"
 msgstr ""
 
+#: ../app/views/groups/leave.html.erb:1
+msgid "Title|Leave %{group_name}"
+msgstr ""
+
+#: ../app/views/groups/leave.html.erb:4
+msgid "Leave group title|Do you want to leave %{group_name}?"
+msgstr ""
+
+#: ../app/views/groups/leave.html.erb:5
+msgid "Leave group title|Discussions and messages"
+msgstr ""
+
+#: ../app/views/groups/leave.html.erb:7
+msgid ""
+"Leave group text|When you leave a group, you will no longer be able to partici"
+"pate to the group discussions, but the messages you have left in such discussi"
+"ons will remain there, so other members can read them."
+msgstr ""
+
+#: ../app/views/groups/leave.html.erb:10
+msgid "Leave group title|Group wallet"
+msgstr ""
+
+#: ../app/views/groups/leave.html.erb:12
+msgid ""
+"Leave group text|Your group wallet will be emptied and all the coins will retu"
+"rn to the group wallet. If you want to give your coins to some other group mem"
+"ber, do it before leaving. "
+msgstr ""
+
+#: ../app/views/groups/leave.html.erb:15
+msgid ""
+"Leave group text|All the transactions you have made with other group members w"
+"ill not be deleted, as each of them must remain visible to the respective coun"
+"terpart."
+msgstr ""
+
+#: ../app/views/groups/leave.html.erb:20
+#: ../app/views/users/registrations/goodbye.html.erb:33
+msgid "Button|I've changed my mind"
+msgstr "Ho cambiato idea"
+
+#: ../app/views/groups/leave.html.erb:23
+msgid "Button|Go ahead, leave this group"
+msgstr ""
+
 #: ../app/views/groups/new.html.erb:1 ../app/views/groups/new.html.erb:4
 msgid "Title|Create group"
 msgstr ""
 
-#: ../app/views/groups/show.html.erb:27
+#: ../app/views/groups/show.html.erb:31
 msgid "Discussions"
 msgstr ""
 
-#: ../app/views/groups/show.html.erb:34
+#: ../app/views/groups/show.html.erb:38
 msgid "Members"
 msgstr ""
 
-#: ../app/views/groups/show.html.erb:47
+#: ../app/views/groups/show.html.erb:53
 msgid "Button|Start a new discussion"
 msgstr ""
 
-#: ../app/views/groups/show.html.erb:54
+#: ../app/views/groups/show.html.erb:60
 msgid "No discussions yet"
 msgstr ""
 
-#: ../app/views/groups/show.html.erb:78
+#: ../app/views/groups/show.html.erb:84
 msgid "Button|Invite member"
 msgstr ""
 
-#: ../app/views/groups/show.html.erb:85
+#: ../app/views/groups/show.html.erb:91
 msgid "No members"
 msgstr ""
 
-#: ../app/views/groups/show.html.erb:98
+#: ../app/views/groups/show.html.erb:105
 msgid "No pending requests"
 msgstr ""
 
@@ -605,6 +655,14 @@ msgid ""
 "operation. In a time in which precarity, insecurity and loneliness are experie"
 "nced by an increasing amount of people, Commonfare wants to value the power of"
 " social relations and claim back the right to joy."
+msgstr ""
+
+#: ../app/views/layouts/_footer.html.erb:7
+msgid ""
+"Footer|Commonfare is a new idea of welfare addressing the needs derived from p"
+"recarity conditions: guaranteed income and access to common goods like housing"
+", education, wealth, knowledge, mobility, sociality. Commonfare is for, with a"
+"nd by people."
 msgstr ""
 
 #: ../app/views/layouts/_footer.html.erb:10
@@ -859,6 +917,12 @@ msgstr ""
 msgid "Home text|Commonfare.net if for, with, and by people."
 msgstr ""
 
+#: ../app/views/pages/home.html.erb:60
+msgid ""
+"Home text|Do you want to join the community? You will need only an email addre"
+"ss, and we will never use it for other purposes."
+msgstr ""
+
 #: ../app/views/pages/home.html.erb:62
 msgid ""
 "Home text|Do you want to join? You will need only an email address, and we wil"
@@ -911,14 +975,6 @@ msgstr "Salva"
 #: ../app/views/stories/_builder_content.html.erb:27
 msgid "This story has no content yet"
 msgstr ""
-
-#: ../app/views/stories/_card.html.erb:3 ../app/views/stories/show.html.erb:28
-msgid "Welfare Provision"
-msgstr "Misura di welfare"
-
-#: ../app/views/stories/_card.html.erb:6 ../app/views/stories/show.html.erb:33
-msgid "Good Practice"
-msgstr "Buona pratica"
 
 #: ../app/views/stories/_card.html.erb:11
 msgid "Draft"
@@ -1027,6 +1083,14 @@ msgstr ""
 "Commonfare.net non è collegato a nessuna piattaforma esterna, quindi per condi"
 "videre questa storia su Facebook, Twitter, ecc. puoi copiare l'URL e incollarl"
 "o lì."
+
+#: ../app/views/stories/_story.html.erb:4
+msgid "Welfare Provision"
+msgstr "Misura di welfare"
+
+#: ../app/views/stories/_story.html.erb:7
+msgid "Good Practice"
+msgstr "Buona pratica"
 
 #: ../app/views/stories/builder.html.erb:1 ../app/views/stories/new.html.erb:1
 msgid "Write your Story"
@@ -1296,10 +1360,6 @@ msgstr ""
 "oni irreversibili</em> - se in futuro attiverai un nuovo account su Commonfare"
 ".net, non potrai più recuperare i contenuti generati con il tuo vecchio accoun"
 "t cancellato."
-
-#: ../app/views/users/registrations/goodbye.html.erb:33
-msgid "Button|I've changed my mind"
-msgstr "Ho cambiato idea"
 
 #: ../app/views/users/registrations/goodbye.html.erb:36
 msgid "Button|Go ahead, cancel my account"

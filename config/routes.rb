@@ -65,7 +65,7 @@ Rails.application.routes.draw do
     end
     resources :comments, except: [:new, :show, :index]
     resources :tags, only: :show
-    resources :memberships
+    resources :memberships, only: :destroy
     resources :groups do
       resources :discussions do
         resources :messages, only: [:create, :destroy]
@@ -74,6 +74,7 @@ Rails.application.routes.draw do
         post :accept, on: :member
         post :reject, on: :member
       end
+      get :leave, on: :member
     end
     resources :conversations, except: [:edit, :update, :destroy] do
       resources :messages, only: [:create, :destroy]

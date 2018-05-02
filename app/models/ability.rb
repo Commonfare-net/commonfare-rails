@@ -28,7 +28,7 @@ class Ability
 
         can [:update, :destroy], Membership, commoner_id: commoner.id
         can :create, Group
-        can :update, Group, memberships: {commoner_id: commoner.id}
+        can [:update, :leave], Group, memberships: {commoner_id: commoner.id}
         can :join, Group do |group|
           !commoner.member_of? group
         end

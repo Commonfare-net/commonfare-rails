@@ -1,0 +1,31 @@
+<%= content_for :title, (s_('Title|Leave %{group_name}') %{group_name: @group.name}) %>
+<div class="row justify-content-center">
+  <div class="col-md-6 col-lg-6 bg-white py-4">
+    <h2 class="red-title"><%= (s_('Leave group title|Do you want to leave %{group_name}?') %{group_name: @group.name}) %></h2>
+    <h4><%= s_('Leave group title|Discussions and messages') %></h4>
+    <p>
+      <%= s_('Leave group text|When you leave a group, you will no longer be able to participate to the group discussions, but the messages you have left in such discussions will remain there, so other members can read them.') %>
+    </p>
+    <!--
+    <h4><%= s_('Leave group title|Group wallet') %></h4>
+    <p>
+      <%= s_('Leave group text|Your group wallet will be emptied and all the coins will return to the group wallet. If you want to give your coins to some other group member, do it before leaving. ') %>
+    </p>
+    <p>
+      <%= s_('Leave group text|All the transactions you have made with other group members will not be deleted, as each of them must remain visible to the respective counterpart.') %>
+    </p>
+    -->
+    <div class="row">
+      <div class="col mb-1">
+        <%= link_to s_("Button|I've changed my mind"), :back, class: 'btn btn-outline-secondary btn-block'  %>
+      </div>
+      <div class="col">
+        <%= link_to s_("Button|Go ahead, leave this group"),
+        membership_path(@membership),
+        class: 'btn btn-cf btn-block',
+          data: { confirm: _("Are you sure?") },
+          method: :delete %>
+        </div>
+      </div>
+  </div>
+</div>
