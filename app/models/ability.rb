@@ -33,7 +33,9 @@ class Ability
           !commoner.member_of? group
         end
         can :create, JoinRequest do |join_request|
-          !commoner.member_of? join_request.group
+          # commoner must not be a member and there must be no pending requests
+          !commoner.member_of?(join_request.group) &&
+          JoinRequest.where(commoner_id: commoner.id, group_id: join_request.group.id, aasm_state: 'pending').empty?
         end
         can [:read, :update], JoinRequest, group_id: commoner.group_ids
         can [:accept, :reject], JoinRequest, group_id: commoner.group_ids, aasm_state: 'pending'

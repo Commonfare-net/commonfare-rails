@@ -23,9 +23,9 @@
         <div class="row nav-pills-container mb-3">
           <ul class="nav nav-pills" id="pills-tab" role="tablist">
             <% if can? :create, @new_discussion %>
-            <li class="nav-item">
-              <a class="nav-link active" id="pills-discussions-tab" data-toggle="pill" href="#pills-discussions" role="tab" aria-controls="pills-discussions" aria-selected="true"><%= _('Discussions') %></a>
-            </li>
+              <li class="nav-item">
+                <a class="nav-link active" id="pills-discussions-tab" data-toggle="pill" href="#pills-discussions" role="tab" aria-controls="pills-discussions" aria-selected="true"><%= _('Discussions') %></a>
+              </li>
             <% end %>
             <li class="nav-item">
               <a class="nav-link <%= 'active' if cannot? :create, @new_discussion %>" id="pills-stories-tab" data-toggle="pill" href="#pills-stories" role="tab" aria-controls="pills-stories" aria-selected="true"><%= _('Stories') %></a>
@@ -33,9 +33,11 @@
             <li class="nav-item">
               <a class="nav-link" id="pills-members-tab" data-toggle="pill" href="#pills-members" role="tab" aria-controls="pills-members" aria-selected="false"><%= _('Members') %></a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" id="pills-requests-tab" data-toggle="pill" href="#pills-requests" role="tab" aria-controls="pills-requests" aria-selected="false"><%= _('Requests') %></a>
-            </li>
+            <% if can? :edit, @group %>
+              <li class="nav-item">
+                <a class="nav-link" id="pills-requests-tab" data-toggle="pill" href="#pills-requests" role="tab" aria-controls="pills-requests" aria-selected="false"><%= _('Requests') %></a>
+              </li>
+            <% end %>
             <li class="nav-item">
               <a class="nav-link" id="pills-activities-tab" data-toggle="pill" href="#pills-activities" role="tab" aria-controls="pills-activities" aria-selected="false"><%= _('Activities') %></a>
             </li>
@@ -88,19 +90,21 @@
             </div>
             <% end %>
           </div>
-          <div class="tab-pane fade" id="pills-requests" role="tabpanel" aria-labelledby="pills-requests-tab">
-            <% if @pending_join_requests.any? %>
-              <%= render partial: 'join_requests/join_request', collection: @pending_join_requests, as: :join_request %>
-            <% else %>
-            <div class="row justify-content-center">
-              <div class="col text-center">
-                <h3 class="text-muted mt-4">
-                  <%= _('No pending requests') %>
-                </h3>
+          <% if can? :edit, @group %>
+            <div class="tab-pane fade" id="pills-requests" role="tabpanel" aria-labelledby="pills-requests-tab">
+              <% if @pending_join_requests.any? %>
+                <%= render partial: 'join_requests/join_request', collection: @pending_join_requests, as: :join_request %>
+              <% else %>
+              <div class="row justify-content-center">
+                <div class="col text-center">
+                  <h3 class="text-muted mt-4">
+                    <%= _('No pending requests') %>
+                  </h3>
+                </div>
               </div>
+              <% end %>
             </div>
-            <% end %>
-          </div>
+          <% end %>
           <div class="tab-pane fade" id="pills-activities" role="tabpanel" aria-labelledby="pills-activities-tab">
             <div class="row justify-content-center">
               <div class="col text-center">
