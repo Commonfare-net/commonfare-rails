@@ -77,9 +77,10 @@ $ docker-compose restart
 
 ## `Gemfile` modifications
 
-Every time you modify the `Gemfile` you have to **rebuild** the docker image of the Rails app, so:
+Every time you modify the `Gemfile` you have to reinstall the gems and update the Gemfile.lock, then **rebuild** the docker image of the Rails app, so:
 
 ```bash
+$ docker-compose run --rm app bundle install
 $ docker-compose build
 $ docker-compose up -d
 ```
