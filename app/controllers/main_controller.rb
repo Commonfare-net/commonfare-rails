@@ -24,9 +24,9 @@ class MainController < ApplicationController
     ).result(distinct: true)
 
     @story_types_and_lists = {
-      commoners_voice: results.commoners_voice.order('created_at DESC'),
-      good_practice: results.good_practice.order('created_at DESC'),
-      welfare_provision: results.welfare_provision.order('created_at DESC')
+      commoners_voice: results.commoners_voice,
+      good_practice: results.good_practice,
+      welfare_provision: results.welfare_provision
     }
 
     @tags = Tag.ransack(

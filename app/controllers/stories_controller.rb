@@ -26,21 +26,28 @@ class StoriesController < ApplicationController
     elsif params[:filter].present?
       @filter = params[:filter]
       if Story::TYPES.include? @filter.to_sym
-        stories = accessible_stories.send(@filter.to_sym).includes(:commoner, :tags, :comments, :images, :translations)
+        stories = accessible_stories.send(@filter.to_sym)
         @title = @filter.to_sym
       else
-        stories = accessible_stories.commoners_voice.includes(:commoner, :tags, :comments, :images, :translations)
+        stories = accessible_stories.commoners_voice
         @title = :commoners_voice
       end
     else
-      stories = accessible_stories.includes(:commoner, :tags, :comments, :images, :translations).order('created_at DESC') # All descending
+      stories = accessible_stories # All descending
       @title = :all
     end
 
+    # Welfare provisions are already scoped in the current locale language
     @story_types_and_lists = {
-      commoners_voice: stories.commoners_voice.order('created_at DESC'),
-      good_practice: stories.good_practice.order('created_at DESC'),
-      welfare_provision: stories.welfare_provision.order('created_at DESC')
+      commoners_voice: stories
+        .commoners_voice
+        .includes(:commoner, :tags, :comments, :images, :translations),
+      good_practice: stories
+        .good_practice
+        .includes(:commoner, :tags, :comments, :images, :translations),
+      welfare_provision: stories
+        .welfare_provision
+        .includes(:commoner, :tags, :comments, :images)
     }
   end
 
@@ -138,7 +145,7 @@ class StoriesController < ApplicationController
   def publish
     # set params without saving (used only for anonymous)
     @story.assign_attributes(publish_params)
-    
+
     if @story.publish!
       respond_to do |format|
         format.html { redirect_to @story }

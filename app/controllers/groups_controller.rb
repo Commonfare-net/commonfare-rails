@@ -15,9 +15,9 @@ class GroupsController < ApplicationController
     # All the stories published by group's members:
     # @group_stories = Story.where(commoner: @group.members).published
     @story_types_and_lists = {
-      commoners_voice: @group_stories.commoners_voice.order('created_at DESC').first(6),
-      good_practice: @group_stories.good_practice.order('created_at DESC').first(6),
-      welfare_provision: @group_stories.welfare_provision.order('created_at DESC').first(6)
+      commoners_voice: @group_stories.commoners_voice.first(6),
+      good_practice: @group_stories.good_practice.first(6),
+      welfare_provision: @group_stories.welfare_provision.first(6)
     }
     @members = @group.members
 

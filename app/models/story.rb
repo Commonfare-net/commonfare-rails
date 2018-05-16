@@ -27,13 +27,19 @@ class Story < ApplicationRecord
   after_save :add_images_from_content_json_draft, if: ->(story) { attribute_changed?(:content_json_draft) } # TODO!! DEPRECATED!! UPGRADE TO RAILS 5.1.5
   after_commit :check_welfare_provision_and_good_practice, on: [:create, :update]
 
+  default_scope { order(created_at: :desc) }
+
   scope :draft, -> { where(published: false) }
   scope :published, -> { where(published: true) }
 
   TYPES = %i(welfare_provision good_practice).freeze
-  TYPES.each do |type|
-    scope type, -> { where(type => true)   }
-  end
+  # TYPES.each do |type|
+  #   scope type, -> { where(type => true) }
+  # end
+
+  # All welfare provisions are scoped by translation
+  scope :welfare_provision, -> { where(welfare_provision: true).with_translations(I18n.locale)}
+  scope :good_practice, -> { where(good_practice: true)}
   scope :commoners_voice, -> { where(good_practice: false, welfare_provision: false) }
 
   def type

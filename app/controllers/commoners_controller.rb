@@ -25,9 +25,9 @@ class CommonersController < ApplicationController
       @stories = @commoner.stories.published.where(anonymous: false, group: nil)
     end
     @story_types_and_lists = {
-      commoners_voice: @stories.commoners_voice.order('created_at DESC').first(6),
-      good_practice: @stories.good_practice.order('created_at DESC').first(6),
-      welfare_provision: @stories.welfare_provision.order('created_at DESC').first(6)
+      commoners_voice: @stories.commoners_voice.first(6),
+      good_practice: @stories.good_practice.first(6),
+      welfare_provision: @stories.welfare_provision.first(6)
     }
     @join_requests = JoinRequest.where(commoner: @commoner).includes(:group)
   end
