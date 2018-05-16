@@ -1,6 +1,6 @@
 <% content_for :title, _('Write your Story') %>
 <div class="row justify-content-center pb-2">
-  <div class="col-md-10 col-lg-8">
+  <div class="col-md-10 col-lg-8 pb-3 bg-white">
     <% Globalize.with_locale(@story_locale) do %>
       <%= render 'language_choice', story_locale: @story_locale, story_builder: false %>
 

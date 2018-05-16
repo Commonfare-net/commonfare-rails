@@ -65,7 +65,7 @@ class Ability
         can :read, Conversation, sender_id: commoner.id
         can :read, Conversation, recipient_id: commoner.id
 
-        can [:create, :update, :destroy], Listing
+        can [:create, :update, :destroy], Listing, commoner_id: commoner.id
       end
     end
   end
