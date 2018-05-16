@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import { oneOf, object, array, bool } from 'prop-types';
 import { IntlProvider, FormattedMessage } from 'react-intl';
 import StoryBuilder from 'storybuilder-react';
 
@@ -14,10 +14,15 @@ import translations from './translations';
 
 export default class extends Component {
   static propTypes = {
-    locale: PropTypes.oneOf(locales).isRequired,
-    storyLocale: PropTypes.oneOf(locales).isRequired,
-    story: PropTypes.object.isRequired,
-    availableTags: PropTypes.array.isRequired
+    locale: oneOf(locales).isRequired,
+    storyLocale: oneOf(locales).isRequired,
+    story: object.isRequired,
+    availableTags: array.isRequired,
+    templatesEnabled: bool
+  }
+
+  static defaultProps = {
+    templatesEnabled: false
   }
 
   constructor(props) {
@@ -80,7 +85,7 @@ export default class extends Component {
   }
 
   render() {
-    const { locale, storyLocale, availableTags, story: { title_draft, place_draft, content_json_draft, tags, anonymous } } = this.props;
+    const { locale, storyLocale, availableTags, templatesEnabled, story: { title_draft, place_draft, content_json_draft, tags, anonymous } } = this.props;
     const { status, storyId, translatedLocales } = this.state;
 
     if (this.state.hasError) {
@@ -107,6 +112,17 @@ export default class extends Component {
             </div>
             {!storyId &&
               <div className="col-12 col-sm-6 order-1 order-sm-12 text-sm-right">
+                {templatesEnabled &&
+                  <span>
+                    <a href={`/${locale}/stories/templates`}>
+                      <FormattedMessage
+                        id="create_template"
+                        defaultMessage="Create using a template"
+                      />
+                    </a>
+                    <br />
+                  </span>
+                }
                 <a href={`/${locale}/stories/new`}>
                   <FormattedMessage
                     id="create_old"

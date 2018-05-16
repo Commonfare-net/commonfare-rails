@@ -24,3 +24,7 @@
 .story-builder-wrapper .ql-editor {
   font-family: 'Asap', sans-serif;
 }
+
+.story-builder-wrapper .story-builder__tag-input {
+  background: transparent;
+}
