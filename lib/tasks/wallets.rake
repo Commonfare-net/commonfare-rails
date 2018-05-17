@@ -6,4 +6,14 @@ namespace :wallets do
     end
   end
 
+  task delete_for_all: :environment do |t|
+    Transaction.destroy_all
+    Wallet.destroy_all
+  end
+
+  desc "Re-create a wallet for each Commoner unless it is already there"
+  task recreate_all_wallets: [:delete_for_all, :create_for_all] do |t|
+    # The work is done in the dependencies
+  end
+
 end

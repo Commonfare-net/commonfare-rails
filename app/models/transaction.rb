@@ -29,8 +29,9 @@ class Transaction < ApplicationRecord
                                      to_id: self.to_wallet.address,
                                      amount: self.amount.to_f,
                                      tags: [])
-    rescue
+    rescue => e
       Rails.logger.info("SWAPI #{Time.now.to_s} Failed transaction from #{self.from_wallet.address}")
+      Rails.logger.info("ERROR: #{e}")
       throw(:abort)
     else
       Rails.logger.info("SWAPI #{Time.now.to_s} Finished transaction from #{self.from_wallet.address}. TXID: #{resp['transaction-id']}")
