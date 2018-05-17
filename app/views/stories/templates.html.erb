@@ -1,0 +1,10 @@
+<% content_for :title, _('Create a story from a template') %>
+<div class="row justify-content-center pb-2">
+  <div class="col-md-10 col-lg-8 pb-3 bg-white">
+    <h1 class="text-center my-4"><%= _('Choose a template for your story') %></h1>
+
+    <% @templates.each do |template_name, template| %>
+      <%= link_to template['title_draft'], new_story_path(story_builder: true, template: template_name), class: 'btn btn-cf-alt btn-lg btn-block' %></p>
+    <% end %>
+  </div>
+</div>

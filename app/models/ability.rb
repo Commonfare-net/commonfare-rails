@@ -21,6 +21,7 @@ class Ability
         can :welcome, Commoner do |commoner|
           commoner.user.sign_in_count == 1
         end
+        can :templates, Story
         can :crud, Story, commoner_id: commoner.id
         can [:publish, :preview], Story, commoner_id: commoner.id
         can [:create, :update, :destroy], Comment, commoner_id: commoner.id

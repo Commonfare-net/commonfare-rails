@@ -1,6 +1,8 @@
 class Story < ApplicationRecord
   extend FriendlyId
   include Authorable
+  include Templatable
+
   belongs_to :group, optional: true
   has_and_belongs_to_many :tags
   has_many :comments, as: :commentable, dependent: :destroy

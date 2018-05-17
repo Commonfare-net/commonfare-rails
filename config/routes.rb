@@ -45,6 +45,7 @@ Rails.application.routes.draw do
       resources :comments, only: [:index, :create]
       post :publish, on: :member
       get :preview, on: :member
+      get :templates, on: :collection
     end
     get 'story_builder', to: 'stories#builder'
 

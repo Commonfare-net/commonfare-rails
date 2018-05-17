@@ -5,8 +5,8 @@ class StoriesController < ApplicationController
 
   # load and authorize are separate to make FriendlyID work
   # with both :id and :slug
-  before_action :set_story, except: [:new, :builder, :create, :index] # manual load
-  authorize_resource :story # managed by CanCanCan
+  before_action :set_story, except: [:new, :builder, :create, :index, :templates] # manual load
+  authorize_resource :story, except: [:templates] # managed by CanCanCan
 
   before_action :set_commoner, only: [:new, :builder, :create, :edit, :update]
   before_action :set_story_locale
@@ -65,7 +65,9 @@ class StoriesController < ApplicationController
 
   # GET /stories/new
   def new
-    @story = @commoner.stories.build
+    @story = params[:template].present? ? Story.build_from_template(params[:template]) : Story.new
+    @story.commoner = @commoner
+
     if params[:story_builder] == 'true'
       @story_builder = true
       @story.created_with_story_builder = true
@@ -155,6 +157,10 @@ class StoriesController < ApplicationController
         format.html { redirect_to edit_story_path(@story), notice: _('Could not publish this story') }
       end
     end
+  end
+
+  def templates
+    @templates = Story::TEMPLATES[I18n.locale]
   end
 
   private

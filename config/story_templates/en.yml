@@ -1,0 +1,22 @@
+what_needs_to_be_changed:
+  title_draft: What needs to be changed?
+  place_draft: Where does it need to change?
+  content_json_draft:
+    - id: inspiring-image
+      type: image
+      caption: A picture to inspire your audience
+    - id: text-1
+      type: text
+      content: What would you like to change?
+    - id: text-2
+      type: text
+      content: What is it exactly?
+    - id: text-3
+      type: text
+      content: which way?
+    - id: text-4
+      type: text
+      content: What are the benefits?
+    - id: text-5
+      type: text
+      content: When and where is the meeting?
