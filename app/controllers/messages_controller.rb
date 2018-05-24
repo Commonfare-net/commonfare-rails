@@ -36,12 +36,10 @@ class MessagesController < ApplicationController
     respond_to do |format|
       if @message.save
         format.html { redirect_to success_path, notice: _('Message sent') }
-        format.json { render :show, status: :created, location: @message }
       else
         @new_message = @message
-        @messages = Message.where(messageable: @discussion)
-        format.html { render 'discussions/show' }
-        format.json { render json: @message.errors, status: :unprocessable_entity }
+        @messages = Message.where(messageable: messageable)
+        format.html { render "#{messageable.class.class_name.downcase.pluralize}/show" }
       end
     end
   end
@@ -81,13 +79,13 @@ class MessagesController < ApplicationController
     end
 
     def success_path
-      if @discussion.present?
-        group_discussion_path(@group, @discussion)
-      elsif @conversation.present?
-        conversation_path(@conversation)
-      else
-        root_path
-      end
+      return group_discussion_path(@group, @discussion) if @discussion.present?
+      conversation_path(@conversation)
+    end
+
+    def messageable
+      return @discussion if @discussion.present?
+      @conversation
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
