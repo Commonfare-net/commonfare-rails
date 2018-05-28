@@ -34,3 +34,5 @@ app_variables.env
 /node_modules
 yarn-debug.log*
 .yarn-integrity
+
+/swapi-commoncoin-data

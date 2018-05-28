@@ -45,6 +45,10 @@ We use `yarn` for managing npm packages, so install it on your machine and run
 $ yarn install
 ```
 
+#### Setup the environment
+
+Copy `app_variables.env.example` to `app_variables.env` and change the variables to your values.
+
 ### Start and stop containers
 
 #### Using docker-sync (recommended on macOS)

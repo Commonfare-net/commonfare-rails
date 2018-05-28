@@ -53,5 +53,25 @@ services:
       - "5432"
     volumes:
       - ./db-data:/var/lib/postgresql/data
+  swapi_commoncoin:
+    image: commonfare/social-wallet-api
+    container_name: swapi_commoncoin
+    volumes:
+     - ./swapi-commoncoin-conf/social-wallet-api.yaml:/usr/src/app/resources/social-wallet-api.yaml
+    ports:
+      - "3036:3000"
+    depends_on:
+      - swapi_commoncoin_mongo
+    # network_mode: "host" # required if social wallet api service listens only to 'localhost'
+    # These two allow debug with pry
+    tty: true
+    stdin_open: true
+  swapi_commoncoin_mongo:
+    image: mongo
+    container_name: swapi_commoncoin_mongo
+    volumes:
+      - ./swapi-commoncoin-data/db:/data/db
+    # ports:
+    #   - "27017:27017" # required if social wallet api service listens only to 'localhost'
 volumes:
   bundle_cache:
