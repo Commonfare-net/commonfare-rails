@@ -20,6 +20,18 @@
           <br>
           <small><%= link_to 'Leave group', leave_group_path(@group), class: 'text-danger' %></small>
         <% end %>
+        <% if can? :create, @currency %>
+          <br>
+          <%= link_to 'Create currency', new_group_currency_path(@group), class: 'btn btn-outline-cf btn-cf' %>
+        <% end %>
+        <% if can? :edit, @currency %>
+          <br>
+          <%= link_to 'Edit currency', edit_group_currency_path(@group, @currency), class: 'btn btn-outline-cf btn-cf' %>
+        <% end %>
+        <% if can? :read, @group_wallet %>
+          <br>
+          <%= link_to 'Wallet', group_wallet_path(@group, @group_wallet), class: 'btn btn-outline-cf btn-cf' %>
+        <% end %>
       </div>
     </div>
     <div class="row">
@@ -34,6 +46,11 @@
             <li class="nav-item">
               <a class="nav-link <%= 'active' if cannot? :create, @new_discussion %>" id="pills-stories-tab" data-toggle="pill" href="#pills-stories" role="tab" aria-controls="pills-stories" aria-selected="true"><%= _('Stories') %></a>
             </li>
+            <% if can? :read, @wallet %>
+              <li class="nav-item">
+                <a class="nav-link" id="pills-wallet-tab" data-toggle="pill" href="#pills-wallet" role="tab" aria-controls="pills-wallet" aria-selected="false"><%= _('Wallet') %></a>
+              </li>
+            <% end %>
             <li class="nav-item">
               <a class="nav-link" id="pills-members-tab" data-toggle="pill" href="#pills-members" role="tab" aria-controls="pills-members" aria-selected="false"><%= _('Members') %></a>
             </li>
@@ -78,6 +95,11 @@
                 </h3>
               </div>
             </div>
+            <% end %>
+          </div>
+          <div class="tab-pane fade" id="pills-wallet" role="tabpanel" aria-labelledby="pills-wallet-tab">
+            <% if can? :read, @wallet %>
+              <%= link_to s_('Button|Go to Wallet'), get_wallet_path(@wallet, @wallet.walletable), class: 'btn btn-cf btn-block'  %>
             <% end %>
           </div>
           <div class="tab-pane fade" id="pills-members" role="tabpanel" aria-labelledby="pills-members-tab">

@@ -45,8 +45,8 @@ class Commoner < ApplicationRecord
 
   # Returns the default wallet, in Commoncoin
   def wallet
-    # TODO: this will be wallets.where(group: nil)
-    wallets.first
+    wallets.where(currency: nil).first
+    # wallets.first
   end
 
   private

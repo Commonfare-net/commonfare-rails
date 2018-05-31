@@ -76,6 +76,16 @@ Rails.application.routes.draw do
         post :reject, on: :member
       end
       get :leave, on: :member
+      resources :currencies, except: [:index, :destroy]
+      # NOTE: uncomment to enable wallet
+      if ENV['WALLET_ENABLED'] == 'true'
+        resources :wallets, only: [:show] do
+          get 'autocomplete', on: :collection, defaults: { format: :json }
+        end
+        post 'transaction_confirm', to: 'transactions#confirm', as: 'transaction_confirm'
+        get 'transaction_confirm', to: 'transactions#confirm'
+        resources :transactions, except: [:edit, :update, :destroy]
+      end
     end
     resources :conversations, except: [:edit, :update, :destroy] do
       resources :messages, only: [:create, :destroy]

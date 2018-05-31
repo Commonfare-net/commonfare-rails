@@ -14,7 +14,8 @@ class Ability
       can :read, Comment
       can :read, Group
       can [:read, :commonplace], Listing
-      alias_action :create, :read, :update, :destroy, :to => :crud
+      cannot :read, Wallet, currency_id: nil
+      alias_action :create, :read, :update, :destroy, to: :crud
       if user.is_commoner?
         commoner = user.meta
         can :crud, Commoner, id: commoner.id
@@ -67,6 +68,20 @@ class Ability
         can :read, Conversation, recipient_id: commoner.id
 
         can [:create, :update, :destroy], Listing, commoner_id: commoner.id
+
+        # Group Currency
+        can :create, Currency do |currency|
+          currency.group.admins.include?(commoner) &&
+          !currency.persisted?
+        end
+        can :update, Currency do |currency|
+          currency.group.admins.include?(commoner)
+        end
+        # Group Wallet
+        can :read, Wallet do |wallet|
+          wallet.currency.present? &&
+          wallet.currency.group.admins.include?(commoner)
+        end
       end
     end
   end

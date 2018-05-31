@@ -1,15 +1,16 @@
-<%= content_for :title, s_('Title|Send Commoncoins') %>
+<%= content_for :title, s_('Title|Send %{currency_name}') %{currency_name: currency_name_for_transaction} %>
 <div class="row justify-content-center">
   <div class="col-md-8 col-lg-8 mt-4">
-    <h1 class='mb-4'><%= s_('Title|Send Commoncoins') %></h1>
-    <%= simple_form_for(@transaction, url: commoner_transaction_confirm_path(@commoner)) do |f| %>
+    <h1 class='mb-4'><%= s_('Title|Send %{currency_name}') %{currency_name: currency_name_for_transaction} %></h1>
+    <%= link_to((_("%{icon} Back to %{currency_name} wallet") %{icon: fa_icon('chevron-left fw'), currency_name: currency_name_for_wallet}).html_safe, get_wallet_path(@wallet), class: 'btn btn-outline-cf btn-sm') %>
+    <%= simple_form_for(@transaction, url: get_transaction_confirm_path) do |f| %>
       <%= f.error_notification %>
       <div class="form-row">
         <div class="col-sm-8">
           <%= f.association :to_wallet, required: false, placeholder: _('Bilbo Baggins'), label: _('Name of the commoner'), collection: [] %>
         </div>
         <div class="col-sm-4">
-          <%= f.input :amount, required: false, placeholder: number_with_precision(42.314, precision: 3), label: _('Amount (cc)'), :input_html => { value: number_with_precision(f.object.amount, precision: 6) } %>
+          <%= f.input :amount, required: false, placeholder: number_with_precision(42.314, precision: 3), label: (_('Amount (%{currency_code})') %{currency_code: currency_code_for_transaction}), :input_html => { value: number_with_precision(f.object.amount, precision: 6) } %>
         </div>
       </div>
       <%= f.input :message, required: false, placeholder: _('I like your stories!'), label: _('Message (optional)') %>
@@ -26,7 +27,7 @@
   $('#transaction_to_wallet_id').select2({
     language: '<%= I18n.locale.to_s %>',
     ajax: {
-      url: '<%= autocomplete_commoner_wallets_path %>',
+      url: '<%= get_autocomplete_wallets_path %>',
       dataType: 'json',
       processResults: function (data) {
         return {

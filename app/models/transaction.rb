@@ -6,8 +6,10 @@ class Transaction < ApplicationRecord
   validates :amount, numericality: {
     less_than_or_equal_to: (Proc.new { |t| t.from_wallet.balance }),
     greater_than: 0
-  }
+  }, unless: (Proc.new { |t| t.from_wallet.walletable.is_a?(Group) })
+  # validate :less_than_balance
   validate :not_to_self
+  validate :same_currency
 
   before_save :perform_remote_transaction, on: :create
   after_commit :refresh_wallets_balance, on: :create
@@ -20,10 +22,22 @@ class Transaction < ApplicationRecord
     end
   end
 
+  def same_currency
+    if self.to_wallet.present? && self.from_wallet.currency != self.to_wallet.currency
+      errors.add(:to_wallet, (_("must accept %{currency_name}") %{currency_name: self.from_wallet.currency.name}))
+    end
+  end
+
+  def less_than_balance
+    if amount > self.balance || self.from_wallet.walletable.is_a?(Group)
+
+    end
+  end
+
   def perform_remote_transaction
     begin
       Rails.logger.info("SWAPI #{Time.now.to_s} Starting transaction from #{self.from_wallet.address}")
-      client = SocialWallet::Client.new(api_endpoint: ENV['SWAPI_ENDPOINT'])
+      client = SocialWallet::Client.new(api_endpoint: self.from_wallet.endpoint)
       # binding.pry
       resp = client.transactions.new(from_id: self.from_wallet.address,
                                      to_id: self.to_wallet.address,

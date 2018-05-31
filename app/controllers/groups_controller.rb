@@ -26,6 +26,9 @@ class GroupsController < ApplicationController
 
     @discussions = Discussion.where(group: @group).includes(:messages)
     @new_discussion = @group.discussions.build
+    @currency = @group.currency || @group.build_currency
+    @group_wallet = @group.wallet
+    @wallet = Wallet.find_by(currency: @group.currency, walletable: current_user.meta) if user_signed_in?
   end
 
   # GET /groups/new
@@ -50,7 +53,7 @@ class GroupsController < ApplicationController
 
     respond_to do |format|
       if @group.save
-        format.html { redirect_to @group, notice: 'Group was successfully created.' }
+        format.html { redirect_to @group, notice: _('Group was successfully created.') }
         format.json { render :show, status: :created, location: @group }
       else
         format.html { render :new }
@@ -64,7 +67,7 @@ class GroupsController < ApplicationController
   def update
     respond_to do |format|
       if @group.update(group_params)
-        format.html { redirect_to @group, notice: 'Group was successfully updated.' }
+        format.html { redirect_to @group, notice: _('Group was successfully updated.') }
         format.json { render :show, status: :ok, location: @group }
       else
         format.html { render :edit }

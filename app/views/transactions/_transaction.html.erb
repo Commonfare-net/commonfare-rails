@@ -16,7 +16,7 @@
     </div>
     <% end %>
     <div class="ml-auto p-2 amount">
-      <%= number_to_currency(transaction.amount, precision: 6, locale: I18n.locale, unit: 'cc ', strip_insignificant_zeros: true) %>
+      <%= number_to_currency(transaction.amount, precision: 6, locale: I18n.locale, unit: "#{currency_code_for_transaction(transaction)} ", strip_insignificant_zeros: true) %>
     </div>
   </div>
   <div class="transaction-details collapse" id="collapseTransaction-<%= transaction.id %>">
@@ -31,8 +31,8 @@
     <div class="d-flex align-items-top">
       <% if counterpart_for_transaction(transaction).persisted? %>
         <div class="transaction-counterpart">
-          <%= link_to commoner_path(counterpart_for_transaction(transaction)) do %>
-          <%= fa_icon('user fw', text: counterpart_for_transaction(transaction).name) %>
+          <%= link_to get_walletable_path(counterpart_for_transaction(transaction)) do %>
+            <%= get_transaction_counterpart_fa_icon(transaction) %>
           <% end %>
         </div>
       <% end %>

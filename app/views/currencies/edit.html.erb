@@ -1,0 +1,14 @@
+<% content_for :title, s_('Title|New coin') %>
+<div class="row justify-content-center">
+  <div class="col-md-6 col-lg-4">
+    <h2 class="red-title"><%= s_('Title|Edit coin') %></h2>
+    <p>
+      <%= (_('for group %{group_name}') %{group_name: link_to(@group.name, @group)}).html_safe %>
+    </p>
+    <%= simple_form_for([@group, @currency]) do |f| %>
+      <%= f.error_notification %>
+      <%= render 'fields', f: f %>
+      <%= f.button :submit, s_('Title|Update'), class: 'btn btn-cf btn-block' %>
+    <% end %>
+  </div>
+</div>

@@ -31,6 +31,10 @@ class JoinRequestsController < ApplicationController
     respond_to do |format|
       if @join_request.accept!
         @join_request.group.members << @join_request.commoner
+        # NOTE: use this below when roles will become public
+        # Membership.create(group:    @join_request.group,
+        #                   commoner: @join_request.commoner
+        #                   role:     'affiliate')
         format.html { redirect_to @join_request.group, notice: _('Join request has been accepted.') }
       else
         format.html { redirect_to @join_request, notice: _('There has been a problem with this join request') }

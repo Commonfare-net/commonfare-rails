@@ -1,7 +1,7 @@
 <%= content_for :title, s_('Title|Confirm transaction') %>
 <div class="row justify-content-center">
   <div class="col-md-8 col-lg-6 pb-4 bg-white">
-    <h1 class='my-4'><%= s_('Title|Confirm transaction') %></h1>
+    <h1 class='my-4'><%= s_('Title|Confirm %{currency_name} transaction') %{currency_name: currency_name_for_transaction} %></h1>
     <div class="transaction-confirm-to">
       <label class="mb-0"><%= _('Send to') %></label>
       <%# TODO: this will be _commoner partial %>
@@ -9,7 +9,7 @@
     </div>
     <div class="transaction-confirm-amount">
       <label class="mb-0"><%= _('Amount') %></label>
-      <p><%= number_to_currency(@transaction.amount, precision: 6, locale: I18n.locale, unit: 'cc ') %></p>
+      <p><%= number_to_currency(@transaction.amount, precision: 6, locale: I18n.locale, unit: "#{currency_code_for_transaction} ") %></p>
     </div>
     <% unless @transaction.message.blank? %>
       <div class="transaction-confirm-message">
@@ -17,13 +17,13 @@
         <p><%= @transaction.message %></p>
       </div>
     <% end %>
-    <%= simple_form_for(@transaction, url: commoner_transactions_path(@commoner)) do |f| %>
+    <%= simple_form_for(@transaction, url: get_transactions_path(@transaction.from_wallet.currency)) do |f| %>
       <%= f.association :to_wallet, as: :hidden %>
       <%= f.input :amount, as: :hidden %>
       <%= f.input :message, as: :hidden %>
       <div class="row">
         <div class="col">
-          <%= link_to s_('Button|Cancel'), :back, class: 'btn btn-outline-secondary btn-block' %>
+          <%= link_to s_('Button|Cancel'), get_wallet_path(@wallet), class: 'btn btn-outline-secondary btn-block' %>
         </div>
         <div class="col">
           <%= f.button :submit, s_('Button|Confirm'), class: 'btn btn-cf btn-block' %>
