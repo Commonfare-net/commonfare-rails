@@ -2,6 +2,9 @@
 <div class="row justify-content-center">
   <div class="col-md-8 col-lg-8 mt-4">
     <h1 class='mb-4'><%= s_('Title|Send %{currency_name}') %{currency_name: currency_name_for_transaction} %></h1>
+    <p>
+      <%= _('Balance') %>: <%= number_to_currency(@transaction.from_wallet.balance || 0, precision: 6, locale: I18n.locale, unit: "#{currency_code_for_transaction} ") %>
+    </p>
     <%= link_to((_("%{icon} Back to %{currency_name} wallet") %{icon: fa_icon('chevron-left fw'), currency_name: currency_name_for_wallet}).html_safe, get_wallet_path(@wallet), class: 'btn btn-outline-cf btn-sm') %>
     <%= simple_form_for(@transaction, url: get_transaction_confirm_path) do |f| %>
       <%= f.error_notification %>

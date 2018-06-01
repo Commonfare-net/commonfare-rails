@@ -14,6 +14,7 @@ class Ability
       can :read, Comment
       can :read, Group
       can [:read, :commonplace], Listing
+      # Commoncoin wallets not visible by guests
       cannot :read, Wallet, currency_id: nil
       alias_action :create, :read, :update, :destroy, to: :crud
       if user.is_commoner?
@@ -58,9 +59,16 @@ class Ability
         can :autocomplete, Wallet
 
         if ENV['WALLET_ENABLED'] == 'true' && commoner.wallet.present?
-          can :read, Transaction, from_wallet_id: commoner.wallet.id
-          can :read, Transaction, to_wallet_id: commoner.wallet.id
-          can [:create, :confirm], Transaction, from_wallet_id: commoner.wallet.id
+          can :read, Transaction, from_wallet: { walletable_id: commoner.id, walletable_type: commoner.class.name }
+          can :read, Transaction, to_wallet: { walletable_id: commoner.id, walletable_type: commoner.class.name }
+          # Transactions from Commoncoin wallet and Group currency wallet
+          can [:create, :confirm], Transaction, from_wallet: { walletable_id: commoner.id, walletable_type: commoner.class.name }
+          # Transactions from Group wallet
+          can [:create, :confirm], Transaction do |transaction|
+            transaction.from_wallet.currency.present? &&
+            transaction.from_wallet.walletable.is_a?(Group) &&
+            transaction.from_wallet.currency.group.admins.include?(commoner)
+          end
         end
 
         can :create, Conversation
@@ -80,6 +88,7 @@ class Ability
         # Group Wallet
         can :read, Wallet do |wallet|
           wallet.currency.present? &&
+          wallet.walletable.is_a?(Group) &&
           wallet.currency.group.admins.include?(commoner)
         end
       end

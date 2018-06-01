@@ -1,9 +1,10 @@
 class TransactionsController < ApplicationController
-  load_and_authorize_resource
-
   before_action :set_commoner
   before_action :set_group
   before_action :set_wallet
+  before_action :set_transaction, only: [:new, :create]
+  load_and_authorize_resource # this must be after the before_actions
+
 
   include TransactionsHelper
   include WalletsHelper
@@ -17,7 +18,9 @@ class TransactionsController < ApplicationController
   end
 
   def new
+    # binding.pry
     @transaction = @wallet.outgoing_transactions.build
+    # authorize! :create, @transaction
     @currency = @wallet.currency
   end
 
@@ -54,7 +57,7 @@ class TransactionsController < ApplicationController
   private
 
   def set_commoner
-    @commoner = Commoner.find_by(id: params[:commoner_id])
+    @commoner = user_signed_in? ? current_user.meta : Commoner.find_by(id: params[:commoner_id])
   end
 
   def set_group
@@ -63,20 +66,25 @@ class TransactionsController < ApplicationController
 
   def set_wallet
     # This can be:
-    # @commoner.wallet if using Commoncoin
     # @group.wallet if group admin sends group coins
-    # XXX if group member sends group coins
-    if @commoner.present?
-      if params[:currency].present? && Currency.find_by(id: params[:currency]).present?
-        @wallet = Wallet.find_by(currency_id: params[:currency], walletable: @commoner)
-        # TODO: devo passare la currency_id in ogni passaggio della transazione
+    # @commoner.wallet if using Commoncoin
+    # @commoner's wallet in Group currency if group member sends Group currency
+    if @group.present? # Group is checked first
+      @wallet = @group.wallet
+    else
+      if params[:currency].present?
+        currency = Currency.find_by(id: params[:currency]).present?
+        @wallet = Wallet.find_by(currency: currency, walletable: @commoner) || @commoner.wallet
+        # NOTE: params[:currency] must be passed through every step of the transaction
       else
         @wallet = @commoner.wallet
       end
-    else
-    @wallet = @group.wallet
     end
     # @wallet = @commoner.present? ? @commoner.wallet : @group.wallet
+  end
+
+  def set_transaction
+    @transaction = @wallet.outgoing_transactions.build
   end
 
   def redirect_path
