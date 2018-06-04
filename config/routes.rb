@@ -58,6 +58,7 @@ Rails.application.routes.draw do
       if ENV['WALLET_ENABLED'] == 'true'
         resources :wallets, only: [:show] do
           get 'autocomplete', on: :collection, defaults: { format: :json }
+          get 'view', on: :member
         end
         post 'transaction_confirm', to: 'transactions#confirm', as: 'transaction_confirm'
         resources :transactions, except: [:edit, :update, :destroy]

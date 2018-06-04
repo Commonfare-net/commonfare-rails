@@ -16,6 +16,9 @@ class Ability
       can [:read, :commonplace], Listing
       # Commoncoin wallets not visible by guests
       cannot :read, Wallet, currency_id: nil
+      # Only some group currency wallets are visible
+      can :view, Wallet, currency_id: [1, 2]
+      cannot :view, Wallet, walletable_type: 'Group'
       alias_action :create, :read, :update, :destroy, to: :crud
       if user.is_commoner?
         commoner = user.meta
@@ -83,6 +86,7 @@ class Ability
           !currency.persisted?
         end
         can :update, Currency do |currency|
+          currency.persisted? &&
           currency.group.admins.include?(commoner)
         end
         # Group Wallet

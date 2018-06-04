@@ -24,4 +24,22 @@ module WalletsHelper
     return @wallet.currency.code if @wallet.currency.present?
     'cc'
   end
+
+  def can_view_qr_code?
+    @wallet.currency.present? &&
+    user_signed_in? &&
+    current_user.meta == @wallet.walletable
+  end
+
+  def can_withdraw_from_wallet?
+    @wallet.currency.present? &&
+    user_signed_in? &&
+    @group.editors.include?(current_user.meta)
+  end
+
+  def can_top_up_wallet?
+    @wallet.currency.present? &&
+    user_signed_in? &&
+    @group.admins.include?(current_user.meta)
+  end
 end
