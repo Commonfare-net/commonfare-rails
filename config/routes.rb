@@ -61,7 +61,12 @@ Rails.application.routes.draw do
           get 'view', on: :member
         end
         post 'transaction_confirm', to: 'transactions#confirm', as: 'transaction_confirm'
-        resources :transactions, except: [:edit, :update, :destroy]
+        resources :transactions, except: [:edit, :update, :destroy] do
+          get 'withdraw', on: :collection
+          post 'confirm_withdraw', on: :collection
+          post 'create_withdraw', on: :collection
+          get 'success', on: :member
+        end
       end
       resources :listings, only: :index
     end

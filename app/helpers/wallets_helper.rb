@@ -1,6 +1,7 @@
 module WalletsHelper
 
   def get_wallet_path(wallet, commoner=@commoner)
+    return view_commoner_wallet_path(commoner, wallet) if current_ability.can?(:view, wallet) && commoner != wallet.holder
     return group_wallet_path(@group, wallet) if @wallet.walletable == @group
     commoner_wallet_path(commoner, wallet)
   end

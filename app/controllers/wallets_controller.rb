@@ -15,6 +15,10 @@ class WalletsController < ApplicationController
   end
 
   def view
+    # TODO: check the role and redirect to the proper page
+    if current_ability.can? :withdraw, @wallet.incoming_transactions.build
+      redirect_to withdraw_commoner_transactions_path(@wallet.walletable, { from_wallet_id: @wallet.id, currency: @wallet.currency.id })
+    end
     @grouped_transactions = @wallet.transactions.order(created_at: :desc).last(10).reverse.group_by {|t| t.created_at.to_date}
     @group = @wallet.currency.group
 

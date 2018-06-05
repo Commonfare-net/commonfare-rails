@@ -1,0 +1,34 @@
+<%= content_for :title, s_('Title|Confirm withdraw') %>
+<div class="row justify-content-center">
+  <div class="col-md-8 col-lg-6 pb-4 bg-white">
+    <h1 class='my-4'><%= s_('Title|Confirm %{currency_name} withdraw') %{currency_name: currency_name_for_transaction} %></h1>
+    <div class="transaction-confirm-to">
+      <label class="mb-0"><%= _('Withdraw from') %></label>
+      <%# TODO: this will be _commoner partial %>
+      <p><%= @transaction.from_wallet %></p>
+    </div>
+    <div class="transaction-confirm-amount">
+      <label class="mb-0"><%= _('Amount') %></label>
+      <p><%= number_to_currency(@transaction.amount, precision: 6, locale: I18n.locale, unit: "#{currency_code_for_transaction} ") %></p>
+    </div>
+    <% unless @transaction.message.blank? %>
+      <div class="transaction-confirm-message">
+        <label class="mb-0"><%= _('Message') %></label>
+        <p><%= @transaction.message %></p>
+      </div>
+    <% end %>
+    <%= simple_form_for(@transaction, url: create_withdraw_commoner_transactions_path(@commoner, currency: @currency)) do |f| %>
+      <%= f.association :from_wallet, as: :hidden %>
+      <%= f.input :amount, as: :hidden %>
+      <%= f.input :message, as: :hidden %>
+      <div class="row">
+        <div class="col">
+          <%= link_to s_('Button|Cancel'), get_wallet_path(@wallet), class: 'btn btn-outline-secondary btn-block' %>
+        </div>
+        <div class="col">
+          <%= f.button :submit, s_('Button|Confirm'), class: 'btn btn-cf btn-block' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

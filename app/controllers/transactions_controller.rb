@@ -2,7 +2,9 @@ class TransactionsController < ApplicationController
   before_action :set_commoner
   before_action :set_group
   before_action :set_wallet
+  # setting the transaction here is needed to make CanCanCan work
   before_action :set_transaction, only: [:new, :create]
+  before_action :set_withdraw_transaction, only: [:withdraw, :confirm_withdraw, :create_withdraw]
   load_and_authorize_resource # this must be after the before_actions
 
 
@@ -54,6 +56,49 @@ class TransactionsController < ApplicationController
     end
   end
 
+  def withdraw
+    # NOTE: here @wallet is the TO_WALLET
+    @from_wallet = Wallet.find_by id: params[:from_wallet_id]
+    @currency = @wallet.currency
+    @transaction = @wallet.incoming_transactions.build(from_wallet: @from_wallet)
+  end
+
+  def confirm_withdraw
+    if request.method_symbol == :get
+      redirect_to withdraw_commoner_transactions_path(@commoner, { from_wallet_id: @transaction.from_wallet.id, currency: @transaction.from_wallet.currency.id })
+    else
+      @currency = @wallet.currency
+      @transaction = @wallet.incoming_transactions.build(withdraw_params)
+      respond_to do |format|
+        if @transaction.valid?
+          format.html { render :confirm_withdraw }
+        else
+          format.html { render :withdraw }
+        end
+      end
+    end
+  end
+
+  def create_withdraw
+    @currency = @wallet.currency
+    @transaction = @wallet.incoming_transactions.build(withdraw_params)
+    respond_to do |format|
+      if @transaction.save
+        format.html { redirect_to success_commoner_transaction_path(@commoner, @transaction), notice: _('Transaction successful') }
+      else
+        if @transaction.invalid?
+          format.html { render :withdraw }
+        else
+          format.html { redirect_to get_wallet_path(@wallet), alert: _('There has been a problem processing the transaction') }
+        end
+      end
+    end
+  end
+
+  def success
+    #code
+  end
+
   private
 
   def set_commoner
@@ -73,7 +118,7 @@ class TransactionsController < ApplicationController
       @wallet = @group.wallet
     else
       if params[:currency].present?
-        currency = Currency.find_by(id: params[:currency]).present?
+        currency = Currency.find_by(id: params[:currency])
         @wallet = Wallet.find_by(currency: currency, walletable: @commoner) || @commoner.wallet
         # NOTE: params[:currency] must be passed through every step of the transaction
       else
@@ -87,6 +132,10 @@ class TransactionsController < ApplicationController
     @transaction = @wallet.outgoing_transactions.build
   end
 
+  def set_withdraw_transaction
+    @transaction = @wallet.incoming_transactions.build
+  end
+
   def redirect_path
     return commoner_wallet_path(@commoner, @wallet) if @commoner.present?
     group_wallet_path(@group, @wallet)
@@ -94,5 +143,9 @@ class TransactionsController < ApplicationController
 
   def transaction_params
     params.require(:transaction).permit(:amount, :to_wallet_id, :message)
+  end
+
+  def withdraw_params
+    params.require(:transaction).permit(:amount, :from_wallet_id, :message)
   end
 end

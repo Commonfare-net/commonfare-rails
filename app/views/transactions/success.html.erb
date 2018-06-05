@@ -1,0 +1,10 @@
+<%= content_for :title, s_('Title|Transaction successful') %>
+<div class="row justify-content-center">
+  <div class="col-md-8 col-lg-8 py-4 bg-white text-center">
+    <h1 class='mb-4'><%= s_('Transaction successful') %></h1>
+    <p>
+      <%= _('Close this window before proceeding with a new transaction') %>
+    </p>
+    <%#= link_to (_('Back to %{currency_name} wallet') %{currency_name: currency_name_for_withdraw_transaction(@transaction)}), get_wallet_path(@transaction.to_wallet), class: 'btn btn-cf btn-block' %>
+  </div>
+</div>

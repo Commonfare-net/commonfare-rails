@@ -17,7 +17,7 @@ class Ability
       # Commoncoin wallets not visible by guests
       cannot :read, Wallet, currency_id: nil
       # Only some group currency wallets are visible
-      can :view, Wallet, currency_id: [1, 2]
+      can :view, Wallet, currency_id: ENV['QR_CODE_ENABLED_CURRENCIES'].split(',').map(&:to_i)
       cannot :view, Wallet, walletable_type: 'Group'
       alias_action :create, :read, :update, :destroy, to: :crud
       if user.is_commoner?
@@ -71,6 +71,11 @@ class Ability
             transaction.from_wallet.currency.present? &&
             transaction.from_wallet.walletable.is_a?(Group) &&
             transaction.from_wallet.currency.group.admins.include?(commoner)
+          end
+          # Withdraws
+          can [:withdraw, :confirm_withdraw, :create_withdraw, :success], Transaction do |transaction|
+            transaction.to_wallet.currency.present? &&
+            transaction.to_wallet.currency.group.editors.include?(commoner)
           end
         end
 

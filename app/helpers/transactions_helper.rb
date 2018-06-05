@@ -45,4 +45,14 @@ module TransactionsHelper
     return transaction.from_wallet.currency.code if transaction.from_wallet.currency.present?
     'cc'
   end
+
+  def currency_name_for_withdraw_transaction(transaction = @transaction)
+    return @transaction.to_wallet.currency.name if @transaction.to_wallet.currency.present?
+    'Commoncoin'
+  end
+
+  def currency_code_for_withdraw_transaction(transaction = @transaction)
+    return transaction.to_wallet.currency.code if transaction.to_wallet.currency.present?
+    'cc'
+  end
 end
