@@ -1,7 +1,7 @@
 what_needs_to_be_changed:
   title_draft: What needs to be changed?
   place_draft: Where does it need to change?
-  content_json_draft:
+  template_json:
     - id: inspiring-image
       type: image
       caption: A picture to inspire your audience

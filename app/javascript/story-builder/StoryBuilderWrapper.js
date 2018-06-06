@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { oneOf, object, array, bool } from 'prop-types';
 import { IntlProvider, FormattedMessage } from 'react-intl';
-import StoryBuilder from 'storybuilder-react';
+import StoryBuilderWithApi from '../../../storybuilder-react/src';
+import debounce from 'lodash/debounce';
 
 import { uploadImage, deleteImage, updateContent } from './api';
 import LanguageChoice from './LanguageChoice';
@@ -65,7 +66,7 @@ export default class extends Component {
     //        .catch(error => this.setState({ status: 'error' }));
   }
 
-  saveStory = (story) => {
+  saveStory = debounce((story) => {
     const { storyLocale } = this.props;
     const { storyId } = this.state;
 
@@ -82,10 +83,10 @@ export default class extends Component {
              }
            })
            .catch(error => this.setState({ status: 'error' }))
-  }
+  }, 1000)
 
   render() {
-    const { locale, storyLocale, availableTags, templatesEnabled, story: { title_draft, place_draft, content_json_draft, tags, anonymous } } = this.props;
+    const { locale, storyLocale, availableTags, templatesEnabled, story: { title_draft, place_draft, template_json, content_json_draft, tags, anonymous } } = this.props;
     const { status, storyId, translatedLocales } = this.state;
 
     if (this.state.hasError) {
@@ -137,17 +138,22 @@ export default class extends Component {
               <FormattedMessage id={status} />
             }
           </div>
-          <StoryBuilder
-            availableTags={availableTags.map(({ id, name }) => ({ id, name }))}
-            imageUploadHandler={this.imageUploadHandler}
-            imageDeleteHandler={this.imageDeleteHandler}
-            onSave={this.saveStory}
-            title={title_draft}
-            place={place_draft}
-            content_json={content_json_draft || []}
-            tags={tags}
-            locale={locale}
-            storyLocale={storyLocale}
+          <StoryBuilderWithApi
+            initialState={{
+              availableTags: availableTags.map(({ id, name }) => ({ id, name })),
+              title: title_draft,
+              place: place_draft,
+              template_json: template_json || [],
+              content_json: content_json_draft || [],
+              tags: tags,
+              locale: locale,
+              storyLocale: storyLocale
+            }}
+            api={{
+              save: this.saveStory,
+              imageUploadHandler: this.imageUploadHandler,
+              imageDeleteHandler: this.imageDeleteHandler
+            }}
           />
           {storyId &&
             <StoryBuilderActions

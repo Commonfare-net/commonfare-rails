@@ -277,7 +277,15 @@ class StoriesController < ApplicationController
     def story_params
       params.tap { |pars| set_draft_params(pars) }
             .require(:story)
-            .permit(:title_draft, :content_draft, :place_draft, :anonymous, :group_id, :published, content_json_draft: [:id, :type, :content, :caption, :url], tag_ids: [])
+            .permit(:title_draft,
+                    :content_draft,
+                    :place_draft,
+                    :anonymous,
+                    :group_id,
+                    :published,
+                    template_json: [:id, :type, :content, :caption, :url],
+                    content_json_draft: [:id, :type, :content, :caption, :url],
+                    tag_ids: [])
     end
 
     # Creates draft params if the client sends title, content or content_json
