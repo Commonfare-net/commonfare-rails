@@ -65,6 +65,9 @@ Rails.application.routes.draw do
           get 'withdraw', on: :collection
           post 'confirm_withdraw', on: :collection
           post 'create_withdraw', on: :collection
+          get 'top_up', on: :collection
+          post 'confirm_top_up', on: :collection
+          post 'create_top_up', on: :collection
           get 'success', on: :member
         end
       end

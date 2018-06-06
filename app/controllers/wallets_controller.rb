@@ -5,22 +5,19 @@ class WalletsController < ApplicationController
 
   before_action :set_currency
 
+  include WalletsHelper
+
   def show
     @grouped_transactions = @wallet.transactions.order(created_at: :desc).last(10).reverse.group_by {|t| t.created_at.to_date}
-    # qr = RQRCode::QRCode.new(commoner_wallet_url(@wallet), size: 7)
-    # @qr_svg = qr.as_svg(offset: 0,
-    #                      color: '000',
-    #                      shape_rendering: 'crispEdges',
-    #                      module_size: 5.5)
   end
 
   def view
+    @group = @wallet.currency.group
     # TODO: check the role and redirect to the proper page
-    if current_ability.can? :withdraw, @wallet.incoming_transactions.build
+    if can_withdraw_from_wallet?
       redirect_to withdraw_commoner_transactions_path(@wallet.walletable, { from_wallet_id: @wallet.id, currency: @wallet.currency.id })
     end
     @grouped_transactions = @wallet.transactions.order(created_at: :desc).last(10).reverse.group_by {|t| t.created_at.to_date}
-    @group = @wallet.currency.group
 
     # see http://www.qrcode.com/en/about/version.html for versions
     # 7 -> 45x45 modules

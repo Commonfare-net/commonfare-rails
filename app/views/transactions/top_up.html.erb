@@ -1,0 +1,17 @@
+<%= content_for :title, s_('Title|Top up %{currency_name}') %{currency_name: currency_name_for_transaction} %>
+<div class="row justify-content-center">
+  <div class="col-md-8 col-lg-8 mt-4">
+    <h1 class='mb-4'><%= s_('Title|Top up %{currency_name}') %{currency_name: currency_name_for_transaction} %></h1>
+    <%= simple_form_for(@transaction, url: confirm_top_up_commoner_transactions_path(@commoner, { to_wallet_id: @transaction.to_wallet.id, currency: @currency.id })) do |f| %>
+      <%= f.error_notification %>
+      <%= f.association :to_wallet, as: :hidden %>
+      <div class="form-row">
+        <div class="col">
+          <%= f.input :amount, required: false, placeholder: number_with_precision(42.314, precision: 3), label: (_('Amount (%{currency_code})') %{currency_code: currency_code_for_transaction}), :input_html => { value: number_with_precision(f.object.amount, precision: 6) } %>
+        </div>
+      </div>
+      <%= f.input :message, required: false, placeholder: _('Service, food, drinks...'), label: _('Message (optional)') %>
+      <%= f.button :submit, s_('Button|Continue'), class: 'btn btn-cf btn-block' %>
+    <% end %>
+  </div>
+</div>
