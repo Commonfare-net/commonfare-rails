@@ -42,6 +42,7 @@
   .transaction-message,
   .transaction-timestamp,
   .transaction-counterpart,
+  .transaction-refund,
   .transaction-collapse {
     padding-top: .5rem;
     padding-bottom: .5rem;
@@ -49,7 +50,8 @@
   }
 
   .transaction-message,
-  .transaction-counterpart {
+  .transaction-counterpart,
+  .transaction-refund {
     padding-left: 2.39rem;
   }
 
@@ -65,6 +67,17 @@
     }
     a {
       color: $cf-secondary-color;
+      text-decoration: none;
+    }
+  }
+
+  .transaction-refund {
+    color: $cf-primary-color;
+    i {
+      padding-right: .5rem;
+    }
+    a {
+      color: $cf-primary-color;
       text-decoration: none;
     }
   }
@@ -88,4 +101,3 @@
     }
   }
 }
-

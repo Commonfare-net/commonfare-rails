@@ -15,7 +15,12 @@ class TransactionsController < ApplicationController
 
   def index
     # @transactions = @transactions.order 'created_at DESC'
-    @grouped_transactions = @transactions.order(created_at: :desc).includes(:from_wallet, :to_wallet).group_by {|t| t.created_at.to_date}
+    if params[:currency].present? && params[:from_wallet_id].present?
+      @from_wallet = Wallet.find_by(id: params[:from_wallet_id])
+      @grouped_transactions = Transaction.between(@from_wallet.id, @wallet.id).order(created_at: :desc).includes(:from_wallet, :to_wallet).group_by {|t| t.created_at.to_date}
+    else
+      @grouped_transactions = @transactions.order(created_at: :desc).includes(:from_wallet, :to_wallet).group_by {|t| t.created_at.to_date}
+    end
   end
 
   def show
@@ -63,6 +68,7 @@ class TransactionsController < ApplicationController
     @from_wallet = Wallet.find_by(id: params[:from_wallet_id])
     @currency = @wallet.currency
     @transaction = @wallet.incoming_transactions.build(from_wallet: @from_wallet)
+    @past_transactions = Transaction.where(from_wallet: @from_wallet, to_wallet: @wallet)
     authorize_action(__method__)
   end
 
@@ -141,6 +147,27 @@ class TransactionsController < ApplicationController
     end
   end
 
+  def refund
+    @currency = @transaction.from_wallet.currency
+    @reverse_transaction = Transaction.new(from_wallet: @transaction.to_wallet,
+                                           to_wallet:   @transaction.from_wallet,
+                                           amount:      @transaction.amount,
+                                           message:     'refund')
+  end
+
+  def create_refund
+    @transaction = Transaction.new(refund_params)
+    @transaction.message = 'refund'
+    @currency = @transaction.from_wallet.currency
+    respond_to do |format|
+      if @transaction.save
+        format.html { redirect_to success_commoner_transaction_path(@commoner, @transaction), notice: _('Transaction successful') }
+      else
+        format.html { redirect_to commoner_transactions_path(@transaction.from_wallet.walletable, { from_wallet_id: @transaction.to_wallet.id, currency: @currency.id }), alert: _('There has been a problem processing the transaction') }
+      end
+    end
+  end
+
   def success
     #code
   end
@@ -202,6 +229,10 @@ class TransactionsController < ApplicationController
 
   def withdraw_params
     params.require(:transaction).permit(:amount, :from_wallet_id, :message)
+  end
+
+  def refund_params
+    params.require(:transaction).permit(:amount, :from_wallet_id, :to_wallet_id, :message)
   end
 
   def authorize_action(action)

@@ -14,6 +14,10 @@ class Transaction < ApplicationRecord
   before_save :perform_remote_transaction, on: :create
   after_commit :refresh_wallets_balance, on: :create
 
+  scope :between, -> (from_wallet_id, to_wallet_id) do
+    where("(transactions.from_wallet_id = ? AND transactions.to_wallet_id =?) OR (transactions.from_wallet_id = ? AND transactions.to_wallet_id =?)", from_wallet_id, to_wallet_id, to_wallet_id, from_wallet_id)
+  end
+
   private
 
   def not_to_self
@@ -28,11 +32,11 @@ class Transaction < ApplicationRecord
     end
   end
 
-  def less_than_balance
-    if amount > self.balance || self.from_wallet.walletable.is_a?(Group)
-
-    end
-  end
+  # def less_than_balance
+  #   if amount > self.balance || self.from_wallet.walletable.is_a?(Group)
+  #
+  #   end
+  # end
 
   def perform_remote_transaction
     begin

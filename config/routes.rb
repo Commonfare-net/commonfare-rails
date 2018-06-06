@@ -69,6 +69,8 @@ Rails.application.routes.draw do
           post 'confirm_top_up', on: :collection
           post 'create_top_up', on: :collection
           get 'success', on: :member
+          get 'refund', on: :member
+          post 'create_refund', on: :collection
         end
       end
       resources :listings, only: :index

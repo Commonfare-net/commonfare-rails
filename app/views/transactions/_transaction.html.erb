@@ -36,6 +36,13 @@
           <% end %>
         </div>
       <% end %>
+      <% if can? :refund, transaction %>
+      <div class="transaction-refund">
+        <%= link_to '#' do %>
+          <%= fa_icon('undo') %><%= link_to(_('Refund'), refund_commoner_transaction_path(transaction.from_wallet.walletable, transaction)) %>
+        <% end %>
+      </div>
+      <% end %>
       <div class="transaction-collapse ml-auto" data-toggle="collapse" data-target="#collapseTransaction-<%= transaction.id %>">
         <%= fa_icon('caret-up') %>
       </div>

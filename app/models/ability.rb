@@ -78,6 +78,13 @@ class Ability
             (transaction.to_wallet.currency.group.editors.include?(commoner) ||
             transaction.to_wallet.currency.group.admins.include?(commoner))
           end
+          # Refunds: like Withdraws + commoner must be the receiver
+          can [:refund, :create_refund], Transaction do |transaction|
+            transaction.to_wallet.currency.present? &&
+            (transaction.to_wallet.currency.group.editors.include?(commoner) ||
+            transaction.to_wallet.currency.group.admins.include?(commoner)) &&
+            transaction.to_wallet.walletable == commoner
+          end
           # Top ups
           can [:top_up, :confirm_top_up, :create_top_up, :success], Transaction do |transaction|
             transaction.from_wallet.currency.present? &&
