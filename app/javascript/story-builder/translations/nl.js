@@ -7,6 +7,7 @@ const messages = defineMessages({
   technical_issues: 'De Story Builder ondervindt enkele technische problemen. Vernieuw de pagina.',
   create_old: 'Maak gebruik van de oude editor',
   error: 'Fout',
+  saving: 'Besparing...',
   uploading: 'Uploaden...',
   publish_anonymously: 'Publiceer anoniem?',
   preview: 'Voorvertoning',
@@ -18,7 +19,10 @@ const messages = defineMessages({
   'locale.hr': 'Kroatisch',
   no_translation_in: "Je hebt dit verhaal nog niet opgeslagen in het {locale}",
   'yes': 'Ja',
-  'no': 'Nee'
+  'no': 'Nee',
+  'publish_as_group': "Publiceer als een groep",
+  'choose_group': "Kies een van je groepen",
+  'no_group_found': "Geen groep gevonden"
 });
 
 export default messages;

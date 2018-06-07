@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180528093511) do
+ActiveRecord::Schema.define(version: 20180606124951) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -194,6 +194,7 @@ ActiveRecord::Schema.define(version: 20180528093511) do
     t.jsonb "content_json_draft"
     t.string "place_draft"
     t.bigint "group_id"
+    t.jsonb "template_json"
     t.index ["anonymous"], name: "index_stories_on_anonymous"
     t.index ["commoner_id"], name: "index_stories_on_commoner_id"
     t.index ["good_practice"], name: "index_stories_on_good_practice"

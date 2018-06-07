@@ -7,6 +7,7 @@ const messages = defineMessages({
   technical_issues: 'Story Builder doživljava neke tehničke probleme. Osvježite stranicu.',
   create_old: 'Napravite pomoću starog uređivača',
   error: 'Greška',
+  saving: 'Spremanje priče...',
   uploading: 'Prijenos...',
   publish_anonymously: 'Objavite anonimno?',
   preview: 'Pregled',
@@ -18,7 +19,10 @@ const messages = defineMessages({
   'locale.hr': 'Hrvatski',
   no_translation_in: "Još niste spremili priču na {locale}",
   'yes': 'Da',
-  'no': 'Ne'
+  'no': 'Ne',
+  'publish_as_group': "Objavi kao grupu",
+  'choose_group': "Odaberite jednu od vaših grupa",
+  'no_group_found': "Nije pronađena nijedna grupa"
 });
 
 export default messages;

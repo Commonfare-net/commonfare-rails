@@ -4,7 +4,7 @@ module Templatable
 
   included do
     TEMPLATES = I18n.available_locales.each_with_object({}) do |locale, acc|
-      template_file = Rails.root.join('config', 'story_templates', "#{locale}.yml")
+      template_file = Rails.root.join('config', 'templates', name.parameterize.pluralize, "#{locale}.yml")
 
       if File.exists?(template_file)
         acc[locale] = YAML.load_file(template_file)
