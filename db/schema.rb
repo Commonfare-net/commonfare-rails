@@ -69,6 +69,16 @@ ActiveRecord::Schema.define(version: 20180606124951) do
     t.index ["sender_id"], name: "index_conversations_on_sender_id"
   end
 
+  create_table "currencies", force: :cascade do |t|
+    t.string "name"
+    t.string "code"
+    t.string "endpoint"
+    t.bigint "group_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["group_id"], name: "index_currencies_on_group_id"
+  end
+
   create_table "discussions", force: :cascade do |t|
     t.bigint "group_id"
     t.string "title"
@@ -263,12 +273,15 @@ ActiveRecord::Schema.define(version: 20180606124951) do
     t.string "address", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "currency_id"
+    t.index ["currency_id"], name: "index_wallets_on_currency_id"
     t.index ["walletable_type", "walletable_id"], name: "index_wallets_on_walletable_type_and_walletable_id"
   end
 
   add_foreign_key "comments", "commoners"
   add_foreign_key "conversations", "commoners", column: "recipient_id"
   add_foreign_key "conversations", "commoners", column: "sender_id"
+  add_foreign_key "currencies", "groups"
   add_foreign_key "discussions", "groups"
   add_foreign_key "images", "commoners"
   add_foreign_key "join_requests", "commoners"
@@ -281,4 +294,5 @@ ActiveRecord::Schema.define(version: 20180606124951) do
   add_foreign_key "stories", "groups"
   add_foreign_key "transactions", "wallets", column: "from_wallet_id"
   add_foreign_key "transactions", "wallets", column: "to_wallet_id"
+  add_foreign_key "wallets", "currencies"
 end
