@@ -1,4 +1,4 @@
-<%= content_for :title, s_('Title|%{currency_name} wallet') %{currency_name: currency_name_for_wallet} %>
+<%= content_for :title, s_('Title|%{holder_name} %{currency_name} wallet') %{holder_name: @wallet.holder.name, currency_name: currency_name_for_wallet} %>
 <div class="row justify-content-center">
   <div class="col-md-10 col-lg-10">
     <div class="row wallet-header pt-5 pb-2 bg-white">
@@ -15,7 +15,10 @@
       </div>
     </div>
     <%= link_to(s_('Show QR code'), '#', class: 'btn btn-cf btn-block', data: { toggle: "modal", target: "#qrModal" }) if can_view_qr_code? %>
-    <%= link_to(s_('Top up'), top_up_commoner_transactions_path(@wallet.walletable, { to_wallet_id: @wallet.id, currency: @wallet.currency.id }), class: 'btn btn-cf btn-block') if can_top_up_wallet? %>
+    <% if can_top_up_wallet? %>
+      <%= link_to(s_('Top up'), top_up_commoner_transactions_path(@wallet.walletable, { to_wallet_id: @wallet.id, currency: @wallet.currency.id }), class: 'btn btn-cf btn-block') %>
+      <%= link_to(s_('Withdraw'), withdraw_commoner_transactions_path(@wallet.walletable, { from_wallet_id: @wallet.id, currency: @wallet.currency.id, amount: @wallet.balance }), class: 'btn btn-cf-secondary btn-block') %>
+    <% end %>
     <div class="wallet-transactions mt-4">
       <h6>Transactions</h6>
       <% @grouped_transactions.each do |date, transactions| %>

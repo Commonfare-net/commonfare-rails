@@ -2,12 +2,19 @@
 <div class="row justify-content-center">
   <div class="col-md-8 col-lg-8 mt-4">
     <h1 class='mb-4'><%= s_('Title|Withdraw %{currency_name}') %{currency_name: currency_name_for_withdraw_transaction} %></h1>
+    <dl class="row">
+      <dt class="col-sm-1"><%= _('From') %></dt>
+      <dd class="col-sm-11"><%= @transaction.from_wallet.walletable.name %></dd>
+      <dt class="col-sm-1"><%= _('To') %></dt>
+      <dd class="col-sm-11"><%= @transaction.to_wallet.walletable.name %></dd>
+    </dl>
     <%= simple_form_for(@transaction, url: confirm_withdraw_commoner_transactions_path(@commoner, { from_wallet_id: @transaction.from_wallet.id, currency: @currency.id })) do |f| %>
       <%= f.error_notification %>
       <%= f.association :from_wallet, as: :hidden %>
       <div class="form-row">
         <div class="col">
-          <%= f.input :amount, required: false, placeholder: number_with_precision(42.314, precision: 3), label: (_('Amount (%{currency_code})') %{currency_code: currency_code_for_withdraw_transaction}), :input_html => { value: number_with_precision(f.object.amount, precision: 6) } %>
+          <%= f.input :amount, required: false, placeholder: number_with_precision(42.314, precision: 3), label: (_('Amount (%{currency_code})') %{currency_code: currency_code_for_withdraw_transaction}), input_html: { value:
+            f.object.amount } %>
         </div>
       </div>
       <%= f.input :message, required: false, placeholder: _('Service, food, drinks...'), label: _('Message (optional)') %>

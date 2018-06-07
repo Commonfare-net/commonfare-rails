@@ -66,8 +66,9 @@ class TransactionsController < ApplicationController
   def withdraw
     # NOTE: here @wallet is the TO_WALLET
     @from_wallet = Wallet.find_by(id: params[:from_wallet_id])
+    @amount = BigDecimal.new(params[:amount]).to_f if params[:amount].present?
     @currency = @wallet.currency
-    @transaction = @wallet.incoming_transactions.build(from_wallet: @from_wallet)
+    @transaction = @wallet.incoming_transactions.build(from_wallet: @from_wallet, amount: @amount)
     @past_transactions = Transaction.where(from_wallet: @from_wallet, to_wallet: @wallet)
     authorize_action(__method__)
   end
@@ -92,6 +93,7 @@ class TransactionsController < ApplicationController
   def create_withdraw
     @currency = @wallet.currency
     @transaction = @wallet.incoming_transactions.build(withdraw_params)
+    @transaction.message = 'withdraw'
     authorize_action(__method__)
     respond_to do |format|
       if @transaction.save
@@ -133,6 +135,7 @@ class TransactionsController < ApplicationController
   def create_top_up
     @currency = @wallet.currency
     @transaction = @wallet.outgoing_transactions.build(transaction_params)
+    @transaction.message = 'top_up'
     authorize_action(__method__)
     respond_to do |format|
       if @transaction.save
@@ -190,15 +193,19 @@ class TransactionsController < ApplicationController
     if @group.present? # Group is checked first
       @wallet = @group.wallet
     else
-      if params[:currency].present?
-        currency = Currency.find_by(id: params[:currency])
-        @wallet = Wallet.find_by(currency: currency, walletable: @commoner) || @commoner.wallet
-        # NOTE: params[:currency] must be passed through every step of the transaction
-      else
-        @wallet = @commoner.wallet
-      end
+      currency = Currency.find_by(id: params[:currency])
+      walletable = group_transaction_for?(currency) ? currency.group : @commoner
+      @wallet = Wallet.find_by(currency: currency, walletable: walletable)
+      # if params[:currency].present?
+      #   currency = Currency.find_by(id: params[:currency])
+      #   @wallet = Wallet.find_by(currency: currency, walletable: @commoner) || @commoner.wallet
+      #   # NOTE: params[:currency] must be passed through every step of the transaction
+      # else
+      #   @wallet = @commoner.wallet
+      # end
     end
     # @wallet = @commoner.present? ? @commoner.wallet : @group.wallet
+
   end
 
   def set_transaction
@@ -237,5 +244,9 @@ class TransactionsController < ApplicationController
 
   def authorize_action(action)
     authorize! action, @transaction
+  end
+
+  def group_transaction_for?(currency)
+    currency.present? && currency.group.admins.include?(@commoner)
   end
 end

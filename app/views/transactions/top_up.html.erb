@@ -2,6 +2,12 @@
 <div class="row justify-content-center">
   <div class="col-md-8 col-lg-8 mt-4">
     <h1 class='mb-4'><%= s_('Title|Top up %{currency_name}') %{currency_name: currency_name_for_transaction} %></h1>
+    <dl class="row">
+      <dt class="col-sm-1"><%= _('From') %></dt>
+      <dd class="col-sm-11"><%= @transaction.from_wallet.walletable.name %></dd>
+      <dt class="col-sm-1"><%= _('To') %></dt>
+      <dd class="col-sm-11"><%= @transaction.to_wallet.walletable.name %></dd>
+    </dl>
     <%= simple_form_for(@transaction, url: confirm_top_up_commoner_transactions_path(@commoner, { to_wallet_id: @transaction.to_wallet.id, currency: @currency.id })) do |f| %>
       <%= f.error_notification %>
       <%= f.association :to_wallet, as: :hidden %>
