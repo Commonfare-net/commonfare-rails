@@ -45,8 +45,8 @@ class StoryBuilderActions extends Component {
 
     return (
       <div>
-        <div className="row justify-content-center">
-          <div className="col-12 publish-anonymously-wrapper">
+        <div className="row justify-content-center my-4">
+          <div className="col-6 publish-anonymously-wrapper">
             <PublishAnonymouslySwitch
               onChange={(state) => this.setState({
                 anonymous: state,
@@ -56,7 +56,7 @@ class StoryBuilderActions extends Component {
               disabled={publishing}
             />
           </div>
-          <div className="col-12 publish-as-group-wrapper">
+          <div className="col-6 publish-as-group-wrapper">
             <PublishAsGroupSelect
               onChange={(groupId) => this.setState({ groupId })}
               groups={availableGroups}
@@ -65,7 +65,7 @@ class StoryBuilderActions extends Component {
             />
           </div>
         </div>
-        <div className="row justify-content-center">
+        <div className="row justify-content-center pt-4">
           <div className="col-6">
             <a
               href={`/${locale}/stories/${storyId}/preview?story_locale=${storyLocale}`}
