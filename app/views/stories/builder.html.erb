@@ -7,6 +7,7 @@
                           storyLocale: @story_locale,
                           story: JSON.parse(render(template: 'stories/show.json')),
                           availableTags: Tag.all.as_json,
+                          availableGroups: @commoner.groups.as_json,
                           templatesEnabled: ENV['TEMPLATES_ENABLED'] == 'true' %>
       <% if @story.persisted? %>
         <p class="text-right">

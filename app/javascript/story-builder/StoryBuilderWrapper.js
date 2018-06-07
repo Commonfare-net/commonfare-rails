@@ -19,10 +19,12 @@ export default class extends Component {
     storyLocale: oneOf(locales).isRequired,
     story: object.isRequired,
     availableTags: array.isRequired,
+    availableGroups: array.isRequired,
     templatesEnabled: bool
   }
 
   static defaultProps = {
+    availableGroups: [],
     templatesEnabled: false
   }
 
@@ -70,7 +72,7 @@ export default class extends Component {
     const { storyLocale } = this.props;
     const { storyId } = this.state;
 
-    this.setState({ status: 'Saving...' });
+    this.setState({ status: 'saving' });
 
     return updateContent(storyId, story, storyLocale)
            .then(({ status, data }) => {
@@ -86,7 +88,7 @@ export default class extends Component {
   }, 1000)
 
   render() {
-    const { locale, storyLocale, availableTags, templatesEnabled, story: { title_draft, place_draft, template_json, content_json_draft, tags, anonymous } } = this.props;
+    const { locale, storyLocale, availableTags, templatesEnabled, availableGroups, story: { title_draft, place_draft, template_json, content_json_draft, tags, anonymous, group_id: groupId } } = this.props;
     const { status, storyId, translatedLocales } = this.state;
 
     if (this.state.hasError) {
@@ -161,6 +163,8 @@ export default class extends Component {
               storyLocale={storyLocale}
               storyId={storyId}
               anonymous={anonymous}
+              availableGroups={availableGroups}
+              groupId={groupId}
             />
           }
         </div>

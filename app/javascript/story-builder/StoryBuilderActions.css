@@ -1,13 +1,21 @@
-.publish-anonymously-wrapper {
+.publish-anonymously-wrapper,
+.publish-as-group-wrapper {
   margin-bottom: 2rem;
   text-align: center;
 }
 
-.publish-anonymously-wrapper label {
+.publish-anonymously-wrapper label,
+.publish-as-group-wrapper label {
   display: block;
   font-weight: 500;
 }
 
 .bootstrap-switch-primary {
   background: #E7472E !important;
+}
+
+.publish-as-group-wrapper .Select {
+  text-align: left;
+  max-width: 300px;
+  margin: auto;
 }

@@ -297,6 +297,6 @@ class StoriesController < ApplicationController
     end
 
     def publish_params
-      params.permit(:anonymous)
+      params.permit(:anonymous, :group_id)
     end
 end
