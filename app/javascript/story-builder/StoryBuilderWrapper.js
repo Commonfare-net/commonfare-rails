@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { oneOf, object, array, bool } from 'prop-types';
 import { IntlProvider, FormattedMessage } from 'react-intl';
-import StoryBuilderWithApi from '../../../storybuilder-react/src';
+import StoryBuilderWithApi from 'storybuilder-react';
 import debounce from 'lodash/debounce';
 
 import { uploadImage, deleteImage, updateContent } from './api';

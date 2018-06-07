@@ -6969,8 +6969,9 @@ stdout-stream@^1.4.0:
   dependencies:
     readable-stream "^2.0.1"
 
-"storybuilder-react@file:./storybuilder-react":
-  version "1.2.1"
+storybuilder-react@^1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/storybuilder-react/-/storybuilder-react-1.3.0.tgz#378afc4a52aef621ace8ded4d26420242710b1b2"
   dependencies:
     babel-plugin-react-intl "^2.4.0"
     babel-polyfill "^6.26.0"
