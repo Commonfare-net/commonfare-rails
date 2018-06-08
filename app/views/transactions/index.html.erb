@@ -1,11 +1,11 @@
-<%= content_for :title, s_('Title|All transactions') %>
+<%= content_for :title, s_('Title|All %{currency_name} transactions') %{currency_name: currency_name_for_wallet} %>
 <div class="row justify-content-center">
   <div class="col-md-8 col-lg-6">
     <h2>
       <% if @from_wallet.present? %>
         <%= s_('Title|Transactions with %{counterpart_name}') %{counterpart_name: @from_wallet.walletable.name} %>
       <% else %>
-        <%= s_('Title|All transactions') %>
+        <%= s_('Title|All %{currency_name} transactions') %{currency_name: currency_name_for_wallet} %>
       <% end %>
     </h2>
     <% @grouped_transactions.each do |date, transactions| %>

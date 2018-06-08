@@ -6,7 +6,7 @@
         <h1><%= link_to(@wallet.holder.name, commoner_path(@wallet.holder)) %></h1>
       </div>
     </div>
-    <div class="row wallet-balance pt-3 bg-white">
+    <div class="row wallet-balance pt-3 mb-4 bg-white">
       <div class="col">
       <h6><%= _('Current balance') %></h6>
       <h1><%= number_to_currency(@wallet.balance || 0, precision: 6, locale: I18n.locale, unit: "#{currency_code_for_wallet} ") %></h1>
@@ -15,11 +15,12 @@
       </div>
     </div>
     <%= link_to(s_('Show QR code'), '#', class: 'btn btn-cf btn-block', data: { toggle: "modal", target: "#qrModal" }) if can_view_qr_code? %>
+    <%= link_to _('Activate account'), '#', class: 'btn btn-cf btn-block' if can_activate_account_for_group?(@wallet.currency.group, @wallet.holder) %>
     <% if can_top_up_wallet? %>
       <%= link_to(s_('Top up'), top_up_commoner_transactions_path(@wallet.walletable, { to_wallet_id: @wallet.id, currency: @wallet.currency.id }), class: 'btn btn-cf btn-block') %>
       <%= link_to(s_('Withdraw'), withdraw_commoner_transactions_path(@wallet.walletable, { from_wallet_id: @wallet.id, currency: @wallet.currency.id, amount: @wallet.balance }), class: 'btn btn-cf-secondary btn-block') %>
     <% end %>
-    <div class="wallet-transactions mt-4">
+    <div class="wallet-transactions my-4">
       <h6>Transactions</h6>
       <% @grouped_transactions.each do |date, transactions| %>
         <div class="transaction-date">
@@ -29,10 +30,14 @@
           <%= render 'transactions/transaction', transaction: transaction %>
         <% end %>
       <% end %>
-      <% if @wallet.transactions.count > 10 %>
+    </div>
+    <% if @wallet.transactions.count > @visible_transactions_num %>
+      <% if can_activate_account_for_group?(@wallet.currency.group, @wallet.holder) %>
+        <p class="text-center"><%= link_to _('Activate account to see more'), '#', class: 'btn btn-cf btn-block' %></p>
+      <% else %>
         <p class="text-center"><%= link_to _('See all'), get_transactions_path, class: 'btn btn-outline-cf-secondary' %></p>
       <% end %>
-    </div>
+    <% end %>
   </div>
 </div>
 

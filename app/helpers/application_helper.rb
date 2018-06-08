@@ -47,6 +47,11 @@ module ApplicationHelper
     end
   end
 
+  def can_activate_account_for_group?(group, commoner)
+    !user_signed_in? &&
+    !group.affiliates.include?(commoner)
+  end
+
   # def infohub_url
   #   locale = %i(it nl hr).include?(I18n.locale) ? I18n.locale : ''
   #   language = I18n.locale

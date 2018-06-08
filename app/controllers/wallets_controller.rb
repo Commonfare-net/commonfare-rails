@@ -13,11 +13,16 @@ class WalletsController < ApplicationController
 
   def view
     @group = @wallet.currency.group
-    # TODO: check the role and redirect to the proper page
+    # The seller is redirected to a new withdraw transaction
     if can_withdraw_from_wallet?
       redirect_to withdraw_commoner_transactions_path(@wallet.walletable, { from_wallet_id: @wallet.id, currency: @wallet.currency.id })
     end
-    @grouped_transactions = @wallet.transactions.order(created_at: :desc).last(10).reverse.group_by {|t| t.created_at.to_date}
+    @visible_transactions_num = user_signed_in? ? 1000 : 5
+    @grouped_transactions = @wallet.transactions
+                                   .order(created_at: :desc)
+                                   .includes(:from_wallet, :to_wallet)
+                                   .last(@visible_transactions_num)
+                                   .reverse.group_by {|t| t.created_at.to_date}
 
     # see http://www.qrcode.com/en/about/version.html for versions
     # 7 -> 45x45 modules

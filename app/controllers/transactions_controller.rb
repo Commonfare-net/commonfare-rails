@@ -19,7 +19,8 @@ class TransactionsController < ApplicationController
       @from_wallet = Wallet.find_by(id: params[:from_wallet_id])
       @grouped_transactions = Transaction.between(@from_wallet.id, @wallet.id).order(created_at: :desc).includes(:from_wallet, :to_wallet).group_by {|t| t.created_at.to_date}
     else
-      @grouped_transactions = @transactions.order(created_at: :desc).includes(:from_wallet, :to_wallet).group_by {|t| t.created_at.to_date}
+      @grouped_transactions = @wallet.transactions.order(created_at: :desc).includes(:from_wallet, :to_wallet).reverse.group_by {|t| t.created_at.to_date}
+      # @grouped_transactions = @transactions.order(created_at: :desc).includes(:from_wallet, :to_wallet).group_by {|t| t.created_at.to_date}
     end
   end
 
