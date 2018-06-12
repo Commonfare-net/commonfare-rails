@@ -107,6 +107,10 @@ gem 'social_wallet', '~> 1.0.1'
 # QR code
 gem 'rqrcode'
 
+# PDF
+gem 'prawn-svg'
+gem 'prawn-rails'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
