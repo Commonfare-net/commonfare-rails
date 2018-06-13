@@ -141,9 +141,7 @@ hr:
           has_many: Nije moguće izbrisati zapis jer postoje ovisni %{record}
     attributes:
       user:
-        confirmation_sent_at: 'Potvrda je poslana u
-
-'
+        confirmation_sent_at: Potvrda je poslana u
         confirmation_token: 'Lozinka za potvrdu
 
 '
@@ -261,9 +259,9 @@ hr:
       create:
         notice: "%{resource_name} uspješno je stvoren."
       update:
-        notice: "%{resource} je uspješno ažuriran.\n"
+        notice: "%{resource_name} je uspješno ažuriran.\n"
       destroy:
-        notice: "%{resource} je uspješno uništen."
+        notice: "%{resource_name} je uspješno uništen."
         alert: "%{resource_name} nije bilo moguće uništiti."
   ransack:
     search: 
@@ -284,42 +282,70 @@ hr:
     asc: u usponu
     desc: silazni
     predicates:
-      eq: 
-      eq_any: 
-      eq_all: 
-      not_eq: 
-      not_eq_any: 
-      not_eq_all: 
-      matches: 
-      matches_any: 
-      matches_all: 
+      eq: jednako je
+      eq_any: jednako je bilo kojoj
+      eq_all: jednako je svima
+      not_eq: nije jednako
+      not_eq_any: nije jednako bilo kojem
+      not_eq_all: nije jednako svima
+      matches: 'odgovara
+
+'
+      matches_any: odgovara bilo kojem
+      matches_all: odgovara svima
       does_not_match: ne odgovara
       does_not_match_any: ne odgovara nijednom
       does_not_match_all: ne odgovara svima
-      lt: 
-      lt_any: 
-      lt_all: 
-      lteq: 
-      lteq_any: 
-      lteq_all: 
-      gt: 
-      gt_any: 
-      gt_all: 
-      gteq: 
-      gteq_any: 
-      gteq_all: 
-      in: 
-      in_any: 
-      in_all: 
-      not_in: 
+      lt: manje od
+      lt_any: 'manje od bilo koje/g
+
+'
+      lt_all: 'manje od svih
+
+'
+      lteq: 'manje ili jednako
+
+'
+      lteq_any: 'manje ili jednako bilo kojem
+
+'
+      lteq_all: manje ili jednako svima
+      gt: 'više od
+
+'
+      gt_any: 'više od bilo koje/g
+
+'
+      gt_all: 'više od svih
+
+'
+      gteq: 'jednako ili više od
+
+'
+      gteq_any: 'jednako ili više od bilo koje/g
+
+'
+      gteq_all: 'jednako ili više od svih
+
+'
+      in: 'u
+
+'
+      in_any: u bilo kojem
+      in_all: u svemu
+      not_in: 'nije u
+
+'
       not_in_any: 
-      not_in_all: 
+      not_in_all: 'nije u svim
+
+'
       cont: sadrži
       cont_any: sadrži bilo koju
       cont_all: sadrži sve
-      not_cont: 
-      not_cont_any: 
-      not_cont_all: 
+      not_cont: ne sadrži
+      not_cont_any: ne sadrži niti jednu
+      not_cont_all: ne sadrži sve
       start: 
       start_any: 
       start_all: 
@@ -329,11 +355,13 @@ hr:
       end: završava s
       end_any: završava s bilo kojim
       end_all: završava svima
-      not_end: 
-      not_end_any: 
-      not_end_all: 
+      not_end: "ne završava s/a\n\n"
+      not_end_any: ne završava ni s jednim
+      not_end_all: 'ne završava svima
+
+'
       'true': 
-      'false': 
+      'false': je netočan
       present: 
       blank: je prazan
       'null': 

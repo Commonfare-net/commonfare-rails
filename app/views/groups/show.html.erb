@@ -11,22 +11,22 @@
       </div>
       <div class="col-md-3 group-actions">
         <% if can? :create, @new_join_request %>
-          <%= link_to 'Join this group', new_group_join_request_path(@group), class: 'btn btn-cf' %>
+          <%= link_to _('Join this group'), new_group_join_request_path(@group), class: 'btn btn-cf' %>
         <% end %>
         <% if can? :edit, @group %>
-          <%= link_to 'Edit group', edit_group_path(@group), class: 'btn btn-outline-cf btn-cf' %>
+          <%= link_to _('Edit group'), edit_group_path(@group), class: 'btn btn-outline-cf btn-cf' %>
         <% end %>
         <% if can? :leave, @group %>
           <br>
-          <small><%= link_to 'Leave group', leave_group_path(@group), class: 'text-danger' %></small>
+          <small><%= link_to _('Leave group'), leave_group_path(@group), class: 'text-danger' %></small>
         <% end %>
         <% if can? :create, @currency %>
           <br>
-          <%= link_to 'Create currency', new_group_currency_path(@group), class: 'btn btn-outline-cf btn-cf' %>
+          <%= link_to _('Create currency'), new_group_currency_path(@group), class: 'btn btn-outline-cf btn-cf' %>
         <% end %>
         <% if can? :edit, @currency %>
           <br>
-          <%= link_to 'Edit currency', edit_group_currency_path(@group, @currency), class: 'btn btn-outline-cf btn-cf' %>
+          <%= link_to _('Edit currency'), edit_group_currency_path(@group, @currency), class: 'btn btn-outline-cf btn-cf' %>
         <% end %>
         <% if can? :read, @group_wallet %>
           <br>
