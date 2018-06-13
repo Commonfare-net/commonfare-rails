@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0\n"
 "Report-Msgid-Bugs-To: contact@translation.io\n"
-"POT-Creation-Date: 2018-06-13 16:20+0200\n"
-"PO-Revision-Date: 2018-06-13 16:20+0200\n"
+"POT-Creation-Date: 2018-06-13 17:13+0200\n"
+"PO-Revision-Date: 2018-06-13 17:12+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Italian\n"
 "Language: it\n"
@@ -58,7 +58,7 @@ msgstr "Ciao %{recipient_name}, "
 msgid ""
 "Conversation|Hello, would you like to join the group %{group_name} ( %{group_u"
 "rl} )? "
-msgstr "Conversazione | Ciao, vuoi unirti al gruppo %{group_name} (%{group_url})? "
+msgstr "Ciao, vuoi unirti al gruppo %{group_name} (%{group_url})? "
 
 #: ../app/controllers/conversations_controller.rb:71
 msgid "Conversation|Hello, "
@@ -166,27 +166,27 @@ msgstr "Condividi questo gruppo"
 
 #: ../app/helpers/pages_helper.rb:10
 msgid "Home title|Commoners Voices"
-msgstr ""
+msgstr "Storie"
 
 #: ../app/helpers/pages_helper.rb:12
 msgid "Home title|Good Practices"
-msgstr ""
+msgstr "Buone pratiche"
 
 #: ../app/helpers/pages_helper.rb:14
 msgid "Home title|Public Benefits"
-msgstr ""
+msgstr "Misure di welfare"
 
 #: ../app/helpers/pages_helper.rb:21
 msgid "Home text|A collection of stories for, with and by people."
-msgstr "Home text | Una raccolta di storie per, con e da persone."
+msgstr "Una raccolta di storie per, con e da persone."
 
 #: ../app/helpers/pages_helper.rb:23
 msgid "Home text|Bottom-up initiatives to connect and inspire."
-msgstr "Home text | Iniziative bottom-up per connettersi e ispirare."
+msgstr "Iniziative bottom-up per connettersi e ispirare."
 
 #: ../app/helpers/pages_helper.rb:25
 msgid "Home text|Get informed about local welfare provisions."
-msgstr "Home text | Rimani aggiornato sulle misure di welfare esistenti"
+msgstr "Rimani aggiornato sulle misure di welfare esistenti"
 
 #: ../app/helpers/stories_helper.rb:13
 msgid "+ %{other_tags_count} more"
@@ -204,7 +204,7 @@ msgstr "Misure di welfare"
 
 #: ../app/helpers/stories_helper.rb:78
 msgid "Commoners Voices"
-msgstr ""
+msgstr "Storie"
 
 #: ../app/helpers/transactions_helper.rb:12
 msgid "No message"
@@ -591,6 +591,8 @@ msgid ""
 "To invite a new member to this group or to recommend this group to someone, ju"
 "st copy the URL of the group and paste it wherever you want."
 msgstr ""
+"Per invitare un nuovo membro a questo gruppo o per consigliare questo gruppo a"
+" qualcuno, copia l'URL del gruppo e incollalo dove vuoi."
 
 #: ../app/views/groups/_invite_modal.html.erb:18
 #: ../app/views/listings/_share_modal.html.erb:18
@@ -807,15 +809,15 @@ msgstr "Cerca"
 
 #: ../app/views/layouts/_navbar.html.erb:26
 msgid "Navbar|Commoners Voices"
-msgstr ""
+msgstr "Storie"
 
 #: ../app/views/layouts/_navbar.html.erb:29
 msgid "Navbar|Good Practices"
-msgstr ""
+msgstr "Buone pratiche"
 
 #: ../app/views/layouts/_navbar.html.erb:32
 msgid "Navbar|Public Benefits"
-msgstr ""
+msgstr "Misure di welfare"
 
 #: ../app/views/layouts/_navbar.html.erb:35
 msgid "Navbar|Commonplace"
@@ -911,6 +913,9 @@ msgid ""
 "Commonfare.net is not linked to any external platform, so to share this listin"
 "g on Facebook, Twitter, etc. you can copy the URL and paste it there."
 msgstr ""
+"Commonfare.net non è collegato a nessuna piattaforma esterna, quindi per condi"
+"videre questa inserzione su Facebook, Twitter, ecc. puoi copiare l'URL e incol"
+"larlo lì."
 
 #: ../app/views/listings/commonplace.html.erb:14
 msgid "Latest listings"
@@ -993,10 +998,10 @@ msgid ""
 "lfare state provisions, support self-organized welfare initiatives, tell stori"
 "es to promote collaboration and develop a complementary economy."
 msgstr ""
-"Testo della carosello domestico | Commonfare.net è il luogo in cui condividiam"
-"o le informazioni sulle disposizioni vigenti dello stato sociale, supportiamo "
-"iniziative di welfare autogestite, raccontiamo storie per promuovere la collab"
-"orazione e sviluppare un'economia complementare."
+"Commonfare.net è il luogo in cui condividiamo le informazioni sulle disposizio"
+"ni vigenti dello stato sociale, supportiamo iniziative di welfare autogestite,"
+" raccontiamo storie per promuovere la collaborazione e sviluppare un'economia "
+"complementare."
 
 #: ../app/views/pages/home.html.erb:37
 msgid ""
@@ -1030,27 +1035,27 @@ msgstr ""
 
 #: ../app/views/pages/home.html.erb:60
 msgid "Home text|Commonfare.net if for, with, and by people."
-msgstr "Home testo | Commonfare.net è per le persone, con le persone e delle persone"
+msgstr "Commonfare.net è per le persone, con le persone e delle persone"
 
 #: ../app/views/pages/home.html.erb:60
 msgid ""
 "Home text|Do you want to join the community? You will need only an email addre"
 "ss, and we will never use it for other purposes."
 msgstr ""
-"Home text | Vuoi entrare a far parte della community? Avrai bisogno solo di un"
-" indirizzo email e non lo useremo mai per altri scopi."
+"Vuoi entrare a far parte della community? Avrai bisogno solo di un indirizzo e"
+"mail e non lo useremo mai per altri scopi."
 
 #: ../app/views/pages/home.html.erb:62
 msgid ""
 "Home text|Do you want to join? You will need only an email address, and we wil"
 "l never use it for other purposes."
 msgstr ""
-"Home text | Vuoi aderire? Avrai bisogno solo di un indirizzo email e non lo us"
-"eremo mai per altri scopi."
+"Vuoi aderire? Avrai bisogno solo di un indirizzo email e non lo useremo mai pe"
+"r altri scopi."
 
 #: ../app/views/pages/home.html.erb:66
 msgid "Home text|Are you already registered? <strong>%{login_link}</strong>"
-msgstr "Home text | Sei già registrato? <Strong> %{login_link} </ strong>"
+msgstr "Sei già registrato? <Strong> %{login_link} </ strong>"
 
 #: ../app/views/pages/home.html.erb:66
 msgid "Login"
@@ -1443,7 +1448,7 @@ msgstr "Invia rimborso a"
 
 #: ../app/views/transactions/success.html.erb:1
 msgid "Title|Transaction successful"
-msgstr "Titolo | Transazione completata"
+msgstr "Transazione completata"
 
 #: ../app/views/transactions/success.html.erb:6
 #: ../app/views/transactions/top_up.html.erb:6
@@ -1469,7 +1474,7 @@ msgstr "Ricarica in %{currency_name}"
 #: ../app/views/transactions/top_up.html.erb:19
 #: ../app/views/transactions/withdraw.html.erb:20
 msgid "Service, food, drinks..."
-msgstr ""
+msgstr "Servizi, cibo, bevande ..."
 
 #: ../app/views/transactions/top_up.html.erb:20
 msgid "Button|Continue"
