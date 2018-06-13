@@ -79,6 +79,7 @@ class TransactionsController < ApplicationController
       redirect_to withdraw_commoner_transactions_path(@commoner, { from_wallet_id: @transaction.from_wallet.id, currency: @transaction.from_wallet.currency.id })
     else
       @currency = @wallet.currency
+      @group = @currency.group # @group is used in get_wallet_path for final withraws
       @transaction = @wallet.incoming_transactions.build(withdraw_params)
       authorize_action(__method__)
       respond_to do |format|

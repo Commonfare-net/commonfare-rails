@@ -58,8 +58,12 @@ services:
     container_name: swapi_commoncoin
     volumes:
      - ./swapi-commoncoin-conf/social-wallet-api.yaml:/usr/src/app/resources/social-wallet-api.yaml
+     - ./swapi-commoncoin-data/m2:/root/.m2
     ports:
-      - "3036:3000"
+      - "3036:3000" # if you specify the env variable SWAPI_PORT make sure it matches the container port here
+    environment:
+      - SWAPI_HOST=0.0.0.0 # hostname on which the social wallet api service will listen
+      # - SWAPI_PORT=4000 # port on which the social wallet api service will listen (default is 3000)
     depends_on:
       - swapi_commoncoin_mongo
     # network_mode: "host" # required if social wallet api service listens only to 'localhost'

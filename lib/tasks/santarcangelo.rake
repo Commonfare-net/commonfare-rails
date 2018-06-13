@@ -23,6 +23,28 @@ namespace :santarcangelo do
     generate_csv_for_wallets(wallets)
   end
 
+  desc "Destroy and recreate all the wallets in the given group"
+  task :reset_group_wallets, [:group_id] => :environment do |t, args|
+    group = Group.find_by(id: args[:group_id]) # improve this
+    abort 'Invalid group_id' if group.nil?
+    currency = group.currency
+    # reset group wallet
+    group.wallet.transactions.destroy_all
+    group.wallet.destroy
+    Wallet.create(walletable: group,
+                  address:    '',
+                  currency:   currency)
+    # reset members' wallets
+    group.members.find_each do |member|
+      wallet = Wallet.find_by(currency: currency, walletable: member)
+      wallet.transactions.destroy_all
+      wallet.destroy
+      Wallet.create(walletable: member,
+                    address:    Digest::SHA2.hexdigest(member.email + Time.now.to_s),
+                    currency:   currency)
+    end
+  end
+
   desc "Generates a PDF with the QR codes of all the wallets in the given group"
   task :generate_qrcode_pdf, [:group_id] => :environment do |t, args|
     group = Group.find_by(id: args[:group_id]) # improve this
