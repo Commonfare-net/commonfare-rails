@@ -2,7 +2,10 @@ require "prawn/measurement_extensions"
 
 namespace :santarcangelo do
 
-  desc "Generates :num customers in with wallets of :amount Santa Coin in the given group"
+  desc  """
+          Generates :num customers with wallets of :amount Santa Coin in the given group
+          and generates the related PDF and CSV files
+        """
   task :generate_customers, [:group_id, :num, :amount] => :environment do |t, args|
     group = Group.find_by(id: args[:group_id]) # improve this
     abort 'Invalid group_id' if group.nil?
@@ -39,10 +42,12 @@ namespace :santarcangelo do
       wallet = Wallet.find_by(currency: currency, walletable: member)
       wallet.transactions.destroy_all
       wallet.destroy
-      Wallet.create(walletable: member,
+      new_wallet = Wallet.create(walletable: member,
                     address:    Digest::SHA2.hexdigest(member.email + Time.now.to_s),
                     currency:   currency)
+      transfer_santacoin_to_wallet(new_wallet, 10)
     end
+    group.wallet.refresh_balance
   end
 
   desc "Generates a PDF with the QR codes of all the wallets in the given group"

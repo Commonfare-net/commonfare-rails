@@ -7,7 +7,7 @@ syncs:
   app-sync: # tip: add -sync and you keep consistent names as a convention
     src: '.'
     # sync_strategy: 'native_osx' # not needed, this is the default now
-    sync_excludes: ['db-data', 'swapi-commoncoin-data', '.git', 'tmp', '.DS_Store']
+    sync_excludes: ['db-data', 'swapi-commoncoin-data', 'swapi-santacoin-data', '.git', 'tmp', '.DS_Store']
     sync_strategy: 'unison'
     #sync_excludes_type: 'log'
     sync_host_ip: '127.0.0.1'

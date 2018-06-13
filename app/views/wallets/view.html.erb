@@ -20,23 +20,26 @@
       <%= link_to(s_('Top up'), top_up_commoner_transactions_path(@wallet.walletable, { to_wallet_id: @wallet.id, currency: @wallet.currency.id }), class: 'btn btn-cf btn-block') %>
       <%= link_to(s_('Withdraw'), withdraw_commoner_transactions_path(@wallet.walletable, { from_wallet_id: @wallet.id, currency: @wallet.currency.id, amount: @wallet.balance }), class: 'btn btn-cf-secondary btn-block') %>
     <% end %>
-    <div class="wallet-transactions my-4">
-      <h6>Transactions</h6>
-      <% @grouped_transactions.each do |date, transactions| %>
+    <% if @grouped_transactions.any? %>
+      <div class="wallet-transactions my-4">
+        <h6>Transactions</h6>
+        <% @grouped_transactions.each do |date, transactions| %>
         <div class="transaction-date">
           <%= l(date, format: :long) %>
         </div>
         <% transactions.each do |transaction| %>
-          <%= render 'transactions/transaction', transaction: transaction %>
+        <%= render 'transactions/transaction', transaction: transaction %>
+        <% end %>
+        <% end %>
+      </div>
+      <% if @wallet.transactions.count > @visible_transactions_num %>
+        <% if can_activate_account_for_group?(@wallet.currency.group, @wallet.holder) %>
+          <p class="text-center"><%= link_to _('Activate account to see more'), '#', class: 'btn btn-cf btn-block' %></p>
+        <% else %>
+          <p class="text-center"><%= link_to _('See all'), get_transactions_path, class: 'btn btn-outline-cf-secondary' %></p>
         <% end %>
       <% end %>
-    </div>
-    <% if @wallet.transactions.count > @visible_transactions_num %>
-      <% if can_activate_account_for_group?(@wallet.currency.group, @wallet.holder) %>
-        <p class="text-center"><%= link_to _('Activate account to see more'), '#', class: 'btn btn-cf btn-block' %></p>
-      <% else %>
-        <p class="text-center"><%= link_to _('See all'), get_transactions_path, class: 'btn btn-outline-cf-secondary' %></p>
-      <% end %>
+
     <% end %>
   </div>
 </div>
