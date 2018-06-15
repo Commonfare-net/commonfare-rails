@@ -14,7 +14,7 @@ class WalletsController < ApplicationController
   def view
     @group = @wallet.currency.group
     # The seller is redirected to a new withdraw transaction
-    if can_withdraw_from_wallet? && @wallet.holder != @commoner
+    if can_withdraw_from_wallet? && @wallet.holder != current_user.meta
       redirect_to withdraw_commoner_transactions_path(@wallet.walletable, { from_wallet_id: @wallet.id, currency: @wallet.currency.id })
     end
     @visible_transactions_num = user_signed_in? ? 1000 : 5
