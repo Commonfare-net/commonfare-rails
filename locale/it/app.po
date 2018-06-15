@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0\n"
 "Report-Msgid-Bugs-To: contact@translation.io\n"
-"POT-Creation-Date: 2018-06-13 17:13+0200\n"
-"PO-Revision-Date: 2018-06-13 17:12+0200\n"
+"POT-Creation-Date: 2018-06-15 10:13+0200\n"
+"PO-Revision-Date: 2018-06-15 10:13+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Italian\n"
 "Language: it\n"
@@ -76,11 +76,11 @@ msgstr ""
 msgid "Discussion was successfully created."
 msgstr "Discussione creata."
 
-#: ../app/controllers/groups_controller.rb:56
+#: ../app/controllers/groups_controller.rb:57
 msgid "Group was successfully created."
 msgstr "Gruppo creato."
 
-#: ../app/controllers/groups_controller.rb:70
+#: ../app/controllers/groups_controller.rb:71
 msgid "Group was successfully updated."
 msgstr "Gruppo modificato."
 
@@ -351,7 +351,7 @@ msgid "Button|Edit profile"
 msgstr "Modifica profilo"
 
 #: ../app/views/commoners/show.html.erb:32 ../app/views/groups/show.html.erb:47
-#: ../app/views/layouts/_navbar.html.erb:94
+#: ../app/views/layouts/_navbar.html.erb:97
 msgid "Stories"
 msgstr "Storie"
 
@@ -372,7 +372,7 @@ msgid "No stories yet"
 msgstr "Non ci sono storie presenti"
 
 #: ../app/views/commoners/show.html.erb:63 ../app/views/pages/home.html.erb:85
-#: ../app/views/wallets/show.html.erb:28 ../app/views/wallets/view.html.erb:39
+#: ../app/views/wallets/show.html.erb:28 ../app/views/wallets/view.html.erb:38
 msgid "See all"
 msgstr "Vedi tutte"
 
@@ -632,7 +632,7 @@ msgstr ""
 
 #: ../app/views/groups/leave.html.erb:10
 msgid "Leave group title|Group wallet"
-msgstr "Wallet"
+msgstr "Portafoglio"
 
 #: ../app/views/groups/leave.html.erb:12
 msgid ""
@@ -641,8 +641,9 @@ msgid ""
 "ber, do it before leaving. "
 msgstr ""
 "Il tuo wallet nel gruppo verrà svuotato e la somma verrà interamente trasferit"
-"a nel wallet centrale del gruppo. Se vuoi trasferire parte o tutta la somma ri"
-"masta a qualche altro membro del gruppo, fallo prima di abbandonare il gruppo."
+"a nel portafoglio centrale del gruppo. Se vuoi trasferire parte o tutta la som"
+"ma rimasta a qualche altro membro del gruppo, fallo prima di abbandonare il gr"
+"uppo."
 
 #: ../app/views/groups/leave.html.erb:15
 msgid ""
@@ -692,9 +693,8 @@ msgid "Discussions"
 msgstr "Discussioni"
 
 #: ../app/views/groups/show.html.erb:51
-#: ../app/views/layouts/_navbar.html.erb:60
 msgid "Wallet"
-msgstr ""
+msgstr "Portafoglio"
 
 #: ../app/views/groups/show.html.erb:55
 msgid "Members"
@@ -710,7 +710,7 @@ msgstr "Non ci sono discussioni"
 
 #: ../app/views/groups/show.html.erb:102
 msgid "Button|Go to Wallet"
-msgstr "Vai al wallet"
+msgstr "Vai al portafoglio"
 
 #: ../app/views/groups/show.html.erb:113
 msgid "No members"
@@ -835,29 +835,37 @@ msgstr "Home"
 msgid "Profile"
 msgstr "Profilo"
 
-#: ../app/views/layouts/_navbar.html.erb:61
+#: ../app/views/layouts/_navbar.html.erb:60
+msgid "Commoncoin Wallet"
+msgstr "Portafoglio Commoncoin"
+
+#: ../app/views/layouts/_navbar.html.erb:62
+msgid "%{currency_name} Wallet"
+msgstr "Portafoglio %{currency_name}"
+
+#: ../app/views/layouts/_navbar.html.erb:64
 msgid "Conversations"
 msgstr "Conversazioni"
 
-#: ../app/views/layouts/_navbar.html.erb:63
+#: ../app/views/layouts/_navbar.html.erb:66
 msgid "Navbar|Logout"
 msgstr "Esci"
 
-#: ../app/views/layouts/_navbar.html.erb:68
+#: ../app/views/layouts/_navbar.html.erb:71
 msgid "Navbar|Login"
 msgstr "Accedi"
 
-#: ../app/views/layouts/_navbar.html.erb:71
+#: ../app/views/layouts/_navbar.html.erb:74
 msgid "Navbar|Join"
 msgstr "Partecipa"
 
-#: ../app/views/layouts/_navbar.html.erb:95
+#: ../app/views/layouts/_navbar.html.erb:98
 #: ../app/views/listings/_fields.html.erb:25
 #: ../app/views/stories/_fields.html.erb:17
 msgid "Tags"
 msgstr "Tags"
 
-#: ../app/views/layouts/_navbar.html.erb:96
+#: ../app/views/layouts/_navbar.html.erb:99
 #: ../app/views/main/search.html.erb:20
 msgid "Listings"
 msgstr "Inserzioni"
@@ -902,7 +910,7 @@ msgstr "Cancella"
 
 #: ../app/views/listings/_listing.html.erb:20
 msgid "by <strong>%{commoner_name}</strong>"
-msgstr "di <strong>%{commoner_name}</ strong>"
+msgstr "di <strong>%{commoner_name}</strong>"
 
 #: ../app/views/listings/_share_modal.html.erb:6
 msgid "Modal title|Share this Listing"
@@ -1055,7 +1063,7 @@ msgstr ""
 
 #: ../app/views/pages/home.html.erb:66
 msgid "Home text|Are you already registered? <strong>%{login_link}</strong>"
-msgstr "Sei già registrato? <Strong> %{login_link} </ strong>"
+msgstr "Sei già registrato? <strong>%{login_link}</strong>"
 
 #: ../app/views/pages/home.html.erb:66
 msgid "Login"
@@ -1307,11 +1315,11 @@ msgstr "Inserzioni con tag"
 
 #: ../app/views/transactions/_transaction.html.erb:8
 msgid "Given to <strong>%{name}</strong>"
-msgstr "Versato a <strong> %{name} </ strong>"
+msgstr "Versato a <strong>%{name}</strong>"
 
 #: ../app/views/transactions/_transaction.html.erb:15
 msgid "Received from <strong>%{name}</strong>"
-msgstr "Ricevuto da <strong>%{name}</ strong>"
+msgstr "Ricevuto da <strong>%{name}</strong>"
 
 #: ../app/views/transactions/_transaction.html.erb:42
 msgid "Refund"
@@ -1701,7 +1709,7 @@ msgstr "Chiudi"
 
 #: ../app/views/wallets/show.html.erb:1 ../app/views/wallets/show.html.erb:6
 msgid "Title|%{currency_name} wallet"
-msgstr "%{currency_name} wallet"
+msgstr "Portafoglio %{currency_name}"
 
 #: ../app/views/wallets/show.html.erb:1 ../app/views/wallets/show.html.erb:6
 msgid "Title|Social wallet"
@@ -1711,7 +1719,7 @@ msgstr ""
 msgid "Current balance"
 msgstr "Saldo attuale"
 
-#: ../app/views/wallets/show.html.erb:14 ../app/views/wallets/view.html.erb:14
+#: ../app/views/wallets/show.html.erb:14 ../app/views/wallets/view.html.erb:13
 msgid "Button|Send %{currency_code}"
 msgstr "Invia %{currency_code}"
 
@@ -1721,24 +1729,24 @@ msgstr "Invia cc"
 
 #: ../app/views/wallets/view.html.erb:1
 msgid "Title|%{holder_name} %{currency_name} wallet"
-msgstr "%{currency_name} wallet di %{holder_name}"
+msgstr "Portafoglio %{currency_name} di %{holder_name}"
 
-#: ../app/views/wallets/view.html.erb:17
+#: ../app/views/wallets/view.html.erb:16
 msgid "Show QR code"
 msgstr "Mostra codice QR"
 
-#: ../app/views/wallets/view.html.erb:18
+#: ../app/views/wallets/view.html.erb:17
 msgid "Activate account"
 msgstr "Attiva account"
 
-#: ../app/views/wallets/view.html.erb:20
+#: ../app/views/wallets/view.html.erb:19
 msgid "Top up"
 msgstr "Ricarica"
 
-#: ../app/views/wallets/view.html.erb:21
+#: ../app/views/wallets/view.html.erb:20
 msgid "Withdraw"
 msgstr "Preleva"
 
-#: ../app/views/wallets/view.html.erb:37
+#: ../app/views/wallets/view.html.erb:36
 msgid "Activate account to see more"
 msgstr "Attiva account vedere le altre"

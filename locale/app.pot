@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0\n"
 "Report-Msgid-Bugs-To: contact@translation.io\n"
-"POT-Creation-Date: 2018-06-13 17:13+0200\n"
-"PO-Revision-Date: 2018-06-13 17:13+0200\n"
+"POT-Creation-Date: 2018-06-15 10:13+0200\n"
+"PO-Revision-Date: 2018-06-15 10:13+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -70,11 +70,11 @@ msgstr ""
 msgid "Discussion was successfully created."
 msgstr ""
 
-#: ../app/controllers/groups_controller.rb:56
+#: ../app/controllers/groups_controller.rb:57
 msgid "Group was successfully created."
 msgstr ""
 
-#: ../app/controllers/groups_controller.rb:70
+#: ../app/controllers/groups_controller.rb:71
 msgid "Group was successfully updated."
 msgstr ""
 
@@ -336,7 +336,7 @@ msgid "Button|Edit profile"
 msgstr ""
 
 #: ../app/views/commoners/show.html.erb:32 ../app/views/groups/show.html.erb:47
-#: ../app/views/layouts/_navbar.html.erb:94
+#: ../app/views/layouts/_navbar.html.erb:97
 msgid "Stories"
 msgstr ""
 
@@ -357,7 +357,7 @@ msgid "No stories yet"
 msgstr ""
 
 #: ../app/views/commoners/show.html.erb:63 ../app/views/pages/home.html.erb:85
-#: ../app/views/wallets/show.html.erb:28 ../app/views/wallets/view.html.erb:39
+#: ../app/views/wallets/show.html.erb:28 ../app/views/wallets/view.html.erb:38
 msgid "See all"
 msgstr ""
 
@@ -639,7 +639,6 @@ msgid "Discussions"
 msgstr ""
 
 #: ../app/views/groups/show.html.erb:51
-#: ../app/views/layouts/_navbar.html.erb:60
 msgid "Wallet"
 msgstr ""
 
@@ -766,29 +765,37 @@ msgstr ""
 msgid "Profile"
 msgstr ""
 
-#: ../app/views/layouts/_navbar.html.erb:61
+#: ../app/views/layouts/_navbar.html.erb:60
+msgid "Commoncoin Wallet"
+msgstr ""
+
+#: ../app/views/layouts/_navbar.html.erb:62
+msgid "%{currency_name} Wallet"
+msgstr ""
+
+#: ../app/views/layouts/_navbar.html.erb:64
 msgid "Conversations"
 msgstr ""
 
-#: ../app/views/layouts/_navbar.html.erb:63
+#: ../app/views/layouts/_navbar.html.erb:66
 msgid "Navbar|Logout"
 msgstr ""
 
-#: ../app/views/layouts/_navbar.html.erb:68
+#: ../app/views/layouts/_navbar.html.erb:71
 msgid "Navbar|Login"
 msgstr ""
 
-#: ../app/views/layouts/_navbar.html.erb:71
+#: ../app/views/layouts/_navbar.html.erb:74
 msgid "Navbar|Join"
 msgstr ""
 
-#: ../app/views/layouts/_navbar.html.erb:95
+#: ../app/views/layouts/_navbar.html.erb:98
 #: ../app/views/listings/_fields.html.erb:25
 #: ../app/views/stories/_fields.html.erb:17
 msgid "Tags"
 msgstr ""
 
-#: ../app/views/layouts/_navbar.html.erb:96
+#: ../app/views/layouts/_navbar.html.erb:99
 #: ../app/views/main/search.html.erb:20
 msgid "Listings"
 msgstr ""
@@ -1499,7 +1506,7 @@ msgstr ""
 msgid "Current balance"
 msgstr ""
 
-#: ../app/views/wallets/show.html.erb:14 ../app/views/wallets/view.html.erb:14
+#: ../app/views/wallets/show.html.erb:14 ../app/views/wallets/view.html.erb:13
 msgid "Button|Send %{currency_code}"
 msgstr ""
 
@@ -1507,22 +1514,22 @@ msgstr ""
 msgid "Title|%{holder_name} %{currency_name} wallet"
 msgstr ""
 
-#: ../app/views/wallets/view.html.erb:17
+#: ../app/views/wallets/view.html.erb:16
 msgid "Show QR code"
 msgstr ""
 
-#: ../app/views/wallets/view.html.erb:18
+#: ../app/views/wallets/view.html.erb:17
 msgid "Activate account"
 msgstr ""
 
-#: ../app/views/wallets/view.html.erb:20
+#: ../app/views/wallets/view.html.erb:19
 msgid "Top up"
 msgstr ""
 
-#: ../app/views/wallets/view.html.erb:21
+#: ../app/views/wallets/view.html.erb:20
 msgid "Withdraw"
 msgstr ""
 
-#: ../app/views/wallets/view.html.erb:37
+#: ../app/views/wallets/view.html.erb:36
 msgid "Activate account to see more"
 msgstr ""
