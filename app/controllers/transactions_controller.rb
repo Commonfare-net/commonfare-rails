@@ -1,14 +1,14 @@
 class TransactionsController < ApplicationController
   before_action :set_commoner
   before_action :set_group
-  before_action :set_wallet, except: [:top_up, :confirm_top_up, :create_top_up]
-  before_action :set_top_up_wallet, only: [:top_up, :confirm_top_up, :create_top_up]
+  before_action :set_wallet #, except: [:top_up, :confirm_top_up, :create_top_up]
+  # NOTE: also for top_up the wallet is the commoner's wallet in the group
+  # before_action :set_top_up_wallet, only: [:top_up, :confirm_top_up, :create_top_up]
   # setting the transaction here is needed to make CanCanCan work
   before_action :set_transaction, only: [:new, :create]
   # before_action :set_withdraw_transaction, only: [:withdraw, :confirm_withdraw, :create_withdraw]
   # before_action :set_top_up_transaction, only: [:top_up, :confirm_top_up, :create_top_up]
   load_and_authorize_resource # this must be after the before_actions
-
 
   include TransactionsHelper
   include WalletsHelper
@@ -196,18 +196,11 @@ class TransactionsController < ApplicationController
       @wallet = @group.wallet
     else
       currency = Currency.find_by(id: params[:currency])
-      walletable = group_transaction_for?(currency) ? currency.group : @commoner
+      # NOTE: for transactions in groups the wallet is ALWAYS the commoner's wallet in the group currency
+      # walletable = group_transaction_for?(currency) ? currency.group : @commoner
+      walletable = @commoner
       @wallet = Wallet.find_by(currency: currency, walletable: walletable)
-      # if params[:currency].present?
-      #   currency = Currency.find_by(id: params[:currency])
-      #   @wallet = Wallet.find_by(currency: currency, walletable: @commoner) || @commoner.wallet
-      #   # NOTE: params[:currency] must be passed through every step of the transaction
-      # else
-      #   @wallet = @commoner.wallet
-      # end
     end
-    # @wallet = @commoner.present? ? @commoner.wallet : @group.wallet
-
   end
 
   def set_transaction

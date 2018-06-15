@@ -49,6 +49,10 @@ class Commoner < ApplicationRecord
     # wallets.first
   end
 
+  def group_currency_wallets
+    wallets.where.not(currency: nil)
+  end
+
   private
 
   def create_wallet_and_get_income

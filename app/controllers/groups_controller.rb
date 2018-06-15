@@ -28,7 +28,8 @@ class GroupsController < ApplicationController
     @new_discussion = @group.discussions.build
     @currency = @group.currency || @group.build_currency
     @group_wallet = @group.wallet
-    @wallet = Wallet.find_by(currency: @group.currency, walletable: current_user.meta) if user_signed_in?
+    # here @wallet is the commoner's wallet in group currency
+    @wallet = Wallet.find_by(currency: @group.currency, walletable: current_user.meta) if user_signed_in? && @group.currency.persisted?
   end
 
   # GET /groups/new

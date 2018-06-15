@@ -10,7 +10,6 @@
       <div class="col">
       <h6><%= _('Current balance') %></h6>
       <h1><%= number_to_currency(@wallet.balance || 0, precision: 6, locale: I18n.locale, unit: "#{currency_code_for_wallet} ") %></h1>
-          <!-- <small class="text-muted">{Next payment expected on date: --/--/----}</small> -->
         <p><%= link_to((s_('Button|Send %{currency_code}') %{currency_code: currency_code_for_wallet}), get_new_transaction_path(@wallet.currency), class: 'btn btn-outline-cf') if can? :create, @wallet.outgoing_transactions.build %></p>
       </div>
     </div>
@@ -24,12 +23,12 @@
       <div class="wallet-transactions my-4">
         <h6>Transactions</h6>
         <% @grouped_transactions.each do |date, transactions| %>
-        <div class="transaction-date">
-          <%= l(date, format: :long) %>
-        </div>
-        <% transactions.each do |transaction| %>
-        <%= render 'transactions/transaction', transaction: transaction %>
-        <% end %>
+          <div class="transaction-date">
+            <%= l(date, format: :long) %>
+          </div>
+          <% transactions.each do |transaction| %>
+            <%= render 'transactions/transaction', transaction: transaction %>
+          <% end %>
         <% end %>
       </div>
       <% if @wallet.transactions.count > @visible_transactions_num %>
@@ -39,7 +38,6 @@
           <p class="text-center"><%= link_to _('See all'), get_transactions_path, class: 'btn btn-outline-cf-secondary' %></p>
         <% end %>
       <% end %>
-
     <% end %>
   </div>
 </div>

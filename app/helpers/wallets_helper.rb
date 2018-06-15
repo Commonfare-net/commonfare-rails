@@ -16,13 +16,13 @@ module WalletsHelper
     commoner_path(walletable)
   end
 
-  def currency_name_for_wallet
-    return @wallet.currency.name if @wallet.currency.present?
+  def currency_name_for_wallet(wallet=@wallet)
+    return wallet.currency.name if wallet.currency.present?
     'Commoncoin'
   end
 
-  def currency_code_for_wallet
-    return @wallet.currency.code if @wallet.currency.present?
+  def currency_code_for_wallet(wallet=@wallet)
+    return wallet.currency.code if wallet.currency.present?
     'cc'
   end
 
