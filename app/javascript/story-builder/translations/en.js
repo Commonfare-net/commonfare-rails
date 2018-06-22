@@ -12,7 +12,7 @@ const messages = defineMessages({
   publish_anonymously: 'Publish anonymously?',
   preview: 'Preview',
   publish: 'Publish',
-  writing_in: 'You are writing in',
+  writing_in: 'Language of your story',
   'locale.en': 'English',
   'locale.it': 'Italian',
   'locale.nl': 'Dutch/Flemish',

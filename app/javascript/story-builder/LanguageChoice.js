@@ -19,7 +19,7 @@ export default class LanguageChoice extends Component {
       <div>
         <FormattedMessage
           id="writing_in"
-          defaultMessage="You are writing in"
+          defaultMessage="Language of your story"
         />
         <div className="dropdown d-inline">
           <button href="#" id="langSelectDropdownMenuButton" type="button" className="btn btn-link btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -36,7 +36,7 @@ export default class LanguageChoice extends Component {
             ))}
           </div>
         </div>
-        {translatedLocales.indexOf(storyLocale) < 0 &&
+        {/* {translatedLocales.indexOf(storyLocale) < 0 &&
           <div className="badge badge-warning">
             <FormattedMessage
               id="no_translation_in"
@@ -46,7 +46,7 @@ export default class LanguageChoice extends Component {
               }}
             />
           </div>
-        }
+        } */}
       </div>
     )
   }

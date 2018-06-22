@@ -46,7 +46,7 @@ class StoryBuilderActions extends Component {
     return (
       <div>
         <div className="row justify-content-center my-4">
-          <div className="col-6 publish-anonymously-wrapper">
+          <div className={`col-${availableGroups.length > 0 ? '6' : '12'} publish-anonymously-wrapper`}>
             <PublishAnonymouslySwitch
               onChange={(state) => this.setState({
                 anonymous: state,
@@ -56,14 +56,16 @@ class StoryBuilderActions extends Component {
               disabled={publishing}
             />
           </div>
-          <div className="col-6 publish-as-group-wrapper">
-            <PublishAsGroupSelect
-              onChange={(groupId) => this.setState({ groupId })}
-              groups={availableGroups}
-              groupId={groupId}
-              disabled={publishing || anonymous || availableGroups.length === 0}
-            />
-          </div>
+          {availableGroups.length > 0 &&
+            <div className="col-6 publish-as-group-wrapper">
+              <PublishAsGroupSelect
+                onChange={(groupId) => this.setState({ groupId })}
+                groups={availableGroups}
+                groupId={groupId}
+                disabled={publishing || anonymous || availableGroups.length === 0}
+              />
+            </div>
+          }
         </div>
         <div className="row justify-content-center pt-4">
           <div className="col-6">
