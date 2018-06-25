@@ -36,5 +36,13 @@ class MainController < ApplicationController
     @listings = Listing.ransack(
       title_or_description_or_place_cont: @q
     ).result(distinct: true)
+
+    @commoners = Commoner.ransack(
+      name_cont: @q
+    ).result(distinct: true)
+
+    @groups = Group.ransack(
+      name_cont: @q
+    ).result(distinct: true)
   end
 end

@@ -1,7 +1,25 @@
 <% content_for :title, (_("Results for %{search_term}") %{search_term: @q}) %>
 <h1><%= (_("Results for '%{search_term}'") %{search_term: @q}) %></h1>
-<% if @tags.any? %>
+<% if @commoners.any? %>
 <div class="row my-4">
+  <div class="col">
+    <h2><%= (_("Commoners found")) %></h2>
+    <%= render partial: 'commoners/commoner', collection: @commoners, as: :commoner %>
+  </div>
+</div>
+<% end %>
+
+<% if @groups.any? %>
+<div class="row my-4">
+  <div class="col">
+    <h2><%= (_("Groups found")) %></h2>
+    <%= render partial: 'groups/group', collection: @groups, as: :group %>
+  </div>
+</div>
+<% end %>
+
+<% if @tags.any? %>
+<div class="row mt-4">
   <div class="col">
     <h2><%= (_("Tags with '%{search_term}'") %{search_term: @q}) %></h2>
     <p class="cf-tags">
@@ -14,6 +32,7 @@
 <% end %>
 
 <%= render 'stories/types_and_lists', story_types_and_lists: @story_types_and_lists %>
+
 <% if @listings.any? %>
   <div class="row">
     <div class="col">

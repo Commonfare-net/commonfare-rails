@@ -22,8 +22,11 @@ module ApplicationHelper
   end
 
   def fab_visible?
+    # binding.pry
     user_signed_in? &&
-    !ACTION_WITHOUT_FAB.include?(action_name)
+    !ACTION_WITHOUT_FAB.include?(action_name) &&
+    !(controller_name == 'commoners' && action_name == 'show') &&
+    !(controller_name == 'groups' && action_name == 'show')
   end
 
   # Returns a path string to the author of the authorable
