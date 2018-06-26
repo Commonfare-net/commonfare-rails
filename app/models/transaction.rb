@@ -18,6 +18,14 @@ class Transaction < ApplicationRecord
     where("(transactions.from_wallet_id = ? AND transactions.to_wallet_id =?) OR (transactions.from_wallet_id = ? AND transactions.to_wallet_id =?)", from_wallet_id, to_wallet_id, to_wallet_id, from_wallet_id)
   end
 
+  # Returns the amount with positive or negative sign
+  # depending on whether the given wallet is 'to' or 'from' wallet
+  def signed_amount_for_wallet(wallet)
+    return amount if wallet == to_wallet
+    return -amount if wallet == from_wallet
+    0
+  end
+
   private
 
   def not_to_self

@@ -34,6 +34,14 @@ class WalletsController < ApplicationController
                         module_size: 5.5) # in pixels
   end
 
+  def daily_takings
+    @day_start = params[:day_start] || 0
+    @daily_takings = {}
+    @wallet.transactions.group_by_day(day_start: @day_start) {|t| t.created_at}.each do |d, ts|
+      @daily_takings[d] = ts.map {|t| t.signed_amount_for_wallet(@wallet)}.reduce(&:+)
+    end
+  end
+
   def autocomplete
     @wallets = Wallet.in_currency(@currency).ransack(
       walletable_of_Commoner_type_name_cont: params[:q]

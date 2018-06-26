@@ -60,6 +60,11 @@ class Ability
         can :destroy, Message, commoner_id: commoner.id
         can :read, Wallet, walletable_id: commoner.id, walletable_type: commoner.class.name
         can :autocomplete, Wallet
+        can :daily_takings, Wallet do |wallet|
+          wallet.currency.present? &&
+          (wallet.currency.group.editors.include?(commoner) ||
+          wallet.currency.group.admins.include?(commoner))
+        end
 
         if ENV['WALLET_ENABLED'] == 'true' && commoner.wallet.present?
           can :read, Transaction, from_wallet: { walletable_id: commoner.id, walletable_type: commoner.class.name }

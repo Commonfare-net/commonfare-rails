@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0\n"
 "Report-Msgid-Bugs-To: contact@translation.io\n"
-"POT-Creation-Date: 2018-06-15 10:13+0200\n"
-"PO-Revision-Date: 2018-06-15 10:13+0200\n"
+"POT-Creation-Date: 2018-06-26 09:20+0200\n"
+"PO-Revision-Date: 2018-06-26 09:20+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Croatian\n"
 "Language: hr\n"
@@ -140,11 +140,11 @@ msgstr ""
 msgid "There has been a problem processing the transaction"
 msgstr ""
 
-#: ../app/helpers/application_helper.rb:41
+#: ../app/helpers/application_helper.rb:44
 msgid "You"
 msgstr "Vi"
 
-#: ../app/helpers/application_helper.rb:43 ../app/helpers/stories_helper.rb:84
+#: ../app/helpers/application_helper.rb:46 ../app/helpers/stories_helper.rb:84
 msgid "Anonymous"
 msgstr "Anonimno"
 
@@ -219,11 +219,11 @@ msgstr ""
 msgid "ValidationError|doesn't seem to be a valid place"
 msgstr ""
 
-#: ../app/models/transaction.rb:25
+#: ../app/models/transaction.rb:29
 msgid "can't be you"
 msgstr ""
 
-#: ../app/models/transaction.rb:31
+#: ../app/models/transaction.rb:35
 msgid "must accept %{currency_name}"
 msgstr ""
 
@@ -352,7 +352,7 @@ msgstr ""
 msgid "Button|Edit profile"
 msgstr "Uredite profil"
 
-#: ../app/views/commoners/show.html.erb:32 ../app/views/groups/show.html.erb:47
+#: ../app/views/commoners/show.html.erb:32 ../app/views/groups/show.html.erb:43
 #: ../app/views/layouts/_navbar.html.erb:97
 msgid "Stories"
 msgstr "Priče"
@@ -361,21 +361,21 @@ msgstr "Priče"
 msgid "Groups"
 msgstr ""
 
-#: ../app/views/commoners/show.html.erb:39 ../app/views/groups/show.html.erb:59
+#: ../app/views/commoners/show.html.erb:39 ../app/views/groups/show.html.erb:55
 msgid "Requests"
 msgstr ""
 
-#: ../app/views/commoners/show.html.erb:43 ../app/views/groups/show.html.erb:63
+#: ../app/views/commoners/show.html.erb:43 ../app/views/groups/show.html.erb:59
 msgid "Activities"
 msgstr ""
 "Aktivnosti\n"
 
-#: ../app/views/commoners/show.html.erb:55 ../app/views/groups/show.html.erb:94
+#: ../app/views/commoners/show.html.erb:55 ../app/views/groups/show.html.erb:90
 msgid "No stories yet"
 msgstr "Još nema priča"
 
 #: ../app/views/commoners/show.html.erb:63 ../app/views/pages/home.html.erb:85
-#: ../app/views/wallets/show.html.erb:28 ../app/views/wallets/view.html.erb:38
+#: ../app/views/wallets/show.html.erb:28 ../app/views/wallets/view.html.erb:39
 msgid "See all"
 msgstr "Vidi sve"
 
@@ -392,7 +392,7 @@ msgid "No requests"
 msgstr ""
 
 #: ../app/views/commoners/show.html.erb:101
-#: ../app/views/groups/show.html.erb:138
+#: ../app/views/groups/show.html.erb:134
 msgid "Coming soon"
 msgstr "Dolazi uskoro"
 
@@ -666,47 +666,51 @@ msgstr ""
 msgid "Edit group"
 msgstr ""
 
-#: ../app/views/groups/show.html.erb:21
-msgid "Leave group"
-msgstr ""
-
-#: ../app/views/groups/show.html.erb:25
+#: ../app/views/groups/show.html.erb:20
 msgid "Create currency"
 msgstr ""
 
-#: ../app/views/groups/show.html.erb:29
+#: ../app/views/groups/show.html.erb:23
 msgid "Edit currency"
 msgstr ""
 
-#: ../app/views/groups/show.html.erb:43
+#: ../app/views/groups/show.html.erb:26
+msgid "Central wallet"
+msgstr ""
+
+#: ../app/views/groups/show.html.erb:29
+msgid "Leave group"
+msgstr ""
+
+#: ../app/views/groups/show.html.erb:39
 msgid "Discussions"
 msgstr ""
 
-#: ../app/views/groups/show.html.erb:51
+#: ../app/views/groups/show.html.erb:47
 msgid "Wallet"
 msgstr ""
 
-#: ../app/views/groups/show.html.erb:55
+#: ../app/views/groups/show.html.erb:51
 msgid "Members"
 msgstr ""
 
-#: ../app/views/groups/show.html.erb:70
+#: ../app/views/groups/show.html.erb:66
 msgid "Button|Start a new discussion"
 msgstr "Button| Započnite novu raspravu"
 
-#: ../app/views/groups/show.html.erb:77
+#: ../app/views/groups/show.html.erb:73
 msgid "No discussions yet"
 msgstr ""
 
-#: ../app/views/groups/show.html.erb:102
+#: ../app/views/groups/show.html.erb:98
 msgid "Button|Go to Wallet"
 msgstr ""
 
-#: ../app/views/groups/show.html.erb:113
+#: ../app/views/groups/show.html.erb:109
 msgid "No members"
 msgstr ""
 
-#: ../app/views/groups/show.html.erb:127
+#: ../app/views/groups/show.html.erb:123
 msgid "No pending requests"
 msgstr ""
 
@@ -849,7 +853,7 @@ msgid "Tags"
 msgstr "Oznake"
 
 #: ../app/views/layouts/_navbar.html.erb:99
-#: ../app/views/main/search.html.erb:20
+#: ../app/views/main/search.html.erb:39
 msgid "Listings"
 msgstr ""
 
@@ -975,6 +979,14 @@ msgid "Results for '%{search_term}'"
 msgstr "Rezultati za ‘%{search_term}’"
 
 #: ../app/views/main/search.html.erb:6
+msgid "Commoners found"
+msgstr ""
+
+#: ../app/views/main/search.html.erb:15
+msgid "Groups found"
+msgstr ""
+
+#: ../app/views/main/search.html.erb:24
 msgid "Tags with '%{search_term}'"
 msgstr ""
 
@@ -1384,6 +1396,7 @@ msgid "Balance"
 msgstr ""
 
 #: ../app/views/transactions/new.html.erb:8
+#: ../app/views/wallets/daily_takings.html.erb:5
 msgid "%{icon} Back to %{currency_name} wallet"
 msgstr ""
 
@@ -1669,6 +1682,15 @@ msgstr "Registrirajte se"
 msgid "Close"
 msgstr ""
 
+#: ../app/views/wallets/daily_takings.html.erb:1
+#: ../app/views/wallets/daily_takings.html.erb:7
+msgid "Daily takings"
+msgstr ""
+
+#: ../app/views/wallets/daily_takings.html.erb:8
+msgid "From %{time}:00 to %{time}:00"
+msgstr ""
+
 #: ../app/views/wallets/show.html.erb:1 ../app/views/wallets/show.html.erb:6
 msgid "Title|%{currency_name} wallet"
 msgstr ""
@@ -1681,13 +1703,17 @@ msgstr ""
 msgid "Current balance"
 msgstr ""
 
-#: ../app/views/wallets/show.html.erb:14 ../app/views/wallets/view.html.erb:13
+#: ../app/views/wallets/show.html.erb:14
 msgid "Button|Send %{currency_code}"
 msgstr ""
 
 #: ../app/views/wallets/show.html.erb:14
 msgid "Button|Send cc"
 msgstr "Button| pošalji cc"
+
+#: ../app/views/wallets/show.html.erb:18 ../app/views/wallets/view.html.erb:25
+msgid "Transactions"
+msgstr ""
 
 #: ../app/views/wallets/view.html.erb:1
 msgid "Title|%{holder_name} %{currency_name} wallet"
@@ -1698,17 +1724,21 @@ msgid "Show QR code"
 msgstr ""
 
 #: ../app/views/wallets/view.html.erb:17
+msgid "Button|Daily takings"
+msgstr ""
+
+#: ../app/views/wallets/view.html.erb:18
 msgid "Activate account"
 msgstr ""
 
-#: ../app/views/wallets/view.html.erb:19
+#: ../app/views/wallets/view.html.erb:20
 msgid "Top up"
 msgstr ""
 
-#: ../app/views/wallets/view.html.erb:20
+#: ../app/views/wallets/view.html.erb:21
 msgid "Withdraw"
 msgstr ""
 
-#: ../app/views/wallets/view.html.erb:36
+#: ../app/views/wallets/view.html.erb:37
 msgid "Activate account to see more"
 msgstr ""

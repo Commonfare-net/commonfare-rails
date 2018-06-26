@@ -59,6 +59,7 @@ Rails.application.routes.draw do
         resources :wallets, only: [:show] do
           get 'autocomplete', on: :collection, defaults: { format: :json }
           get 'view', on: :member
+          get 'daily_takings', on: :member
         end
         post 'transaction_confirm', to: 'transactions#confirm', as: 'transaction_confirm'
         resources :transactions, except: [:edit, :update, :destroy] do

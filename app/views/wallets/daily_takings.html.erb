@@ -1,0 +1,17 @@
+<%= content_for :title, _('Daily takings') %>
+<div class="row justify-content-center">
+  <div class="col-lg-8 col-md-8 bg-white">
+    <p class="mt-3">
+      <%= link_to((_("%{icon} Back to %{currency_name} wallet") %{icon: fa_icon('chevron-left fw'), currency_name: currency_name_for_wallet}).html_safe, view_commoner_wallet_path(@wallet.walletable, @wallet), class: 'btn btn-outline-cf btn-sm') %>
+    </p>
+    <h2><%= _('Daily takings') %></h2>
+    <small><%= _('From %{time}:00 to %{time}:00') %{time: @day_start} %></small>
+    <hr>
+    <dl class="daily-takings">
+      <% @daily_takings.reverse_each.to_h.each do |date, total| %>
+        <dt><%= I18n.l(date) %></dt>
+        <dd><%= number_to_currency(total || 0, precision: 2, locale: I18n.locale, unit: "#{currency_code_for_wallet} ") %></dd>
+      <% end %>
+    </dl>
+  </div>
+</div>

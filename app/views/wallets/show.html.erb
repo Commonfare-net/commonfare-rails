@@ -15,7 +15,7 @@
       </div>
     </div>
     <div class="wallet-transactions mt-4">
-      <h6>Transactions</h6>
+      <h6><%= _('Transactions') %></h6>
       <% @grouped_transactions.each do |date, transactions| %>
         <div class="transaction-date">
           <%= l(date, format: :long) %>
