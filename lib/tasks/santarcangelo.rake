@@ -68,8 +68,9 @@ namespace :santarcangelo do
                            color: '000',
                            shape_rendering: 'crispEdges',
                            module_size: 5.5) # in pixels
-        svg qr_svg, position: :center, vposition: :center, width: 215
-        # text "#{member.name}"
+        svg qr_svg, position: :center, width: 179
+        move_down 2
+        text "WalletID #{wallet.id}", align: :center
         start_new_page
       end
     end
@@ -94,7 +95,7 @@ namespace :santarcangelo do
   def page_options
     {
       margin: 1.mm,
-      page_size: [75.mm, 75.mm]
+      page_size: [70.mm, 70.mm]
     }
   end
 
@@ -152,8 +153,9 @@ namespace :santarcangelo do
                            color: '000',
                            shape_rendering: 'crispEdges',
                            module_size: 5.5) # in pixels
-        svg qr_svg, position: :center, vposition: :center, width: 215
-        # text "#{member.name}"
+        svg qr_svg, position: :center, width: 179
+        move_down 2
+        text "WalletID #{wallet.id}", align: :center
         start_new_page
       end
     end
