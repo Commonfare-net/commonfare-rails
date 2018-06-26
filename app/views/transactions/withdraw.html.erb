@@ -17,7 +17,7 @@
             f.object.amount } %>
         </div>
       </div>
-      <%= f.input :message, required: false, placeholder: _('Service, food, drinks...'), label: _('Message (optional)') %>
+      <%= f.input :message, as: :hidden %>
       <%= f.button :submit, s_('Button|Withdraw'), class: 'btn btn-cf btn-block' %>
     <% end %>
   </div>
