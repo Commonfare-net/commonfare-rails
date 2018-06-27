@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0\n"
 "Report-Msgid-Bugs-To: contact@translation.io\n"
-"POT-Creation-Date: 2018-06-26 09:20+0200\n"
-"PO-Revision-Date: 2018-06-26 09:20+0200\n"
+"POT-Creation-Date: 2018-06-27 10:50+0200\n"
+"PO-Revision-Date: 2018-06-27 10:50+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -212,11 +212,11 @@ msgstr ""
 msgid "ValidationError|doesn't seem to be a valid place"
 msgstr ""
 
-#: ../app/models/transaction.rb:29
+#: ../app/models/transaction.rb:33
 msgid "can't be you"
 msgstr ""
 
-#: ../app/models/transaction.rb:35
+#: ../app/models/transaction.rb:39
 msgid "must accept %{currency_name}"
 msgstr ""
 
@@ -452,14 +452,17 @@ msgstr ""
 msgid "%{icon} Back to My conversations"
 msgstr ""
 
-#: ../app/views/currencies/edit.html.erb:1
-#: ../app/views/currencies/new.html.erb:1
-#: ../app/views/currencies/new.html.erb:4
-msgid "Title|New coin"
+#: ../app/views/currencies/_fields.html.erb:1
+msgid "Name"
 msgstr ""
 
+#: ../app/views/currencies/_fields.html.erb:2
+msgid "Code"
+msgstr ""
+
+#: ../app/views/currencies/edit.html.erb:1
 #: ../app/views/currencies/edit.html.erb:4
-msgid "Title|Edit coin"
+msgid "Title|Edit currency"
 msgstr ""
 
 #: ../app/views/currencies/edit.html.erb:6
@@ -469,6 +472,11 @@ msgstr ""
 
 #: ../app/views/currencies/edit.html.erb:11
 msgid "Title|Update"
+msgstr ""
+
+#: ../app/views/currencies/new.html.erb:1
+#: ../app/views/currencies/new.html.erb:4
+msgid "Title|New coin"
 msgstr ""
 
 #: ../app/views/currencies/new.html.erb:11
@@ -1260,8 +1268,6 @@ msgid "I like your stories!"
 msgstr ""
 
 #: ../app/views/transactions/new.html.erb:19
-#: ../app/views/transactions/top_up.html.erb:19
-#: ../app/views/transactions/withdraw.html.erb:20
 msgid "Message (optional)"
 msgstr ""
 
@@ -1300,11 +1306,6 @@ msgstr ""
 #: ../app/views/transactions/top_up.html.erb:1
 #: ../app/views/transactions/top_up.html.erb:4
 msgid "Title|Top up %{currency_name}"
-msgstr ""
-
-#: ../app/views/transactions/top_up.html.erb:19
-#: ../app/views/transactions/withdraw.html.erb:20
-msgid "Service, food, drinks..."
 msgstr ""
 
 #: ../app/views/transactions/top_up.html.erb:20
@@ -1516,8 +1517,13 @@ msgstr ""
 msgid "Daily takings"
 msgstr ""
 
-#: ../app/views/wallets/daily_takings.html.erb:8
+#: ../app/views/wallets/daily_takings.html.erb:9
 msgid "From %{time}:00 to %{time}:00"
+msgstr ""
+
+#: ../app/views/wallets/daily_takings.html.erb:11
+#: ../app/views/wallets/daily_takings.html.erb:14
+msgid "(see from %{time}:00 to %{time}:00)"
 msgstr ""
 
 #: ../app/views/wallets/show.html.erb:1 ../app/views/wallets/show.html.erb:6

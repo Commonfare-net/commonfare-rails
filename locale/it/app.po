@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0\n"
 "Report-Msgid-Bugs-To: contact@translation.io\n"
-"POT-Creation-Date: 2018-06-26 09:20+0200\n"
-"PO-Revision-Date: 2018-06-26 09:20+0200\n"
+"POT-Creation-Date: 2018-06-27 10:50+0200\n"
+"PO-Revision-Date: 2018-06-27 10:50+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Italian\n"
 "Language: it\n"
@@ -66,11 +66,11 @@ msgstr "Ciao, "
 
 #: ../app/controllers/currencies_controller.rb:20
 msgid "Currency was successfully created."
-msgstr ""
+msgstr "Moneta creata"
 
 #: ../app/controllers/currencies_controller.rb:30
 msgid "Currency was successfully updated."
-msgstr ""
+msgstr "Moneta aggiornata"
 
 #: ../app/controllers/discussions_controller.rb:36
 msgid "Discussion was successfully created."
@@ -218,11 +218,11 @@ msgstr "indirizzo non valido per SWAPI"
 msgid "ValidationError|doesn't seem to be a valid place"
 msgstr "non sembra essere un luogo valido"
 
-#: ../app/models/transaction.rb:29
+#: ../app/models/transaction.rb:33
 msgid "can't be you"
 msgstr "non puoi essere tu stesso"
 
-#: ../app/models/transaction.rb:35
+#: ../app/models/transaction.rb:39
 msgid "must accept %{currency_name}"
 msgstr "deve accettare %{currency_name}"
 
@@ -484,11 +484,18 @@ msgstr "Conversazione con %{commoner_name}"
 msgid "%{icon} Back to My conversations"
 msgstr "%{icon} Torna alle mie conversazioni"
 
+#: ../app/views/currencies/_fields.html.erb:1
+msgid "Name"
+msgstr "Nome"
+
+#: ../app/views/currencies/_fields.html.erb:2
+msgid "Code"
+msgstr "Codice"
+
 #: ../app/views/currencies/edit.html.erb:1
-#: ../app/views/currencies/new.html.erb:1
-#: ../app/views/currencies/new.html.erb:4
-msgid "Title|New coin"
-msgstr ""
+#: ../app/views/currencies/edit.html.erb:4
+msgid "Title|Edit currency"
+msgstr "Modifica moneta"
 
 #: ../app/views/currencies/edit.html.erb:4
 msgid "Title|Edit coin"
@@ -502,6 +509,11 @@ msgstr "per il gruppo %{group_name}"
 #: ../app/views/currencies/edit.html.erb:11
 msgid "Title|Update"
 msgstr "Aggiorna"
+
+#: ../app/views/currencies/new.html.erb:1
+#: ../app/views/currencies/new.html.erb:4
+msgid "Title|New coin"
+msgstr ""
 
 #: ../app/views/currencies/new.html.erb:11
 msgid "Title|Create"
@@ -678,11 +690,11 @@ msgstr "Modifica gruppo"
 
 #: ../app/views/groups/show.html.erb:20
 msgid "Create currency"
-msgstr ""
+msgstr "Crea moneta"
 
 #: ../app/views/groups/show.html.erb:23
 msgid "Edit currency"
-msgstr ""
+msgstr "Modifica moneta"
 
 #: ../app/views/groups/show.html.erb:26
 msgid "Central wallet"
@@ -906,7 +918,7 @@ msgstr "Aggiungi immagine"
 
 #: ../app/views/listings/_fields.html.erb:48
 msgid "e.g. Lessons, Babysitting, etc."
-msgstr ""
+msgstr "es. lezioni, babysitter, traduzioni, ecc."
 
 #: ../app/views/listings/_image_fields.html.erb:4
 msgid "Remove"
@@ -998,11 +1010,11 @@ msgstr "Risultati per ‘%{search_term}’"
 
 #: ../app/views/main/search.html.erb:6
 msgid "Commoners found"
-msgstr ""
+msgstr "Commoner trovati"
 
 #: ../app/views/main/search.html.erb:15
 msgid "Groups found"
-msgstr ""
+msgstr "Gruppi trovati"
 
 #: ../app/views/main/search.html.erb:24
 msgid "Tags with '%{search_term}'"
@@ -1450,8 +1462,6 @@ msgid "I like your stories!"
 msgstr "Mi piacciono le tue storie!"
 
 #: ../app/views/transactions/new.html.erb:19
-#: ../app/views/transactions/top_up.html.erb:19
-#: ../app/views/transactions/withdraw.html.erb:20
 msgid "Message (optional)"
 msgstr "Messaggio (opzionale)"
 
@@ -1725,9 +1735,14 @@ msgstr "Chiudi"
 msgid "Daily takings"
 msgstr "Incassi giornalieri"
 
-#: ../app/views/wallets/daily_takings.html.erb:8
+#: ../app/views/wallets/daily_takings.html.erb:9
 msgid "From %{time}:00 to %{time}:00"
 msgstr "Dalle %{time}:00 alle %{time}:00"
+
+#: ../app/views/wallets/daily_takings.html.erb:11
+#: ../app/views/wallets/daily_takings.html.erb:14
+msgid "(see from %{time}:00 to %{time}:00)"
+msgstr "(vedi dalle %{time}:00 alle %{time}:00)"
 
 #: ../app/views/wallets/show.html.erb:1 ../app/views/wallets/show.html.erb:6
 msgid "Title|%{currency_name} wallet"

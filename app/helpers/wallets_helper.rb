@@ -48,5 +48,6 @@ module WalletsHelper
     return 6 if @wallet.currency.present? &&
       user_signed_in? &&
       @group.editors.include?(current_user.meta)
+    0
   end
 end

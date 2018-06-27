@@ -5,7 +5,15 @@
       <%= link_to((_("%{icon} Back to %{currency_name} wallet") %{icon: fa_icon('chevron-left fw'), currency_name: currency_name_for_wallet}).html_safe, view_commoner_wallet_path(@wallet.walletable, @wallet), class: 'btn btn-outline-cf btn-sm') %>
     </p>
     <h2><%= _('Daily takings') %></h2>
-    <small><%= _('From %{time}:00 to %{time}:00') %{time: @day_start} %></small>
+    <p>
+      <%= _('From %{time}:00 to %{time}:00') %{time: @day_start} %>
+      <% if @day_start != '0' %>
+        <small><%= link_to (_('(see from %{time}:00 to %{time}:00)') %{time: 0}), daily_takings_commoner_wallet_path(@commoner, @wallet, {day_start: 0}) %></small>
+      <% end %>
+      <% if @day_start != '6' %>
+        <small><%= link_to (_('(see from %{time}:00 to %{time}:00)') %{time: 6}), daily_takings_commoner_wallet_path(@commoner, @wallet, {day_start: 6}) %></small>
+      <% end %>
+    </p>
     <hr>
     <dl class="daily-takings">
       <% @daily_takings.reverse_each.to_h.each do |date, total| %>
