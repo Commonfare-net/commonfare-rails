@@ -68,6 +68,7 @@ class TransactionsController < ApplicationController
     # NOTE: here @wallet is the TO_WALLET
     @from_wallet = Wallet.find_by(id: params[:from_wallet_id])
     @amount = BigDecimal.new(params[:amount]).to_f if params[:amount].present?
+    @reimbursement = params[:reimburse].present?
     @currency = @wallet.currency
     @transaction = @wallet.incoming_transactions.build(from_wallet: @from_wallet, amount: @amount)
     @past_transactions = Transaction.where(from_wallet: @from_wallet, to_wallet: @wallet)

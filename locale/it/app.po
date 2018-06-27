@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0\n"
 "Report-Msgid-Bugs-To: contact@translation.io\n"
-"POT-Creation-Date: 2018-06-27 10:50+0200\n"
-"PO-Revision-Date: 2018-06-27 10:50+0200\n"
+"POT-Creation-Date: 2018-06-27 15:26+0200\n"
+"PO-Revision-Date: 2018-06-27 15:26+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Italian\n"
 "Language: it\n"
@@ -126,17 +126,17 @@ msgid "Story was successfully updated."
 msgstr "La storia è stata aggiornata con successo."
 
 #: ../app/controllers/transactions_controller.rb:56
-#: ../app/controllers/transactions_controller.rb:102
-#: ../app/controllers/transactions_controller.rb:144
-#: ../app/controllers/transactions_controller.rb:169
+#: ../app/controllers/transactions_controller.rb:103
+#: ../app/controllers/transactions_controller.rb:145
+#: ../app/controllers/transactions_controller.rb:170
 #: ../app/views/transactions/success.html.erb:4
 msgid "Transaction successful"
 msgstr "Transazione completata"
 
 #: ../app/controllers/transactions_controller.rb:61
-#: ../app/controllers/transactions_controller.rb:107
-#: ../app/controllers/transactions_controller.rb:149
-#: ../app/controllers/transactions_controller.rb:171
+#: ../app/controllers/transactions_controller.rb:108
+#: ../app/controllers/transactions_controller.rb:150
+#: ../app/controllers/transactions_controller.rb:172
 msgid "There has been a problem processing the transaction"
 msgstr "Si è verificato un problema durante l'elaborazione della transazione"
 
@@ -372,7 +372,7 @@ msgid "No stories yet"
 msgstr "Non ci sono storie presenti"
 
 #: ../app/views/commoners/show.html.erb:63 ../app/views/pages/home.html.erb:85
-#: ../app/views/wallets/show.html.erb:28 ../app/views/wallets/view.html.erb:39
+#: ../app/views/wallets/show.html.erb:28 ../app/views/wallets/view.html.erb:40
 msgid "See all"
 msgstr "Vedi tutte"
 
@@ -1066,6 +1066,10 @@ msgstr ""
 "cipa e unisciti a noi!"
 
 #: ../app/views/pages/home.html.erb:60
+msgid "Home text|Commonfare.net is for, with, and by people."
+msgstr "Commonfare.net è per le persone, con le persone e delle persone."
+
+#: ../app/views/pages/home.html.erb:60
 msgid "Home text|Commonfare.net if for, with, and by people."
 msgstr "Commonfare.net è per le persone, con le persone e delle persone"
 
@@ -1453,7 +1457,7 @@ msgstr "Nome del commoner"
 
 #: ../app/views/transactions/new.html.erb:16
 #: ../app/views/transactions/top_up.html.erb:16
-#: ../app/views/transactions/withdraw.html.erb:16
+#: ../app/views/transactions/withdraw.html.erb:21
 msgid "Amount (%{currency_code})"
 msgstr "Importo (%{currency_code})"
 
@@ -1483,13 +1487,13 @@ msgstr "Transazione completata"
 
 #: ../app/views/transactions/success.html.erb:6
 #: ../app/views/transactions/top_up.html.erb:6
-#: ../app/views/transactions/withdraw.html.erb:6
+#: ../app/views/transactions/withdraw.html.erb:11
 msgid "From"
 msgstr "Da"
 
 #: ../app/views/transactions/success.html.erb:8
 #: ../app/views/transactions/top_up.html.erb:8
-#: ../app/views/transactions/withdraw.html.erb:8
+#: ../app/views/transactions/withdraw.html.erb:13
 msgid "To"
 msgstr "A"
 
@@ -1512,15 +1516,20 @@ msgid "Button|Continue"
 msgstr "Continua"
 
 #: ../app/views/transactions/withdraw.html.erb:1
-#: ../app/views/transactions/withdraw.html.erb:4
+#: ../app/views/transactions/withdraw.html.erb:5
 msgid "Title|Withdraw %{currency_name}"
 msgstr "Prelievo in %{currency_name}"
 
-#: ../app/views/transactions/withdraw.html.erb:21
+#: ../app/views/transactions/withdraw.html.erb:8
+msgid "Title|Final reimbursement"
+msgstr "Rimborso finale"
+
+#: ../app/views/transactions/withdraw.html.erb:26
+#: ../app/views/wallets/view.html.erb:21
 msgid "Button|Withdraw"
 msgstr "Preleva"
 
-#: ../app/views/transactions/withdraw.html.erb:29
+#: ../app/views/transactions/withdraw.html.erb:34
 msgid "Transactions and refunds"
 msgstr "Transazioni e rimborsi"
 
@@ -1764,7 +1773,7 @@ msgstr "Invia %{currency_code}"
 msgid "Button|Send cc"
 msgstr "Invia cc"
 
-#: ../app/views/wallets/show.html.erb:18 ../app/views/wallets/view.html.erb:25
+#: ../app/views/wallets/show.html.erb:18 ../app/views/wallets/view.html.erb:26
 msgid "Transactions"
 msgstr "Transazioni"
 
@@ -1781,8 +1790,16 @@ msgid "Button|Daily takings"
 msgstr "Incassi giornalieri"
 
 #: ../app/views/wallets/view.html.erb:18
+msgid "Button|Activate account"
+msgstr ""
+
+#: ../app/views/wallets/view.html.erb:18
 msgid "Activate account"
 msgstr "Attiva account"
+
+#: ../app/views/wallets/view.html.erb:20
+msgid "Button|Top up"
+msgstr "Ricarica"
 
 #: ../app/views/wallets/view.html.erb:20
 msgid "Top up"
@@ -1792,6 +1809,10 @@ msgstr "Ricarica"
 msgid "Withdraw"
 msgstr "Preleva"
 
-#: ../app/views/wallets/view.html.erb:37
+#: ../app/views/wallets/view.html.erb:22
+msgid "Button|Reimburse"
+msgstr "Rimborsa"
+
+#: ../app/views/wallets/view.html.erb:38
 msgid "Activate account to see more"
 msgstr "Attiva account vedere le altre"

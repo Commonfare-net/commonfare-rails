@@ -1,7 +1,12 @@
 <%= content_for :title, s_('Title|Withdraw %{currency_name}') %{currency_name: currency_name_for_withdraw_transaction} %>
 <div class="row justify-content-center">
   <div class="col-md-8 col-lg-8 py-4">
-    <h1 class='mb-4'><%= s_('Title|Withdraw %{currency_name}') %{currency_name: currency_name_for_withdraw_transaction} %></h1>
+    <h1 class='mb-4'>
+      <%= s_('Title|Withdraw %{currency_name}') %{currency_name: currency_name_for_withdraw_transaction} %>
+    </h1>
+    <h3 class="text-danger">
+      <%= s_('Title|Final reimbursement') if @reimbursement %>
+    </h3>
     <dl class="row">
       <dt class="col-sm-1"><%= _('From') %></dt>
       <dd class="col-sm-11"><%= @transaction.from_wallet.walletable.name %></dd>

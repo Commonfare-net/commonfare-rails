@@ -62,6 +62,7 @@ class Ability
         can :autocomplete, Wallet
         can :daily_takings, Wallet do |wallet|
           wallet.currency.present? &&
+          wallet.walletable == commoner &&
           (wallet.currency.group.editors.include?(commoner) ||
           wallet.currency.group.admins.include?(commoner))
         end
