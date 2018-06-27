@@ -14,7 +14,7 @@ namespace :santarcangelo do
     currency = group.currency
     wallets = []
     num.times do
-      commoner = Commoner.find_or_create_by name: DateTime.now.strftime('%Q') do |commoner|
+      commoner = Commoner.find_or_create_by name: generate_commoner_name do |commoner|
         user_attributes_for(commoner)
       end
       Membership.create(commoner: commoner, group: group)
@@ -22,8 +22,8 @@ namespace :santarcangelo do
       transfer_santacoin_to_wallet(wallet, amount)
       wallets << wallet
     end
-    generate_pdf_for_wallets(wallets)
-    generate_csv_for_wallets(wallets)
+    generate_pdf_for_wallets(wallets, amount)
+    generate_csv_for_wallets(wallets, amount)
   end
 
   desc "Destroy and recreate all the wallets in the given group"
@@ -139,9 +139,18 @@ namespace :santarcangelo do
     end
   end
 
-  def generate_pdf_for_wallets(wallets)
+  def generate_commoner_name
+    name = "SF_#{[('a'..'z').to_a.shuffle[0,5].join, rand(100..999)].join}"
+    if Commoner.exists?(["lower(name) = ?", name.downcase])
+      generate_commoner_name
+    else
+      name
+    end
+  end
+
+  def generate_pdf_for_wallets(wallets, amount)
     sorted_ids = wallets.map(&:id).sort
-    Prawn::Document.generate("#{host_tmp_path}/#{timestamp}_santarcangelo_qrcodes_#{sorted_ids.first}-#{sorted_ids.last}.pdf", page_options) do
+    Prawn::Document.generate("#{host_tmp_path}/#{timestamp}_santarcangelo_qrcodes_#{amount}sc_#{sorted_ids.first}-#{sorted_ids.last}.pdf", page_options) do
       wallets.each do |wallet|
         # see http://www.qrcode.com/en/about/version.html for versions
         # 7 -> 45x45 modules
@@ -161,9 +170,9 @@ namespace :santarcangelo do
     end
   end
 
-  def generate_csv_for_wallets(wallets)
+  def generate_csv_for_wallets(wallets, amount)
     sorted_ids = wallets.map(&:id).sort
-    output_file = File.join(host_tmp_path, ("#{timestamp}_santarcangelo_wallet_urls_#{sorted_ids.first}-#{sorted_ids.last}.csv"))
+    output_file = File.join(host_tmp_path, ("#{timestamp}_santarcangelo_wallet_urls_#{amount}sc_#{sorted_ids.first}-#{sorted_ids.last}.csv"))
     CSV.open(output_file, 'wb') do |csv|
       csv << %w(Wallet_URL Wallet_ID)
       wallets.each do |wallet|
