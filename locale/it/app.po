@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0\n"
 "Report-Msgid-Bugs-To: contact@translation.io\n"
-"POT-Creation-Date: 2018-06-27 15:26+0200\n"
-"PO-Revision-Date: 2018-06-27 15:26+0200\n"
+"POT-Creation-Date: 2018-06-28 16:19+0200\n"
+"PO-Revision-Date: 2018-06-28 16:18+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Italian\n"
 "Language: it\n"
@@ -50,10 +50,6 @@ msgstr ""
 "Ciao %{recipient_name}, sono interessato a %{listing_title} ( %{listing_url} )"
 " "
 
-#: ../app/controllers/conversations_controller.rb:68
-msgid "Conversation|Hello %{recipient_name}, "
-msgstr "Ciao %{recipient_name}, "
-
 #: ../app/controllers/conversations_controller.rb:69
 msgid ""
 "Conversation|Hello, would you like to join the group %{group_name} ( %{group_u"
@@ -76,11 +72,15 @@ msgstr "Moneta aggiornata"
 msgid "Discussion was successfully created."
 msgstr "Discussione creata."
 
-#: ../app/controllers/groups_controller.rb:57
+#: ../app/controllers/groups_controller.rb:74
+msgid "Activation complete!"
+msgstr "Attivazione completata!"
+
+#: ../app/controllers/groups_controller.rb:88
 msgid "Group was successfully created."
 msgstr "Gruppo creato."
 
-#: ../app/controllers/groups_controller.rb:71
+#: ../app/controllers/groups_controller.rb:102
 msgid "Group was successfully updated."
 msgstr "Gruppo modificato."
 
@@ -242,11 +242,6 @@ msgstr "Commenta in modo anonimo"
 msgid "There are no comments"
 msgstr "Non ci sono commenti"
 
-#: ../app/views/comments/_list.html.erb:2
-#: ../app/views/stories/_comments.html.erb:16
-msgid "There are no comments for this Story"
-msgstr "Non ci sono commenti per questa storia"
-
 #: ../app/views/comments/_list.html.erb:15
 msgid "Edit comment"
 msgstr "Modifica il commento"
@@ -292,6 +287,7 @@ msgid "e.g. Bungo Baggins, pbm42, etc."
 msgstr "es. Bungo Baggins, pbm42, ecc."
 
 #: ../app/views/commoners/_form.html.erb:7
+#: ../app/views/groups/affiliation.html.erb:10
 msgid "It must be unique"
 msgstr "Deve essere unico"
 
@@ -334,10 +330,6 @@ msgstr "Modifica profilo"
 msgid "Edit your email or password"
 msgstr "Modifica la tua email o password"
 
-#: ../app/views/commoners/show.html.erb:15
-msgid "%{commoner_name}'s stories"
-msgstr "Storie di %{commoner_name}"
-
 #: ../app/views/commoners/show.html.erb:19
 msgid "Continue conversation"
 msgstr "Continua la conversazione"
@@ -350,45 +342,49 @@ msgstr "Inizia una conversazione"
 msgid "Button|Edit profile"
 msgstr "Modifica profilo"
 
-#: ../app/views/commoners/show.html.erb:32 ../app/views/groups/show.html.erb:43
+#: ../app/views/commoners/show.html.erb:32
+msgid "Go to %{currency_name} Wallet"
+msgstr "Vai al portafoglio %{currency_name}"
+
+#: ../app/views/commoners/show.html.erb:42 ../app/views/groups/show.html.erb:43
 #: ../app/views/layouts/_navbar.html.erb:97
 msgid "Stories"
 msgstr "Storie"
 
-#: ../app/views/commoners/show.html.erb:35
+#: ../app/views/commoners/show.html.erb:45
 msgid "Groups"
 msgstr "Gruppi"
 
-#: ../app/views/commoners/show.html.erb:39 ../app/views/groups/show.html.erb:55
+#: ../app/views/commoners/show.html.erb:49 ../app/views/groups/show.html.erb:55
 msgid "Requests"
 msgstr "Richieste"
 
-#: ../app/views/commoners/show.html.erb:43 ../app/views/groups/show.html.erb:59
+#: ../app/views/commoners/show.html.erb:53 ../app/views/groups/show.html.erb:59
 msgid "Activities"
 msgstr "Attività"
 
-#: ../app/views/commoners/show.html.erb:55 ../app/views/groups/show.html.erb:90
+#: ../app/views/commoners/show.html.erb:65 ../app/views/groups/show.html.erb:90
 msgid "No stories yet"
 msgstr "Non ci sono storie presenti"
 
-#: ../app/views/commoners/show.html.erb:63 ../app/views/pages/home.html.erb:85
+#: ../app/views/commoners/show.html.erb:73 ../app/views/pages/home.html.erb:85
 #: ../app/views/wallets/show.html.erb:28 ../app/views/wallets/view.html.erb:40
 msgid "See all"
 msgstr "Vedi tutte"
 
-#: ../app/views/commoners/show.html.erb:69
+#: ../app/views/commoners/show.html.erb:79
 msgid "Button|Start a group"
 msgstr "Crea un gruppo"
 
-#: ../app/views/commoners/show.html.erb:76
+#: ../app/views/commoners/show.html.erb:86
 msgid "No groups"
 msgstr "Non ci sono gruppi"
 
-#: ../app/views/commoners/show.html.erb:90
+#: ../app/views/commoners/show.html.erb:100
 msgid "No requests"
 msgstr "Nessuna richiesta"
 
-#: ../app/views/commoners/show.html.erb:101
+#: ../app/views/commoners/show.html.erb:111
 #: ../app/views/groups/show.html.erb:134
 msgid "Coming soon"
 msgstr "In arrivo"
@@ -497,10 +493,6 @@ msgstr "Codice"
 msgid "Title|Edit currency"
 msgstr "Modifica moneta"
 
-#: ../app/views/currencies/edit.html.erb:4
-msgid "Title|Edit coin"
-msgstr "Modifica"
-
 #: ../app/views/currencies/edit.html.erb:6
 #: ../app/views/currencies/new.html.erb:6
 msgid "for group %{group_name}"
@@ -584,16 +576,6 @@ msgid_plural "members"
 msgstr[0] "membro"
 msgstr[1] "membri"
 
-#: ../app/views/groups/_inviteModal.html.erb:13
-msgid ""
-"To invite a new member to a group, contact the person directly by visiting her"
-"/his profile page and starting a conversation. You can copy the URL of the gro"
-"up and paste it there."
-msgstr ""
-"Per invitare un nuovo membro nel gruppo, contatta direttamente la persona visi"
-"tando il suo profilo e inizia una conversazione. Puoi copiare la URL del grupp"
-"o e incollarla nella conversazione"
-
 #: ../app/views/groups/_invite_modal.html.erb:6
 msgid "Title|Invite member"
 msgstr "Invita"
@@ -611,6 +593,53 @@ msgstr ""
 #: ../app/views/stories/_share_modal.html.erb:18
 msgid "Copy and close"
 msgstr "Copia e chiudi"
+
+#: ../app/views/groups/affiliation.html.erb:1
+#: ../app/views/groups/affiliation.html.erb:4
+msgid "Activate account"
+msgstr "Attiva account"
+
+#: ../app/views/groups/affiliation.html.erb:9
+msgid "Activate account form|Choose your name on Commonfare.net"
+msgstr "Scegli il tuo nome su Commonfare"
+
+#: ../app/views/groups/affiliation.html.erb:13
+msgid "Activate account form|Enter your email address"
+msgstr "Inserisci il tuo indirizzo email"
+
+#: ../app/views/groups/affiliation.html.erb:14
+msgid "Activate account form|Enter your new password"
+msgstr "Inserisci la tua nuova password"
+
+#: ../app/views/groups/affiliation.html.erb:19
+#: ../app/views/users/registrations/new.html.erb:13
+msgid "By joining you agree to our %{tos} and %{privacy}."
+msgstr "Registrandoti aderirai ai nostri %{tos} e %{privacy}."
+
+#: ../app/views/groups/affiliation.html.erb:20
+#: ../app/views/pages/tos.html.erb:1
+#: ../app/views/users/registrations/new.html.erb:14
+msgid "Terms of Service"
+msgstr "Termini di Servizio"
+
+#: ../app/views/groups/affiliation.html.erb:21
+#: ../app/views/pages/privacy.html.erb:1
+#: ../app/views/users/registrations/new.html.erb:15
+msgid "Privacy Policy"
+msgstr "Informativa sulla privacy"
+
+#: ../app/views/groups/affiliation.html.erb:28
+#: ../app/views/shared/_back_and_save_buttons.html.erb:5
+#: ../app/views/transactions/confirm.html.erb:26
+#: ../app/views/transactions/confirm_top_up.html.erb:26
+#: ../app/views/transactions/confirm_withdraw.html.erb:26
+#: ../app/views/transactions/refund.html.erb:21
+msgid "Button|Cancel"
+msgstr "Annulla"
+
+#: ../app/views/groups/affiliation.html.erb:31
+msgid "Button|Activate"
+msgstr "Attiva"
 
 #: ../app/views/groups/edit.html.erb:1 ../app/views/groups/edit.html.erb:4
 msgid "Title|Edit group"
@@ -785,18 +814,6 @@ msgstr ""
 " sociale. In un momento in cui la precarietà, l'insicurezza e la solitudine so"
 "no vissute da una quantità crescente di persone, Commonfare vuole valutare il "
 "potere delle relazioni sociali e rivendicare il diritto alla gioia."
-
-#: ../app/views/layouts/_footer.html.erb:7
-msgid ""
-"Footer|Commonfare is a new idea of welfare addressing the needs derived from p"
-"recarity conditions: guaranteed income and access to common goods like housing"
-", education, wealth, knowledge, mobility, sociality. Commonfare is for, with a"
-"nd by people."
-msgstr ""
-"Commonfare è una nuova idea di welfare che risponde ai bisogni derivati ​​dall"
-"e condizioni di precarietà: reddito garantito e accesso a beni comuni come l'a"
-"lloggio, l'istruzione, la ricchezza, la conoscenza, la mobilità, la socialità."
-" Commonfare è per, con e delle persone."
 
 #: ../app/views/layouts/_footer.html.erb:10
 msgid "Footer| For info write at"
@@ -1035,51 +1052,9 @@ msgstr ""
 " raccontiamo storie per promuovere la collaborazione e sviluppare un'economia "
 "complementare."
 
-#: ../app/views/pages/home.html.erb:37
-msgid ""
-"Home carousel text|Commonfare is a new and complementary form of welfare provi"
-"sion that is accessible to all and bottom-up. Commonfare is for, with, and by "
-"people."
-msgstr ""
-"Commonfare è una nuova forma complementare di welfare “dal basso”, accessibile"
-" a tutti e tutte. Commonfare è fatto per le persone e con le persone."
-
-#: ../app/views/pages/home.html.erb:42
-msgid ""
-"Home carousel text|Commonfare proposes an unconditional basic income; proper m"
-"anagement of common goods; free access to basic needs, and alternative monetar"
-"y circuits."
-msgstr ""
-"Commonfare propone un reddito di base incondizionato; una gestione più giusta "
-"dei beni comuni; il libero accesso ai bisogni di base e a circuiti monetari al"
-"ternativi."
-
-#: ../app/views/pages/home.html.erb:47
-msgid ""
-"Home carousel text|Commonfare.net is where we share information on existing we"
-"lfare state provisions, support self-organized welfare initiatives and tell st"
-"ories to promote collaboration. Join us!"
-msgstr ""
-"Commonfare.net è uno spazio in cui condividiamo informazioni sulle misure di w"
-"elfare disponibili, in cui supportiamo iniziative di welfare “dal basso”, e in"
-" cui raccontiamo storie che promuovono la collaborazione tra le persone. Parte"
-"cipa e unisciti a noi!"
-
 #: ../app/views/pages/home.html.erb:60
 msgid "Home text|Commonfare.net is for, with, and by people."
 msgstr "Commonfare.net è per le persone, con le persone e delle persone."
-
-#: ../app/views/pages/home.html.erb:60
-msgid "Home text|Commonfare.net if for, with, and by people."
-msgstr "Commonfare.net è per le persone, con le persone e delle persone"
-
-#: ../app/views/pages/home.html.erb:60
-msgid ""
-"Home text|Do you want to join the community? You will need only an email addre"
-"ss, and we will never use it for other purposes."
-msgstr ""
-"Vuoi entrare a far parte della community? Avrai bisogno solo di un indirizzo e"
-"mail e non lo useremo mai per altri scopi."
 
 #: ../app/views/pages/home.html.erb:62
 msgid ""
@@ -1097,40 +1072,6 @@ msgstr "Sei già registrato? <strong>%{login_link}</strong>"
 msgid "Login"
 msgstr ""
 
-#: ../app/views/pages/home.html.erb:74
-msgid "Button|Login"
-msgstr "Accedi"
-
-#: ../app/views/pages/home.html.erb:94
-msgid "Latest Stories"
-msgstr "Ultime storie"
-
-#: ../app/views/pages/home.html.erb:111
-msgid "Latest Good Practices"
-msgstr "Ultime buone pratiche"
-
-#: ../app/views/pages/home.html.erb:128
-msgid "Latest Welfare Provisions"
-msgstr "Ultime misure di welfare"
-
-#: ../app/views/pages/privacy.html.erb:1
-#: ../app/views/users/registrations/new.html.erb:15
-msgid "Privacy Policy"
-msgstr "Informativa sulla privacy"
-
-#: ../app/views/pages/tos.html.erb:1
-#: ../app/views/users/registrations/new.html.erb:14
-msgid "Terms of Service"
-msgstr "Termini di Servizio"
-
-#: ../app/views/shared/_back_and_save_buttons.html.erb:5
-#: ../app/views/transactions/confirm.html.erb:26
-#: ../app/views/transactions/confirm_top_up.html.erb:26
-#: ../app/views/transactions/confirm_withdraw.html.erb:26
-#: ../app/views/transactions/refund.html.erb:21
-msgid "Button|Cancel"
-msgstr "Annulla"
-
 #: ../app/views/shared/_back_and_save_buttons.html.erb:8
 msgid "Button|Save"
 msgstr "Salva"
@@ -1142,22 +1083,6 @@ msgstr "Questa storia non ha ancora contenuto"
 #: ../app/views/stories/_card.html.erb:11
 msgid "Draft"
 msgstr "Bozza"
-
-#: ../app/views/stories/_comments.html.erb:5
-msgid "Write a comment"
-msgstr "Scrivi un commento"
-
-#: ../app/views/stories/_comments.html.erb:7
-msgid "Publish comment button|Comment"
-msgstr "Commenta"
-
-#: ../app/views/stories/_comments.html.erb:14
-msgid "Comments"
-msgstr "Commenti"
-
-#: ../app/views/stories/_comments.html.erb:31
-msgid "commented on %{date}"
-msgstr "commentato il %{date}"
 
 #: ../app/views/stories/_fields.html.erb:3
 msgid "Give a title to your content"
@@ -1247,14 +1172,6 @@ msgstr ""
 "videre questa storia su Facebook, Twitter, ecc. puoi copiare l'URL e incollarl"
 "o lì."
 
-#: ../app/views/stories/_story.html.erb:4
-msgid "Welfare Provision"
-msgstr "Misura di welfare"
-
-#: ../app/views/stories/_story.html.erb:7
-msgid "Good Practice"
-msgstr "Buona pratica"
-
 #: ../app/views/stories/builder.html.erb:1 ../app/views/stories/new.html.erb:1
 msgid "Write your Story"
 msgstr "Scrivi la tua storia"
@@ -1285,29 +1202,13 @@ msgstr "Non hai ancora salvato questa storia in %{localised_lang_name}"
 msgid "Story form button|Save"
 msgstr "Salva"
 
-#: ../app/views/stories/edit.html.erb:27
-msgid "Story form button|Edit"
-msgstr "Modifica"
-
 #: ../app/views/stories/edit.html.erb:30 ../app/views/stories/new.html.erb:13
 msgid "Saving..."
 msgstr "Salvo..."
 
-#: ../app/views/stories/edit.html.erb:30 ../app/views/stories/new.html.erb:24
-msgid "Publishing..."
-msgstr "Pubblicazione in corso…"
-
 #: ../app/views/stories/index.html.erb:4
 msgid "Stories by %{author_name}"
 msgstr "Storie di %{author_name}"
-
-#: ../app/views/stories/new.html.erb:21
-msgid "Story form button|Publish"
-msgstr "Pubblica"
-
-#: ../app/views/stories/show.html.erb:22
-msgid "Read in %{other_languages}"
-msgstr "Leggi %{other_languages}"
 
 #: ../app/views/stories/show.html.erb:92
 msgid "Button|Share"
@@ -1414,11 +1315,6 @@ msgstr "Preleva da"
 msgid "Title|All %{currency_name} transactions"
 msgstr "Tutte le transazioni in %{currency_name}"
 
-#: ../app/views/transactions/index.html.erb:1
-#: ../app/views/transactions/index.html.erb:4
-msgid "Title|All transactions"
-msgstr "Tutte le transazioni"
-
 #: ../app/views/transactions/index.html.erb:6
 msgid "Title|Transactions with %{counterpart_name}"
 msgstr "Transazioni con %{counterpart_name}"
@@ -1428,11 +1324,6 @@ msgstr "Transazioni con %{counterpart_name}"
 msgid "Title|Send %{currency_name}"
 msgstr "Invia %{currency_name}"
 
-#: ../app/views/transactions/new.html.erb:1
-#: ../app/views/transactions/new.html.erb:4
-msgid "Title|Send Commoncoins"
-msgstr "Invia Commoncoin"
-
 #: ../app/views/transactions/new.html.erb:6
 msgid "Balance"
 msgstr "Saldo"
@@ -1441,10 +1332,6 @@ msgstr "Saldo"
 #: ../app/views/wallets/daily_takings.html.erb:5
 msgid "%{icon} Back to %{currency_name} wallet"
 msgstr "%{icon} Torna al portafoglio %{currency_name}"
-
-#: ../app/views/transactions/new.html.erb:12
-msgid "Amount (cc)"
-msgstr "Importo (cc)"
 
 #: ../app/views/transactions/new.html.erb:13
 #: ../app/views/transactions/new.html.erb:43
@@ -1505,11 +1392,6 @@ msgstr "Chiudi questa finestra prima di iniziare una nuova transazione"
 #: ../app/views/transactions/top_up.html.erb:4
 msgid "Title|Top up %{currency_name}"
 msgstr "Ricarica in %{currency_name}"
-
-#: ../app/views/transactions/top_up.html.erb:19
-#: ../app/views/transactions/withdraw.html.erb:20
-msgid "Service, food, drinks..."
-msgstr "Servizi, cibo, bevande ..."
 
 #: ../app/views/transactions/top_up.html.erb:20
 msgid "Button|Continue"
@@ -1694,10 +1576,6 @@ msgstr "Sei già un/a Commoner?"
 msgid "Sign up page form|Password Confirmation"
 msgstr "Conferma password"
 
-#: ../app/views/users/registrations/new.html.erb:13
-msgid "By joining you agree to our %{tos} and %{privacy}."
-msgstr "Registrandoti aderirai ai nostri %{tos} e %{privacy}."
-
 #: ../app/views/users/registrations/new.html.erb:20
 msgid "Sign up page button|Join Commonfare"
 msgstr "Partecipa a Commonfare"
@@ -1757,10 +1635,6 @@ msgstr "(vedi dalle %{time}:00 alle %{time}:00)"
 msgid "Title|%{currency_name} wallet"
 msgstr "Portafoglio %{currency_name}"
 
-#: ../app/views/wallets/show.html.erb:1 ../app/views/wallets/show.html.erb:6
-msgid "Title|Social wallet"
-msgstr "Portafoglio"
-
 #: ../app/views/wallets/show.html.erb:11 ../app/views/wallets/view.html.erb:11
 msgid "Current balance"
 msgstr "Saldo attuale"
@@ -1768,10 +1642,6 @@ msgstr "Saldo attuale"
 #: ../app/views/wallets/show.html.erb:14
 msgid "Button|Send %{currency_code}"
 msgstr "Invia %{currency_code}"
-
-#: ../app/views/wallets/show.html.erb:14
-msgid "Button|Send cc"
-msgstr "Invia cc"
 
 #: ../app/views/wallets/show.html.erb:18 ../app/views/wallets/view.html.erb:26
 msgid "Transactions"
@@ -1791,23 +1661,11 @@ msgstr "Incassi giornalieri"
 
 #: ../app/views/wallets/view.html.erb:18
 msgid "Button|Activate account"
-msgstr ""
-
-#: ../app/views/wallets/view.html.erb:18
-msgid "Activate account"
 msgstr "Attiva account"
 
 #: ../app/views/wallets/view.html.erb:20
 msgid "Button|Top up"
 msgstr "Ricarica"
-
-#: ../app/views/wallets/view.html.erb:20
-msgid "Top up"
-msgstr "Ricarica"
-
-#: ../app/views/wallets/view.html.erb:21
-msgid "Withdraw"
-msgstr "Preleva"
 
 #: ../app/views/wallets/view.html.erb:22
 msgid "Button|Reimburse"

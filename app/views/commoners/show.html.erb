@@ -24,6 +24,16 @@
         <%= link_to s_('Button|Edit profile'), edit_commoner_path(@commoner), class: 'btn btn-outline-cf edit-profile' if can? :edit, @commoner %>
       </div>
     </div>
+    <%# TODO: remove after Santarcangelo %>
+    <% if user_signed_in? && @commoner == current_user.meta %>
+      <% @commoner.group_currency_wallets.find_each do |wallet| %>
+        <div class="row justify-content-center bg-white">
+          <div class="col-lg-9 text-center py-4">
+            <%= link_to((_('Go to %{currency_name} Wallet') %{currency_name: currency_name_for_wallet(wallet)}), view_commoner_wallet_url(@commoner, wallet), class: 'btn btn-cf btn-block') %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
     <div class="row">
       <div class="col">
         <div class="row nav-pills-container mb-3">

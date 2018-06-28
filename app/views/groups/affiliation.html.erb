@@ -6,15 +6,31 @@
       <%= f.error_notification %>
       <%= f.input :name,
                   required: false,
-                  label: _('Your name on Commonfare.net'),
+                  label: s_('Activate account form|Choose your name on Commonfare.net'),
                   hint: _('It must be unique') %>
       <%= f.input :id, as: :hidden %>
       <%= f.simple_fields_for :user do |uf| %>
-        <%= uf.input :email, autofocus: true, label: s_('Activate account form|Your email') %>
-        <%= uf.input :password, autocomplete: "off", label: s_('Activate account form|Your new password'), required: false %>
+        <%= uf.input :email, autofocus: true, label: s_('Activate account form|Enter your email address'), input_html: { value: '' } %>
+        <%= uf.input :password, autocomplete: "off", label: s_('Activate account form|Enter your new password'), required: false %>
         <%#= uf.input :password_confirmation, label: s_('Activate account form|Repeat new password'), required: false %>
       <% end %>
-      <%= render 'shared/back_and_save_buttons', f: f, cancel_path: nil %>
+      <p>
+        <small>
+          <%= (_("By joining you agree to our %{tos} and %{privacy}.") %{
+                tos: link_to(_('Terms of Service'), page_path(id: 'tos')),
+                privacy: link_to(_('Privacy Policy'), page_path(id: 'privacy'))
+                }
+            ).html_safe %>
+        </small>
+      </p>
+      <div class="row">
+        <div class="col">
+          <%= link_to s_('Button|Cancel'), :back, class: 'btn btn-outline-secondary btn-lg btn-block' %>
+        </div>
+        <div class="col">
+          <%= f.button :submit, s_('Button|Activate'), class: 'btn btn-cf btn-lg btn-block' %>
+        </div>
+      </div>
     <% end %>
   </div>
 </div>

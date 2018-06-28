@@ -24,7 +24,7 @@ it:
     - ven
     - sab
     month_names:
-    -
+    - 
     - gennaio
     - febbraio
     - marzo
@@ -38,7 +38,7 @@ it:
     - novembre
     - dicembre
     abbr_month_names:
-    -
+    - 
     - gen
     - feb
     - mar
@@ -65,8 +65,8 @@ it:
           mb: MB
           gb: GB
           tb: TB
-          pb:
-          eb:
+          pb: 
+          eb: 
       decimal_units:
         units:
           thousand: Mila
@@ -121,9 +121,9 @@ it:
       header:
         one: 'Non posso salvare questo %{model}: 1 errore'
         other: 'Non posso salvare questo %{model}: %{count} errori.'
-    unavailable_session:
-    unacceptable_request:
-    connection_refused:
+    unavailable_session: 
+    unacceptable_request: 
+    connection_refused: 
   activerecord:
     errors:
       messages:
@@ -138,19 +138,19 @@ it:
         confirmation_sent_at: Conferma inviata a
         confirmation_token: Token di conferma
         confirmed_at: Conferma inviata a
-        created_at:
+        created_at: 
         current_password: Password corrente
-        current_sign_in_at:
-        current_sign_in_ip:
+        current_sign_in_at: 
+        current_sign_in_ip: 
         email: Email
-        encrypted_password:
+        encrypted_password: 
         failed_attempts: Tentativi falliti
-        last_sign_in_at:
-        last_sign_in_ip:
-        locked_at:
+        last_sign_in_at: 
+        last_sign_in_ip: 
+        locked_at: 
         password: Password
         password_confirmation: Conferma password
-        remember_created_at:
+        remember_created_at: 
         remember_me: Ricordami
         reset_password_sent_at: reimpostare la password inviata al
         reset_password_token: Token di reset password
@@ -215,12 +215,12 @@ it:
       submit: Invia %{model}
     page_entries_info:
       entry:
-        zero:
-        one:
-        other:
+        zero: 
+        one: 
+        other: 
       one_page:
         display_entries:
-          zero:
+          zero: 
           one: "<b>%{count}</b> %{entry_name}"
           other: "<b>Tutti %{count}</b> %{entry_name}"
       more_pages:
@@ -229,81 +229,81 @@ it:
   flash:
     actions:
       create:
-        notice:
+        notice: 
       update:
-        notice:
+        notice: 
       destroy:
-        notice:
-        alert:
+        notice: 
+        alert: 
   ransack:
-    search:
-    predicate:
+    search: 
+    predicate: 
     and: e
     or: o
     any: qualsiasi
     all: tutto
-    combinator:
-    attribute:
-    value:
+    combinator: 
+    attribute: 
+    value: 
     condition: Condizione
-    sort:
-    asc:
-    desc:
+    sort: 
+    asc: 
+    desc: 
     predicates:
-      eq:
-      eq_any:
-      eq_all:
-      not_eq:
-      not_eq_any:
-      not_eq_all:
-      matches:
-      matches_any:
-      matches_all:
-      does_not_match:
-      does_not_match_any:
-      does_not_match_all:
-      lt:
-      lt_any:
-      lt_all:
+      eq: 
+      eq_any: 
+      eq_all: 
+      not_eq: 
+      not_eq_any: 
+      not_eq_all: 
+      matches: 
+      matches_any: 
+      matches_all: 
+      does_not_match: 
+      does_not_match_any: 
+      does_not_match_all: 
+      lt: 
+      lt_any: 
+      lt_all: 
       lteq: deve essere minore o uguale a %{count}
-      lteq_any:
-      lteq_all:
-      gt:
-      gt_any:
-      gt_all:
-      gteq:
-      gteq_any:
-      gteq_all:
-      in:
-      in_any:
-      in_all:
-      not_in:
-      not_in_any:
-      not_in_all:
-      cont:
-      cont_any:
-      cont_all:
-      not_cont:
-      not_cont_any:
-      not_cont_all:
-      start:
-      start_any:
-      start_all:
-      not_start:
-      not_start_any:
-      not_start_all:
-      end:
-      end_any:
-      end_all:
-      not_end:
-      not_end_any:
-      not_end_all:
-      'true':
-      'false':
-      present:
-      blank:
-      'null':
-      not_null:
+      lteq_any: 
+      lteq_all: 
+      gt: 
+      gt_any: 
+      gt_all: 
+      gteq: 
+      gteq_any: 
+      gteq_all: 
+      in: 
+      in_any: 
+      in_all: 
+      not_in: 
+      not_in_any: 
+      not_in_all: 
+      cont: 
+      cont_any: 
+      cont_all: 
+      not_cont: 
+      not_cont_any: 
+      not_cont_all: 
+      start: 
+      start_any: 
+      start_all: 
+      not_start: 
+      not_start_any: 
+      not_start_all: 
+      end: 
+      end_any: 
+      end_all: 
+      not_end: 
+      not_end_any: 
+      not_end_all: 
+      'true': 
+      'false': 
+      present: 
+      blank: 
+      'null': 
+      not_null: 
   devise:
     confirmations:
       confirmed: Il tuo account è stato correttamente confermato.
@@ -428,7 +428,7 @@ it:
         minuto.
       unlocked: Il tuo account è stato correttamente sbloccato. Ora sei collegato.
   exception_handler:
-    internal_server_error:
+    internal_server_error: 
   views:
     pagination:
       first: "&laquo; Inizio"
@@ -475,7 +475,3 @@ it:
       mark: "*"
     error_notification:
       default_message: 'Controlla i problemi elencati sotto:'
-  # CanCanCan
-  unauthorized:
-    manage:
-      all: "Non sei autorizzato ad accedere a questa pagina"

@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0\n"
 "Report-Msgid-Bugs-To: contact@translation.io\n"
-"POT-Creation-Date: 2018-06-27 15:26+0200\n"
-"PO-Revision-Date: 2018-06-27 15:26+0200\n"
+"POT-Creation-Date: 2018-06-28 16:19+0200\n"
+"PO-Revision-Date: 2018-06-28 16:19+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -70,11 +70,15 @@ msgstr ""
 msgid "Discussion was successfully created."
 msgstr ""
 
-#: ../app/controllers/groups_controller.rb:57
+#: ../app/controllers/groups_controller.rb:74
+msgid "Activation complete!"
+msgstr ""
+
+#: ../app/controllers/groups_controller.rb:88
 msgid "Group was successfully created."
 msgstr ""
 
-#: ../app/controllers/groups_controller.rb:71
+#: ../app/controllers/groups_controller.rb:102
 msgid "Group was successfully updated."
 msgstr ""
 
@@ -281,6 +285,7 @@ msgid "e.g. Bungo Baggins, pbm42, etc."
 msgstr ""
 
 #: ../app/views/commoners/_form.html.erb:7
+#: ../app/views/groups/affiliation.html.erb:10
 msgid "It must be unique"
 msgstr ""
 
@@ -335,45 +340,49 @@ msgstr ""
 msgid "Button|Edit profile"
 msgstr ""
 
-#: ../app/views/commoners/show.html.erb:32 ../app/views/groups/show.html.erb:43
+#: ../app/views/commoners/show.html.erb:32
+msgid "Go to %{currency_name} Wallet"
+msgstr ""
+
+#: ../app/views/commoners/show.html.erb:42 ../app/views/groups/show.html.erb:43
 #: ../app/views/layouts/_navbar.html.erb:97
 msgid "Stories"
 msgstr ""
 
-#: ../app/views/commoners/show.html.erb:35
+#: ../app/views/commoners/show.html.erb:45
 msgid "Groups"
 msgstr ""
 
-#: ../app/views/commoners/show.html.erb:39 ../app/views/groups/show.html.erb:55
+#: ../app/views/commoners/show.html.erb:49 ../app/views/groups/show.html.erb:55
 msgid "Requests"
 msgstr ""
 
-#: ../app/views/commoners/show.html.erb:43 ../app/views/groups/show.html.erb:59
+#: ../app/views/commoners/show.html.erb:53 ../app/views/groups/show.html.erb:59
 msgid "Activities"
 msgstr ""
 
-#: ../app/views/commoners/show.html.erb:55 ../app/views/groups/show.html.erb:90
+#: ../app/views/commoners/show.html.erb:65 ../app/views/groups/show.html.erb:90
 msgid "No stories yet"
 msgstr ""
 
-#: ../app/views/commoners/show.html.erb:63 ../app/views/pages/home.html.erb:85
+#: ../app/views/commoners/show.html.erb:73 ../app/views/pages/home.html.erb:85
 #: ../app/views/wallets/show.html.erb:28 ../app/views/wallets/view.html.erb:40
 msgid "See all"
 msgstr ""
 
-#: ../app/views/commoners/show.html.erb:69
+#: ../app/views/commoners/show.html.erb:79
 msgid "Button|Start a group"
 msgstr ""
 
-#: ../app/views/commoners/show.html.erb:76
+#: ../app/views/commoners/show.html.erb:86
 msgid "No groups"
 msgstr ""
 
-#: ../app/views/commoners/show.html.erb:90
+#: ../app/views/commoners/show.html.erb:100
 msgid "No requests"
 msgstr ""
 
-#: ../app/views/commoners/show.html.erb:101
+#: ../app/views/commoners/show.html.erb:111
 #: ../app/views/groups/show.html.erb:134
 msgid "Coming soon"
 msgstr ""
@@ -562,6 +571,53 @@ msgstr ""
 #: ../app/views/listings/_share_modal.html.erb:18
 #: ../app/views/stories/_share_modal.html.erb:18
 msgid "Copy and close"
+msgstr ""
+
+#: ../app/views/groups/affiliation.html.erb:1
+#: ../app/views/groups/affiliation.html.erb:4
+msgid "Activate account"
+msgstr ""
+
+#: ../app/views/groups/affiliation.html.erb:9
+msgid "Activate account form|Choose your name on Commonfare.net"
+msgstr ""
+
+#: ../app/views/groups/affiliation.html.erb:13
+msgid "Activate account form|Enter your email address"
+msgstr ""
+
+#: ../app/views/groups/affiliation.html.erb:14
+msgid "Activate account form|Enter your new password"
+msgstr ""
+
+#: ../app/views/groups/affiliation.html.erb:19
+#: ../app/views/users/registrations/new.html.erb:13
+msgid "By joining you agree to our %{tos} and %{privacy}."
+msgstr ""
+
+#: ../app/views/groups/affiliation.html.erb:20
+#: ../app/views/pages/tos.html.erb:1
+#: ../app/views/users/registrations/new.html.erb:14
+msgid "Terms of Service"
+msgstr ""
+
+#: ../app/views/groups/affiliation.html.erb:21
+#: ../app/views/pages/privacy.html.erb:1
+#: ../app/views/users/registrations/new.html.erb:15
+msgid "Privacy Policy"
+msgstr ""
+
+#: ../app/views/groups/affiliation.html.erb:28
+#: ../app/views/shared/_back_and_save_buttons.html.erb:5
+#: ../app/views/transactions/confirm.html.erb:26
+#: ../app/views/transactions/confirm_top_up.html.erb:26
+#: ../app/views/transactions/confirm_withdraw.html.erb:26
+#: ../app/views/transactions/refund.html.erb:21
+msgid "Button|Cancel"
+msgstr ""
+
+#: ../app/views/groups/affiliation.html.erb:31
+msgid "Button|Activate"
 msgstr ""
 
 #: ../app/views/groups/edit.html.erb:1 ../app/views/groups/edit.html.erb:4
@@ -970,24 +1026,6 @@ msgstr ""
 
 #: ../app/views/pages/home.html.erb:66
 msgid "Login"
-msgstr ""
-
-#: ../app/views/pages/privacy.html.erb:1
-#: ../app/views/users/registrations/new.html.erb:15
-msgid "Privacy Policy"
-msgstr ""
-
-#: ../app/views/pages/tos.html.erb:1
-#: ../app/views/users/registrations/new.html.erb:14
-msgid "Terms of Service"
-msgstr ""
-
-#: ../app/views/shared/_back_and_save_buttons.html.erb:5
-#: ../app/views/transactions/confirm.html.erb:26
-#: ../app/views/transactions/confirm_top_up.html.erb:26
-#: ../app/views/transactions/confirm_withdraw.html.erb:26
-#: ../app/views/transactions/refund.html.erb:21
-msgid "Button|Cancel"
 msgstr ""
 
 #: ../app/views/shared/_back_and_save_buttons.html.erb:8
@@ -1470,10 +1508,6 @@ msgstr ""
 
 #: ../app/views/users/registrations/new.html.erb:10
 msgid "Sign up page form|Password Confirmation"
-msgstr ""
-
-#: ../app/views/users/registrations/new.html.erb:13
-msgid "By joining you agree to our %{tos} and %{privacy}."
 msgstr ""
 
 #: ../app/views/users/registrations/new.html.erb:20

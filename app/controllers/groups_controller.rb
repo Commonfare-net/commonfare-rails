@@ -56,13 +56,13 @@ class GroupsController < ApplicationController
     @commoner = Commoner.find_by id: commoner_params[:id]
     raise CanCan::AccessDenied.new unless can_affiliate_commoner?(@commoner)
     @commoner.name = commoner_params[:name]
-    # @commoner.user_attributes = commoner_params[:user_attributes]
+    # New values are assigned to the user (and later saved)
+    # to avoid assigning also the id, which causes problems
     user = @commoner.user
     user.email = commoner_params[:user_attributes][:email]
     user.password = commoner_params[:user_attributes][:password]
-    binding.pry
     respond_to do |format|
-      if user.valid? && @commoner.valid?
+      if @commoner.valid? # this validates also the user
         user.save
         @commoner.save
         membership = Membership.find_by group: @group, commoner: @commoner

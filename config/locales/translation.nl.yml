@@ -24,7 +24,7 @@ nl:
     - vr
     - za
     month_names:
-    -
+    - 
     - januari
     - februari
     - maart
@@ -38,7 +38,7 @@ nl:
     - november
     - december
     abbr_month_names:
-    -
+    - 
     - jan
     - feb
     - mrt
@@ -65,8 +65,8 @@ nl:
           mb: MB
           gb: GB
           tb: TB
-          pb:
-          eb:
+          pb: 
+          eb: 
       decimal_units:
         units:
           thousand: duizend
@@ -121,9 +121,9 @@ nl:
       header:
         one: "%{model} niet opgeslagen: 1 fout gevonden"
         other: "%{model} niet opgeslagen: %{count} fouten gevonden"
-    unavailable_session:
-    unacceptable_request:
-    connection_refused:
+    unavailable_session: 
+    unacceptable_request: 
+    connection_refused: 
   activerecord:
     errors:
       messages:
@@ -133,29 +133,29 @@ nl:
           has_many: Kan item niet verwijderen omdat afhankelijke %{record} bestaan
     attributes:
       user:
-        confirmation_sent_at:
-        confirmation_token:
-        confirmed_at:
-        created_at:
+        confirmation_sent_at: 
+        confirmation_token: 
+        confirmed_at: 
+        created_at: 
         current_password: Huidig wachtwoord
-        current_sign_in_at:
-        current_sign_in_ip:
+        current_sign_in_at: 
+        current_sign_in_ip: 
         email: E-mailadres
-        encrypted_password:
-        failed_attempts:
-        last_sign_in_at:
-        last_sign_in_ip:
-        locked_at:
+        encrypted_password: 
+        failed_attempts: 
+        last_sign_in_at: 
+        last_sign_in_ip: 
+        locked_at: 
         password: Wachtwoord
         password_confirmation: Bevestig wachtwoord
-        remember_created_at:
+        remember_created_at: 
         remember_me: Ingelogd blijven
-        reset_password_sent_at:
+        reset_password_sent_at: 
         reset_password_token: Reset wachtwoord token
-        sign_in_count:
-        unconfirmed_email:
+        sign_in_count: 
+        unconfirmed_email: 
         unlock_token: Ontgrendel token
-        updated_at:
+        updated_at: 
     models:
       user: Gebruiker
   datetime:
@@ -213,12 +213,12 @@ nl:
       submit: "%{model} opslaan"
     page_entries_info:
       entry:
-        zero:
-        one:
-        other:
+        zero: 
+        one: 
+        other: 
       one_page:
         display_entries:
-          zero:
+          zero: 
           one: "<b>%{count}</b> %{entry_name} getoond"
           other: Alle <b>%{count}</b> %{entry_name} getoond
       more_pages:
@@ -227,12 +227,12 @@ nl:
   flash:
     actions:
       create:
-        notice:
+        notice: 
       update:
-        notice:
+        notice: 
       destroy:
-        notice:
-        alert:
+        notice: 
+        alert: 
   ransack:
     search: zoeken
     predicate: eigenschap
@@ -350,7 +350,7 @@ nl:
           loggen.
         subject: Ontgrendelinstructies
       email_changed:
-        subject:
+        subject: 
     omniauth_callbacks:
       failure: We konden je niet aanmelden op je %{kind} omdat "%{reason}".
       success: Je bent succesvol ingelogd op je %{kind} account.
@@ -425,7 +425,7 @@ nl:
         je je account kan ontgrendelen.
       unlocked: Je account is ontgrendeld. Je kan nu weer inloggen.
   exception_handler:
-    internal_server_error:
+    internal_server_error: 
   views:
     pagination:
       first: "&laquo; Eerste"
@@ -472,7 +472,3 @@ nl:
       mark: "*"
     error_notification:
       default_message: 'Bekijk de onderstaande problemen:'
-  # CanCanCan
-  unauthorized:
-    manage:
-      all: "U bent niet gemachtigd om deze pagina te openen"

@@ -24,7 +24,7 @@ hr:
     - Pet
     - Sub
     month_names:
-    -
+    - 
     - Siječanj
     - Veljača
     - Ožujak
@@ -38,7 +38,7 @@ hr:
     - Studeni
     - Prosinac
     abbr_month_names:
-    -
+    - 
     - Sij
     - Veǉ
     - Ožu
@@ -65,8 +65,8 @@ hr:
           mb: MB
           gb: GB
           tb: TB
-          pb:
-          eb:
+          pb: 
+          eb: 
       decimal_units:
         units:
           thousand: Tisuća
@@ -131,7 +131,7 @@ hr:
     unacceptable_request: 'Podržana verzija očekuje se u zaglavlju prihvaćanja.
 
 '
-    connection_refused:
+    connection_refused: 
   activerecord:
     errors:
       messages:
@@ -264,7 +264,7 @@ hr:
         notice: "%{resource_name} je uspješno uništen."
         alert: "%{resource_name} nije bilo moguće uništiti."
   ransack:
-    search:
+    search: 
     predicate: iskaz
     and: 'i
 
@@ -274,11 +274,11 @@ hr:
     all: 'sve
 
 '
-    combinator:
+    combinator: 
     attribute: atribut
-    value:
+    value: 
     condition: stanje
-    sort:
+    sort: 
     asc: u usponu
     desc: silazni
     predicates:
@@ -336,7 +336,7 @@ hr:
       not_in: 'nije u
 
 '
-      not_in_any:
+      not_in_any: 
       not_in_all: 'nije u svim
 
 '
@@ -346,12 +346,12 @@ hr:
       not_cont: ne sadrži
       not_cont_any: ne sadrži niti jednu
       not_cont_all: ne sadrži sve
-      start:
-      start_any:
-      start_all:
-      not_start:
-      not_start_any:
-      not_start_all:
+      start: 
+      start_any: 
+      start_all: 
+      not_start: 
+      not_start_any: 
+      not_start_all: 
       end: završava s
       end_any: završava s bilo kojim
       end_all: završava svima
@@ -360,12 +360,12 @@ hr:
       not_end_all: 'ne završava svima
 
 '
-      'true':
+      'true': 
       'false': je netočan
-      present:
+      present: 
       blank: je prazan
-      'null':
-      not_null:
+      'null': 
+      not_null: 
   devise:
     confirmations:
       confirmed: Vaš račun je uspješno potvrđen. Sad ste prijavljeni.
@@ -494,11 +494,11 @@ hr:
       se početnoj stranici</ p>"
   views:
     pagination:
-      first:
-      last:
-      previous:
-      next:
-      truncate:
+      first: 
+      last: 
+      previous: 
+      next: 
+      truncate: 
   administrate:
     actions:
       confirm: Jeste li sigurni?
@@ -544,7 +544,3 @@ hr:
       mark: "*"
     error_notification:
       default_message: 'Pregledajte probleme u nastavku:'
-  # CanCanCan
-  unauthorized:
-    manage:
-      all: "Niste ovlasteni za pristup ovoj stranici"
