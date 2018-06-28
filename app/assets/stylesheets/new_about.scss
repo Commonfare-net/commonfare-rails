@@ -1,0 +1,243 @@
+main.about {  
+  * {
+    margin: 0;
+    padding: 0;
+    /*list-style: none;*/
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 400;
+  }
+  h1 {
+    font-size: 2.37em;
+  }
+  h2 {
+    font-size: 1.3em;
+  }
+  h3 {
+    font-size: 100%;
+  }
+  a {
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  p {
+    max-width: 800px;
+  }
+  ol, ul {
+    list-style-position: inside;
+  }
+  li {
+    max-width: 720px;
+  }
+  input {
+    border: none;
+    font-family: 'Asap', Arial, sans-serif;
+  }
+  label {
+    font-size: 100%;
+  }
+  button {
+    font-family: 'Asap', Arial, sans-serif;
+    font-size: 100%;
+    background-color: transparent;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+  }
+  section {
+    display: none;
+    padding: 20px 20px;
+    border-top: 1px solid #e1e8e7;
+    /*min-height: 85vh;*/
+  }
+  section.active {
+    display: block;
+  }
+
+  /* General elements */
+  main {
+  }
+  .wrap {
+    max-width: 1280px;
+    margin: auto;
+  }
+  .flex {
+    display: flex;
+    justify-content: space-between;
+  }
+  .bg-white {
+    background-color: #fff;
+  }
+  .col-lg-3 {
+    width: calc(100%/12*3);
+  }
+  .col-lg-9 {
+    width: calc(100%/12*9);
+  }
+
+
+  /* Top bar*/
+  .top-bar {
+    position: fixed;
+    width: 100%;
+    background-color: #e7472e;
+    height: 54px;
+  }
+  .top-bar button {
+    color: #fff;
+    margin: 7px;
+    /*border: 1px solid #fff;*/
+  }
+
+
+  /* Left column */
+  .col-left {
+    margin-top: 3.35rem;
+    /*margin-right: 2%;*/
+  }
+  nav.table-of-contents {
+    position: fixed;
+    max-width: 300px;
+    background-color: #fff;
+    padding: 1rem;
+    border: 1px solid #488580;
+    border-top: none;
+    color: #488580;
+  }
+  nav.table-of-contents h5 {
+    position: relative;
+  }
+  nav.table-of-contents i.fa {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  nav.table-of-contents.open i.fa {
+    transform: rotate(180deg);
+  }
+  nav.table-of-contents a {
+    font-weight: 500;
+    color: #488580;
+  }
+  nav.table-of-contents ol {
+    padding-top: 1rem;
+  }
+  nav.table-of-contents ol li {
+    line-height: 2em;
+  }
+
+
+  /* Content */
+  .col-right {
+    margin-left: 40px;
+  }
+  section h1 {
+    padding: 4.5rem 0 1rem;
+  }
+  .content {
+    font-family: 'Lora', serif;
+    line-height: 1.69em;
+  }
+  .content h2 {
+    font-family: 'Asap', sans-serif;
+    font-weight: 500;
+    padding: 2rem 0 0.25rem;
+  }
+  .content h2:first-child {
+    padding-top: 1rem;
+  }
+  .content p {
+    padding-bottom: 1rem;
+  }
+  .content a {
+    color: #e7472e;
+  }
+  .content ol, .content ul {
+    list-style-position: outside;
+    padding: 0 2rem 0;
+  }
+  .content ol li, .content ul li {
+    padding-bottom: 1rem;
+  }
+  .content .big {
+    font-size: 1.69em;
+    line-height: 1.35em;
+    color: #e7472e;
+    padding: 1rem 1rem 2rem;
+  }
+  .section-nav {
+    display: flex;
+    justify-content: space-between;
+    margin: 5rem -20px 0 -20px;
+    padding: 20px 20px 0;
+    border-top: 1px solid #e1e8e7;
+  }
+  .section-nav a {
+    max-width: 50%;
+    color: #000;
+    cursor: pointer;
+  }
+  .section-nav a:hover {
+    text-decoration: none;
+  }
+  .section-nav .next-section {
+    text-align: right;
+  }
+  .section-nav label {
+    display: block;
+    font-size: 85%;
+    color: #488580;
+    padding-bottom: 0.25rem;
+  }
+  .section-nav h4 {
+    font-size: 1.15em;
+    font-weight: 500;
+  }
+
+
+  @media screen and (max-width: 980px) {
+    .flex {
+      flex-direction: column;
+    }
+    .col-left {
+      margin-top: 0;
+      margin-right: 2%;
+    }
+    nav.table-of-contents {
+      top: 54px;
+      width: 100%;
+      max-width: none;
+      background-color: #eef4f3;
+      border-right: none;
+      border-left: none;
+      border-top: none;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    nav.table-of-contents i.fa {
+      display: block;
+    }
+    nav.table-of-contents.open ol {
+      display: block;
+    }
+    nav.table-of-contents ol {
+      display: none;
+    }
+    nav.table-of-contents li {
+      font-size: 1.3em;
+    }
+    .col-right {
+      width: 100%;
+      margin-left: 0;
+      padding-top: 0;
+    }
+    section h1 {
+      padding-top: 7.5rem;
+    }
+  }
+}
