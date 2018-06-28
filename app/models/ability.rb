@@ -19,6 +19,7 @@ class Ability
       # Only some group currency wallets are visible
       can :view, Wallet, currency_id: ENV['QR_CODE_ENABLED_CURRENCIES'].split(',').map(&:to_i)
       cannot :view, Wallet, walletable_type: 'Group'
+      can [:affiliation, :affiliate], Group
       alias_action :create, :read, :update, :destroy, to: :crud
       if user.is_commoner?
         commoner = user.meta
@@ -38,6 +39,7 @@ class Ability
         can :join, Group do |group|
           !commoner.member_of? group
         end
+        cannot [:affiliation, :affiliate], Group
         can :create, JoinRequest do |join_request|
           # commoner must not be a member and there must be no pending requests
           !commoner.member_of?(join_request.group) &&

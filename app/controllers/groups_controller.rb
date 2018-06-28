@@ -1,5 +1,5 @@
 class GroupsController < ApplicationController
-  before_action :set_group, only: [:show, :edit, :update, :destroy, :leave]
+  before_action :set_group, only: [:show, :edit, :update, :destroy, :leave, :affiliation, :affiliate]
   before_action :set_commoner, only: [:new, :create, :leave]
 
   # GET /groups
@@ -45,6 +45,37 @@ class GroupsController < ApplicationController
 
   def leave
     @membership = Membership.find_by(group: @group, commoner: @commoner)
+  end
+
+  def affiliation
+    @commoner = Commoner.find_by name: params[:commoner_name]
+    raise CanCan::AccessDenied.new unless can_affiliate_commoner?(@commoner)
+  end
+
+  def affiliate
+    @commoner = Commoner.find_by id: commoner_params[:id]
+    raise CanCan::AccessDenied.new unless can_affiliate_commoner?(@commoner)
+    @commoner.name = commoner_params[:name]
+    # @commoner.user_attributes = commoner_params[:user_attributes]
+    user = @commoner.user
+    user.email = commoner_params[:user_attributes][:email]
+    user.password = commoner_params[:user_attributes][:password]
+    binding.pry
+    respond_to do |format|
+      if user.valid? && @commoner.valid?
+        user.save
+        @commoner.save
+        membership = Membership.find_by group: @group, commoner: @commoner
+        if membership.role.nil?
+          membership.role = 'affiliate'
+          membership.save
+        end
+        sign_in(user, scope: :user)
+        format.html { redirect_to commoner_path(@commoner), notice: _('Activation complete!') }
+      else
+        format.html { render :affiliation }
+      end
+    end
   end
 
   # POST /groups
@@ -102,7 +133,17 @@ class GroupsController < ApplicationController
       params.require(:group).permit(:name, :description, :avatar)
     end
 
+    # These are used for group affiliation
+    def commoner_params
+      params.require(:commoner).permit(:id, :name, user_attributes: [:email, :password])
+    end
+
     def clear_session_after_signup
       session.delete :create_group
+    end
+
+    def can_affiliate_commoner?(commoner)
+      !user_signed_in? &&
+      !@group.affiliates.include?(commoner)
     end
 end

@@ -88,6 +88,8 @@ Rails.application.routes.draw do
         post :reject, on: :member
       end
       get :leave, on: :member
+      get :affiliation, on: :member
+      patch :affiliate, on: :member
       resources :currencies, except: [:index, :destroy]
       # NOTE: uncomment to enable wallet
       if ENV['WALLET_ENABLED'] == 'true'

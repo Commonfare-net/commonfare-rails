@@ -109,7 +109,7 @@ namespace :santarcangelo do
 
   def user_attributes_for(resource)
     resource.user_attributes = {
-      email: "#{resource.name.parameterize}@cfsanta.it",
+      email: "#{resource.name.parameterize}@sf.it",
       password: [('a'..'z').to_a.shuffle[0,8].join, rand(100..999)].join
     }
   end
