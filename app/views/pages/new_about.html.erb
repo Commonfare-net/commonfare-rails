@@ -9,7 +9,7 @@
         <ol>
           <a href="#what-is-commonfare"><li>What is commonfare.net</li></a>
           <a href="#our-values"><li>Our values</li></a>
-          <a href="#who-are-we"><li>Who are we</li></a>
+          <a href="#who-we-are"><li>Who we are</li></a>
           <a href="#commonfare-sections"><li>Sections and how to use them</li></a>
           <a href="#commoncoin-and-social-wallet"><li>Common Coin and Social Wallet</li></a>
           <a href="#contacts"><li>Contacts</li></a>
@@ -79,8 +79,8 @@
 
 
       <!-- Who are we -->
-        <section id="who-are-we">
-          <h1>Who are we</h1>
+        <section id="who-we-are">
+          <h1>Who we are</h1>
           <div class="content">
             <p>
               We are a collective of activists, researchers, artists and software developers working in Croatia, Italy, and The Netherlands. The Commonfare consortium is in fact rather heterogeneous and interdisciplinary, and comprises:
@@ -139,7 +139,7 @@
               <li>transferability (in terms of possible use in different contexts and sectors)</li>
             </ul>
             <p>
-              Examples of Commonfare good practices are ethical purchasing groups, free software communities, co-housing groups, self-revitalization projects of old abandoned buildings, Fab Labs, co-working spaces and time banks, urban vegetable gardens, community-based and self-organised gyms, mutual aid practices, and networks of artists and freelancers. These initiatives pursue new forms of social collaboration starting from local needs and desires; they constitute new social and collective experiments within the “economy of us”. They are diverse and are all welcome on commonfare.net: if you want to tell us about projects or groups that you consider inspiring, please <a href="#contacts">get in contact</a>.
+              Examples of Commonfare good practices are ethical purchasing groups, free software communities, co-housing groups, self-revitalization projects of old abandoned buildings, Fab Labs, co-working spaces and time banks, urban vegetable gardens, community-based and self-organised gyms, mutual aid practices, and networks of artists and freelancers. These initiatives pursue new forms of social collaboration starting from local needs and desires; they constitute social and collective experiments within the “economy of us”. They are diverse and are all welcome on commonfare.net: if you want to tell us about projects or groups that you consider inspiring, please <a href="#contacts">get in contact</a>.
             </p>
 
           <!-- #3 -->
@@ -169,16 +169,16 @@
           <h1>Common Coin and Social Wallet</h1>
           <div class="content">
             <p>
-              Common Coin is a digital token stored in the optional Social Wallet that any Commoner can use to make the Commonfare economy thrive through the listings on the Commonplace page. When a Commoner signs up, s/he has the right to a Common Income: 400 commoncoins per month as a social right to access money, albeit starting from within a lawful hobby-like setting. These tokens can be spent by each Commoner from the Commonfare Wallet - belonging to all Commoners in this research scenario - to:
+              Commoncoin is a digital token non convertible to Euro to be used exclusively on the Commonfare platform. When a Commoner signs up, s/he has the access to 400 commoncoins to make the Commonfare economy thrive by:
             </p>
             <ol>
-              <li>Reward other Commoner’s stories or comments.</li>
-              <li>Pay for a second hand good offered by a Commoner.</li>
-              <li>Pay for a Service offered by a Commoner.</li>
-              <li>Donate to Commonfare Groups to finance their initiatives.</li>
+              <li>Rewarding other Commoner’s stories or comments.</li>
+              <li>On Commonplace: acquiring a second hand good offered by a Commoner.</li>
+              <li>On Commonplace: acquiring a Service offered by a Commoner.</li>
+              <li>Donating to Commonfare Groups to finance their initiatives.</li>
             </ol>
             <p>
-              Each Commoner, when there is the need, can withdraw from the Commonfare Wallet and transfer to other Commoners up to 400 commoncoins per month. See the tutorial on how to use the Social Wallet for Common Coin. Through experimentation in all three pilots, commonfare.net will also promote a new economic model capable to innovate the process of providing access to the commons and wealth of services allowing people, institutions, and organizations to benefit of new forms of collaboration and value exchange through a complementary and decentralized digital currency supporting a new form of commonwealth.
+              Through experimentation, we hope to promote a new socio-economic model for providing access to the commons and wealth of services, a model based on novel forms of collaboration and exchange of use value.
             </p>
           </div>
         </section>
@@ -189,7 +189,7 @@
           <h1>Contacts</h1>
           <div class="content">
             <p>
-              If you want to know more about the project and help us to spread Commonfare, you can reach us at:
+              If you want to know more about the project and help us to spread Commonfare, you can reach us as follows:
             </p>
             <ul>
               <li><a href="mailto:info@commonfare.net">Email us</a></li>
@@ -222,12 +222,19 @@
 
     // Go to section
     // when click on table of contents, prev/next navigation, link in the text
-    $(document).on('click', '.table-of-contents a, .section-nav a, .content a:not(.to-subsection)', function(e) {
+    $('main.about').on('click', '.table-of-contents a, .section-nav a, .content a:not(.to-subsection)', function(e) {
+      e.preventDefault();
       target = $(this).attr('href');
+
+    // Set hash of the section
+      window.location.hash = target;
 
     // Activate the target section
       $('section').removeClass('active');
       $(target).addClass('active');
+
+    // Scroll to the top
+      $(document).scrollTop(0);
     })
 
 

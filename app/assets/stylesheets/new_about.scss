@@ -96,7 +96,7 @@ main.about {
 
   /* Left column */
   .col-left {
-    margin-top: 3.35rem;
+    margin-top: 2.5rem;
     /*margin-right: 2%;*/
   }
   nav.table-of-contents {
@@ -105,7 +105,6 @@ main.about {
     background-color: #fff;
     padding: 1rem;
     border: 1px solid #488580;
-    border-top: none;
     color: #488580;
   }
   nav.table-of-contents h5 {
@@ -137,7 +136,7 @@ main.about {
     margin-left: 40px;
   }
   section h1 {
-    padding: 4.5rem 0 1rem;
+    padding: 1rem 0;
   }
   .content {
     font-family: 'Lora', serif;
@@ -209,7 +208,9 @@ main.about {
       margin-right: 2%;
     }
     nav.table-of-contents {
-      top: 54px;
+      z-index: 1;
+      top: 53px;
+      left: 0;
       width: 100%;
       max-width: none;
       background-color: #eef4f3;
@@ -237,7 +238,7 @@ main.about {
       padding-top: 0;
     }
     section h1 {
-      padding-top: 7.5rem;
+      padding-top: 5rem;
     }
   }
 }
