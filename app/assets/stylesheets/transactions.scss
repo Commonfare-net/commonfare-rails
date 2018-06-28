@@ -39,6 +39,7 @@
     font-weight: 500;
   }
 
+
   .transaction-message,
   .transaction-timestamp,
   .transaction-counterpart,
@@ -90,6 +91,32 @@
   }
 }
 
+.transaction_amount {
+  input {
+    font-size: 2.5rem;
+  }
+}
+
+.withdraw-header {
+  border-bottom: 1px solid $lightgreen;
+}
+.withdraw-details {
+  color: $cf-secondary-color;
+}
+
+
+.icon-confirm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  font-size: 2em;
+  color: $cf-secondary-color;;
+  margin: 1.5em auto .5em;
+  border-radius: 100%;
+  border: 2px solid $cf-secondary-color;;
+}
 
 @media screen and (max-width: 800px) {
   .transaction {
