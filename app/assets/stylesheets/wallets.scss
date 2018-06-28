@@ -3,6 +3,13 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .wallet-header {
   border-bottom: 1px solid $lightgreen;
+  a {
+    color: $cf-secondary-color;
+    &:hover {
+      text-decoration: none;
+      color: $darkgreen;
+    }
+  }
 }
 
 .wallet-balance {

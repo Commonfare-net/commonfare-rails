@@ -3,6 +3,8 @@
   <div class="col-md-10 col-lg-10">
     <div class="row wallet-header pt-5 pb-2 bg-white">
       <div class="col">
+        <!-- TODO : rendere traducibile 'commoner name' -->
+        <h6>Commoner name</h6>
         <h1><%= link_to(@wallet.holder.name, commoner_path(@wallet.holder)) %></h1>
       </div>
     </div>
@@ -13,13 +15,13 @@
         <p><%#= link_to((s_('Button|Send %{currency_code}') %{currency_code: currency_code_for_wallet}), get_new_transaction_path(@wallet.currency), class: 'btn btn-outline-cf') if can? :create, @wallet.outgoing_transactions.build %></p>
       </div>
     </div>
-    <%= link_to(s_('Show QR code'), '#', class: 'btn btn-cf btn-block', data: { toggle: "modal", target: "#qrModal" }) if can_view_qr_code? %>
-    <%= link_to(s_('Button|Daily takings'), daily_takings_commoner_wallet_path(@commoner, @wallet, {day_start: get_day_start_for_wallet(@wallet)}), class: 'btn btn-outline-cf btn-block') if can? :daily_takings, @wallet %>
-    <%= link_to s_('Button|Activate account'), affiliation_group_path(@wallet.currency.group, { commoner_name: @wallet.holder.name}), class: 'btn btn-cf btn-block' if can_activate_account_for_group?(@wallet.currency.group, @wallet.holder) %>
+    <%= link_to(s_('Show QR code'), '#', class: 'btn btn-outline-secondary btn-block', data: { toggle: "modal", target: "#qrModal" }) if can_view_qr_code? %>
+    <%= link_to(s_('Button|Daily takings'), daily_takings_commoner_wallet_path(@commoner, @wallet, {day_start: get_day_start_for_wallet(@wallet)}), class: 'btn btn-outline-secondary btn-block') if can? :daily_takings, @wallet %>
+    <%= link_to s_('Button|Activate account'), '#', class: 'btn btn-cf btn-block' if can_activate_account_for_group?(@wallet.currency.group, @wallet.holder) %>
     <% if can_top_up_wallet? %>
-      <%= link_to(s_('Button|Top up'), top_up_commoner_transactions_path(@wallet.walletable, { to_wallet_id: @wallet.id, currency: @wallet.currency.id }), class: 'btn btn-cf btn-block') %>
-      <%= link_to(s_('Button|Withdraw'), withdraw_commoner_transactions_path(@wallet.walletable, { from_wallet_id: @wallet.id, currency: @wallet.currency.id }), class: 'btn btn-cf-secondary btn-block') %>
-      <%= link_to(s_('Button|Reimburse'), withdraw_commoner_transactions_path(@wallet.walletable, { from_wallet_id: @wallet.id, currency: @wallet.currency.id, amount: @wallet.balance, reimburse: true }), class: 'btn btn-outline-cf-secondary btn-block') %>
+      <%= link_to(s_('Button|Withdraw'), withdraw_commoner_transactions_path(@wallet.walletable, { from_wallet_id: @wallet.id, currency: @wallet.currency.id }), class: 'btn btn btn-cf btn-block') %>
+      <%= link_to(s_('Button|Top up'), top_up_commoner_transactions_path(@wallet.walletable, { to_wallet_id: @wallet.id, currency: @wallet.currency.id }), class: 'btn btn-cf-alt btn-block') %>
+      <%= link_to(s_('Button|Reimburse'), withdraw_commoner_transactions_path(@wallet.walletable, { from_wallet_id: @wallet.id, currency: @wallet.currency.id, amount: @wallet.balance, reimburse: true }), class: 'btn btn-cf-alt btn-block') %>
     <% end %>
     <% if @grouped_transactions.any? %>
       <div class="wallet-transactions my-4">

@@ -1,18 +1,27 @@
 <%= content_for :title, s_('Title|Withdraw %{currency_name}') %{currency_name: currency_name_for_withdraw_transaction} %>
 <div class="row justify-content-center">
-  <div class="col-md-8 col-lg-8 py-4">
-    <h1 class='mb-4'>
-      <%= s_('Title|Withdraw %{currency_name}') %{currency_name: currency_name_for_withdraw_transaction} %>
-    </h1>
-    <h3 class="text-danger">
-      <%= s_('Title|Final reimbursement') if @reimbursement %>
-    </h3>
-    <dl class="row">
-      <dt class="col-sm-1"><%= _('From') %></dt>
-      <dd class="col-sm-11"><%= @transaction.from_wallet.walletable.name %></dd>
-      <dt class="col-sm-1"><%= _('To') %></dt>
-      <dd class="col-sm-11"><%= @transaction.to_wallet.walletable.name %></dd>
-    </dl>
+  <div class="col-md-8 col-lg-8 pb-2">
+    <div class="row withdraw-header bg-white pt-5 pb-2">
+      <div class="col">
+        <h1 class='mb-2'>
+          <%= s_('Title|Withdraw %{currency_name}') %{currency_name: currency_name_for_withdraw_transaction} %>
+        </h1>
+        <h3 class="text-danger">
+          <%= s_('Title|Final reimbursement') if @reimbursement %>
+        </h3>
+      </div>
+    </div>
+    <div class="row withdraw-details bg-white pt-3">
+      <div class="col">
+        <dl class="row mb-2">
+          <dt class="col-sm-1"><%= _('From') %></dt>
+          <dd class="col-sm-11"><%= @transaction.from_wallet.walletable.name %></dd>
+          <dt class="col-sm-1"><%= _('To') %></dt>
+          <dd class="col-sm-11"><%= @transaction.to_wallet.walletable.name %></dd>
+        </dl>
+      </div>
+    </div>
+
     <%= simple_form_for(@transaction, url: confirm_withdraw_commoner_transactions_path(@commoner, { from_wallet_id: @transaction.from_wallet.id, currency: @currency.id })) do |f| %>
       <%= f.error_notification %>
       <%= f.association :from_wallet, as: :hidden %>
@@ -30,8 +39,8 @@
 <%# Hide this button to Issuer %>
 <% unless can? :top_up, @transaction %>
   <div class="row justify-content-center">
-    <div class="col-md-8 col-lg-8 mt-4">
-      <%= link_to(_('Transactions and refunds'), commoner_transactions_path(@transaction.from_wallet.walletable, { from_wallet_id: @transaction.from_wallet.id, currency: @currency.id }), class: 'btn btn-cf-secondary btn-block') %>
+    <div class="col-md-8 col-lg-8">
+      <%= link_to(_('Transactions and refunds'), commoner_transactions_path(@transaction.from_wallet.walletable, { from_wallet_id: @transaction.from_wallet.id, currency: @currency.id }), class: 'btn btn-outline-secondary btn-block') %>
     </div>
   </div>
 <% end %>

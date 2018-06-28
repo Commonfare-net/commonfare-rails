@@ -51,21 +51,22 @@ document.addEventListener("turbolinks:load", function() {
     var movement = 0;
 
     $(window).scroll(function(event){
-      var st = $(this).scrollTop();
-      movement += st - lastScrollTop;
+      if (!$('main').hasClass('about')) {
+        var st = $(this).scrollTop();
+        movement += st - lastScrollTop;
 
-      if (st > (navbarHeight * 1.5)) {
-      // on scroll down
-        if (st > lastScrollTop && !$navbar.hasClass('hidden')) { 
-          $navbar.addClass('hidden');
+        if (st > (navbarHeight * 1.5)) {
+        // on scroll down
+          if (st > lastScrollTop && !$navbar.hasClass('hidden')) { 
+            $navbar.addClass('hidden');
+          }
+        // on scroll up
+          else if (st < lastScrollTop && $navbar.hasClass('hidden')) {
+            $navbar.removeClass('hidden');
+          }
         }
-      // on scroll up
-        else if (st < lastScrollTop && $navbar.hasClass('hidden')) {
-          $navbar.removeClass('hidden');
-        }
+        lastScrollTop = st;
       }
-
-      lastScrollTop = st;
     });
   });
 
