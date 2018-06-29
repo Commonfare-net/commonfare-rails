@@ -27,8 +27,7 @@
       <%= f.association :from_wallet, as: :hidden %>
       <div class="form-row">
         <div class="col">
-          <%= f.input :amount, required: false, placeholder: number_with_precision(42.314, precision: 3), label: (_('Amount (%{currency_code})') %{currency_code: currency_code_for_withdraw_transaction}), input_html: { value:
-            f.object.amount } %>
+          <%= f.input :amount, required: false, autofocus: true, label: (_('Amount (%{currency_code})') %{currency_code: currency_code_for_withdraw_transaction}), input_html: { value: f.object.amount } %>
         </div>
       </div>
       <%= f.input :message, as: :hidden %>

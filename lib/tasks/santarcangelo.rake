@@ -92,6 +92,34 @@ namespace :santarcangelo do
     end
   end
 
+  task :import_sellers, [:group_id] => :environment do |t, args|
+    group = Group.find_by(id: args[:group_id])
+    abort 'Invalid group_id' if group.nil?
+    puts group.name
+    currency = group.currency
+    wallets = []
+    # out_csv = CSV.new(File.join(host_tmp_path, 'sf_sellers_out.csv'), headers: true)
+    CSV.open(File.join(host_tmp_path, 'sf_sellers_out.csv'), 'wb') do |out_csv|
+      out_csv << %w(Name Email Password)
+      CSV.foreach(File.join(host_tmp_path, 'sf_sellers.csv'), headers: true, header_converters: :symbol) do |row|
+        hash_row = row.to_hash
+        name = hash_row[:name]
+        email = hash_row[:email]
+        password = [('a'..'z').to_a.shuffle[0,8].join, rand(100..999)].join
+        puts "#{hash_row[:name]} #{hash_row[:email]}"
+        out_csv << [name, email, password]
+        commoner = Commoner.find_or_create_by name: name do |commoner|
+          seller_user_attributes_for(commoner, email, password)
+        end
+        Membership.find_or_create_by(commoner: commoner, group: group, role: 'editor')
+        wallet = Wallet.find_by(currency: currency, walletable: commoner)
+        wallets << wallet
+      end
+    end
+    generate_pdf_for_wallets(wallets, 0)
+    generate_csv_for_wallets(wallets, 0)
+  end
+
   def page_options
     {
       margin: 1.mm,
@@ -111,6 +139,13 @@ namespace :santarcangelo do
     resource.user_attributes = {
       email: "#{resource.name.parameterize}@sf.it",
       password: [('a'..'z').to_a.shuffle[0,8].join, rand(100..999)].join
+    }
+  end
+
+  def seller_user_attributes_for(resource, email, password)
+    resource.user_attributes = {
+      email: email,
+      password: password
     }
   end
 
