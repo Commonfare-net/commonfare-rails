@@ -144,6 +144,9 @@ class GroupsController < ApplicationController
 
     def can_affiliate_commoner?(commoner)
       !user_signed_in? &&
-      !@group.affiliates.include?(commoner)
+      @group.members.include?(commoner) &&
+      !(@group.affiliates.include?(commoner) ||
+      @group.editors.include?(commoner) ||
+      @group.admins.include?(commoner))
     end
 end
