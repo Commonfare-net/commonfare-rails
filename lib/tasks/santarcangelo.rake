@@ -22,6 +22,7 @@ namespace :santarcangelo do
       transfer_santacoin_to_wallet(wallet, amount)
       wallets << wallet
     end
+    group.wallet.refresh_balance
     generate_pdf_for_wallets(wallets, amount)
     generate_csv_for_wallets(wallets, amount)
   end
@@ -116,6 +117,7 @@ namespace :santarcangelo do
         wallets << wallet
       end
     end
+    group.wallet.refresh_balance
     generate_pdf_for_wallets(wallets, 0)
     generate_csv_for_wallets(wallets, 0)
   end
