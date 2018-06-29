@@ -1,5 +1,5 @@
 <%= content_for :title, s_('Title|Top up %{currency_name}') %{currency_name: currency_name_for_transaction} %>
-<div class="row justify-content-center">
+<div class="row justify-content-center top_up-container">
   <div class="col-md-8 col-lg-8 mt-4">
     <h1 class='mb-4'><%= s_('Title|Top up %{currency_name}') %{currency_name: currency_name_for_transaction} %></h1>
     <dl class="row">
@@ -13,7 +13,7 @@
       <%= f.association :to_wallet, as: :hidden %>
       <div class="form-row">
         <div class="col">
-          <%= f.input :amount, required: false, placeholder: number_with_precision(42.314, precision: 3), label: (_('Amount (%{currency_code})') %{currency_code: currency_code_for_transaction}), :input_html => { value: number_with_precision(f.object.amount, precision: 6) } %>
+          <%= f.input :amount, required: false, autofocus: true, placeholder: number_with_precision(42.314, precision: 3), label: (_('Amount (%{currency_code})') %{currency_code: currency_code_for_transaction}), :input_html => { value: number_with_precision(f.object.amount, precision: 6) } %>
         </div>
       </div>
       <%= f.input :message, as: :hidden %>
