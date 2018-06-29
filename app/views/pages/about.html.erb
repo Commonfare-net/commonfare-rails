@@ -1,6 +1,92 @@
-<%= content_for :title, _('About') %>
-<div class="row justify-content-center">
-  <div class="col-md-10 col-lg-8 cf-static-page bg-white pt-4">
-    <%= render translated_page('about') %>
-  </div>
-</div>
+<main class="about">
+  <%= render translated_page('about') %>
+</main>
+
+<%= content_for :scripts do %>
+  <script type="text/javascript">
+  $(document).ready(function() {
+    var target;
+
+    // If the url contains a hash on load, go to section
+    var hash = window.location.hash;
+    if (hash) {
+      $('section').removeClass('active');
+      $(hash).addClass('active');
+    }
+
+
+    // Go to section
+    // when click on table of contents, prev/next navigation, link in the text
+    $('main.about').on('click', '.table-of-contents a, .section-nav a, .content a:not(.to-subsection)', function(e) {
+      e.preventDefault();
+      target = $(this).attr('href');
+
+    // Set hash of the section
+      window.location.hash = target;
+
+    // Activate the target section
+      $('section').removeClass('active');
+      $(target).addClass('active');
+
+    // Scroll to the top
+      $(document).scrollTop(0);
+    })
+
+
+    // Go to sub-section
+    // when click on link in the text
+    // (The HASH needs to refer to the main section)
+    $(document).on('click', '.content a.to-subsection', function(e) {
+      e.preventDefault();
+      target        = $(this).attr('href');
+      var section   = $(target).closest('section').attr('id');
+
+    // Set hash of the section
+      window.location.hash = section;
+
+    // Activate the target section
+      $('section').removeClass('active');
+      $('#'+section).addClass('active');
+
+    // Scroll to the position of the sub-section
+      var targetPos = $(target).offset().top;
+      $(document).scrollTop(targetPos - 60);
+    })
+
+
+    // Add prev/next navigation to each section
+    var next, prev, nextEl, prevEl, nextLink, prevLink, sectionNav;
+    $('section').each(function() {
+      prev     = $(this).prev();
+      next     = $(this).next();
+
+      prevText = prev.find('h1')[0];
+      if (prevText !== undefined) {
+        prevLink = prev[0].id;
+        prevEl = '<a href="#'+ prevLink +'" class="prev-section"><label>Previous section</label><h4>'+ prevText.innerHTML +'</h4></a>';
+      } else {
+        prevEl = '<div></div>'
+      }
+
+      nextText = next.find('h1')[0];
+      if (nextText !== undefined) {
+        nextLink = next[0].id;
+        nextEl = '<a href="#'+ nextLink +'" class="next-section"><label>Next section</label><h4>'+ nextText.innerHTML +'</h4></a>';
+      } else {
+        nextEl = '<div></div>'
+      }
+
+      sectionNav = '<nav class="section-nav">'+ prevEl + nextEl +'</nav>'
+      $(this).append(sectionNav);
+    })
+
+
+    // OPEN TABLE OF CONTENTS
+    $('.table-of-contents').click(function() {
+      // nav = $(this).closest('nav.table-of-contents');
+      $(this).toggleClass('open');
+    })
+
+  });
+  </script>
+<% end %>
