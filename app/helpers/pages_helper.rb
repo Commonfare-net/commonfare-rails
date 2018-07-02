@@ -4,6 +4,10 @@ module PagesHelper
     "pages/#{locale}/#{page_name}"
   end
 
+  def jumbotron_bg_image_path
+    image_path("jumbotron-bg-random-#{rand(1..2)}.jpg")
+  end
+
   def story_type_title(story_type)
     case story_type
     when :commoners_voice

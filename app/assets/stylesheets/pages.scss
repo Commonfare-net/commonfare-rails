@@ -16,6 +16,8 @@
   background-image: none;
   background-color: $cf-secondary-color;
   background-size: cover;
+  background-position: center;
+  background-blend-mode: soft-light;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -68,10 +70,10 @@
   }
   p {
     @extend .lead;
-    max-width: 1000px;
+    max-width: none;
     color: white;
-    font-weight: 400;
-    font-size: 2.65rem;
+    font-weight: 500;
+    font-size: 5.25vw;
     margin: 1em auto;
     line-height: 1.35em;
   }
