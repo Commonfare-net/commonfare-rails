@@ -18,6 +18,9 @@
     // Go to section
     // when click on table of contents, prev/next navigation, link in the text
     $('main.about').on('click', '.table-of-contents a, .section-nav a, .content a:not(.to-subsection)', function(e) {
+      if($(this).hasClass('to-external')) {
+        return;
+      }
       e.preventDefault();
       target = $(this).attr('href');
 
@@ -46,7 +49,7 @@
 
     // Activate the target section
       $('section').removeClass('active');
-      $('#'+section).addClass('active');
+      $('#' + section).addClass('active');
 
     // Scroll to the position of the sub-section
       var targetPos = $(target).offset().top;
