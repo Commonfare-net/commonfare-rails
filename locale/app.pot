@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0\n"
 "Report-Msgid-Bugs-To: contact@translation.io\n"
-"POT-Creation-Date: 2018-06-28 16:19+0200\n"
-"PO-Revision-Date: 2018-06-28 16:19+0200\n"
+"POT-Creation-Date: 2018-07-02 16:05+0200\n"
+"PO-Revision-Date: 2018-07-02 16:05+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -127,7 +127,7 @@ msgstr ""
 #: ../app/controllers/transactions_controller.rb:103
 #: ../app/controllers/transactions_controller.rb:145
 #: ../app/controllers/transactions_controller.rb:170
-#: ../app/views/transactions/success.html.erb:4
+#: ../app/views/transactions/success.html.erb:7
 msgid "Transaction successful"
 msgstr ""
 
@@ -162,27 +162,27 @@ msgstr ""
 msgid "Button|Share this group"
 msgstr ""
 
-#: ../app/helpers/pages_helper.rb:10
+#: ../app/helpers/pages_helper.rb:14
 msgid "Home title|Commoners Voices"
 msgstr ""
 
-#: ../app/helpers/pages_helper.rb:12
+#: ../app/helpers/pages_helper.rb:16
 msgid "Home title|Good Practices"
 msgstr ""
 
-#: ../app/helpers/pages_helper.rb:14
+#: ../app/helpers/pages_helper.rb:18
 msgid "Home title|Public Benefits"
 msgstr ""
 
-#: ../app/helpers/pages_helper.rb:21
+#: ../app/helpers/pages_helper.rb:25
 msgid "Home text|A collection of stories for, with and by people."
 msgstr ""
 
-#: ../app/helpers/pages_helper.rb:23
+#: ../app/helpers/pages_helper.rb:27
 msgid "Home text|Bottom-up initiatives to connect and inspire."
 msgstr ""
 
-#: ../app/helpers/pages_helper.rb:25
+#: ../app/helpers/pages_helper.rb:29
 msgid "Home text|Get informed about local welfare provisions."
 msgstr ""
 
@@ -366,7 +366,7 @@ msgid "No stories yet"
 msgstr ""
 
 #: ../app/views/commoners/show.html.erb:73 ../app/views/pages/home.html.erb:85
-#: ../app/views/wallets/show.html.erb:28 ../app/views/wallets/view.html.erb:40
+#: ../app/views/wallets/show.html.erb:28 ../app/views/wallets/view.html.erb:41
 msgid "See all"
 msgstr ""
 
@@ -449,7 +449,7 @@ msgstr ""
 
 #: ../app/views/conversations/new.html.erb:17
 #: ../app/views/messages/_form.html.erb:5
-#: ../app/views/transactions/new.html.erb:20
+#: ../app/views/transactions/new.html.erb:22
 msgid "Button|Send"
 msgstr ""
 
@@ -999,15 +999,18 @@ msgstr ""
 msgid "Tags with '%{search_term}'"
 msgstr ""
 
-#: ../app/views/pages/about.html.erb:1
-msgid "About"
+#: ../app/views/pages/dashboard.html.erb:1
+#: ../app/views/pages/dashboard.html.erb:6
+msgid "Title|Dashboard"
+msgstr ""
+
+#: ../app/views/pages/dashboard.html.erb:9
+#: ../app/views/pages/dashboard.html.erb:14
+msgid "Dashboard|Start date"
 msgstr ""
 
 #: ../app/views/pages/home.html.erb:37
-msgid ""
-"Home carousel text|Commonfare.net is where we share information on existing we"
-"lfare state provisions, support self-organized welfare initiatives, tell stori"
-"es to promote collaboration and develop a complementary economy."
+msgid "Home carousel text|We have so much in Common"
 msgstr ""
 
 #: ../app/views/pages/home.html.erb:60
@@ -1026,6 +1029,10 @@ msgstr ""
 
 #: ../app/views/pages/home.html.erb:66
 msgid "Login"
+msgstr ""
+
+#: ../app/views/pages/old_about.html.erb:1
+msgid "About"
 msgstr ""
 
 #: ../app/views/shared/_back_and_save_buttons.html.erb:8
@@ -1264,48 +1271,48 @@ msgid "Withdraw from"
 msgstr ""
 
 #: ../app/views/transactions/index.html.erb:1
-#: ../app/views/transactions/index.html.erb:8
+#: ../app/views/transactions/index.html.erb:10
 msgid "Title|All %{currency_name} transactions"
 msgstr ""
 
-#: ../app/views/transactions/index.html.erb:6
+#: ../app/views/transactions/index.html.erb:8
 msgid "Title|Transactions with %{counterpart_name}"
 msgstr ""
 
 #: ../app/views/transactions/new.html.erb:1
-#: ../app/views/transactions/new.html.erb:4
+#: ../app/views/transactions/new.html.erb:6
 msgid "Title|Send %{currency_name}"
 msgstr ""
 
-#: ../app/views/transactions/new.html.erb:6
-msgid "Balance"
-msgstr ""
-
-#: ../app/views/transactions/new.html.erb:8
+#: ../app/views/transactions/new.html.erb:5
 #: ../app/views/wallets/daily_takings.html.erb:5
 msgid "%{icon} Back to %{currency_name} wallet"
 msgstr ""
 
-#: ../app/views/transactions/new.html.erb:13
-#: ../app/views/transactions/new.html.erb:43
+#: ../app/views/transactions/new.html.erb:8
+msgid "Balance"
+msgstr ""
+
+#: ../app/views/transactions/new.html.erb:15
+#: ../app/views/transactions/new.html.erb:45
 msgid "Bilbo Baggins"
 msgstr ""
 
-#: ../app/views/transactions/new.html.erb:13
+#: ../app/views/transactions/new.html.erb:15
 msgid "Name of the commoner"
 msgstr ""
 
-#: ../app/views/transactions/new.html.erb:16
+#: ../app/views/transactions/new.html.erb:18
 #: ../app/views/transactions/top_up.html.erb:16
-#: ../app/views/transactions/withdraw.html.erb:21
+#: ../app/views/transactions/withdraw.html.erb:30
 msgid "Amount (%{currency_code})"
 msgstr ""
 
-#: ../app/views/transactions/new.html.erb:19
+#: ../app/views/transactions/new.html.erb:21
 msgid "I like your stories!"
 msgstr ""
 
-#: ../app/views/transactions/new.html.erb:19
+#: ../app/views/transactions/new.html.erb:21
 msgid "Message (optional)"
 msgstr ""
 
@@ -1325,19 +1332,7 @@ msgstr ""
 msgid "Title|Transaction successful"
 msgstr ""
 
-#: ../app/views/transactions/success.html.erb:6
-#: ../app/views/transactions/top_up.html.erb:6
-#: ../app/views/transactions/withdraw.html.erb:11
-msgid "From"
-msgstr ""
-
-#: ../app/views/transactions/success.html.erb:8
-#: ../app/views/transactions/top_up.html.erb:8
-#: ../app/views/transactions/withdraw.html.erb:13
-msgid "To"
-msgstr ""
-
-#: ../app/views/transactions/success.html.erb:12
+#: ../app/views/transactions/success.html.erb:9
 msgid "Close this window before proceeding with a new transaction"
 msgstr ""
 
@@ -1346,25 +1341,35 @@ msgstr ""
 msgid "Title|Top up %{currency_name}"
 msgstr ""
 
+#: ../app/views/transactions/top_up.html.erb:6
+#: ../app/views/transactions/withdraw.html.erb:17
+msgid "From"
+msgstr ""
+
+#: ../app/views/transactions/top_up.html.erb:8
+#: ../app/views/transactions/withdraw.html.erb:19
+msgid "To"
+msgstr ""
+
 #: ../app/views/transactions/top_up.html.erb:20
 msgid "Button|Continue"
 msgstr ""
 
 #: ../app/views/transactions/withdraw.html.erb:1
-#: ../app/views/transactions/withdraw.html.erb:5
+#: ../app/views/transactions/withdraw.html.erb:7
 msgid "Title|Withdraw %{currency_name}"
 msgstr ""
 
-#: ../app/views/transactions/withdraw.html.erb:8
+#: ../app/views/transactions/withdraw.html.erb:10
 msgid "Title|Final reimbursement"
 msgstr ""
 
-#: ../app/views/transactions/withdraw.html.erb:26
+#: ../app/views/transactions/withdraw.html.erb:34
 #: ../app/views/wallets/view.html.erb:21
 msgid "Button|Withdraw"
 msgstr ""
 
-#: ../app/views/transactions/withdraw.html.erb:34
+#: ../app/views/transactions/withdraw.html.erb:42
 msgid "Transactions and refunds"
 msgstr ""
 
@@ -1569,7 +1574,7 @@ msgstr ""
 msgid "Title|%{currency_name} wallet"
 msgstr ""
 
-#: ../app/views/wallets/show.html.erb:11 ../app/views/wallets/view.html.erb:11
+#: ../app/views/wallets/show.html.erb:11 ../app/views/wallets/view.html.erb:12
 msgid "Current balance"
 msgstr ""
 
@@ -1577,7 +1582,7 @@ msgstr ""
 msgid "Button|Send %{currency_code}"
 msgstr ""
 
-#: ../app/views/wallets/show.html.erb:18 ../app/views/wallets/view.html.erb:26
+#: ../app/views/wallets/show.html.erb:18 ../app/views/wallets/view.html.erb:27
 msgid "Transactions"
 msgstr ""
 
@@ -1585,26 +1590,30 @@ msgstr ""
 msgid "Title|%{holder_name} %{currency_name} wallet"
 msgstr ""
 
-#: ../app/views/wallets/view.html.erb:16
-msgid "Show QR code"
+#: ../app/views/wallets/view.html.erb:6
+msgid "Title|Commoner name"
 msgstr ""
 
 #: ../app/views/wallets/view.html.erb:17
-msgid "Button|Daily takings"
+msgid "Show QR code"
 msgstr ""
 
 #: ../app/views/wallets/view.html.erb:18
+msgid "Button|Daily takings"
+msgstr ""
+
+#: ../app/views/wallets/view.html.erb:19
 msgid "Button|Activate account"
 msgstr ""
 
-#: ../app/views/wallets/view.html.erb:20
+#: ../app/views/wallets/view.html.erb:22
 msgid "Button|Top up"
 msgstr ""
 
-#: ../app/views/wallets/view.html.erb:22
+#: ../app/views/wallets/view.html.erb:23
 msgid "Button|Reimburse"
 msgstr ""
 
-#: ../app/views/wallets/view.html.erb:38
+#: ../app/views/wallets/view.html.erb:39
 msgid "Activate account to see more"
 msgstr ""
