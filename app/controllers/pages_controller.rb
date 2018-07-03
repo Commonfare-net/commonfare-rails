@@ -35,7 +35,14 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    data = YAML.load_file(File.join('/host_tmp', 'dashboard_data.yml'))
-    @nb_uniq_visitors = data['nb_uniq_visitors']
+    if params[:id] == 'dashboard'
+      file_path = File.join('/host_tmp', 'dashboard_data.yml')
+      if File.exists? file_path
+        data = YAML.load_file file_path
+        @nb_uniq_visitors = data['nb_uniq_visitors']
+      else
+        @no_file = true
+      end
+    end
   end
 end
