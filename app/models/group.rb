@@ -19,6 +19,10 @@ class Group < ApplicationRecord
     end
   end
 
+  def inactive_commoners
+    memberships.where(role: nil).map(&:commoner)
+  end
+
   def wallet
     # wallets.first
     Wallet.find_by currency: currency, walletable: self

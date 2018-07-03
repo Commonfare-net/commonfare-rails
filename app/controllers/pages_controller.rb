@@ -39,7 +39,12 @@ class PagesController < ApplicationController
       file_path = File.join('/host_tmp', 'dashboard_data.yml')
       if File.exists? file_path
         data = YAML.load_file file_path
+        @week_of          = data['week_of']
         @nb_uniq_visitors = data['nb_uniq_visitors']
+        @nb_visits        = data['nb_visits']
+        @nb_pageviews     = data['nb_pageviews']
+        @site_searches    = data['site_searches']
+        @nb_registered_commoners = data['nb_registered_commoners']
       else
         @no_file = true
       end

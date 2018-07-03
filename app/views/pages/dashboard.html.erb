@@ -1,4 +1,9 @@
 <%= content_for :title, s_('Title|Dashboard') %>
+<% if @no_file == true %>
+  <div class="alert alert-danger text-center mt-2" role="alert">
+   <h4 class="alert-heading">No data file!</h4>
+  </div>
+<% else %>
 <main class="dashboard">
   <header class="header">
     <div class="wrap">
@@ -7,13 +12,15 @@
         <div class="date">
           <div class="date-filter">
             <label for="start-date"><%= s_('Dashboard|Start date') %></label>
-            <input type="date" name="start-date" id="start-date" />
+            <!-- <input type="date" name="start-date" id="start-date" /> -->
             <!-- COLLEGARE DATA AI GRAFICI -->
+            <%= I18n.l(@week_of.to_datetime.beginning_of_week, format: :message_time) %>
           </div>
           <div class="date-filter">
-            <label for="end-date"><%= s_('Dashboard|Start date') %></label>
-            <input type="date" name="end-date" id="end-date" />
+            <label for="end-date"><%= s_('Dashboard|End date') %></label>
+            <!-- <input type="date" name="end-date" id="end-date" /> -->
             <!-- COLLEGARE DATA AI GRAFICI -->
+            <%= I18n.l(@week_of.to_datetime.end_of_week, format: :message_time) %>
           </div>
         </div>
       </div>
@@ -24,80 +31,90 @@
     <div class="wrap">
 
       <section>
-        <h2>Visits overview</h2>
+        <h2><%= s_('Dashboard|Visits overview') %></h2>
         <div class="flex">
           <div class="block block-4 block-bg-green">
-            <h3>Visits</h3>
-            <!-- INSERIRE DA MATOMO -->
-            <p class="number">100</p>
+            <h3><%= s_('Dashboard|Visits') %></h3>
+            <p class="number"><%= @nb_visits %></p>
           </div>
 
           <div class="block block-4 block-bg-green">
-            <h3>Unique visitors</h3>
-            <!-- INSERIRE DA MATOMO -->
+            <h3><%= s_('Dashboard|Unique visitors') %></h3>
             <p class="number"><%= @nb_uniq_visitors %></p>
           </div>
 
           <div class="block block-4 block-bg-green">
-            <h3>Pageviews</h3>
-            <!-- INSERIRE DA MATOMO -->
-            <p class="number">500</p>
+            <h3><%= s_('Dashboard|Pageviews') %></h3>
+            <p class="number"><%= @nb_pageviews %></p>
           </div>
 
           <div class="block block-4 block-bg-green">
-            <h3>Registered users</h3>
-            <!-- INSERIRE DA MATOMO -->
-            <p class="number">200</p>
+            <h3><%= s_('Dashboard|Registered commoners') %></h3>
+            <p class="number"><%= @nb_registered_commoners %></p>
           </div>
         </div>
       </section>
 
       <section>
-        <h2>Visits over time</h2>
+        <h2><%= s_('Dashboard|Visits over time') %></h2>
         <div class="block block-1">
           <div id="widgetIframe">
-            <iframe width="100%" height="360" src="https://piwik.commonfare.net/index.php?module=Widgetize&token_auth=9274e037558bce247f6b126b5a08625d&action=iframe&forceView=0&viewDataTable=graphEvolution&widget=1&moduleToWidgetize=VisitsSummary&actionToWidgetize=getEvolutionGraph&idSite=2&period=day&date=yesterday&disableLink=1&widget=1" scrolling="yes" frameborder="0" marginheight="0" marginwidth="0"></iframe>
+            <div id="widgetIframe"><iframe width="100%" height="350" src="https://piwik.commonfare.net/index.php?token_auth=anonymous&module=Widgetize&action=iframe&forceView=1&viewDataTable=graphEvolution&widget=1&moduleToWidgetize=VisitsSummary&actionToWidgetize=getEvolutionGraph&idSite=2&period=day&date=yesterday&disableLink=1&widget=1" scrolling="no" frameborder="0" marginheight="0" marginwidth="0"></iframe></div>
           </div>
         </div>
       </section>
 
-      <section>
+      <!-- <section>
         <h2>For specific topics</h2>
         <ul class="tags">
-          <!-- INSERIRE TAGS E COLLEGARE AI GRAFICI -->
+          <%# INSERIRE TAGS E COLLEGARE AI GRAFICI %>
           <li class="tag active">Welfare</li>
           <li class="tag">Basic Income</li>
           <li class="tag">Good Practice</li>
         </ul>
         <div class="flex">
           <div class="block block-2">
-            <!-- INSERIRE DA MATOMO (?) -->
+            <%# INSERIRE DA MATOMO (?) %>
             <div class="graph"></div>
           </div>
 
           <div class="block block-2">
-            <!-- INSERIRE DA MATOMO (?) -->
-            <div id="widgetIframe"><iframe width="100%" height="350" src="https://piwik.commonfare.net/index.php?module=Widgetize&token_auth=9274e037558bce247f6b126b5a08625d&action=iframe&widget=1&moduleToWidgetize=Referrers&actionToWidgetize=getKeywords&idSite=2&period=day&date=yesterday&disableLink=1&widget=1" scrolling="yes" frameborder="0" marginheight="0" marginwidth="0"></iframe></div>
+            <%# INSERIRE DA MATOMO (?) %>
 
           </div>
         </div>
-      </section>
+      </section> -->
 
       <div class="flex">
         <section class="block-2">
-          <h2>Site search</h2>
-          <div class="block">
-            <div id="widgetIframe">
-              <iframe width="100%" height="600" src="https://piwik.commonfare.net/index.php?module=Widgetize&token_auth=9274e037558bce247f6b126b5a08625d&action=iframe&widget=1&moduleToWidgetize=Actions&actionToWidgetize=getSiteSearchKeywords&idSite=2&period=month&date=yesterday&disableLink=1&widget=1" scrolling="yes" frameborder="0" marginheight="0" marginwidth="0"></iframe>
-            </div>
-          </div>
+          <h2><%= s_('Dashboard|Site search (last month)') %></h2>
+          <table class="table table-hover">
+            <thead class="thead-light">
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col"><%= s_('Dashboard site search|Keyword') %></th>
+                <th scope="col"><%= s_('Dashboard site search|Visits') %></th>
+              </tr>
+            </thead>
+            <tbody>
+            <% @site_searches.each_with_index do |s, i| %>
+              <tr>
+                <th scope="row"><%= i + 1 %></th>
+                <td><%= s['label'] %></td>
+                <td><%= s['nb_visits'] %></td>
+              </tr>
+            <% end %>
+            </tbody>
+          </table>
         </section>
 
         <section class="block-2">
-          <h2>Social graph</h2>
+          <h2><%= s_('Dashboard|Social graph') %></h2>
           <div class="block">
             <!-- INSERIRE GRAFICO STATICO -->
-            <div class="graph"></div>
+            <div class="graph">
+              <h2 class="text-center pt-4">Coming soon</h2>
+            </div>
           </div>
         </section>
       </div>
@@ -105,3 +122,4 @@
   </div>
 
 </main>
+<% end %>

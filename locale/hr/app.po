@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0\n"
 "Report-Msgid-Bugs-To: contact@translation.io\n"
-"POT-Creation-Date: 2018-07-02 16:05+0200\n"
-"PO-Revision-Date: 2018-07-02 16:06+0200\n"
+"POT-Creation-Date: 2018-07-03 14:54+0200\n"
+"PO-Revision-Date: 2018-07-03 14:54+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Croatian\n"
 "Language: hr\n"
@@ -824,6 +824,10 @@ msgstr "Uvjeti pružanja usluge"
 msgid "Footer|Privacy"
 msgstr "Privatnost"
 
+#: ../app/views/layouts/_footer.html.erb:32
+msgid "Footer|Dashboard"
+msgstr ""
+
 #: ../app/views/layouts/_navbar.html.erb:15
 #: ../app/views/layouts/_navbar.html.erb:45
 msgid "Search"
@@ -1025,25 +1029,69 @@ msgstr ""
 msgid "Tags with '%{search_term}'"
 msgstr ""
 
+#: ../app/views/pages/about.html.erb:69
+msgid "About page|Previous section"
+msgstr ""
+
+#: ../app/views/pages/about.html.erb:77
+msgid "About page|Next section"
+msgstr ""
+
 #: ../app/views/pages/dashboard.html.erb:1
-#: ../app/views/pages/dashboard.html.erb:6
+#: ../app/views/pages/dashboard.html.erb:11
 msgid "Title|Dashboard"
 msgstr ""
 
-#: ../app/views/pages/dashboard.html.erb:9
 #: ../app/views/pages/dashboard.html.erb:14
 msgid "Dashboard|Start date"
 msgstr ""
 
-#: ../app/views/pages/home.html.erb:37
-msgid "Home carousel text|We have so much in Common"
+#: ../app/views/pages/dashboard.html.erb:20
+msgid "Dashboard|End date"
+msgstr ""
+
+#: ../app/views/pages/dashboard.html.erb:34
+msgid "Dashboard|Visits overview"
+msgstr ""
+
+#: ../app/views/pages/dashboard.html.erb:37
+msgid "Dashboard|Visits"
+msgstr ""
+
+#: ../app/views/pages/dashboard.html.erb:42
+msgid "Dashboard|Unique visitors"
+msgstr ""
+
+#: ../app/views/pages/dashboard.html.erb:47
+msgid "Dashboard|Pageviews"
+msgstr ""
+
+#: ../app/views/pages/dashboard.html.erb:52
+msgid "Dashboard|Registered commoners"
+msgstr ""
+
+#: ../app/views/pages/dashboard.html.erb:59
+msgid "Dashboard|Visits over time"
+msgstr ""
+
+#: ../app/views/pages/dashboard.html.erb:90
+msgid "Dashboard|Site search (last month)"
+msgstr ""
+
+#: ../app/views/pages/dashboard.html.erb:95
+msgid "Dashboard site search|Keyword"
+msgstr ""
+
+#: ../app/views/pages/dashboard.html.erb:96
+msgid "Dashboard site search|Visits"
+msgstr ""
+
+#: ../app/views/pages/dashboard.html.erb:112
+msgid "Dashboard|Social graph"
 msgstr ""
 
 #: ../app/views/pages/home.html.erb:37
-msgid ""
-"Home carousel text|Commonfare.net is where we share information on existing we"
-"lfare state provisions, support self-organized welfare initiatives, tell stori"
-"es to promote collaboration and develop a complementary economy."
+msgid "Home carousel text|We have so much in Common"
 msgstr ""
 
 #: ../app/views/pages/home.html.erb:60

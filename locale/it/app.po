@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0\n"
 "Report-Msgid-Bugs-To: contact@translation.io\n"
-"POT-Creation-Date: 2018-07-02 16:05+0200\n"
-"PO-Revision-Date: 2018-07-02 16:06+0200\n"
+"POT-Creation-Date: 2018-07-03 14:54+0200\n"
+"PO-Revision-Date: 2018-07-03 14:54+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Italian\n"
 "Language: it\n"
@@ -835,6 +835,10 @@ msgstr "Termini di Servizio"
 msgid "Footer|Privacy"
 msgstr "Privacy"
 
+#: ../app/views/layouts/_footer.html.erb:32
+msgid "Footer|Dashboard"
+msgstr "Dashboard"
+
 #: ../app/views/layouts/_navbar.html.erb:15
 #: ../app/views/layouts/_navbar.html.erb:45
 msgid "Search"
@@ -854,11 +858,11 @@ msgstr "Misure di welfare"
 
 #: ../app/views/layouts/_navbar.html.erb:35
 msgid "Navbar|Commonplace"
-msgstr ""
+msgstr "Commonplace"
 
 #: ../app/views/layouts/_navbar.html.erb:39
 msgid "Navbar|About"
-msgstr ""
+msgstr "About"
 
 #: ../app/views/layouts/_navbar.html.erb:50
 msgid "Navbar|Home"
@@ -1037,30 +1041,70 @@ msgstr "Gruppi trovati"
 msgid "Tags with '%{search_term}'"
 msgstr "Tag con '%{search_term}'"
 
-#: ../app/views/pages/dashboard.html.erb:1
-#: ../app/views/pages/dashboard.html.erb:6
-msgid "Title|Dashboard"
-msgstr ""
+#: ../app/views/pages/about.html.erb:69
+msgid "About page|Previous section"
+msgstr "Precedente"
 
-#: ../app/views/pages/dashboard.html.erb:9
+#: ../app/views/pages/about.html.erb:77
+msgid "About page|Next section"
+msgstr "Successivo"
+
+#: ../app/views/pages/dashboard.html.erb:1
+#: ../app/views/pages/dashboard.html.erb:11
+msgid "Title|Dashboard"
+msgstr "Dashboard"
+
 #: ../app/views/pages/dashboard.html.erb:14
 msgid "Dashboard|Start date"
+msgstr "Dal giorno"
+
+#: ../app/views/pages/dashboard.html.erb:20
+msgid "Dashboard|End date"
+msgstr "Al giorno"
+
+#: ../app/views/pages/dashboard.html.erb:34
+msgid "Dashboard|Visits overview"
+msgstr "Riepilogo visite"
+
+#: ../app/views/pages/dashboard.html.erb:37
+msgid "Dashboard|Visits"
+msgstr "Visite"
+
+#: ../app/views/pages/dashboard.html.erb:42
+msgid "Dashboard|Unique visitors"
+msgstr "Visite uniche"
+
+#: ../app/views/pages/dashboard.html.erb:47
+msgid "Dashboard|Pageviews"
+msgstr "Visualizzazioni pagina"
+
+#: ../app/views/pages/dashboard.html.erb:52
+msgid "Dashboard|Registered commoners"
+msgstr "Commoner registrati"
+
+#: ../app/views/pages/dashboard.html.erb:59
+msgid "Dashboard|Visits over time"
+msgstr "Visite nel periodo"
+
+#: ../app/views/pages/dashboard.html.erb:90
+msgid "Dashboard|Site search (last month)"
+msgstr "Ricerche sul sito (mese scorso)"
+
+#: ../app/views/pages/dashboard.html.erb:95
+msgid "Dashboard site search|Keyword"
+msgstr "Parola chiave"
+
+#: ../app/views/pages/dashboard.html.erb:96
+msgid "Dashboard site search|Visits"
+msgstr "Ricerche"
+
+#: ../app/views/pages/dashboard.html.erb:112
+msgid "Dashboard|Social graph"
 msgstr ""
 
 #: ../app/views/pages/home.html.erb:37
 msgid "Home carousel text|We have so much in Common"
 msgstr "Abbiamo così tanto in Comune"
-
-#: ../app/views/pages/home.html.erb:37
-msgid ""
-"Home carousel text|Commonfare.net is where we share information on existing we"
-"lfare state provisions, support self-organized welfare initiatives, tell stori"
-"es to promote collaboration and develop a complementary economy."
-msgstr ""
-"Commonfare.net è il luogo in cui condividiamo le informazioni sulle disposizio"
-"ni vigenti dello stato sociale, supportiamo iniziative di welfare autogestite,"
-" raccontiamo storie per promuovere la collaborazione e sviluppare un'economia "
-"complementare."
 
 #: ../app/views/pages/home.html.erb:60
 msgid "Home text|Commonfare.net is for, with, and by people."
@@ -1080,7 +1124,7 @@ msgstr "Sei già registrato? <strong>%{login_link}</strong>"
 
 #: ../app/views/pages/home.html.erb:66
 msgid "Login"
-msgstr ""
+msgstr "Login"
 
 #: ../app/views/pages/old_about.html.erb:1
 msgid "About"

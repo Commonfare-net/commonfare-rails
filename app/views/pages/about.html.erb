@@ -66,7 +66,7 @@
       prevText = prev.find('h1')[0];
       if (prevText !== undefined) {
         prevLink = prev[0].id;
-        prevEl = '<a href="#'+ prevLink +'" class="prev-section"><label>Previous section</label><h4>'+ prevText.innerHTML +'</h4></a>';
+        prevEl = '<a href="#'+ prevLink +'" class="prev-section"><label><%= s_('About page|Previous section') %></label><h4>'+ prevText.innerHTML +'</h4></a>';
       } else {
         prevEl = '<div></div>'
       }
@@ -74,7 +74,7 @@
       nextText = next.find('h1')[0];
       if (nextText !== undefined) {
         nextLink = next[0].id;
-        nextEl = '<a href="#'+ nextLink +'" class="next-section"><label>Next section</label><h4>'+ nextText.innerHTML +'</h4></a>';
+        nextEl = '<a href="#'+ nextLink +'" class="next-section"><label><%= s_('About page|Next section') %></label><h4>'+ nextText.innerHTML +'</h4></a>';
       } else {
         nextEl = '<div></div>'
       }
