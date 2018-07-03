@@ -9,7 +9,7 @@
 <meta name="twitter:card" content="summary_large_image" />
 <% end %>
 <%= content_for :hero do %>
-<div class="cf-jumbotron">
+<div class="cf-jumbotron" style="background-image: url('<%= jumbotron_bg_image_path %>')">
   <div class="gray-layer">&nbsp;</div>
   <div class="container-fluid d-block d-lg-none d-xl-none">
     <div class="row justify-content-center">
@@ -30,11 +30,11 @@
         </ol>
         <div class="container-fluid">
           <div class="row justify-content-center">
-            <div class="col-lg-8">
+            <div class="col-lg-12">
               <div class="carousel-inner">
-                <div class="carousel-item active">
+                <div class="carousel-item active text-center">
                   <p>
-                    <%= s_("Home carousel text|Commonfare.net is where we share information on existing welfare state provisions, support self-organized welfare initiatives, tell stories to promote collaboration and develop a complementary economy.") %>
+                    <%= s_("Home carousel text|We have so much in Common") %>
                   </p>
                 </div>
               </div>
