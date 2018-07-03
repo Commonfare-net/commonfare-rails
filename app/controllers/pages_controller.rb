@@ -2,6 +2,7 @@ class PagesController < ApplicationController
   include HighVoltage::StaticPage
 
   before_action :home
+  before_action :dashboard
   # before_filter :authenticate
   # layout :layout_for_page
 
@@ -31,5 +32,10 @@ class PagesController < ApplicationController
           .first(6)
       }
     end
+  end
+
+  def dashboard
+    data = YAML.load_file(File.join('/host_tmp', 'dashboard_data.yml'))
+    @nb_uniq_visitors = data['nb_uniq_visitors']
   end
 end

@@ -95,6 +95,7 @@ gem 'administrate'
 
 # Piwik analytics
 gem 'piwik_analytics'
+gem 'autometal-piwik', require: 'piwik'
 
 # Cookie Law
 gem 'cookies_eu'

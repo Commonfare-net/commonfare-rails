@@ -1,0 +1,107 @@
+<%= content_for :title, s_('Title|Dashboard') %>
+<main class="dashboard">
+  <header class="header">
+    <div class="wrap">
+      <div class="flex">
+        <h1><%= s_('Title|Dashboard') %></h1>
+        <div class="date">
+          <div class="date-filter">
+            <label for="start-date"><%= s_('Dashboard|Start date') %></label>
+            <input type="date" name="start-date" id="start-date" />
+            <!-- COLLEGARE DATA AI GRAFICI -->
+          </div>
+          <div class="date-filter">
+            <label for="end-date"><%= s_('Dashboard|Start date') %></label>
+            <input type="date" name="end-date" id="end-date" />
+            <!-- COLLEGARE DATA AI GRAFICI -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="content">
+    <div class="wrap">
+
+      <section>
+        <h2>Visits overview</h2>
+        <div class="flex">
+          <div class="block block-4 block-bg-green">
+            <h3>Visits</h3>
+            <!-- INSERIRE DA MATOMO -->
+            <p class="number">100</p>
+          </div>
+
+          <div class="block block-4 block-bg-green">
+            <h3>Unique visitors</h3>
+            <!-- INSERIRE DA MATOMO -->
+            <p class="number"><%= @nb_uniq_visitors %></p>
+          </div>
+
+          <div class="block block-4 block-bg-green">
+            <h3>Pageviews</h3>
+            <!-- INSERIRE DA MATOMO -->
+            <p class="number">500</p>
+          </div>
+
+          <div class="block block-4 block-bg-green">
+            <h3>Registered users</h3>
+            <!-- INSERIRE DA MATOMO -->
+            <p class="number">200</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Visits over time</h2>
+        <div class="block block-1">
+          <div id="widgetIframe">
+            <iframe width="100%" height="360" src="https://piwik.commonfare.net/index.php?module=Widgetize&token_auth=9274e037558bce247f6b126b5a08625d&action=iframe&forceView=0&viewDataTable=graphEvolution&widget=1&moduleToWidgetize=VisitsSummary&actionToWidgetize=getEvolutionGraph&idSite=2&period=day&date=yesterday&disableLink=1&widget=1" scrolling="yes" frameborder="0" marginheight="0" marginwidth="0"></iframe>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>For specific topics</h2>
+        <ul class="tags">
+          <!-- INSERIRE TAGS E COLLEGARE AI GRAFICI -->
+          <li class="tag active">Welfare</li>
+          <li class="tag">Basic Income</li>
+          <li class="tag">Good Practice</li>
+        </ul>
+        <div class="flex">
+          <div class="block block-2">
+            <!-- INSERIRE DA MATOMO (?) -->
+            <div class="graph"></div>
+          </div>
+
+          <div class="block block-2">
+            <!-- INSERIRE DA MATOMO (?) -->
+            <div id="widgetIframe"><iframe width="100%" height="350" src="https://piwik.commonfare.net/index.php?module=Widgetize&token_auth=9274e037558bce247f6b126b5a08625d&action=iframe&widget=1&moduleToWidgetize=Referrers&actionToWidgetize=getKeywords&idSite=2&period=day&date=yesterday&disableLink=1&widget=1" scrolling="yes" frameborder="0" marginheight="0" marginwidth="0"></iframe></div>
+
+          </div>
+        </div>
+      </section>
+
+      <div class="flex">
+        <section class="block-2">
+          <h2>Site search</h2>
+          <div class="block">
+            <div id="widgetIframe">
+              <iframe width="100%" height="600" src="https://piwik.commonfare.net/index.php?module=Widgetize&token_auth=9274e037558bce247f6b126b5a08625d&action=iframe&widget=1&moduleToWidgetize=Actions&actionToWidgetize=getSiteSearchKeywords&idSite=2&period=month&date=yesterday&disableLink=1&widget=1" scrolling="yes" frameborder="0" marginheight="0" marginwidth="0"></iframe>
+            </div>
+          </div>
+        </section>
+
+        <section class="block-2">
+          <h2>Social graph</h2>
+          <div class="block">
+            <!-- INSERIRE GRAFICO STATICO -->
+            <div class="graph"></div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+
+</main>
