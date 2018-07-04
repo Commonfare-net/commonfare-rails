@@ -1,4 +1,26 @@
 namespace :nda do
+
+  task commoners_graph: :environment do |t|
+    graph = GEXF::Graph.new
+    graph.define_node_attribute(:commoner_id)
+    graph.define_node_attribute(:commoner_name)
+    graph.define_edge_attribute(:comment_id)
+    Commoner.find_each do |commoner|
+      commoner_node = graph.create_node(label: "commoner_#{commoner.id}")
+      commoner_node[:commoner_id] = commoner.id
+      commoner_node[:commoner_name] = commoner.name
+    end
+    # binding.pry
+    Comment.find_each do |comment|
+      author_node = graph.nodes.find { |node| node[:commoner_id].to_i == comment.author.id }
+      commentable_author_node = graph.nodes.find { |node| node[:commoner_id].to_i == comment.commentable.commoner.id }
+      author_node.connect_to(commentable_author_node)
+    end
+    file = File.new(File.join(host_tmp_path, (Time.now.strftime("%Y%m%d%H%M%S") + "_commoners_graph.gexf")), "wb")
+    file.write(graph.to_xml)
+    file.close
+  end
+
   desc  """
           Creates a timestamped CSV file in the home directory
           with the list of commoners

@@ -129,6 +129,9 @@ group :development, :test do
 
   # Favicon as if were no tomorrow
   gem 'rails_real_favicon'
+
+  # Graphs (using a forked version)
+  gem 'gexf', '~> 0.0.7', git: 'https://github.com/Commonfare-net/gexf.rb.git'
 end
 
 group :development do

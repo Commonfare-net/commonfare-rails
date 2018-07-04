@@ -1,4 +1,11 @@
 GIT
+  remote: https://github.com/Commonfare-net/gexf.rb.git
+  revision: 9cb1ee334c9e85d9bd4f40c38bd4566bb3618864
+  specs:
+    gexf (0.0.7)
+      nokogiri (~> 1.8.0)
+
+GIT
   remote: https://github.com/globalize/globalize
   revision: 35adbbd4928577fef701b0986f7d7d035b0d4340
   specs:
@@ -405,6 +412,7 @@ DEPENDENCIES
   friendly_id (~> 5.2.0)
   friendly_id-globalize!
   geocoder
+  gexf (~> 0.0.7)!
   globalize!
   groupdate
   high_voltage (~> 3.0.0)
