@@ -26,6 +26,10 @@ class Transaction < ApplicationRecord
     0
   end
 
+  def involve_group_wallet?
+    from_wallet.walletable.is_a?(Group) || to_wallet.walletable.is_a?(Group)
+  end
+
   private
 
   def not_to_self
