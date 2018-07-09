@@ -1,24 +1,34 @@
 namespace :nda do
-
-  task commoners_objects_graph: :environment do |t|
+  desc  """
+          Creates a GEXF file in the host_tmp directory with data
+          until :days_ago days ago
+          USAGE: rake nda:commoners_objects_graph\[7\]
+        """
+  task :commoners_objects_graph, [:days_ago] => :environment do |t, args|
+    date = Time.zone.now
+    if args[:days_ago].present? && args[:days_ago].to_i > 0
+      date = args[:days_ago].to_i.days.ago.end_of_week
+    end
     graph = GEXF::Graph.new
     graph.define_node_attribute(:type)
     graph.define_node_attribute(:id)
     graph.define_node_attribute(:name)
     graph.define_node_attribute(:title)
-    Commoner.find_each do |commoner|
+    Commoner.where('created_at < ?', date).find_each do |commoner|
+      # Create the commoner node
       commoner_node = graph.create_node(label: "commoner_#{commoner.id}")
       commoner_node[:type] = commoner.class.class_name.downcase
       commoner_node[:id] = commoner.id
       commoner_node[:name] = commoner.name
     end
-    Story.find_each do |story|
+    Story.where('created_at < ?', date).find_each do |story|
+      # Create the story node
       next if story.author.is_a?(Group)
       story_node = graph.create_node(label: "story_#{story.id}")
       story_node[:type] = story.class.class_name.downcase
       story_node[:id] = story.id
       story_node[:title] = story.title
-      binding.pry
+      # binding.pry
       story_author_node = graph.nodes.find do |node|
         node[:type] == story.author.class.class_name.downcase &&
         node[:id].to_i == story.author.id
@@ -28,7 +38,8 @@ namespace :nda do
         label: "create_#{story.id}+date_start=#{story.created_at.strftime('%Y/%m/%d')}"
       )
     end
-    Listing.find_each do |listing|
+    Listing.where('created_at < ?', date).find_each do |listing|
+      # Create the listing node
       listing_node = graph.create_node(label: "listing_#{listing.id}")
       listing_node[:type] = listing.class.class_name.downcase
       listing_node[:id] = listing.id
@@ -42,24 +53,112 @@ namespace :nda do
         label: "create_#{listing.id}+date_start=#{listing.created_at.strftime('%Y/%m/%d')}"
       )
     end
-    # binding.pry
-    Comment.find_each do |comment|
+    Tag.where('created_at < ?', date).find_each do |tag|
+      # Create the Tag node
+      tag_node = graph.create_node(label: "tag_#{tag.id}")
+      tag_node[:type] = tag.class.class_name.downcase
+      tag_node[:id] = tag.id
+      tag_node[:name] = tag.name
+      # Create edges between the tag and the associated commoners
+      tag.commoners.where('created_at < ?', date).find_each do |commoner|
+        tag_commoner_node = graph.nodes.find do |node|
+          node[:type] == commoner.class.class_name.downcase &&
+          node[:id].to_i == commoner.id
+        end
+        tag_commoner_node.connect_to(
+          tag_node,
+          label: "tag_#{tag.id}+date_start=#{commoner.created_at.strftime('%Y/%m/%d')}"
+        )
+      end
+      # Create edges between the tag and the associated stories
+      tag.stories.where('created_at < ?', date).find_each do |story|
+        next if story.author.is_a?(Group)
+        tag_story_node = graph.nodes.find do |node|
+          node[:type] == story.class.class_name.downcase &&
+          node[:id].to_i == story.id
+        end
+        tag_story_node.connect_to(
+          tag_node,
+          label: "tag_#{tag.id}+date_start=#{story.created_at.strftime('%Y/%m/%d')}"
+        )
+      end
+      # Create edges between the tag and the associated listings
+      tag.listings.where('created_at < ?', date).find_each do |listing|
+        tag_listing_node = graph.nodes.find do |node|
+          node[:type] == listing.class.class_name.downcase &&
+          node[:id].to_i == listing.id
+        end
+        tag_listing_node.connect_to(
+          tag_node,
+          label: "tag_#{tag.id}+date_start=#{listing.created_at.strftime('%Y/%m/%d')}"
+        )
+      end
+    end
+    # Edges by comments
+    Comment.where('created_at < ?', date).find_each do |comment|
       comment_author_node = graph.nodes.find do |node|
         node[:type] == comment.author.class.class_name.downcase &&
         node[:id].to_i == comment.author.id
+      end
+      commentable_node = graph.nodes.find do |node|
+        node[:type] == comment.commentable.class.class_name.downcase &&
+        node[:id].to_i == comment.commentable.id
       end
       commentable_author_node = graph.nodes.find do |node|
         node[:type] == comment.commentable.commoner.class.class_name.downcase &&
         node[:id].to_i == comment.commentable.commoner.id
       end
-      # edge = find_or_create_edge_by(graph, author_node, commentable_author_node)
-      # edge[:comment_id] = comment.id
+      # Edge between comment's author and commentable's author
       comment_author_node.connect_to(
         commentable_author_node,
         label: "comment_#{comment.id}+date_start=#{comment.created_at.strftime('%Y/%m/%d')}"
       )
+      # Edge between comment's author and commentable
+      comment_author_node.connect_to(
+        commentable_node,
+        label: "comment_#{comment.id}+date_start=#{comment.created_at.strftime('%Y/%m/%d')}"
+      )
     end
-    file = File.new(File.join(host_tmp_path, (Time.now.strftime('%Y%m%d%H%M%S') + "_commoners_objects_graph.gexf")), "wb")
+    # Edges by conversations
+    Conversation.where('created_at < ?', date).find_each do |conversation|
+      sender_node = graph.nodes.find do |node|
+        node[:type] == conversation.sender.class.class_name.downcase &&
+        node[:id].to_i == conversation.sender.id
+      end
+      recipient_node = graph.nodes.find do |node|
+        node[:type] == conversation.recipient.class.class_name.downcase &&
+        node[:id].to_i == conversation.recipient.id
+      end
+      sender_node.connect_to(
+        recipient_node,
+        label: "conversation_#{conversation.id}+date_start=#{conversation.created_at.strftime('%Y/%m/%d')}+date_end=#{conversation.messages.last.created_at.strftime('%Y/%m/%d')}"
+      )
+    end
+    # Edges by transactions
+    Transaction.where('created_at < ?', date).find_each do |transaction|
+      next if transaction.involve_group_wallet?
+      from_node = graph.nodes.find do |node|
+        node[:type] == transaction.from_wallet.walletable.class.class_name.downcase &&
+        node[:id].to_i == transaction.from_wallet.walletable.id
+      end
+      to_node = graph.nodes.find do |node|
+        node[:type] == transaction.to_wallet.walletable.class.class_name.downcase &&
+        node[:id].to_i == transaction.to_wallet.walletable.id
+      end
+      from_node.connect_to(
+        to_node,
+        label: "transaction_#{transaction.id}+date_start=#{transaction.created_at.strftime('%Y/%m/%d')}",
+        start: transaction.created_at.strftime('%Y/%m/%d')
+      )
+    end
+    file_name = File.join(
+      host_tmp_path, (
+        Time.now.strftime('%Y%m%d%H%M%S') +
+        "_to_#{date.strftime('%F')}" +
+        "_commoners_objects.gexf"
+      )
+    )
+    file = File.new(file_name, "wb")
     file.write(graph.to_xml)
     file.close
   end
