@@ -1,125 +1,85 @@
-<%= content_for :title, s_('Title|Dashboard') %>
+<%= content_for :title, s_('Title|Metrics dashboard') %>
 <% if @no_file == true %>
-  <div class="alert alert-danger text-center mt-2" role="alert">
-   <h4 class="alert-heading">No data file!</h4>
-  </div>
+<div class="alert alert-danger text-center mt-2" role="alert">
+ <h4 class="alert-heading">No data file!</h4>
+</div>
 <% else %>
-<main class="dashboard">
+<div class="dashboard-responsive">
   <header class="header">
-    <div class="wrap">
-      <div class="flex">
-        <h1><%= s_('Title|Dashboard') %></h1>
-        <div class="date">
-          <div class="date-filter">
-            <label for="start-date"><%= s_('Dashboard|Start date') %></label>
-            <!-- <input type="date" name="start-date" id="start-date" /> -->
-            <!-- COLLEGARE DATA AI GRAFICI -->
-            <%= I18n.l(@week_of.to_datetime.beginning_of_week, format: :message_time) %>
-          </div>
-          <div class="date-filter">
-            <label for="end-date"><%= s_('Dashboard|End date') %></label>
-            <!-- <input type="date" name="end-date" id="end-date" /> -->
-            <!-- COLLEGARE DATA AI GRAFICI -->
-            <%= I18n.l(@week_of.to_datetime.end_of_week, format: :message_time) %>
-          </div>
-        </div>
+    <div class="row wrap">
+      <div class="col">
+        <h1><%= s_('Title|Metrics dashboard') %></h1>
+      </div>
+      <div class="col-sm-auto date-filter">
+        <label for="start-date"><%= s_('Dashboard|Start date') %></label>
+        <!-- <input type="date" name="start-date" id="start-date" /> -->
+        <!-- COLLEGARE DATA AI GRAFICI -->
+        <%= I18n.l(@week_of.to_datetime.beginning_of_week, format: :message_time) %>
+      </div>
+      <div class="col-sm-auto date-filter">
+        <label for="end-date"><%= s_('Dashboard|End date') %></label>
+        <!-- <input type="date" name="end-date" id="end-date" /> -->
+        <!-- COLLEGARE DATA AI GRAFICI -->
+        <%= I18n.l(@week_of.to_datetime.end_of_week, format: :message_time) %>
       </div>
     </div>
   </header>
-
   <div class="content">
-    <div class="wrap">
-
-      <section>
-        <h2><%= s_('Dashboard|Visits overview') %></h2>
-        <div class="flex">
-          <div class="block block-4 block-bg-green">
-            <h3><%= s_('Dashboard|Visits') %></h3>
-            <p class="number"><%= @nb_visits %></p>
-          </div>
-
-          <div class="block block-4 block-bg-green">
-            <h3><%= s_('Dashboard|Unique visitors') %></h3>
-            <p class="number"><%= @nb_uniq_visitors %></p>
-          </div>
-
-          <div class="block block-4 block-bg-green">
-            <h3><%= s_('Dashboard|Pageviews') %></h3>
-            <p class="number"><%= @nb_pageviews %></p>
-          </div>
-
-          <div class="block block-4 block-bg-green">
-            <h3><%= s_('Dashboard|Registered commoners') %></h3>
-            <p class="number"><%= @nb_registered_commoners %></p>
-          </div>
+    <h2 class="mt-4"><%= s_('Dashboard|Visits overview') %></h2>
+    <div class="row">
+    <% @visits_overview.each do |title, value| %>
+      <div class="col-sm-3">
+        <div class="block block-bg-green">
+          <h3><%= title %></h3>
+          <p class="number"><%= value %></p>
         </div>
-      </section>
+      </div>
+    <% end %>
+    </div>
 
-      <section>
-        <h2><%= s_('Dashboard|Visits over time') %></h2>
-        <div class="block block-1">
+    <h2 class="mt-5"><%= s_('Dashboard|Visits over time') %></h2>
+    <div class="row">
+      <div class="col">
+        <div class="block">
           <div id="widgetIframe">
             <div id="widgetIframe"><iframe width="100%" height="350" src="https://piwik.commonfare.net/index.php?token_auth=anonymous&module=Widgetize&action=iframe&forceView=1&viewDataTable=graphEvolution&widget=1&moduleToWidgetize=VisitsSummary&actionToWidgetize=getEvolutionGraph&idSite=2&period=day&date=yesterday&disableLink=1&widget=1" scrolling="no" frameborder="0" marginheight="0" marginwidth="0"></iframe></div>
           </div>
         </div>
-      </section>
+      </div>
+    </div>
 
-      <!-- <section>
-        <h2>For specific topics</h2>
-        <ul class="tags">
-          <%# INSERIRE TAGS E COLLEGARE AI GRAFICI %>
-          <li class="tag active">Welfare</li>
-          <li class="tag">Basic Income</li>
-          <li class="tag">Good Practice</li>
-        </ul>
-        <div class="flex">
-          <div class="block block-2">
-            <%# INSERIRE DA MATOMO (?) %>
-            <div class="graph"></div>
-          </div>
-
-          <div class="block block-2">
-            <%# INSERIRE DA MATOMO (?) %>
-
+    <div class="row">
+      <div class="col-lg-6">
+        <h2><%= s_('Dashboard|Site search (last month)') %></h2>
+        <table class="table table-hover">
+          <thead class="thead-light">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col"><%= s_('Dashboard site search|Keyword') %></th>
+              <th scope="col"><%= s_('Dashboard site search|Visits') %></th>
+            </tr>
+          </thead>
+          <tbody>
+          <% @site_searches.each_with_index do |s, i| %>
+            <tr>
+              <th scope="row"><%= i + 1 %></th>
+              <td><%= s['label'] %></td>
+              <td><%= s['nb_visits'] %></td>
+            </tr>
+          <% end %>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-lg-6">
+        <h2><%= s_('Dashboard|Social graph') %></h2>
+        <div class="block">
+          <!-- INSERIRE GRAFICO STATICO -->
+          <div class="graph">
+            <h2 class="text-center pt-4">Coming soon</h2>
           </div>
         </div>
-      </section> -->
-
-      <div class="flex">
-        <section class="block-2">
-          <h2><%= s_('Dashboard|Site search (last month)') %></h2>
-          <table class="table table-hover">
-            <thead class="thead-light">
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col"><%= s_('Dashboard site search|Keyword') %></th>
-                <th scope="col"><%= s_('Dashboard site search|Visits') %></th>
-              </tr>
-            </thead>
-            <tbody>
-            <% @site_searches.each_with_index do |s, i| %>
-              <tr>
-                <th scope="row"><%= i + 1 %></th>
-                <td><%= s['label'] %></td>
-                <td><%= s['nb_visits'] %></td>
-              </tr>
-            <% end %>
-            </tbody>
-          </table>
-        </section>
-
-        <section class="block-2">
-          <h2><%= s_('Dashboard|Social graph') %></h2>
-          <div class="block">
-            <!-- INSERIRE GRAFICO STATICO -->
-            <div class="graph">
-              <h2 class="text-center pt-4">Coming soon</h2>
-            </div>
-          </div>
-        </section>
       </div>
     </div>
   </div>
-
-</main>
+</div>
 <% end %>

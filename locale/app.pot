@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0\n"
 "Report-Msgid-Bugs-To: contact@translation.io\n"
-"POT-Creation-Date: 2018-07-03 14:54+0200\n"
-"PO-Revision-Date: 2018-07-03 14:54+0200\n"
+"POT-Creation-Date: 2018-07-10 17:23+0200\n"
+"PO-Revision-Date: 2018-07-10 17:23+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -107,6 +107,22 @@ msgstr ""
 msgid "Message deleted"
 msgstr ""
 
+#: ../app/controllers/pages_controller.rb:45
+msgid "Dashboard|Visits"
+msgstr ""
+
+#: ../app/controllers/pages_controller.rb:46
+msgid "Dashboard|Unique visitors"
+msgstr ""
+
+#: ../app/controllers/pages_controller.rb:47
+msgid "Dashboard|Pageviews"
+msgstr ""
+
+#: ../app/controllers/pages_controller.rb:48
+msgid "Dashboard|Registered commoners"
+msgstr ""
+
 #: ../app/controllers/stories_controller.rb:142
 msgid "Story was successfully destroyed."
 msgstr ""
@@ -124,17 +140,17 @@ msgid "Story was successfully updated."
 msgstr ""
 
 #: ../app/controllers/transactions_controller.rb:56
-#: ../app/controllers/transactions_controller.rb:103
-#: ../app/controllers/transactions_controller.rb:145
-#: ../app/controllers/transactions_controller.rb:170
+#: ../app/controllers/transactions_controller.rb:106
+#: ../app/controllers/transactions_controller.rb:148
+#: ../app/controllers/transactions_controller.rb:173
 #: ../app/views/transactions/success.html.erb:7
 msgid "Transaction successful"
 msgstr ""
 
 #: ../app/controllers/transactions_controller.rb:61
-#: ../app/controllers/transactions_controller.rb:108
-#: ../app/controllers/transactions_controller.rb:150
-#: ../app/controllers/transactions_controller.rb:172
+#: ../app/controllers/transactions_controller.rb:111
+#: ../app/controllers/transactions_controller.rb:153
+#: ../app/controllers/transactions_controller.rb:175
 msgid "There has been a problem processing the transaction"
 msgstr ""
 
@@ -216,11 +232,11 @@ msgstr ""
 msgid "ValidationError|doesn't seem to be a valid place"
 msgstr ""
 
-#: ../app/models/transaction.rb:33
+#: ../app/models/transaction.rb:37
 msgid "can't be you"
 msgstr ""
 
-#: ../app/models/transaction.rb:39
+#: ../app/models/transaction.rb:43
 msgid "must accept %{currency_name}"
 msgstr ""
 
@@ -801,7 +817,7 @@ msgid "Footer|Privacy"
 msgstr ""
 
 #: ../app/views/layouts/_footer.html.erb:32
-msgid "Footer|Dashboard"
+msgid "Footer|Metrics dashboard"
 msgstr ""
 
 #: ../app/views/layouts/_navbar.html.erb:15
@@ -1013,7 +1029,7 @@ msgstr ""
 
 #: ../app/views/pages/dashboard.html.erb:1
 #: ../app/views/pages/dashboard.html.erb:11
-msgid "Title|Dashboard"
+msgid "Title|Metrics dashboard"
 msgstr ""
 
 #: ../app/views/pages/dashboard.html.erb:14
@@ -1024,43 +1040,27 @@ msgstr ""
 msgid "Dashboard|End date"
 msgstr ""
 
-#: ../app/views/pages/dashboard.html.erb:34
+#: ../app/views/pages/dashboard.html.erb:28
 msgid "Dashboard|Visits overview"
 msgstr ""
 
-#: ../app/views/pages/dashboard.html.erb:37
-msgid "Dashboard|Visits"
-msgstr ""
-
-#: ../app/views/pages/dashboard.html.erb:42
-msgid "Dashboard|Unique visitors"
-msgstr ""
-
-#: ../app/views/pages/dashboard.html.erb:47
-msgid "Dashboard|Pageviews"
-msgstr ""
-
-#: ../app/views/pages/dashboard.html.erb:52
-msgid "Dashboard|Registered commoners"
-msgstr ""
-
-#: ../app/views/pages/dashboard.html.erb:59
+#: ../app/views/pages/dashboard.html.erb:40
 msgid "Dashboard|Visits over time"
 msgstr ""
 
-#: ../app/views/pages/dashboard.html.erb:90
+#: ../app/views/pages/dashboard.html.erb:53
 msgid "Dashboard|Site search (last month)"
 msgstr ""
 
-#: ../app/views/pages/dashboard.html.erb:95
+#: ../app/views/pages/dashboard.html.erb:58
 msgid "Dashboard site search|Keyword"
 msgstr ""
 
-#: ../app/views/pages/dashboard.html.erb:96
+#: ../app/views/pages/dashboard.html.erb:59
 msgid "Dashboard site search|Visits"
 msgstr ""
 
-#: ../app/views/pages/dashboard.html.erb:112
+#: ../app/views/pages/dashboard.html.erb:74
 msgid "Dashboard|Social graph"
 msgstr ""
 

@@ -1,4 +1,4 @@
-main.dashboard {
+.dashboard-responsive {
   h1, h2, h3, h4, h5, h6 {
     font-weight: 500;
   }
@@ -27,142 +27,80 @@ main.dashboard {
     cursor: pointer;
   }
 
-  /* General elements */
-  .wrap {
-    max-width: 1280px;
-    margin: auto;
-  }
-  .flex {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  /* Top bar*/
-  .top-bar {
-    background-color: #e7472e;
-    height: 54px;
-  }
-    .top-bar button {
-      color: #fff;
-      margin: 7px;
-      /*border: 1px solid #fff;*/
-    }
-
   /* Header */
   .header {
     background-color: #fff;
     border-bottom: 1px solid rgba(72, 133, 128, 0.15);
   }
-    .header .wrap {
-      padding: 0 20px;
-    }
-    .header h1 {
-      padding: 35px 0 10px;
-    }
-    .date {
-      display: flex;
-      margin-right: -20px;
-    }
-    .date .date-filter {
-      border-left: 1px solid rgba(72, 133, 128, 0.15);
-      padding: 10px;
-    }
-    .date .date-filter:last-child {
-      border-right: 1px solid rgba(72, 133, 128, 0.15);
-    }
-    .date .date-filter label {
-      display: block;
-      padding-top: 35px;
-      font-weight: 500;
-    }
+  .header .wrap {
+    padding: 0 20px;
+  }
+  .header h1 {
+    padding: 35px 0 10px;
+  }
+  .date {
+    display: flex;
+    margin-right: -20px;
+  }
+  .date-filter {
+    border-left: 1px solid rgba(72, 133, 128, 0.15);
+    padding: 10px;
+  }
+  // .date-filter:last-child {
+  //   border-right: 1px solid rgba(72, 133, 128, 0.15);
+  // }
+  .date-filter label {
+    display: block;
+    padding-top: 35px;
+    font-weight: 500;
+  }
 
-  /* Content */
+  // Content
   .content {
-  }
-    .content .wrap {
-      padding: 20px;
-      background-color: #fff;
-    }
-  section {
-    margin: 30px 0 60px;
-  }
-    section h2 {
-      padding-bottom: 10px;
-    }
-    section .number {
+    padding: 20px;
+    background-color: #fff;
+    p.number {
       font-size: 300%;
       font-weight: 500;
       padding-top: 10px;
     }
-    section .graph {
-      min-height: 250px;
-      background-color: #f5f9f8;
+    .block {
+      background-color: #fff;
+      margin-top: 10px;
+      /*box-shadow: 0 1px 5px -2px rgba(0,0,0,0.15);*/
     }
-    section .tags {
-      display: flex;
-      padding-bottom: 10px;
+    .block-bg-green {
+      padding: 10px;
+      background-color: rgba(72, 133, 128, 0.075);
+      border-radius: 3px;
+      box-shadow: 0 1px 5px -1px rgba(0,0,0,.15);
+      transition: box-shadow .15s;
     }
-    section .tags .tag {
-      font-size: 1em;
-      text-transform: uppercase;
-      /*background-color: rgba(72, 133, 128, 0.15);*/
-      color: rgb(72, 133, 128);
-      color: #e7472e;
-      border: 1px solid #e7472e;
-      margin-right: 10px;
-      padding: 10px 15px;
-      border-radius: 1px;
-      transition: all .15s;
-      cursor: pointer;
+    .block-bg-green:hover {
+      box-shadow: 0 1px 5px -1px rgba(0,0,0,.35);
     }
-    section .tags .tag:hover {
-      color: #000;
-      border-color: #000;
-    }
-    section .tags .tag.active {
-      color: white;
+    .block-bg-orange {
       background-color: #e7472e;
-      border-color: #e7472e;
+      color: #fff;
     }
-    section .widget {
-      background-color: transparent !important;
-      border: none !important;
-      box-shadow: none !important;
-    }
-
-  .block {
-    background-color: #fff;
-    /*padding: 10px;*/
-    /*box-shadow: 0 1px 5px -2px rgba(0,0,0,0.15);*/
-  }
-  .block-bg-green {
-    padding: 10px;
-    background-color: rgba(72, 133, 128, 0.075);
-    border-radius: 3px;
-    box-shadow: 0 1px 5px -1px rgba(0,0,0,.15);
-    transition: box-shadow .15s;
-  }
-  .block-bg-green:hover {
-    box-shadow: 0 1px 5px -1px rgba(0,0,0,.35);
-  }
-  .block-bg-orange {
-    background-color: #e7472e;
-    color: #fff;
-  }
     .block-bg-green .number {
       color: rgb(72, 133, 128);
     }
+    .graph {
+      min-height: 250px;
+      background-color: #f5f9f8;
+    }
+  }
+}
 
-  .block-1 {
-    width: 100%;
-  }
-  .block-2 {
-    width: calc(50% - 12px);
-  }
-  .block-3 {
-    width: calc(33% - 20px);
-  }
-  .block-4 {
-    width: calc(25% - 20px);
+@media screen and (max-width: 575px) {
+  .dashboard-responsive .date-filter{
+    border: none;
+    padding: 0;
+    padding-left: 20px;
+    label {
+      display: inline-block;
+      padding-top: 0;
+    }
   }
 }
