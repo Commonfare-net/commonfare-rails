@@ -151,14 +151,8 @@ namespace :nda do
         start: transaction.created_at.strftime('%Y/%m/%d')
       )
     end
-    file_name = File.join(
-      host_tmp_path, (
-        Time.now.strftime('%Y%m%d%H%M%S') +
-        "_to_#{date.strftime('%F')}" +
-        "_commoners_objects.gexf"
-      )
-    )
-    file = File.new(file_name, "wb")
+    file_path = get_file_path(/.+:/.match(t.name).post_match, date)
+    file = File.new(file_path, "wb")
     file.write(graph.to_xml)
     file.close
   end
@@ -207,7 +201,8 @@ namespace :nda do
         label: "transaction_#{transaction.id}+date_start=#{transaction.created_at.strftime('%Y/%m/%d')}",
         start: transaction.created_at.strftime('%Y/%m/%d'))
     end
-    file = File.new(File.join(host_tmp_path, (Time.now.strftime('%Y%m%d%H%M%S') + "_commoners_graph.gexf")), "wb")
+    file_path = get_file_path(/.+:/.match(t.name).post_match)
+    file = File.new(file_path, "wb")
     file.write(graph.to_xml)
     file.close
   end
@@ -276,6 +271,17 @@ namespace :nda do
     edge = graph.edges.find {|edge| (edge.source == source && edge.target == target) || (edge.source == target && edge.target == source)}
     return edge if edge.present?
     graph.create_edge(source, target)
+  end
+
+  # Something like '/tmp/20180710104136_to_2018-07-10_development_commoners_graph.gexf'
+  def get_file_path(task_name, date = Time.zone.now)
+    file_name = [
+      Time.now.strftime('%Y%m%d%H%M%S'),
+      'to', date.strftime('%F'),
+      Rails.env,
+      task_name,
+    ].join('_').concat('.gexf')
+    File.join(host_tmp_path, file_name)
   end
 
 end
