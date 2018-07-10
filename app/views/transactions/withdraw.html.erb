@@ -22,7 +22,7 @@
       </div>
     </div>
 
-    <%= simple_form_for(@transaction, url: confirm_withdraw_commoner_transactions_path(@commoner, { from_wallet_id: @transaction.from_wallet.id, currency: @currency.id })) do |f| %>
+    <%= simple_form_for(@transaction, url: confirm_withdraw_commoner_transactions_path(@commoner, { from_wallet_id: @transaction.from_wallet.id, currency: @currency.id, reimburse: @reimbursement })) do |f| %>
       <%= f.error_notification %>
       <%= f.association :from_wallet, as: :hidden %>
       <div class="form-row">

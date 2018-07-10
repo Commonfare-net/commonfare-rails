@@ -17,7 +17,7 @@
         <p><%= @transaction.message %></p>
       </div>
     <% end %>
-    <%= simple_form_for(@transaction, url: create_withdraw_commoner_transactions_path(@commoner, currency: @currency)) do |f| %>
+    <%= simple_form_for(@transaction, url: create_withdraw_commoner_transactions_path(@commoner, { currency: @currency, reimburse: @reimbursement})) do |f| %>
       <%= f.association :from_wallet, as: :hidden %>
       <%= f.input :amount, as: :hidden %>
       <%= f.input :message, as: :hidden %>

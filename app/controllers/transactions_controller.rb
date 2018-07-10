@@ -82,6 +82,7 @@ class TransactionsController < ApplicationController
       @currency = @wallet.currency
       @group = @currency.group # @group is used in get_wallet_path for final withraws
       @transaction = @wallet.incoming_transactions.build(withdraw_params)
+      @reimbursement = params[:reimburse].present? && params[:reimburse] == 'true'
       authorize_action(__method__)
       respond_to do |format|
         if @transaction.valid?
@@ -97,6 +98,8 @@ class TransactionsController < ApplicationController
     @currency = @wallet.currency
     @transaction = @wallet.incoming_transactions.build(withdraw_params)
     @transaction.message = 'withdraw'
+    @reimbursement = params[:reimburse].present? && params[:reimburse] == 'true'
+    @transaction.message = 'reimbursement' if @reimbursement
     authorize_action(__method__)
     respond_to do |format|
       if @transaction.save
