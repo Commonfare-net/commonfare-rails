@@ -24,7 +24,7 @@ module PagesHelper
     when :commoners_voice
       s_('Home text|A collection of stories for, with and by people.')
     when :good_practice
-      s_('Home text|Bottom-up initiatives to connect and inspire.')
+      s_('Home text|Selected bottom-up initiatives to connect and inspire.')
     when :welfare_provision
       s_('Home text|Get informed about local welfare provisions.')
     end
