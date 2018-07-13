@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0\n"
 "Report-Msgid-Bugs-To: contact@translation.io\n"
-"POT-Creation-Date: 2018-07-12 08:16+0200\n"
-"PO-Revision-Date: 2018-07-12 08:16+0200\n"
+"POT-Creation-Date: 2018-07-13 16:22+0200\n"
+"PO-Revision-Date: 2018-07-13 16:22+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -508,8 +508,9 @@ msgstr ""
 msgid "Title|Create"
 msgstr ""
 
-#: ../app/views/discussions/_discussion.html.erb:6
-msgid "%{last_msg_time}, by"
+#: ../app/views/discussions/_discussion.html.erb:7
+#: ../app/views/listings/_listing.html.erb:20
+msgid "by <strong>%{commoner_name}</strong>"
 msgstr ""
 
 #: ../app/views/discussions/_discussion.html.erb:14
@@ -926,10 +927,6 @@ msgstr ""
 msgid "Remove"
 msgstr ""
 
-#: ../app/views/listings/_listing.html.erb:20
-msgid "by <strong>%{commoner_name}</strong>"
-msgstr ""
-
 #: ../app/views/listings/_share_modal.html.erb:6
 msgid "Modal title|Share this Listing"
 msgstr ""
@@ -1265,7 +1262,7 @@ msgstr ""
 msgid "Received from <strong>%{name}</strong>"
 msgstr ""
 
-#: ../app/views/transactions/_transaction.html.erb:42
+#: ../app/views/transactions/_transaction.html.erb:43
 msgid "Refund"
 msgstr ""
 

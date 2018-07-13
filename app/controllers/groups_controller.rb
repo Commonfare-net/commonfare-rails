@@ -24,7 +24,7 @@ class GroupsController < ApplicationController
     @pending_join_requests = JoinRequest.where(group: @group).pending.includes(:commoner)
     @new_join_request = @group.join_requests.build
 
-    @discussions = Discussion.where(group: @group).includes(:messages)
+    @discussions = Discussion.where(group: @group).includes(:messages).order(updated_at: :desc)
     @new_discussion = @group.discussions.build
     @currency = @group.currency || @group.build_currency
     @group_wallet = @group.wallet

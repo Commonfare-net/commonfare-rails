@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0\n"
 "Report-Msgid-Bugs-To: contact@translation.io\n"
-"POT-Creation-Date: 2018-07-12 08:16+0200\n"
-"PO-Revision-Date: 2018-07-12 08:16+0200\n"
+"POT-Creation-Date: 2018-07-13 16:22+0200\n"
+"PO-Revision-Date: 2018-07-13 16:22+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Croatian\n"
 "Language: hr\n"
@@ -166,15 +166,15 @@ msgstr "Anonimno"
 #: ../app/helpers/groups_helper.rb:3
 msgid "Button|Confirm and create profile"
 msgstr ""
-"Button| Potvrdi i stvori profil\n"
+"Potvrdi i stvori profil\n"
 
 #: ../app/helpers/groups_helper.rb:3
 msgid "Button|Create"
-msgstr "Button|Stvori"
+msgstr "Stvori"
 
 #: ../app/helpers/groups_helper.rb:7
 msgid "Button|Invite member"
-msgstr "Gumb | Pozovite člana"
+msgstr "Pozovite člana"
 
 #: ../app/helpers/groups_helper.rb:8
 msgid "Button|Share this group"
@@ -392,7 +392,7 @@ msgstr "Vidi sve"
 
 #: ../app/views/commoners/show.html.erb:79
 msgid "Button|Start a group"
-msgstr "Button| Pokrenite grupu"
+msgstr "Pokrenite grupu"
 
 #: ../app/views/commoners/show.html.erb:86
 msgid "No groups"
@@ -485,7 +485,7 @@ msgstr ""
 #: ../app/views/messages/_form.html.erb:5
 #: ../app/views/transactions/new.html.erb:22
 msgid "Button|Send"
-msgstr "Button| pošalji"
+msgstr "Pošalji"
 
 #: ../app/views/conversations/show.html.erb:1
 msgid "Conversation with %{commoner_name}"
@@ -532,6 +532,11 @@ msgid "%{last_msg_time}, by"
 msgstr ""
 "od\n"
 
+#: ../app/views/discussions/_discussion.html.erb:7
+#: ../app/views/listings/_listing.html.erb:20
+msgid "by <strong>%{commoner_name}</strong>"
+msgstr ""
+
 #: ../app/views/discussions/_discussion.html.erb:14
 msgid "message"
 msgid_plural "messages"
@@ -563,7 +568,7 @@ msgstr ""
 #: ../app/views/discussions/new.html.erb:17
 msgid "Button|Start discussion"
 msgstr ""
-"Button| Započnite raspravu\n"
+"Započnite raspravu\n"
 
 #: ../app/views/discussions/show.html.erb:5
 msgid "%{icon} Back to %{group_name}"
@@ -707,7 +712,7 @@ msgstr ""
 #: ../app/views/groups/leave.html.erb:21
 #: ../app/views/users/registrations/goodbye.html.erb:33
 msgid "Button|I've changed my mind"
-msgstr "Button | Promijenio/la sam mišljenje"
+msgstr "Promijenio/la sam mišljenje"
 
 #: ../app/views/groups/leave.html.erb:24
 msgid "Button|Go ahead, leave this group"
@@ -755,7 +760,7 @@ msgstr ""
 
 #: ../app/views/groups/show.html.erb:66
 msgid "Button|Start a new discussion"
-msgstr "Button| Započnite novu raspravu"
+msgstr "Započnite novu raspravu"
 
 #: ../app/views/groups/show.html.erb:73
 msgid "No discussions yet"
@@ -792,7 +797,7 @@ msgstr ""
 
 #: ../app/views/join_requests/new.html.erb:12
 msgid "Button|Request to join"
-msgstr "Button | Zahtjev za pridruživanje"
+msgstr "Zahtjev za pridruživanje"
 
 #: ../app/views/join_requests/show.html.erb:1
 #: ../app/views/join_requests/show.html.erb:4
@@ -805,12 +810,12 @@ msgstr ""
 
 #: ../app/views/join_requests/show.html.erb:15
 msgid "Button|Reject"
-msgstr "Button| Odbij"
+msgstr "Odbij"
 
 #: ../app/views/join_requests/show.html.erb:20
 msgid "Button|Accept"
 msgstr ""
-"Button| Prihvati\n"
+"Prihvati\n"
 
 #: ../app/views/layouts/_footer.html.erb:7
 msgid ""
@@ -951,10 +956,6 @@ msgstr ""
 msgid "Remove"
 msgstr ""
 
-#: ../app/views/listings/_listing.html.erb:20
-msgid "by <strong>%{commoner_name}</strong>"
-msgstr ""
-
 #: ../app/views/listings/_share_modal.html.erb:6
 msgid "Modal title|Share this Listing"
 msgstr ""
@@ -979,7 +980,7 @@ msgstr ""
 
 #: ../app/views/listings/commonplace.html.erb:41
 msgid "Button|New listing"
-msgstr "Button | Novi oglas"
+msgstr "Novi oglas"
 
 #: ../app/views/listings/commonplace.html.erb:54
 msgid "No listings"
@@ -991,7 +992,7 @@ msgstr ""
 
 #: ../app/views/listings/edit.html.erb:8
 msgid "Button|Edit listing"
-msgstr "Button| Izmjeni oglas"
+msgstr "Izmjeni oglas"
 
 #: ../app/views/listings/edit.html.erb:12
 msgid "Delete this listing"
@@ -1003,7 +1004,7 @@ msgstr ""
 
 #: ../app/views/listings/new.html.erb:8
 msgid "Button|Create listing"
-msgstr "Button| Napravi oglas"
+msgstr "Napravi oglas"
 
 #: ../app/views/listings/show.html.erb:63
 msgid "Added on %{date}"
@@ -1294,7 +1295,7 @@ msgstr ""
 msgid "Received from <strong>%{name}</strong>"
 msgstr ""
 
-#: ../app/views/transactions/_transaction.html.erb:42
+#: ../app/views/transactions/_transaction.html.erb:43
 msgid "Refund"
 msgstr ""
 
@@ -1329,7 +1330,7 @@ msgstr ""
 #: ../app/views/transactions/refund.html.erb:24
 msgid "Button|Confirm"
 msgstr ""
-"Button | potvrdi\n"
+"Potvrdi\n"
 
 #: ../app/views/transactions/confirm_top_up.html.erb:1
 msgid "Title|Confirm top_up"

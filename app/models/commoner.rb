@@ -28,7 +28,7 @@ class Commoner < ApplicationRecord
   def conversations
    Conversation.where(id: sender_conversation_ids)
         .or(Conversation.where(id: recipient_conversation_ids))
-        .order(created_at: :desc)
+        # .order(created_at: :desc)
   end
 
   # NOTE: uncomment to enable wallet

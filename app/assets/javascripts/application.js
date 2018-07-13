@@ -30,4 +30,8 @@
 //= require cookies_eu
 //= require search
 //= require cocoon
+//= require moment
+//= require moment/it.js
+//= require moment/hr.js
+//= require moment/nl.js
 //= require_tree .

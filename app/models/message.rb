@@ -7,6 +7,8 @@ class Message < ApplicationRecord
 
   validates :body, presence: true
 
+  default_scope { order(created_at: :asc) }
+
   alias_method :discussion, :messageable
   alias_method :conversation, :messageable
 

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0\n"
 "Report-Msgid-Bugs-To: contact@translation.io\n"
-"POT-Creation-Date: 2018-07-12 08:16+0200\n"
-"PO-Revision-Date: 2018-07-12 08:16+0200\n"
+"POT-Creation-Date: 2018-07-13 16:22+0200\n"
+"PO-Revision-Date: 2018-07-13 16:22+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Italian\n"
 "Language: it\n"
@@ -531,6 +531,11 @@ msgstr "Crea"
 msgid "%{last_msg_time}, by"
 msgstr "%{last_msg_time}, di"
 
+#: ../app/views/discussions/_discussion.html.erb:7
+#: ../app/views/listings/_listing.html.erb:20
+msgid "by <strong>%{commoner_name}</strong>"
+msgstr "di <strong>%{commoner_name}</strong>"
+
 #: ../app/views/discussions/_discussion.html.erb:14
 msgid "message"
 msgid_plural "messages"
@@ -961,10 +966,6 @@ msgstr "es. lezioni, babysitter, traduzioni, ecc."
 msgid "Remove"
 msgstr "Cancella"
 
-#: ../app/views/listings/_listing.html.erb:20
-msgid "by <strong>%{commoner_name}</strong>"
-msgstr "di <strong>%{commoner_name}</strong>"
-
 #: ../app/views/listings/_share_modal.html.erb:6
 msgid "Modal title|Share this Listing"
 msgstr "Condividi questa inserzione"
@@ -1308,7 +1309,7 @@ msgstr "Versato a <strong>%{name}</strong>"
 msgid "Received from <strong>%{name}</strong>"
 msgstr "Ricevuto da <strong>%{name}</strong>"
 
-#: ../app/views/transactions/_transaction.html.erb:42
+#: ../app/views/transactions/_transaction.html.erb:43
 msgid "Refund"
 msgstr "Rimborso"
 
