@@ -114,10 +114,13 @@ namespace :nda do
         label: "comment_#{comment.id}+date_start=#{comment.created_at.strftime('%Y/%m/%d')}"
       )
       # Edge between comment's author and commentable
+      # NOTE: this is conditioned because some Stories
+      #       may have a Group as author, and in this case the
+      #       commentable_node would be nil
       comment_author_node.connect_to(
         commentable_node,
         label: "comment_#{comment.id}+date_start=#{comment.created_at.strftime('%Y/%m/%d')}"
-      )
+      ) if commentable_node.present?
     end
     # Edges by conversations
     Conversation.where('created_at < ?', date).find_each do |conversation|
