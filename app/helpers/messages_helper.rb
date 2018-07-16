@@ -8,15 +8,14 @@ module MessagesHelper
     [message.messageable.group, message.messageable, message]
   end
 
-  # Not used anymore as Moment.js now takes care of dates
-  # Keeping it for future references
-  # def last_message_time(message)
-  #   format = :message_time
-  #   message_age = Time.now - message.created_at
-  #   format = '%A' if message_age < 1.week
-  #   format = '%H:%M' if message_age < 24.hours
-  #   l(message.created_at, format: format)
-  # end
+  # Used as 'backup' since Moment.js takes care of dates
+  def last_message_time(message)
+    format = :message_time
+    message_age = Time.now - message.created_at
+    format = '%A' if message_age < 1.week
+    format = '%H:%M' if message_age < 24.hours
+    l(message.created_at, format: format)
+  end
 
   def unread_class(message)
     'unread' if message.author != current_user.meta && !message.read

@@ -1,14 +1,14 @@
 function momentizeDates(locale) {
   $('.moment-long-date').each(function() {
     this.textContent = moment(
-      this.textContent,
+      this.dataset.serverDate,
       'YYYY-MM-DD HH:mm Z',
       locale
     ).format('lll');
   });
   $('.moment-variable-date').each(function() {
     givenDate = moment(
-      this.textContent,
+      this.dataset.serverDate,
       'YYYY-MM-DD HH:mm Z',
       locale
     )

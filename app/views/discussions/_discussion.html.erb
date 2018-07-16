@@ -3,7 +3,9 @@
     <div class="col col-lg-10">
       <h5 class="mt-2 mb-0"><%= link_to discussion.title, group_discussion_path(discussion.group, discussion) %></h5>
       <small>
-        <span class="text-muted moment-variable-date"><%= discussion.messages.last.created_at %></span>,
+        <span class="text-muted moment-variable-date" data-server-date="<%= discussion.messages.last.created_at %>">
+          <%= last_message_time(discussion.messages.last) %>
+        </span>,
         <%= (_('by <strong>%{commoner_name}</strong>') %{commoner_name: discussion.messages.last.author.name}).html_safe %>
       </small>
     </div>
