@@ -21,7 +21,7 @@
       <%= l(comment.created_at, format: :comment_timestamp) %>
     </small>
     <p class="comment-body">
-      <%= comment.body %>
+      <%= detect_links_in(comment.body) %>
     </p>
   </div>
 </div>

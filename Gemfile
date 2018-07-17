@@ -45,6 +45,11 @@ gem 'select2-rails'
 # Embed SVGs
 gem 'inline_svg'
 
+# Nice HTML for some text
+gem 'html-pipeline'
+gem 'rinku'
+gem 'sanitize'
+
 # Forms
 gem 'simple_form'
 gem 'cocoon'
