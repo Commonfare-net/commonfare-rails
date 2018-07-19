@@ -8,6 +8,8 @@
     <meta property="og:title" content='<%= @story.title %> | Commonfare' />
     <meta property="og:description" content='<%= og_description_for(@story) %>' />
     <meta property="og:image" content='<%= story_card_image_url(@story) %>' />
+    <meta property="og:image:width" content="318">
+    <meta property="og:image:height" content="150">
     <meta property="og:url" content='<%= request.url %>' />
     <!-- Twitter tags -->
     <meta name="twitter:card" content="<%= @story.images.any? ? 'summary_large_image' : 'summary' %>" />

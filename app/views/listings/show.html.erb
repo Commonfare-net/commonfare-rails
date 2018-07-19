@@ -7,6 +7,8 @@
     <meta property="og:title" content='<%= @listing.title %> | Commonfare' />
     <meta property="og:description" content='<%= og_description_for(@listing) %>' />
     <meta property="og:image" content='<%= listing_card_image_url(@listing) %>' />
+    <meta property="og:image:width" content="318">
+    <meta property="og:image:height" content="150">
     <meta property="og:url" content='<%= request.url %>' />
     <!-- Twitter tags -->
     <meta name="twitter:card" content="<%= @images.any? ? 'summary_large_image' : 'summary' %>" />
