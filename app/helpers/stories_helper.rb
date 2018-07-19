@@ -90,12 +90,19 @@ module StoriesHelper
   def og_description_for(obj)
     if obj.is_a? Story
       return strip_tags(obj.content).truncate(42) if obj.content.present?
-      return strip_tags(obj.content_json.join).truncate(42) if obj.content_json.present?
+      return strip_tags(first_item_text_from_content_json(obj.content_json)).truncate(42) if obj.content_json.present?
     elsif obj.is_a? Listing
       return obj.description.truncate(42) if obj.description.present?
     else
       ''
     end
+    ''
+  end
+
+  def first_item_text_from_content_json(content_json)
+    # see http://mitrev.net/ruby/2015/11/13/the-operator-in-ruby/
+    content = content_json.select {|item| item['type'] == 'text'}.first&.dig('content')
+    return content if content.present?
     ''
   end
 end
