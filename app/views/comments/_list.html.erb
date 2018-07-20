@@ -2,27 +2,29 @@
   <p class="text-muted"><%= _('There are no comments') %></p>
 <% end %>
 <% comments.each do |comment| %>
-<div class="col-md-8 col-lg-8 media comment-container">
-  <%= link_to author_path(comment) do %>
+<div class="col-md-8 col-lg-8">
+  <div class="media comment-container">
+    <%= link_to author_path(comment) do %>
     <%= image_tag author_image_for(comment), class: 'comment-avatar' %>
-  <% end %>
-  <div class="media-body ml-3">
-    <% if can? :edit, comment %>
-    <div class="dropdown d-inline float-right">
-      <%= link_to(fa_icon('ellipsis-h lg'), '#', id: 'commentDropdownMenuLink', data: { toggle: 'dropdown' }, aria: { haspopup: true, expanded: false } ) %>
-
-      <div class="dropdown-menu" aria-labelledby="commentDropdownMenuLink">
-        <%= link_to _('Edit comment'), edit_comment_path(comment), class: 'dropdown-item' %>
-      </div>
-    </div>
     <% end %>
-    <p class="comment-author"><%= author_link_for(comment) %></p>
-    <small class="text-muted">
-      <%= l(comment.created_at, format: :comment_timestamp) %>
-    </small>
-    <p class="comment-body">
-      <%= detect_links_in(comment.body) %>
-    </p>
+    <div class="media-body ml-3">
+      <% if can? :edit, comment %>
+      <div class="dropdown d-inline float-right">
+        <%= link_to(fa_icon('ellipsis-h lg'), '#', id: 'commentDropdownMenuLink', data: { toggle: 'dropdown' }, aria: { haspopup: true, expanded: false } ) %>
+
+        <div class="dropdown-menu" aria-labelledby="commentDropdownMenuLink">
+          <%= link_to _('Edit comment'), edit_comment_path(comment), class: 'dropdown-item' %>
+        </div>
+      </div>
+      <% end %>
+      <p class="comment-author"><%= author_link_for(comment) %></p>
+      <small class="text-muted">
+        <%= l(comment.created_at, format: :comment_timestamp) %>
+      </small>
+      <p class="comment-body dont-break-out">
+        <%= detect_links_in(comment.body) %>
+      </p>
+    </div>
   </div>
 </div>
 <% end %>
