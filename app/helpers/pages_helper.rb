@@ -29,4 +29,26 @@ module PagesHelper
       s_('Home text|Get informed about local welfare provisions.')
     end
   end
+
+  def piwik_image_url(start_date, end_date)
+    params = {
+      module: 'API',
+      method: 'ImageGraph.get',
+      idSite: ENV['PIWIK_SITE_ID'],
+      apiModule: 'VisitsSummary',
+      apiAction: 'get',
+      token_auth: 'anonymous',
+      graphType: 'evolution',
+      period: 'day',
+      date: "#{start_date},#{end_date}",
+      legendFontSize: 12,
+      fontSize: 12,
+      showLegend: 0,
+      colors: '#E7472E',
+      width: '976',
+      height: '250',
+      language: I18n.locale
+    }
+    ENV['PIWIK_URL'] + '/index.php?' + params.to_query
+  end
 end

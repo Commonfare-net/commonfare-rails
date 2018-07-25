@@ -39,12 +39,9 @@
 
     <h2 class="mt-5"><%= s_('Dashboard|Visits over time') %></h2>
     <div class="row">
-      <div class="col">
-        <div class="block">
-          <div class="alert alert-info text-center mt-2" role="alert">
-           <h4 class="alert-heading">Temporarily unavailable</h4>
-          </div>
-
+      <div class="col text-center">
+        <div class="block mb-5">
+          <%= image_tag piwik_image_url(@week_of.to_datetime.beginning_of_week.strftime('%F'), @week_of.to_datetime.end_of_week.strftime('%F')), alt: s_('Dashboard|Visits over time'), class: 'img-fluid' %>
         </div>
       </div>
     </div>
