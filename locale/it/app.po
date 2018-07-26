@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0\n"
 "Report-Msgid-Bugs-To: contact@translation.io\n"
-"POT-Creation-Date: 2018-07-13 16:22+0200\n"
-"PO-Revision-Date: 2018-07-13 16:22+0200\n"
+"POT-Creation-Date: 2018-07-25 17:19+0200\n"
+"PO-Revision-Date: 2018-07-25 17:18+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Italian\n"
 "Language: it\n"
@@ -109,21 +109,21 @@ msgstr "Messaggio inviato"
 msgid "Message deleted"
 msgstr "Messaggio cancellato"
 
-#: ../app/controllers/pages_controller.rb:45
+#: ../app/controllers/pages_controller.rb:47
 msgid "Dashboard|Visits"
 msgstr "Visite"
 
-#: ../app/controllers/pages_controller.rb:46
+#: ../app/controllers/pages_controller.rb:48
 msgid "Dashboard|Unique visitors"
 msgstr "Visite uniche"
 
-#: ../app/controllers/pages_controller.rb:47
+#: ../app/controllers/pages_controller.rb:49
 msgid "Dashboard|Pageviews"
 msgstr "Visualizzazioni pagina"
 
-#: ../app/controllers/pages_controller.rb:48
-msgid "Dashboard|Registered commoners"
-msgstr "Commoner registrati"
+#: ../app/controllers/pages_controller.rb:50
+msgid "Dashboard|Total registered commoners"
+msgstr "Commoner registrati (totale)"
 
 #: ../app/controllers/stories_controller.rb:142
 msgid "Story was successfully destroyed."
@@ -258,7 +258,7 @@ msgstr "Commenta in modo anonimo"
 msgid "There are no comments"
 msgstr "Non ci sono commenti"
 
-#: ../app/views/comments/_list.html.erb:15
+#: ../app/views/comments/_list.html.erb:16
 msgid "Edit comment"
 msgstr "Modifica il commento"
 
@@ -527,16 +527,12 @@ msgstr ""
 msgid "Title|Create"
 msgstr "Crea"
 
-#: ../app/views/discussions/_discussion.html.erb:6
-msgid "%{last_msg_time}, by"
-msgstr "%{last_msg_time}, di"
-
-#: ../app/views/discussions/_discussion.html.erb:7
+#: ../app/views/discussions/_discussion.html.erb:9
 #: ../app/views/listings/_listing.html.erb:20
 msgid "by <strong>%{commoner_name}</strong>"
 msgstr "di <strong>%{commoner_name}</strong>"
 
-#: ../app/views/discussions/_discussion.html.erb:14
+#: ../app/views/discussions/_discussion.html.erb:16
 msgid "message"
 msgid_plural "messages"
 msgstr[0] "messaggio"
@@ -1019,20 +1015,20 @@ msgstr "Nuova inserzione"
 msgid "Button|Create listing"
 msgstr "Crea inserzione"
 
-#: ../app/views/listings/show.html.erb:63
+#: ../app/views/listings/show.html.erb:65
 msgid "Added on %{date}"
 msgstr "Aggiunto il %{date}"
 
-#: ../app/views/listings/show.html.erb:69 ../app/views/stories/show.html.erb:58
+#: ../app/views/listings/show.html.erb:71 ../app/views/stories/show.html.erb:60
 msgid "Share"
 msgstr "Condividi"
 
-#: ../app/views/listings/show.html.erb:122
+#: ../app/views/listings/show.html.erb:124
 msgid "Get in touch"
 msgstr "Contatta"
 
-#: ../app/views/listings/show.html.erb:133
-#: ../app/views/stories/show.html.erb:102
+#: ../app/views/listings/show.html.erb:135
+#: ../app/views/stories/show.html.erb:104
 msgid "Comment"
 msgid_plural "Comments"
 msgstr[0] "Commento"
@@ -1071,35 +1067,48 @@ msgstr "Successivo"
 msgid "Title|Metrics dashboard"
 msgstr "Metriche"
 
-#: ../app/views/pages/dashboard.html.erb:14
+#: ../app/views/pages/dashboard.html.erb:13
+msgid "Dashboard|Not viewing correctly?"
+msgstr "Problemi di visualizzazione?"
+
+#: ../app/views/pages/dashboard.html.erb:13
+msgid ""
+"Dashboard|If you don't visualize some of the content, try to disable your Ad B"
+"locker for this website."
+msgstr ""
+"Se non vedi alcune parti di questa pagina, prova a disabilitare il tuo Ad Bock"
+"er."
+
+#: ../app/views/pages/dashboard.html.erb:17
 msgid "Dashboard|Start date"
 msgstr "Dal giorno"
 
-#: ../app/views/pages/dashboard.html.erb:20
+#: ../app/views/pages/dashboard.html.erb:23
 msgid "Dashboard|End date"
 msgstr "Al giorno"
 
-#: ../app/views/pages/dashboard.html.erb:28
+#: ../app/views/pages/dashboard.html.erb:31
 msgid "Dashboard|Visits overview"
 msgstr "Riepilogo visite"
 
-#: ../app/views/pages/dashboard.html.erb:40
+#: ../app/views/pages/dashboard.html.erb:43
+#: ../app/views/pages/dashboard.html.erb:47
 msgid "Dashboard|Visits over time"
 msgstr "Visite nel periodo"
 
-#: ../app/views/pages/dashboard.html.erb:53
-msgid "Dashboard|Site search (last month)"
-msgstr "Ricerche sul sito (mese scorso)"
+#: ../app/views/pages/dashboard.html.erb:54
+msgid "Dashboard|Site search"
+msgstr "Ricerche sul sito"
 
-#: ../app/views/pages/dashboard.html.erb:58
+#: ../app/views/pages/dashboard.html.erb:59
 msgid "Dashboard site search|Keyword"
 msgstr "Parola chiave"
 
-#: ../app/views/pages/dashboard.html.erb:59
+#: ../app/views/pages/dashboard.html.erb:60
 msgid "Dashboard site search|Visits"
 msgstr "Ricerche"
 
-#: ../app/views/pages/dashboard.html.erb:74
+#: ../app/views/pages/dashboard.html.erb:75
 msgid "Dashboard|Social graph"
 msgstr ""
 
@@ -1269,7 +1278,7 @@ msgstr "Salvo..."
 msgid "Stories by %{author_name}"
 msgstr "Storie di %{author_name}"
 
-#: ../app/views/stories/show.html.erb:92
+#: ../app/views/stories/show.html.erb:94
 msgid "Button|Share"
 msgstr "Condividi"
 
@@ -1309,7 +1318,7 @@ msgstr "Versato a <strong>%{name}</strong>"
 msgid "Received from <strong>%{name}</strong>"
 msgstr "Ricevuto da <strong>%{name}</strong>"
 
-#: ../app/views/transactions/_transaction.html.erb:43
+#: ../app/views/transactions/_transaction.html.erb:42
 msgid "Refund"
 msgstr "Rimborso"
 

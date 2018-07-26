@@ -14,17 +14,20 @@
         <label for="start-date"><%= s_('Dashboard|Start date') %></label>
         <!-- <input type="date" name="start-date" id="start-date" /> -->
         <!-- COLLEGARE DATA AI GRAFICI -->
-        <%= I18n.l(@week_of.to_datetime.beginning_of_week, format: :message_time) %>
+        <%= I18n.l(@start_date.to_datetime, format: :message_time) %>
       </div>
       <div class="col-sm-auto date-filter">
         <label for="end-date"><%= s_('Dashboard|End date') %></label>
         <!-- <input type="date" name="end-date" id="end-date" /> -->
         <!-- COLLEGARE DATA AI GRAFICI -->
-        <%= I18n.l(@week_of.to_datetime.end_of_week, format: :message_time) %>
+        <%= I18n.l(@end_date.to_datetime, format: :message_time) %>
       </div>
     </div>
   </header>
   <div class="content">
+    <small class="pl-1">
+      <%= link_to(s_('Dashboard|Not viewing correctly?'), 'javascript:;', data: { toggle: 'popover', trigger: 'focus', placement: 'bottom', content: s_("Dashboard|If you don't visualize some of the content, try to disable your Ad Blocker for this website.") }, tabindex: 0, class: 'help-popover') %>
+    </small>
     <h2 class="mt-4"><%= s_('Dashboard|Visits overview') %></h2>
     <div class="row">
     <% @visits_overview.each do |title, value| %>
@@ -41,14 +44,14 @@
     <div class="row">
       <div class="col text-center">
         <div class="block mb-5">
-          <%= image_tag piwik_image_url(@week_of.to_datetime.beginning_of_week.strftime('%F'), @week_of.to_datetime.end_of_week.strftime('%F')), alt: s_('Dashboard|Visits over time'), class: 'img-fluid' %>
+          <%= image_tag piwik_image_url(@start_date, @end_date), alt: s_('Dashboard|Visits over time'), class: 'img-fluid' %>
         </div>
       </div>
     </div>
 
     <div class="row">
       <div class="col-lg-6">
-        <h2><%= s_('Dashboard|Site search (last month)') %></h2>
+        <h2><%= s_('Dashboard|Site search') %></h2>
         <table class="table table-hover">
           <thead class="thead-light">
             <tr>
@@ -80,4 +83,12 @@
     </div>
   </div>
 </div>
+<% end %>
+
+<% content_for :scripts do %>
+  <script type="text/javascript">
+    $('.help-popover').popover({
+      container: 'body'
+    });
+  </script>
 <% end %>

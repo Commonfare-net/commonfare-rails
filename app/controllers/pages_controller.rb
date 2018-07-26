@@ -40,12 +40,14 @@ class PagesController < ApplicationController
       if File.exists? file_path
         data = YAML.load_file file_path
         @week_of          = data['week_of']
+        @start_date       = data['start_date']
+        @end_date         = data['end_date']
         @site_searches    = data['site_searches']
         @visits_overview = {
           s_('Dashboard|Visits')               => data['nb_visits'],
           s_('Dashboard|Unique visitors')      => data['nb_uniq_visitors'],
           s_('Dashboard|Pageviews')            => data['nb_pageviews'],
-          s_('Dashboard|Registered commoners') => data['nb_registered_commoners']
+          s_('Dashboard|Total registered commoners') => data['nb_registered_commoners']
         }
       else
         @no_file = true

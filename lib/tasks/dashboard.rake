@@ -3,12 +3,15 @@ namespace :dashboard do
   task :populate_yml => [:init_piwik] do
     site = Piwik::Site.load(ENV['PIWIK_SITE_ID'])
     date = 7.days.ago.strftime('%F')
-    visits_summary = site.visits.summary(period: 'week', date: date)
-    actions_summary = site.actions.summary(period: 'week', date: date)
+    start_date = 2.weeks.ago.beginning_of_week.strftime('%F')
+    end_date = 1.weeks.ago.end_of_week.strftime('%F')
+    date_span = "#{start_date},#{end_date}"
+    visits_summary = site.visits.summary(period: :range, date: date_span)
+    actions_summary = site.actions.summary(period: :range, date: date_span)
     site_searches = Piwik::Actions.getSiteSearchKeywords(
       idSite: ENV['PIWIK_SITE_ID'],
-      period: :month,
-      date: 1.month.ago.strftime('%F')
+      period: :range,
+      date: date_span
     )
     inactive_commoners_count = Currency.find(ENV['QR_CODE_ENABLED_CURRENCIES'].split(',').map(&:to_i))
       .map(&:group)
@@ -17,6 +20,8 @@ namespace :dashboard do
 
     data = {}
     data['week_of'] = date
+    data['start_date'] = start_date
+    data['end_date'] = end_date
     data['nb_registered_commoners'] = Commoner.count - inactive_commoners_count
     data['nb_uniq_visitors'] = visits_summary.nb_uniq_visitors
     data['nb_visits'] = visits_summary.nb_visits
