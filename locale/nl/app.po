@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0\n"
 "Report-Msgid-Bugs-To: contact@translation.io\n"
-"POT-Creation-Date: 2018-07-25 17:19+0200\n"
-"PO-Revision-Date: 2018-07-25 17:18+0200\n"
+"POT-Creation-Date: 2018-07-27 13:30+0200\n"
+"PO-Revision-Date: 2018-07-27 13:30+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Dutch\n"
 "Language: nl\n"
@@ -366,6 +366,7 @@ msgid "Stories"
 msgstr "Verhalen"
 
 #: ../app/views/commoners/show.html.erb:45
+#: ../app/views/layouts/_navbar.html.erb:100
 msgid "Groups"
 msgstr ""
 
@@ -904,6 +905,18 @@ msgstr "Tags"
 msgid "Listings"
 msgstr ""
 
+#: ../app/views/layouts/_navbar.html.erb:101
+msgid "Autocomplete category Title|Commoners"
+msgstr ""
+
+#: ../app/views/layouts/_navbar.html.erb:103
+msgid "Autocomplete help text|Suggested results"
+msgstr ""
+
+#: ../app/views/layouts/_navbar.html.erb:104
+msgid "Autocomplete help text|Press Enter to see more"
+msgstr ""
+
 #: ../app/views/layouts/application.html.erb:4
 msgid "Welcome"
 msgstr "Welkom"
@@ -1044,22 +1057,22 @@ msgstr ""
 msgid "Title|Metrics dashboard"
 msgstr ""
 
-#: ../app/views/pages/dashboard.html.erb:13
-msgid "Dashboard|Not viewing correctly?"
-msgstr ""
-
-#: ../app/views/pages/dashboard.html.erb:13
-msgid ""
-"Dashboard|If you don't visualize some of the content, try to disable your Ad B"
-"locker for this website."
-msgstr ""
-
-#: ../app/views/pages/dashboard.html.erb:17
+#: ../app/views/pages/dashboard.html.erb:14
 msgid "Dashboard|Start date"
 msgstr ""
 
-#: ../app/views/pages/dashboard.html.erb:23
+#: ../app/views/pages/dashboard.html.erb:20
 msgid "Dashboard|End date"
+msgstr ""
+
+#: ../app/views/pages/dashboard.html.erb:29
+msgid "Dashboard|Not viewing correctly?"
+msgstr ""
+
+#: ../app/views/pages/dashboard.html.erb:29
+msgid ""
+"Dashboard|If you don't visualize some of the content, try to disable your Ad B"
+"locker for this website."
 msgstr ""
 
 #: ../app/views/pages/dashboard.html.erb:31

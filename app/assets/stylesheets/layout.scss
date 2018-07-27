@@ -175,6 +175,12 @@ body {
     .easy-autocomplete-container {
       width: 200px !important;
       border-top: none;
+      .eac-menu-help {
+        @extend .bg-cf-secondary;
+        // text-align: center;
+        color: white;
+        padding: 0 5px;
+      }
       .eac-category {
         font-size: 1em;
         text-transform: uppercase;

@@ -10,6 +10,12 @@ class MainController < ApplicationController
     @listings = Listing.ransack(
       title_cont: params[:q]
     ).result(distinct: true).limit(5)
+    @groups = Group.ransack(
+      name_cont: params[:q]
+    ).result(distinct: true).limit(5)
+    @commoners = Commoner.ransack(
+      name_cont: params[:q]
+    ).result(distinct: true).limit(5)
   end
 
   def search
