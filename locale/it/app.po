@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0\n"
 "Report-Msgid-Bugs-To: contact@translation.io\n"
-"POT-Creation-Date: 2018-07-27 13:30+0200\n"
-"PO-Revision-Date: 2018-07-27 13:30+0200\n"
+"POT-Creation-Date: 2018-08-01 15:50+0200\n"
+"PO-Revision-Date: 2018-08-01 15:50+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Italian\n"
 "Language: it\n"
@@ -109,19 +109,19 @@ msgstr "Messaggio inviato"
 msgid "Message deleted"
 msgstr "Messaggio cancellato"
 
-#: ../app/controllers/pages_controller.rb:47
+#: ../app/controllers/pages_controller.rb:48
 msgid "Dashboard|Visits"
 msgstr "Visite"
 
-#: ../app/controllers/pages_controller.rb:48
+#: ../app/controllers/pages_controller.rb:49
 msgid "Dashboard|Unique visitors"
 msgstr "Visite uniche"
 
-#: ../app/controllers/pages_controller.rb:49
+#: ../app/controllers/pages_controller.rb:50
 msgid "Dashboard|Pageviews"
 msgstr "Visualizzazioni pagina"
 
-#: ../app/controllers/pages_controller.rb:50
+#: ../app/controllers/pages_controller.rb:51
 msgid "Dashboard|Total registered commoners"
 msgstr "Commoner registrati (totale)"
 
@@ -203,6 +203,26 @@ msgstr "Iniziative bottom-up per connettersi e ispirare."
 #: ../app/helpers/pages_helper.rb:29
 msgid "Home text|Get informed about local welfare provisions."
 msgstr "Rimani aggiornato sulle misure di welfare esistenti"
+
+#: ../app/helpers/pages_helper.rb:57
+msgid "Legend"
+msgstr "Legenda"
+
+#: ../app/helpers/pages_helper.rb:58
+msgid "Social graph legend|Commoner"
+msgstr "Commoner"
+
+#: ../app/helpers/pages_helper.rb:59
+msgid "Social graph legend|Story"
+msgstr "Storia"
+
+#: ../app/helpers/pages_helper.rb:60
+msgid "Social graph legend|Tag"
+msgstr "Tag"
+
+#: ../app/helpers/pages_helper.rb:61
+msgid "Social graph legend|Listing"
+msgstr "Inserzione"
 
 #: ../app/helpers/stories_helper.rb:13
 msgid "+ %{other_tags_count} more"
@@ -522,7 +542,7 @@ msgstr "Aggiorna"
 #: ../app/views/currencies/new.html.erb:1
 #: ../app/views/currencies/new.html.erb:4
 msgid "Title|New coin"
-msgstr ""
+msgstr "Nuova moneta"
 
 #: ../app/views/currencies/new.html.erb:11
 msgid "Title|Create"
@@ -1121,9 +1141,9 @@ msgstr "Parola chiave"
 msgid "Dashboard site search|Visits"
 msgstr "Ricerche"
 
-#: ../app/views/pages/dashboard.html.erb:75
+#: ../app/views/pages/dashboard.html.erb:76
 msgid "Dashboard|Social graph"
-msgstr ""
+msgstr "Grafico sociale"
 
 #: ../app/views/pages/home.html.erb:37
 msgid "Home carousel text|We have so much in Common"
@@ -1732,7 +1752,7 @@ msgstr "Portafoglio %{currency_name} di %{holder_name}"
 
 #: ../app/views/wallets/view.html.erb:6
 msgid "Title|Commoner name"
-msgstr ""
+msgstr "Nome del commoner"
 
 #: ../app/views/wallets/view.html.erb:17
 msgid "Show QR code"

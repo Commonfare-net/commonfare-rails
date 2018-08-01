@@ -53,24 +53,30 @@ module PagesHelper
   end
 
   def social_graph_legend
+    # Must set the variables here to make gettext find them
+    legend = _('Legend')
+    commoner = s_('Social graph legend|Commoner')
+    story = s_('Social graph legend|Story')
+    tag = s_('Social graph legend|Tag')
+    listing = s_('Social graph legend|Listing')
     <<-eos
-    <h6>Legend</h6>
+    <h6>#{legend}</h6>
     <ul class="list-unstyled">
       <li>
         <i class="fa fa-circle" aria-hidden="true" style="color: steelblue"></i>
-        #{s_('Social graph legend|Commoner')}
+        #{commoner}
       </li>
       <li>
         <i class="fa fa-circle" aria-hidden="true" style="color: red"></i>
-        #{s_('Social graph legend|Story')}
+        #{story}
       </li>
       <li>
         <i class="fa fa-circle" aria-hidden="true" style="color: lightgreen"></i>
-        #{s_('Social graph legend|Tag')}
+        #{tag}
       </li>
       <li>
         <i class="fa fa-circle" aria-hidden="true" style="color: purple"></i>
-        #{s_('Social graph legend|Listing')}
+        #{listing}
       </li>
     </ul>
     eos

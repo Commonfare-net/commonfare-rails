@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0\n"
 "Report-Msgid-Bugs-To: contact@translation.io\n"
-"POT-Creation-Date: 2018-07-27 13:30+0200\n"
-"PO-Revision-Date: 2018-07-27 13:30+0200\n"
+"POT-Creation-Date: 2018-08-01 15:50+0200\n"
+"PO-Revision-Date: 2018-08-01 15:50+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Dutch\n"
 "Language: nl\n"
@@ -107,19 +107,19 @@ msgstr ""
 msgid "Message deleted"
 msgstr ""
 
-#: ../app/controllers/pages_controller.rb:47
+#: ../app/controllers/pages_controller.rb:48
 msgid "Dashboard|Visits"
 msgstr ""
 
-#: ../app/controllers/pages_controller.rb:48
+#: ../app/controllers/pages_controller.rb:49
 msgid "Dashboard|Unique visitors"
 msgstr ""
 
-#: ../app/controllers/pages_controller.rb:49
+#: ../app/controllers/pages_controller.rb:50
 msgid "Dashboard|Pageviews"
 msgstr ""
 
-#: ../app/controllers/pages_controller.rb:50
+#: ../app/controllers/pages_controller.rb:51
 msgid "Dashboard|Total registered commoners"
 msgstr ""
 
@@ -200,6 +200,26 @@ msgstr ""
 
 #: ../app/helpers/pages_helper.rb:29
 msgid "Home text|Get informed about local welfare provisions."
+msgstr ""
+
+#: ../app/helpers/pages_helper.rb:57
+msgid "Legend"
+msgstr ""
+
+#: ../app/helpers/pages_helper.rb:58
+msgid "Social graph legend|Commoner"
+msgstr ""
+
+#: ../app/helpers/pages_helper.rb:59
+msgid "Social graph legend|Story"
+msgstr ""
+
+#: ../app/helpers/pages_helper.rb:60
+msgid "Social graph legend|Tag"
+msgstr ""
+
+#: ../app/helpers/pages_helper.rb:61
+msgid "Social graph legend|Listing"
 msgstr ""
 
 #: ../app/helpers/stories_helper.rb:13
@@ -1096,7 +1116,7 @@ msgstr ""
 msgid "Dashboard site search|Visits"
 msgstr ""
 
-#: ../app/views/pages/dashboard.html.erb:75
+#: ../app/views/pages/dashboard.html.erb:76
 msgid "Dashboard|Social graph"
 msgstr ""
 
