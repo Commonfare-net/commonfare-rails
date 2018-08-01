@@ -34,4 +34,5 @@
 //= require moment/it.js
 //= require moment/hr.js
 //= require moment/nl.js
+//= require d3
 //= require_tree .

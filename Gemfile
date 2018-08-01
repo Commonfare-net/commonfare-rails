@@ -44,6 +44,8 @@ gem 'trix'
 gem 'select2-rails'
 # Embed SVGs
 gem 'inline_svg'
+# Graphs and charts
+gem 'd3-rails'
 
 # Nice HTML for some text
 gem 'html-pipeline'
@@ -121,7 +123,7 @@ gem 'prawn-svg'
 gem 'prawn-rails'
 
 # Graphs (using a forked version)
-gem 'gexf', '~> 0.0.7', git: 'https://github.com/Commonfare-net/gexf.rb.git'
+gem 'gexf', '~> 0.0.7', git: 'https://github.com/Commonfare-net/gexf.rb.git', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

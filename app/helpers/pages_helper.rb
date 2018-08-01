@@ -51,4 +51,28 @@ module PagesHelper
     }
     ENV['PIWIK_URL'] + '/index.php?' + params.to_query
   end
+
+  def social_graph_legend
+    <<-eos
+    <h6>Legend</h6>
+    <ul class="list-unstyled">
+      <li>
+        <i class="fa fa-circle" aria-hidden="true" style="color: steelblue"></i>
+        #{s_('Social graph legend|Commoner')}
+      </li>
+      <li>
+        <i class="fa fa-circle" aria-hidden="true" style="color: red"></i>
+        #{s_('Social graph legend|Story')}
+      </li>
+      <li>
+        <i class="fa fa-circle" aria-hidden="true" style="color: lightgreen"></i>
+        #{s_('Social graph legend|Tag')}
+      </li>
+      <li>
+        <i class="fa fa-circle" aria-hidden="true" style="color: purple"></i>
+        #{s_('Social graph legend|Listing')}
+      </li>
+    </ul>
+    eos
+  end
 end

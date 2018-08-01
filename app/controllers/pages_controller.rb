@@ -36,9 +36,10 @@ class PagesController < ApplicationController
 
   def dashboard
     if params[:id] == 'dashboard'
-      file_path = File.join('/host_tmp', 'dashboard_data.yml')
-      if File.exists? file_path
-        data = YAML.load_file file_path
+      data_file_path = File.join('/host_tmp', 'dashboard_data.yml')
+      json_file_path = File.join('/host_tmp', 'dashboard_graph_data.json')
+      if File.exists? data_file_path
+        data = YAML.load_file data_file_path
         @week_of          = data['week_of']
         @start_date       = data['start_date']
         @end_date         = data['end_date']
@@ -49,6 +50,7 @@ class PagesController < ApplicationController
           s_('Dashboard|Pageviews')            => data['nb_pageviews'],
           s_('Dashboard|Total registered commoners') => data['nb_registered_commoners']
         }
+        @json_data = JSON.parse(File.read(json_file_path)).to_json.html_safe if File.exists? json_file_path
       else
         @no_file = true
       end

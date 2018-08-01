@@ -5,6 +5,7 @@ namespace :nda do
           USAGE: rake nda:commoners_objects_graph\[7\]
         """
   task :commoners_objects_graph, [:days_ago] => :environment do |t, args|
+    require 'gexf'
     date = Time.zone.now
     if args[:days_ago].present? && args[:days_ago].to_i > 0
       date = args[:days_ago].to_i.days.ago.end_of_week
@@ -161,6 +162,7 @@ namespace :nda do
   end
 
   task commoners_graph: :environment do |t|
+    require 'gefx'
     graph = GEXF::Graph.new
     graph.define_node_attribute(:commoner_id)
     graph.define_node_attribute(:commoner_name)

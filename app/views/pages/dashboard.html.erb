@@ -72,11 +72,16 @@
         </table>
       </div>
       <div class="col-lg-6">
-        <h2><%= s_('Dashboard|Social graph') %></h2>
+        <h2>
+          <%= s_('Dashboard|Social graph') %>
+          <%= link_to(fa_icon('question-circle fw', class: 'text-muted'), 'javascript:;', data: { toggle: 'popover', trigger: 'focus', placement: 'bottom', content: social_graph_legend }, tabindex: 0, class: 'help-popover') %>
+        </h2>
+        <!--Container for the network viz-->
         <div class="block">
           <!-- INSERIRE GRAFICO STATICO -->
-          <div class="graph">
-            <h2 class="text-center pt-4">Coming soon</h2>
+          <div class="graph border">
+            <svg class="bigvis"></svg>
+            <!-- <h2 class="text-center pt-4">Coming soon</h2> -->
           </div>
         </div>
       </div>
@@ -88,7 +93,12 @@
 <% content_for :scripts do %>
   <script type="text/javascript">
     $('.help-popover').popover({
-      container: 'body'
+      container: 'body',
+      html: true
     });
+
+    // These functions are in social_graph.js
+    initSocialGraph();
+    draw($.parseJSON('<%= @json_data %>'));
   </script>
 <% end %>

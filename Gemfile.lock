@@ -131,6 +131,8 @@ GEM
     crass (1.0.4)
     css_parser (1.6.0)
       addressable
+    d3-rails (5.5.0)
+      railties (>= 3.1)
     datetime_picker_rails (0.0.7)
       momentjs-rails (>= 2.8.1)
     debug_inspector (0.0.3)
@@ -416,6 +418,7 @@ DEPENDENCIES
   cocoon
   coffee-rails (~> 4.2)
   cookies_eu
+  d3-rails
   devise
   devise-i18n
   exception_handler (~> 0.7.7.0)
