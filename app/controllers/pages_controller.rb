@@ -21,9 +21,7 @@ class PagesController < ApplicationController
     if params[:id] == 'home'
       # Welfare provisions are already scoped in the current locale language
       @story_types_and_lists = {
-        commoners_voice: Story.published.commoners_voice
-          .includes(:commoner, :tags, :comments, :images, :translations)
-          .first(6),
+        commoners_voice: get_commoner_voices,
         good_practice: Story.published.good_practice
           .includes(:commoner, :tags, :comments, :images, :translations)
           .first(6),
@@ -55,5 +53,26 @@ class PagesController < ApplicationController
         @no_file = true
       end
     end
+  end
+
+  private
+  def get_featured_stories_ids
+    if ENV['FEATURED_STORIES'].present?
+      ids = ENV['FEATURED_STORIES'].split(',').map(&:to_i)
+      ids.select {|id| Story.published.commoners_voice.find_by(id: id).present?}
+    else
+      []
+    end
+  end
+
+  # Returns 6 commoners_voices with the featured ones on top
+  def get_commoner_voices
+    filtered_stories_ids = (
+      get_featured_stories_ids +
+      Story.published.commoners_voice
+        .first(12)
+        .pluck(:id)
+    ).uniq.first(6)
+    filtered_stories_ids.map { |id| Story.includes(:commoner, :tags, :comments, :images, :translations).find(id) }
   end
 end

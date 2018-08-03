@@ -127,12 +127,12 @@ export default class extends Component {
                   </span>
                 }
                 {/* Commented for Santarcangelo */}
-                {/* <a href={`/${locale}/stories/new`}>
+                <a href={`/${locale}/stories/new`}>
                   <FormattedMessage
                     id="create_old"
                     defaultMessage="Create using the old editor"
                   />
-                </a> */}
+                </a>
               </div>
             }
           </div>
