@@ -37,7 +37,7 @@ namespace :nda do
       story_author_node.connect_to(
         story_node,
         label: "create_#{story.id}+date_start=#{story.created_at.strftime('%Y/%m/%d')}"
-      )
+      ) unless story.anonymous?
     end
     Listing.where('created_at < ?', date).find_each do |listing|
       # Create the listing node
@@ -97,6 +97,7 @@ namespace :nda do
     end
     # Edges by comments
     Comment.where('created_at < ?', date).find_each do |comment|
+      next if comment.anonymous?
       comment_author_node = graph.nodes.find do |node|
         node[:type] == comment.author.class.class_name.downcase &&
         node[:id].to_i == comment.author.id
