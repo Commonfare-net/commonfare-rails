@@ -22,7 +22,7 @@ namespace :nda do
       commoner_node[:id] = commoner.id
       commoner_node[:name] = commoner.name
     end
-    Story.where('created_at < ?', date).find_each do |story|
+    Story.published.where('created_at < ?', date).find_each do |story|
       # Create the story node
       next if story.author.is_a?(Group)
       story_node = graph.create_node(label: "story_#{story.id}")
@@ -72,7 +72,7 @@ namespace :nda do
         )
       end
       # Create edges between the tag and the associated stories
-      tag.stories.where('created_at < ?', date).find_each do |story|
+      tag.stories.published.where('created_at < ?', date).find_each do |story|
         next if story.author.is_a?(Group)
         tag_story_node = graph.nodes.find do |node|
           node[:type] == story.class.class_name.downcase &&
