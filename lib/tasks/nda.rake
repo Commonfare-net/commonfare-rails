@@ -28,7 +28,7 @@ namespace :nda do
       story_node = graph.create_node(label: "story_#{story.id}")
       story_node[:type] = story.class.class_name.downcase
       story_node[:id] = story.id
-      story_node[:title] = story.title
+      story_node[:title] = get_story_title(story)
       # binding.pry
       story_author_node = graph.nodes.find do |node|
         node[:type] == story.author.class.class_name.downcase &&
@@ -277,6 +277,13 @@ namespace :nda do
     edge = graph.edges.find {|edge| (edge.source == source && edge.target == target) || (edge.source == target && edge.target == source)}
     return edge if edge.present?
     graph.create_edge(source, target)
+  end
+
+  # Sometimes stories have nil or '' title in the current with_locale
+  # so this method returns the title in the first available locale
+  def get_story_title(story)
+    return story.title if story.title.present?
+    story.title_translations.values.select(&:present?).first
   end
 
   # Something like '/tmp/20180710104136_to_2018-07-10_development_commoners_graph.gexf'
