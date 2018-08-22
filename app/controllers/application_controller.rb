@@ -70,7 +70,8 @@ class ApplicationController < ActionController::Base
     devise_controller? ||
       is_a?(::PagesController) ||
       is_a?(::MainController) ||
-      is_a?(::ExceptionHandler::ExceptionsController)
+      is_a?(::ExceptionHandler::ExceptionsController) ||
+      is_a?(::ActivityNotification::NotificationsController)
       # admin_controller?
   end
 

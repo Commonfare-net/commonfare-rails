@@ -1,5 +1,8 @@
 class Commoner < ApplicationRecord
   include Authenticatable
+
+  acts_as_notification_target devise_resource: :user # used by activity_notification
+
   mount_uploader :avatar, AvatarUploader
   has_many :images, inverse_of: :commoner # needed by cocoon for nested attributes
   has_many :stories

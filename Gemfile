@@ -118,6 +118,9 @@ gem 'social_wallet', '~> 1.0.1'
 # QR code
 gem 'rqrcode'
 
+# Notifications
+gem 'activity_notification'
+
 # PDF
 gem 'prawn-svg'
 gem 'prawn-rails'

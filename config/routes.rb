@@ -37,7 +37,9 @@ Rails.application.routes.draw do
     end
   end
 
+
   scope "(:locale)", locale: /en|it|nl|hr/ do
+    notify_to :commoners, with_devise: :users
     get :search, controller: :main
     get :autocomplete, controller: :main, defaults: { format: :json }
     resources :stories do
