@@ -35,8 +35,7 @@ class MessagesController < ApplicationController
     # @message is built by CanCanCan
     respond_to do |format|
       if @message.save
-        # @message.notify :commoners
-        ActivityNotification::Notification.notify :commoners, @message
+        @message.notify :commoners, group: @message.conversation if @message.in_conversation?
         format.html { redirect_to success_path, notice: _('Message sent') }
       else
         @new_message = @message

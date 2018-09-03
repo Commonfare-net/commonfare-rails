@@ -19,10 +19,13 @@ class Message < ApplicationRecord
 
   default_scope { order(created_at: :asc) }
 
-  alias_method :discussion, :messageable
-  alias_method :conversation, :messageable
-
-  # after_create :notify_counterpart
+  # Dynamically define alias and helper methods
+  %i(conversation discussion).each do |msgbl|
+    alias_method msgbl, :messageable
+    define_method("in_#{msgbl}?") do
+      messageable.is_a? msgbl.to_s.classify.constantize
+    end
+  end
 
   def to_s
     body
@@ -30,10 +33,6 @@ class Message < ApplicationRecord
 
   private
   def message_conversation_path
-    conversation_path(self.conversation)
-  end
-
-  def notify_counterpart
-    self.notify :commoners
+    conversation_path(self.conversation, locale: I18n.locale)
   end
 end
