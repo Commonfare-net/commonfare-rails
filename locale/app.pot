@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0\n"
 "Report-Msgid-Bugs-To: contact@translation.io\n"
-"POT-Creation-Date: 2018-08-01 15:50+0200\n"
-"PO-Revision-Date: 2018-08-01 15:50+0200\n"
+"POT-Creation-Date: 2018-09-03 17:48+0200\n"
+"PO-Revision-Date: 2018-09-03 17:48+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -99,27 +99,27 @@ msgstr ""
 msgid "You have left this group"
 msgstr ""
 
-#: ../app/controllers/messages_controller.rb:38
+#: ../app/controllers/messages_controller.rb:39
 msgid "Message sent"
 msgstr ""
 
-#: ../app/controllers/messages_controller.rb:66
+#: ../app/controllers/messages_controller.rb:67
 msgid "Message deleted"
 msgstr ""
 
-#: ../app/controllers/pages_controller.rb:48
+#: ../app/controllers/pages_controller.rb:46
 msgid "Dashboard|Visits"
 msgstr ""
 
-#: ../app/controllers/pages_controller.rb:49
+#: ../app/controllers/pages_controller.rb:47
 msgid "Dashboard|Unique visitors"
 msgstr ""
 
-#: ../app/controllers/pages_controller.rb:50
+#: ../app/controllers/pages_controller.rb:48
 msgid "Dashboard|Pageviews"
 msgstr ""
 
-#: ../app/controllers/pages_controller.rb:51
+#: ../app/controllers/pages_controller.rb:49
 msgid "Dashboard|Total registered commoners"
 msgstr ""
 
@@ -1049,11 +1049,15 @@ msgstr ""
 msgid "Tags with '%{search_term}'"
 msgstr ""
 
-#: ../app/views/pages/about.html.erb:69
+#: ../app/views/pages/about.html.erb:1 ../app/views/pages/old_about.html.erb:1
+msgid "About"
+msgstr ""
+
+#: ../app/views/pages/about.html.erb:70
 msgid "About page|Previous section"
 msgstr ""
 
-#: ../app/views/pages/about.html.erb:77
+#: ../app/views/pages/about.html.erb:78
 msgid "About page|Next section"
 msgstr ""
 
@@ -1125,10 +1129,6 @@ msgstr ""
 
 #: ../app/views/pages/home.html.erb:66
 msgid "Login"
-msgstr ""
-
-#: ../app/views/pages/old_about.html.erb:1
-msgid "About"
 msgstr ""
 
 #: ../app/views/shared/_back_and_save_buttons.html.erb:8
