@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0\n"
 "Report-Msgid-Bugs-To: contact@translation.io\n"
-"POT-Creation-Date: 2018-08-01 15:50+0200\n"
-"PO-Revision-Date: 2018-08-01 15:50+0200\n"
+"POT-Creation-Date: 2018-09-03 17:48+0200\n"
+"PO-Revision-Date: 2018-09-03 17:48+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Italian\n"
 "Language: it\n"
@@ -101,27 +101,27 @@ msgstr "La richiesta di adesione è stata respinta."
 msgid "You have left this group"
 msgstr "Hai lasciato questo gruppo"
 
-#: ../app/controllers/messages_controller.rb:38
+#: ../app/controllers/messages_controller.rb:39
 msgid "Message sent"
 msgstr "Messaggio inviato"
 
-#: ../app/controllers/messages_controller.rb:66
+#: ../app/controllers/messages_controller.rb:67
 msgid "Message deleted"
 msgstr "Messaggio cancellato"
 
-#: ../app/controllers/pages_controller.rb:48
+#: ../app/controllers/pages_controller.rb:46
 msgid "Dashboard|Visits"
 msgstr "Visite"
 
-#: ../app/controllers/pages_controller.rb:49
+#: ../app/controllers/pages_controller.rb:47
 msgid "Dashboard|Unique visitors"
 msgstr "Visite uniche"
 
-#: ../app/controllers/pages_controller.rb:50
+#: ../app/controllers/pages_controller.rb:48
 msgid "Dashboard|Pageviews"
 msgstr "Visualizzazioni pagina"
 
-#: ../app/controllers/pages_controller.rb:51
+#: ../app/controllers/pages_controller.rb:49
 msgid "Dashboard|Total registered commoners"
 msgstr "Commoner registrati (totale)"
 
@@ -1087,11 +1087,15 @@ msgstr "Gruppi trovati"
 msgid "Tags with '%{search_term}'"
 msgstr "Tag con '%{search_term}'"
 
-#: ../app/views/pages/about.html.erb:69
+#: ../app/views/pages/about.html.erb:1 ../app/views/pages/old_about.html.erb:1
+msgid "About"
+msgstr "About"
+
+#: ../app/views/pages/about.html.erb:70
 msgid "About page|Previous section"
 msgstr "Precedente"
 
-#: ../app/views/pages/about.html.erb:77
+#: ../app/views/pages/about.html.erb:78
 msgid "About page|Next section"
 msgstr "Successivo"
 
@@ -1168,10 +1172,6 @@ msgstr "Sei già registrato? <strong>%{login_link}</strong>"
 #: ../app/views/pages/home.html.erb:66
 msgid "Login"
 msgstr "Login"
-
-#: ../app/views/pages/old_about.html.erb:1
-msgid "About"
-msgstr "About"
 
 #: ../app/views/shared/_back_and_save_buttons.html.erb:8
 msgid "Button|Save"

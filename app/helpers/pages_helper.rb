@@ -5,7 +5,7 @@ module PagesHelper
   end
 
   def jumbotron_bg_image_path
-    image_path("jumbotron-bg-random-#{rand(2..2)}.jpg")
+    image_path("jumbotron-bg-random-#{rand(1..4)}.jpg")
   end
 
   def story_type_title(story_type)

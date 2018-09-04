@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0\n"
 "Report-Msgid-Bugs-To: contact@translation.io\n"
-"POT-Creation-Date: 2018-08-01 15:50+0200\n"
-"PO-Revision-Date: 2018-08-01 15:50+0200\n"
+"POT-Creation-Date: 2018-09-03 17:48+0200\n"
+"PO-Revision-Date: 2018-09-03 17:48+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Croatian\n"
 "Language: hr\n"
@@ -25,7 +25,7 @@ msgstr "Priložite datoteku"
 
 #: ../app/assets/javascripts/stories.js.erb:46
 msgid "Embed a video"
-msgstr "Embed video"
+msgstr "Ugradi video"
 
 #: ../app/controllers/application_controller.rb:16
 msgid "You have to log in to continue"
@@ -33,7 +33,7 @@ msgstr "Morate se prijaviti da biste nastavili"
 
 #: ../app/controllers/comments_controller.rb:49
 msgid "Comment was successfully created."
-msgstr "Komentar je uspješno prenesen."
+msgstr "Komentar je uspješno kreiran."
 
 #: ../app/controllers/comments_controller.rb:66
 msgid "Comment was successfully updated."
@@ -48,81 +48,84 @@ msgid ""
 "Conversation|Hello %{recipient_name}, I am intersted in %{listing_title} ( %{l"
 "isting_url} ) "
 msgstr ""
+"Pozdrav %{recipient_name}, zainteresiran sam za %{listing_title} (%{listing_ur"
+"l})"
 
 #: ../app/controllers/conversations_controller.rb:69
 msgid ""
 "Conversation|Hello, would you like to join the group %{group_name} ( %{group_u"
 "rl} )? "
 msgstr ""
+"Pozdrav, želite li se pridružiti grupi %{group_name} ( %{group_url} )?\n"
 
 #: ../app/controllers/conversations_controller.rb:71
 msgid "Conversation|Hello, "
-msgstr ""
+msgstr "Pozdrav,"
 
 #: ../app/controllers/currencies_controller.rb:20
 msgid "Currency was successfully created."
-msgstr ""
+msgstr "Valuta je uspješno kreirana"
 
 #: ../app/controllers/currencies_controller.rb:30
 msgid "Currency was successfully updated."
-msgstr ""
+msgstr "Valuta je uspješno ažurirana"
 
 #: ../app/controllers/discussions_controller.rb:36
 msgid "Discussion was successfully created."
-msgstr ""
+msgstr "Rasprava je uspješno kreirana."
 
 #: ../app/controllers/groups_controller.rb:74
 msgid "Activation complete!"
-msgstr ""
+msgstr "Aktivacija je dovršena!"
 
 #: ../app/controllers/groups_controller.rb:88
 msgid "Group was successfully created."
-msgstr ""
+msgstr "Grupa je uspješno stvorena."
 
 #: ../app/controllers/groups_controller.rb:102
 msgid "Group was successfully updated."
-msgstr ""
+msgstr "Grupa je uspješno ažurirana."
 
 #: ../app/controllers/join_requests_controller.rb:38
 msgid "Join request has been accepted."
-msgstr ""
+msgstr "Zahtjev za pristupanje je prihvaćen."
 
 #: ../app/controllers/join_requests_controller.rb:40
 #: ../app/controllers/join_requests_controller.rb:50
 msgid "There has been a problem with this join request"
-msgstr ""
+msgstr "Došlo je do problema s ovim zahtjevom za pridruživanje"
 
 #: ../app/controllers/join_requests_controller.rb:48
 msgid "Join request has been rejected."
-msgstr ""
+msgstr "Zahtjev za pristupanje je odbijen."
 
 #: ../app/controllers/memberships_controller.rb:60
 msgid "You have left this group"
-msgstr ""
+msgstr "Napustili ste ovu grupu"
 
-#: ../app/controllers/messages_controller.rb:38
+#: ../app/controllers/messages_controller.rb:39
 msgid "Message sent"
-msgstr ""
+msgstr "Poruka je poslana"
 
-#: ../app/controllers/messages_controller.rb:66
+#: ../app/controllers/messages_controller.rb:67
 msgid "Message deleted"
-msgstr ""
+msgstr "Poruka je izbrisana"
+
+#: ../app/controllers/pages_controller.rb:46
+msgid "Dashboard|Visits"
+msgstr "Posjeta"
+
+#: ../app/controllers/pages_controller.rb:47
+msgid "Dashboard|Unique visitors"
+msgstr "Jedinstvenih posjeta"
 
 #: ../app/controllers/pages_controller.rb:48
-msgid "Dashboard|Visits"
-msgstr ""
+msgid "Dashboard|Pageviews"
+msgstr "Pregleda stranica"
 
 #: ../app/controllers/pages_controller.rb:49
-msgid "Dashboard|Unique visitors"
-msgstr ""
-
-#: ../app/controllers/pages_controller.rb:50
-msgid "Dashboard|Pageviews"
-msgstr ""
-
-#: ../app/controllers/pages_controller.rb:51
 msgid "Dashboard|Total registered commoners"
-msgstr ""
+msgstr "Ukupno registriranih commonera"
 
 #: ../app/controllers/stories_controller.rb:142
 msgid "Story was successfully destroyed."
@@ -130,11 +133,11 @@ msgstr "Priča je uspješno izbrisana."
 
 #: ../app/controllers/stories_controller.rb:157
 msgid "Could not publish this story"
-msgstr ""
+msgstr "Nije bilo moguće objaviti ovu priču"
 
 #: ../app/controllers/stories_controller.rb:220
 msgid "Story was successfully created."
-msgstr "Priča je uspješno prenesena."
+msgstr "Priča je uspješno stvorena."
 
 #: ../app/controllers/stories_controller.rb:235
 msgid "Story was successfully updated."
@@ -146,14 +149,14 @@ msgstr "Priča je uspješno ažururana."
 #: ../app/controllers/transactions_controller.rb:173
 #: ../app/views/transactions/success.html.erb:7
 msgid "Transaction successful"
-msgstr ""
+msgstr "Transakcija je uspješna"
 
 #: ../app/controllers/transactions_controller.rb:61
 #: ../app/controllers/transactions_controller.rb:111
 #: ../app/controllers/transactions_controller.rb:153
 #: ../app/controllers/transactions_controller.rb:175
 msgid "There has been a problem processing the transaction"
-msgstr ""
+msgstr "Došlo je do problema prilikom obrade transakcije"
 
 #: ../app/helpers/application_helper.rb:44
 msgid "You"
@@ -179,50 +182,51 @@ msgstr "Pozovite člana"
 #: ../app/helpers/groups_helper.rb:8
 msgid "Button|Share this group"
 msgstr ""
+"Podijeli ovu grupu\n"
 
 #: ../app/helpers/pages_helper.rb:14
 msgid "Home title|Commoners Voices"
-msgstr ""
+msgstr "Glasovi Commonera"
 
 #: ../app/helpers/pages_helper.rb:16
 msgid "Home title|Good Practices"
-msgstr ""
+msgstr "Dobre prakse"
 
 #: ../app/helpers/pages_helper.rb:18
 msgid "Home title|Public Benefits"
-msgstr ""
+msgstr "Javne koristi"
 
 #: ../app/helpers/pages_helper.rb:25
 msgid "Home text|A collection of stories for, with and by people."
-msgstr ""
+msgstr "Zbirka priča za ljude, sa ljudima i od ljudi"
 
 #: ../app/helpers/pages_helper.rb:27
 msgid "Home text|Selected bottom-up initiatives to connect and inspire."
-msgstr ""
+msgstr "Odabrane bottom-up inicijative za povezivanje i nadahnuće."
 
 #: ../app/helpers/pages_helper.rb:29
 msgid "Home text|Get informed about local welfare provisions."
-msgstr ""
+msgstr "Informirajte se o lokalnim zakonima o socijalnoj pomoći"
 
 #: ../app/helpers/pages_helper.rb:57
 msgid "Legend"
-msgstr ""
+msgstr "Legenda"
 
 #: ../app/helpers/pages_helper.rb:58
 msgid "Social graph legend|Commoner"
-msgstr ""
+msgstr "Commoner"
 
 #: ../app/helpers/pages_helper.rb:59
 msgid "Social graph legend|Story"
-msgstr ""
+msgstr "Priča"
 
 #: ../app/helpers/pages_helper.rb:60
 msgid "Social graph legend|Tag"
-msgstr ""
+msgstr "Oznaka"
 
 #: ../app/helpers/pages_helper.rb:61
 msgid "Social graph legend|Listing"
-msgstr ""
+msgstr "Oglas"
 
 #: ../app/helpers/stories_helper.rb:13
 msgid "+ %{other_tags_count} more"
@@ -240,31 +244,31 @@ msgstr "Odredbe socijalne skrbi"
 
 #: ../app/helpers/stories_helper.rb:78
 msgid "Commoners Voices"
-msgstr ""
+msgstr "Glasovi Commonera"
 
 #: ../app/helpers/transactions_helper.rb:12
 msgid "No message"
-msgstr ""
+msgstr "Nema poruka"
 
 #: ../app/models/currency.rb:35
 msgid "not a valid SWAPI endpoint"
-msgstr ""
+msgstr "nije valjana SWAPI krajnja točka"
 
 #: ../app/models/listing.rb:19
 msgid "ValidationError|doesn't seem to be a valid place"
-msgstr ""
+msgstr "ValidationError|Ne čini se valjanim mjestom"
 
 #: ../app/models/transaction.rb:37
 msgid "can't be you"
-msgstr ""
+msgstr "ne možeš biti ti"
 
 #: ../app/models/transaction.rb:43
 msgid "must accept %{currency_name}"
-msgstr ""
+msgstr "mora prihvaćatii %{currency_name}"
 
 #: ../app/models/wallet.rb:36
 msgid "Unregistered commoner"
-msgstr ""
+msgstr "Neregistrirani Commoner"
 
 #: ../app/views/comments/_fields.html.erb:2
 msgid "Add a comment"
@@ -272,11 +276,11 @@ msgstr "Dodajte komentar"
 
 #: ../app/views/comments/_fields.html.erb:3
 msgid "Comment anonymously"
-msgstr "Komentirati anonimno"
+msgstr "Komentirajte anonimno"
 
 #: ../app/views/comments/_list.html.erb:2
 msgid "There are no comments"
-msgstr ""
+msgstr "Nema komentara"
 
 #: ../app/views/comments/_list.html.erb:16
 msgid "Edit comment"
@@ -330,7 +334,7 @@ msgstr "Mora biti jedinstveno"
 
 #: ../app/views/commoners/_form.html.erb:11
 msgid "Your avatar"
-msgstr ""
+msgstr "Vaš avatar"
 
 #: ../app/views/commoners/_form.html.erb:12
 #: ../app/views/groups/_fields.html.erb:7
@@ -340,23 +344,23 @@ msgstr "Kvadratne slike izgledaju bolje ✨"
 #: ../app/views/commoners/_form.html.erb:16
 #: ../app/views/listings/_fields.html.erb:23
 msgid "Description"
-msgstr ""
+msgstr "Opis"
 
 #: ../app/views/commoners/_form.html.erb:17
 msgid "Few words about yourself"
-msgstr ""
+msgstr "Nekoliko riječi o sebi"
 
 #: ../app/views/commoners/_form.html.erb:19
 msgid "Interests"
-msgstr ""
+msgstr "Interesi"
 
 #: ../app/views/commoners/_form.html.erb:21
 msgid "Use comma or press Enter to separate interests"
-msgstr ""
+msgstr "Koristite zarez ili pritisnite Enter za odjeljivanje interesa"
 
 #: ../app/views/commoners/_form.html.erb:31
 msgid "Skills, services or goods"
-msgstr ""
+msgstr "Vještine, usluge ili roba"
 
 #: ../app/views/commoners/edit.html.erb:1
 #: ../app/views/commoners/edit.html.erb:4
@@ -369,11 +373,11 @@ msgstr "Uredi email ili lozinku"
 
 #: ../app/views/commoners/show.html.erb:19
 msgid "Continue conversation"
-msgstr ""
+msgstr "Nastavite razgovor"
 
 #: ../app/views/commoners/show.html.erb:21
 msgid "Start a conversation"
-msgstr ""
+msgstr "Započnite razgovor"
 
 #: ../app/views/commoners/show.html.erb:24
 msgid "Button|Edit profile"
@@ -381,7 +385,7 @@ msgstr "Uredite profil"
 
 #: ../app/views/commoners/show.html.erb:32
 msgid "Go to %{currency_name} Wallet"
-msgstr ""
+msgstr "Odite na %{currency_name} Novčanik"
 
 #: ../app/views/commoners/show.html.erb:42 ../app/views/groups/show.html.erb:43
 #: ../app/views/layouts/_navbar.html.erb:97
@@ -391,11 +395,11 @@ msgstr "Priče"
 #: ../app/views/commoners/show.html.erb:45
 #: ../app/views/layouts/_navbar.html.erb:100
 msgid "Groups"
-msgstr ""
+msgstr "Grupe"
 
 #: ../app/views/commoners/show.html.erb:49 ../app/views/groups/show.html.erb:55
 msgid "Requests"
-msgstr ""
+msgstr "Zahtjevi"
 
 #: ../app/views/commoners/show.html.erb:53 ../app/views/groups/show.html.erb:59
 msgid "Activities"
@@ -409,7 +413,7 @@ msgstr "Još nema priča"
 #: ../app/views/commoners/show.html.erb:73 ../app/views/pages/home.html.erb:85
 #: ../app/views/wallets/show.html.erb:28 ../app/views/wallets/view.html.erb:41
 msgid "See all"
-msgstr "Vidi sve"
+msgstr "Pogledaj sve"
 
 #: ../app/views/commoners/show.html.erb:79
 msgid "Button|Start a group"
@@ -417,11 +421,11 @@ msgstr "Pokrenite grupu"
 
 #: ../app/views/commoners/show.html.erb:86
 msgid "No groups"
-msgstr ""
+msgstr "Nema grupa"
 
 #: ../app/views/commoners/show.html.erb:100
 msgid "No requests"
-msgstr ""
+msgstr "Nema zahtjeva"
 
 #: ../app/views/commoners/show.html.erb:111
 #: ../app/views/groups/show.html.erb:134
@@ -441,9 +445,9 @@ msgid ""
 "do it now, just click on it!"
 msgstr ""
 "Prije nego što nastavite, obratite pozornost da je vaše privremeno ime na Comm"
-"onfare.net <strong>%{name}</strong>. Ovo je nasumično izabrano ime nastalo kak"
-"o bismo zaštitili vašu privatnost. Možete promjeniti vaše ime bilo kada. Ako t"
-"o želite učiniti sada, pritisnite ime!"
+"onfare.net <strong>%{name}</strong>. Ovo je nasumično izabrano ime stvoreno ka"
+"ko bismo zaštitili vašu privatnost. Vaše ime možete promjeniti bilo kada. Ako "
+"to želite učiniti sada, kliknite na ime!"
 
 #: ../app/views/commoners/welcome.html.erb:9
 msgid ""
@@ -464,7 +468,7 @@ msgstr ""
 
 #: ../app/views/commoners/welcome.html.erb:9
 msgid "Welcome page text|share a Story"
-msgstr "sodjeli svoju priču"
+msgstr "Podijeli svoju priču"
 
 #: ../app/views/commoners/welcome.html.erb:12
 msgid ""
@@ -473,7 +477,8 @@ msgid ""
 "ds, expertise, etc."
 msgstr ""
 "Uskoro ćete biti u mogućnosti kreirati stvarne odnose sa drugim Commoners-ima "
-"dijeleći (i primajući) ne samo vaše iskustvo nego i vrijeme, robu i stručnost."
+"dijeleći (i primajući) ne samo vaše iskustvo nego i vrijeme, robu, stručnost i"
+"td."
 
 #: ../app/views/commoners/welcome.html.erb:15
 msgid ""
@@ -481,26 +486,26 @@ msgid ""
 "actively working on it, please visit our <strong>%{link_to_about_page}</strong"
 ">."
 msgstr ""
-"Ukoliko želite znati više o tome što je Commonfare.net i tko aktivno radi na n"
-"jemu, molimo da posjetite <strong>%{link_to_about_page}</strong>."
+"Ukoliko želite saznati više o tome što je Commonfare.net i tko aktivno radi na"
+" njemu, molimo da posjetite <strong>%{link_to_about_page}</strong>."
 
 #: ../app/views/commoners/welcome.html.erb:15
 msgid "Welcome page text|About page"
-msgstr "o stranici"
+msgstr "O stranici"
 
 #: ../app/views/conversations/index.html.erb:1
 #: ../app/views/conversations/index.html.erb:6
 msgid "Title|My conversations"
-msgstr ""
+msgstr "Moji razgovori"
 
 #: ../app/views/conversations/index.html.erb:15
 msgid "No conversations"
-msgstr ""
+msgstr "Nema razgovora"
 
 #: ../app/views/conversations/new.html.erb:1
 #: ../app/views/conversations/new.html.erb:4
 msgid "Title|Start a conversation"
-msgstr ""
+msgstr "Započnite razgovor"
 
 #: ../app/views/conversations/new.html.erb:17
 #: ../app/views/messages/_form.html.erb:5
@@ -515,54 +520,54 @@ msgstr "Razgovor s %{commoner_name}"
 #: ../app/views/conversations/show.html.erb:5
 msgid "%{icon} Back to My conversations"
 msgstr ""
-"%{icon} Natrag na moje razgovore\n"
+"%{icon} Povratak na Moje razgovore\n"
 
 #: ../app/views/currencies/_fields.html.erb:1
 msgid "Name"
-msgstr ""
+msgstr "Ime"
 
 #: ../app/views/currencies/_fields.html.erb:2
 msgid "Code"
-msgstr ""
+msgstr "Kodirati"
 
 #: ../app/views/currencies/edit.html.erb:1
 #: ../app/views/currencies/edit.html.erb:4
 msgid "Title|Edit currency"
-msgstr ""
+msgstr "Uredi valutu"
 
 #: ../app/views/currencies/edit.html.erb:6
 #: ../app/views/currencies/new.html.erb:6
 msgid "for group %{group_name}"
-msgstr ""
+msgstr "za grupu %{group_name}"
 
 #: ../app/views/currencies/edit.html.erb:11
 msgid "Title|Update"
-msgstr ""
+msgstr "Ažuriranje"
 
 #: ../app/views/currencies/new.html.erb:1
 #: ../app/views/currencies/new.html.erb:4
 msgid "Title|New coin"
-msgstr ""
+msgstr "Novi coin"
 
 #: ../app/views/currencies/new.html.erb:11
 msgid "Title|Create"
-msgstr ""
+msgstr "Stvori"
 
 #: ../app/views/discussions/_discussion.html.erb:9
 #: ../app/views/listings/_listing.html.erb:20
 msgid "by <strong>%{commoner_name}</strong>"
-msgstr ""
+msgstr "od <strong>%{commoner_name}</strong>"
 
 #: ../app/views/discussions/_discussion.html.erb:16
 msgid "message"
 msgid_plural "messages"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "poruka"
+msgstr[1] "poruke"
+msgstr[2] "poruke"
 
 #: ../app/views/discussions/new.html.erb:1
 msgid "Title|Start a discussion"
-msgstr ""
+msgstr "Započnite raspravu"
 
 #: ../app/views/discussions/new.html.erb:4
 msgid "Title|New discussion in %{group_name}"
@@ -571,24 +576,23 @@ msgstr ""
 #: ../app/views/discussions/new.html.erb:8
 #: ../app/views/listings/_fields.html.erb:3
 msgid "Title"
-msgstr ""
+msgstr "Naslov"
 
 #: ../app/views/discussions/new.html.erb:8
 msgid "What's up?"
-msgstr ""
+msgstr "Što ima?"
 
 #: ../app/views/discussions/new.html.erb:13
 msgid "Enter the first message"
-msgstr ""
+msgstr "Unesite prvu poruku"
 
 #: ../app/views/discussions/new.html.erb:17
 msgid "Button|Start discussion"
-msgstr ""
-"Započnite raspravu\n"
+msgstr "Započnite raspravu"
 
 #: ../app/views/discussions/show.html.erb:5
 msgid "%{icon} Back to %{group_name}"
-msgstr "%{icon} Natrag na %{group_name}"
+msgstr "%{icon} Povratak na %{group_name}"
 
 #: ../app/views/exception_handler/exceptions/show.html.erb:1
 msgid "Error"
@@ -604,7 +608,7 @@ msgstr "Došlo je do pogreške prilikom posjete ovoj stranici."
 
 #: ../app/views/exception_handler/exceptions/show.html.erb:17
 msgid "Error code: %{err_code}"
-msgstr "Kod pogreške"
+msgstr "Kod greške: %{err_code}"
 
 #: ../app/views/exception_handler/exceptions/show.html.erb:22
 msgid "Homepage"
@@ -613,19 +617,21 @@ msgstr "Početna stranica"
 #: ../app/views/groups/_group.html.erb:10
 msgid "member"
 msgid_plural "members"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "član"
+msgstr[1] "članovi"
+msgstr[2] "članovi"
 
 #: ../app/views/groups/_invite_modal.html.erb:6
 msgid "Title|Invite member"
-msgstr ""
+msgstr "Pozovite člana"
 
 #: ../app/views/groups/_invite_modal.html.erb:13
 msgid ""
 "To invite a new member to this group or to recommend this group to someone, ju"
 "st copy the URL of the group and paste it wherever you want."
 msgstr ""
+"Da biste pozvali novog člana u ovu grupu ili ju nekome preporučili, jednostavn"
+"o kopirajte URL grupe i zalijepite ga gdje god želite."
 
 #: ../app/views/groups/_invite_modal.html.erb:18
 #: ../app/views/listings/_share_modal.html.erb:18
@@ -636,24 +642,24 @@ msgstr "Kopirajte i zatvorite"
 #: ../app/views/groups/affiliation.html.erb:1
 #: ../app/views/groups/affiliation.html.erb:4
 msgid "Activate account"
-msgstr ""
+msgstr "Aktivirajte račun"
 
 #: ../app/views/groups/affiliation.html.erb:9
 msgid "Activate account form|Choose your name on Commonfare.net"
-msgstr ""
+msgstr "Odaberite svoje ime na Commonfare.net"
 
 #: ../app/views/groups/affiliation.html.erb:13
 msgid "Activate account form|Enter your email address"
-msgstr ""
+msgstr "Unesite svoju e-mail adresu"
 
 #: ../app/views/groups/affiliation.html.erb:14
 msgid "Activate account form|Enter your new password"
-msgstr ""
+msgstr "Unesite novu lozinku"
 
 #: ../app/views/groups/affiliation.html.erb:19
 #: ../app/views/users/registrations/new.html.erb:13
 msgid "By joining you agree to our %{tos} and %{privacy}."
-msgstr "Pridruživanjem se slažete sa našim %{tos} i %{privacy}."
+msgstr "Pristupanjem pristajete na naše %{tos} i %{privacy}."
 
 #: ../app/views/groups/affiliation.html.erb:20
 #: ../app/views/pages/tos.html.erb:1
@@ -674,31 +680,31 @@ msgstr "Pravila o privatnosti"
 #: ../app/views/transactions/confirm_withdraw.html.erb:26
 #: ../app/views/transactions/refund.html.erb:21
 msgid "Button|Cancel"
-msgstr "Otkazati"
+msgstr "Otkaži"
 
 #: ../app/views/groups/affiliation.html.erb:31
 msgid "Button|Activate"
-msgstr ""
+msgstr "Aktiviraj"
 
 #: ../app/views/groups/edit.html.erb:1 ../app/views/groups/edit.html.erb:4
 msgid "Title|Edit group"
-msgstr ""
+msgstr "Uredi grupu"
 
 #: ../app/views/groups/edit.html.erb:8
 msgid "Title|Edit"
-msgstr ""
+msgstr "Uredi"
 
 #: ../app/views/groups/leave.html.erb:1
 msgid "Title|Leave %{group_name}"
-msgstr ""
+msgstr "Napustite %{group_name}"
 
 #: ../app/views/groups/leave.html.erb:4
 msgid "Leave group title|Do you want to leave %{group_name}?"
-msgstr ""
+msgstr "Želite li napustiti %{group_name}?"
 
 #: ../app/views/groups/leave.html.erb:5
 msgid "Leave group title|Discussions and messages"
-msgstr ""
+msgstr "Rasprave i poruke"
 
 #: ../app/views/groups/leave.html.erb:7
 msgid ""
@@ -706,10 +712,13 @@ msgid ""
 "pate to the group discussions, but the messages you have left in such discussi"
 "ons will remain there, so other members can read them."
 msgstr ""
+"Kada napustite grupu, više nećete moći sudjelovati u grupnim raspravama, ali p"
+"oruke koje ste ostavili u tim raspravama ostat će pohranjene, tako da ih i dru"
+"gi članovi mogu čitati."
 
 #: ../app/views/groups/leave.html.erb:10
 msgid "Leave group title|Group wallet"
-msgstr ""
+msgstr "Grupni novčanik"
 
 #: ../app/views/groups/leave.html.erb:12
 msgid ""
@@ -717,6 +726,9 @@ msgid ""
 "rn to the group wallet. If you want to give your coins to some other group mem"
 "ber, do it before leaving. "
 msgstr ""
+"Vaš grupni novčanik će se osprazniti i svi coin-ovi će se vratiti u grupni nov"
+"čanik. Ako želite dati svoje coin-ove nekom drugom članu grupe, učinite to pri"
+"je odlaska."
 
 #: ../app/views/groups/leave.html.erb:15
 msgid ""
@@ -724,6 +736,8 @@ msgid ""
 "ill not be deleted, as each of them must remain visible to the respective coun"
 "terpart."
 msgstr ""
+"Sve transakcije koje ste napravili s drugim članovima grupe neće se izbrisati "
+"jer svaka od njih mora ostati vidljiva i njima."
 
 #: ../app/views/groups/leave.html.erb:21
 #: ../app/views/users/registrations/goodbye.html.erb:33
@@ -736,43 +750,43 @@ msgstr "Napusti ovu grupu"
 
 #: ../app/views/groups/new.html.erb:1 ../app/views/groups/new.html.erb:4
 msgid "Title|Create group"
-msgstr ""
+msgstr "Stvori grupu"
 
 #: ../app/views/groups/show.html.erb:14
 msgid "Join this group"
-msgstr ""
+msgstr "Pridružite se ovoj grupi"
 
 #: ../app/views/groups/show.html.erb:17
 msgid "Edit group"
-msgstr ""
+msgstr "Uredi grupu"
 
 #: ../app/views/groups/show.html.erb:20
 msgid "Create currency"
-msgstr ""
+msgstr "Stvorite valutu"
 
 #: ../app/views/groups/show.html.erb:23
 msgid "Edit currency"
-msgstr ""
+msgstr "Uređivanje valute"
 
 #: ../app/views/groups/show.html.erb:26
 msgid "Central wallet"
-msgstr ""
+msgstr "Središnji novčanik"
 
 #: ../app/views/groups/show.html.erb:29
 msgid "Leave group"
-msgstr ""
+msgstr "Napusti grupu"
 
 #: ../app/views/groups/show.html.erb:39
 msgid "Discussions"
-msgstr ""
+msgstr "Rasprave"
 
 #: ../app/views/groups/show.html.erb:47
 msgid "Wallet"
-msgstr ""
+msgstr "Novčanik"
 
 #: ../app/views/groups/show.html.erb:51
 msgid "Members"
-msgstr ""
+msgstr "Članovi"
 
 #: ../app/views/groups/show.html.erb:66
 msgid "Button|Start a new discussion"
@@ -780,19 +794,19 @@ msgstr "Započnite novu raspravu"
 
 #: ../app/views/groups/show.html.erb:73
 msgid "No discussions yet"
-msgstr ""
+msgstr "Još nema rasprava"
 
 #: ../app/views/groups/show.html.erb:98
 msgid "Button|Go to Wallet"
-msgstr ""
+msgstr "Idite na Novčanik"
 
 #: ../app/views/groups/show.html.erb:109
 msgid "No members"
-msgstr ""
+msgstr "Nema članova"
 
 #: ../app/views/groups/show.html.erb:123
 msgid "No pending requests"
-msgstr ""
+msgstr "Nema zahtjeva na čekanju"
 
 #: ../app/views/join_requests/_form.html.erb:5
 #: ../app/views/pages/home.html.erb:64
@@ -805,11 +819,11 @@ msgstr ""
 
 #: ../app/views/join_requests/new.html.erb:4
 msgid "Title|Do you want to join %{group_name}?"
-msgstr ""
+msgstr "Da li se želite pridružiti grupi %{group_name}?"
 
 #: ../app/views/join_requests/new.html.erb:6
 msgid "The group members will review your request"
-msgstr ""
+msgstr "Članovi grupe pregledat će vaš zahtjev"
 
 #: ../app/views/join_requests/new.html.erb:12
 msgid "Button|Request to join"
@@ -818,11 +832,11 @@ msgstr "Zahtjev za pridruživanje"
 #: ../app/views/join_requests/show.html.erb:1
 #: ../app/views/join_requests/show.html.erb:4
 msgid "Title|Join request"
-msgstr ""
+msgstr "Zahtjev za pridruživanje"
 
 #: ../app/views/join_requests/show.html.erb:11
 msgid "Requested on %{date}"
-msgstr ""
+msgstr "Zatraženo na %{date}"
 
 #: ../app/views/join_requests/show.html.erb:15
 msgid "Button|Reject"
@@ -840,14 +854,17 @@ msgid ""
 "nced by an increasing amount of people, Commonfare wants to value the power of"
 " social relations and claim back the right to joy."
 msgstr ""
+"Commonfare je ideja dobrobiti temeljena na valorizaciji društvene suradnje. U "
+"vremenu u kojemu nesigurnost i usamljenost doživljava sve veći broj ljudi, Com"
+"monfare želi vrednovati moć društvenih odnosa i vratiti  pravo na radost."
 
 #: ../app/views/layouts/_footer.html.erb:10
 msgid "Footer| For info write at"
-msgstr ""
+msgstr "Za više informacija pišite na"
 
 #: ../app/views/layouts/_footer.html.erb:16
 msgid "Footer|Language"
-msgstr ""
+msgstr "Jezik"
 
 #: ../app/views/layouts/_footer.html.erb:29
 msgid "Footer|About"
@@ -863,7 +880,7 @@ msgstr "Privatnost"
 
 #: ../app/views/layouts/_footer.html.erb:32
 msgid "Footer|Metrics dashboard"
-msgstr ""
+msgstr "Nadzorna ploča pokazatelja"
 
 #: ../app/views/layouts/_navbar.html.erb:15
 #: ../app/views/layouts/_navbar.html.erb:45
@@ -872,43 +889,43 @@ msgstr "Pretraži"
 
 #: ../app/views/layouts/_navbar.html.erb:26
 msgid "Navbar|Commoners Voices"
-msgstr ""
+msgstr "Glasovi Commonera"
 
 #: ../app/views/layouts/_navbar.html.erb:29
 msgid "Navbar|Good Practices"
-msgstr ""
+msgstr "Dobre prakse"
 
 #: ../app/views/layouts/_navbar.html.erb:32
 msgid "Navbar|Public Benefits"
-msgstr ""
+msgstr "Javne koristi"
 
 #: ../app/views/layouts/_navbar.html.erb:35
 msgid "Navbar|Commonplace"
-msgstr ""
+msgstr "Commonplace"
 
 #: ../app/views/layouts/_navbar.html.erb:39
 msgid "Navbar|About"
-msgstr ""
+msgstr "O nama"
 
 #: ../app/views/layouts/_navbar.html.erb:50
 msgid "Navbar|Home"
-msgstr "Početna stranica"
+msgstr "Početna"
 
 #: ../app/views/layouts/_navbar.html.erb:58
 msgid "Profile"
-msgstr ""
+msgstr "Profil"
 
 #: ../app/views/layouts/_navbar.html.erb:60
 msgid "Commoncoin Wallet"
-msgstr ""
+msgstr "Commoncoin novčanik"
 
 #: ../app/views/layouts/_navbar.html.erb:62
 msgid "%{currency_name} Wallet"
-msgstr ""
+msgstr "%{currency_name} Novčanik"
 
 #: ../app/views/layouts/_navbar.html.erb:64
 msgid "Conversations"
-msgstr "razgovori"
+msgstr "Razgovori"
 
 #: ../app/views/layouts/_navbar.html.erb:66
 msgid "Navbar|Logout"
@@ -931,19 +948,19 @@ msgstr "Oznake"
 #: ../app/views/layouts/_navbar.html.erb:99
 #: ../app/views/main/search.html.erb:39
 msgid "Listings"
-msgstr ""
+msgstr "Oglasi"
 
 #: ../app/views/layouts/_navbar.html.erb:101
 msgid "Autocomplete category Title|Commoners"
-msgstr ""
+msgstr "Commoneri"
 
 #: ../app/views/layouts/_navbar.html.erb:103
 msgid "Autocomplete help text|Suggested results"
-msgstr ""
+msgstr "Predloženi rezultati"
 
 #: ../app/views/layouts/_navbar.html.erb:104
 msgid "Autocomplete help text|Press Enter to see more"
-msgstr ""
+msgstr "Stisnite Enter kako bi vidjeli više"
 
 #: ../app/views/layouts/application.html.erb:4
 msgid "Welcome"
@@ -951,20 +968,20 @@ msgstr "Dobrodošli"
 
 #: ../app/views/listings/_fields.html.erb:6
 msgid "Place"
-msgstr ""
+msgstr "Mjesto"
 
 #: ../app/views/listings/_fields.html.erb:11
 msgid "Minimum price (in CC)"
-msgstr ""
+msgstr "Minimalna cijena (u CC)"
 
 #: ../app/views/listings/_fields.html.erb:12
 #: ../app/views/listings/_fields.html.erb:17
 msgid "Specify an amount"
-msgstr ""
+msgstr "Navedite iznos"
 
 #: ../app/views/listings/_fields.html.erb:16
 msgid "Maximum price (in CC)"
-msgstr ""
+msgstr "Maksimalna cijena (u CC)"
 
 #: ../app/views/listings/_fields.html.erb:27
 #: ../app/views/stories/_fields.html.erb:19
@@ -973,38 +990,40 @@ msgstr "Koristite zarez ili pritisnite Enter za razdvajanje oznaka"
 
 #: ../app/views/listings/_fields.html.erb:35
 msgid "Add image"
-msgstr ""
-"dodaj sliku\n"
+msgstr "Dodaj sliku"
 
 #: ../app/views/listings/_fields.html.erb:48
 msgid "e.g. Lessons, Babysitting, etc."
-msgstr ""
+msgstr "npr. lekcije, čuvanje djece itd."
 
 #: ../app/views/listings/_image_fields.html.erb:4
 msgid "Remove"
-msgstr ""
+msgstr "Ukloni"
 
 #: ../app/views/listings/_share_modal.html.erb:6
 msgid "Modal title|Share this Listing"
-msgstr ""
+msgstr "Podijelite ovaj oglas"
 
 #: ../app/views/listings/_share_modal.html.erb:14
 msgid ""
 "Commonfare.net is not linked to any external platform, so to share this listin"
 "g on Facebook, Twitter, etc. you can copy the URL and paste it there."
 msgstr ""
+"Commonfare.net nije povezan s bilo kojom vanjskom platformom. Ako želite podij"
+"eliti ovu priču na Facebooku, Twitteru itd., možete kopirati URL i tamo zalije"
+"piti."
 
 #: ../app/views/listings/commonplace.html.erb:14
 msgid "Latest listings"
-msgstr ""
+msgstr "Najnoviji oglasi"
 
 #: ../app/views/listings/commonplace.html.erb:18
 msgid "My Listings"
-msgstr ""
+msgstr "Moji oglasi"
 
 #: ../app/views/listings/commonplace.html.erb:31
 msgid "No Listings yet"
-msgstr ""
+msgstr "Još nema oglasa"
 
 #: ../app/views/listings/commonplace.html.erb:41
 msgid "Button|New listing"
@@ -1012,11 +1031,11 @@ msgstr "Novi oglas"
 
 #: ../app/views/listings/commonplace.html.erb:54
 msgid "No listings"
-msgstr ""
+msgstr "Nema oglasa"
 
 #: ../app/views/listings/edit.html.erb:1 ../app/views/listings/edit.html.erb:4
 msgid "Title|Edit listing"
-msgstr ""
+msgstr "Izmjeni oglas"
 
 #: ../app/views/listings/edit.html.erb:8
 msgid "Button|Edit listing"
@@ -1024,11 +1043,11 @@ msgstr "Izmjeni oglas"
 
 #: ../app/views/listings/edit.html.erb:12
 msgid "Delete this listing"
-msgstr ""
+msgstr "Obriši ovaj unos"
 
 #: ../app/views/listings/new.html.erb:1 ../app/views/listings/new.html.erb:4
 msgid "Title|New listing"
-msgstr ""
+msgstr "Novi oglas"
 
 #: ../app/views/listings/new.html.erb:8
 msgid "Button|Create listing"
@@ -1040,11 +1059,11 @@ msgstr "Dodano na %{date}"
 
 #: ../app/views/listings/show.html.erb:71 ../app/views/stories/show.html.erb:60
 msgid "Share"
-msgstr ""
+msgstr "Podijeli"
 
 #: ../app/views/listings/show.html.erb:124
 msgid "Get in touch"
-msgstr ""
+msgstr "Javite nam se"
 
 #: ../app/views/listings/show.html.erb:135
 #: ../app/views/stories/show.html.erb:104
@@ -1056,7 +1075,7 @@ msgstr[2] "Komentara"
 
 #: ../app/views/main/search.html.erb:1
 msgid "Results for %{search_term}"
-msgstr "Rezultati za"
+msgstr "Rezultati za %{search_term}"
 
 #: ../app/views/main/search.html.erb:2
 msgid "Results for '%{search_term}'"
@@ -1064,97 +1083,101 @@ msgstr "Rezultati za ‘%{search_term}’"
 
 #: ../app/views/main/search.html.erb:6
 msgid "Commoners found"
-msgstr ""
+msgstr "Pronađeno Commonera"
 
 #: ../app/views/main/search.html.erb:15
 msgid "Groups found"
-msgstr ""
+msgstr "Pronađene grupe"
 
 #: ../app/views/main/search.html.erb:24
 msgid "Tags with '%{search_term}'"
-msgstr ""
+msgstr "Oznake s '%{search_term}'"
 
-#: ../app/views/pages/about.html.erb:69
+#: ../app/views/pages/about.html.erb:1 ../app/views/pages/old_about.html.erb:1
+msgid "About"
+msgstr "O nama"
+
+#: ../app/views/pages/about.html.erb:70
 msgid "About page|Previous section"
-msgstr ""
+msgstr "Prethodni odjeljak"
 
-#: ../app/views/pages/about.html.erb:77
+#: ../app/views/pages/about.html.erb:78
 msgid "About page|Next section"
-msgstr ""
+msgstr "Sljedeći odjeljak"
 
 #: ../app/views/pages/dashboard.html.erb:1
 #: ../app/views/pages/dashboard.html.erb:11
 msgid "Title|Metrics dashboard"
-msgstr ""
+msgstr "Nadzorna ploča pokazatelja"
 
 #: ../app/views/pages/dashboard.html.erb:14
 msgid "Dashboard|Start date"
-msgstr ""
+msgstr "Početni datum"
 
 #: ../app/views/pages/dashboard.html.erb:20
 msgid "Dashboard|End date"
-msgstr ""
+msgstr "Krajnji datum"
 
 #: ../app/views/pages/dashboard.html.erb:29
 msgid "Dashboard|Not viewing correctly?"
-msgstr ""
+msgstr "Ne prikazuje se ispravno?"
 
 #: ../app/views/pages/dashboard.html.erb:29
 msgid ""
 "Dashboard|If you don't visualize some of the content, try to disable your Ad B"
 "locker for this website."
 msgstr ""
+"AKo se određeni sadržaj ne može prikazati, pokušajte isključiti blokator oglas"
+"a za ovu internet stranicu."
 
 #: ../app/views/pages/dashboard.html.erb:31
 msgid "Dashboard|Visits overview"
-msgstr ""
+msgstr "Pregled posjeta"
 
 #: ../app/views/pages/dashboard.html.erb:43
 #: ../app/views/pages/dashboard.html.erb:47
 msgid "Dashboard|Visits over time"
-msgstr ""
+msgstr "Posjete u vremenskom periodu"
 
 #: ../app/views/pages/dashboard.html.erb:54
 msgid "Dashboard|Site search"
-msgstr ""
+msgstr "Pretraživanja stranice"
 
 #: ../app/views/pages/dashboard.html.erb:59
 msgid "Dashboard site search|Keyword"
-msgstr ""
+msgstr "Ključna riječ"
 
 #: ../app/views/pages/dashboard.html.erb:60
 msgid "Dashboard site search|Visits"
-msgstr ""
+msgstr "Posjeti"
 
 #: ../app/views/pages/dashboard.html.erb:76
 msgid "Dashboard|Social graph"
-msgstr ""
+msgstr "Društveni grafikon"
 
 #: ../app/views/pages/home.html.erb:37
 msgid "Home carousel text|We have so much in Common"
-msgstr ""
+msgstr "Mi imamo toliko zajedničkoga"
 
 #: ../app/views/pages/home.html.erb:60
 msgid "Home text|Commonfare.net is for, with, and by people."
-msgstr ""
+msgstr "Commonfare.net je za, sa i od ljudi."
 
 #: ../app/views/pages/home.html.erb:62
 msgid ""
 "Home text|Do you want to join? You will need only an email address, and we wil"
 "l never use it for other purposes."
 msgstr ""
+"Želite li se pridružiti? Trebat će vam samo email adresa koju nikada nećemo ko"
+"ristiti u druge svrhe."
 
 #: ../app/views/pages/home.html.erb:66
 msgid "Home text|Are you already registered? <strong>%{login_link}</strong>"
-msgstr ""
+msgstr "Jeste li već registrirani? <strong>%{login_link}</ strong>"
 
 #: ../app/views/pages/home.html.erb:66
 msgid "Login"
-msgstr ""
-
-#: ../app/views/pages/old_about.html.erb:1
-msgid "About"
-msgstr "O nama"
+msgstr "Prijaviti se"
 
 #: ../app/views/shared/_back_and_save_buttons.html.erb:8
 msgid "Button|Save"
@@ -1162,15 +1185,15 @@ msgstr "Spremi"
 
 #: ../app/views/stories/_builder_content.html.erb:27
 msgid "This story has no content yet"
-msgstr ""
+msgstr "Ova priča još nema sadržaja"
 
 #: ../app/views/stories/_card.html.erb:11
 msgid "Draft"
-msgstr ""
+msgstr "Nacrt"
 
 #: ../app/views/stories/_fields.html.erb:3
 msgid "Give a title to your content"
-msgstr "Dajte naslov vašem sadržaju"
+msgstr "Pridodajte naslov vašem sadržaju"
 
 #: ../app/views/stories/_fields.html.erb:5
 msgid "e.g. There and back again"
@@ -1203,7 +1226,7 @@ msgstr "Objavite anonimno"
 
 #: ../app/views/stories/_fields.html.erb:25
 msgid "Publish as a Group"
-msgstr "Objavi kao grupu"
+msgstr "Objavi kao grupa"
 
 #: ../app/views/stories/_fields.html.erb:28
 #: ../app/views/stories/_fields.html.erb:150
@@ -1225,11 +1248,11 @@ msgstr "npr. trudnoća, dijeljenje hrane, itd."
 
 #: ../app/views/stories/_form.html.erb:6
 msgid "What is the title of your story?"
-msgstr "Što je naslov vaše priče?"
+msgstr "Koji je naslov vaše priče?"
 
 #: ../app/views/stories/_form.html.erb:10
 msgid "Please don't be too concise (min. 500 chars)"
-msgstr "Molimo vas, nemojte biti prekratki (najmanje 500 znakova)"
+msgstr "Molimo vas, nemojte biti presažeti (najmanje 500 znakova)"
 
 #: ../app/views/stories/_form.html.erb:11
 msgid "The city, region or country of your story"
@@ -1237,7 +1260,7 @@ msgstr "Grad, regija ili zemlja vaše priče"
 
 #: ../app/views/stories/_form.html.erb:12
 msgid "Story form button|Share your Story"
-msgstr "Podjeli priču"
+msgstr "Podijelite svoju priču"
 
 #: ../app/views/stories/_language_choice.html.erb:2
 msgid "You are writing in"
@@ -1245,7 +1268,7 @@ msgstr "Pišete na"
 
 #: ../app/views/stories/_share_modal.html.erb:6
 msgid "Modal title|Share this Story"
-msgstr "Podjelite ovu priču"
+msgstr "Podijelite ovu priču"
 
 #: ../app/views/stories/_share_modal.html.erb:14
 msgid ""
@@ -1268,55 +1291,55 @@ msgstr "Izbriši ovu priču"
 #: ../app/views/stories/builder.html.erb:19
 #: ../app/views/stories/edit.html.erb:38
 msgid "Are you sure? This will delete all the comments as well."
-msgstr "Jeste li sigurni? Ovim putem će se izbrisati svi komentari."
+msgstr "Jeste li sigurni? Ovim putem će se izbrisati i svi komentari."
 
 #: ../app/views/stories/edit.html.erb:1
 msgid "Edit your Story"
-msgstr "Uredi priču"
+msgstr "Uredi svoju priču"
 
 #: ../app/views/stories/edit.html.erb:6
 msgid "You are editing in"
-msgstr "Uređuješ na"
+msgstr "Uređujete na"
 
 #: ../app/views/stories/edit.html.erb:20
 msgid "You haven't yet saved this Story in %{localised_lang_name}"
-msgstr "Još niste spremili priču na"
+msgstr "Još niste spremili ovu priču na %{localised_lang_name}"
 
 #: ../app/views/stories/edit.html.erb:27 ../app/views/stories/new.html.erb:10
 msgid "Story form button|Save"
-msgstr ""
+msgstr "Spremi"
 
 #: ../app/views/stories/edit.html.erb:30 ../app/views/stories/new.html.erb:13
 msgid "Saving..."
-msgstr ""
+msgstr "Spremanje..."
 
 #: ../app/views/stories/index.html.erb:4
 msgid "Stories by %{author_name}"
-msgstr "Priče od"
+msgstr "Priče od %{author_name}"
 
 #: ../app/views/stories/show.html.erb:94
 msgid "Button|Share"
-msgstr "Podjeli"
+msgstr "Podijeli"
 
 #: ../app/views/stories/templates.html.erb:1
 msgid "Create a story from a template"
-msgstr ""
+msgstr "Stvorite priču putem predloška"
 
 #: ../app/views/stories/templates.html.erb:4
 msgid "Choose a template for your story"
-msgstr ""
+msgstr "Odaberite predložak za svoju priču"
 
 #: ../app/views/stories/templates.html.erb:6
 msgid "No templates for this language"
-msgstr ""
+msgstr "Nema predložaka za ovaj jezik"
 
 #: ../app/views/tags/show.html.erb:5
 msgid "Stories with tag %{tag_name}"
-msgstr "Priče sa tagom %{tag_name}"
+msgstr "Priče s oznakom %{tag_name}"
 
 #: ../app/views/tags/show.html.erb:10
 msgid "Content with tag %{tag_name}"
-msgstr ""
+msgstr "Sadržaj s oznakom %{tag_name}"
 
 #: ../app/views/tags/show.html.erb:14
 msgid "Stories with tag"
@@ -1324,31 +1347,31 @@ msgstr "Priče"
 
 #: ../app/views/tags/show.html.erb:25
 msgid "Listings with tag"
-msgstr ""
+msgstr "Oglasi s oznakom"
 
 #: ../app/views/transactions/_transaction.html.erb:8
 msgid "Given to <strong>%{name}</strong>"
-msgstr ""
+msgstr "Pridodano <strong>%{name}</strong>"
 
 #: ../app/views/transactions/_transaction.html.erb:15
 msgid "Received from <strong>%{name}</strong>"
-msgstr ""
+msgstr "Primljeno od <strong>%{name}</strong>"
 
 #: ../app/views/transactions/_transaction.html.erb:42
 msgid "Refund"
-msgstr ""
+msgstr "Povrat"
 
 #: ../app/views/transactions/confirm.html.erb:1
 msgid "Title|Confirm transaction"
-msgstr ""
+msgstr "Potvrdi transakciju"
 
 #: ../app/views/transactions/confirm.html.erb:4
 msgid "Title|Confirm %{currency_name} transaction"
-msgstr ""
+msgstr "Potvrdi %{currency_name} transakciju"
 
 #: ../app/views/transactions/confirm.html.erb:6
 msgid "Send to"
-msgstr ""
+msgstr "Pošalji na"
 
 #: ../app/views/transactions/confirm.html.erb:11
 #: ../app/views/transactions/confirm_top_up.html.erb:11
@@ -1361,7 +1384,7 @@ msgstr "Iznos"
 #: ../app/views/transactions/confirm_top_up.html.erb:16
 #: ../app/views/transactions/confirm_withdraw.html.erb:16
 msgid "Message"
-msgstr ""
+msgstr "Poruka"
 
 #: ../app/views/transactions/confirm.html.erb:29
 #: ../app/views/transactions/confirm_top_up.html.erb:29
@@ -1373,131 +1396,130 @@ msgstr ""
 
 #: ../app/views/transactions/confirm_top_up.html.erb:1
 msgid "Title|Confirm top_up"
-msgstr ""
+msgstr "Potvrdi nadopunu"
 
 #: ../app/views/transactions/confirm_top_up.html.erb:4
 msgid "Title|Confirm %{currency_name} top up"
-msgstr ""
+msgstr "Potvrdi %{currency_name} nadopunu "
 
 #: ../app/views/transactions/confirm_top_up.html.erb:6
 msgid "Top up to"
-msgstr ""
+msgstr "Nadopuni do"
 
 #: ../app/views/transactions/confirm_withdraw.html.erb:1
 msgid "Title|Confirm withdraw"
-msgstr ""
+msgstr "Potvrdi povlačenje"
 
 #: ../app/views/transactions/confirm_withdraw.html.erb:4
 msgid "Title|Confirm %{currency_name} withdraw"
-msgstr ""
+msgstr "Potvrdi %{currency_name} povlačenje"
 
 #: ../app/views/transactions/confirm_withdraw.html.erb:6
 msgid "Withdraw from"
-msgstr ""
+msgstr "Povući iz"
 
 #: ../app/views/transactions/index.html.erb:1
 #: ../app/views/transactions/index.html.erb:10
 msgid "Title|All %{currency_name} transactions"
-msgstr ""
+msgstr "Sve %{currency_name} transakcije"
 
 #: ../app/views/transactions/index.html.erb:8
 msgid "Title|Transactions with %{counterpart_name}"
-msgstr ""
+msgstr "Transakcije s %{counterpart_name}"
 
 #: ../app/views/transactions/new.html.erb:1
 #: ../app/views/transactions/new.html.erb:6
 msgid "Title|Send %{currency_name}"
-msgstr ""
+msgstr "Pošalji %{currency_name}"
 
 #: ../app/views/transactions/new.html.erb:5
 #: ../app/views/wallets/daily_takings.html.erb:5
 msgid "%{icon} Back to %{currency_name} wallet"
-msgstr ""
+msgstr "%{icon} Povratak na %{currency_name} novčanik"
 
 #: ../app/views/transactions/new.html.erb:8
 msgid "Balance"
-msgstr ""
+msgstr "Stanje"
 
 #: ../app/views/transactions/new.html.erb:15
 #: ../app/views/transactions/new.html.erb:45
 msgid "Bilbo Baggins"
-msgstr ""
-"Bilbo Baggins\n"
+msgstr "Bilbo Baggins"
 
 #: ../app/views/transactions/new.html.erb:15
 msgid "Name of the commoner"
-msgstr ""
+msgstr "Ime Commonera"
 
 #: ../app/views/transactions/new.html.erb:18
 #: ../app/views/transactions/top_up.html.erb:16
 #: ../app/views/transactions/withdraw.html.erb:30
 msgid "Amount (%{currency_code})"
-msgstr ""
+msgstr "Iznos (%{currency_code})"
 
 #: ../app/views/transactions/new.html.erb:21
 msgid "I like your stories!"
-msgstr ""
+msgstr "Volim vaše priče!"
 
 #: ../app/views/transactions/new.html.erb:21
 msgid "Message (optional)"
-msgstr ""
+msgstr "Poruka (opcionalno)"
 
 #: ../app/views/transactions/refund.html.erb:1
 msgid "Title|Refund"
-msgstr ""
+msgstr "Povrat"
 
 #: ../app/views/transactions/refund.html.erb:4
 msgid "Title|Refund %{counterpart_name}"
-msgstr ""
+msgstr "Povrat %{counterpart_name}"
 
 #: ../app/views/transactions/refund.html.erb:6
 msgid "Send refund to"
-msgstr ""
+msgstr "Pošaljite povrat sredstava na"
 
 #: ../app/views/transactions/success.html.erb:1
 msgid "Title|Transaction successful"
-msgstr ""
+msgstr "Transakcija je uspješna"
 
 #: ../app/views/transactions/success.html.erb:9
 msgid "Close this window before proceeding with a new transaction"
-msgstr ""
+msgstr "Zatvorite ovaj prozor prije nastavka nove transakcije"
 
 #: ../app/views/transactions/top_up.html.erb:1
 #: ../app/views/transactions/top_up.html.erb:4
 msgid "Title|Top up %{currency_name}"
-msgstr ""
+msgstr "Nadopunite %{currency_name}"
 
 #: ../app/views/transactions/top_up.html.erb:6
 #: ../app/views/transactions/withdraw.html.erb:17
 msgid "From"
-msgstr ""
+msgstr "Od"
 
 #: ../app/views/transactions/top_up.html.erb:8
 #: ../app/views/transactions/withdraw.html.erb:19
 msgid "To"
-msgstr ""
+msgstr "Do"
 
 #: ../app/views/transactions/top_up.html.erb:20
 msgid "Button|Continue"
-msgstr ""
+msgstr "Nastavi"
 
 #: ../app/views/transactions/withdraw.html.erb:1
 #: ../app/views/transactions/withdraw.html.erb:7
 msgid "Title|Withdraw %{currency_name}"
-msgstr ""
+msgstr "Povucite %{currency_name}"
 
 #: ../app/views/transactions/withdraw.html.erb:10
 msgid "Title|Final reimbursement"
-msgstr ""
+msgstr "Završna naknada"
 
 #: ../app/views/transactions/withdraw.html.erb:34
 #: ../app/views/wallets/view.html.erb:21
 msgid "Button|Withdraw"
-msgstr ""
+msgstr "Povuci"
 
 #: ../app/views/transactions/withdraw.html.erb:42
 msgid "Transactions and refunds"
-msgstr ""
+msgstr "Transakcije i povrati"
 
 #: ../app/views/users/passwords/edit.html.erb:1
 #: ../app/views/users/passwords/edit.html.erb:4
@@ -1511,7 +1533,7 @@ msgstr "Nova lozinka"
 #: ../app/views/users/passwords/edit.html.erb:9
 #: ../app/views/users/registrations/new.html.erb:9
 msgid "Sign up page form hint|%{min_password_length} characters minimum"
-msgstr "najmanje znakova %{min_password_length}"
+msgstr "Minimalno %{min_password_length} znakova"
 
 #: ../app/views/users/passwords/edit.html.erb:10
 msgid "Change password page field|Confirm your new password"
@@ -1519,7 +1541,7 @@ msgstr "Potvrdite novu lozinku"
 
 #: ../app/views/users/passwords/edit.html.erb:11
 msgid "Change password page button|Change my password"
-msgstr "Promjenite lozinku"
+msgstr "Promjenite moju lozinku"
 
 #: ../app/views/users/passwords/new.html.erb:1
 msgid "Forgot password"
@@ -1544,7 +1566,7 @@ msgstr "Pošaljite mi upute"
 #: ../app/views/users/registrations/edit.html.erb:1
 #: ../app/views/users/registrations/edit.html.erb:4
 msgid "Edit credentials"
-msgstr "Uredi vjerodajnice"
+msgstr "Uredi pristupne podatke"
 
 #: ../app/views/users/registrations/edit.html.erb:8
 msgid "Edit email"
@@ -1560,7 +1582,7 @@ msgstr "ostavite prazno ako ne želite promijeniti"
 
 #: ../app/views/users/registrations/edit.html.erb:16
 msgid "Edit credentials form|Password confirmation"
-msgstr "Potvrdi lozinku"
+msgstr "Potvrda lozinku"
 
 #: ../app/views/users/registrations/edit.html.erb:17
 msgid "Edit credentials form|Current password"
@@ -1572,25 +1594,27 @@ msgstr "trebamo vašu trenutnu lozinku za potvrdu vaših izmjena"
 
 #: ../app/views/users/registrations/edit.html.erb:23
 msgid "Leave Commonfare.net..."
-msgstr ""
+msgstr "Napusti Commonfare.net ..."
 
 #: ../app/views/users/registrations/goodbye.html.erb:1
 msgid "Goodbye"
-msgstr ""
+msgstr "Doviđenja"
 
 #: ../app/views/users/registrations/goodbye.html.erb:4
 msgid "Do you want to leave Commonfare.net?"
-msgstr ""
+msgstr "Želite li napustiti Commonfare.net?"
 
 #: ../app/views/users/registrations/goodbye.html.erb:6
 msgid ""
 "Your profile will be permanently removed from Commonfare.net, along with all p"
 "ersonal data associated with it, such as your email, password, avatar, etc."
 msgstr ""
+"Vaš profil će biti trajno uklonjen sa Commonfare.net, zajedno sa svim osobnim "
+"podacima povezanim s njim, kao što su vaša e-pošta, lozinka, avatar itd."
 
 #: ../app/views/users/registrations/goodbye.html.erb:8
 msgid "Stories and comments"
-msgstr ""
+msgstr "Priče i komentari"
 
 #: ../app/views/users/registrations/goodbye.html.erb:10
 msgid ""
@@ -1600,6 +1624,11 @@ msgid ""
 "way, they will remain available for others to read but reference to your accou"
 "nt will be deleted."
 msgstr ""
+"Priče i komentari koje ste već podijelili ovdje, dio su zajednice na Commonfar"
+"e.net-u i još uvijek mogu koristiti drugim Commonerima. Kod brisanja vašeg pro"
+"fila, oni će biti premješteni na račun %{archive_commoner}. Na taj će način os"
+"tati dostupni ostalim korisnicima ali sa uklonjenim poveznicama sa vašim račun"
+"om."
 
 #: ../app/views/users/registrations/goodbye.html.erb:13
 msgid ""
@@ -1608,6 +1637,10 @@ msgid ""
 "do not want to be made available through the archive, you can go back now and "
 "do so before deleting your profile."
 msgstr ""
+"Imajte na umu da dok imate Commonfare.net račun, uvijek možete izbrisati sve p"
+"riče ili komentare koje ste objavili, pa ako postoji priča ili komentar za koj"
+"i ne želite da je dostupan putem arhive, možete se vratiti i obrisati ih prije"
+" brisanja samog profila."
 
 #: ../app/views/users/registrations/goodbye.html.erb:29
 msgid ""
@@ -1616,9 +1649,9 @@ msgid ""
 "ure, you will not be able to reclaim content generated under a cancelled accou"
 "nt."
 msgstr ""
-"<em> Obrišćenje profila i prijenos sadržaja u Commonfare arhivu nepovratni su "
-"</ em> - ako u budućnosti napravite novi commonfare.net račun, nećete moći vra"
-"titi sadržaj koji je generiran na otkazanom računu."
+"<em>Brisanje vašeg profila kao i prijenos sadržaja u Commonfare arhivu nepovra"
+"tni su</em> - ako u budućnosti napravite novi commonfare.net račun, nećete moć"
+"i vratiti sadržaj koji je generiran na otkazanom računu."
 
 #: ../app/views/users/registrations/goodbye.html.erb:36
 msgid "Button|Go ahead, cancel my account"
@@ -1653,7 +1686,7 @@ msgstr "Pridružite se Commonfare-u"
 
 #: ../app/views/users/registrations/new.html.erb:21
 msgid "Sign up page button|Join and create a group"
-msgstr ""
+msgstr "Pridružite se i stvorite grupu"
 
 #: ../app/views/users/sessions/new.html.erb:4
 msgid "Login page header|Log in"
@@ -1674,7 +1707,7 @@ msgstr "Prijavite se"
 #: ../app/views/users/sessions/new.html.erb:12
 #: ../app/views/users/shared/_links.html.erb:10
 msgid "Auth Button title|Forgot your password?"
-msgstr "Zaboravili ste podatke za logiranje?"
+msgstr "Zaboravili ste lozinku?"
 
 #: ../app/views/users/shared/_links.html.erb:2
 msgid "Auth Button title|Log in"
@@ -1687,65 +1720,66 @@ msgstr "Registrirajte se"
 #: ../app/views/wallets/_qr_modal.html.erb:21
 msgid "Close"
 msgstr ""
+"Zatvori\n"
 
 #: ../app/views/wallets/daily_takings.html.erb:1
 #: ../app/views/wallets/daily_takings.html.erb:7
 msgid "Daily takings"
-msgstr ""
+msgstr "Dnevni promet"
 
 #: ../app/views/wallets/daily_takings.html.erb:9
 msgid "From %{time}:00 to %{time}:00"
-msgstr ""
+msgstr "Od %{time}:00 do %{time}:00"
 
 #: ../app/views/wallets/daily_takings.html.erb:11
 #: ../app/views/wallets/daily_takings.html.erb:14
 msgid "(see from %{time}:00 to %{time}:00)"
-msgstr ""
+msgstr "(vidi od %{time}:00 do %{time}:00)"
 
 #: ../app/views/wallets/show.html.erb:1 ../app/views/wallets/show.html.erb:6
 msgid "Title|%{currency_name} wallet"
-msgstr ""
+msgstr "%{currency_name} novčanik"
 
 #: ../app/views/wallets/show.html.erb:11 ../app/views/wallets/view.html.erb:12
 msgid "Current balance"
-msgstr ""
+msgstr "Trenutno stanje"
 
 #: ../app/views/wallets/show.html.erb:14
 msgid "Button|Send %{currency_code}"
-msgstr ""
+msgstr "Pošalji %{currency_code}"
 
 #: ../app/views/wallets/show.html.erb:18 ../app/views/wallets/view.html.erb:27
 msgid "Transactions"
-msgstr ""
+msgstr "Transakcije"
 
 #: ../app/views/wallets/view.html.erb:1
 msgid "Title|%{holder_name} %{currency_name} wallet"
-msgstr ""
+msgstr "%{holder_name} %{currency_name} novčanik"
 
 #: ../app/views/wallets/view.html.erb:6
 msgid "Title|Commoner name"
-msgstr ""
+msgstr "Ime Commonera"
 
 #: ../app/views/wallets/view.html.erb:17
 msgid "Show QR code"
-msgstr ""
+msgstr "Prikaži QR kôd"
 
 #: ../app/views/wallets/view.html.erb:18
 msgid "Button|Daily takings"
-msgstr ""
+msgstr "Dnevni promet"
 
 #: ../app/views/wallets/view.html.erb:19
 msgid "Button|Activate account"
-msgstr ""
+msgstr "Aktiviraj račun"
 
 #: ../app/views/wallets/view.html.erb:22
 msgid "Button|Top up"
-msgstr ""
+msgstr "Nadopuni"
 
 #: ../app/views/wallets/view.html.erb:23
 msgid "Button|Reimburse"
-msgstr ""
+msgstr "Nadoknaditi"
 
 #: ../app/views/wallets/view.html.erb:39
 msgid "Activate account to see more"
-msgstr ""
+msgstr "Aktivirajte račun kako biste vidjeli više"
