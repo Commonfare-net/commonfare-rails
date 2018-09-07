@@ -199,6 +199,10 @@ body {
   height: 24px;
 }
 
+.bell-md {
+  display: none;
+}
+
 @media screen and (max-width: 991px) {
   .navbar-cf {
     flex-direction: row-reverse;
@@ -224,6 +228,9 @@ body {
         width: 100% !important;
       }
     }
+  }
+  .bell-md {
+    display: block;
   }
 }
 

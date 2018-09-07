@@ -7,7 +7,7 @@ class Conversation < ApplicationRecord
 
   validates_uniqueness_of :sender_id, scope: :recipient_id
 
-  acts_as_notification_group printable_name: ->(conversation) { "your conversation" }
+  acts_as_notification_group printable_name: ->(conversation) { "conversation" }
 
   scope :between, -> (sender_id, recipient_id) do
     where("(conversations.sender_id = ? AND conversations.recipient_id =?) OR (conversations.sender_id = ? AND conversations.recipient_id =?)", sender_id, recipient_id, recipient_id, sender_id)

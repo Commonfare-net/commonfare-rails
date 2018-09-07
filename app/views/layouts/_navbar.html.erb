@@ -7,15 +7,26 @@
     <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
     <button class="btn btn-success" type="submit">Search</button>
   </form> -->
+  <!-- NOTE: the order of the elements in the navbar is IMPORTANT for alignment, see https://getbootstrap.com/docs/4.1/components/navbar/#toggler -->
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
+
+  <% if user_signed_in? %>
+    <ul class="navbar-nav bell-md ml-auto">
+      <li class="nav-item">
+        <%= link_to(fa_icon('bell'), commoner_notifications_path(current_user.meta), class: "nav-link #{'active' if current_user.meta.notifications.unopened_only.any?}") %>
+      </li>
+    </ul>
+  <% end %>
+
 <!--   <div class="d-block d-lg-none d-xl-none cf-search-form-container">
     <%= form_with url: search_path, local: true, method: :get, html: { class: 'form-inline my-lg-0' } do |form| %>
     <%= form.text_field :q, placeholder: _('Search'), data: { behavior: 'autocomplete' }, class: 'form-control mr-sm-2' %>
     <%= form.button fa_icon('search'), class: 'btn btn-cf' %>
     <% end %>
   </div> -->
+
   <%= link_to root_path, class: 'navbar-brand' do %>
     <%= image_tag "logo.svg", height: 30 %>
   <% end %>
@@ -50,6 +61,9 @@
       <%= link_to s_('Navbar|Home'), root_path, class: 'nav-link'  %>
     </li>
     <% if user_signed_in? %>
+      <li class="nav-item">
+        <%= link_to(fa_icon('bell'), commoner_notifications_path(current_user.meta), class: "nav-link #{'active' if current_user.meta.notifications.unopened_only.any?}") %>
+      </li>
       <li class="nav-item dropdown">
         <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <%= current_user.meta.name %>
