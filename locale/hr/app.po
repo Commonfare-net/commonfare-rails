@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0\n"
 "Report-Msgid-Bugs-To: contact@translation.io\n"
-"POT-Creation-Date: 2018-09-03 17:48+0200\n"
-"PO-Revision-Date: 2018-09-03 17:48+0200\n"
+"POT-Creation-Date: 2018-09-10 11:49+0200\n"
+"PO-Revision-Date: 2018-09-10 11:49+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Croatian\n"
 "Language: hr\n"
@@ -103,11 +103,11 @@ msgstr "Zahtjev za pristupanje je odbijen."
 msgid "You have left this group"
 msgstr "Napustili ste ovu grupu"
 
-#: ../app/controllers/messages_controller.rb:39
+#: ../app/controllers/messages_controller.rb:38
 msgid "Message sent"
 msgstr "Poruka je poslana"
 
-#: ../app/controllers/messages_controller.rb:67
+#: ../app/controllers/messages_controller.rb:66
 msgid "Message deleted"
 msgstr "Poruka je izbrisana"
 
@@ -194,7 +194,7 @@ msgstr "Dobre prakse"
 
 #: ../app/helpers/pages_helper.rb:18
 msgid "Home title|Public Benefits"
-msgstr "Javne koristi"
+msgstr "Mjere socijalne zaštite"
 
 #: ../app/helpers/pages_helper.rb:25
 msgid "Home text|A collection of stories for, with and by people."
@@ -897,7 +897,7 @@ msgstr "Dobre prakse"
 
 #: ../app/views/layouts/_navbar.html.erb:32
 msgid "Navbar|Public Benefits"
-msgstr "Javne koristi"
+msgstr "Mjere socijalne zaštite"
 
 #: ../app/views/layouts/_navbar.html.erb:35
 msgid "Navbar|Commonplace"
