@@ -1,5 +1,6 @@
 <% content_for :notification_content, flush: true do %>
   <div class='notification_list <%= notification.opened? ? "opened" : "unopened" %>'>
+    <%= link_to fa_icon('close'), notification_path_for(notification, index_options: @index_options), method: :delete, class: 'delete_notification_link' %>
     <div class="notification_list_cover"></div>
     <div class="list_image">
       <%= image_tag notification.notifier.avatar.card %>
@@ -41,7 +42,6 @@
     <%#= link_to "Open", open_notification_path_for(notification, index_options: @index_options), method: :post %>
     <%#= link_to "Open (Ajax)", open_notification_path_for(notification, reload: false), method: :post, remote: true %>
   <%# end %>
-  <%#= link_to "Destroy", notification_path_for(notification, index_options: @index_options), method: :delete %>
   <%#= link_to "Destroy (Ajax)", notification_path_for(notification, reload: false), method: :delete, remote: true %>
 
 </div>

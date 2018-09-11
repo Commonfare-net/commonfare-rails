@@ -203,6 +203,17 @@ body {
   display: none;
 }
 
+.unopened_circle_navbar {
+  display: block;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  border-radius: 50%;
+  background-color: #27a5eb;
+  top: 12px;
+  margin-left: 20px;
+}
+
 @media screen and (max-width: 991px) {
   .navbar-cf {
     flex-direction: row-reverse;
@@ -231,6 +242,9 @@ body {
   }
   .bell-md {
     display: block;
+  }
+  .unopened_circle_navbar {
+    margin-left: 10px;
   }
 }
 

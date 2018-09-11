@@ -115,4 +115,10 @@
       }
     }
   }
+  .delete_notification_link {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    z-index: 10;
+  }
 }

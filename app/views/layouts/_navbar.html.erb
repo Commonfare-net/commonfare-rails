@@ -15,6 +15,7 @@
   <% if user_signed_in? %>
     <ul class="navbar-nav bell-md ml-auto">
       <li class="nav-item">
+        <%= content_tag('div', '', class: 'unopened_circle_navbar') if current_user.meta.notifications.unopened_only.any? %>
         <%= link_to(fa_icon('bell'), commoner_notifications_path(current_user.meta), class: "nav-link #{'active' if current_user.meta.notifications.unopened_only.any?}") %>
       </li>
     </ul>
@@ -62,6 +63,7 @@
     </li>
     <% if user_signed_in? %>
       <li class="nav-item">
+        <%= content_tag('div', '', class: 'unopened_circle_navbar') if current_user.meta.notifications.unopened_only.any? %>
         <%= link_to(fa_icon('bell'), commoner_notifications_path(current_user.meta), class: "nav-link #{'active' if current_user.meta.notifications.unopened_only.any?}") %>
       </li>
       <li class="nav-item dropdown">
