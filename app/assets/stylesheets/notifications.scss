@@ -115,10 +115,14 @@
       }
     }
   }
-  .delete_notification_link {
-    position: absolute;
-    top: 0;
-    right: 10px;
-    z-index: 10;
-  }
+}
+
+.notification-body {
+  width: 100%;
+}
+
+.delete_notification_link {
+  position: absolute;
+  right: 28px;
+  z-index: 5;
 }

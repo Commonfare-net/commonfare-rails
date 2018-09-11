@@ -1,13 +1,17 @@
 <% content_for :notification_content, flush: true do %>
   <div class='notification_list <%= notification.opened? ? "opened" : "unopened" %>'>
-    <%= link_to fa_icon('close'), notification_path_for(notification, index_options: @index_options), method: :delete, class: 'delete_notification_link' %>
     <div class="notification_list_cover"></div>
     <div class="list_image">
       <%= image_tag notification.notifier.avatar.card %>
     </div>
     <div class="list_text_wrapper">
       <p class="list_text">
-        <%= (_("You have %{num_of_messages} in the conversation with <strong>%{other_commoner}</strong>") %{num_of_messages: notifiable_count(notification), other_commoner: notification.notifier.printable_target_name}).html_safe %>
+        <% if notification.notifiable.is_a? Message %>
+          <%= (_("You have %{num_of_messages} in the conversation with <strong>%{other_commoner}</strong>") %{num_of_messages: notifiable_count(notification), other_commoner: notification.notifier.printable_target_name}).html_safe %>
+        <% end %>
+        <% if notification.notifiable.is_a? Transaction %>
+          <%= (_("You have received %{amount} %{currency} from <strong>%{other_commoner}</strong>") %{amount: notification.notifiable.amount, currency: currency_name_for_transaction(notification.notifiable), other_commoner: notification.notifier.printable_target_name}).html_safe %>
+        <% end %>
         <br>
         <span class="text-muted moment-variable-date" data-server-date="<%= notification.created_at %>">
           <%= notification.created_at.strftime("%b %d %H:%M") %>
@@ -17,23 +21,25 @@
   </div>
 <% end %>
 
-<div class='<%= "notification_#{notification.id}" %>'>
-  <% if notification.unopened? %>
+<div class='<%= "notification_#{notification.id}" %> d-flex flex-row'>
+  <div class="notification-body">
+    <% if notification.unopened? %>
     <%= link_to open_notification_path_for(notification, reload: false), method: :post, remote: true, class: "unopened_wrapper" do %>
-      <div class="unopened_circle"></div>
-      <div class="unopened_description_wrapper">
-        <p class="unopened_description">Open</p>
-      </div>
+    <div class="unopened_circle"></div>
+    <div class="unopened_description_wrapper">
+      <p class="unopened_description">Open</p>
+    </div>
     <% end %>
     <%= link_to open_notification_path_for(notification, move: true), method: :post do %>
-      <%= yield :notification_content %>
+    <%= yield :notification_content %>
     <% end %>
     <div class="unopened_wrapper"></div>
-  <% else %>
+    <% else %>
     <%= link_to move_notification_path_for(notification) do %>
-      <%= yield :notification_content %>
+    <%= yield :notification_content %>
     <% end %>
-  <% end %>
+    <% end %>
+  </div>
 
   <%#= link_to "Move", move_notification_path_for(notification) %>
   <%# if notification.unopened? %>
@@ -42,6 +48,9 @@
     <%#= link_to "Open", open_notification_path_for(notification, index_options: @index_options), method: :post %>
     <%#= link_to "Open (Ajax)", open_notification_path_for(notification, reload: false), method: :post, remote: true %>
   <%# end %>
+  <div class="delete_notification_link">
+    <%= link_to fa_icon('close'), notification_path_for(notification, index_options: @index_options), method: :delete, class: '' %>
+  </div>
   <%#= link_to "Destroy (Ajax)", notification_path_for(notification, reload: false), method: :delete, remote: true %>
 
 </div>

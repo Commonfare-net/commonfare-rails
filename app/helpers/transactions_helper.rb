@@ -37,7 +37,7 @@ module TransactionsHelper
   end
 
   def currency_name_for_transaction(transaction = @transaction)
-    return @transaction.from_wallet.currency.name if @transaction.from_wallet.currency.present?
+    return transaction.from_wallet.currency.name if transaction.from_wallet.currency.present?
     'Commoncoin'
   end
 

@@ -53,6 +53,7 @@ class TransactionsController < ApplicationController
     @transaction = @wallet.outgoing_transactions.build(transaction_params)
     respond_to do |format|
       if @transaction.save
+        @transaction.notify(:commoners) if @transaction.to_wallet.walletable.is_a?(Commoner)
         format.html { redirect_to get_wallet_path(@wallet), notice: _('Transaction successful') }
       else
         if @transaction.invalid?

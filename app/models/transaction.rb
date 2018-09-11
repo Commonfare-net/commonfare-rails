@@ -2,6 +2,15 @@ class Transaction < ApplicationRecord
   belongs_to :from_wallet, class_name: 'Wallet'
   belongs_to :to_wallet, class_name: 'Wallet'
 
+  acts_as_notifiable :commoners,
+    # Set to notify to the counterpart of the transaction
+    # NOTE: the lambda must return an array!
+    targets: ->(transaction, key) { [transaction.to_wallet.walletable] },
+    notifier: ->(transaction) { transaction.from_wallet.walletable },
+    # Path to move when the notification is opened by the target user
+    # This is an optional configuration since activity_notification uses polymorphic_path as default
+    notifiable_path: :transaction_wallet_path
+
   validates :amount, :to_wallet, :from_wallet, presence: true
   validates :amount, numericality: {
     less_than_or_equal_to: (Proc.new { |t| t.from_wallet.balance }),
@@ -72,5 +81,9 @@ class Transaction < ApplicationRecord
   def refresh_wallets_balance
     self.from_wallet.refresh_balance
     self.to_wallet.refresh_balance
+  end
+
+  def transaction_wallet_path
+    commoner_wallet_path(self.to_wallet.walletable, self.to_wallet, locale: I18n.locale) if self.to_wallet.walletable.is_a? Commoner
   end
 end

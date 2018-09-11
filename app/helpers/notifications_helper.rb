@@ -14,8 +14,6 @@ module NotificationsHelper
   # notification.group.printable_group_name => 'conversation'
   # notification.group_notification_count => Number of unread messages in a conversation
   def notifiable_count(notification)
-    if notification.notifiable.is_a? Message
-      "#{notification.group_notification_count} #{n_('message', 'messages', notification.group_notification_count)}" 
-    end
+    "#{notification.group_notification_count} #{n_(notification.notifiable_type.humanize.singularize.downcase, notification.notifiable_type.humanize.pluralize.downcase, notification.group_notification_count)}" 
   end
 end
