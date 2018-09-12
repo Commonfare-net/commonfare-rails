@@ -1,5 +1,7 @@
-// See https://css-tricks.com/snippets/css/prevent-long-urls-from-breaking-out-of-container/
-.dont-break-out {
+// NOTE: this prevents ONLY URLs from breaking out of container.
+// Very long words may still break out.
+.dont-break-out a {
+  // See https://css-tricks.com/snippets/css/prevent-long-urls-from-breaking-out-of-container/
   /* These are technically the same, but use both */
   overflow-wrap: break-word;
   word-wrap: break-word;
