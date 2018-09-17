@@ -68,19 +68,24 @@ class ApplicationController < ActionController::Base
   # Create a Comment in case the user started the comment creation
   # when not logged in, and return a path
   def create_comment_from_session
-    story = Story.friendly.find session[:comment_path_params]['story_id']
-    comment = story.comments.build(session[:comment_request_params]['comment'])
+    if session[:comment_path_params]['story_id'].present?
+      commentable = Story.friendly.find session[:comment_path_params]['story_id']
+    elsif session[:comment_path_params]['listing_id'].present?
+      commentable = Listing.friendly.find session[:comment_path_params]['listing_id']
+    else
+      commentable = nil
+    end
+    comment = commentable.comments.build(session[:comment_request_params]['comment'])
     comment.commoner = current_user.meta
-    binding.pry
     if comment.save
       # clear session
       clear_session
-      # and go to the story
+      # and go to the story or listing
       flash[:notice] = _('Comment was successfully created.')
-      story_path(story)
+      get_commentable_path(commentable)
     else
       flash[:alert] = _("A problem occurred with your comment. Please try again")
-      story_path(story)
+      get_commentable_path(commentable)
     end
 
   end
@@ -132,5 +137,15 @@ class ApplicationController < ActionController::Base
   # Returns true if there has been a POST request for creating a Comment
   def is_comment_creation?
     request.post? && request.request_parameters['comment'].present?
+  end
+
+  def get_commentable_path(commentable)
+    if commentable.is_a? Story
+      story_path(commentable)
+    elsif commentable.is_a? Listing
+      listing_path(commentable)
+    else
+      root_path
+    end
   end
 end

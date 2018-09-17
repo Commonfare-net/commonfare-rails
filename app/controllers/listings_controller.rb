@@ -27,6 +27,8 @@ class ListingsController < ApplicationController
     @comments = @listing.comments
     if user_signed_in?
       @comment = current_user.meta.comments.build
+    else
+      @comment = Comment.new(commentable: @listing)
     end
   end
 
