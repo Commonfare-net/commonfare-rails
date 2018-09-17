@@ -13,6 +13,12 @@ class ApplicationController < ActionController::Base
 
   rescue_from CanCan::AccessDenied do |exception|
     if current_user.nil?
+      # Store the original requests
+      if is_comment_creation?
+        # binding.pry
+        session[:comment_request_params] = request.request_parameters
+        session[:comment_path_params] = request.path_parameters
+      end
       redirect_to new_user_session_path, notice: _("You have to log in to continue")
     else
       #render :file => "#{Rails.root}/public/403.html", :status => 403
@@ -30,7 +36,11 @@ class ApplicationController < ActionController::Base
     if resource.is_a? AdminUser
       admin_root_path
     else
-      commoner_path(current_user.meta)
+      if comment_in_session?
+        create_comment_from_session # This returns a path
+      else
+        commoner_path(current_user.meta)
+      end
     end
   end
 
@@ -45,6 +55,41 @@ class ApplicationController < ActionController::Base
     # else
       { locale: I18n.locale }.merge options
     # end
+  end
+
+  protected
+
+  # Check if there is a comment in the session, i.e. the user tried to create a
+  # Comment when not logged in.
+  def comment_in_session?
+    session[:comment_request_params].present? && session[:comment_path_params].present?
+  end
+
+  # Create a Comment in case the user started the comment creation
+  # when not logged in, and return a path
+  def create_comment_from_session
+    story = Story.friendly.find session[:comment_path_params]['story_id']
+    comment = story.comments.build(session[:comment_request_params]['comment'])
+    comment.commoner = current_user.meta
+    binding.pry
+    if comment.save
+      # clear session
+      clear_session
+      # and go to the story
+      flash[:notice] = _('Comment was successfully created.')
+      story_path(story)
+    else
+      flash[:alert] = _("A problem occurred with your comment. Please try again")
+      story_path(story)
+    end
+
+  end
+
+  # Delete all the keys in the session hash that have been used for
+  # storing temporary data
+  def clear_session
+    session.delete :comment_request_params
+    session.delete :comment_path_params
   end
 
   private
@@ -82,5 +127,10 @@ class ApplicationController < ActionController::Base
       nl: %i[nl en it hr],
       hr: %i[hr en it nl],
     }
+  end
+
+  # Returns true if there has been a POST request for creating a Comment
+  def is_comment_creation?
+    request.post? && request.request_parameters['comment'].present?
   end
 end

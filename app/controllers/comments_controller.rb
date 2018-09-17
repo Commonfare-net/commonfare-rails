@@ -1,8 +1,8 @@
 class CommentsController < ApplicationController
   # before_action :set_comment, only: [:show, :edit, :update, :destroy]
   load_and_authorize_resource
-  skip_authorize_resource only: :create
-  skip_authorization_check only: :create
+  # skip_authorize_resource only: :create
+  # skip_authorization_check only: :create
   before_action :load_commentable, only: :create
   before_action :set_commoner, only: [:create, :edit, :update]
   before_action :set_story_locale

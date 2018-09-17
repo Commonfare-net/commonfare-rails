@@ -18,7 +18,7 @@
         </small>
       </p>
       <%= f.button :submit, s_('Sign up page button|Join Commonfare'), class: 'btn btn-cf btn-lg btn-block mb-3' %>
-      <%= f.button :button, s_('Sign up page button|Join and create a group'), type: 'submit', name: 'create_group', value: 'true', class: 'btn btn-cf btn-lg btn-block mb-3' %>
+      <%= f.button(:button, s_('Sign up page button|Join and create a group'), type: 'submit', name: 'create_group', value: 'true', class: 'btn btn-cf btn-lg btn-block mb-3') unless @no_group %>
     <% end %>
   </div>
 </div>

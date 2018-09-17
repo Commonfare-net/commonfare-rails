@@ -3,18 +3,23 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
-  # def new
-  #   super
-  # end
+  def new
+    @no_group = true if comment_in_session?
+    super
+  end
 
   # POST /resource
   def create
-    super
+    # Here I use Devise superpowers: the Commoner is created within the super,
+    # so the creation of the new Comment can be done in the after_sign_up_path_for
+    # see https://github.com/plataformatec/devise/blob/3b0bc08ec67dd073ddd6d043c71646c2784ced6c/app/controllers/devise/registrations_controller.rb#L20
+    super do |resource|
+      Commoner.create name: generate_name, user: resource
+    end
     if params['create_group'] == 'true'
       # The session will be cleared in the groups#new
       session[:create_group] = true
     end
-    Commoner.create name: generate_name, user: resource
   end
 
   # GET /resource/edit
@@ -62,6 +67,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
     # super(resource)
     if session[:create_group]
       new_group_path(new_group_after_signup: true)
+    elsif comment_in_session?
+      create_comment_from_session # This returns a path
     else
       welcome_path
     end

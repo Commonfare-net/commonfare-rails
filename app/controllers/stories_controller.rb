@@ -57,6 +57,8 @@ class StoriesController < ApplicationController
     @comments = @story.comments
     if user_signed_in?
       @comment = current_user.meta.comments.build
+    else
+      @comment = Comment.new(commentable: @story)
     end
   end
 
