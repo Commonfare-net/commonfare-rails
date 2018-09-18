@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0\n"
 "Report-Msgid-Bugs-To: contact@translation.io\n"
-"POT-Creation-Date: 2018-09-10 11:49+0200\n"
-"PO-Revision-Date: 2018-09-10 11:49+0200\n"
+"POT-Creation-Date: 2018-09-18 09:56+0200\n"
+"PO-Revision-Date: 2018-09-18 09:56+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Croatian\n"
 "Language: hr\n"
@@ -27,13 +27,18 @@ msgstr "Priložite datoteku"
 msgid "Embed a video"
 msgstr "Ugradi video"
 
-#: ../app/controllers/application_controller.rb:16
+#: ../app/controllers/application_controller.rb:22
 msgid "You have to log in to continue"
 msgstr "Morate se prijaviti da biste nastavili"
 
+#: ../app/controllers/application_controller.rb:84
 #: ../app/controllers/comments_controller.rb:49
 msgid "Comment was successfully created."
 msgstr "Komentar je uspješno kreiran."
+
+#: ../app/controllers/application_controller.rb:87
+msgid "A problem occurred with your comment. Please try again"
+msgstr ""
 
 #: ../app/controllers/comments_controller.rb:66
 msgid "Comment was successfully updated."
@@ -103,11 +108,11 @@ msgstr "Zahtjev za pristupanje je odbijen."
 msgid "You have left this group"
 msgstr "Napustili ste ovu grupu"
 
-#: ../app/controllers/messages_controller.rb:38
+#: ../app/controllers/messages_controller.rb:39
 msgid "Message sent"
 msgstr "Poruka je poslana"
 
-#: ../app/controllers/messages_controller.rb:66
+#: ../app/controllers/messages_controller.rb:67
 msgid "Message deleted"
 msgstr "Poruka je izbrisana"
 
@@ -127,34 +132,34 @@ msgstr "Pregleda stranica"
 msgid "Dashboard|Total registered commoners"
 msgstr "Ukupno registriranih commonera"
 
-#: ../app/controllers/stories_controller.rb:142
+#: ../app/controllers/stories_controller.rb:144
 msgid "Story was successfully destroyed."
 msgstr "Priča je uspješno izbrisana."
 
-#: ../app/controllers/stories_controller.rb:157
+#: ../app/controllers/stories_controller.rb:159
 msgid "Could not publish this story"
 msgstr "Nije bilo moguće objaviti ovu priču"
 
-#: ../app/controllers/stories_controller.rb:220
+#: ../app/controllers/stories_controller.rb:222
 msgid "Story was successfully created."
 msgstr "Priča je uspješno stvorena."
 
-#: ../app/controllers/stories_controller.rb:235
+#: ../app/controllers/stories_controller.rb:237
 msgid "Story was successfully updated."
 msgstr "Priča je uspješno ažururana."
 
-#: ../app/controllers/transactions_controller.rb:56
-#: ../app/controllers/transactions_controller.rb:106
-#: ../app/controllers/transactions_controller.rb:148
-#: ../app/controllers/transactions_controller.rb:173
+#: ../app/controllers/transactions_controller.rb:57
+#: ../app/controllers/transactions_controller.rb:107
+#: ../app/controllers/transactions_controller.rb:149
+#: ../app/controllers/transactions_controller.rb:174
 #: ../app/views/transactions/success.html.erb:7
 msgid "Transaction successful"
 msgstr "Transakcija je uspješna"
 
-#: ../app/controllers/transactions_controller.rb:61
-#: ../app/controllers/transactions_controller.rb:111
-#: ../app/controllers/transactions_controller.rb:153
-#: ../app/controllers/transactions_controller.rb:175
+#: ../app/controllers/transactions_controller.rb:62
+#: ../app/controllers/transactions_controller.rb:112
+#: ../app/controllers/transactions_controller.rb:154
+#: ../app/controllers/transactions_controller.rb:176
 msgid "There has been a problem processing the transaction"
 msgstr "Došlo je do problema prilikom obrade transakcije"
 
@@ -165,6 +170,12 @@ msgstr "Vi"
 #: ../app/helpers/application_helper.rb:46 ../app/helpers/stories_helper.rb:84
 msgid "Anonymous"
 msgstr "Anonimno"
+
+#: ../app/helpers/comments_helper.rb:8
+msgid ""
+"Your profile will not be linked to this comment, but you will still be able to"
+" edit or delete the comment."
+msgstr ""
 
 #: ../app/helpers/groups_helper.rb:3
 msgid "Button|Confirm and create profile"
@@ -258,17 +269,36 @@ msgstr "nije valjana SWAPI krajnja točka"
 msgid "ValidationError|doesn't seem to be a valid place"
 msgstr "ValidationError|Ne čini se valjanim mjestom"
 
-#: ../app/models/transaction.rb:37
+#: ../app/models/transaction.rb:46
 msgid "can't be you"
 msgstr "ne možeš biti ti"
 
-#: ../app/models/transaction.rb:43
+#: ../app/models/transaction.rb:52
 msgid "must accept %{currency_name}"
 msgstr "mora prihvaćatii %{currency_name}"
 
 #: ../app/models/wallet.rb:36
 msgid "Unregistered commoner"
 msgstr "Neregistrirani Commoner"
+
+#:
+#: ../app/views/activity_notification/notifications/commoners/_default.html.erb:10
+msgid ""
+"You have %{num_of_messages} in the conversation with <strong>%{other_commoner}"
+"</strong>"
+msgstr ""
+
+#:
+#: ../app/views/activity_notification/notifications/commoners/_default.html.erb:13
+msgid ""
+"You have received %{amount} %{currency} from <strong>%{other_commoner}</strong"
+">"
+msgstr ""
+
+#: ../app/views/activity_notification/notifications/commoners/index.html.erb:1
+#: ../app/views/activity_notification/notifications/commoners/index.html.erb:7
+msgid "Title|Notifications"
+msgstr ""
 
 #: ../app/views/comments/_fields.html.erb:2
 msgid "Add a comment"
@@ -289,6 +319,10 @@ msgstr "Uredi komentar"
 #: ../app/views/comments/_new.html.erb:2
 msgid "Button|Comment"
 msgstr "Komentirajte"
+
+#: ../app/views/comments/_new.html.erb:2
+msgid "Button|Login and comment"
+msgstr ""
 
 #: ../app/views/comments/edit.html.erb:3
 msgid "Edit your comment"
@@ -388,12 +422,12 @@ msgid "Go to %{currency_name} Wallet"
 msgstr "Odite na %{currency_name} Novčanik"
 
 #: ../app/views/commoners/show.html.erb:42 ../app/views/groups/show.html.erb:43
-#: ../app/views/layouts/_navbar.html.erb:97
+#: ../app/views/layouts/_navbar.html.erb:113
 msgid "Stories"
 msgstr "Priče"
 
 #: ../app/views/commoners/show.html.erb:45
-#: ../app/views/layouts/_navbar.html.erb:100
+#: ../app/views/layouts/_navbar.html.erb:116
 msgid "Groups"
 msgstr "Grupe"
 
@@ -572,6 +606,7 @@ msgstr "Započnite raspravu"
 #: ../app/views/discussions/new.html.erb:4
 msgid "Title|New discussion in %{group_name}"
 msgstr ""
+"Title| Nova rasprava u grupi %{group_name}\n"
 
 #: ../app/views/discussions/new.html.erb:8
 #: ../app/views/listings/_fields.html.erb:3
@@ -815,7 +850,7 @@ msgstr "Pridružite se"
 
 #: ../app/views/join_requests/new.html.erb:1
 msgid "Title|Request to join %{group_name}"
-msgstr ""
+msgstr "Title| Zahtjev za pridruživanje"
 
 #: ../app/views/join_requests/new.html.erb:4
 msgid "Title|Do you want to join %{group_name}?"
@@ -882,83 +917,83 @@ msgstr "Privatnost"
 msgid "Footer|Metrics dashboard"
 msgstr "Nadzorna ploča pokazatelja"
 
-#: ../app/views/layouts/_navbar.html.erb:15
-#: ../app/views/layouts/_navbar.html.erb:45
+#: ../app/views/layouts/_navbar.html.erb:26
+#: ../app/views/layouts/_navbar.html.erb:57
 msgid "Search"
 msgstr "Pretraži"
 
-#: ../app/views/layouts/_navbar.html.erb:26
+#: ../app/views/layouts/_navbar.html.erb:38
 msgid "Navbar|Commoners Voices"
 msgstr "Glasovi Commonera"
 
-#: ../app/views/layouts/_navbar.html.erb:29
+#: ../app/views/layouts/_navbar.html.erb:41
 msgid "Navbar|Good Practices"
 msgstr "Dobre prakse"
 
-#: ../app/views/layouts/_navbar.html.erb:32
+#: ../app/views/layouts/_navbar.html.erb:44
 msgid "Navbar|Public Benefits"
 msgstr "Mjere socijalne zaštite"
 
-#: ../app/views/layouts/_navbar.html.erb:35
+#: ../app/views/layouts/_navbar.html.erb:47
 msgid "Navbar|Commonplace"
 msgstr "Commonplace"
 
-#: ../app/views/layouts/_navbar.html.erb:39
+#: ../app/views/layouts/_navbar.html.erb:51
 msgid "Navbar|About"
 msgstr "O nama"
 
-#: ../app/views/layouts/_navbar.html.erb:50
+#: ../app/views/layouts/_navbar.html.erb:62
 msgid "Navbar|Home"
 msgstr "Početna"
 
-#: ../app/views/layouts/_navbar.html.erb:58
+#: ../app/views/layouts/_navbar.html.erb:74
 msgid "Profile"
 msgstr "Profil"
 
-#: ../app/views/layouts/_navbar.html.erb:60
+#: ../app/views/layouts/_navbar.html.erb:76
 msgid "Commoncoin Wallet"
 msgstr "Commoncoin novčanik"
 
-#: ../app/views/layouts/_navbar.html.erb:62
+#: ../app/views/layouts/_navbar.html.erb:78
 msgid "%{currency_name} Wallet"
 msgstr "%{currency_name} Novčanik"
 
-#: ../app/views/layouts/_navbar.html.erb:64
+#: ../app/views/layouts/_navbar.html.erb:80
 msgid "Conversations"
 msgstr "Razgovori"
 
-#: ../app/views/layouts/_navbar.html.erb:66
+#: ../app/views/layouts/_navbar.html.erb:82
 msgid "Navbar|Logout"
 msgstr "Odjavite se"
 
-#: ../app/views/layouts/_navbar.html.erb:71
+#: ../app/views/layouts/_navbar.html.erb:87
 msgid "Navbar|Login"
 msgstr "Prijavite se"
 
-#: ../app/views/layouts/_navbar.html.erb:74
+#: ../app/views/layouts/_navbar.html.erb:90
 msgid "Navbar|Join"
 msgstr "Pridružite se"
 
-#: ../app/views/layouts/_navbar.html.erb:98
+#: ../app/views/layouts/_navbar.html.erb:114
 #: ../app/views/listings/_fields.html.erb:25
 #: ../app/views/stories/_fields.html.erb:17
 msgid "Tags"
 msgstr "Oznake"
 
-#: ../app/views/layouts/_navbar.html.erb:99
+#: ../app/views/layouts/_navbar.html.erb:115
 #: ../app/views/main/search.html.erb:39
 msgid "Listings"
 msgstr "Oglasi"
 
-#: ../app/views/layouts/_navbar.html.erb:101
+#: ../app/views/layouts/_navbar.html.erb:117
 msgid "Autocomplete category Title|Commoners"
 msgstr "Commoneri"
 
-#: ../app/views/layouts/_navbar.html.erb:103
+#: ../app/views/layouts/_navbar.html.erb:119
 msgid "Autocomplete help text|Suggested results"
 msgstr "Predloženi rezultati"
 
-#: ../app/views/layouts/_navbar.html.erb:104
+#: ../app/views/layouts/_navbar.html.erb:120
 msgid "Autocomplete help text|Press Enter to see more"
 msgstr "Stisnite Enter kako bi vidjeli više"
 
