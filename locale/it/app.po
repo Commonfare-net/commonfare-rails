@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0\n"
 "Report-Msgid-Bugs-To: contact@translation.io\n"
-"POT-Creation-Date: 2018-09-18 09:56+0200\n"
-"PO-Revision-Date: 2018-09-18 09:56+0200\n"
+"POT-Creation-Date: 2018-09-18 14:47+0200\n"
+"PO-Revision-Date: 2018-09-18 14:47+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Italian\n"
 "Language: it\n"
@@ -299,6 +299,10 @@ msgstr "Hai ricevuto %{amount} %{currency} da <strong>%{other_commoner}</strong>
 #: ../app/views/activity_notification/notifications/commoners/index.html.erb:7
 msgid "Title|Notifications"
 msgstr "Notifiche"
+
+#: ../app/views/activity_notification/notifications/commoners/index.html.erb:20
+msgid "No notifications"
+msgstr "Nessuna notifica"
 
 #: ../app/views/comments/_fields.html.erb:2
 msgid "Add a comment"

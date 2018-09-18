@@ -17,6 +17,7 @@
       <div class="notification_header">
       </div>
       <div class="notifications bg-white p-2">
+        <%= content_tag(:h4, _('No notifications'), class: 'text-muted') if @target.notifications.empty? %>
         <% if @index_options[:with_group_members] %>
         <%= render_notification @notifications, fallback: :default_without_grouping, with_group_members: true %>
         <% else %>
