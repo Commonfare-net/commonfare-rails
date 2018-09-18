@@ -24,6 +24,9 @@ class ConversationsController < ApplicationController
     @conversation = Conversation.new(conversation_params)
     respond_to do |format|
       if @conversation.save
+        # I need the message to trigger the notification
+        message = @conversation.messages.first
+        message.notify(:commoners, group: @conversation) if message.present?
         format.html { redirect_to conversation_path(@conversation) }
         format.json { render :show, status: :created, location: @conversation }
       else
