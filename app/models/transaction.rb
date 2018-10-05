@@ -15,7 +15,7 @@ class Transaction < ApplicationRecord
   validates :amount, numericality: {
     less_than_or_equal_to: (Proc.new { |t| t.from_wallet.balance }),
     greater_than: 0
-  }, unless: (Proc.new { |t| t.from_wallet.walletable.is_a?(Group) })
+  }, unless: (Proc.new { |t| t.from_wallet.walletable.is_a?(Group) || t.from_wallet.is_common_wallet? })
   # validate :less_than_balance
   validate :not_to_self
   validate :same_currency

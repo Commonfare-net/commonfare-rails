@@ -14,6 +14,16 @@ module NotificationsHelper
   # notification.group.printable_group_name => 'conversation'
   # notification.group_notification_count => Number of unread messages in a conversation
   def notifiable_count(notification)
-    "#{notification.group_notification_count} #{n_(notification.notifiable_type.humanize.singularize.downcase, notification.notifiable_type.humanize.pluralize.downcase, notification.group_notification_count)}" 
+    "#{notification.group_notification_count} #{n_(notification.notifiable_type.humanize.singularize.downcase, notification.notifiable_type.humanize.pluralize.downcase, notification.group_notification_count)}"
+  end
+
+  def other_commoner_name_for_transaction_notification(notification)
+    return _('Common wallet') if notification.notifiable.is_a?(Transaction) && notification.notifiable.from_wallet.is_common_wallet?
+    notification.notifier.printable_target_name
+  end
+
+  def notification_image(notification)
+    return image_tag('card_square_default_img.jpg', height: 48) if notification.notifiable.is_a?(Transaction) && notification.notifiable.from_wallet.is_common_wallet?
+    image_tag notification.notifier.avatar.card
   end
 end

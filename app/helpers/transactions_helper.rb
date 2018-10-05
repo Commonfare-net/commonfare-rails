@@ -55,4 +55,8 @@ module TransactionsHelper
     return transaction.to_wallet.currency.code if transaction.to_wallet.currency.present?
     'cc'
   end
+
+  def basic_income_transaction?(transaction)
+    transaction.from_wallet.is_common_wallet?
+  end
 end

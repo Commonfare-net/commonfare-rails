@@ -52,13 +52,21 @@ class Wallet < ApplicationRecord
     ENV['SWAPI_ENDPOINT']
   end
 
+  def self.get_common_wallet
+    Wallet.where(currency: nil, address: '').first
+  end
+
+  def is_common_wallet?
+    !address.present?
+  end
+
   private
   def get_initial_income
-    unless currency.present?
-      # 400 Commoncoin on signup
+    unless currency.present? || is_common_wallet?
+      # 1000 Commoncoin on signup
       client = SocialWallet::Client.new(api_endpoint: endpoint)
-      resp = client.transactions.new(from_id: '', to_id: self.address, amount: 400, tags: ['initial_income', 'new_commoner'])
-      refresh_balance if resp['amount'] == 400
+      resp = client.transactions.new(from_id: '', to_id: self.address, amount: 1000, tags: ['initial_income', 'new_commoner'])
+      refresh_balance if resp['amount'] == 1000
     else
       # 0 Group coins
       update_column(:balance, 0)
