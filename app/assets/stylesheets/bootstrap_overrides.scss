@@ -50,6 +50,8 @@ hr {
   max-width: 360px;
   margin: auto;
   cursor: pointer;
+  font-size: 1.2em;
+  padding: 0.5rem 2rem;
 }
 .btn-cf {
   color: $white;
@@ -76,12 +78,26 @@ hr {
   color: $darkgreen;
   background-color: transparent;
   border-color: rgba($darkgreen, .15);
-  padding: 0.3rem 1.5rem;
   &:hover {
     border-color: $darkgreen;
     background-color: transparent;
     color: $darkgreen;
   }
+}
+.btn-outline-secondary {
+  color: $cf-primary-color;
+  background-color: transparent;
+  border-color: rgba($cf-primary-color, .15);
+  &:hover {
+    border-color: $cf-primary-color;
+    background-color: transparent;
+    color: $cf-primary-color;
+  }
+}
+
+.btn-sm {
+  font-size: 1.05em;
+  padding: 0.25rem 1.5rem;
 }
 .btn-cf:focus, .btn-cf.focus {
   box-shadow: none;
@@ -128,7 +144,7 @@ hr {
   }
 }
 .form-group {
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   &.image_preview {
     img {
       margin-right: 1em;
@@ -138,8 +154,10 @@ hr {
   }
 }
 label {
-  font-size: .9em;
+  font-size: 1em;
   font-weight: 500;
+  display: block;
+  margin-bottom: .25rem;
 }
 
 

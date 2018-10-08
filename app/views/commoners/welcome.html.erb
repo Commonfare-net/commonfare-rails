@@ -1,6 +1,6 @@
 <% content_for :title, _('Welcome!') %>
 <div class="row justify-content-center">
-  <div class="col-md-8 col-lg-6">
+  <div class="col-lg-7 col-md-9">
     <h1 class="red-title"><%= _('Welcome!') %> 😀</h1>
     <p>
       <%= (s_('Welcome page|Before you go on, please notice that your temporary name on Commonfare.net is <strong>%{name}</strong>. This is a random name that has been created to protect your privacy, and that you can change anytime. If you want to do it now, just click on it!') %{name: link_to(@commoner.name, edit_commoner_path(@commoner))}).html_safe %>

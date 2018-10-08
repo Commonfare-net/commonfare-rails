@@ -1,8 +1,8 @@
 <%= content_for :title, (_('Conversation with %{commoner_name}') %{commoner_name: counterpart_for_conversation(@conversation).name}) %>
 <div class="row justify-content-center">
-  <div class="col-lg-8 col-md-8 bg-white">
+  <div class="col-lg-7 col-md-9 bg-white">
     <div class="conversation-back mt-3">
-      <%= link_to((_("%{icon} Back to My conversations") %{icon: fa_icon('chevron-left fw')}).html_safe, conversations_path, class: 'btn btn-outline-cf') %>
+      <%= link_to((_("%{icon} Back to My conversations") %{icon: fa_icon('chevron-left fw')}).html_safe, conversations_path, class: 'btn btn-outline-cf btn-sm') %>
     </div>
     <div class="row conversation-header pt-4 pb-2">
       <div class="col-md-8">

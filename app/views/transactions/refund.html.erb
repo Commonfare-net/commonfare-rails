@@ -1,6 +1,6 @@
 <%= content_for :title, s_('Title|Refund') %>
 <div class="row justify-content-center">
-  <div class="col-md-8 col-lg-6 pb-4 bg-white">
+  <div class="col-lg-7 col-md-9 pb-4 bg-white">
     <h1 class='my-4'><%= s_('Title|Refund %{counterpart_name}') %{counterpart_name: @reverse_transaction.to_wallet.walletable.name} %></h1>
     <div class="transaction-confirm-to">
       <label class="mb-0"><%= _('Send refund to') %></label>

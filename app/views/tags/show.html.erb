@@ -11,10 +11,12 @@
 <% if @story_types_and_lists.any? %>
   <div class="row my-4">
     <div class="col">
-      <h3 class="d-inline mr-3"><%= _("Stories with tag") %></h3>
-      <p class="cf-tags d-inline">
-        <%= link_to @tag.name, tag_path(@tag) %>
-      </p>
+      <div class="row mt-3">      
+        <h3 class="d-inline mr-3"><%= _("Stories with tag") %></h3>
+        <p class="cf-tags d-inline">
+          <%= link_to @tag.name, tag_path(@tag) %>
+        </p>
+      </div>
       <%= render 'stories/types_and_lists', story_types_and_lists: @story_types_and_lists %>
     </div>
   </div>

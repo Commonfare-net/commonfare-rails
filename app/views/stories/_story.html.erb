@@ -4,10 +4,10 @@
       <%= image_tag story_card_square_image_path(story), class: 'mr-3' %>
     <% end %>
     <div class="media-body">
-      <h4 class="mb-0"><%= link_to story.title, story_show_or_preview_path(story), class: 'clamp' %></h4>
-      <small class="text-muted">
+      <h4 class="mb-1"><%= link_to story.title, story_show_or_preview_path(story), class: 'clamp' %></h4>
+      <span class="text-muted">
         <%= l(story.created_at.to_date, format: :short) %>
-      </small>
+      </span>
     </div>
   </div>
   <div class="story-media-footer">

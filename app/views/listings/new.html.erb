@@ -1,7 +1,7 @@
 <%= content_for :title, s_('Title|New listing') %>
 <div class="row justify-content-center">
-  <div class="col-md-10 col-lg-8 bg-white pb-2">
-    <h2><%= s_('Title|New listing') %></h2>
+  <div class="col-lg-7 col-md-9 py-4 bg-white">
+    <h2 class="pt-4 pb-2"><%= s_('Title|New listing') %></h2>
     <%= simple_form_for(@listing) do |f| %>
       <%= f.error_notification %>
       <%= render 'fields', f: f %>

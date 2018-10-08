@@ -33,15 +33,13 @@
     </div>
   </div>
   <div class="transaction-details collapse" id="collapseTransaction-<%= transaction.id %>">
-    <div class="d-flex align-items-top">
-      <div class="transaction-message">
-        <%= message_for_transaction(transaction.message) %>
-      </div>
-      <div class="transaction-timestamp ml-auto moment-long-date" data-server-date="<%= transaction.created_at %>">
-        <%= l((transaction.created_at || Time.now.to_date), format: :long) %>
-      </div>
+    <div class="transaction-timestamp text-muted moment-long-date" data-server-date="<%= transaction.created_at %>">
+      <%= l((transaction.created_at || Time.now.to_date), format: :long) %>
     </div>
-    <div class="d-flex align-items-top">
+    <div class="transaction-message">
+      <%= message_for_transaction(transaction.message) %>
+    </div>
+    <div class="d-flex align-items-top pt-3 pb-2">
       <% if counterpart_for_transaction(transaction).persisted? %>
         <div class="transaction-counterpart">
           <%= link_to get_walletable_path(counterpart_for_transaction(transaction)) do %>

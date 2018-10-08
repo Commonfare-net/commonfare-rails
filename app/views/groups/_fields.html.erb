@@ -1,9 +1,11 @@
-<%= f.input :name %>
-<%= f.input :description %>
+<%= f.input :name,
+            label: _('Name') %>
+<%= f.input :description,
+            label: _('Description') %>
 <%= f.input :avatar,
             as: :image_preview,
             input_html: { preview_version: :profile },
-            label: false,
+            label: _('Avatar'),
             hint: _('Square pictures look better ✨'),
             wrapper: :vertical_file_input %>
 

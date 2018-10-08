@@ -21,20 +21,21 @@
             as: :text,
             required: false,
             label: _('Description') %>
-<%= f.association :tags,
-                  label: _('Tags'),
-                  # placeholder: "Managed in JS",
-                  hint: _('Use comma or press Enter to separate tags') %>
 
-
-<div id="images">
+<div class="form-group" id="images">
+  <label><%= _('Images') %></label>
   <%= f.simple_fields_for :images do |img| %>
     <%= render 'image_fields', f: img %>
   <% end %>
   <div class="links">
-    <%= link_to_add_association _('Add image'), f, :images %>
+    <%= link_to_add_association _('Add image'), f, :images, class: 'btn btn-cf btn-sm' %>
   </div>
 </div>
+
+<%= f.association :tags,
+                  label: _('Tags'),
+                  # placeholder: "Managed in JS",
+                  hint: _('Use comma or press Enter to separate tags') %>
 
 
 

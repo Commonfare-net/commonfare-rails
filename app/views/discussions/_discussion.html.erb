@@ -1,13 +1,13 @@
 <div class="discussion-media mt-3 mb-3">
   <div class="row media-body">
-    <div class="col col-lg-10">
-      <h5 class="mt-2 mb-0"><%= link_to discussion.title, group_discussion_path(discussion.group, discussion) %></h5>
-      <small>
+    <div class="col-lg-10">
+      <h4 class="mt-2 mb-1"><%= link_to discussion.title, group_discussion_path(discussion.group, discussion) %></h4>
+      <div>
         <span class="text-muted moment-variable-date" data-server-date="<%= discussion.messages.last.created_at %>">
           <%= last_message_time(discussion.messages.last) %>
         </span>,
-        <%= (_('by <strong>%{commoner_name}</strong>') %{commoner_name: discussion.messages.last.author.name}).html_safe %>
-      </small>
+        <%= (_('by %{commoner_name}') %{commoner_name: discussion.messages.last.author.name}).html_safe %>
+      </div>
     </div>
     <div class="col col-lg-2 comments">
       <p class="text-muted">

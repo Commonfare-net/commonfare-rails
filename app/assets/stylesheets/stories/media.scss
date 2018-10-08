@@ -1,11 +1,6 @@
 .story-media-container {
   margin-bottom: 1rem;
   background-color: $white;
-  box-shadow: 0 1px 4px -2px rgba(0, 0, 0, 0.35);
-  transition: box-shadow .25s;
-  &:hover {
-    box-shadow: 0 1px 4px 0px rgba(0, 0, 0, 0.25);
-  }
   a {
     text-decoration: none;
   }
@@ -23,7 +18,6 @@
   border-top: 1px solid $lightgreen;
   .story-media-footer-comments {
     @extend .text-muted;
-    font-size: 0.8em;
     padding: 0;
     i.fa {
       padding-right: .5em;

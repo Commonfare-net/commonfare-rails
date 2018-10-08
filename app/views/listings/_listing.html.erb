@@ -15,10 +15,8 @@
         <%= fa_icon('map-marker', text: listing.place) %>
       </div>
       <div class="listing-media-date-commoner mt-auto">
-        <small>
-          <span class="text-muted"><%= l(listing.created_at.to_date, format: :short) %>,</span>
-          <%= (_('by <strong>%{commoner_name}</strong>') %{commoner_name: listing.commoner.name}).html_safe %>
-        </small>
+        <span class="text-muted"><%= l(listing.created_at.to_date, format: :short) %>,</span>
+        <%= (_('by %{commoner_name}') %{commoner_name: listing.commoner.name}).html_safe %>
       </div>
     </div>
   </div>

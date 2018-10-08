@@ -21,11 +21,11 @@
     }
   }
   .outgoing-transaction {
-    color: red;
+    color: $cf-primary-color;
   }
 
   .incoming-transaction {
-    color: green;
+    color: $cf-secondary-color;
   }
 
   .target {
@@ -45,20 +45,19 @@
   .transaction-counterpart,
   .transaction-refund,
   .transaction-collapse {
-    padding-top: .5rem;
-    padding-bottom: .5rem;
     padding-right: .5rem;
   }
 
   .transaction-message,
   .transaction-counterpart,
-  .transaction-refund {
-    padding-left: 2.39rem;
+  .transaction-refund,
+  .transaction-timestamp {
+    padding-left: 3.25rem;
+    max-width: 480px;
   }
 
   .transaction-timestamp {
     font-size: .8rem;
-    color: gray;
   }
 
   .transaction-counterpart {

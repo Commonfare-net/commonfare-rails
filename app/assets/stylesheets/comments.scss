@@ -16,16 +16,17 @@
     a {
       color: black;
     }
-    margin-bottom: 0;
     font-weight: 500;
     margin: 0;
-    padding: .5rem 0 0;
+    padding: .5rem 0 .15rem;
     line-height: 1em;
   }
   #commentDropdownMenuLink {
     color: inherit;
   }
   p.comment-body {
+    font-family: 'Lora', serif;
+    font-size: 1.15rem;
     margin: .5rem 0;
   }
 }

@@ -5,6 +5,10 @@
                 label: _('Your name on Commonfare.net'),
                 placeholder: _('e.g. Bungo Baggins, pbm42, etc.'),
                 hint: _('It must be unique') %>
+    <div class="form-group">
+      <label><%= _('Edit email or password') %></label>
+      <%= link_to('Edit email or password', edit_user_registration_path, class: 'btn btn-cf btn-sm') %>
+    </div>
     <%= f.input :avatar,
                 as: :image_preview,
                 input_html: { preview_version: :profile },

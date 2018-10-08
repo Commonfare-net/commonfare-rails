@@ -1,8 +1,8 @@
 <div class="row wp-row">
-  <div class="col-2 wp-row--date">
+  <div class="col-1 wp-row--date">
     <%= l(story.created_at.to_date, format: :short) %>
   </div>
-  <div class="col-10">
+  <div class="col-11">
     <div class="row">
       <div class="col-lg-8 wp-row--title">
         <h3><%= link_to(story.title, story_path(story)) %></h3>

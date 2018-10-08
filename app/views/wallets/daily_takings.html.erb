@@ -1,6 +1,6 @@
 <%= content_for :title, _('Daily takings') %>
 <div class="row justify-content-center">
-  <div class="col-lg-8 col-md-8 bg-white">
+  <div class="col-lg-7 col-md-9 bg-white">
     <p class="mt-3">
       <%= link_to((_("%{icon} Back to %{currency_name} wallet") %{icon: fa_icon('chevron-left fw'), currency_name: currency_name_for_wallet}).html_safe, view_commoner_wallet_path(@wallet.walletable, @wallet), class: 'btn btn-outline-cf btn-sm') %>
     </p>

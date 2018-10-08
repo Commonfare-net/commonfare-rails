@@ -1,6 +1,6 @@
 <%= content_for :title, s_('Title|Start a discussion') %>
 <div class="row justify-content-center">
-  <div class="col-md-10 col-lg-8">
+  <div class="col-lg-7 col-md-9 pt-4 pb-3 bg-white">
     <h3><%= s_('Title|New discussion in %{group_name}') %{group_name: @group.name} %></h3>
     <%= simple_form_for([@group, @discussion]) do |f| %>
       <%= f.error_notification %>

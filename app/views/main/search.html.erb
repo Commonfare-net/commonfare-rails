@@ -1,5 +1,5 @@
 <% content_for :title, (_("Results for %{search_term}") %{search_term: @q}) %>
-<h1><%= (_("Results for '%{search_term}'") %{search_term: @q}) %></h1>
+<h1 class="mt-5"><%= (_("Results for '%{search_term}'") %{search_term: @q}) %></h1>
 <% if @commoners.any? %>
 <div class="row my-4">
   <div class="col">

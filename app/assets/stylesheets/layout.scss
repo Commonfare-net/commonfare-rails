@@ -11,6 +11,7 @@ body {
   /* Margin bottom by footer height */
   margin-bottom: 300px; // this changes in a media query
   -webkit-font-smoothing: antialiased;
+  min-height: 85vh;
 }
 
 .bg-white {
