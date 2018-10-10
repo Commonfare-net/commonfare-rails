@@ -57,10 +57,19 @@ hr {
   color: $white;
   background-color: $darkgreen;
   border-color: transparent;
-  cursor: pointer;
   &:hover {
     color: $white;
     background-color: $darkergreen;
+    border-color: transparent;
+  }
+}
+.btn-secondary {
+  color: $darkgreen;
+  background-color: $lightgreen;
+  border-color: transparent;
+  &:hover {
+    color: $darkergreen;
+    background-color: darken($lightgreen, 5%);
     border-color: transparent;
   }
 }
@@ -75,7 +84,7 @@ hr {
   }
 }
 .btn-outline-cf {
-  color: $darkgreen;
+  color: $darkgreen !important;
   background-color: transparent;
   border-color: rgba($darkgreen, .15);
   &:hover {
@@ -144,10 +153,17 @@ hr {
   }
 }
 .form-group {
-  margin-bottom: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  &.hidden {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
   &.image_preview {
     img {
+      display: block;
       margin-right: 1em;
+      margin-bottom: .5em;
       border: 2px solid $lightgreen;
       border-radius: 100%
     }
@@ -156,10 +172,34 @@ hr {
 label {
   font-size: 1em;
   font-weight: 500;
-  display: block;
   margin-bottom: .25rem;
 }
-
+.select2-container--bootstrap .select2-selection--multiple {
+  .select2-selection__choice {
+    color: $cf-secondary-color !important;
+    background-color: $lightgreen !important;
+    border: none !important;
+    border-radius: 2px !important;
+    margin: 5px 0 5px 6px !important;
+    padding: 1px 8px !important;
+  }
+  .select2-selection__choice__remove {
+    color: $darkgreen !important;
+  }
+}
+// Toastr
+#toast-container {
+  > div {
+    width: 100% !important;
+    font-size: 1.3em;
+    padding: 12px 15px 11px 50px !important;
+    border-radius: 0 !important;
+    opacity: 1 !important;
+  }
+  .toast-info {
+    background-color: $cf-secondary-color;
+  }
+}
 
 
 

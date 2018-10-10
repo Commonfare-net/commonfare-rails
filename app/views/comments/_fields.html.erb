@@ -1,10 +1,14 @@
 <%= f.error_notification %>
 <%= f.input :body, required: false, placeholder: _('Add a comment'), label: false %>
-<%= f.input :anonymous, as: :boolean, inline_label: _('Comment anonymously'), wrapper: :checkbox_inline %>
-<span id="anonymous-tooltip" data-toggle="tooltip" data-placement="bottom" title="<%= anonymous_comment_tooltip_text %>">
-  <%= fa_icon('question-circle', class: 'text-muted') %>
-</span>
-<%= f.button :submit, btn_text, class: 'btn btn-sm btn-cf float-right' %>
+
+<div class="d-flex">
+  <%= f.input :anonymous, as: :boolean, inline_label: _('Comment anonymously'), wrapper: :checkbox_inline %>
+  <span id="anonymous-tooltip" data-toggle="tooltip" data-placement="bottom" title="<%= anonymous_comment_tooltip_text %>">
+    <%= fa_icon('question-circle', class: 'text-muted ml-2') %>
+  </span>
+
+  <%= f.button :submit, btn_text, class: 'btn btn-sm btn-cf float-right mr-0' %>
+</div>
 
 <%= content_for :scripts do %>
   <script type="text/javascript">

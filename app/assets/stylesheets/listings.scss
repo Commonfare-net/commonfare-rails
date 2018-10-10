@@ -39,18 +39,18 @@
     .listing-share,
     .listing-lang-select {
       // @extend .text-muted;
-      color: $cf-secondary-color;
-      padding: .5rem .75rem;
+      color: darken($lightgreen, 18%);
+      padding: .65rem .75rem;
       border-bottom: 1px solid $lightgreen;
       i.fa {
+        color: $cf-secondary-color;
         padding-right: .5em;
       }
       a {
+        color: $cf-secondary-color;
         text-decoration: none;
-        color: inherit;
         &:hover {
-          color: inherit;
-          text-decoration: none;
+          text-decoration: underline;
         }
       }
     }
@@ -68,7 +68,7 @@
 
   .listing-price {
     margin-top: 0.25rem;
-    // color: $cf-secondary-color;
+    color: $cf-secondary-color;
   }
 
   .listing-description {
@@ -136,6 +136,9 @@
   }
   a {
     color: $black;
+  }
+  .listing-media-price {
+    color: $cf-secondary-color;
   }
 }
 .listing-media-footer {

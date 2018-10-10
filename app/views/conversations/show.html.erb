@@ -5,6 +5,7 @@
       <%= link_to((_("%{icon} Back to My conversations") %{icon: fa_icon('chevron-left fw')}).html_safe, conversations_path, class: 'btn btn-outline-cf btn-sm') %>
     </div>
     <div class="row conversation-header pt-4 pb-2">
+      <!-- TODO-NEW: Make commoners' name a link to his profile -->
       <div class="col-md-8">
         <h3><%= counterpart_for_conversation(@conversation).name %></h3>
       </div>

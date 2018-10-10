@@ -2,23 +2,23 @@
   <%= f.error_notification %>
     <%= f.input :name,
                 required: false,
-                label: _('Your name on Commonfare.net'),
+                label: _('Username'),
                 placeholder: _('e.g. Bungo Baggins, pbm42, etc.'),
                 hint: _('It must be unique') %>
-    <div class="form-group">
-      <label><%= _('Edit email or password') %></label>
-      <%= link_to('Edit email or password', edit_user_registration_path, class: 'btn btn-cf btn-sm') %>
-    </div>
-    <%= f.input :avatar,
-                as: :image_preview,
-                input_html: { preview_version: :profile },
-                label:_('Your avatar'),
-                hint: _('Square pictures look better ✨'),
-                wrapper: :vertical_file_input %>
     <%= f.input :description,
                 required: false,
                 label: _('Description'),
                 placeholder: _('Few words about yourself') %>
+    <%= f.input :avatar,
+                as: :image_preview,
+                input_html: { preview_version: :profile },
+                label:_('Avatar'),
+                hint: _('Square pictures look better ✨'),
+                wrapper: :vertical_file_input %>
+    <div class="form-group">      
+      <div><label><%= _('Account settings') %></label></div>
+      <%= link_to('Edit', edit_user_registration_path, class: 'btn btn-cf btn-sm') %>
+    </div>
     <%= f.association :tags,
                       label: _('Interests'),
                       # placeholder: "Managed in JS",

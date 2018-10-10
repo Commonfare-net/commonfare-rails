@@ -1,20 +1,24 @@
 <%= content_for :title, s_('Title|Edit listing') %>
 <div class="row justify-content-center">
   <div class="col-lg-7 col-md-9 py-4 bg-white">
-    <h2 class="pt-4 pb-2"><%= s_('Title|Edit listing') %></h2>
+    <div class="row pt-4 pb-2">
+      <div class="col-lg-8">
+        <h2 class=""><%= s_('Title|Edit listing') %></h2>        
+      </div>
+      <div class="col-lg-4 col-sm-3">
+          <%= link_to(fa_icon('', text: _('Delete this listing')),
+          listing_path(@listing),
+          method: :delete,
+          class: 'btn btn-outline-secondary btn-sm btn-block',
+            data: {confirm: _('Are you sure?')}) %>
+      </div>
+    </div>
+    <!-- TODO-NEW: Add 'cancel' button to the left -->
     <%= simple_form_for(@listing) do |f| %>
       <%= f.error_notification %>
       <%= render 'fields', f: f %>
-      <%= f.button :submit, s_('Button|Edit listing'), class: 'btn btn-cf btn-block' %>
+      <%= render 'shared/back_and_save_buttons', f: f, cancel_path: listing_path(@listing) %>
+      <!-- <%= f.button :submit, s_('Button|Save'), class: 'btn btn-cf btn-block' %> -->
     <% end %>
-    <p class="text-right">
-      <small>
-        <%= link_to(fa_icon('trash', text: _('Delete this listing')),
-        listing_path(@listing),
-        method: :delete,
-        class: 'text-danger',
-          data: {confirm: _('Are you sure?')}) %>
-      </small>
-    </p>
   </div>
 </div>

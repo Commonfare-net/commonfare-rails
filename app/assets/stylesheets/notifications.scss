@@ -1,7 +1,7 @@
 .notification_wrapper {
   .notification_header {
     .unopened {
-      background-color: #f87880;
+      background-color: $lightgreen;
     }
   }
 }
@@ -11,15 +11,15 @@
   position: absolute;
   margin-top: 20px;
   margin-left: 56px;
-  .unopened_circle {
-    display: block;
-    width: 10px;
-    height: 10px;
-    position: absolute;
-    border-radius: 50%;
-    background-color: #27a5eb;
-    z-index: 2;
-  }
+  // .unopened_circle {
+  //   display: block;
+  //   width: 10px;
+  //   height: 10px;
+  //   position: absolute;
+  //   border-radius: 50%;
+  //   background-color: #27a5eb;
+  //   z-index: 2;
+  // }
   .unopened_description_wrapper {
     display: none;
     position: absolute;
@@ -59,17 +59,16 @@
 
 /* list */
 .notification_list {
-  padding: 15px 10px;
+  padding: 0.75rem;
   position: relative;
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 1px solid $lightgreen;
+  background-color: lighten($lightgreen, 2%);
+  opacity: 0.65;
   &.unopened {
-    background-color: #eeeff4;
-  }
-  &:hover {
-    background-color: #f8f9fb;
-  }
-  &:last-child {
-    border-bottom: none;
+    background-color: $white;
+    opacity: 1;
+    &:hover {
+    }
   }
   &:after{
     content: "";
@@ -88,21 +87,24 @@
   }
   .list_image {
     float: left;
-    width: 40px;
-    height: 40px;
+    width: 48px;
+    height: 48px;
+    border-radius: 100%;
+    border: 2px solid #e1e8e7;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-color: #979797;
+    background-color: #fff;
+    overflow: hidden;
   }
   .list_text_wrapper {
     float: left;
-    width: calc(100% - 60px);
+    width: calc(100% - 72px);
     margin-left: 20px;
     .list_text {
-      color: #4f4f4f;
-      font-size: 14px;
-      line-height: 1.4;
+      color: $black;
+      font-size: 1em;
+      line-height: 1.35em;
       margin-top: 0;
       height: auto;
       font-weight: normal;
@@ -125,4 +127,18 @@
   position: absolute;
   right: 28px;
   z-index: 5;
+  a {
+    color: $darkgreen;
+    &:hover {
+      color: $darkergreen;
+    }
+  }
+}
+
+.badge-secondary {
+  background-color: $lightgreen;
+  &[href]:hover,
+  &[href]:focus {
+    background-color: darken($lightgreen, 5%);
+  }
 }

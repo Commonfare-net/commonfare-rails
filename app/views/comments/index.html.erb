@@ -1,19 +1,17 @@
 <div class="row">
-  <div class="col-md-8 col-lg-8">
+  <div class="col-lg-7 col-md-9 py-5">
     <% if @story.present? %>
-      <h4><%= _('All comments for') %></h4>
-      <h3><%= link_to(@story.title, story_path(@story), class: 'clamp') %></h3>
+      <h3><%= _('All comments for') %> <em><%= link_to(@story.title, story_path(@story), class: 'clamp') %></em></h3>
       <%= render 'list', comments: @comments %>
     <% end %>
 
     <% if @listing.present? %>
-      <h4><%= _('All comments for') %></h4>
-      <h3><%= link_to(@listing.title, listing_path(@listing), class: 'clamp') %></h3>
+      <h3><%= _('All comments for') %> <em><%= link_to(@listing.title, listing_path(@listing), class: 'clamp') %></em></h3>
       <%= render 'list', comments: @comments %>
     <% end %>
 
     <% if @commoner.present? %>
-      <h4><%= _('All comments by %{commoner_name}') %{commoner_name: @commoner.name} %></h4>
+      <h3><%= _('All comments by %{commoner_name}') %{commoner_name: @commoner.name} %></h3>
       <%= render 'list', comments: @comments %>
     <% end %>
   </div>

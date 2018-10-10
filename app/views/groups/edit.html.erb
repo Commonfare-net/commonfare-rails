@@ -5,7 +5,7 @@
     <%= simple_form_for(@group) do |f| %>
       <%= f.error_notification %>
       <%= render 'fields', f: f %>
-      <%= f.button :submit, s_('Title|Edit'), class: 'btn btn-cf btn-lg btn-block' %>
+      <%= render 'shared/back_and_save_buttons', f: f, cancel_path: group_path(@group) %>
     <% end %>
   </div>
 </div>

@@ -1,29 +1,12 @@
 // Specific for Story show
 .story-container {
   @extend .col;
-  // background-color: snow;
   color: #111;
-
-  // .story-ribbon {
-  //   float: right;
-  //   font-size: .9rem;
-  //   color: white;
-  //   padding: .2rem 1rem;
-  //   background-color: black;
-  //   &.wp-ribbon {
-  //     background-color: $cf-primary-color;
-  //   }
-  //   &.gp-ribbon {
-  //     background-color: $cf-secondary-color;
-  //   }
-  //   box-shadow: 1px 1px 2px #585858;
-  // }
   .grey-bg {
     background-color: $backgroundgrey;
   }
   .story-lang-select {
     @extend .text-muted;
-    font-size: 0.8em;
     padding: 5px;
   }
 
@@ -59,7 +42,7 @@
     .story-share,
     .story-lang-select {
       // @extend .text-muted;
-      color: $black;
+      color: darken($lightgreen, 18%);
       padding: .65rem .75rem;
       border-bottom: 1px solid #e1e8e7;
       i.fa {
@@ -73,9 +56,6 @@
           text-decoration: underline;
         }
       }
-    }
-    .story-comments {
-      // padding: 2.7em 0 .5em;
     }
   }
 
@@ -107,7 +87,6 @@
 
       figcaption {
         background-color: #efefef;
-        // font-style: italic;
         font-size: .9rem;
         padding: 0 1em;
         color: black;
@@ -128,9 +107,6 @@
   }
 
   // Story content made with story builder
-  .story-content-item {
-    //
-  }
 
   .story-content-item--large-text {
     @extend .red-title;

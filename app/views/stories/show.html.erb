@@ -20,12 +20,16 @@
         <div class="row">
           <div class="col">
             <div class="story-title">
+            <!-- TODO-NEW: Transform BUTTON 1 (pencil) into BUTTON 2 (text) -->
               <% if can? :edit, @story %>
-                <%= link_to edit_story_path(@story, story_locale: @story_locale), class: 'mdc-fab mdc-fab--mini material-icons card-fab--absolute', 'aria-label': 'Favorite', data: { 'mdc-auto-init': 'MDCRipple' } do %>
+                <!-- This is BUTTON 1 (pencil): -->
+                 <%= link_to edit_story_path(@story, story_locale: @story_locale), class: 'mdc-fab mdc-fab--mini material-icons card-fab--absolute', 'aria-label': 'Favorite', data: { 'mdc-auto-init': 'MDCRipple' } do %>
                   <span class="mdc-fab__icon">
                     <%= fa_icon 'pencil lg' %>
                   </span>
                 <% end %>
+                <!-- This is BUTTON 2 (text): -->
+                <a href="#" class='btn btn-outline-cf btn-sm mr-3' style='position: absolute; top: -2rem; right: 0'>Edit story</a>
               <% end %>
               <p class="story-type"><%= title_for_stories(@story.type).upcase %></p>
               <h2>
@@ -63,6 +67,7 @@
               <div class="row">
                 <div class="col">
                   <div class="story-lang-select">
+                    <!-- TODO-NEW: The link should be: 'Read in Italian', now it's only 'Italian' -->
                     <%= fa_icon('globe', text: other_story_available_translations(@story, @story_locale).html_safe) %>
                   </div>
                 </div>
@@ -89,11 +94,12 @@
             </div>
           </div>
         </div>
-        <div class="row py-4">
-          <div class="col-lg-4">
-            <%= link_to s_("Button|Share"), '#', class: 'btn btn-cf btn-block', data: { toggle: "modal", target: "#shareModal" } %>
-          </div>
-        </div>
+      </div>
+    </div>
+
+    <div class="row justify-content-center pt-5 pb-4 bg-white">
+      <div class="col-lg-3">
+        <%= link_to s_("Button|Share"), '#', class: 'btn btn-cf btn-block', data: { toggle: "modal", target: "#shareModal" } %>
       </div>
     </div>
 

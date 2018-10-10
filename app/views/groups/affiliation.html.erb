@@ -1,7 +1,7 @@
 <%= content_for :title, s_('Activate account') %>
 <div class="row justify-content-center">
-  <div class="col-md-6 col-lg-6 py-4 bg-white">
-    <h2 class=""><%= s_('Activate account') %></h2>
+  <div class="col-lg-7 col-md-9 py-4 bg-white">
+    <h2 class="pt-4 pb-2"><%= s_('Activate account') %></h2>
     <%= simple_form_for(@commoner, url: affiliate_group_path(@group)) do |f| %>
       <%= f.error_notification %>
       <%= f.input :name,

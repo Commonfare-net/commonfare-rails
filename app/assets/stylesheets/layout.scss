@@ -14,6 +14,15 @@ body {
   min-height: 85vh;
 }
 
+p.serif {
+  font-family: "Lora", serif;
+}
+
+p.big {
+  line-height: 1.5em;
+  font-size: 1.3em;
+}
+
 .bg-white {
   background-color: $white;
 }
@@ -67,13 +76,16 @@ body {
       }
     }
     .nav-link {
-      color: $navbar-cf-color;
       padding-right: .75em;
       padding-left: .75em;
-
-      @include hover-focus {
-        color: $navbar-cf-hover-color;
+      color: rgba(255, 255, 255, 0.5);
+      &:hover {
+        color: rgba(255, 255, 255, 0.6);
       }
+      // color: $navbar-cf-color;
+      // @include hover-focus {
+      //   color: $navbar-cf-hover-color;
+      // }
 
       &.disabled {
         color: $navbar-cf-disabled-color;
@@ -154,6 +166,8 @@ body {
       }
       button {
         background: transparent;
+        font-size: 1em;
+        padding: 0 0.75em 0 0.35em;
       }
     }
 
@@ -210,7 +224,7 @@ body {
   height: 10px;
   position: absolute;
   border-radius: 50%;
-  background-color: #27a5eb;
+  background-color: $darkgreen;
   top: 12px;
   margin-left: 20px;
 }
@@ -219,21 +233,38 @@ body {
   .navbar-cf {
     flex-direction: row-reverse;
     .navbar-nav {
+      font-size: 1.3em;
+      padding: 0 .5rem;
       .nav-link {
         padding-right: 0;
         padding-left: 0;
+      }
+      &.bell-md {
+        .nav-item {
+          .nav-link {
+            color: rgba(255, 255, 255, 0.2);
+            &:hover {
+              color: rgba(255, 255, 255, 0.3);
+            }
+          }
+        }
       }
     }
   }
   .cf-search-form-container {
     .cf-search-form {
-      width: calc(100% - 36px) !important;
+      width: calc(100% - 48px) !important;
       .form-control {
         max-width: none !important;
         width: 100% !important;
         &:focus {
           max-width: none !important;
           width: 100% !important;
+        }
+        form.form-inline {
+          button {
+            padding: 0;
+          }
         }
       }
       .easy-autocomplete-container {
@@ -246,6 +277,22 @@ body {
   }
   .unopened_circle_navbar {
     margin-left: 10px;
+  }
+}
+
+.wallet-header,
+.commonplace-header,
+.conversations-header {
+  padding-top: 12em !important;
+  background-position: center;
+  background-size: cover;
+  h1 {
+    color: white;
+    font-size: 2.8rem;
+  }
+  .header-caption {
+    color: white;
+    font-size: 1.3rem;
   }
 }
 
@@ -262,6 +309,18 @@ body {
         padding-bottom: 2em;
       }
     }
+  }
+  .wallet-header,
+  .commonplace-header,
+  .conversations-header {
+    padding-top: 8em !important;
+    h1 {
+      font-size: 2.5rem;
+    }
+    .header-caption {
+      font-size: 1rem;
+    }
+
   }
 }
 

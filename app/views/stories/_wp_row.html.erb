@@ -4,7 +4,7 @@
   </div>
   <div class="col-11">
     <div class="row">
-      <div class="col-lg-8 wp-row--title">
+      <div class="col-lg-9 col-md-8 wp-row--title">
         <h3><%= link_to(story.title, story_path(story)) %></h3>
         <% if story.tags.any? %>
         <small class="story-card-tags-text">
@@ -12,7 +12,7 @@
         </small>
         <% end %>
       </div>
-      <div class="col-lg-4">
+      <div class="col-lg-3 col-md-4">
         <div class="row">
           <div class="col-8 wp-row--place">
             <%= fa_icon('map-marker fw', text: story.place) %>

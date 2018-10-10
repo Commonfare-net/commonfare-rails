@@ -25,7 +25,7 @@
   <div class="notification-body">
     <% if notification.unopened? %>
     <%= link_to open_notification_path_for(notification, reload: false), method: :post, remote: true, class: "unopened_wrapper" do %>
-    <div class="unopened_circle"></div>
+    <!-- <div class="unopened_circle"></div> -->
     <div class="unopened_description_wrapper">
       <p class="unopened_description">Open</p>
     </div>

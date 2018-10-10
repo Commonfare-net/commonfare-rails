@@ -1,11 +1,16 @@
-<div class="row pb-3">
-  <div class="col-md-8 col-lg-8 mt-4">
-    <h3 class=""><%= _('Edit your comment') %></h3>
+<div class="row justify-content-center">
+  <div class="col-lg-7 col-md-9 pt-5 pb-3 bg-white">
+    <div class="row">
+      <div class="col-lg-8">
+        <h3 class=""><%= _('Edit your comment') %></h3>
+      </div>
+      <div class="col-lg-4">
+        <%= link_to(fa_icon('', text: _('Delete this comment')), comment_path(@comment), class: 'btn btn-outline-secondary btn-sm btn-block', method: :delete, data: { confirm: _('Are you sure?') }) if can? :destroy, @comment %>
+      </div>
+    </div>
     <%= simple_form_for(@comment) do |f| %>
       <%= render 'comments/fields', f: f, btn_text: s_('Edit') %>
     <% end %>
-    <small>
-      <%= link_to(fa_icon('trash', text: _('Delete this comment')), comment_path(@comment), class: 'text-danger', method: :delete, data: { confirm: _('Are you sure?') }) if can? :destroy, @comment %>
-    </small>
+
   </div>
 </div>
