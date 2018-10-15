@@ -20,16 +20,8 @@
         <div class="row">
           <div class="col">
             <div class="story-title">
-            <!-- TODO-NEW: Transform BUTTON 1 (pencil) into BUTTON 2 (text) -->
               <% if can? :edit, @story %>
-                <!-- This is BUTTON 1 (pencil): -->
-                 <%= link_to edit_story_path(@story, story_locale: @story_locale), class: 'mdc-fab mdc-fab--mini material-icons card-fab--absolute', 'aria-label': 'Favorite', data: { 'mdc-auto-init': 'MDCRipple' } do %>
-                  <span class="mdc-fab__icon">
-                    <%= fa_icon 'pencil lg' %>
-                  </span>
-                <% end %>
-                <!-- This is BUTTON 2 (text): -->
-                <a href="#" class='btn btn-outline-cf btn-sm mr-3' style='position: absolute; top: -2rem; right: 0'>Edit story</a>
+               <%= link_to _('Edit story'), edit_story_path(@story, story_locale: @story_locale), class: 'btn btn-outline-cf btn-sm mr-3 float-right' %>
               <% end %>
               <p class="story-type"><%= title_for_stories(@story.type).upcase %></p>
               <h2>

@@ -25,15 +25,15 @@
       </div>
     </div>
     <%# TODO: remove after Santarcangelo %>
-<!--     <% if user_signed_in? && @commoner == current_user.meta %>
-      <% @commoner.group_currency_wallets.find_each do |wallet| %>
+<!--     <%# if user_signed_in? && @commoner == current_user.meta %>
+      <%# @commoner.group_currency_wallets.find_each do |wallet| %>
         <div class="row justify-content-center bg-white">
           <div class="col-lg-9 text-center py-4">
-            <%= link_to((_('Go to %{currency_name} Wallet') %{currency_name: currency_name_for_wallet(wallet)}), view_commoner_wallet_url(@commoner, wallet), class: 'btn btn-cf btn-block') %>
+            <%#= link_to((_('Go to %{currency_name} Wallet') %{currency_name: currency_name_for_wallet(wallet)}), view_commoner_wallet_url(@commoner, wallet), class: 'btn btn-cf btn-block') %>
           </div>
         </div>
-      <% end %>
-    <% end %> -->
+      <%# end %>
+    <%# end %> -->
     <div class="row">
       <div class="col">
         <div class="row nav-pills-container mb-3">
@@ -44,16 +44,11 @@
             <li class="nav-item">
               <a class="nav-link" id="pills-groups-tab" data-toggle="pill" href="#pills-groups" role="tab" aria-controls="pills-groups" aria-selected="false"><%= _('Groups') %></a>
             </li>
-            <!-- TODO-NEW: Remove this? We could move requests to notifications section -->
             <% if @commoner.user == current_user %>
               <li class="nav-item">
                 <a class="nav-link" id="pills-requests-tab" data-toggle="pill" href="#pills-requests" role="tab" aria-controls="pills-requests" aria-selected="false"><%= _('Requests') %></a>
               </li>
             <% end %>
-            <!-- TODO-NEW: Remove this, we have notifications -->
-            <!-- <li class="nav-item">
-              <a class="nav-link" id="pills-activities-tab" data-toggle="pill" href="#pills-activities" role="tab" aria-controls="pills-activities" aria-selected="false"><%= _('Activities') %></a>
-            </li> -->
           </ul>
         </div>
         <div class="tab-content" id="pills-tabContent">

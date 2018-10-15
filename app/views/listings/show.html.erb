@@ -56,7 +56,7 @@
             <div class="col">
               <div class="listing-author">
                 <!-- TODO-NEW: Link to commoner -->
-                <%= fa_icon('user fw', text: @listing.commoner.name).html_safe %>
+                <%= fa_icon('user fw', text: link_to(@listing.commoner.name, commoner_path(@listing.commoner)) ).html_safe %>
               </div>
               <div class="listing-date">
                 <%= fa_icon('clock-o fw', text: (_('Added on %{date}') %{date: l(@listing.created_at.to_date, format: :long)})) %>

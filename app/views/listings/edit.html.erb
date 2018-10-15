@@ -13,12 +13,10 @@
             data: {confirm: _('Are you sure?')}) %>
       </div>
     </div>
-    <!-- TODO-NEW: Add 'cancel' button to the left -->
     <%= simple_form_for(@listing) do |f| %>
       <%= f.error_notification %>
       <%= render 'fields', f: f %>
       <%= render 'shared/back_and_save_buttons', f: f, cancel_path: listing_path(@listing) %>
-      <!-- <%= f.button :submit, s_('Button|Save'), class: 'btn btn-cf btn-block' %> -->
     <% end %>
   </div>
 </div>

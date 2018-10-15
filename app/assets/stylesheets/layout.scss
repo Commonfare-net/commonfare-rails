@@ -155,11 +155,10 @@ p.big {
       border-radius: 2px;
       justify-content: space-between;
       .form-control {
-        max-width: 100px;
+        max-width: 180px;
         transition: all .25s;
-        &:focus {
-          max-width: 200px;
-          width: 200px;
+        &:focus,
+        &:active {
           background-color: rgba(255, 255, 255, .25);
           color: white;
         }
@@ -173,7 +172,6 @@ p.big {
 
   // Used in search.js as option to customize easyAutocomplete
   .cf-search-form {
-    // width: 201px !important;
     z-index: 999;
     width: unset !important;
     input {
