@@ -204,7 +204,9 @@ class TransactionsController < ApplicationController
       # NOTE: for transactions in groups the wallet is ALWAYS the commoner's wallet in the group currency
       # walletable = group_transaction_for?(currency) ? currency.group : @commoner
       walletable = @commoner
-      @wallet = Wallet.find_by(currency: currency, walletable: walletable)
+      # getting @wallet with .where().first is less elegant than with .find_by
+      # but it is needed for Commoners who have two wallets in Commoncoin
+      @wallet = Wallet.where(currency: currency, walletable: walletable).first
     end
   end
 
