@@ -59,8 +59,7 @@
               <div class="row">
                 <div class="col">
                   <div class="story-lang-select">
-                    <!-- TODO-NEW: The link should be: 'Read in Italian', now it's only 'Italian' -->
-                    <%= fa_icon('globe', text: other_story_available_translations(@story, @story_locale).html_safe) %>
+                    <%= fa_icon('globe', text: (_("Read in ") + other_story_available_translations(@story, @story_locale)).html_safe) %>
                   </div>
                 </div>
               </div>
