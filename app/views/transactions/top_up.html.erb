@@ -13,7 +13,7 @@
       <%= f.association :to_wallet, as: :hidden %>
       <div class="form-row">
         <div class="col">
-          <%= f.input :amount, required: false, autofocus: true, placeholder: number_with_precision(42.314, precision: 3), label: (_('Amount (%{currency_code})') %{currency_code: currency_code_for_transaction}), :input_html => { value: number_with_precision(f.object.amount, precision: 6) } %>
+          <%= f.input :amount, required: false, autofocus: true, placeholder: number_with_precision(42.314, precision: 3), label: (_('Amount (%{currency_code})') %{currency_code: currency_code_for_transaction}), :input_html => { value: number_with_precision(f.object.amount, precision: 2) } %>
         </div>
       </div>
       <%= f.input :message, as: :hidden %>

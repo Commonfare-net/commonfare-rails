@@ -24,7 +24,7 @@ class ListingsController < ApplicationController
   # GET /listings/1.json
   def show
     @images = @listing.images.order(created_at: :asc)
-    @comments = @listing.comments
+    @comments = @listing.comments.order(created_at: :asc)
     if user_signed_in?
       @comment = current_user.meta.comments.build
     else

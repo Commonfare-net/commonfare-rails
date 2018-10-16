@@ -16,6 +16,7 @@ class Transaction < ApplicationRecord
     less_than_or_equal_to: (Proc.new { |t| t.from_wallet.balance }),
     greater_than: 0
   }, unless: (Proc.new { |t| t.from_wallet.walletable.is_a?(Group) || t.from_wallet.is_common_wallet? })
+  validate :two_decimals
   # validate :less_than_balance
   validate :not_to_self
   validate :same_currency
@@ -50,6 +51,12 @@ class Transaction < ApplicationRecord
   def same_currency
     if self.to_wallet.present? && self.from_wallet.currency != self.to_wallet.currency
       errors.add(:to_wallet, (_("must accept %{currency_name}") %{currency_name: self.from_wallet.currency.name}))
+    end
+  end
+
+  def two_decimals
+    unless self.amount.to_s.match?(/\A\d+(?:\.\d{0,2})?\z/)
+      errors.add(:amount, _('use only two decimals'))
     end
   end
 

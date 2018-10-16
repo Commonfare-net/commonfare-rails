@@ -9,7 +9,7 @@
     </div>
     <div class="transaction-confirm-amount">
       <label class="mb-0"><%= _('Amount') %></label>
-      <p><%= number_to_currency(@reverse_transaction.amount, precision: 6, locale: I18n.locale, unit: "#{currency_code_for_transaction} ") %></p>
+      <p><%= number_to_currency(@reverse_transaction.amount, precision: 2, locale: I18n.locale, unit: "#{currency_code_for_transaction} ") %></p>
     </div>
     <%= simple_form_for(@reverse_transaction, url: create_refund_commoner_transactions_path(@commoner, currency: @currency)) do |f| %>
       <%= f.association :from_wallet, as: :hidden %>

@@ -8,7 +8,7 @@
       <strong><%= _('Basic income') %></strong>
     </div>
     <div class="ml-auto p-2 amount">
-      <%= number_to_currency(transaction.amount, precision: 6, locale: I18n.locale, unit: "#{currency_code_for_transaction(transaction)} ", strip_insignificant_zeros: true) %>
+      <%= number_to_currency(transaction.amount, precision: 2, locale: I18n.locale, unit: "#{currency_code_for_transaction(transaction)} ", strip_insignificant_zeros: true) %>
     </div>
   </div>
   <% else %>
@@ -29,7 +29,7 @@
     </div>
     <% end %>
     <div class="ml-auto p-2 amount">
-      <%= number_to_currency(transaction.amount, precision: 6, locale: I18n.locale, unit: "#{currency_code_for_transaction(transaction)} ", strip_insignificant_zeros: true) %>
+      <%= number_to_currency(transaction.amount, precision: 2, locale: I18n.locale, unit: "#{currency_code_for_transaction(transaction)} ", strip_insignificant_zeros: true) %>
     </div>
   </div>
   <div class="transaction-details collapse" id="collapseTransaction-<%= transaction.id %>">

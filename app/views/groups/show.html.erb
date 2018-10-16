@@ -13,6 +13,9 @@
         <% if can? :create, @new_join_request %>
           <%= link_to _('Join this group'), new_group_join_request_path(@group), class: 'btn btn-outline-cf btn-sm btn-block' %>
         <% end %>
+        <% if user_signed_in? && @pending_join_requests.map(&:commoner).include?(current_user.meta) %>
+          <%= link_to _('Pending request'), '#', class: 'btn btn-outline-warning btn-sm btn-block disabled' %>
+        <% end %>
         <% if can? :edit, @group %>
           <%= link_to _('Edit group'), edit_group_path(@group), class: 'btn btn-outline-cf btn-sm btn-block' %>
         <% end %>
