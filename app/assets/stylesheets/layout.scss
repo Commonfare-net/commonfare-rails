@@ -294,6 +294,18 @@ p.big {
   }
 }
 
+.commonplace-header {
+  background-image: image-url('section-cover/cover-commonplace.png');
+}
+
+.wallet-header {
+  background-image: image-url('section-cover/cover-wallet.png');
+}
+
+.conversations-header {
+  background-image: image-url('section-cover/cover-conversations.png');
+}
+
 @media screen and (max-width: 767px) {
   body {
     margin-bottom: 500px;
