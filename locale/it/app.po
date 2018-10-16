@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0\n"
 "Report-Msgid-Bugs-To: contact@translation.io\n"
-"POT-Creation-Date: 2018-09-18 14:47+0200\n"
-"PO-Revision-Date: 2018-09-18 14:47+0200\n"
+"POT-Creation-Date: 2018-10-16 11:58+0200\n"
+"PO-Revision-Date: 2018-10-16 11:58+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Italian\n"
 "Language: it\n"
@@ -47,7 +47,7 @@ msgstr "Il commento è stato aggiornato."
 msgid "Comment was successfully destroyed."
 msgstr "Il commento è stato eliminato."
 
-#: ../app/controllers/conversations_controller.rb:67
+#: ../app/controllers/conversations_controller.rb:70
 msgid ""
 "Conversation|Hello %{recipient_name}, I am intersted in %{listing_title} ( %{l"
 "isting_url} ) "
@@ -55,13 +55,13 @@ msgstr ""
 "Ciao %{recipient_name}, sono interessato a %{listing_title} ( %{listing_url} )"
 " "
 
-#: ../app/controllers/conversations_controller.rb:69
+#: ../app/controllers/conversations_controller.rb:72
 msgid ""
 "Conversation|Hello, would you like to join the group %{group_name} ( %{group_u"
 "rl} )? "
 msgstr "Ciao, vuoi unirti al gruppo %{group_name} (%{group_url})? "
 
-#: ../app/controllers/conversations_controller.rb:71
+#: ../app/controllers/conversations_controller.rb:74
 msgid "Conversation|Hello, "
 msgstr "Ciao, "
 
@@ -193,6 +193,10 @@ msgstr "Invita"
 msgid "Button|Share this group"
 msgstr "Condividi questo gruppo"
 
+#: ../app/helpers/notifications_helper.rb:21
+msgid "Common wallet"
+msgstr "Portafoglio comune"
+
 #: ../app/helpers/pages_helper.rb:14
 msgid "Home title|Commoners Voices"
 msgstr "Storie"
@@ -267,13 +271,17 @@ msgstr "indirizzo non valido per SWAPI"
 msgid "ValidationError|doesn't seem to be a valid place"
 msgstr "non sembra essere un luogo valido"
 
-#: ../app/models/transaction.rb:46
+#: ../app/models/transaction.rb:47
 msgid "can't be you"
 msgstr "non puoi essere tu stesso"
 
-#: ../app/models/transaction.rb:52
+#: ../app/models/transaction.rb:53
 msgid "must accept %{currency_name}"
 msgstr "deve accettare %{currency_name}"
+
+#: ../app/models/transaction.rb:59
+msgid "use only two decimals"
+msgstr "utilizza solo due decimali"
 
 #: ../app/models/wallet.rb:36
 msgid "Unregistered commoner"
@@ -308,7 +316,7 @@ msgstr "Nessuna notifica"
 msgid "Add a comment"
 msgstr "Aggiungi un commento"
 
-#: ../app/views/comments/_fields.html.erb:3
+#: ../app/views/comments/_fields.html.erb:5
 msgid "Comment anonymously"
 msgstr "Commenta in modo anonimo"
 
@@ -328,17 +336,13 @@ msgstr "Commenta"
 msgid "Button|Login and comment"
 msgstr "Entra e commenta"
 
-#: ../app/views/comments/edit.html.erb:3
+#: ../app/views/comments/edit.html.erb:5
 msgid "Edit your comment"
 msgstr "Modifica il tuo commento"
 
-#: ../app/views/comments/edit.html.erb:5
-msgid "Edit"
-msgstr "Modifica"
-
 #: ../app/views/comments/edit.html.erb:8
 #: ../app/views/discussions/show.html.erb:19
-#: ../app/views/groups/leave.html.erb:27 ../app/views/listings/edit.html.erb:16
+#: ../app/views/groups/leave.html.erb:27 ../app/views/listings/edit.html.erb:13
 #: ../app/views/users/registrations/goodbye.html.erb:39
 msgid "Are you sure?"
 msgstr "Sei sicuro/a?"
@@ -347,14 +351,23 @@ msgstr "Sei sicuro/a?"
 msgid "Delete this comment"
 msgstr "Elimina questo commento"
 
+#: ../app/views/comments/edit.html.erb:12
+#: ../app/views/commoners/_form.html.erb:20
+msgid "Edit"
+msgstr "Modifica"
+
 #: ../app/views/comments/index.html.erb:4
-#: ../app/views/comments/index.html.erb:10
+#: ../app/views/comments/index.html.erb:9
 msgid "All comments for"
 msgstr "Tutti i comment per"
 
-#: ../app/views/comments/index.html.erb:16
+#: ../app/views/comments/index.html.erb:14
 msgid "All comments by %{commoner_name}"
 msgstr "Tutti i commenti di %{commoner_name}"
+
+#: ../app/views/commoners/_form.html.erb:5
+msgid "Username"
+msgstr "Nome"
 
 #: ../app/views/commoners/_form.html.erb:5
 msgid "Your name on Commonfare.net"
@@ -369,33 +382,43 @@ msgstr "es. Bungo Baggins, pbm42, ecc."
 msgid "It must be unique"
 msgstr "Deve essere unico"
 
-#: ../app/views/commoners/_form.html.erb:11
-msgid "Your avatar"
-msgstr "Il tuo avatar"
-
-#: ../app/views/commoners/_form.html.erb:12
-#: ../app/views/groups/_fields.html.erb:7
-msgid "Square pictures look better ✨"
-msgstr "Le immagini quadrate hanno un aspetto migliore ✨"
-
-#: ../app/views/commoners/_form.html.erb:16
+#: ../app/views/commoners/_form.html.erb:10
+#: ../app/views/groups/_fields.html.erb:4
 #: ../app/views/listings/_fields.html.erb:23
 msgid "Description"
 msgstr "Descrizione"
 
-#: ../app/views/commoners/_form.html.erb:17
+#: ../app/views/commoners/_form.html.erb:11
 msgid "Few words about yourself"
 msgstr "Qualcosa su di te"
 
+#: ../app/views/commoners/_form.html.erb:11
+msgid "Your avatar"
+msgstr "Il tuo avatar"
+
+#: ../app/views/commoners/_form.html.erb:15
+#: ../app/views/groups/_fields.html.erb:8
+msgid "Avatar"
+msgstr ""
+
+#: ../app/views/commoners/_form.html.erb:16
+#: ../app/views/groups/_fields.html.erb:9
+msgid "Square pictures look better ✨"
+msgstr "Le immagini quadrate hanno un aspetto migliore ✨"
+
 #: ../app/views/commoners/_form.html.erb:19
+msgid "Account settings"
+msgstr "Impostazioni account"
+
+#: ../app/views/commoners/_form.html.erb:23
 msgid "Interests"
 msgstr "Interessi"
 
-#: ../app/views/commoners/_form.html.erb:21
+#: ../app/views/commoners/_form.html.erb:25
 msgid "Use comma or press Enter to separate interests"
 msgstr "Usa la virgola o premi Invio per separare gli interessi"
 
-#: ../app/views/commoners/_form.html.erb:31
+#: ../app/views/commoners/_form.html.erb:35
 msgid "Skills, services or goods"
 msgstr ""
 
@@ -424,7 +447,7 @@ msgstr "Modifica profilo"
 msgid "Go to %{currency_name} Wallet"
 msgstr "Vai al portafoglio %{currency_name}"
 
-#: ../app/views/commoners/show.html.erb:42 ../app/views/groups/show.html.erb:43
+#: ../app/views/commoners/show.html.erb:42 ../app/views/groups/show.html.erb:46
 #: ../app/views/layouts/_navbar.html.erb:113
 msgid "Stories"
 msgstr "Storie"
@@ -434,39 +457,30 @@ msgstr "Storie"
 msgid "Groups"
 msgstr "Gruppi"
 
-#: ../app/views/commoners/show.html.erb:49 ../app/views/groups/show.html.erb:55
+#: ../app/views/commoners/show.html.erb:49 ../app/views/groups/show.html.erb:58
 msgid "Requests"
 msgstr "Richieste"
 
-#: ../app/views/commoners/show.html.erb:53 ../app/views/groups/show.html.erb:59
-msgid "Activities"
-msgstr "Attività"
-
-#: ../app/views/commoners/show.html.erb:65 ../app/views/groups/show.html.erb:90
+#: ../app/views/commoners/show.html.erb:62 ../app/views/groups/show.html.erb:93
 msgid "No stories yet"
 msgstr "Non ci sono storie presenti"
 
-#: ../app/views/commoners/show.html.erb:73 ../app/views/pages/home.html.erb:85
-#: ../app/views/wallets/show.html.erb:28 ../app/views/wallets/view.html.erb:41
+#: ../app/views/commoners/show.html.erb:70 ../app/views/pages/home.html.erb:104
+#: ../app/views/wallets/show.html.erb:31 ../app/views/wallets/view.html.erb:41
 msgid "See all"
 msgstr "Vedi tutte"
 
-#: ../app/views/commoners/show.html.erb:79
+#: ../app/views/commoners/show.html.erb:76
 msgid "Button|Start a group"
 msgstr "Crea un gruppo"
 
-#: ../app/views/commoners/show.html.erb:86
+#: ../app/views/commoners/show.html.erb:83
 msgid "No groups"
 msgstr "Non ci sono gruppi"
 
-#: ../app/views/commoners/show.html.erb:100
+#: ../app/views/commoners/show.html.erb:97
 msgid "No requests"
 msgstr "Nessuna richiesta"
-
-#: ../app/views/commoners/show.html.erb:111
-#: ../app/views/groups/show.html.erb:134
-msgid "Coming soon"
-msgstr "In arrivo"
 
 #: ../app/views/commoners/welcome.html.erb:1
 #: ../app/views/commoners/welcome.html.erb:4
@@ -517,7 +531,7 @@ msgstr ""
 "ndivisione reciproca non solo di esperienze, ma anche di tempo, beni, e saperi"
 "."
 
-#: ../app/views/commoners/welcome.html.erb:15
+#: ../app/views/commoners/welcome.html.erb:17
 msgid ""
 "Welcome page|If you want to know more about what Commonfare.net is and who is "
 "actively working on it, please visit our <strong>%{link_to_about_page}</strong"
@@ -527,7 +541,7 @@ msgstr ""
 "ano attivamente a questo progetto, visita la sezione <strong>%{link_to_about_p"
 "age}</strong>."
 
-#: ../app/views/commoners/welcome.html.erb:15
+#: ../app/views/commoners/welcome.html.erb:17
 msgid "Welcome page text|About page"
 msgstr "su di noi"
 
@@ -536,7 +550,11 @@ msgstr "su di noi"
 msgid "Title|My conversations"
 msgstr "Le mie conversazioni"
 
-#: ../app/views/conversations/index.html.erb:15
+#: ../app/views/conversations/index.html.erb:9
+msgid "Get in touch with other commoners"
+msgstr "Entra in contatto con altri commoner"
+
+#: ../app/views/conversations/index.html.erb:18
 msgid "No conversations"
 msgstr "Non ci sono conversazioni"
 
@@ -560,6 +578,7 @@ msgid "%{icon} Back to My conversations"
 msgstr "%{icon} Torna alle mie conversazioni"
 
 #: ../app/views/currencies/_fields.html.erb:1
+#: ../app/views/groups/_fields.html.erb:2
 msgid "Name"
 msgstr "Nome"
 
@@ -589,6 +608,11 @@ msgstr "Nuova moneta"
 #: ../app/views/currencies/new.html.erb:11
 msgid "Title|Create"
 msgstr "Crea"
+
+#: ../app/views/discussions/_discussion.html.erb:9
+#: ../app/views/listings/_listing.html.erb:19
+msgid "by %{commoner_name}"
+msgstr "di %{commoner_name}"
 
 #: ../app/views/discussions/_discussion.html.erb:9
 #: ../app/views/listings/_listing.html.erb:20
@@ -794,56 +818,68 @@ msgid "Join this group"
 msgstr "Unisciti a questo gruppo"
 
 #: ../app/views/groups/show.html.erb:17
+msgid "Pending request"
+msgstr "Richiesta in sospeso"
+
+#: ../app/views/groups/show.html.erb:20
 msgid "Edit group"
 msgstr "Modifica gruppo"
 
-#: ../app/views/groups/show.html.erb:20
+#: ../app/views/groups/show.html.erb:23
 msgid "Create currency"
 msgstr "Crea moneta"
 
-#: ../app/views/groups/show.html.erb:23
+#: ../app/views/groups/show.html.erb:26
 msgid "Edit currency"
 msgstr "Modifica moneta"
 
-#: ../app/views/groups/show.html.erb:26
+#: ../app/views/groups/show.html.erb:29
 msgid "Central wallet"
 msgstr "Portafoglio centrale"
 
-#: ../app/views/groups/show.html.erb:29
+#: ../app/views/groups/show.html.erb:32
 msgid "Leave group"
 msgstr "Lascia il gruppo"
 
-#: ../app/views/groups/show.html.erb:39
+#: ../app/views/groups/show.html.erb:42
 msgid "Discussions"
 msgstr "Discussioni"
 
-#: ../app/views/groups/show.html.erb:47
+#: ../app/views/groups/show.html.erb:50
 msgid "Wallet"
 msgstr "Portafoglio"
 
-#: ../app/views/groups/show.html.erb:51
+#: ../app/views/groups/show.html.erb:54
 msgid "Members"
 msgstr "Membri"
 
-#: ../app/views/groups/show.html.erb:66
+#: ../app/views/groups/show.html.erb:62
+msgid "Activities"
+msgstr "Attività"
+
+#: ../app/views/groups/show.html.erb:69
 msgid "Button|Start a new discussion"
 msgstr "Inizia una discussione"
 
-#: ../app/views/groups/show.html.erb:73
+#: ../app/views/groups/show.html.erb:76
 msgid "No discussions yet"
 msgstr "Non ci sono discussioni"
 
-#: ../app/views/groups/show.html.erb:98
+#: ../app/views/groups/show.html.erb:101
 msgid "Button|Go to Wallet"
 msgstr "Vai al portafoglio"
 
-#: ../app/views/groups/show.html.erb:109
+#: ../app/views/groups/show.html.erb:112
 msgid "No members"
 msgstr "Non ci sono membri"
 
-#: ../app/views/groups/show.html.erb:123
+#: ../app/views/groups/show.html.erb:126
 msgid "No pending requests"
 msgstr "Nessuna richiesta in sospeso"
+
+#: ../app/views/groups/show.html.erb:137
+msgid "Coming soon"
+msgstr "In arrivo"
 
 #: ../app/views/join_requests/_form.html.erb:5
 #: ../app/views/pages/home.html.erb:64
@@ -977,7 +1013,7 @@ msgid "Navbar|Join"
 msgstr "Partecipa"
 
 #: ../app/views/layouts/_navbar.html.erb:114
-#: ../app/views/listings/_fields.html.erb:25
+#: ../app/views/listings/_fields.html.erb:36
 #: ../app/views/stories/_fields.html.erb:17
 msgid "Tags"
 msgstr "Tags"
@@ -1020,16 +1056,20 @@ msgstr "Specifica un importo"
 msgid "Maximum price (in CC)"
 msgstr "Prezzo massimo (in CC)"
 
-#: ../app/views/listings/_fields.html.erb:27
+#: ../app/views/listings/_fields.html.erb:26
+msgid "Images"
+msgstr "immagini"
+
+#: ../app/views/listings/_fields.html.erb:31
+msgid "Add image"
+msgstr "Aggiungi immagine"
+
+#: ../app/views/listings/_fields.html.erb:38
 #: ../app/views/stories/_fields.html.erb:19
 msgid "Use comma or press Enter to separate tags"
 msgstr "Utilizza la virgola o premi ‘Invio’ per separare i tag"
 
-#: ../app/views/listings/_fields.html.erb:35
-msgid "Add image"
-msgstr "Aggiungi immagine"
-
-#: ../app/views/listings/_fields.html.erb:48
+#: ../app/views/listings/_fields.html.erb:49
 msgid "e.g. Lessons, Babysitting, etc."
 msgstr "es. lezioni, babysitter, traduzioni, ecc."
 
@@ -1050,27 +1090,31 @@ msgstr ""
 "videre questa inserzione su Facebook, Twitter, ecc. puoi copiare l'URL e incol"
 "larlo lì."
 
-#: ../app/views/listings/commonplace.html.erb:14
+#: ../app/views/listings/commonplace.html.erb:9
+msgid "Where you exchange goods, services and knowledge"
+msgstr "Dove puoi beni, servizi e conoscenze"
+
+#: ../app/views/listings/commonplace.html.erb:17
 msgid "Latest listings"
 msgstr "Ultime inserzioni"
 
-#: ../app/views/listings/commonplace.html.erb:18
+#: ../app/views/listings/commonplace.html.erb:21
 msgid "My Listings"
 msgstr "Le mie inserzioni"
 
-#: ../app/views/listings/commonplace.html.erb:31
+#: ../app/views/listings/commonplace.html.erb:34
 msgid "No Listings yet"
 msgstr "Non ci sono inserzioni"
 
-#: ../app/views/listings/commonplace.html.erb:41
+#: ../app/views/listings/commonplace.html.erb:44
 msgid "Button|New listing"
 msgstr "Nuova inserzione"
 
-#: ../app/views/listings/commonplace.html.erb:54
+#: ../app/views/listings/commonplace.html.erb:57
 msgid "No listings"
 msgstr "Non ci sono inserzioni"
 
-#: ../app/views/listings/edit.html.erb:1 ../app/views/listings/edit.html.erb:4
+#: ../app/views/listings/edit.html.erb:1 ../app/views/listings/edit.html.erb:6
 msgid "Title|Edit listing"
 msgstr "Modifica inserzione"
 
@@ -1078,7 +1122,7 @@ msgstr "Modifica inserzione"
 msgid "Button|Edit listing"
 msgstr "Modifica inserzione"
 
-#: ../app/views/listings/edit.html.erb:12
+#: ../app/views/listings/edit.html.erb:9
 msgid "Delete this listing"
 msgstr "Elimina questa inserzione"
 
@@ -1090,20 +1134,20 @@ msgstr "Nuova inserzione"
 msgid "Button|Create listing"
 msgstr "Crea inserzione"
 
-#: ../app/views/listings/show.html.erb:65
+#: ../app/views/listings/show.html.erb:61
 msgid "Added on %{date}"
 msgstr "Aggiunto il %{date}"
 
-#: ../app/views/listings/show.html.erb:71 ../app/views/stories/show.html.erb:60
+#: ../app/views/listings/show.html.erb:67 ../app/views/stories/show.html.erb:56
 msgid "Share"
 msgstr "Condividi"
 
-#: ../app/views/listings/show.html.erb:124
+#: ../app/views/listings/show.html.erb:120
 msgid "Get in touch"
 msgstr "Contatta"
 
-#: ../app/views/listings/show.html.erb:135
-#: ../app/views/stories/show.html.erb:104
+#: ../app/views/listings/show.html.erb:131
+#: ../app/views/stories/show.html.erb:101
 msgid "Comment"
 msgid_plural "Comments"
 msgstr[0] "Commento"
@@ -1353,7 +1397,16 @@ msgstr "Salvo..."
 msgid "Stories by %{author_name}"
 msgstr "Storie di %{author_name}"
 
-#: ../app/views/stories/show.html.erb:94
+#: ../app/views/stories/preview.html.erb:46
+#: ../app/views/stories/show.html.erb:62
+msgid "Read in "
+msgstr "Leggi in "
+
+#: ../app/views/stories/show.html.erb:24
+msgid "Edit story"
+msgstr "Modifica la storia"
+
+#: ../app/views/stories/show.html.erb:93
 msgid "Button|Share"
 msgstr "Condividi"
 
@@ -1377,23 +1430,27 @@ msgstr "Storie con tag %{tag_name}"
 msgid "Content with tag %{tag_name}"
 msgstr "Contenuto con tag %{tag_name}"
 
-#: ../app/views/tags/show.html.erb:14
+#: ../app/views/tags/show.html.erb:15
 msgid "Stories with tag"
 msgstr "Storie con tag"
 
-#: ../app/views/tags/show.html.erb:25
+#: ../app/views/tags/show.html.erb:27
 msgid "Listings with tag"
 msgstr "Inserzioni con tag"
 
 #: ../app/views/transactions/_transaction.html.erb:8
+msgid "Basic income"
+msgstr "Reddito di base"
+
+#: ../app/views/transactions/_transaction.html.erb:21
 msgid "Given to <strong>%{name}</strong>"
 msgstr "Versato a <strong>%{name}</strong>"
 
-#: ../app/views/transactions/_transaction.html.erb:15
+#: ../app/views/transactions/_transaction.html.erb:28
 msgid "Received from <strong>%{name}</strong>"
 msgstr "Ricevuto da <strong>%{name}</strong>"
 
-#: ../app/views/transactions/_transaction.html.erb:42
+#: ../app/views/transactions/_transaction.html.erb:53
 msgid "Refund"
 msgstr "Rimborso"
 
@@ -1471,6 +1528,11 @@ msgstr "Invia %{currency_name}"
 #: ../app/views/wallets/daily_takings.html.erb:5
 msgid "%{icon} Back to %{currency_name} wallet"
 msgstr "%{icon} Torna al portafoglio %{currency_name}"
+
+#: ../app/views/transactions/new.html.erb:8
+#: ../app/views/wallets/show.html.erb:14 ../app/views/wallets/view.html.erb:12
+msgid "Current balance"
+msgstr "Saldo attuale"
 
 #: ../app/views/transactions/new.html.erb:8
 msgid "Balance"
@@ -1607,27 +1669,39 @@ msgstr "Modifica le credenziali"
 msgid "Edit email"
 msgstr "Modifica email"
 
+#: ../app/views/users/registrations/edit.html.erb:10
+msgid "Change email"
+msgstr "Modifica email"
+
 #: ../app/views/users/registrations/edit.html.erb:14
 msgid "Edit password"
 msgstr "Modifica password"
 
-#: ../app/views/users/registrations/edit.html.erb:15
+#: ../app/views/users/registrations/edit.html.erb:17
+msgid "Change password"
+msgstr "Cambia la password"
+
+#: ../app/views/users/registrations/edit.html.erb:18
 msgid "Edit credentials form|leave it blank if you don't want to change it"
 msgstr "lascia lo spazio vuoto se non vuoi modificare"
 
-#: ../app/views/users/registrations/edit.html.erb:16
+#: ../app/views/users/registrations/edit.html.erb:19
 msgid "Edit credentials form|Password confirmation"
 msgstr "Conferma password"
 
-#: ../app/views/users/registrations/edit.html.erb:17
+#: ../app/views/users/registrations/edit.html.erb:20
 msgid "Edit credentials form|Current password"
 msgstr "Password attuale"
 
-#: ../app/views/users/registrations/edit.html.erb:17
+#: ../app/views/users/registrations/edit.html.erb:20
 msgid "Edit credentials form|we need your current password to confirm your changes"
 msgstr "abbiamo bisogno della tua password attuale per procedere con la modifica"
 
-#: ../app/views/users/registrations/edit.html.erb:23
+#: ../app/views/users/registrations/edit.html.erb:28
+msgid "Delete account"
+msgstr "Eliminare l'account"
+
+#: ../app/views/users/registrations/edit.html.erb:30
 msgid "Leave Commonfare.net..."
 msgstr "Lascia Commonfare.net ..."
 
@@ -1776,15 +1850,15 @@ msgstr "(vedi dalle %{time}:00 alle %{time}:00)"
 msgid "Title|%{currency_name} wallet"
 msgstr "Portafoglio %{currency_name}"
 
-#: ../app/views/wallets/show.html.erb:11 ../app/views/wallets/view.html.erb:12
-msgid "Current balance"
-msgstr "Saldo attuale"
+#: ../app/views/wallets/show.html.erb:9
+msgid "Your personal wallet for digital tokens"
+msgstr "Il tuo portafoglio personale"
 
-#: ../app/views/wallets/show.html.erb:14
+#: ../app/views/wallets/show.html.erb:17
 msgid "Button|Send %{currency_code}"
 msgstr "Invia %{currency_code}"
 
-#: ../app/views/wallets/show.html.erb:18 ../app/views/wallets/view.html.erb:27
+#: ../app/views/wallets/show.html.erb:21 ../app/views/wallets/view.html.erb:27
 msgid "Transactions"
 msgstr "Transazioni"
 
