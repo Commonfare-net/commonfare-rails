@@ -10,8 +10,10 @@ module ListingsHelper
   end
 
   def listing_price(listing)
-    return "#{listing.min_price}-#{listing.max_price}cc" if listing.max_price.present?
-    "#{listing.min_price}cc"
+    localized_min_price = number_to_currency(listing.min_price || 0, precision: 2, locale: I18n.locale, unit: "cc")
+    localized_max_price = number_to_currency(listing.max_price || 0, precision: 2, locale: I18n.locale, unit: "cc")
+    return "#{localized_min_price} - #{localized_max_price}" if listing.max_price.present?
+    localized_min_price
   end
 
   def listing_media_image_path(listing)

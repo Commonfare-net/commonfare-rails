@@ -44,19 +44,19 @@ class Transaction < ApplicationRecord
 
   def not_to_self
     if self.from_wallet == self.to_wallet
-      errors.add(:to_wallet, _("can't be you"))
+      errors.add(:to_wallet, s_("ValidationError|can't be you"))
     end
   end
 
   def same_currency
     if self.to_wallet.present? && self.from_wallet.currency != self.to_wallet.currency
-      errors.add(:to_wallet, (_("must accept %{currency_name}") %{currency_name: self.from_wallet.currency.name}))
+      errors.add(:to_wallet, (s_("ValidationError|must accept %{currency_name}") %{currency_name: self.from_wallet.currency.name}))
     end
   end
 
   def two_decimals
     unless self.amount.to_s.match?(/\A\d+(?:\.\d{0,2})?\z/)
-      errors.add(:amount, _('use only two decimals'))
+      errors.add(:amount, s_('ValidationError|use only two decimals'))
     end
   end
 

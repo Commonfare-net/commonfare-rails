@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0\n"
 "Report-Msgid-Bugs-To: contact@translation.io\n"
-"POT-Creation-Date: 2018-10-16 11:58+0200\n"
-"PO-Revision-Date: 2018-10-16 11:58+0200\n"
+"POT-Creation-Date: 2018-10-18 11:22+0200\n"
+"PO-Revision-Date: 2018-10-18 11:22+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Croatian\n"
 "Language: hr\n"
@@ -269,21 +269,26 @@ msgstr "Nema poruka"
 msgid "not a valid SWAPI endpoint"
 msgstr "nije valjana SWAPI krajnja točka"
 
-#: ../app/models/listing.rb:19
+#: ../app/models/listing.rb:22
 msgid "ValidationError|doesn't seem to be a valid place"
 msgstr "ValidationError|Ne čini se valjanim mjestom"
 
+#: ../app/models/listing.rb:27 ../app/models/listing.rb:30
+#: ../app/models/transaction.rb:59
+msgid "ValidationError|use only two decimals"
+msgstr ""
+
+#: ../app/models/listing.rb:36
+msgid "ValidationError|must be higher than %{min_price}"
+msgstr ""
+
 #: ../app/models/transaction.rb:47
-msgid "can't be you"
+msgid "ValidationError|can't be you"
 msgstr "ne možeš biti ti"
 
 #: ../app/models/transaction.rb:53
-msgid "must accept %{currency_name}"
+msgid "ValidationError|must accept %{currency_name}"
 msgstr "mora prihvaćatii %{currency_name}"
-
-#: ../app/models/transaction.rb:59
-msgid "use only two decimals"
-msgstr ""
 
 #: ../app/models/wallet.rb:36
 msgid "Unregistered commoner"
@@ -367,12 +372,10 @@ msgstr ""
 "Svi komentari od %{commoner_name}\n"
 
 #: ../app/views/commoners/_form.html.erb:5
-msgid "Username"
-msgstr ""
-
-#: ../app/views/commoners/_form.html.erb:5
-msgid "Your name on Commonfare.net"
-msgstr "Vaše ime na Commonfare.net-u"
+#: ../app/views/currencies/_fields.html.erb:1
+#: ../app/views/groups/_fields.html.erb:2
+msgid "Name"
+msgstr "Ime"
 
 #: ../app/views/commoners/_form.html.erb:6
 msgid "e.g. Bungo Baggins, pbm42, etc."
@@ -392,10 +395,6 @@ msgstr "Opis"
 #: ../app/views/commoners/_form.html.erb:11
 msgid "Few words about yourself"
 msgstr "Nekoliko riječi o sebi"
-
-#: ../app/views/commoners/_form.html.erb:11
-msgid "Your avatar"
-msgstr "Vaš avatar"
 
 #: ../app/views/commoners/_form.html.erb:15
 #: ../app/views/groups/_fields.html.erb:8
@@ -428,10 +427,6 @@ msgstr "Vještine, usluge ili roba"
 msgid "Edit profile"
 msgstr "Uredi profil"
 
-#: ../app/views/commoners/edit.html.erb:8
-msgid "Edit your email or password"
-msgstr "Uredi email ili lozinku"
-
 #: ../app/views/commoners/show.html.erb:19
 msgid "Continue conversation"
 msgstr "Nastavite razgovor"
@@ -443,10 +438,6 @@ msgstr "Započnite razgovor"
 #: ../app/views/commoners/show.html.erb:24
 msgid "Button|Edit profile"
 msgstr "Uredite profil"
-
-#: ../app/views/commoners/show.html.erb:32
-msgid "Go to %{currency_name} Wallet"
-msgstr "Odite na %{currency_name} Novčanik"
 
 #: ../app/views/commoners/show.html.erb:42 ../app/views/groups/show.html.erb:46
 #: ../app/views/layouts/_navbar.html.erb:113
@@ -521,16 +512,6 @@ msgstr ""
 msgid "Welcome page text|share a Story"
 msgstr "Podijeli svoju priču"
 
-#: ../app/views/commoners/welcome.html.erb:12
-msgid ""
-"Welcome page|Soon you will also be able to create real relations with other Co"
-"mmoners by sharing (and receiving) not only your experience but also time, goo"
-"ds, expertise, etc."
-msgstr ""
-"Uskoro ćete biti u mogućnosti kreirati stvarne odnose sa drugim Commoners-ima "
-"dijeleći (i primajući) ne samo vaše iskustvo nego i vrijeme, robu, stručnost i"
-"td."
-
 #: ../app/views/commoners/welcome.html.erb:17
 msgid ""
 "Welcome page|If you want to know more about what Commonfare.net is and who is "
@@ -577,11 +558,6 @@ msgid "%{icon} Back to My conversations"
 msgstr ""
 "%{icon} Povratak na Moje razgovore\n"
 
-#: ../app/views/currencies/_fields.html.erb:1
-#: ../app/views/groups/_fields.html.erb:2
-msgid "Name"
-msgstr "Ime"
-
 #: ../app/views/currencies/_fields.html.erb:2
 msgid "Code"
 msgstr "Kodirati"
@@ -613,11 +589,6 @@ msgstr "Stvori"
 #: ../app/views/listings/_listing.html.erb:19
 msgid "by %{commoner_name}"
 msgstr ""
-
-#: ../app/views/discussions/_discussion.html.erb:9
-#: ../app/views/listings/_listing.html.erb:20
-msgid "by <strong>%{commoner_name}</strong>"
-msgstr "od <strong>%{commoner_name}</strong>"
 
 #: ../app/views/discussions/_discussion.html.erb:16
 msgid "message"
@@ -655,10 +626,6 @@ msgstr "Započnite raspravu"
 #: ../app/views/discussions/show.html.erb:5
 msgid "%{icon} Back to %{group_name}"
 msgstr "%{icon} Povratak na %{group_name}"
-
-#: ../app/views/exception_handler/exceptions/show.html.erb:1
-msgid "Error"
-msgstr "Greška"
 
 #: ../app/views/exception_handler/exceptions/show.html.erb:9
 msgid "Sorry, the page you are looking for does not exist."
@@ -751,10 +718,6 @@ msgstr "Aktiviraj"
 #: ../app/views/groups/edit.html.erb:1 ../app/views/groups/edit.html.erb:4
 msgid "Title|Edit group"
 msgstr "Uredi grupu"
-
-#: ../app/views/groups/edit.html.erb:8
-msgid "Title|Edit"
-msgstr "Uredi"
 
 #: ../app/views/groups/leave.html.erb:1
 msgid "Title|Leave %{group_name}"
@@ -1046,8 +1009,8 @@ msgid "Place"
 msgstr "Mjesto"
 
 #: ../app/views/listings/_fields.html.erb:11
-msgid "Minimum price (in CC)"
-msgstr "Minimalna cijena (u CC)"
+msgid "Minimum price (cc)"
+msgstr "Minimalna cijena (cc)"
 
 #: ../app/views/listings/_fields.html.erb:12
 #: ../app/views/listings/_fields.html.erb:17
@@ -1055,8 +1018,8 @@ msgid "Specify an amount"
 msgstr "Navedite iznos"
 
 #: ../app/views/listings/_fields.html.erb:16
-msgid "Maximum price (in CC)"
-msgstr "Maksimalna cijena (u CC)"
+msgid "Maximum price (cc)"
+msgstr "Maksimalna cijena (cc)"
 
 #: ../app/views/listings/_fields.html.erb:26
 msgid "Images"
@@ -1118,10 +1081,6 @@ msgstr "Nema oglasa"
 
 #: ../app/views/listings/edit.html.erb:1 ../app/views/listings/edit.html.erb:6
 msgid "Title|Edit listing"
-msgstr "Izmjeni oglas"
-
-#: ../app/views/listings/edit.html.erb:8
-msgid "Button|Edit listing"
 msgstr "Izmjeni oglas"
 
 #: ../app/views/listings/edit.html.erb:9
@@ -1538,10 +1497,6 @@ msgstr "%{icon} Povratak na %{currency_name} novčanik"
 msgid "Current balance"
 msgstr "Trenutno stanje"
 
-#: ../app/views/transactions/new.html.erb:8
-msgid "Balance"
-msgstr "Stanje"
-
 #: ../app/views/transactions/new.html.erb:15
 #: ../app/views/transactions/new.html.erb:45
 msgid "Bilbo Baggins"
@@ -1669,17 +1624,9 @@ msgstr "Pošaljite mi upute"
 msgid "Edit credentials"
 msgstr "Uredi pristupne podatke"
 
-#: ../app/views/users/registrations/edit.html.erb:8
-msgid "Edit email"
-msgstr "Uredi email"
-
 #: ../app/views/users/registrations/edit.html.erb:10
 msgid "Change email"
 msgstr ""
-
-#: ../app/views/users/registrations/edit.html.erb:14
-msgid "Edit password"
-msgstr "Uredi lozinku"
 
 #: ../app/views/users/registrations/edit.html.erb:17
 msgid "Change password"

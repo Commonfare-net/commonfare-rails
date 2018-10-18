@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0\n"
 "Report-Msgid-Bugs-To: contact@translation.io\n"
-"POT-Creation-Date: 2018-10-16 11:58+0200\n"
-"PO-Revision-Date: 2018-10-16 11:58+0200\n"
+"POT-Creation-Date: 2018-10-18 11:22+0200\n"
+"PO-Revision-Date: 2018-10-18 11:22+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Italian\n"
 "Language: it\n"
@@ -267,21 +267,26 @@ msgstr "Nessun messaggio"
 msgid "not a valid SWAPI endpoint"
 msgstr "indirizzo non valido per SWAPI"
 
-#: ../app/models/listing.rb:19
+#: ../app/models/listing.rb:22
 msgid "ValidationError|doesn't seem to be a valid place"
 msgstr "non sembra essere un luogo valido"
 
+#: ../app/models/listing.rb:27 ../app/models/listing.rb:30
+#: ../app/models/transaction.rb:59
+msgid "ValidationError|use only two decimals"
+msgstr "utilizza solo due decimali"
+
+#: ../app/models/listing.rb:36
+msgid "ValidationError|must be higher than %{min_price}"
+msgstr "Deve essere maggiore di %{min_price}"
+
 #: ../app/models/transaction.rb:47
-msgid "can't be you"
+msgid "ValidationError|can't be you"
 msgstr "non puoi essere tu stesso"
 
 #: ../app/models/transaction.rb:53
-msgid "must accept %{currency_name}"
+msgid "ValidationError|must accept %{currency_name}"
 msgstr "deve accettare %{currency_name}"
-
-#: ../app/models/transaction.rb:59
-msgid "use only two decimals"
-msgstr "utilizza solo due decimali"
 
 #: ../app/models/wallet.rb:36
 msgid "Unregistered commoner"
@@ -366,12 +371,10 @@ msgid "All comments by %{commoner_name}"
 msgstr "Tutti i commenti di %{commoner_name}"
 
 #: ../app/views/commoners/_form.html.erb:5
-msgid "Username"
+#: ../app/views/currencies/_fields.html.erb:1
+#: ../app/views/groups/_fields.html.erb:2
+msgid "Name"
 msgstr "Nome"
-
-#: ../app/views/commoners/_form.html.erb:5
-msgid "Your name on Commonfare.net"
-msgstr "Il tuo nome su Commonfare.net"
 
 #: ../app/views/commoners/_form.html.erb:6
 msgid "e.g. Bungo Baggins, pbm42, etc."
@@ -391,10 +394,6 @@ msgstr "Descrizione"
 #: ../app/views/commoners/_form.html.erb:11
 msgid "Few words about yourself"
 msgstr "Qualcosa su di te"
-
-#: ../app/views/commoners/_form.html.erb:11
-msgid "Your avatar"
-msgstr "Il tuo avatar"
 
 #: ../app/views/commoners/_form.html.erb:15
 #: ../app/views/groups/_fields.html.erb:8
@@ -427,10 +426,6 @@ msgstr ""
 msgid "Edit profile"
 msgstr "Modifica profilo"
 
-#: ../app/views/commoners/edit.html.erb:8
-msgid "Edit your email or password"
-msgstr "Modifica la tua email o password"
-
 #: ../app/views/commoners/show.html.erb:19
 msgid "Continue conversation"
 msgstr "Continua la conversazione"
@@ -442,10 +437,6 @@ msgstr "Inizia una conversazione"
 #: ../app/views/commoners/show.html.erb:24
 msgid "Button|Edit profile"
 msgstr "Modifica profilo"
-
-#: ../app/views/commoners/show.html.erb:32
-msgid "Go to %{currency_name} Wallet"
-msgstr "Vai al portafoglio %{currency_name}"
 
 #: ../app/views/commoners/show.html.erb:42 ../app/views/groups/show.html.erb:46
 #: ../app/views/layouts/_navbar.html.erb:113
@@ -521,16 +512,6 @@ msgstr ""
 msgid "Welcome page text|share a Story"
 msgstr "condividere una storia"
 
-#: ../app/views/commoners/welcome.html.erb:12
-msgid ""
-"Welcome page|Soon you will also be able to create real relations with other Co"
-"mmoners by sharing (and receiving) not only your experience but also time, goo"
-"ds, expertise, etc."
-msgstr ""
-"Presto potrai costruire relazioni reali con altri/e Commoners attraverso la co"
-"ndivisione reciproca non solo di esperienze, ma anche di tempo, beni, e saperi"
-"."
-
 #: ../app/views/commoners/welcome.html.erb:17
 msgid ""
 "Welcome page|If you want to know more about what Commonfare.net is and who is "
@@ -577,11 +558,6 @@ msgstr "Conversazione con %{commoner_name}"
 msgid "%{icon} Back to My conversations"
 msgstr "%{icon} Torna alle mie conversazioni"
 
-#: ../app/views/currencies/_fields.html.erb:1
-#: ../app/views/groups/_fields.html.erb:2
-msgid "Name"
-msgstr "Nome"
-
 #: ../app/views/currencies/_fields.html.erb:2
 msgid "Code"
 msgstr "Codice"
@@ -613,11 +589,6 @@ msgstr "Crea"
 #: ../app/views/listings/_listing.html.erb:19
 msgid "by %{commoner_name}"
 msgstr "di %{commoner_name}"
-
-#: ../app/views/discussions/_discussion.html.erb:9
-#: ../app/views/listings/_listing.html.erb:20
-msgid "by <strong>%{commoner_name}</strong>"
-msgstr "di <strong>%{commoner_name}</strong>"
 
 #: ../app/views/discussions/_discussion.html.erb:16
 msgid "message"
@@ -653,10 +624,6 @@ msgstr "Inizia discussione"
 #: ../app/views/discussions/show.html.erb:5
 msgid "%{icon} Back to %{group_name}"
 msgstr "%{icon} Torna a %{group_name}"
-
-#: ../app/views/exception_handler/exceptions/show.html.erb:1
-msgid "Error"
-msgstr "Errore"
 
 #: ../app/views/exception_handler/exceptions/show.html.erb:9
 msgid "Sorry, the page you are looking for does not exist."
@@ -747,10 +714,6 @@ msgstr "Attiva"
 
 #: ../app/views/groups/edit.html.erb:1 ../app/views/groups/edit.html.erb:4
 msgid "Title|Edit group"
-msgstr "Modifica"
-
-#: ../app/views/groups/edit.html.erb:8
-msgid "Title|Edit"
 msgstr "Modifica"
 
 #: ../app/views/groups/leave.html.erb:1
@@ -1044,8 +1007,8 @@ msgid "Place"
 msgstr "Luogo"
 
 #: ../app/views/listings/_fields.html.erb:11
-msgid "Minimum price (in CC)"
-msgstr "Prezzo minimo (in CC)"
+msgid "Minimum price (cc)"
+msgstr "Prezzo minimo (cc)"
 
 #: ../app/views/listings/_fields.html.erb:12
 #: ../app/views/listings/_fields.html.erb:17
@@ -1053,8 +1016,8 @@ msgid "Specify an amount"
 msgstr "Specifica un importo"
 
 #: ../app/views/listings/_fields.html.erb:16
-msgid "Maximum price (in CC)"
-msgstr "Prezzo massimo (in CC)"
+msgid "Maximum price (cc)"
+msgstr "Prezzo massimo (cc)"
 
 #: ../app/views/listings/_fields.html.erb:26
 msgid "Images"
@@ -1116,10 +1079,6 @@ msgstr "Non ci sono inserzioni"
 
 #: ../app/views/listings/edit.html.erb:1 ../app/views/listings/edit.html.erb:6
 msgid "Title|Edit listing"
-msgstr "Modifica inserzione"
-
-#: ../app/views/listings/edit.html.erb:8
-msgid "Button|Edit listing"
 msgstr "Modifica inserzione"
 
 #: ../app/views/listings/edit.html.erb:9
@@ -1534,10 +1493,6 @@ msgstr "%{icon} Torna al portafoglio %{currency_name}"
 msgid "Current balance"
 msgstr "Saldo attuale"
 
-#: ../app/views/transactions/new.html.erb:8
-msgid "Balance"
-msgstr "Saldo"
-
 #: ../app/views/transactions/new.html.erb:15
 #: ../app/views/transactions/new.html.erb:45
 msgid "Bilbo Baggins"
@@ -1665,17 +1620,9 @@ msgstr "Inviami le istruzioni per ripristinare la password"
 msgid "Edit credentials"
 msgstr "Modifica le credenziali"
 
-#: ../app/views/users/registrations/edit.html.erb:8
-msgid "Edit email"
-msgstr "Modifica email"
-
 #: ../app/views/users/registrations/edit.html.erb:10
 msgid "Change email"
 msgstr "Modifica email"
-
-#: ../app/views/users/registrations/edit.html.erb:14
-msgid "Edit password"
-msgstr "Modifica password"
 
 #: ../app/views/users/registrations/edit.html.erb:17
 msgid "Change password"

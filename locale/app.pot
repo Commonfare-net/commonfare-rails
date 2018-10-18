@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0\n"
 "Report-Msgid-Bugs-To: contact@translation.io\n"
-"POT-Creation-Date: 2018-10-16 11:58+0200\n"
-"PO-Revision-Date: 2018-10-16 11:58+0200\n"
+"POT-Creation-Date: 2018-10-18 11:22+0200\n"
+"PO-Revision-Date: 2018-10-18 11:22+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -263,20 +263,25 @@ msgstr ""
 msgid "not a valid SWAPI endpoint"
 msgstr ""
 
-#: ../app/models/listing.rb:19
+#: ../app/models/listing.rb:22
 msgid "ValidationError|doesn't seem to be a valid place"
 msgstr ""
 
+#: ../app/models/listing.rb:27 ../app/models/listing.rb:30
+#: ../app/models/transaction.rb:59
+msgid "ValidationError|use only two decimals"
+msgstr ""
+
+#: ../app/models/listing.rb:36
+msgid "ValidationError|must be higher than %{min_price}"
+msgstr ""
+
 #: ../app/models/transaction.rb:47
-msgid "can't be you"
+msgid "ValidationError|can't be you"
 msgstr ""
 
 #: ../app/models/transaction.rb:53
-msgid "must accept %{currency_name}"
-msgstr ""
-
-#: ../app/models/transaction.rb:59
-msgid "use only two decimals"
+msgid "ValidationError|must accept %{currency_name}"
 msgstr ""
 
 #: ../app/models/wallet.rb:36
@@ -360,7 +365,9 @@ msgid "All comments by %{commoner_name}"
 msgstr ""
 
 #: ../app/views/commoners/_form.html.erb:5
-msgid "Username"
+#: ../app/views/currencies/_fields.html.erb:1
+#: ../app/views/groups/_fields.html.erb:2
+msgid "Name"
 msgstr ""
 
 #: ../app/views/commoners/_form.html.erb:6
@@ -529,11 +536,6 @@ msgstr ""
 
 #: ../app/views/conversations/show.html.erb:5
 msgid "%{icon} Back to My conversations"
-msgstr ""
-
-#: ../app/views/currencies/_fields.html.erb:1
-#: ../app/views/groups/_fields.html.erb:2
-msgid "Name"
 msgstr ""
 
 #: ../app/views/currencies/_fields.html.erb:2
@@ -969,7 +971,7 @@ msgid "Place"
 msgstr ""
 
 #: ../app/views/listings/_fields.html.erb:11
-msgid "Minimum price (in CC)"
+msgid "Minimum price (cc)"
 msgstr ""
 
 #: ../app/views/listings/_fields.html.erb:12
@@ -978,7 +980,7 @@ msgid "Specify an amount"
 msgstr ""
 
 #: ../app/views/listings/_fields.html.erb:16
-msgid "Maximum price (in CC)"
+msgid "Maximum price (cc)"
 msgstr ""
 
 #: ../app/views/listings/_fields.html.erb:26
