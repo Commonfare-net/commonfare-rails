@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0\n"
 "Report-Msgid-Bugs-To: contact@translation.io\n"
-"POT-Creation-Date: 2018-10-18 11:22+0200\n"
-"PO-Revision-Date: 2018-10-18 11:22+0200\n"
+"POT-Creation-Date: 2018-10-23 15:39+0200\n"
+"PO-Revision-Date: 2018-10-23 15:39+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Croatian\n"
 "Language: hr\n"
@@ -38,7 +38,7 @@ msgstr "Komentar je uspješno kreiran."
 
 #: ../app/controllers/application_controller.rb:87
 msgid "A problem occurred with your comment. Please try again"
-msgstr ""
+msgstr "Došlo je do problema s vašim komentarom. Molimo vas pokušajte ponovno."
 
 #: ../app/controllers/comments_controller.rb:66
 msgid "Comment was successfully updated."
@@ -75,7 +75,7 @@ msgstr "Valuta je uspješno kreirana"
 msgid "Currency was successfully updated."
 msgstr "Valuta je uspješno ažurirana"
 
-#: ../app/controllers/discussions_controller.rb:36
+#: ../app/controllers/discussions_controller.rb:39
 msgid "Discussion was successfully created."
 msgstr "Rasprava je uspješno kreirana."
 
@@ -91,16 +91,16 @@ msgstr "Grupa je uspješno stvorena."
 msgid "Group was successfully updated."
 msgstr "Grupa je uspješno ažurirana."
 
-#: ../app/controllers/join_requests_controller.rb:38
+#: ../app/controllers/join_requests_controller.rb:39
 msgid "Join request has been accepted."
 msgstr "Zahtjev za pristupanje je prihvaćen."
 
-#: ../app/controllers/join_requests_controller.rb:40
-#: ../app/controllers/join_requests_controller.rb:50
+#: ../app/controllers/join_requests_controller.rb:41
+#: ../app/controllers/join_requests_controller.rb:52
 msgid "There has been a problem with this join request"
 msgstr "Došlo je do problema s ovim zahtjevom za pridruživanje"
 
-#: ../app/controllers/join_requests_controller.rb:48
+#: ../app/controllers/join_requests_controller.rb:50
 msgid "Join request has been rejected."
 msgstr "Zahtjev za pristupanje je odbijen."
 
@@ -108,11 +108,11 @@ msgstr "Zahtjev za pristupanje je odbijen."
 msgid "You have left this group"
 msgstr "Napustili ste ovu grupu"
 
-#: ../app/controllers/messages_controller.rb:39
+#: ../app/controllers/messages_controller.rb:40
 msgid "Message sent"
 msgstr "Poruka je poslana"
 
-#: ../app/controllers/messages_controller.rb:67
+#: ../app/controllers/messages_controller.rb:68
 msgid "Message deleted"
 msgstr "Poruka je izbrisana"
 
@@ -176,6 +176,8 @@ msgid ""
 "Your profile will not be linked to this comment, but you will still be able to"
 " edit or delete the comment."
 msgstr ""
+"Vaš profil neće biti povezan s ovim komentarom, ali ćete i dalje moći uređivat"
+"i ​​ili izbrisati komentar."
 
 #: ../app/helpers/groups_helper.rb:3
 msgid "Button|Confirm and create profile"
@@ -197,7 +199,7 @@ msgstr ""
 
 #: ../app/helpers/notifications_helper.rb:21
 msgid "Common wallet"
-msgstr ""
+msgstr "Commoncoin novčanik"
 
 #: ../app/helpers/pages_helper.rb:14
 msgid "Home title|Commoners Voices"
@@ -276,11 +278,12 @@ msgstr "ValidationError|Ne čini se valjanim mjestom"
 #: ../app/models/listing.rb:27 ../app/models/listing.rb:30
 #: ../app/models/transaction.rb:59
 msgid "ValidationError|use only two decimals"
-msgstr ""
+msgstr "ValidationError|koristite samo dvije decimale"
 
 #: ../app/models/listing.rb:36
 msgid "ValidationError|must be higher than %{min_price}"
 msgstr ""
+"ValidationError|mora biti više od %{min_price}\n"
 
 #: ../app/models/transaction.rb:47
 msgid "ValidationError|can't be you"
@@ -295,27 +298,55 @@ msgid "Unregistered commoner"
 msgstr "Neregistrirani Commoner"
 
 #:
-#: ../app/views/activity_notification/notifications/commoners/_default.html.erb:10
+#: ../app/views/activity_notification/notifications/commoners/_default.html.erb:11
 msgid ""
 "You have %{num_of_messages} in the conversation with <strong>%{other_commoner}"
 "</strong>"
-msgstr ""
+msgstr "Imate %{num_of_messages} u razgovoru s <strong>%{other_commoner}</strong>"
 
 #:
 #: ../app/views/activity_notification/notifications/commoners/_default.html.erb:13
 msgid ""
+"%{num_of_messages} from <strong>%{author_name}</strong> in <strong>%{discussio"
+"n_title}</strong>"
+msgstr ""
+
+#:
+#: ../app/views/activity_notification/notifications/commoners/_default.html.erb:17
+msgid ""
 "You have received %{amount} %{currency} from <strong>%{other_commoner}</strong"
 ">"
+msgstr "Primili ste %{amount} %{currency} od <strong>%{other_commoner}</strong>"
+
+#:
+#: ../app/views/activity_notification/notifications/commoners/_default.html.erb:21
+msgid ""
+"<strong>%{requester_name}</strong> requested to join the group <strong>%{group"
+"_name}</strong>"
+msgstr ""
+
+#:
+#: ../app/views/activity_notification/notifications/commoners/_default.html.erb:23
+msgid ""
+"Your request to join the group <strong>%{group_name}</strong> has been accepte"
+"d"
+msgstr ""
+
+#:
+#: ../app/views/activity_notification/notifications/commoners/_default.html.erb:25
+msgid ""
+"Your request to join the group <strong>%{group_name}</strong> has been rejecte"
+"d"
 msgstr ""
 
 #: ../app/views/activity_notification/notifications/commoners/index.html.erb:1
 #: ../app/views/activity_notification/notifications/commoners/index.html.erb:7
 msgid "Title|Notifications"
-msgstr ""
+msgstr "Title|Obavijesti"
 
 #: ../app/views/activity_notification/notifications/commoners/index.html.erb:20
 msgid "No notifications"
-msgstr ""
+msgstr "Nema obavijesti"
 
 #: ../app/views/comments/_fields.html.erb:2
 msgid "Add a comment"
@@ -339,7 +370,7 @@ msgstr "Komentirajte"
 
 #: ../app/views/comments/_new.html.erb:2
 msgid "Button|Login and comment"
-msgstr ""
+msgstr "Button|Prijavite se i komentirajte"
 
 #: ../app/views/comments/edit.html.erb:5
 msgid "Edit your comment"
@@ -399,7 +430,7 @@ msgstr "Nekoliko riječi o sebi"
 #: ../app/views/commoners/_form.html.erb:15
 #: ../app/views/groups/_fields.html.erb:8
 msgid "Avatar"
-msgstr ""
+msgstr "Slika"
 
 #: ../app/views/commoners/_form.html.erb:16
 #: ../app/views/groups/_fields.html.erb:9
@@ -408,7 +439,7 @@ msgstr "Kvadratne slike izgledaju bolje ✨"
 
 #: ../app/views/commoners/_form.html.erb:19
 msgid "Account settings"
-msgstr ""
+msgstr "Postavke računa"
 
 #: ../app/views/commoners/_form.html.erb:23
 msgid "Interests"
@@ -532,7 +563,7 @@ msgstr "Moji razgovori"
 
 #: ../app/views/conversations/index.html.erb:9
 msgid "Get in touch with other commoners"
-msgstr ""
+msgstr "Stupite u kontakt s drugim Commoners-ima"
 
 #: ../app/views/conversations/index.html.erb:18
 msgid "No conversations"
@@ -588,7 +619,7 @@ msgstr "Stvori"
 #: ../app/views/discussions/_discussion.html.erb:9
 #: ../app/views/listings/_listing.html.erb:19
 msgid "by %{commoner_name}"
-msgstr ""
+msgstr "autor/ica %{commoner_name}"
 
 #: ../app/views/discussions/_discussion.html.erb:16
 msgid "message"
@@ -783,7 +814,7 @@ msgstr "Pridružite se ovoj grupi"
 
 #: ../app/views/groups/show.html.erb:17
 msgid "Pending request"
-msgstr ""
+msgstr "Zahtjev na čekanju"
 
 #: ../app/views/groups/show.html.erb:20
 msgid "Edit group"
@@ -1024,6 +1055,7 @@ msgstr "Maksimalna cijena (cc)"
 #: ../app/views/listings/_fields.html.erb:26
 msgid "Images"
 msgstr ""
+"Slike\n"
 
 #: ../app/views/listings/_fields.html.erb:31
 msgid "Add image"
@@ -1058,6 +1090,7 @@ msgstr ""
 #: ../app/views/listings/commonplace.html.erb:9
 msgid "Where you exchange goods, services and knowledge"
 msgstr ""
+"Gdje razmjenjujete robu, usluge i znanja\n"
 
 #: ../app/views/listings/commonplace.html.erb:17
 msgid "Latest listings"
@@ -1363,10 +1396,11 @@ msgstr "Priče od %{author_name}"
 #: ../app/views/stories/show.html.erb:62
 msgid "Read in "
 msgstr ""
+"Čitaj na\n"
 
 #: ../app/views/stories/show.html.erb:24
 msgid "Edit story"
-msgstr ""
+msgstr "Uredite priču"
 
 #: ../app/views/stories/show.html.erb:93
 msgid "Button|Share"
@@ -1402,7 +1436,7 @@ msgstr "Oglasi s oznakom"
 
 #: ../app/views/transactions/_transaction.html.erb:8
 msgid "Basic income"
-msgstr ""
+msgstr "Osnovni dohodak"
 
 #: ../app/views/transactions/_transaction.html.erb:21
 msgid "Given to <strong>%{name}</strong>"
@@ -1626,11 +1660,11 @@ msgstr "Uredi pristupne podatke"
 
 #: ../app/views/users/registrations/edit.html.erb:10
 msgid "Change email"
-msgstr ""
+msgstr "Promijenite e-mail"
 
 #: ../app/views/users/registrations/edit.html.erb:17
 msgid "Change password"
-msgstr ""
+msgstr "Promjenite lozinku"
 
 #: ../app/views/users/registrations/edit.html.erb:18
 msgid "Edit credentials form|leave it blank if you don't want to change it"
@@ -1650,7 +1684,7 @@ msgstr "trebamo vašu trenutnu lozinku za potvrdu vaših izmjena"
 
 #: ../app/views/users/registrations/edit.html.erb:28
 msgid "Delete account"
-msgstr ""
+msgstr "Izbrišite račun"
 
 #: ../app/views/users/registrations/edit.html.erb:30
 msgid "Leave Commonfare.net..."
@@ -1802,7 +1836,7 @@ msgstr "%{currency_name} novčanik"
 
 #: ../app/views/wallets/show.html.erb:9
 msgid "Your personal wallet for digital tokens"
-msgstr ""
+msgstr "Vaš osobni novčanik za digitalne tokene"
 
 #: ../app/views/wallets/show.html.erb:17
 msgid "Button|Send %{currency_code}"

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0\n"
 "Report-Msgid-Bugs-To: contact@translation.io\n"
-"POT-Creation-Date: 2018-10-18 11:22+0200\n"
-"PO-Revision-Date: 2018-10-18 11:22+0200\n"
+"POT-Creation-Date: 2018-10-23 15:39+0200\n"
+"PO-Revision-Date: 2018-10-23 15:39+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Italian\n"
 "Language: it\n"
@@ -73,7 +73,7 @@ msgstr "Moneta creata"
 msgid "Currency was successfully updated."
 msgstr "Moneta aggiornata"
 
-#: ../app/controllers/discussions_controller.rb:36
+#: ../app/controllers/discussions_controller.rb:39
 msgid "Discussion was successfully created."
 msgstr "Discussione creata."
 
@@ -89,16 +89,16 @@ msgstr "Gruppo creato."
 msgid "Group was successfully updated."
 msgstr "Gruppo modificato."
 
-#: ../app/controllers/join_requests_controller.rb:38
+#: ../app/controllers/join_requests_controller.rb:39
 msgid "Join request has been accepted."
 msgstr "La richiesta di adesione è stata accettata."
 
-#: ../app/controllers/join_requests_controller.rb:40
-#: ../app/controllers/join_requests_controller.rb:50
+#: ../app/controllers/join_requests_controller.rb:41
+#: ../app/controllers/join_requests_controller.rb:52
 msgid "There has been a problem with this join request"
 msgstr "C'è stato un problema con questa richiesta di adesione"
 
-#: ../app/controllers/join_requests_controller.rb:48
+#: ../app/controllers/join_requests_controller.rb:50
 msgid "Join request has been rejected."
 msgstr "La richiesta di adesione è stata respinta."
 
@@ -106,11 +106,11 @@ msgstr "La richiesta di adesione è stata respinta."
 msgid "You have left this group"
 msgstr "Hai lasciato questo gruppo"
 
-#: ../app/controllers/messages_controller.rb:39
+#: ../app/controllers/messages_controller.rb:40
 msgid "Message sent"
 msgstr "Messaggio inviato"
 
-#: ../app/controllers/messages_controller.rb:67
+#: ../app/controllers/messages_controller.rb:68
 msgid "Message deleted"
 msgstr "Messaggio cancellato"
 
@@ -293,7 +293,7 @@ msgid "Unregistered commoner"
 msgstr "Commoner non registrato"
 
 #:
-#: ../app/views/activity_notification/notifications/commoners/_default.html.erb:10
+#: ../app/views/activity_notification/notifications/commoners/_default.html.erb:11
 msgid ""
 "You have %{num_of_messages} in the conversation with <strong>%{other_commoner}"
 "</strong>"
@@ -304,9 +304,45 @@ msgstr ""
 #:
 #: ../app/views/activity_notification/notifications/commoners/_default.html.erb:13
 msgid ""
+"%{num_of_messages} from <strong>%{author_name}</strong> in <strong>%{discussio"
+"n_title}</strong>"
+msgstr ""
+"%{num_of_messages} da <strong>%{author_name}</strong> in <strong>%{discussion_"
+"title}</strong>"
+
+#:
+#: ../app/views/activity_notification/notifications/commoners/_default.html.erb:17
+msgid ""
 "You have received %{amount} %{currency} from <strong>%{other_commoner}</strong"
 ">"
 msgstr "Hai ricevuto %{amount} %{currency} da <strong>%{other_commoner}</strong>"
+
+#:
+#: ../app/views/activity_notification/notifications/commoners/_default.html.erb:21
+msgid ""
+"<strong>%{requester_name}</strong> requested to join the group <strong>%{group"
+"_name}</strong>"
+msgstr ""
+"<strong>%{requester_name}</strong> ha richiesto di unirsi al gruppo <strong>%{"
+"group_name}</strong>"
+
+#:
+#: ../app/views/activity_notification/notifications/commoners/_default.html.erb:23
+msgid ""
+"Your request to join the group <strong>%{group_name}</strong> has been accepte"
+"d"
+msgstr ""
+"La tua richiesta di adesione al gruppo <strong>%{group_name}</strong> è stata "
+"accettata"
+
+#:
+#: ../app/views/activity_notification/notifications/commoners/_default.html.erb:25
+msgid ""
+"Your request to join the group <strong>%{group_name}</strong> has been rejecte"
+"d"
+msgstr ""
+"La richiesta di adesione al gruppo <strong>%{group_name}</strong> è stata resp"
+"inta."
 
 #: ../app/views/activity_notification/notifications/commoners/index.html.erb:1
 #: ../app/views/activity_notification/notifications/commoners/index.html.erb:7
