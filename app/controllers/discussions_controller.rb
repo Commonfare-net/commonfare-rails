@@ -33,6 +33,9 @@ class DiscussionsController < ApplicationController
     @discussion = Discussion.new(discussion_params)
     respond_to do |format|
       if @discussion.save
+        # I need the message to trigger the notification
+        message = @discussion.messages.first
+        message.notify(:commoners, group: @discussion) if message.present?
         format.html { redirect_to group_discussion_path(@group, @discussion), notice: _('Discussion was successfully created.') }
         format.json { render :show, status: :created, location: @discussion }
       else

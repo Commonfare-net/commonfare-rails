@@ -35,6 +35,7 @@ class JoinRequestsController < ApplicationController
         # Membership.create(group:    @join_request.group,
         #                   commoner: @join_request.commoner
         #                   role:     'affiliate')
+        @join_request.notify(:commoners, group: @join_request.group)
         format.html { redirect_to @join_request.group, notice: _('Join request has been accepted.') }
       else
         format.html { redirect_to @join_request, notice: _('There has been a problem with this join request') }
@@ -45,6 +46,7 @@ class JoinRequestsController < ApplicationController
   def reject
     respond_to do |format|
       if @join_request.reject!
+        @join_request.notify(:commoners, group: @join_request.group)
         format.html { redirect_to @join_request.group, notice: _('Join request has been rejected.') }
       else
         format.html { redirect_to @join_request, notice: _('There has been a problem with this join request') }
@@ -59,6 +61,7 @@ class JoinRequestsController < ApplicationController
 
     respond_to do |format|
       if @join_request.save
+        @join_request.notify(:commoners, group: @join_request.group)
         format.html { redirect_to @join_request, notice: 'Join request was successfully created.' }
         format.json { render :show, status: :created, location: @join_request }
       else

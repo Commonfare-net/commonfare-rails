@@ -16,6 +16,15 @@
         <% if notification.notifiable.is_a? Transaction %>
           <%= (_("You have received %{amount} %{currency} from <strong>%{other_commoner}</strong>") %{amount: notification.notifiable.amount, currency: currency_name_for_transaction(notification.notifiable), other_commoner: other_commoner_name_for_transaction_notification(notification)}).html_safe %>
         <% end %>
+        <% if notification.notifiable.is_a? JoinRequest %>
+          <% if notification.notifiable.pending? %>
+            <%= (_("<strong>%{requester_name}</strong> requested to join the group <strong>%{group_name}</strong>") %{requester_name: notification.notifiable.commoner.name, group_name: notification.notifiable.group.name}).html_safe %>
+          <% elsif notification.notifiable.accepted? %>
+            <%= (_("Your request to join the group <strong>%{group_name}</strong> has been accepted") %{group_name: notification.notifiable.group.name}).html_safe %>
+          <% else %>
+            <%= (_("Your request to join the group <strong>%{group_name}</strong> has been rejected") %{group_name: notification.notifiable.group.name}).html_safe %>
+          <% end %>
+        <% end %>
         <br>
         <span class="text-muted moment-variable-date" data-server-date="<%= notification.created_at %>">
           <%= notification.created_at.strftime("%b %d %H:%M") %>
