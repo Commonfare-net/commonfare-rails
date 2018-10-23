@@ -4,12 +4,16 @@ class Message < ApplicationRecord
     # Set to notify to the counterpart of the conversation
     # NOTE: the lambda must return an array!
     targets: ->(message, key) {
-      [message.conversation.sender == message.author ? message.conversation.recipient : message.conversation.sender]
+      if message.in_conversation?
+        [message.conversation.sender == message.author ? message.conversation.recipient : message.conversation.sender]
+      else
+        (message.discussion.group.members.to_a - [message.author]).uniq
+      end
     },
     notifier: :commoner,
     # Path to move when the notification is opened by the target user
     # This is an optional configuration since activity_notification uses polymorphic_path as default
-    notifiable_path: :message_conversation_path
+    notifiable_path: :message_target_path
 
   # optional: true is here until Rails fixes this bug
   # https://github.com/rails/rails/issues/29781
@@ -32,7 +36,8 @@ class Message < ApplicationRecord
   end
 
   private
-  def message_conversation_path
-    conversation_path(self.conversation, locale: I18n.locale)
+  def message_target_path
+    return conversation_path(self.conversation, locale: I18n.locale) if self.in_conversation?
+    group_discussion_path(self.discussion.group, self.discussion, locale: I18n.locale)
   end
 end

@@ -36,6 +36,7 @@ class MessagesController < ApplicationController
     respond_to do |format|
       if @message.save
         @message.notify(:commoners, group: @message.conversation) if @message.in_conversation?
+        @message.notify(:commoners, group: @message.discussion) if @message.in_discussion?
         format.html { redirect_to success_path, notice: _('Message sent') }
       else
         @new_message = @message

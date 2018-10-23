@@ -7,7 +7,11 @@
     <div class="list_text_wrapper">
       <p class="list_text">
         <% if notification.notifiable.is_a? Message %>
+          <% if notification.notifiable.in_conversation? %>
           <%= (_("You have %{num_of_messages} in the conversation with <strong>%{other_commoner}</strong>") %{num_of_messages: notifiable_count(notification), other_commoner: notification.notifier.printable_target_name}).html_safe %>
+          <% else %>
+          <%= (_("%{num_of_messages} from <strong>%{author_name}</strong> in <strong>%{discussion_title}</strong>") %{num_of_messages: notifiable_count(notification), author_name: notification.notifier.printable_target_name, discussion_title: notification.group.printable_group_name }).html_safe %>
+          <% end %>
         <% end %>
         <% if notification.notifiable.is_a? Transaction %>
           <%= (_("You have received %{amount} %{currency} from <strong>%{other_commoner}</strong>") %{amount: notification.notifiable.amount, currency: currency_name_for_transaction(notification.notifiable), other_commoner: other_commoner_name_for_transaction_notification(notification)}).html_safe %>
