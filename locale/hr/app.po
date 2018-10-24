@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0\n"
 "Report-Msgid-Bugs-To: contact@translation.io\n"
-"POT-Creation-Date: 2018-10-23 15:39+0200\n"
-"PO-Revision-Date: 2018-10-23 15:39+0200\n"
+"POT-Creation-Date: 2018-10-24 11:31+0200\n"
+"PO-Revision-Date: 2018-10-24 11:31+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Croatian\n"
 "Language: hr\n"
@@ -306,9 +306,7 @@ msgstr "Imate %{num_of_messages} u razgovoru s <strong>%{other_commoner}</strong
 
 #:
 #: ../app/views/activity_notification/notifications/commoners/_default.html.erb:13
-msgid ""
-"%{num_of_messages} from <strong>%{author_name}</strong> in <strong>%{discussio"
-"n_title}</strong>"
+msgid "There are new messages in <strong>%{discussion_title}</strong>"
 msgstr ""
 
 #:
@@ -326,17 +324,31 @@ msgid ""
 msgstr ""
 
 #:
-#: ../app/views/activity_notification/notifications/commoners/_default.html.erb:23
+#: ../app/views/activity_notification/notifications/commoners/_default.html.erb:24
 msgid ""
 "Your request to join the group <strong>%{group_name}</strong> has been accepte"
 "d"
 msgstr ""
 
 #:
-#: ../app/views/activity_notification/notifications/commoners/_default.html.erb:25
+#: ../app/views/activity_notification/notifications/commoners/_default.html.erb:26
+msgid ""
+"<strong>%{requester_name}</strong> has joined the group <strong>%{group_name}<"
+"/strong>"
+msgstr ""
+
+#:
+#: ../app/views/activity_notification/notifications/commoners/_default.html.erb:30
 msgid ""
 "Your request to join the group <strong>%{group_name}</strong> has been rejecte"
 "d"
+msgstr ""
+
+#:
+#: ../app/views/activity_notification/notifications/commoners/_default.html.erb:32
+msgid ""
+"The request by <strong>%{requester_name}</strong> to join the group <strong>%{"
+"group_name}</strong> has been rejected"
 msgstr ""
 
 #: ../app/views/activity_notification/notifications/commoners/index.html.erb:1

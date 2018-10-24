@@ -24,6 +24,10 @@ module NotificationsHelper
 
   def notification_image(notification)
     return image_tag('card_square_default_img.jpg', height: 48) if notification.notifiable.is_a?(Transaction) && notification.notifiable.from_wallet.is_common_wallet?
+
+    # show group avatar for join_request notifications seen by requesters
+    return image_tag(notification.notifiable.group.avatar.card) if notification.notifiable.is_a?(JoinRequest) && !notification.notifiable.pending? && notification.notifiable.commoner.user == current_user
+
     image_tag notification.notifier.avatar.card
   end
 end

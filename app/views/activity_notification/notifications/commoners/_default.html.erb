@@ -10,7 +10,7 @@
           <% if notification.notifiable.in_conversation? %>
           <%= (_("You have %{num_of_messages} in the conversation with <strong>%{other_commoner}</strong>") %{num_of_messages: notifiable_count(notification), other_commoner: notification.notifier.printable_target_name}).html_safe %>
           <% else %>
-          <%= (_("%{num_of_messages} from <strong>%{author_name}</strong> in <strong>%{discussion_title}</strong>") %{num_of_messages: notifiable_count(notification), author_name: notification.notifier.printable_target_name, discussion_title: notification.group.printable_group_name }).html_safe %>
+          <%= (_("There are new messages in <strong>%{discussion_title}</strong>") %{discussion_title: notification.group.printable_group_name }).html_safe %>
           <% end %>
         <% end %>
         <% if notification.notifiable.is_a? Transaction %>
@@ -20,9 +20,17 @@
           <% if notification.notifiable.pending? %>
             <%= (_("<strong>%{requester_name}</strong> requested to join the group <strong>%{group_name}</strong>") %{requester_name: notification.notifiable.commoner.name, group_name: notification.notifiable.group.name}).html_safe %>
           <% elsif notification.notifiable.accepted? %>
-            <%= (_("Your request to join the group <strong>%{group_name}</strong> has been accepted") %{group_name: notification.notifiable.group.name}).html_safe %>
+            <% if notification.notifiable.commoner.user == current_user %>
+              <%= (_("Your request to join the group <strong>%{group_name}</strong> has been accepted") %{group_name: notification.notifiable.group.name}).html_safe %>
+            <% else %>
+              <%= (_("<strong>%{requester_name}</strong> has joined the group <strong>%{group_name}</strong>") %{requester_name: notification.notifiable.commoner.name, group_name: notification.notifiable.group.name}).html_safe %>
+            <% end %>
           <% else %>
-            <%= (_("Your request to join the group <strong>%{group_name}</strong> has been rejected") %{group_name: notification.notifiable.group.name}).html_safe %>
+            <% if notification.notifiable.commoner.user == current_user %>
+              <%= (_("Your request to join the group <strong>%{group_name}</strong> has been rejected") %{group_name: notification.notifiable.group.name}).html_safe %>
+            <% else %>
+              <%= (_("The request by <strong>%{requester_name}</strong> to join the group <strong>%{group_name}</strong> has been rejected") %{requester_name: notification.notifiable.commoner.name, group_name: notification.notifiable.group.name}).html_safe %>
+            <% end %>
           <% end %>
         <% end %>
         <br>

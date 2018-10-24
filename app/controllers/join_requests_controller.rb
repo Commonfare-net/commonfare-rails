@@ -61,7 +61,9 @@ class JoinRequestsController < ApplicationController
 
     respond_to do |format|
       if @join_request.save
-        @join_request.notify(:commoners, group: @join_request.group)
+        # New join requests are not grouped to avoid issues with many requestt from different commoners
+        # This way the notification text change according to the JoinRequest state (see the corresponding view)
+        @join_request.notify(:commoners)
         format.html { redirect_to @join_request, notice: 'Join request was successfully created.' }
         format.json { render :show, status: :created, location: @join_request }
       else

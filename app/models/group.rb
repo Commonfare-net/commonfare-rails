@@ -9,8 +9,6 @@ class Group < ApplicationRecord
   has_one :currency
   has_many :wallets, as: :walletable
 
-  acts_as_notification_group printable_name: ->(group) { group.name }
-
   after_commit :set_admin, on: :create
 
   ROLES = %w(admin editor affiliate)
