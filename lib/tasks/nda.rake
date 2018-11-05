@@ -142,6 +142,11 @@ namespace :nda do
     # Edges by transactions
     Transaction.where('created_at < ?', date).find_each do |transaction|
       next if transaction.involve_group_wallet?
+      # Here I skip transactions to/from commoners that have deleted their account
+      # TODO: A better solution for the commonshare could be to keep these transactions
+      # and someway mark them as happened between deleted commoners
+      next if transaction.to_wallet.walletable.nil? || transaction.from_wallet.walletable.nil?
+
       from_node = graph.nodes.find do |node|
         node[:type] == transaction.from_wallet.walletable.class.class_name.downcase &&
         node[:id].to_i == transaction.from_wallet.walletable.id
