@@ -27,14 +27,14 @@ class Story < ApplicationRecord
   after_save :destroy_unused_images, if: :just_published?
   after_save :add_images_from_content_draft, if: ->(story) { attribute_changed?(:content_draft) } # TODO!! DEPRECATED!! UPGRADE TO RAILS 5.1.5
   after_save :add_images_from_content_json_draft, if: ->(story) { attribute_changed?(:content_json_draft) } # TODO!! DEPRECATED!! UPGRADE TO RAILS 5.1.5
-  after_commit :check_welfare_provision_and_good_practice, on: [:create, :update]
+  after_commit :check_type, on: [:create, :update]
 
   default_scope { order(created_at: :desc) }
 
   scope :draft, -> { where(published: false) }
   scope :published, -> { where(published: true) }
 
-  TYPES = %i(welfare_provision good_practice).freeze
+  TYPES = %i(welfare_provision good_practice tutorial).freeze
   # TYPES.each do |type|
   #   scope type, -> { where(type => true) }
   # end
@@ -42,11 +42,14 @@ class Story < ApplicationRecord
   # All welfare provisions are scoped by translation
   scope :welfare_provision, -> { where(welfare_provision: true).with_translations(I18n.locale)}
   scope :good_practice, -> { where(good_practice: true)}
-  scope :commoners_voice, -> { where(good_practice: false, welfare_provision: false) }
+  scope :tutorial, -> { where(tutorial: true)}
+  scope :commoners_voice, -> { where(good_practice: false, welfare_provision: false, tutorial: false) }
 
   def type
     if good_practice?
       :good_practice
+    elsif tutorial?
+      :tutorial
     elsif welfare_provision?
       :welfare_provision
     else
@@ -108,7 +111,7 @@ class Story < ApplicationRecord
 
   private
 
-  def check_welfare_provision_and_good_practice
+  def check_type
     tag_names = tags.pluck :name
     gp_authors = ENV['GP_AUTHORS'].split(',')
     wp_authors = ENV['WP_AUTHORS'].split(',')
@@ -129,9 +132,12 @@ class Story < ApplicationRecord
                 )
               )
 
+    is_tutorial = %w(tutorial howto).all? {|t| tag_names.include?(t)}
+
     # The queries are performed only if needed
     update_column(:welfare_provision, is_wp) if is_wp != welfare_provision?
     update_column(:good_practice, is_gp) if is_gp != good_practice?
+    update_column(:tutorial, is_tutorial) if is_tutorial != tutorial?
   end
 
   def just_published?

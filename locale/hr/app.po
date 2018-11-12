@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0\n"
 "Report-Msgid-Bugs-To: contact@translation.io\n"
-"POT-Creation-Date: 2018-10-24 11:31+0200\n"
-"PO-Revision-Date: 2018-10-24 11:31+0200\n"
+"POT-Creation-Date: 2018-11-12 14:40+0100\n"
+"PO-Revision-Date: 2018-11-12 14:40+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Croatian\n"
 "Language: hr\n"
@@ -116,35 +116,35 @@ msgstr "Poruka je poslana"
 msgid "Message deleted"
 msgstr "Poruka je izbrisana"
 
-#: ../app/controllers/pages_controller.rb:46
+#: ../app/controllers/pages_controller.rb:51
 msgid "Dashboard|Visits"
 msgstr "Posjeta"
 
-#: ../app/controllers/pages_controller.rb:47
+#: ../app/controllers/pages_controller.rb:52
 msgid "Dashboard|Unique visitors"
 msgstr "Jedinstvenih posjeta"
 
-#: ../app/controllers/pages_controller.rb:48
+#: ../app/controllers/pages_controller.rb:53
 msgid "Dashboard|Pageviews"
 msgstr "Pregleda stranica"
 
-#: ../app/controllers/pages_controller.rb:49
+#: ../app/controllers/pages_controller.rb:54
 msgid "Dashboard|Total registered commoners"
 msgstr "Ukupno registriranih commonera"
 
-#: ../app/controllers/stories_controller.rb:144
+#: ../app/controllers/stories_controller.rb:147
 msgid "Story was successfully destroyed."
 msgstr "Priča je uspješno izbrisana."
 
-#: ../app/controllers/stories_controller.rb:159
+#: ../app/controllers/stories_controller.rb:162
 msgid "Could not publish this story"
 msgstr "Nije bilo moguće objaviti ovu priču"
 
-#: ../app/controllers/stories_controller.rb:222
+#: ../app/controllers/stories_controller.rb:225
 msgid "Story was successfully created."
 msgstr "Priča je uspješno stvorena."
 
-#: ../app/controllers/stories_controller.rb:237
+#: ../app/controllers/stories_controller.rb:240
 msgid "Story was successfully updated."
 msgstr "Priča je uspješno ažururana."
 
@@ -206,42 +206,50 @@ msgid "Home title|Commoners Voices"
 msgstr "Glasovi Commonera"
 
 #: ../app/helpers/pages_helper.rb:16
+msgid "Home title|Tutorials"
+msgstr ""
+
+#: ../app/helpers/pages_helper.rb:18
 msgid "Home title|Good Practices"
 msgstr "Dobre prakse"
 
-#: ../app/helpers/pages_helper.rb:18
+#: ../app/helpers/pages_helper.rb:20
 msgid "Home title|Public Benefits"
 msgstr "Mjere socijalne zaštite"
 
-#: ../app/helpers/pages_helper.rb:25
+#: ../app/helpers/pages_helper.rb:27
 msgid "Home text|A collection of stories for, with and by people."
 msgstr "Zbirka priča za ljude, sa ljudima i od ljudi"
 
-#: ../app/helpers/pages_helper.rb:27
+#: ../app/helpers/pages_helper.rb:29
+msgid "Home text|How to use Commonfare.net"
+msgstr ""
+
+#: ../app/helpers/pages_helper.rb:31
 msgid "Home text|Selected bottom-up initiatives to connect and inspire."
 msgstr "Odabrane bottom-up inicijative za povezivanje i nadahnuće."
 
-#: ../app/helpers/pages_helper.rb:29
+#: ../app/helpers/pages_helper.rb:33
 msgid "Home text|Get informed about local welfare provisions."
 msgstr "Informirajte se o lokalnim zakonima o socijalnoj pomoći"
 
-#: ../app/helpers/pages_helper.rb:57
+#: ../app/helpers/pages_helper.rb:61
 msgid "Legend"
 msgstr "Legenda"
 
-#: ../app/helpers/pages_helper.rb:58
+#: ../app/helpers/pages_helper.rb:62
 msgid "Social graph legend|Commoner"
 msgstr "Commoner"
 
-#: ../app/helpers/pages_helper.rb:59
+#: ../app/helpers/pages_helper.rb:63
 msgid "Social graph legend|Story"
 msgstr "Priča"
 
-#: ../app/helpers/pages_helper.rb:60
+#: ../app/helpers/pages_helper.rb:64
 msgid "Social graph legend|Tag"
 msgstr "Oznaka"
 
-#: ../app/helpers/pages_helper.rb:61
+#: ../app/helpers/pages_helper.rb:65
 msgid "Social graph legend|Listing"
 msgstr "Oglas"
 

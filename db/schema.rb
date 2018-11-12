@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180821141351) do
+ActiveRecord::Schema.define(version: 20181112072604) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -217,11 +217,13 @@ ActiveRecord::Schema.define(version: 20180821141351) do
     t.string "place_draft"
     t.bigint "group_id"
     t.jsonb "template_json"
+    t.boolean "tutorial", default: false
     t.index ["anonymous"], name: "index_stories_on_anonymous"
     t.index ["commoner_id"], name: "index_stories_on_commoner_id"
     t.index ["good_practice"], name: "index_stories_on_good_practice"
     t.index ["group_id"], name: "index_stories_on_group_id"
     t.index ["slug"], name: "index_stories_on_slug", unique: true
+    t.index ["tutorial"], name: "index_stories_on_tutorial"
     t.index ["welfare_provision"], name: "index_stories_on_welfare_provision"
   end
 

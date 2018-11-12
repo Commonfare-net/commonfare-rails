@@ -21,7 +21,12 @@ class PagesController < ApplicationController
     if params[:id] == 'home'
       # Welfare provisions are already scoped in the current locale language
       @story_types_and_lists = {
-        commoners_voice: get_commoner_voices,
+        commoners_voice: Story.published.commoners_voice
+          .includes(:commoner, :tags, :comments, :images, :translations)
+          .first(6),
+        tutorial: Story.published.tutorial
+          .includes(:commoner, :tags, :comments, :images, :translations)
+          .first(3),
         good_practice: Story.published.good_practice
           .includes(:commoner, :tags, :comments, :images, :translations)
           .first(6),
@@ -74,5 +79,13 @@ class PagesController < ApplicationController
         .pluck(:id)
     ).uniq.first(6)
     filtered_stories_ids.map { |id| Story.includes(:commoner, :tags, :comments, :images, :translations).find(id) }
+  end
+
+  # Returns 3 stories with specific tags
+  # TODO: this is not efficient. Improve it.
+  def get_tutorials
+    Story.published.commoners_voice.select do |s|
+      %w(tutorial howto).all? {|t| s.tags.pluck(:name).include?(t)}
+    end.first(3)
   end
 end

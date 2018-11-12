@@ -12,6 +12,8 @@ module PagesHelper
     case story_type
     when :commoners_voice
       s_('Home title|Commoners Voices')
+    when :tutorial
+      s_('Home title|Tutorials')
     when :good_practice
       s_('Home title|Good Practices')
     when :welfare_provision
@@ -23,6 +25,8 @@ module PagesHelper
     case story_type
     when :commoners_voice
       s_('Home text|A collection of stories for, with and by people.')
+    when :tutorial
+      s_('Home text|How to use Commonfare.net')
     when :good_practice
       s_('Home text|Selected bottom-up initiatives to connect and inspire.')
     when :welfare_provision

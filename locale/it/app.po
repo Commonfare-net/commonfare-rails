@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0\n"
 "Report-Msgid-Bugs-To: contact@translation.io\n"
-"POT-Creation-Date: 2018-10-24 11:31+0200\n"
-"PO-Revision-Date: 2018-10-24 11:31+0200\n"
+"POT-Creation-Date: 2018-11-12 14:40+0100\n"
+"PO-Revision-Date: 2018-11-12 14:40+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Italian\n"
 "Language: it\n"
@@ -114,35 +114,35 @@ msgstr "Messaggio inviato"
 msgid "Message deleted"
 msgstr "Messaggio cancellato"
 
-#: ../app/controllers/pages_controller.rb:46
+#: ../app/controllers/pages_controller.rb:51
 msgid "Dashboard|Visits"
 msgstr "Visite"
 
-#: ../app/controllers/pages_controller.rb:47
+#: ../app/controllers/pages_controller.rb:52
 msgid "Dashboard|Unique visitors"
 msgstr "Visite uniche"
 
-#: ../app/controllers/pages_controller.rb:48
+#: ../app/controllers/pages_controller.rb:53
 msgid "Dashboard|Pageviews"
 msgstr "Visualizzazioni pagina"
 
-#: ../app/controllers/pages_controller.rb:49
+#: ../app/controllers/pages_controller.rb:54
 msgid "Dashboard|Total registered commoners"
 msgstr "Commoner registrati (totale)"
 
-#: ../app/controllers/stories_controller.rb:144
+#: ../app/controllers/stories_controller.rb:147
 msgid "Story was successfully destroyed."
 msgstr "La storia è stata eliminata con successo."
 
-#: ../app/controllers/stories_controller.rb:159
+#: ../app/controllers/stories_controller.rb:162
 msgid "Could not publish this story"
 msgstr "Impossibile pubblicare la storia"
 
-#: ../app/controllers/stories_controller.rb:222
+#: ../app/controllers/stories_controller.rb:225
 msgid "Story was successfully created."
 msgstr "La storia è stata creata con successo."
 
-#: ../app/controllers/stories_controller.rb:237
+#: ../app/controllers/stories_controller.rb:240
 msgid "Story was successfully updated."
 msgstr "La storia è stata aggiornata con successo."
 
@@ -202,42 +202,50 @@ msgid "Home title|Commoners Voices"
 msgstr "Storie"
 
 #: ../app/helpers/pages_helper.rb:16
+msgid "Home title|Tutorials"
+msgstr "Tutorial"
+
+#: ../app/helpers/pages_helper.rb:18
 msgid "Home title|Good Practices"
 msgstr "Buone pratiche"
 
-#: ../app/helpers/pages_helper.rb:18
+#: ../app/helpers/pages_helper.rb:20
 msgid "Home title|Public Benefits"
 msgstr "Misure di welfare"
 
-#: ../app/helpers/pages_helper.rb:25
+#: ../app/helpers/pages_helper.rb:27
 msgid "Home text|A collection of stories for, with and by people."
 msgstr "Una raccolta di storie per, con e da persone."
 
-#: ../app/helpers/pages_helper.rb:27
+#: ../app/helpers/pages_helper.rb:29
+msgid "Home text|How to use Commonfare.net"
+msgstr "Come usare Commonfare.net"
+
+#: ../app/helpers/pages_helper.rb:31
 msgid "Home text|Selected bottom-up initiatives to connect and inspire."
 msgstr "Iniziative bottom-up per connettersi e ispirare."
 
-#: ../app/helpers/pages_helper.rb:29
+#: ../app/helpers/pages_helper.rb:33
 msgid "Home text|Get informed about local welfare provisions."
 msgstr "Rimani aggiornato sulle misure di welfare esistenti"
 
-#: ../app/helpers/pages_helper.rb:57
+#: ../app/helpers/pages_helper.rb:61
 msgid "Legend"
 msgstr "Legenda"
 
-#: ../app/helpers/pages_helper.rb:58
+#: ../app/helpers/pages_helper.rb:62
 msgid "Social graph legend|Commoner"
 msgstr "Commoner"
 
-#: ../app/helpers/pages_helper.rb:59
+#: ../app/helpers/pages_helper.rb:63
 msgid "Social graph legend|Story"
 msgstr "Storia"
 
-#: ../app/helpers/pages_helper.rb:60
+#: ../app/helpers/pages_helper.rb:64
 msgid "Social graph legend|Tag"
 msgstr "Tag"
 
-#: ../app/helpers/pages_helper.rb:61
+#: ../app/helpers/pages_helper.rb:65
 msgid "Social graph legend|Listing"
 msgstr "Inserzione"
 
@@ -337,6 +345,8 @@ msgid ""
 "<strong>%{requester_name}</strong> has joined the group <strong>%{group_name}<"
 "/strong>"
 msgstr ""
+"<strong>%{requester_name}</strong> si è unito al gruppo <strong>%{group_name}<"
+"/strong>"
 
 #:
 #: ../app/views/activity_notification/notifications/commoners/_default.html.erb:30

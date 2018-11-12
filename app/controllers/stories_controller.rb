@@ -42,6 +42,9 @@ class StoriesController < ApplicationController
       commoners_voice: stories
         .commoners_voice
         .includes(:commoner, :tags, :comments, :images, :translations),
+      tutorial: stories
+        .tutorial
+        .includes(:commoner, :tags, :comments, :images, :translations),
       good_practice: stories
         .good_practice
         .includes(:commoner, :tags, :comments, :images, :translations),
