@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0\n"
 "Report-Msgid-Bugs-To: contact@translation.io\n"
-"POT-Creation-Date: 2018-11-12 14:40+0100\n"
-"PO-Revision-Date: 2018-11-12 14:40+0100\n"
+"POT-Creation-Date: 2018-11-14 10:13+0100\n"
+"PO-Revision-Date: 2018-11-14 10:13+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Croatian\n"
 "Language: hr\n"
@@ -970,6 +970,10 @@ msgstr "Privatnost"
 #: ../app/views/layouts/_footer.html.erb:32
 msgid "Footer|Metrics dashboard"
 msgstr "Nadzorna ploča pokazatelja"
+
+#: ../app/views/layouts/_footer.html.erb:33
+msgid "Footer|Tutorials"
+msgstr ""
 
 #: ../app/views/layouts/_navbar.html.erb:26
 #: ../app/views/layouts/_navbar.html.erb:57
