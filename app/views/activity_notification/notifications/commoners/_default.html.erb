@@ -16,6 +16,9 @@
         <% if notification.notifiable.is_a? Transaction %>
           <%= (_("You have received %{amount} %{currency} from <strong>%{other_commoner}</strong>") %{amount: notification.notifiable.amount, currency: currency_name_for_transaction(notification.notifiable), other_commoner: other_commoner_name_for_transaction_notification(notification)}).html_safe %>
         <% end %>
+        <% if notification.notifiable.is_a? Comment %>
+          <%= (_("There is a new comment from <strong>%{comment_author}</strong> for <strong>%{commentable_title}</strong>") %{comment_author: notification.notifiable.author.name, commentable_title: notification.notifiable.commentable.title}).html_safe %>
+        <% end %>
         <% if notification.notifiable.is_a? JoinRequest %>
           <% if notification.notifiable.pending? %>
             <%= (_("<strong>%{requester_name}</strong> requested to join the group <strong>%{group_name}</strong>") %{requester_name: notification.notifiable.commoner.name, group_name: notification.notifiable.group.name}).html_safe %>

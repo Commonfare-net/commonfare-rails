@@ -3,7 +3,7 @@
 <% end %>
 <% comments.each do |comment| %>
 <div class="col-lg-12">
-  <div class="media comment-container">
+  <div class="media comment-container" id="comment-<%= comment.id %>">
     <%= link_to author_path(comment) do %>
     <%= image_tag author_image_for(comment), class: 'comment-avatar' %>
     <% end %>

@@ -46,6 +46,7 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.save
+        @comment.notify(:commoners)
         format.html { redirect_to @commentable, notice: _('Comment was successfully created.') }
         format.json { render :show, status: :created, location: @comment }
       else
