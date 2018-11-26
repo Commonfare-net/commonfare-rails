@@ -20,3 +20,25 @@ what_needs_to_be_changed:
     - id: text-5
       type: text
       content: When and where is the meeting?
+call_to_action:
+  title_draft: What do you want to call attention to?
+  place_draft: Where is it happening?
+  template_json:
+    - id: text-1
+      type: text
+      content: What is the context? Help the reader understand the big picture.
+    - id: text-2
+      type: text
+      content: Why now? What is your motivation? Who does it affect?
+    - id: inspiring-image
+      type: image
+      caption: Can you show us what is happening?
+    - id: text-3
+      type: text
+      content: What can be done to help the situation?
+    - id: text-4
+      type: text
+      content: Is there anything we should be careful or considerate of when contributing?
+    - id: text-5
+      type: text
+      content: Any other information or links that might help.
