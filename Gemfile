@@ -125,6 +125,9 @@ gem 'activity_notification'
 gem 'prawn-svg'
 gem 'prawn-rails'
 
+# Browser's useful info
+gem 'browser'
+
 # Graphs (using a forked version)
 gem 'gexf', '~> 0.0.7', git: 'https://github.com/Commonfare-net/gexf.rb.git', require: false
 

@@ -21,8 +21,8 @@ class PagesController < ApplicationController
     if params[:id] == 'home'
       # Welfare provisions are already scoped in the current locale language
       @story_types_and_lists = {
-        commoners_voice: Story.published.commoners_voice
         # the second arg to with_translations() is needed to load also the stories in the default_locale
+        commoners_voice: Story.published.commoners_voice
           .with_translations(I18n.locale, I18n.default_locale)
           .includes(:commoner, :tags, :comments, :images, :translations)
           .first(6),

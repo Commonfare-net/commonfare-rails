@@ -45,7 +45,7 @@ class ApplicationController < ActionController::Base
   end
 
   def set_locale
-    I18n.locale = params[:locale] || I18n.default_locale
+    I18n.locale = params[:locale] || get_browser_locale || I18n.default_locale
   end
 
   def default_url_options(options = {})
@@ -132,6 +132,11 @@ class ApplicationController < ActionController::Base
       nl: %i[nl en it hr],
       hr: %i[hr en it nl],
     }
+  end
+
+  def get_browser_locale
+    locale = browser&.accept_language&.first&.code&.to_sym
+    I18n.available_locales.include?(locale) ? locale : nil
   end
 
   # Returns true if there has been a POST request for creating a Comment

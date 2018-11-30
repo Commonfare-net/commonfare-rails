@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0\n"
 "Report-Msgid-Bugs-To: contact@translation.io\n"
-"POT-Creation-Date: 2018-11-14 10:13+0100\n"
-"PO-Revision-Date: 2018-11-14 10:13+0100\n"
+"POT-Creation-Date: 2018-11-30 14:48+0100\n"
+"PO-Revision-Date: 2018-11-30 14:48+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -31,7 +31,7 @@ msgid "You have to log in to continue"
 msgstr ""
 
 #: ../app/controllers/application_controller.rb:84
-#: ../app/controllers/comments_controller.rb:49
+#: ../app/controllers/comments_controller.rb:50
 msgid "Comment was successfully created."
 msgstr ""
 
@@ -39,11 +39,11 @@ msgstr ""
 msgid "A problem occurred with your comment. Please try again"
 msgstr ""
 
-#: ../app/controllers/comments_controller.rb:66
+#: ../app/controllers/comments_controller.rb:67
 msgid "Comment was successfully updated."
 msgstr ""
 
-#: ../app/controllers/comments_controller.rb:81
+#: ../app/controllers/comments_controller.rb:82
 msgid "Comment was successfully destroyed."
 msgstr ""
 
@@ -112,19 +112,19 @@ msgstr ""
 msgid "Message deleted"
 msgstr ""
 
-#: ../app/controllers/pages_controller.rb:51
+#: ../app/controllers/pages_controller.rb:55
 msgid "Dashboard|Visits"
 msgstr ""
 
-#: ../app/controllers/pages_controller.rb:52
+#: ../app/controllers/pages_controller.rb:56
 msgid "Dashboard|Unique visitors"
 msgstr ""
 
-#: ../app/controllers/pages_controller.rb:53
+#: ../app/controllers/pages_controller.rb:57
 msgid "Dashboard|Pageviews"
 msgstr ""
 
-#: ../app/controllers/pages_controller.rb:54
+#: ../app/controllers/pages_controller.rb:58
 msgid "Dashboard|Total registered commoners"
 msgstr ""
 
@@ -316,35 +316,42 @@ msgid ""
 msgstr ""
 
 #:
-#: ../app/views/activity_notification/notifications/commoners/_default.html.erb:21
+#: ../app/views/activity_notification/notifications/commoners/_default.html.erb:20
+msgid ""
+"There is a new comment from <strong>%{comment_author}</strong> for <strong>%{c"
+"ommentable_title}</strong>"
+msgstr ""
+
+#:
+#: ../app/views/activity_notification/notifications/commoners/_default.html.erb:24
 msgid ""
 "<strong>%{requester_name}</strong> requested to join the group <strong>%{group"
 "_name}</strong>"
 msgstr ""
 
 #:
-#: ../app/views/activity_notification/notifications/commoners/_default.html.erb:24
+#: ../app/views/activity_notification/notifications/commoners/_default.html.erb:27
 msgid ""
 "Your request to join the group <strong>%{group_name}</strong> has been accepte"
 "d"
 msgstr ""
 
 #:
-#: ../app/views/activity_notification/notifications/commoners/_default.html.erb:26
+#: ../app/views/activity_notification/notifications/commoners/_default.html.erb:29
 msgid ""
 "<strong>%{requester_name}</strong> has joined the group <strong>%{group_name}<"
 "/strong>"
 msgstr ""
 
 #:
-#: ../app/views/activity_notification/notifications/commoners/_default.html.erb:30
+#: ../app/views/activity_notification/notifications/commoners/_default.html.erb:33
 msgid ""
 "Your request to join the group <strong>%{group_name}</strong> has been rejecte"
 "d"
 msgstr ""
 
 #:
-#: ../app/views/activity_notification/notifications/commoners/_default.html.erb:32
+#: ../app/views/activity_notification/notifications/commoners/_default.html.erb:35
 msgid ""
 "The request by <strong>%{requester_name}</strong> to join the group <strong>%{"
 "group_name}</strong> has been rejected"
