@@ -22,12 +22,16 @@ class PagesController < ApplicationController
       # Welfare provisions are already scoped in the current locale language
       @story_types_and_lists = {
         commoners_voice: Story.published.commoners_voice
+        # the second arg to with_translations() is needed to load also the stories in the default_locale
+          .with_translations(I18n.locale, I18n.default_locale)
           .includes(:commoner, :tags, :comments, :images, :translations)
           .first(6),
         tutorial: Story.published.tutorial
+          .with_translations(I18n.locale, I18n.default_locale)
           .includes(:commoner, :tags, :comments, :images, :translations)
           .first(3),
         good_practice: Story.published.good_practice
+          .with_translations(I18n.locale, I18n.default_locale)
           .includes(:commoner, :tags, :comments, :images, :translations)
           .first(6),
         welfare_provision: Story.published.welfare_provision
