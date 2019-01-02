@@ -14,4 +14,8 @@ module GroupsHelper
     group.editors.include?(commoner) ||
     group.admins.include?(commoner))
   end
+
+  def translated_role(role)
+    Group::TRANSLATED_ROLES.fetch(Group::ROLES.index(role))
+  end
 end

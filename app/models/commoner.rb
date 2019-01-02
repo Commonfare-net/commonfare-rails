@@ -58,6 +58,10 @@ class Commoner < ApplicationRecord
     wallets.where.not(currency: nil)
   end
 
+  def groups_in_which_is_editor
+    groups.select {|g| g.editors.include?(self) || g.admins.include?(self)}
+  end
+
   private
 
   def create_wallet_and_get_income

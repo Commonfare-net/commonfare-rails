@@ -33,9 +33,16 @@ class Ability
         can [:create, :update, :destroy], Comment, commoner_id: commoner.id
         can [:create, :destroy], Image, commoner_id: commoner.id
 
+        can :read, Membership, memberships: {commoner_id: commoner.id}
         can [:update, :destroy], Membership, commoner_id: commoner.id
+        can :update, Membership do |membership|
+          membership.group.admins.include?(commoner)
+        end
         can :create, Group
-        can [:update, :leave], Group, memberships: {commoner_id: commoner.id}
+        can :update, Group do |group|
+          group.admins.include?(commoner)
+        end
+        can :leave, Group, memberships: {commoner_id: commoner.id}
         can :join, Group do |group|
           !commoner.member_of? group
         end

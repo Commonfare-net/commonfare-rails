@@ -30,11 +30,11 @@ class JoinRequestsController < ApplicationController
   def accept
     respond_to do |format|
       if @join_request.accept!
-        @join_request.group.members << @join_request.commoner
+        # @join_request.group.members << @join_request.commoner
         # NOTE: use this below when roles will become public
-        # Membership.create(group:    @join_request.group,
-        #                   commoner: @join_request.commoner
-        #                   role:     'affiliate')
+        Membership.create(group:    @join_request.group,
+                          commoner: @join_request.commoner,
+                          role:     'affiliate')
         @join_request.notify(:commoners, group: @join_request.group)
         format.html { redirect_to @join_request.group, notice: _('Join request has been accepted.') }
       else
@@ -61,7 +61,7 @@ class JoinRequestsController < ApplicationController
 
     respond_to do |format|
       if @join_request.save
-        # New join requests are not grouped to avoid issues with many requestt from different commoners
+        # New join requests are not grouped to avoid issues with many requests from different commoners
         # This way the notification text change according to the JoinRequest state (see the corresponding view)
         @join_request.notify(:commoners)
         format.html { redirect_to @join_request, notice: 'Join request was successfully created.' }

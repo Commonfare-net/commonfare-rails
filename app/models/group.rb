@@ -12,6 +12,7 @@ class Group < ApplicationRecord
   after_commit :set_admin, on: :create
 
   ROLES = %w(admin editor affiliate)
+  TRANSLATED_ROLES = [_('Adminstrator'), _('Editor'), _('Affiliate')]
 
   ROLES.each do |role|
     define_method "#{role}s" do

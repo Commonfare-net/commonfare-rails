@@ -7,4 +7,8 @@ class Discussion < ApplicationRecord
 
   validates :title, presence: true
   validates_associated :messages
+
+  def participants
+    messages.map(&:commoner).uniq.compact
+  end
 end

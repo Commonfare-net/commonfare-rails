@@ -52,6 +52,14 @@
       border: 1px solid $lightgreen;
     }
   }
+  .memberships {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    a {
+      margin: 0 .5rem 0 0;
+    }
+  }
 }
 
 @media screen and (max-width: 991px) {

@@ -4,7 +4,8 @@ class MembershipsController < ApplicationController
   # GET /memberships
   # GET /memberships.json
   def index
-    @memberships = Membership.all
+    @group = Group.find params[:group_id]
+    @members = @group.members.order(name: :asc)
   end
 
   # GET /memberships/1
@@ -42,7 +43,7 @@ class MembershipsController < ApplicationController
   def update
     respond_to do |format|
       if @membership.update(membership_params)
-        format.html { redirect_to @membership, notice: 'Membership was successfully updated.' }
+        format.html { redirect_to @membership.group, notice: _('Role was successfully updated.') }
         format.json { render :show, status: :ok, location: @membership }
       else
         format.html { render :edit }

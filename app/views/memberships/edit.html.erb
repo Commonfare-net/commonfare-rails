@@ -1,6 +1,26 @@
-<h1>Editing Membership</h1>
+<% content_for :title, s_('Title|Edit role') %>
+<div class="row justify-content-center">
+  <div class="col-lg-7 col-md-9 py-4 bg-white">
+    <h2 class="pt-4 pb-2"><%= s_('Title|Edit role') %></h2>
+    <%= simple_form_for([@membership.group, @membership]) do |f| %>
+      <%= f.error_notification %>
+      <%= f.input :role,
+            collection: Group::ROLES.zip(Group::TRANSLATED_ROLES),
+            label_method: :second,
+            value_method: :first,
+            selected: @membership.role,
+            label: _('Role for %{name}') %{name: @membership.commoner.name} %>
+      <%= render 'shared/back_and_save_buttons', f: f, cancel_path: group_path(@membership.group) %>
+    <% end %>
+  </div>
+</div>
 
-<%= render 'form', membership: @membership %>
-
-<%= link_to 'Show', @membership %> |
-<%= link_to 'Back', memberships_path %>
+<%= content_for :scripts do %>
+<script type="text/javascript">
+  // Select2 for roles
+  $('#membership_role').select2({
+    theme: 'bootstrap',
+    minimumResultsForSearch: -1
+  });
+</script>
+<% end %>

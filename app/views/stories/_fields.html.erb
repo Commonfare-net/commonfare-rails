@@ -20,11 +20,11 @@
 <%= f.input :anonymous,
             inline_label: _('Publish anonymously') %>
 
-<% if @commoner.groups.any? %>
+<% if @commoner.groups_in_which_is_editor.any? %>
   <%= f.association :group,
             label: _('Publish as a Group'),
             required: false,
-            collection: @commoner.groups,
+            collection: @commoner.groups_in_which_is_editor,
             prompt: _('Choose one of your groups') %>
 <% end %>
 

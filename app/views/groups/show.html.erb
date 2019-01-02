@@ -34,7 +34,7 @@
       </div>
     </div>
     <div class="row">
-      <div class="col">
+      <div class="col bg-white pb-3">
         <div class="row nav-pills-container mb-3">
           <ul class="nav nav-pills" id="pills-tab" role="tablist">
             <% if can? :create, @new_discussion %>
@@ -105,6 +105,7 @@
             <%= link_to(invite_member_btn_text(@group), '#', class: 'btn btn-cf btn-block', data: { toggle: "modal", target: "#inviteMemberModal" })  %>
             <% if @members.any? %>
               <%= render partial: 'commoners/commoner', collection: @members, as: :commoner %>
+              <%= link_to(_('All members'), group_memberships_path(@group), class: 'btn btn-cf-outline btn-block') if @group.members.count > 1%>
             <% else %>
             <div class="row justify-content-center">
               <div class="col text-center">

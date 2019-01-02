@@ -22,7 +22,7 @@
       </div>
       <div class="col">
         <%= link_to s_("Button|Go ahead, leave this group"),
-        membership_path(@membership),
+        group_membership_path(@group, @membership),
         class: 'btn btn-cf btn-block',
           data: { confirm: _("Are you sure?") },
           method: :delete %>

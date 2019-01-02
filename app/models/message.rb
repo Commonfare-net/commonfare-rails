@@ -7,7 +7,13 @@ class Message < ApplicationRecord
       if message.in_conversation?
         [message.conversation.sender == message.author ? message.conversation.recipient : message.conversation.sender]
       else
-        (message.discussion.group.members.to_a - [message.author]).uniq
+        if message.discussion.messages.count == 1 # first message
+          # notify all members
+          (message.discussion.group.members.to_a - [message.author]).uniq.compact
+        else
+          # notify participants
+          (message.discussion.participants.to_a - [message.author]).uniq.compact
+        end
       end
     },
     notifier: :commoner,

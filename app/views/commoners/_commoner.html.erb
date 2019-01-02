@@ -2,7 +2,15 @@
   <%= link_to commoner do %>
     <%= image_tag commoner.avatar.card, class: 'rounded-circle mr-3' %>
   <% end %>
-  <div class="media-body">
-    <h5><%= link_to commoner.name, commoner %></h5>
+  <div class="row media-body">
+    <div class="col-lg-10">
+      <h5><%= link_to commoner.name, commoner %></h5>
+    </div>
+    <div class="col-lg-2 memberships">
+      <% if @group.present? && @group.members.include?(commoner) %>
+        <small class="text-muted mr-1"><%= translated_role(@group.memberships.where(commoner: commoner).first.role) %></small>
+        <%= link_to(fa_icon('gear'), edit_group_membership_path(@group, @group.memberships.where(commoner: commoner).first), class: 'text-muted') if can?(:edit, commoner.memberships.where(group: @group).first) %>
+      <% end %>
+    </div>
   </div>
 </div>

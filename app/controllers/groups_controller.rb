@@ -19,7 +19,7 @@ class GroupsController < ApplicationController
       good_practice: @group_stories.good_practice.first(6),
       welfare_provision: @group_stories.welfare_provision.first(6)
     }
-    @members = @group.members.limit(10)
+    @members = @group.memberships.order(created_at: :desc).limit(10).map(&:commoner)
 
     @pending_join_requests = JoinRequest.where(group: @group).pending.includes(:commoner)
     @new_join_request = @group.join_requests.build

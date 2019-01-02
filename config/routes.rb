@@ -80,8 +80,8 @@ Rails.application.routes.draw do
     end
     resources :comments, except: [:new, :show, :index]
     resources :tags, only: :show
-    resources :memberships, only: :destroy
     resources :groups do
+      resources :memberships, only: [:index, :edit, :update, :destroy]
       resources :discussions do
         resources :messages, only: [:create, :destroy]
       end

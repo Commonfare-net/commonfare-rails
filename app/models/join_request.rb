@@ -25,8 +25,7 @@ class JoinRequest < ApplicationRecord
     # NOTE: the lambda must return an array!
     targets: ->(join_request, key) {
       if join_request.pending?
-        # TODO: these will be the group adimins
-        join_request.group.members.to_a
+        join_request.group.admins.to_a
       else # the target is the commoner who made the request
         [join_request.commoner]
       end

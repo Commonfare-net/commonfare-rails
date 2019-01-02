@@ -1,14 +1,14 @@
 # Croatian translations for app package.
-# Copyright (C) 2018 app
+# Copyright (C) 2019 app
 # This file is distributed under the same license as the app package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0\n"
 "Report-Msgid-Bugs-To: contact@translation.io\n"
-"POT-Creation-Date: 2018-11-30 14:48+0100\n"
-"PO-Revision-Date: 2018-11-30 14:48+0100\n"
+"POT-Creation-Date: 2019-01-02 11:54+0100\n"
+"PO-Revision-Date: 2019-01-02 11:54+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Croatian\n"
 "Language: hr\n"
@@ -104,7 +104,11 @@ msgstr "Došlo je do problema s ovim zahtjevom za pridruživanje"
 msgid "Join request has been rejected."
 msgstr "Zahtjev za pristupanje je odbijen."
 
-#: ../app/controllers/memberships_controller.rb:60
+#: ../app/controllers/memberships_controller.rb:46
+msgid "Role was successfully updated."
+msgstr ""
+
+#: ../app/controllers/memberships_controller.rb:61
 msgid "You have left this group"
 msgstr "Napustili ste ovu grupu"
 
@@ -278,6 +282,18 @@ msgstr "Nema poruka"
 #: ../app/models/currency.rb:35
 msgid "not a valid SWAPI endpoint"
 msgstr "nije valjana SWAPI krajnja točka"
+
+#: ../app/models/group.rb:15
+msgid "Adminstrator"
+msgstr ""
+
+#: ../app/models/group.rb:15
+msgid "Editor"
+msgstr ""
+
+#: ../app/models/group.rb:15
+msgid "Affiliate"
+msgstr ""
 
 #: ../app/models/listing.rb:22
 msgid "ValidationError|doesn't seem to be a valid place"
@@ -648,13 +664,6 @@ msgstr "Stvori"
 msgid "by %{commoner_name}"
 msgstr "autor/ica %{commoner_name}"
 
-#: ../app/views/discussions/_discussion.html.erb:16
-msgid "message"
-msgid_plural "messages"
-msgstr[0] "poruka"
-msgstr[1] "poruke"
-msgstr[2] "poruke"
-
 #: ../app/views/discussions/new.html.erb:1
 msgid "Title|Start a discussion"
 msgstr "Započnite raspravu"
@@ -892,15 +901,20 @@ msgstr "Još nema rasprava"
 msgid "Button|Go to Wallet"
 msgstr "Idite na Novčanik"
 
-#: ../app/views/groups/show.html.erb:112
+#: ../app/views/groups/show.html.erb:108
+msgid "All members"
+msgstr ""
+
+#: ../app/views/groups/show.html.erb:113
+#: ../app/views/memberships/index.html.erb:11
 msgid "No members"
 msgstr "Nema članova"
 
-#: ../app/views/groups/show.html.erb:126
+#: ../app/views/groups/show.html.erb:127
 msgid "No pending requests"
 msgstr "Nema zahtjeva na čekanju"
 
-#: ../app/views/groups/show.html.erb:137
+#: ../app/views/groups/show.html.erb:138
 msgid "Coming soon"
 msgstr "Dolazi uskoro"
 
@@ -1198,6 +1212,20 @@ msgstr "Pronađene grupe"
 #: ../app/views/main/search.html.erb:24
 msgid "Tags with '%{search_term}'"
 msgstr "Oznake s '%{search_term}'"
+
+#: ../app/views/memberships/edit.html.erb:1
+#: ../app/views/memberships/edit.html.erb:4
+msgid "Title|Edit role"
+msgstr ""
+
+#: ../app/views/memberships/edit.html.erb:12
+msgid "Role for %{name}"
+msgstr ""
+
+#: ../app/views/memberships/index.html.erb:1
+#: ../app/views/memberships/index.html.erb:4
+msgid "Members of %{group_name}"
+msgstr ""
 
 #: ../app/views/pages/about.html.erb:1 ../app/views/pages/old_about.html.erb:1
 msgid "About"
