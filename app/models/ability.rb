@@ -34,10 +34,10 @@ class Ability
         can [:create, :destroy], Image, commoner_id: commoner.id
 
         can :read, Membership, memberships: {commoner_id: commoner.id}
-        can [:update, :destroy], Membership, commoner_id: commoner.id
         can :update, Membership do |membership|
           membership.group.admins.include?(commoner)
         end
+        
         can :create, Group
         can :update, Group do |group|
           group.admins.include?(commoner)

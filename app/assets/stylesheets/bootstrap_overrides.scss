@@ -19,6 +19,9 @@ body, html {
   &.transaction_to_wallet .invalid-feedback {
     display: block;
   }
+  &.membership_role .invalid-feedback {
+    display: block;
+  }
 }
 
 // External container
@@ -141,7 +144,7 @@ hr {
         border-bottom: 2px solid $cf-primary-color;
       }
     }
-  }  
+  }
 }
 
 
@@ -232,4 +235,3 @@ label {
 //   margin-left: calc(( 100vw - 100%) * -0.5);
 //   margin-right: calc(( 100vw - 100%) * -0.5);
 // }
-

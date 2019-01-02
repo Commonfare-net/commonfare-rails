@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0\n"
 "Report-Msgid-Bugs-To: contact@translation.io\n"
-"POT-Creation-Date: 2019-01-02 11:54+0100\n"
-"PO-Revision-Date: 2019-01-02 11:54+0100\n"
+"POT-Creation-Date: 2019-01-02 13:50+0100\n"
+"PO-Revision-Date: 2019-01-02 13:51+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Croatian\n"
 "Language: hr\n"
@@ -104,11 +104,11 @@ msgstr "Došlo je do problema s ovim zahtjevom za pridruživanje"
 msgid "Join request has been rejected."
 msgstr "Zahtjev za pristupanje je odbijen."
 
-#: ../app/controllers/memberships_controller.rb:46
+#: ../app/controllers/memberships_controller.rb:47
 msgid "Role was successfully updated."
 msgstr ""
 
-#: ../app/controllers/memberships_controller.rb:61
+#: ../app/controllers/memberships_controller.rb:62
 msgid "You have left this group"
 msgstr "Napustili ste ovu grupu"
 
@@ -308,6 +308,10 @@ msgstr "ValidationError|koristite samo dvije decimale"
 msgid "ValidationError|must be higher than %{min_price}"
 msgstr ""
 "ValidationError|mora biti više od %{min_price}\n"
+
+#: ../app/models/membership.rb:20
+msgid "There must be at least one administrator"
+msgstr ""
 
 #: ../app/models/transaction.rb:47
 msgid "ValidationError|can't be you"

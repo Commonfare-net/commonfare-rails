@@ -1,5 +1,6 @@
 class MembershipsController < ApplicationController
-  before_action :set_membership, only: [:show, :edit, :update, :destroy]
+  # before_action :set_membership, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource except: :index
 
   # GET /memberships
   # GET /memberships.json

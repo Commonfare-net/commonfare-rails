@@ -4,12 +4,20 @@ class Membership < ApplicationRecord
 
   after_commit :create_wallet, on: :create
 
+  validate :not_the_last_admin, on: :update
+
   private
   def create_wallet
     if self.group.currency.present?
       Wallet.create(walletable: self.commoner,
                     address:    Digest::SHA2.hexdigest(self.commoner.email + Time.now.to_s),
                     currency:   self.group.currency)
+    end
+  end
+
+  def not_the_last_admin
+    if self.group.admins.count == 1 && will_save_change_to_role? && changes['role'].first == 'admin'
+      errors.add(:role, _('There must be at least one administrator'))
     end
   end
 end
