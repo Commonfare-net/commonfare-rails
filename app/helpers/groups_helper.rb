@@ -16,6 +16,7 @@ module GroupsHelper
   end
 
   def translated_role(role)
-    Group::TRANSLATED_ROLES.fetch(Group::ROLES.index(role))
+    return Group::TRANSLATED_ROLES.fetch(Group::ROLES.index(role)) if role.present?
+    ''
   end
 end
