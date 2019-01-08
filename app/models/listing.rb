@@ -7,7 +7,7 @@ class Listing < ApplicationRecord
   accepts_nested_attributes_for :images, allow_destroy: true, reject_if: proc { |attributes| attributes[:picture].nil? }
 
   validates :title, :description, :place, :min_price, presence: true
-  validates :min_price, numericality: { greater_than: 0 }
+  validates :min_price, numericality: { greater_than_or_equals_to: 0 }
   validate :two_decimals
   validate :min_less_than_max
   validate :valid_place, if: -> { place.present? and place_changed? }

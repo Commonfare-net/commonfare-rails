@@ -29,7 +29,7 @@ class CurrenciesController < ApplicationController
       if @currency.update(currency_params)
         format.html { redirect_to @group, notice: _('Currency was successfully updated.') }
       else
-        format.html { render :new }
+        format.html { render :edit }
       end
     end
   end
@@ -38,6 +38,6 @@ class CurrenciesController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def currency_params
-    params.require(:currency).permit(:name, :code, :endpoint)
+    params.require(:currency).permit(:name, :code, :endpoint, :api_key)
   end
 end

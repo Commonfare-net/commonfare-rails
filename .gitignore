@@ -38,3 +38,4 @@ yarn-debug.log*
 # SWAPI related stuff
 /swapi-commoncoin-data
 /swapi-santacoin-data
+apikey.yaml

@@ -152,7 +152,10 @@ namespace :santarcangelo do
   end
 
   def transfer_santacoin_to_wallet(wallet, amount)
-    client = SocialWallet::Client.new(api_endpoint: wallet.endpoint)
+    client = SocialWallet::Client.new(
+      api_endpoint: wallet.endpoint,
+      api_key: wallet.api_key
+    )
     resp = client.transactions.new(from_id: '', to_id: wallet.address, amount: amount, tags: ['initial_income', 'new_commoner'])
     wallet.refresh_balance if resp['amount'] == amount
   end

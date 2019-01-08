@@ -25,7 +25,10 @@ class Wallet < ApplicationRecord
   scope :in_currency, ->(currency) { where(currency: currency) }
 
   def refresh_balance
-    client = SocialWallet::Client.new(api_endpoint: endpoint)
+    client = SocialWallet::Client.new(
+      api_endpoint: endpoint,
+      api_key: api_key
+    )
     resp = client.balance(account_id: self.address)
     update_column(:balance, resp['amount'])
   end
@@ -42,7 +45,10 @@ class Wallet < ApplicationRecord
   end
 
   def empty_and_give_back
-    client = SocialWallet::Client.new(api_endpoint: endpoint)
+    client = SocialWallet::Client.new(
+      api_endpoint: endpoint,
+      api_key: api_key
+    )
     resp = client.transactions.new(from_id: self.address, to_id: '', amount: self.balance.to_f, tags: ['leaving_commoner'])
     self.refresh_balance
   end
@@ -50,6 +56,11 @@ class Wallet < ApplicationRecord
   def endpoint
     return currency.endpoint if currency.present?
     ENV['SWAPI_ENDPOINT']
+  end
+
+  def api_key
+    return currency.api_key if currency.present?
+    ENV['SWAPI_API_KEY']
   end
 
   def self.get_common_wallet
@@ -64,7 +75,10 @@ class Wallet < ApplicationRecord
   def get_initial_income
     unless currency.present? || is_common_wallet?
       # 1000 Commoncoin on signup
-      client = SocialWallet::Client.new(api_endpoint: endpoint)
+      client = SocialWallet::Client.new(
+        api_endpoint: endpoint,
+        api_key: api_key
+      )
       resp = client.transactions.new(from_id: '', to_id: self.address, amount: 1000, tags: ['initial_income', 'new_commoner'])
       refresh_balance if resp['amount'] == 1000
     else

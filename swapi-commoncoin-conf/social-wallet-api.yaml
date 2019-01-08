@@ -17,6 +17,8 @@ freecoin:
     host: swapi_commoncoin_mongo
     port: 27017
     db:   freecoin
+    currency: Commoncoin
+  apikey: swapi_commoncoin
   # faircoin:
   #   currency: fair
   #   number-confirmations: 6

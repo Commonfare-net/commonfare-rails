@@ -17,6 +17,8 @@ freecoin:
     host: swapi_santacoin_mongo
     port: 27017
     db:   freecoin
+    currency: Santacoin
+  apikey: swapi_santacoin
   # faircoin:
   #   currency: fair
   #   number-confirmations: 6

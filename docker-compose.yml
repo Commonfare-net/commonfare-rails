@@ -54,11 +54,11 @@ services:
     volumes:
       - ./db-data:/var/lib/postgresql/data
   swapi_commoncoin:
-    image: commonfare/social-wallet-api
+    image: dyne/social-wallet-api
     container_name: swapi_commoncoin
     volumes:
-     - ./swapi-commoncoin-conf/social-wallet-api.yaml:/usr/src/app/resources/social-wallet-api.yaml
-     - ./swapi-commoncoin-data/m2:/root/.m2
+     - ./swapi-commoncoin-conf/social-wallet-api.yaml:/app/resources/social-wallet-api.yaml
+     - ./swapi-commoncoin-conf/apikey.yaml:/app/apikey.yaml
     ports:
       - "3036:3000" # if you specify the env variable SWAPI_PORT make sure it matches the container port here
     environment:
@@ -78,11 +78,11 @@ services:
     # ports:
     #   - "27017:27017" # required if social wallet api service listens only to 'localhost'
   swapi_santacoin:
-    image: commonfare/social-wallet-api
+    image: dyne/social-wallet-api
     container_name: swapi_santacoin
     volumes:
-     - ./swapi-santacoin-conf/social-wallet-api.yaml:/usr/src/app/resources/social-wallet-api.yaml
-     - ./swapi-santacoin-data/m2:/root/.m2
+     - ./swapi-santacoin-conf/social-wallet-api.yaml:/app/resources/social-wallet-api.yaml
+     - ./swapi-santacoin-conf/apikey.yaml:/app/apikey.yaml
     ports:
       - "3037:3000" # if you specify the env variable SWAPI_PORT make sure it matches the container port here
     environment:

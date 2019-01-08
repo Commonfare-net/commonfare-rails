@@ -113,7 +113,7 @@ gem 'webpacker'
 gem 'webpacker-react'
 
 # Social wallet
-gem 'social_wallet', '~> 1.0.1'
+gem 'social_wallet', '~> 1.2.0'
 
 # QR code
 gem 'rqrcode'

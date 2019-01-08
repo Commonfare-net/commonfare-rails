@@ -1,7 +1,7 @@
 class Currency < ApplicationRecord
   belongs_to :group
 
-  validates :name, :code, :endpoint, presence: true
+  validates :name, :code, :endpoint, :api_key, presence: true
   validates :name, :endpoint, uniqueness: true
   validates :code, length: { maximum: 3 }
 
@@ -25,14 +25,21 @@ class Currency < ApplicationRecord
   def endpoint_exists
     begin
       Rails.logger.info("SWAPI #{Time.now.to_s} Reading label")
-      client = SocialWallet::Client.new(api_endpoint: self.endpoint)
+      client = SocialWallet::Client.new(
+        api_endpoint: self.endpoint,
+        api_key:      self.api_key
+      )
       # binding.pry
       resp = client.label
       resp['currency'] != nil
     rescue => e
       Rails.logger.info("SWAPI #{Time.now.to_s} Failed reading label")
       Rails.logger.info("ERROR: #{e}")
-      errors.add(:endpoint, _('not a valid SWAPI endpoint'))
+      if e.message.present? && e.message.include?('wrong API KEY')
+        errors.add(:api_key, _('not a valid SWAPI API key'))
+      else
+        errors.add(:endpoint, _('not a valid SWAPI endpoint'))
+      end
     else
       true
     end

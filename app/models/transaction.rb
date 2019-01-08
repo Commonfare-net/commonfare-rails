@@ -69,7 +69,10 @@ class Transaction < ApplicationRecord
   def perform_remote_transaction
     begin
       Rails.logger.info("SWAPI #{Time.now.to_s} Starting transaction from #{self.from_wallet.address}")
-      client = SocialWallet::Client.new(api_endpoint: self.from_wallet.endpoint)
+      client = SocialWallet::Client.new(
+        api_endpoint: self.from_wallet.endpoint,
+        api_key: self.from_wallet.api_key
+      )
       # binding.pry
       resp = client.transactions.new(from_id: self.from_wallet.address,
                                      to_id: self.to_wallet.address,
