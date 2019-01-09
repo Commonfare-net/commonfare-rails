@@ -131,6 +131,9 @@ gem 'browser'
 # Graphs (using a forked version)
 gem 'gexf', '~> 0.0.7', git: 'https://github.com/Commonfare-net/gexf.rb.git', require: false
 
+# Easy cron jobs
+gem 'whenever'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

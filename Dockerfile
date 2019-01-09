@@ -7,7 +7,7 @@ RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
     && curl -sL https://deb.nodesource.com/setup_9.x | bash - \
     && echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list \
     && apt-get update \
-    && apt-get install -qq -y --no-install-recommends build-essential nodejs yarn \
+    && apt-get install -qq -y --no-install-recommends build-essential nodejs yarn cron \
     && rm -rf /var/lib/apt/lists/* \
     && cp /usr/share/zoneinfo/Europe/Rome /etc/localtime
 
@@ -45,4 +45,5 @@ COPY ./docker-entrypoint.sh /
 RUN chmod +x /docker-entrypoint.sh
 ENTRYPOINT ["/docker-entrypoint.sh"]
 
-CMD bundle exec puma
+RUN bundle exec whenever --update-crontab --set environment=development
+CMD cron && bundle exec puma
