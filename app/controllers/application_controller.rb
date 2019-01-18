@@ -21,9 +21,11 @@ class ApplicationController < ActionController::Base
       end
       redirect_to new_user_session_path, notice: _("You have to log in to continue")
     else
-      #render :file => "#{Rails.root}/public/403.html", :status => 403
-      if request.env["HTTP_REFERER"].present?
-        redirect_to :back, alert: exception.message
+      if is_viewing_wallet?
+        # redirects to the normal wallet_path if the wallet's currency is not in QR_CODE_ENABLED_CURRENCIES
+        redirect_to commoner_wallet_path(@commoner, @wallet) # ... so ability is checked again
+      elsif request.env["HTTP_REFERER"].present?
+        redirect_back fallback_location: root_path
       else
         redirect_to root_url, alert: exception.message
       end
@@ -142,6 +144,13 @@ class ApplicationController < ActionController::Base
   # Returns true if there has been a POST request for creating a Comment
   def is_comment_creation?
     request.post? && request.request_parameters['comment'].present?
+  end
+
+  def is_viewing_wallet?
+    return false unless (params['controller'] == 'wallets' && params['action'] == 'view')
+    @commoner = params['commoner_id']
+    @wallet = params['id']
+    true
   end
 
   def get_commentable_path(commentable)
