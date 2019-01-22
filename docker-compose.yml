@@ -13,6 +13,7 @@ services:
       "
     volumes:
       - ~/tmp:/host_tmp
+      - ~/tmp/commonshare-data:/commonshare-data
       - bundle_cache:/bundle
     ports:
       - "3000:3000"
@@ -100,5 +101,12 @@ services:
     container_name: swapi_santacoin_mongo
     volumes:
       - ./swapi-santacoin-data/db:/data/db
+  commonshare:
+    image: commonfare/commonshare-python
+    container_name: commonshare
+    volumes:
+     - ~/tmp/commonshare-data:/usr/src/app/data
+    ports:
+      - "5001:5000"
 volumes:
   bundle_cache:

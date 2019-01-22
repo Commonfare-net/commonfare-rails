@@ -165,6 +165,9 @@ namespace :nda do
     file = File.new(file_path, "wb")
     file.write(graph.to_xml)
     file.close
+    # Copy file to directory shared with commonshare toolkit
+    FileUtils.mkdir_p "#{commonshare_data_path}/input"
+    FileUtils.cp file_path, "#{commonshare_data_path}/input/latest.gexf", preserve: false
   end
 
   task commoners_graph: :environment do |t|
@@ -276,6 +279,10 @@ namespace :nda do
 
   def host_tmp_path
     "/host_tmp" # A volume defined in the proper docker-compose file
+  end
+
+  def commonshare_data_path
+    "/commonshare-data"
   end
 
   def find_or_create_edge_by(graph, source, target)

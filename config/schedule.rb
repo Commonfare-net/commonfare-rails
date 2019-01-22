@@ -10,19 +10,25 @@ ENV.each { |k, v| env(k, v) }
 set :output, '/host_tmp/cron_log.log'
 
 # Generate the GEXF file
-every :monday, at: '1:00' do
+every :day, at: '1:00' do
   rake 'nda:commoners_objects_graph'
 end
 
 # Trigger the data analysis
-# every :monday, at: '2:00' do
-#   rake 'commonshare:analyse_data'
-# end
+every :day, at: '2:00' do
+  rake 'commonshare:analyse_data'
+end
 
-# Import data from analysis results
-# every :monday, at: '3:00' do
-#   rake 'commonshare:import_data'
-# end
+# Import user data from analysis results
+every :day, at: '3:00' do
+  rake 'commonshare:import_commoner_data'
+end
+
+# Update the dashboard
+every :monday, at: '4:00' do
+  rake 'dashboard:populate_yml'
+  rake 'dashboard:update_social_graph'
+end
 
 # Example:
 #
