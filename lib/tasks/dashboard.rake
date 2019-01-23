@@ -34,8 +34,8 @@ namespace :dashboard do
   task update_social_graph: :environment do |t|
     end_date = 1.weeks.ago.end_of_week.strftime('%F')
     new_file_path = File.join(commonshare_data_path, '/output/graphdata/biweekly/1.json')
-    latest_file_path = File.join(host_tmp_path, 'dashboard_graph_data.json')
-    backup_file_path = File.join(host_tmp_path, "dashboard_graph_data_until_#{end_date.gsub('-', '_')}.json")
+    latest_file_path = File.join(dashboard_data_path, 'dashboard_graph_data.json')
+    backup_file_path = File.join(dashboard_data_path, "dashboard_graph_data_until_#{end_date.gsub('-', '_')}.json")
     # create a backup copy of the latest file
     FileUtils.cp(latest_file_path, backup_file_path)
     # overwrite the latest file
@@ -55,11 +55,15 @@ namespace :dashboard do
     "/commonshare-data"
   end
 
+  def dashboard_data_path
+    "/dashboard-data"
+  end
+
   def write_to_file(data)
     start_date = 2.weeks.ago.beginning_of_week.strftime('%F')
     end_date = 1.weeks.ago.end_of_week.strftime('%F')
-    new_file_path = File.join(host_tmp_path, "dashboard_data_#{start_date}_#{end_date}.yml")
-    latest_file_path = File.join(host_tmp_path, 'dashboard_data.yml')
+    new_file_path = File.join(dashboard_data_path, "dashboard_data_#{start_date}_#{end_date}.yml")
+    latest_file_path = File.join(dashboard_data_path, 'dashboard_data.yml')
     # write the new file (to be stored as backup)
     File.write(new_file_path, data.to_yaml)
     # overwrite the latest file with the new one

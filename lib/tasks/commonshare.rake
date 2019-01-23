@@ -28,10 +28,6 @@ namespace :commonshare do
     end
   end
 
-  def host_tmp_path
-    "/host_tmp" # A volume defined in the proper docker-compose file
-  end
-
   def commonshare_data_path
     "/commonshare-data"
   end

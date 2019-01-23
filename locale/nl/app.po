@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0\n"
 "Report-Msgid-Bugs-To: contact@translation.io\n"
-"POT-Creation-Date: 2019-01-02 13:50+0100\n"
-"PO-Revision-Date: 2019-01-02 13:51+0100\n"
+"POT-Creation-Date: 2019-01-23 09:51+0100\n"
+"PO-Revision-Date: 2019-01-23 09:51+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Dutch\n"
 "Language: nl\n"
@@ -30,12 +30,12 @@ msgstr "Video insluiten"
 msgid "You have to log in to continue"
 msgstr "Je moet inloggen om door te gaan"
 
-#: ../app/controllers/application_controller.rb:84
+#: ../app/controllers/application_controller.rb:86
 #: ../app/controllers/comments_controller.rb:50
 msgid "Comment was successfully created."
 msgstr "Reactie is geplaatst."
 
-#: ../app/controllers/application_controller.rb:87
+#: ../app/controllers/application_controller.rb:89
 msgid "A problem occurred with your comment. Please try again"
 msgstr "Er is een probleem opgetreden met je opmerking. Probeer het opnieuw"
 
@@ -271,7 +271,11 @@ msgstr ""
 msgid "No message"
 msgstr ""
 
-#: ../app/models/currency.rb:35
+#: ../app/models/currency.rb:39
+msgid "not a valid SWAPI API key"
+msgstr ""
+
+#: ../app/models/currency.rb:41
 msgid "not a valid SWAPI endpoint"
 msgstr ""
 
@@ -312,7 +316,7 @@ msgstr ""
 msgid "ValidationError|must accept %{currency_name}"
 msgstr ""
 
-#: ../app/models/wallet.rb:36
+#: ../app/models/wallet.rb:39
 msgid "Unregistered commoner"
 msgstr ""
 

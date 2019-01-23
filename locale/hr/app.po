@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0\n"
 "Report-Msgid-Bugs-To: contact@translation.io\n"
-"POT-Creation-Date: 2019-01-02 13:50+0100\n"
-"PO-Revision-Date: 2019-01-02 13:51+0100\n"
+"POT-Creation-Date: 2019-01-23 09:51+0100\n"
+"PO-Revision-Date: 2019-01-23 09:51+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Croatian\n"
 "Language: hr\n"
@@ -31,12 +31,12 @@ msgstr "Ugradi video"
 msgid "You have to log in to continue"
 msgstr "Morate se prijaviti da biste nastavili"
 
-#: ../app/controllers/application_controller.rb:84
+#: ../app/controllers/application_controller.rb:86
 #: ../app/controllers/comments_controller.rb:50
 msgid "Comment was successfully created."
 msgstr "Komentar je uspješno kreiran."
 
-#: ../app/controllers/application_controller.rb:87
+#: ../app/controllers/application_controller.rb:89
 msgid "A problem occurred with your comment. Please try again"
 msgstr "Došlo je do problema s vašim komentarom. Molimo vas pokušajte ponovno."
 
@@ -279,7 +279,11 @@ msgstr "Glasovi Commonera"
 msgid "No message"
 msgstr "Nema poruka"
 
-#: ../app/models/currency.rb:35
+#: ../app/models/currency.rb:39
+msgid "not a valid SWAPI API key"
+msgstr ""
+
+#: ../app/models/currency.rb:41
 msgid "not a valid SWAPI endpoint"
 msgstr "nije valjana SWAPI krajnja točka"
 
@@ -321,7 +325,7 @@ msgstr "ne možeš biti ti"
 msgid "ValidationError|must accept %{currency_name}"
 msgstr "mora prihvaćatii %{currency_name}"
 
-#: ../app/models/wallet.rb:36
+#: ../app/models/wallet.rb:39
 msgid "Unregistered commoner"
 msgstr "Neregistrirani Commoner"
 
@@ -417,7 +421,7 @@ msgstr "Komentirajte"
 
 #: ../app/views/comments/_new.html.erb:2
 msgid "Button|Login and comment"
-msgstr "Button|Prijavite se i komentirajte"
+msgstr "Prijavite se i komentirajte"
 
 #: ../app/views/comments/edit.html.erb:5
 msgid "Edit your comment"

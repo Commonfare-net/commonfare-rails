@@ -14,6 +14,7 @@ services:
     volumes:
       - ~/tmp:/host_tmp
       - ~/tmp/commonshare-data:/commonshare-data
+      - ~/tmp/dashboard-data:/dashboard-data
       - bundle_cache:/bundle
     ports:
       - "3000:3000"
