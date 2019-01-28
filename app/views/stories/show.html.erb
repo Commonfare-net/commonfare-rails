@@ -94,6 +94,26 @@
       </div>
     </div>
 
+    <% unless user_signed_in? %>
+    <div class="row pt-4 pb-3 call-to-action">
+      <!-- CALL TO ACTION TEXT -->
+      <div class="col-lg-7 px-5">
+        <p class="big pr-5">
+          <%= s_('Home text|Commonfare.net is for, with, and by people.') %>
+        </p>
+        <p>
+          <%= s_('Home text|Do you want to join? You will need only an email address, and we will never use it for other purposes.') %>
+        </p>
+      </div>
+      <!-- BUTTON -->
+      <div class="col-lg-5">
+        <div class="row p-5">
+          <%= link_to s_('Button|Join'), new_user_registration_path, class: 'btn btn-cf-outline' %>
+        </div>
+      </div>
+    </div>
+    <% end %>
+
     <div class="row grey-bg pt-3">
       <div class="col-lg-3"></div>
       <div class="col-lg-9">
