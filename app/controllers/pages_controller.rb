@@ -57,7 +57,7 @@ class PagesController < ApplicationController
           s_('Dashboard|Pageviews')            => data['nb_pageviews'],
           s_('Dashboard|Total registered commoners') => data['nb_registered_commoners']
         }
-        @json_data = JSON.parse(File.read(json_file_path)).to_json.html_safe if File.exists? json_file_path
+        @json_data = JSON.parse(File.read(json_file_path)).to_json.gsub('\'', '&rsquo;').html_safe if File.exists? json_file_path
       else
         @no_file = true
       end
