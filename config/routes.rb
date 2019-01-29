@@ -48,6 +48,7 @@ Rails.application.routes.draw do
       post :publish, on: :member
       get :preview, on: :member
       get :templates, on: :collection
+      get :recommend, on: :member, defaults: { format: :json }
     end
     get 'story_builder', to: 'stories#builder'
 

@@ -102,3 +102,30 @@ function enableButton(button, text) {
     button.prop('value', text);
   }
 }
+
+function addStory(story, elementId) {
+  // console.log(story.name);
+  $('<li>').append(
+    $('<a>',{
+      text: story.name,
+      title: story.name,
+      href: story.path,
+      // 'data-turbolinks-action': 'replace'
+    })
+  ).appendTo(elementId);
+}
+
+function getRecommendedStories(url, elementId) {
+  axios.get(url)
+  .then(function (response) {
+    // handle success
+    response.data.stories.forEach(function (story) {
+      addStory(story, elementId)
+    });
+    $('#recommended-stories-row').show();
+  })
+  .catch(function (error) {
+    // handle error
+    console.log(error);
+  });
+}

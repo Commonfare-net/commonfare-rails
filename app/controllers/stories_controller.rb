@@ -58,6 +58,8 @@ class StoriesController < ApplicationController
   # GET /stories/1.json
   def show
     @comments = @story.comments.order(created_at: :asc)
+    # The page_id is used in the id of the <ul> that contains the recommended stories
+    @page_id = Digest::SHA1.hexdigest Time.now.to_s
     if user_signed_in?
       @comment = current_user.meta.comments.build
     else
@@ -66,6 +68,20 @@ class StoriesController < ApplicationController
   end
 
   def preview
+  end
+
+  def recommend
+    ids = []
+    @stories = []
+    commoner_id = user_signed_in? ? current_user.meta.id : '0'
+    conn = Faraday.new ENV['COMMONSHARE_ENDPOINT']
+    response = conn.get do |req|
+      # req.url "/recommend/1/1"
+      req.url "/recommend/#{@story.id}/#{commoner_id}"
+    end
+    # binding.pry
+    ids = response.body.strip.gsub(/[^0-9A-Za-z,]/, '').split(',').map(&:to_i) if response.status == 200
+    ids.each {|id| @stories << Story.find(id) if Story.exists?(id)}
   end
 
   # GET /stories/new
