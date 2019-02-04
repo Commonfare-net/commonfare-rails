@@ -30,6 +30,11 @@ every :monday, at: '4:00' do
   rake 'dashboard:update_social_graph'
 end
 
+# Monthly basic income distribution
+every 1.month, at: 'January 5th 1:00am' do
+  rake 'wallets:distribute_basic_income'
+end
+
 # Example:
 #
 # set :output, "/path/to/my/cron_log.log"
