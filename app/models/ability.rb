@@ -10,6 +10,7 @@ class Ability
       # visitors can see Commoners, Stories, Tags
       can :read, Commoner
       can :read, Story, published: true
+      can :recommend, Story, published: true
       can :read, Tag
       can :read, Comment
       can :read, Group
@@ -37,7 +38,7 @@ class Ability
         can :update, Membership do |membership|
           membership.group.admins.include?(commoner)
         end
-        
+
         can :create, Group
         can :update, Group do |group|
           group.admins.include?(commoner)

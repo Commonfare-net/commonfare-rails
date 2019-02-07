@@ -94,6 +94,13 @@
       </div>
     </div>
 
+    <div class="recommended-stories-container">
+      <div class="row justify-content-center bg-white">
+        <h2><%= _('Recommended stories') %></h2>
+      </div>
+      <div id="recommended-stories-row-<%= @page_id %>" class="row justify-content-center pt-4 pb-3 bg-white"></div>
+    </div>
+
     <% unless user_signed_in? %>
     <div class="row pt-4 pb-3 call-to-action">
       <!-- CALL TO ACTION TEXT -->
@@ -130,4 +137,14 @@
   </div>
 </div>
 
+
 <%= render 'stories/share_modal' %>
+<%= content_for :scripts do %>
+<script type="text/javascript">
+  document.addEventListener("turbolinks:load",
+    getRecommendedStories(
+      '<%= recommend_story_path(@story) %>',
+      '#recommended-stories-row-<%= @page_id %>')
+    );
+</script>
+<% end %>

@@ -100,6 +100,10 @@
     }
   }
 
+  .recommended-stories-container {
+    display: none;
+  }
+
   .story-tags {
     color: $cf-secondary-color;
     background-color: $lightgreen;

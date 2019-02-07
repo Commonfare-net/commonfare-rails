@@ -3,19 +3,19 @@ document.addEventListener("turbolinks:load", function() {
     lines: 3,
   });
   Ellipsis({
-    class: '.story-card-title-link',
+    'class': '.story-card-title-link',
     lines: 4,
   });
   Ellipsis({
-    class: '.story-media-title-link',
+    'class': '.story-media-title-link',
     lines: 2,
   });
   Ellipsis({
-    class: '.nav-item--single-line',
+    'class': '.nav-item--single-line',
     lines: 2
   });
   Ellipsis({
-    class: '.single-line',
+    'class': '.single-line',
     lines: 1,
   });
 });
@@ -101,4 +101,64 @@ function enableButton(button, text) {
     button.prop('disabled', false);
     button.prop('value', text);
   }
+}
+
+function addStoryCard(story, elementId) {
+  $('<div>', { 'class': 'col-lg-4' }).append(
+    $('<div>', { 'class': 'story-media-container border'} ).append(
+      $('<div>', { 'class': 'story-media-body'} ).append(
+        $('<a>', {
+          title: story.title,
+          href: story.path
+        }).append(
+          $('<img>', {
+            'class': 'mr-3',
+            src: story.image_path
+          })
+        ),
+        $('<div>', { 'class': 'media-container' }).append(
+          $('<h4>', { 'class': 'mb-1'} ).append(
+            $('<a>', {
+              text: story.title,
+              title: story.title,
+              href: story.path,
+              'class': 'recommended-story-title'
+            })
+          ),
+          $('<span>', { 'class': 'text-muted', text: story.created_at })
+        )
+      ), // end story-media-body
+      $('<div>', { 'class': 'story-media-footer' }).append(
+        $('<div>', { 'class': 'story-media-footer-comments' }).append(
+          $('<a>', {
+            title: story.comments_num_text,
+            href: story.comments_path
+          }).append(
+            $('<i>', { 'class': 'fa fa-comment-o' }),
+            story.comments_num_text
+          )
+        )
+      ) // end story-media-footer
+    ) // end story-media-container
+  ) // end col
+  .appendTo(elementId);
+}
+
+function getRecommendedStories(url, elementId) {
+  axios.get(url)
+  .then(function (response) {
+    // handle success
+    response.data.stories.forEach(function (story) {
+      addStoryCard(story, elementId);
+    });
+    $('.recommended-stories-container').show();
+    Ellipsis({
+      'class': '.recommended-story-title',
+      lines: 3,
+    });
+  })
+  .catch(function (error) {
+    // handle error
+    console.log(error);
+  });
 }
