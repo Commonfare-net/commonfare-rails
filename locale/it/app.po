@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0\n"
 "Report-Msgid-Bugs-To: contact@translation.io\n"
-"POT-Creation-Date: 2019-01-23 09:51+0100\n"
-"PO-Revision-Date: 2019-01-23 09:51+0100\n"
+"POT-Creation-Date: 2019-02-07 14:28+0100\n"
+"PO-Revision-Date: 2019-02-07 14:28+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Italian\n"
 "Language: it\n"
@@ -134,19 +134,19 @@ msgstr "Visualizzazioni pagina"
 msgid "Dashboard|Total registered commoners"
 msgstr "Commoner registrati (totale)"
 
-#: ../app/controllers/stories_controller.rb:147
+#: ../app/controllers/stories_controller.rb:163
 msgid "Story was successfully destroyed."
 msgstr "La storia è stata eliminata con successo."
 
-#: ../app/controllers/stories_controller.rb:162
+#: ../app/controllers/stories_controller.rb:178
 msgid "Could not publish this story"
 msgstr "Impossibile pubblicare la storia"
 
-#: ../app/controllers/stories_controller.rb:225
+#: ../app/controllers/stories_controller.rb:241
 msgid "Story was successfully created."
 msgstr "La storia è stata creata con successo."
 
-#: ../app/controllers/stories_controller.rb:240
+#: ../app/controllers/stories_controller.rb:256
 msgid "Story was successfully updated."
 msgstr "La storia è stata aggiornata con successo."
 
@@ -935,7 +935,8 @@ msgid "Coming soon"
 msgstr "In arrivo"
 
 #: ../app/views/join_requests/_form.html.erb:5
-#: ../app/views/pages/home.html.erb:64
+#: ../app/views/listings/show.html.erb:139 ../app/views/pages/home.html.erb:64
+#: ../app/views/stories/show.html.erb:118
 msgid "Button|Join"
 msgstr "Partecipa"
 
@@ -1199,8 +1200,22 @@ msgstr "Condividi"
 msgid "Get in touch"
 msgstr "Contatta"
 
-#: ../app/views/listings/show.html.erb:131
-#: ../app/views/stories/show.html.erb:101
+#: ../app/views/listings/show.html.erb:130 ../app/views/pages/home.html.erb:60
+#: ../app/views/stories/show.html.erb:109
+msgid "Home text|Commonfare.net is for, with, and by people."
+msgstr "Commonfare.net è per le persone, con le persone e delle persone."
+
+#: ../app/views/listings/show.html.erb:133 ../app/views/pages/home.html.erb:62
+#: ../app/views/stories/show.html.erb:112
+msgid ""
+"Home text|Do you want to join? You will need only an email address, and we wil"
+"l never use it for other purposes."
+msgstr ""
+"Vuoi aderire? Avrai bisogno solo di un indirizzo email e non lo useremo mai pe"
+"r altri scopi."
+
+#: ../app/views/listings/show.html.erb:152
+#: ../app/views/stories/show.html.erb:128
 msgid "Comment"
 msgid_plural "Comments"
 msgstr[0] "Commento"
@@ -1305,18 +1320,6 @@ msgstr "Grafico sociale"
 #: ../app/views/pages/home.html.erb:37
 msgid "Home carousel text|We have so much in Common"
 msgstr "Abbiamo così tanto in Comune"
-
-#: ../app/views/pages/home.html.erb:60
-msgid "Home text|Commonfare.net is for, with, and by people."
-msgstr "Commonfare.net è per le persone, con le persone e delle persone."
-
-#: ../app/views/pages/home.html.erb:62
-msgid ""
-"Home text|Do you want to join? You will need only an email address, and we wil"
-"l never use it for other purposes."
-msgstr ""
-"Vuoi aderire? Avrai bisogno solo di un indirizzo email e non lo useremo mai pe"
-"r altri scopi."
 
 #: ../app/views/pages/home.html.erb:66
 msgid "Home text|Are you already registered? <strong>%{login_link}</strong>"
@@ -1476,6 +1479,10 @@ msgstr "Modifica la storia"
 #: ../app/views/stories/show.html.erb:93
 msgid "Button|Share"
 msgstr "Condividi"
+
+#: ../app/views/stories/show.html.erb:99
+msgid "Recommended stories"
+msgstr "Storie consigliate"
 
 #: ../app/views/stories/templates.html.erb:1
 msgid "Create a story from a template"

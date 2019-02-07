@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0\n"
 "Report-Msgid-Bugs-To: contact@translation.io\n"
-"POT-Creation-Date: 2019-01-23 09:51+0100\n"
-"PO-Revision-Date: 2019-01-23 09:51+0100\n"
+"POT-Creation-Date: 2019-02-07 14:28+0100\n"
+"PO-Revision-Date: 2019-02-07 14:28+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Croatian\n"
 "Language: hr\n"
@@ -136,19 +136,19 @@ msgstr "Pregleda stranica"
 msgid "Dashboard|Total registered commoners"
 msgstr "Ukupno registriranih commonera"
 
-#: ../app/controllers/stories_controller.rb:147
+#: ../app/controllers/stories_controller.rb:163
 msgid "Story was successfully destroyed."
 msgstr "Priča je uspješno izbrisana."
 
-#: ../app/controllers/stories_controller.rb:162
+#: ../app/controllers/stories_controller.rb:178
 msgid "Could not publish this story"
 msgstr "Nije bilo moguće objaviti ovu priču"
 
-#: ../app/controllers/stories_controller.rb:225
+#: ../app/controllers/stories_controller.rb:241
 msgid "Story was successfully created."
 msgstr "Priča je uspješno stvorena."
 
-#: ../app/controllers/stories_controller.rb:240
+#: ../app/controllers/stories_controller.rb:256
 msgid "Story was successfully updated."
 msgstr "Priča je uspješno ažururana."
 
@@ -927,7 +927,8 @@ msgid "Coming soon"
 msgstr "Dolazi uskoro"
 
 #: ../app/views/join_requests/_form.html.erb:5
-#: ../app/views/pages/home.html.erb:64
+#: ../app/views/listings/show.html.erb:139 ../app/views/pages/home.html.erb:64
+#: ../app/views/stories/show.html.erb:118
 msgid "Button|Join"
 msgstr "Pridružite se"
 
@@ -1193,8 +1194,22 @@ msgstr "Podijeli"
 msgid "Get in touch"
 msgstr "Javite nam se"
 
-#: ../app/views/listings/show.html.erb:131
-#: ../app/views/stories/show.html.erb:101
+#: ../app/views/listings/show.html.erb:130 ../app/views/pages/home.html.erb:60
+#: ../app/views/stories/show.html.erb:109
+msgid "Home text|Commonfare.net is for, with, and by people."
+msgstr "Commonfare.net je za, sa i od ljudi."
+
+#: ../app/views/listings/show.html.erb:133 ../app/views/pages/home.html.erb:62
+#: ../app/views/stories/show.html.erb:112
+msgid ""
+"Home text|Do you want to join? You will need only an email address, and we wil"
+"l never use it for other purposes."
+msgstr ""
+"Želite li se pridružiti? Trebat će vam samo email adresa koju nikada nećemo ko"
+"ristiti u druge svrhe."
+
+#: ../app/views/listings/show.html.erb:152
+#: ../app/views/stories/show.html.erb:128
 msgid "Comment"
 msgid_plural "Comments"
 msgstr[0] "Komentar"
@@ -1300,18 +1315,6 @@ msgstr "Društveni grafikon"
 #: ../app/views/pages/home.html.erb:37
 msgid "Home carousel text|We have so much in Common"
 msgstr "Mi imamo toliko zajedničkoga"
-
-#: ../app/views/pages/home.html.erb:60
-msgid "Home text|Commonfare.net is for, with, and by people."
-msgstr "Commonfare.net je za, sa i od ljudi."
-
-#: ../app/views/pages/home.html.erb:62
-msgid ""
-"Home text|Do you want to join? You will need only an email address, and we wil"
-"l never use it for other purposes."
-msgstr ""
-"Želite li se pridružiti? Trebat će vam samo email adresa koju nikada nećemo ko"
-"ristiti u druge svrhe."
 
 #: ../app/views/pages/home.html.erb:66
 msgid "Home text|Are you already registered? <strong>%{login_link}</strong>"
@@ -1472,6 +1475,10 @@ msgstr "Uredite priču"
 #: ../app/views/stories/show.html.erb:93
 msgid "Button|Share"
 msgstr "Podijeli"
+
+#: ../app/views/stories/show.html.erb:99
+msgid "Recommended stories"
+msgstr ""
 
 #: ../app/views/stories/templates.html.erb:1
 msgid "Create a story from a template"

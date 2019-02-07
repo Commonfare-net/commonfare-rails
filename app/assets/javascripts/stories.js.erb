@@ -145,13 +145,15 @@ function addStoryCard(story, elementId) {
 }
 
 function getRecommendedStories(url, elementId) {
+  // boorish trick to avoid adding cards when visiting the page after pressing back button
+  if ($('.recommended-stories-container').is(":visible")) return;
   axios.get(url)
   .then(function (response) {
     // handle success
     response.data.stories.forEach(function (story) {
       addStoryCard(story, elementId);
     });
-    $('.recommended-stories-container').show();
+    if (response.data.stories.length > 0) $('.recommended-stories-container').show();
     Ellipsis({
       'class': '.recommended-story-title',
       lines: 3,
