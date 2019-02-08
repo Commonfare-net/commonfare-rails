@@ -249,11 +249,11 @@ hr:
       one_page:
         display_entries:
           zero: Nije pronađen %{entry_name}
-          one: Prikazuje se <b>1</ b> %{entry_name}
-          other: Prikazuju se <b>svi %{count}</ b> %{entry_name}
+          one: Prikazuje se <b>1</b> %{entry_name}
+          other: Prikazuju se <b>svi %{count}</b> %{entry_name}
       more_pages:
         display_entries: Prikazano %{entry_name} <b> %{first} & nbsp; - & nbsp; %{last}
-          </ b> od <b> %{total} </ b> ukupno
+          </b> od <b> %{total} </b> ukupno
   flash:
     actions:
       create:
@@ -498,8 +498,8 @@ hr:
         minuta primiti upute kako ga otključati.
       unlocked: Vaš račun je uspješno otključan. Molimo prijavite se.
   exception_handler:
-    internal_server_error: "<strong> %{status} Greška </ strong> %{message} <p> Vrati
-      se početnoj stranici</ p>"
+    internal_server_error: "<strong> %{status} Greška </strong> %{message} <p> Vrati
+      se početnoj stranici</p>"
   views:
     pagination:
       first: "&laquo; Prvi\n"

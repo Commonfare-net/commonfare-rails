@@ -8,6 +8,9 @@ class TagsController < ApplicationController
 
     # Welfare provisions are already scoped in the current locale language
     @story_types_and_lists = {
+      tutorial: stories
+        .tutorial
+        .includes(:commoner, :tags, :comments, :images, :translations),
       commoners_voice: stories
         .commoners_voice
         .includes(:commoner, :tags, :comments, :images, :translations),

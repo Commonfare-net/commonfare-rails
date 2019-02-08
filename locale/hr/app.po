@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0\n"
 "Report-Msgid-Bugs-To: contact@translation.io\n"
-"POT-Creation-Date: 2019-02-07 14:28+0100\n"
-"PO-Revision-Date: 2019-02-07 14:28+0100\n"
+"POT-Creation-Date: 2019-02-08 17:01+0100\n"
+"PO-Revision-Date: 2019-02-08 17:01+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Croatian\n"
 "Language: hr\n"
@@ -107,6 +107,7 @@ msgstr "Zahtjev za pristupanje je odbijen."
 #: ../app/controllers/memberships_controller.rb:47
 msgid "Role was successfully updated."
 msgstr ""
+"Uloga je uspješno ažurirana.\n"
 
 #: ../app/controllers/memberships_controller.rb:62
 msgid "You have left this group"
@@ -212,6 +213,7 @@ msgstr "Glasovi Commonera"
 #: ../app/helpers/pages_helper.rb:16
 msgid "Home title|Tutorials"
 msgstr ""
+"Uđbenici\n"
 
 #: ../app/helpers/pages_helper.rb:18
 msgid "Home title|Good Practices"
@@ -228,6 +230,7 @@ msgstr "Zbirka priča za ljude, sa ljudima i od ljudi"
 #: ../app/helpers/pages_helper.rb:29
 msgid "Home text|How to use Commonfare.net"
 msgstr ""
+"Kako koristiti Commonfare.net\n"
 
 #: ../app/helpers/pages_helper.rb:31
 msgid "Home text|Selected bottom-up initiatives to connect and inspire."
@@ -282,6 +285,8 @@ msgstr "Nema poruka"
 #: ../app/models/currency.rb:39
 msgid "not a valid SWAPI API key"
 msgstr ""
+"nije valjan ključ za SWAPI API \n"
+"\n"
 
 #: ../app/models/currency.rb:41
 msgid "not a valid SWAPI endpoint"
@@ -289,15 +294,17 @@ msgstr "nije valjana SWAPI krajnja točka"
 
 #: ../app/models/group.rb:15
 msgid "Adminstrator"
-msgstr ""
+msgstr "Adminstrator"
 
 #: ../app/models/group.rb:15
 msgid "Editor"
 msgstr ""
+"Urednik\n"
 
 #: ../app/models/group.rb:15
 msgid "Affiliate"
 msgstr ""
+"Član\n"
 
 #: ../app/models/listing.rb:22
 msgid "ValidationError|doesn't seem to be a valid place"
@@ -316,6 +323,7 @@ msgstr ""
 #: ../app/models/membership.rb:20
 msgid "There must be at least one administrator"
 msgstr ""
+"Mora postojati barem jedan administrator\n"
 
 #: ../app/models/transaction.rb:47
 msgid "ValidationError|can't be you"
@@ -339,7 +347,7 @@ msgstr "Imate %{num_of_messages} u razgovoru s <strong>%{other_commoner}</strong
 #:
 #: ../app/views/activity_notification/notifications/commoners/_default.html.erb:13
 msgid "There are new messages in <strong>%{discussion_title}</strong>"
-msgstr ""
+msgstr "Imate nove poruke u razgovoru <strong>%{discussion_title}</strong>"
 
 #:
 #: ../app/views/activity_notification/notifications/commoners/_default.html.erb:17
@@ -354,6 +362,8 @@ msgid ""
 "There is a new comment from <strong>%{comment_author}</strong> for <strong>%{c"
 "ommentable_title}</strong>"
 msgstr ""
+"Imate novi komentar od  <strong>%{comment_author}</strong> na <strong>%{commen"
+"table_title}</strong>"
 
 #:
 #: ../app/views/activity_notification/notifications/commoners/_default.html.erb:24
@@ -361,6 +371,8 @@ msgid ""
 "<strong>%{requester_name}</strong> requested to join the group <strong>%{group"
 "_name}</strong>"
 msgstr ""
+"<strong>%{requester_name}</strong> zatražio/la je pridruživanje grupi <strong>"
+"%{group_name}</strong>\n"
 
 #:
 #: ../app/views/activity_notification/notifications/commoners/_default.html.erb:27
@@ -368,6 +380,8 @@ msgid ""
 "Your request to join the group <strong>%{group_name}</strong> has been accepte"
 "d"
 msgstr ""
+"Vaš zahtjev za pridruživanje grupi  <strong>%{group_name}</strong> je prihvaće"
+"n"
 
 #:
 #: ../app/views/activity_notification/notifications/commoners/_default.html.erb:29
@@ -375,6 +389,8 @@ msgid ""
 "<strong>%{requester_name}</strong> has joined the group <strong>%{group_name}<"
 "/strong>"
 msgstr ""
+"<strong>%{requester_name}</strong> pridružio/la se grupi <strong>%{group_name}"
+"</strong>\n"
 
 #:
 #: ../app/views/activity_notification/notifications/commoners/_default.html.erb:33
@@ -382,6 +398,7 @@ msgid ""
 "Your request to join the group <strong>%{group_name}</strong> has been rejecte"
 "d"
 msgstr ""
+"Vaš zahtjev za pridruživanje grupi  <strong>%{group_name}</strong> je odbijen\n"
 
 #:
 #: ../app/views/activity_notification/notifications/commoners/_default.html.erb:35
@@ -389,11 +406,13 @@ msgid ""
 "The request by <strong>%{requester_name}</strong> to join the group <strong>%{"
 "group_name}</strong> has been rejected"
 msgstr ""
+" Zahtjev <strong>%{requester_name}</strong> da se pridruži grupi <strong>%{gro"
+"up_name}</strong> je odbijen\n"
 
 #: ../app/views/activity_notification/notifications/commoners/index.html.erb:1
 #: ../app/views/activity_notification/notifications/commoners/index.html.erb:7
 msgid "Title|Notifications"
-msgstr "Title|Obavijesti"
+msgstr "Obavijesti"
 
 #: ../app/views/activity_notification/notifications/commoners/index.html.erb:20
 msgid "No notifications"
@@ -679,7 +698,7 @@ msgstr "Započnite raspravu"
 #: ../app/views/discussions/new.html.erb:4
 msgid "Title|New discussion in %{group_name}"
 msgstr ""
-"Title| Nova rasprava u grupi %{group_name}\n"
+"Nova rasprava u grupi %{group_name}\n"
 
 #: ../app/views/discussions/new.html.erb:8
 #: ../app/views/listings/_fields.html.erb:3
@@ -912,6 +931,7 @@ msgstr "Idite na Novčanik"
 #: ../app/views/groups/show.html.erb:108
 msgid "All members"
 msgstr ""
+"Svi članovi\n"
 
 #: ../app/views/groups/show.html.erb:113
 #: ../app/views/memberships/index.html.erb:11
@@ -934,7 +954,7 @@ msgstr "Pridružite se"
 
 #: ../app/views/join_requests/new.html.erb:1
 msgid "Title|Request to join %{group_name}"
-msgstr "Title| Zahtjev za pridruživanje"
+msgstr "Zahtjev za pridruživanje"
 
 #: ../app/views/join_requests/new.html.erb:4
 msgid "Title|Do you want to join %{group_name}?"
@@ -1004,6 +1024,7 @@ msgstr "Nadzorna ploča pokazatelja"
 #: ../app/views/layouts/_footer.html.erb:33
 msgid "Footer|Tutorials"
 msgstr ""
+"Uđbenici\n"
 
 #: ../app/views/layouts/_navbar.html.erb:26
 #: ../app/views/layouts/_navbar.html.erb:57
@@ -1239,16 +1260,18 @@ msgstr "Oznake s '%{search_term}'"
 #: ../app/views/memberships/edit.html.erb:1
 #: ../app/views/memberships/edit.html.erb:4
 msgid "Title|Edit role"
-msgstr ""
+msgstr "Uredi ulogu"
 
 #: ../app/views/memberships/edit.html.erb:12
 msgid "Role for %{name}"
 msgstr ""
+"Uloga za %{name}\n"
 
 #: ../app/views/memberships/index.html.erb:1
 #: ../app/views/memberships/index.html.erb:4
 msgid "Members of %{group_name}"
 msgstr ""
+"Članovi %{group_name}\n"
 
 #: ../app/views/pages/about.html.erb:1 ../app/views/pages/old_about.html.erb:1
 msgid "About"
@@ -1318,7 +1341,7 @@ msgstr "Mi imamo toliko zajedničkoga"
 
 #: ../app/views/pages/home.html.erb:66
 msgid "Home text|Are you already registered? <strong>%{login_link}</strong>"
-msgstr "Jeste li već registrirani? <strong>%{login_link}</ strong>"
+msgstr "Jeste li već registrirani? <strong>%{login_link}</strong>"
 
 #: ../app/views/pages/home.html.erb:66
 msgid "Login"
@@ -1478,7 +1501,7 @@ msgstr "Podijeli"
 
 #: ../app/views/stories/show.html.erb:99
 msgid "Recommended stories"
-msgstr ""
+msgstr "preporučene priče"
 
 #: ../app/views/stories/templates.html.erb:1
 msgid "Create a story from a template"
