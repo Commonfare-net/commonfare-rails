@@ -12,7 +12,9 @@
         <% @messages.each do |message| %>
         <div class="discussion-message d-flex flex-column <%= message.author == current_user.meta ? 'align-items-end' : 'align-items-start' %>">
           <div class="message <%= message.author == current_user.meta ? 'current-user-message' : 'other-user-message' %>">
-            <div class="message-author <%= message.author == current_user.meta ? 'text-right' : 'text-left' %>"><%= message.author.name %></div>
+            <div class="message-author <%= message.author == current_user.meta ? 'text-right' : 'text-left' %>">
+              <%= link_to message.author.name, commoner_path(message.author) %>
+            </div>
             <div class="message-body">
               <%= detect_links_in(message.body) %>
             </div>

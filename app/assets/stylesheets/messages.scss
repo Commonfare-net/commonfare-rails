@@ -9,6 +9,9 @@
   max-width: 80%;
   .message-author {
     font-weight: 500;
+    a {
+      color: black;
+    }
   }
   .message-delete {
     a {
