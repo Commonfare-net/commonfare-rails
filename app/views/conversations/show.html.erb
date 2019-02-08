@@ -20,6 +20,11 @@
             <div class="message-body <%= unread_class(message) %>">
               <%= detect_links_in(message.body) %>
             </div>
+            <div class="<%= message.author == current_user.meta ? 'text-right' : 'text-left' %>">
+              <small class="text-muted moment-variable-date" data-server-date="<%= message.created_at %>">
+                <%= last_message_time(message) %>
+              </small>
+            </div>
           </div>
         </div>
         <% end %>
