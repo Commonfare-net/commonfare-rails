@@ -28,6 +28,8 @@ module NotificationsHelper
     # show group avatar for join_request notifications seen by requesters
     return image_tag(notification.notifiable.group.avatar.card) if notification.notifiable.is_a?(JoinRequest) && !notification.notifiable.pending? && notification.notifiable.commoner.user == current_user
 
+    return image_tag(author_image_for(notification.notifiable)) if notification.notifiable.is_a?(Comment)
+
     image_tag notification.notifier.avatar.card
   end
 end
