@@ -28,6 +28,22 @@ module NotificationsHelper
     # show group avatar for join_request notifications seen by requesters
     return image_tag(notification.notifiable.group.avatar.card) if notification.notifiable.is_a?(JoinRequest) && !notification.notifiable.pending? && notification.notifiable.commoner.user == current_user
 
+    return image_tag(author_image_for(notification.notifiable)) if notification.notifiable.is_a?(Comment)
+
     image_tag notification.notifier.avatar.card
+  end
+
+  # Returns a link to the content author page
+  # except when the content is anonymous
+  def notification_author_name_for(content)
+    return unless content.respond_to? :author
+    if !content.author.is_a?(Group) && current_user == content.author.user
+      _('You')
+    elsif content.anonymous?
+      _('Anonymous')
+    else
+      # link_to(content.author.name, commoner_path(content.author))
+      content.author.name
+    end
   end
 end
