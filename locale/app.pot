@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0\n"
 "Report-Msgid-Bugs-To: contact@translation.io\n"
-"POT-Creation-Date: 2019-02-08 17:01+0100\n"
-"PO-Revision-Date: 2019-02-08 17:01+0100\n"
+"POT-Creation-Date: 2019-02-27 16:38+0100\n"
+"PO-Revision-Date: 2019-02-27 16:38+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -164,10 +164,13 @@ msgid "There has been a problem processing the transaction"
 msgstr ""
 
 #: ../app/helpers/application_helper.rb:44
+#: ../app/helpers/notifications_helper.rb:41
 msgid "You"
 msgstr ""
 
-#: ../app/helpers/application_helper.rb:46 ../app/helpers/stories_helper.rb:84
+#: ../app/helpers/application_helper.rb:46
+#: ../app/helpers/notifications_helper.rb:43
+#: ../app/helpers/stories_helper.rb:84
 msgid "Anonymous"
 msgstr ""
 
@@ -419,7 +422,7 @@ msgid "Edit your comment"
 msgstr ""
 
 #: ../app/views/comments/edit.html.erb:8
-#: ../app/views/discussions/show.html.erb:19
+#: ../app/views/discussions/show.html.erb:27
 #: ../app/views/groups/leave.html.erb:27 ../app/views/listings/edit.html.erb:13
 #: ../app/views/users/registrations/goodbye.html.erb:39
 msgid "Are you sure?"
@@ -511,38 +514,56 @@ msgstr ""
 msgid "Button|Edit profile"
 msgstr ""
 
-#: ../app/views/commoners/show.html.erb:42 ../app/views/groups/show.html.erb:46
+#: ../app/views/commoners/show.html.erb:43
+msgid "Commonshare"
+msgstr ""
+
+#: ../app/views/commoners/show.html.erb:47 ../app/views/groups/show.html.erb:46
 #: ../app/views/layouts/_navbar.html.erb:113
 msgid "Stories"
 msgstr ""
 
-#: ../app/views/commoners/show.html.erb:45
+#: ../app/views/commoners/show.html.erb:50
 #: ../app/views/layouts/_navbar.html.erb:116
 msgid "Groups"
 msgstr ""
 
-#: ../app/views/commoners/show.html.erb:49 ../app/views/groups/show.html.erb:58
+#: ../app/views/commoners/show.html.erb:54 ../app/views/groups/show.html.erb:58
 msgid "Requests"
 msgstr ""
 
-#: ../app/views/commoners/show.html.erb:62 ../app/views/groups/show.html.erb:93
+#: ../app/views/commoners/show.html.erb:65
+msgid "Commonshare heading|Two weeks"
+msgstr ""
+
+#: ../app/views/commoners/show.html.erb:79
+msgid "Commonshare heading|Over time"
+msgstr ""
+
+#: ../app/views/commoners/show.html.erb:92
+msgid "No Commonshare yet"
+msgstr ""
+
+#: ../app/views/commoners/show.html.erb:105
+#: ../app/views/groups/show.html.erb:93
 msgid "No stories yet"
 msgstr ""
 
-#: ../app/views/commoners/show.html.erb:70 ../app/views/pages/home.html.erb:104
-#: ../app/views/wallets/show.html.erb:31 ../app/views/wallets/view.html.erb:41
+#: ../app/views/commoners/show.html.erb:113
+#: ../app/views/pages/home.html.erb:104 ../app/views/wallets/show.html.erb:31
+#: ../app/views/wallets/view.html.erb:41
 msgid "See all"
 msgstr ""
 
-#: ../app/views/commoners/show.html.erb:76
+#: ../app/views/commoners/show.html.erb:119
 msgid "Button|Start a group"
 msgstr ""
 
-#: ../app/views/commoners/show.html.erb:83
+#: ../app/views/commoners/show.html.erb:126
 msgid "No groups"
 msgstr ""
 
-#: ../app/views/commoners/show.html.erb:97
+#: ../app/views/commoners/show.html.erb:140
 msgid "No requests"
 msgstr ""
 
