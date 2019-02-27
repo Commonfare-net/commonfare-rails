@@ -221,7 +221,7 @@ function drawCommonshare(jsonUrl, userId, locale) {
 	uid = userId;
 	lang = locale;
 	initLocalisedText();
-	d3.json(jsonUrl).then(results => {
+	d3.json(jsonUrl).then(function(results) {
 		data = results;
 		initDonutVars();
 		for (var fortnight = 0; fortnight < results.length; fortnight++) {
@@ -236,7 +236,7 @@ function drawCommonshare(jsonUrl, userId, locale) {
 		$('#donutdate').text(getDateText(node_data[currentdonut]));
 		numticks = results.length;
 		plotsimpleline(uid);
-	}).catch(err => {
+	}).catch(function(err) {
 		console.log(err);
 	});
 }
