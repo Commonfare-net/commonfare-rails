@@ -238,6 +238,8 @@ function drawCommonshare(jsonUrl, userId, locale) {
 		plotsimpleline(uid);
 	}).catch(function(err) {
 		console.log(err);
+		$(".box-wrap").hide();
+		$("#no-commonshare").show();
 	});
 }
 

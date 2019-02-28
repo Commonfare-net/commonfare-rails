@@ -61,6 +61,7 @@
             <% if @commoner.commonshare_data.present? %>
             <div class="row">
               <div class="col col-lg-4">
+                <h3 id="no-commonshare"><%= _("No Commonshare yet") %></h3>
                 <div class="box-wrap">
                   <h3><%= s_('Commonshare heading|Two weeks') %></h3>
                   <div class="graph text-center" style="padding: 2em 0 0;">
@@ -152,12 +153,13 @@
 
 <% content_for :scripts do %>
   <script type="text/javascript">
-
+    <% if user_signed_in? %>
     // These functions are in commonshare/commonvariables.js
     drawCommonshare(
       '<%= commonshare_commoner_url(@commoner) %>',
       '<%= @commoner.id %>',
       '<%= I18n.locale.to_s %>'
     );
+    <% end %>
   </script>
 <% end %>
