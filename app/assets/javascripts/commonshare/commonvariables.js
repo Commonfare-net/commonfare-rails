@@ -244,7 +244,7 @@ function drawCommonshare(jsonUrl, userId, locale) {
 }
 
 function findNode(node) {
-	return node['id'] == uid;
+	return node['platform_id'] == uid;
 }
 //From https://stackoverflow.com/questions/38224875/replacing-d3-transform-in-d3-v4/38230545#38230545
 function getTranslation(transform) {
