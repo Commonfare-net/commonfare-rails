@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0\n"
 "Report-Msgid-Bugs-To: contact@translation.io\n"
-"POT-Creation-Date: 2019-02-08 17:01+0100\n"
-"PO-Revision-Date: 2019-02-08 17:01+0100\n"
+"POT-Creation-Date: 2019-03-12 12:04+0100\n"
+"PO-Revision-Date: 2019-03-12 12:04+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -164,10 +164,13 @@ msgid "There has been a problem processing the transaction"
 msgstr ""
 
 #: ../app/helpers/application_helper.rb:44
+#: ../app/helpers/notifications_helper.rb:41
 msgid "You"
 msgstr ""
 
-#: ../app/helpers/application_helper.rb:46 ../app/helpers/stories_helper.rb:84
+#: ../app/helpers/application_helper.rb:46
+#: ../app/helpers/notifications_helper.rb:43
+#: ../app/helpers/stories_helper.rb:84
 msgid "Anonymous"
 msgstr ""
 
@@ -419,7 +422,7 @@ msgid "Edit your comment"
 msgstr ""
 
 #: ../app/views/comments/edit.html.erb:8
-#: ../app/views/discussions/show.html.erb:19
+#: ../app/views/discussions/show.html.erb:27
 #: ../app/views/groups/leave.html.erb:27 ../app/views/listings/edit.html.erb:13
 #: ../app/views/users/registrations/goodbye.html.erb:39
 msgid "Are you sure?"
@@ -931,10 +934,10 @@ msgstr ""
 
 #: ../app/views/layouts/_footer.html.erb:7
 msgid ""
-"Footer|Commonfare is an idea of welfare based on the valorization of social co"
-"operation. In a time in which precarity, insecurity and loneliness are experie"
-"nced by an increasing amount of people, Commonfare wants to value the power of"
-" social relations and claim back the right to joy."
+"Footer|Commonfare is an idea of welfare based on the recognition of social coo"
+"peration. In a time in which precarity, insecurity and loneliness are experien"
+"ced by an increasing amount of people, Commonfare wants to support the power o"
+"f social relations and claim back the right to joy."
 msgstr ""
 
 #: ../app/views/layouts/_footer.html.erb:10
