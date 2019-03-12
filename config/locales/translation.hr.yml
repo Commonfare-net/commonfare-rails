@@ -143,7 +143,9 @@ hr:
           has_many: Nije moguće izbrisati zapis jer postoje ovisni %{record}
     attributes:
       user:
-        confirmation_sent_at: Potvrda je poslana u
+        confirmation_sent_at: 'Potvrda je poslana u
+
+'
         confirmation_token: 'Lozinka za potvrdu
 
 '
