@@ -136,7 +136,8 @@ class Story < ApplicationRecord
 
     # The queries are performed only if needed
     update_column(:welfare_provision, is_wp) if is_wp != welfare_provision?
-    update_column(:good_practice, is_gp) if is_gp != good_practice?
+    # No more good_practice
+    # update_column(:good_practice, is_gp) if is_gp != good_practice?
     update_column(:tutorial, is_tutorial) if is_tutorial != tutorial?
   end
 
