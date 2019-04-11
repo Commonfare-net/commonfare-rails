@@ -25,6 +25,7 @@ class Ability
       if user.is_commoner?
         commoner = user.meta
         can :crud, Commoner, id: commoner.id
+        can :commonshare, Commoner
         can :welcome, Commoner do |commoner|
           commoner.user.sign_in_count == 1
         end
