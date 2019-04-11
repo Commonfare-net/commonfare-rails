@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0\n"
 "Report-Msgid-Bugs-To: contact@translation.io\n"
-"POT-Creation-Date: 2019-03-12 12:04+0100\n"
-"PO-Revision-Date: 2019-03-12 12:04+0100\n"
+"POT-Creation-Date: 2019-04-11 14:20+0200\n"
+"PO-Revision-Date: 2019-04-11 14:20+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -532,38 +532,43 @@ msgstr ""
 msgid "Requests"
 msgstr ""
 
-#: ../app/views/commoners/show.html.erb:65
-msgid "Commonshare heading|Two weeks"
+#: ../app/views/commoners/show.html.erb:64
+msgid "What is the Commonshare?"
 msgstr ""
 
-#: ../app/views/commoners/show.html.erb:79
-msgid "Commonshare heading|Over time"
-msgstr ""
-
-#: ../app/views/commoners/show.html.erb:92
+#: ../app/views/commoners/show.html.erb:69
+#: ../app/views/commoners/show.html.erb:98
 msgid "No Commonshare yet"
 msgstr ""
 
-#: ../app/views/commoners/show.html.erb:105
+#: ../app/views/commoners/show.html.erb:71
+msgid "Commonshare heading|Two weeks"
+msgstr ""
+
+#: ../app/views/commoners/show.html.erb:85
+msgid "Commonshare heading|Over time"
+msgstr ""
+
+#: ../app/views/commoners/show.html.erb:111
 #: ../app/views/groups/show.html.erb:93
 msgid "No stories yet"
 msgstr ""
 
-#: ../app/views/commoners/show.html.erb:113
+#: ../app/views/commoners/show.html.erb:119
 #: ../app/views/pages/home.html.erb:104 ../app/views/wallets/show.html.erb:31
 #: ../app/views/wallets/view.html.erb:41
 msgid "See all"
 msgstr ""
 
-#: ../app/views/commoners/show.html.erb:119
+#: ../app/views/commoners/show.html.erb:125
 msgid "Button|Start a group"
 msgstr ""
 
-#: ../app/views/commoners/show.html.erb:126
+#: ../app/views/commoners/show.html.erb:132
 msgid "No groups"
 msgstr ""
 
-#: ../app/views/commoners/show.html.erb:140
+#: ../app/views/commoners/show.html.erb:146
 msgid "No requests"
 msgstr ""
 
@@ -993,10 +998,6 @@ msgstr ""
 
 #: ../app/views/layouts/_navbar.html.erb:38
 msgid "Navbar|Commoners Voices"
-msgstr ""
-
-#: ../app/views/layouts/_navbar.html.erb:41
-msgid "Navbar|Good Practices"
 msgstr ""
 
 #: ../app/views/layouts/_navbar.html.erb:44
@@ -1657,12 +1658,12 @@ msgid "Change password page header|Change your password"
 msgstr ""
 
 #: ../app/views/users/passwords/edit.html.erb:9
-msgid "Change password page field|New password"
+#: ../app/views/users/registrations/new.html.erb:9
+msgid "Sign up page form hint|%{min_password_length} characters minimum"
 msgstr ""
 
 #: ../app/views/users/passwords/edit.html.erb:9
-#: ../app/views/users/registrations/new.html.erb:9
-msgid "Sign up page form hint|%{min_password_length} characters minimum"
+msgid "Change password page field|New password"
 msgstr ""
 
 #: ../app/views/users/passwords/edit.html.erb:10
@@ -1785,12 +1786,12 @@ msgid "Sign up page header|Become a Commoner"
 msgstr ""
 
 #: ../app/views/users/registrations/new.html.erb:5
-#: ../app/views/users/sessions/new.html.erb:1
-msgid "Log in"
+msgid "Already a Commoner?"
 msgstr ""
 
 #: ../app/views/users/registrations/new.html.erb:5
-msgid "Already a Commoner?"
+#: ../app/views/users/sessions/new.html.erb:1
+msgid "Log in"
 msgstr ""
 
 #: ../app/views/users/registrations/new.html.erb:10
