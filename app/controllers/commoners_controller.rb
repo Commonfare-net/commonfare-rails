@@ -21,6 +21,8 @@ class CommonersController < ApplicationController
   def show
     if current_user == @commoner.user
       @stories = @commoner.stories
+      # binding.pry
+      @json_data = @commoner.commonshare_data.to_json.gsub('\'', '&rsquo;').html_safe
     else
       @stories = @commoner.stories.published.where(anonymous: false, group: nil)
     end
@@ -30,6 +32,9 @@ class CommonersController < ApplicationController
       welfare_provision: @stories.welfare_provision.first(6)
     }
     @join_requests = JoinRequest.where(commoner: @commoner).includes(:group)
+  end
+
+  def commonshare
   end
 
   # GET /commoners/new

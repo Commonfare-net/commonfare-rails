@@ -80,6 +80,7 @@ Rails.application.routes.draw do
         end
       end
       resources :listings, only: :index
+      get :commonshare, on: :member, defaults: { format: :json }
     end
     resources :comments, except: [:new, :show, :index]
     resources :tags, only: :show

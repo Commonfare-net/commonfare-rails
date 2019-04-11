@@ -1,6 +1,6 @@
 <% content_for :title, @commoner.name %>
 <div class="row justify-content-center">
-  <div class="col-lg-7 col-md-9">
+  <div class="col-lg-12 col-md-9">
     <div class="row commoner-header py-4 bg-white">
       <div class="col-lg-8 commoner-profile">
         <%= image_tag @commoner.avatar.profile, class: 'mb-1' %>
@@ -38,8 +38,13 @@
       <div class="col">
         <div class="row nav-pills-container mb-3">
           <ul class="nav nav-pills" id="pills-tab" role="tablist">
+            <% if user_signed_in? %>
+              <li class="nav-item">
+                <a class="nav-link active" id="pills-commonshare-tab" data-toggle="pill" href="#pills-commonshare" role="tab" aria-controls="pills-commonshare" aria-selected="true"><%= _('Commonshare') %></a>
+              </li>
+            <% end %>
             <li class="nav-item">
-              <a class="nav-link active" id="pills-stories-tab" data-toggle="pill" href="#pills-stories" role="tab" aria-controls="pills-stories" aria-selected="true"><%= _('Stories') %></a>
+              <a class="nav-link <%= 'active' unless user_signed_in? %>" id="pills-stories-tab" data-toggle="pill" href="#pills-stories" role="tab" aria-controls="pills-stories" aria-selected="true"><%= _('Stories') %></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" id="pills-groups-tab" data-toggle="pill" href="#pills-groups" role="tab" aria-controls="pills-groups" aria-selected="false"><%= _('Groups') %></a>
@@ -51,8 +56,52 @@
             <% end %>
           </ul>
         </div>
-        <div class="tab-content" id="pills-tabContent">
-          <div class="tab-pane fade show active" id="pills-stories" role="tabpanel" aria-labelledby="pills-stories-tab">
+        <div class="tab-content bg-white" id="pills-tabContent">
+          <div class="tab-pane fade <%= 'show active' if user_signed_in? %>" id="pills-commonshare" role="tabpanel" aria-labelledby="pills-commonshare-tab">
+            <% if @commoner.commonshare_data.present? %>
+            <div class="row">
+              <div class="col">
+                <h6 class="m-3"><%= link_to _("What is the Commonshare?"), page_path(id: 'about', anchor: 'commonshare'), target: :blank %></h6>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col col-lg-4">
+                <h3 id="no-commonshare"><%= _("No Commonshare yet") %></h3>
+                <div class="box-wrap">
+                  <h3><%= s_('Commonshare heading|Two weeks') %></h3>
+                  <div class="graph text-center" style="padding: 2em 0 0;">
+                    <svg id="donut" width="240" height="280"></svg>
+                    <div class="datepicker">
+                      <i class="arrow arrow-left" onclick="updateDonut(-1)"></i>
+                      <p id="donutdate"></p>
+                      <i class="arrow arrow-right" onclick="updateDonut(1)"></i>
+                    </div>
+                  </div>
+                  <div id="donut_description"></div>
+                </div>
+              </div>
+              <div class="col col-lg-8">
+                <div class="box-wrap">
+                  <h3><%= s_('Commonshare heading|Over time') %></h3>
+                  <div class="graph">
+                    <div id="linechartdiv">
+                      <svg id="linechart" width="500" height="420"></svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <% else %>
+            <div class="row justify-content-center">
+              <div class="col text-center">
+                <h3 class="text-muted mt-4">
+                  <%= _("No Commonshare yet") %>
+                </h3>
+              </div>
+            </div>
+            <% end %>
+          </div>
+          <div class="tab-pane fade <%= 'show active' unless user_signed_in? %>" id="pills-stories" role="tabpanel" aria-labelledby="pills-stories-tab">
             <% if @stories.any? %>
               <%= render partial: 'stories/story', collection: @stories.first(6), as: :story %>
             <% else %>
@@ -106,3 +155,16 @@
     </div>
   </div>
 </div>
+
+<% content_for :scripts do %>
+  <script type="text/javascript">
+    <% if user_signed_in? %>
+    // These functions are in commonshare/commonvariables.js
+    drawCommonshare(
+      '<%= commonshare_commoner_url(@commoner) %>',
+      '<%= @commoner.id %>',
+      '<%= I18n.locale.to_s %>'
+    );
+    <% end %>
+  </script>
+<% end %>
