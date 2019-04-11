@@ -60,6 +60,11 @@
           <div class="tab-pane fade <%= 'show active' if user_signed_in? %>" id="pills-commonshare" role="tabpanel" aria-labelledby="pills-commonshare-tab">
             <% if @commoner.commonshare_data.present? %>
             <div class="row">
+              <div class="col">
+                <h6 class="m-3"><%= link_to _("What is the Commonshare?"), page_path(id: 'about', anchor: 'commonshare'), target: :blank %></h6>
+              </div>
+            </div>
+            <div class="row">
               <div class="col col-lg-4">
                 <h3 id="no-commonshare"><%= _("No Commonshare yet") %></h3>
                 <div class="box-wrap">
