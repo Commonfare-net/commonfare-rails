@@ -1,7 +1,7 @@
 class WalletsController < ApplicationController
-  load_and_authorize_resource :commoner
+  load_and_authorize_resource :commoner, except: :short_view
   load_and_authorize_resource :group
-  load_and_authorize_resource :wallet, through: [:commoner, :group]
+  load_and_authorize_resource :wallet, through: [:commoner, :group], except: :short_view
 
   before_action :set_currency
 
@@ -9,6 +9,15 @@ class WalletsController < ApplicationController
 
   def show
     @grouped_transactions = @wallet.transactions.order(created_at: :desc).last(10).reverse.group_by {|t| t.created_at.to_date}
+  end
+
+  def short_view
+    wallet = Wallet.find_by id: params[:id]
+    if wallet.present?
+      redirect_to view_commoner_wallet_url(wallet.holder, wallet)
+    else
+      raise CanCan::AccessDenied.new
+    end
   end
 
   def view
