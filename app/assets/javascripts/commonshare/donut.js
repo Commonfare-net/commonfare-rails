@@ -1,4 +1,5 @@
 var currentdonut = 0;
+
 var pie = d3.pie()
 	.startAngle(-90 * Math.PI / 180)
 	.endAngle(-90 * Math.PI / 180 + 2 * Math.PI)
@@ -10,36 +11,10 @@ var pie = d3.pie()
 var arc = d3.arc()
 	.outerRadius(90)
 	.innerRadius(70);
+
 var biggerarc = d3.arc()
 	.outerRadius(120)
 	.innerRadius(100);
-// var defs = chart.append("defs");
-//
-//
-// //Filter for the outside glow
-// var filter = defs.append("filter")
-// 	.attr("id", "glow");
-// filter.append("feGaussianBlur")
-// .attr("stdDeviation", "3.5")
-// .attr("result", "coloredBlur");
-//
-// var feMerge = filter.append("feMerge");
-// feMerge.append("feMergeNode")
-// .attr("in", "coloredBlur");
-// feMerge.append("feMergeNode")
-// .attr("in", "SourceGraphic");
-//
-// //https://www.visualcinnamon.com/2015/09/placing-text-on-arcs.html
-//
-// var arcs = chartg.selectAll(".arc");
-// var donut_labels = chartg.selectAll(".donutText");
-// var kcoretext = chartg.append("text")
-// 	.attr("id", "core_text");
-// var returntext = chart.append("text")
-// 	.attr("id", "return_text")
-// 	.text(myReturnText)
-// 	.style("font-size", "20px");
-// var bunchg = chart.append("g").attr('class', 'bunchpack');
 
 d3.selectAll(".textpath")
 .attr("xlink:href", function (d, i) {
@@ -61,12 +36,20 @@ function updateDonut(value) {
 }
 
 function links_of_type(d, key) {
+    var platform_uid;
+    for (var n in d.nodes){
+        if(d.nodes[n].platform_id == uid){
+            platform_uid = d.nodes[n].id;
+            console.log("platform_uid is " + platform_uid);
+            break;
+        }
+    }    
 	var linktypes = keytypes[key];
 	var type_links = [];
 	for (var link in d.links) {
-		if ((d.links[link].source.id == uid || d.links[link].target.id == uid) &&
+		if ((d.links[link].source.id == platform_uid || d.links[link].target.id == platform_uid) &&
 			"edgemeta" in d.links[link] && d.links[link].edgemeta.includes(key)) {
-			if (d.links[link].target.id == uid) {
+			if (d.links[link].target.id == platform_uid) {
 				target = d.links[link].source;
 			} else {
 				target = d.links[link].target;
@@ -259,7 +242,8 @@ function makechildarcs(piesegments) {
 }
 
 function makearcs(piesegments) {
-	d3.selectAll(".node").remove();
+	d3.selectAll(".node")
+	.remove();
 	arcs = arcs.data(pie(piesegments));
 	arcs.exit().remove();
 	d3.selectAll(".hiddenDonutArcs").remove();
@@ -357,13 +341,11 @@ function positionCommonshareText() {
 	returntext.style("display", "none");
 	kcoretext.style("display", "block");
 	var kcorenode = kcoretext.node();
-	if (kcorenode != null) {
-		var kcorewidth = kcorenode.getBoundingClientRect().width;
-		var kcoreheight = kcorenode.getBoundingClientRect().height;
+	var kcorewidth = kcorenode.getBoundingClientRect().width;
+	var kcoreheight = kcorenode.getBoundingClientRect().height;
 
-		kcoretext.attr("transform", "translate(" + ((width / 2) - (kcorewidth / 2)) +
+	kcoretext.attr("transform", "translate(" + ((width / 2) - (kcorewidth / 2)) +
 		"," + ((height / 2) + (kcoreheight / 4)) + ")");
-	}
 }
 
 function positionReturnText() {
@@ -410,7 +392,6 @@ function initDonutVars() {
 }
 
 function plotdonut(graphdata, mydata) {
-
 	$('#donutdate').text(getDateText(mydata));
 
 	$("#donut").bind("wheel mousewheel", function (e) {
@@ -494,7 +475,7 @@ function plotdonut(graphdata, mydata) {
 		d3.select(this).style("fill", "#E7472E");
 	})
 	.on("mouseout", function (d) {
-		d3.select(this).style("fill", "#488580");
+		d3.select(this).style("fill", "var(--cf-green)");
 	})
 	.on("click", function (d) {
 		donut_labels
