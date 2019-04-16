@@ -36,7 +36,8 @@ class WalletsController < ApplicationController
     # see http://www.qrcode.com/en/about/version.html for versions
     # 7 -> 45x45 modules
     # 8 -> 49x49 modules
-    qr = RQRCode::QRCode.new(view_commoner_wallet_url(@wallet.walletable, @wallet), size: 7)
+    # qr = RQRCode::QRCode.new(view_commoner_wallet_url(@wallet.walletable, @wallet), size: 7)
+    qr = RQRCode::QRCode.new(wallet_short_url(@wallet), size: 7)
     @qr_svg = qr.as_svg(offset: 0,
                         color: '000',
                         shape_rendering: 'crispEdges',

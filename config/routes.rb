@@ -52,7 +52,7 @@ Rails.application.routes.draw do
     end
     get 'story_builder', to: 'stories#builder'
 
-    # Usage: wallet_short_path(wallet_id)
+    # Usage: wallet_short_url(wallet_id)
     match 'w/:id', to: 'wallets#short_view', via: :get, as: 'wallet_short'
     resources :commoners, except: [:index] do
       resources :stories, only: :index

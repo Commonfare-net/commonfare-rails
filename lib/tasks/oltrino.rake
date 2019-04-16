@@ -168,6 +168,13 @@ namespace :oltrino do
       id: wallet.id)
   end
 
+  def commoner_wallet_short_url(wallet)
+    Rails.application.routes.url_helpers.wallet_short_url(
+      host: hostname,
+      locale: 'it',
+      id: wallet.id)
+  end
+
   def hostname
     case Rails.env
     when 'production'
