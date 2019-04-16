@@ -8,7 +8,7 @@
   background-color: $lightgreen;
   color: $cf-secondary-color;
 }
-.transaction {
+.transaction-collapse {
   // margin-bottom: 2px;
   background-color: $white;
   border-bottom: 1px solid $lightgreen;
@@ -90,7 +90,7 @@
   }
 }
 
-.withdraw-container, .top_up-container {  
+.withdraw-container, .top_up-container {
   .transaction_amount {
     input {
       font-size: 2.5rem;

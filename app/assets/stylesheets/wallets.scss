@@ -4,10 +4,10 @@
 .wallet-header {
   border-bottom: 1px solid $lightgreen;
   a {
-    color: $cf-secondary-color;
+    color: white;
     &:hover {
       text-decoration: none;
-      color: $darkgreen;
+      color: lightgrey;
     }
   }
 }
