@@ -68,7 +68,7 @@ class Wallet < ApplicationRecord
   end
 
   def is_common_wallet?
-    !address.present? && !walletable.is_a?(Group)
+    !address.present?
   end
 
   private
