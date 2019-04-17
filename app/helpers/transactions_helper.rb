@@ -57,6 +57,6 @@ module TransactionsHelper
   end
 
   def basic_income_transaction?(transaction)
-    transaction.from_wallet.is_common_wallet?
+    transaction.from_wallet.is_common_wallet? && !transaction.from_wallet.walletable.is_a?(Group)
   end
 end
