@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0\n"
 "Report-Msgid-Bugs-To: contact@translation.io\n"
-"POT-Creation-Date: 2019-04-11 14:20+0200\n"
-"PO-Revision-Date: 2019-04-11 14:20+0200\n"
+"POT-Creation-Date: 2019-04-24 16:54+0200\n"
+"PO-Revision-Date: 2019-04-24 16:54+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Italian\n"
 "Language: it\n"
@@ -118,19 +118,19 @@ msgstr "Messaggio inviato"
 msgid "Message deleted"
 msgstr "Messaggio cancellato"
 
-#: ../app/controllers/pages_controller.rb:55
+#: ../app/controllers/pages_controller.rb:56
 msgid "Dashboard|Visits"
 msgstr "Visite"
 
-#: ../app/controllers/pages_controller.rb:56
+#: ../app/controllers/pages_controller.rb:57
 msgid "Dashboard|Unique visitors"
 msgstr "Visite uniche"
 
-#: ../app/controllers/pages_controller.rb:57
+#: ../app/controllers/pages_controller.rb:58
 msgid "Dashboard|Pageviews"
 msgstr "Visualizzazioni pagina"
 
-#: ../app/controllers/pages_controller.rb:58
+#: ../app/controllers/pages_controller.rb:59
 msgid "Dashboard|Total registered commoners"
 msgstr "Commoner registrati (totale)"
 
@@ -1324,18 +1324,14 @@ msgid "Dashboard|Visits over time"
 msgstr "Visite nel periodo"
 
 #: ../app/views/pages/dashboard.html.erb:54
-msgid "Dashboard|Site search"
-msgstr "Ricerche sul sito"
+msgid "Dashboard|Popular Stories"
+msgstr "Storie più popolari"
 
 #: ../app/views/pages/dashboard.html.erb:59
-msgid "Dashboard site search|Keyword"
-msgstr "Parola chiave"
+msgid "Dashboard site popular story|Title"
+msgstr "Titolo"
 
-#: ../app/views/pages/dashboard.html.erb:60
-msgid "Dashboard site search|Visits"
-msgstr "Ricerche"
-
-#: ../app/views/pages/dashboard.html.erb:76
+#: ../app/views/pages/dashboard.html.erb:93
 msgid "Dashboard|Social graph"
 msgstr "Grafico sociale"
 

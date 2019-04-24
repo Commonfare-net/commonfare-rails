@@ -51,6 +51,7 @@ class PagesController < ApplicationController
         @start_date       = data['start_date']
         @end_date         = data['end_date']
         @site_searches    = data['site_searches']
+        @popular_stories  = data['popular_stories']
         @visits_overview = {
           s_('Dashboard|Visits')               => data['nb_visits'],
           s_('Dashboard|Unique visitors')      => data['nb_uniq_visitors'],

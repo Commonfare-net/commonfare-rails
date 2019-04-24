@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0\n"
 "Report-Msgid-Bugs-To: contact@translation.io\n"
-"POT-Creation-Date: 2019-04-11 14:20+0200\n"
-"PO-Revision-Date: 2019-04-11 14:20+0200\n"
+"POT-Creation-Date: 2019-04-24 16:54+0200\n"
+"PO-Revision-Date: 2019-04-24 16:54+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Croatian\n"
 "Language: hr\n"
@@ -121,19 +121,19 @@ msgstr "Poruka je poslana"
 msgid "Message deleted"
 msgstr "Poruka je izbrisana"
 
-#: ../app/controllers/pages_controller.rb:55
+#: ../app/controllers/pages_controller.rb:56
 msgid "Dashboard|Visits"
 msgstr "Posjeta"
 
-#: ../app/controllers/pages_controller.rb:56
+#: ../app/controllers/pages_controller.rb:57
 msgid "Dashboard|Unique visitors"
 msgstr "Jedinstvenih posjeta"
 
-#: ../app/controllers/pages_controller.rb:57
+#: ../app/controllers/pages_controller.rb:58
 msgid "Dashboard|Pageviews"
 msgstr "Pregleda stranica"
 
-#: ../app/controllers/pages_controller.rb:58
+#: ../app/controllers/pages_controller.rb:59
 msgid "Dashboard|Total registered commoners"
 msgstr "Ukupno registriranih commonera"
 
@@ -1346,18 +1346,14 @@ msgid "Dashboard|Visits over time"
 msgstr "Posjete u vremenskom periodu"
 
 #: ../app/views/pages/dashboard.html.erb:54
-msgid "Dashboard|Site search"
-msgstr "Pretraživanja stranice"
+msgid "Dashboard|Popular Stories"
+msgstr "Najpopularnije priče"
 
 #: ../app/views/pages/dashboard.html.erb:59
-msgid "Dashboard site search|Keyword"
-msgstr "Ključna riječ"
+msgid "Dashboard site popular story|Title"
+msgstr "Naslov"
 
-#: ../app/views/pages/dashboard.html.erb:60
-msgid "Dashboard site search|Visits"
-msgstr "Posjeti"
-
-#: ../app/views/pages/dashboard.html.erb:76
+#: ../app/views/pages/dashboard.html.erb:93
 msgid "Dashboard|Social graph"
 msgstr "Društveni grafikon"
 
