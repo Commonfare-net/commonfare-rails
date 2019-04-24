@@ -51,25 +51,42 @@
 
     <div class="row">
       <div class="col-lg-6">
-        <h2><%= s_('Dashboard|Site search') %></h2>
+        <h2><%= s_('Dashboard|Popular Stories') %></h2>
         <table class="table table-hover">
           <thead class="thead-light">
             <tr>
               <th scope="col">#</th>
-              <th scope="col"><%= s_('Dashboard site search|Keyword') %></th>
-              <th scope="col"><%= s_('Dashboard site search|Visits') %></th>
+              <th scope="col"><%= s_('Dashboard site popular story|Title') %></th>
             </tr>
           </thead>
           <tbody>
-          <% @site_searches.each_with_index do |s, i| %>
+          <% @popular_stories.each_with_index do |s, i| %>
             <tr>
               <th scope="row"><%= i + 1 %></th>
               <td><%= s['label'] %></td>
-              <td><%= s['nb_visits'] %></td>
             </tr>
           <% end %>
           </tbody>
         </table>
+        <!-- <h2><%#= s_('Dashboard|Site search') %></h2>
+        <table class="table table-hover">
+          <thead class="thead-light">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col"><%#= s_('Dashboard site search|Keyword') %></th>
+              <th scope="col"><%#= s_('Dashboard site search|Visits') %></th>
+            </tr>
+          </thead>
+          <tbody>
+          <%# @site_searches.each_with_index do |s, i| %>
+            <tr>
+              <th scope="row"><%#= i + 1 %></th>
+              <td><%#= s['label'] %></td>
+              <td><%#= s['nb_visits'] %></td>
+            </tr>
+          <%# end %>
+          </tbody>
+        </table> -->
       </div>
       <div class="col-lg-6">
         <h2>

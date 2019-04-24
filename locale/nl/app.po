@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0\n"
 "Report-Msgid-Bugs-To: contact@translation.io\n"
-"POT-Creation-Date: 2019-04-11 14:20+0200\n"
-"PO-Revision-Date: 2019-04-11 14:20+0200\n"
+"POT-Creation-Date: 2019-04-24 16:54+0200\n"
+"PO-Revision-Date: 2019-04-24 16:54+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Dutch\n"
 "Language: nl\n"
@@ -116,19 +116,19 @@ msgstr ""
 msgid "Message deleted"
 msgstr ""
 
-#: ../app/controllers/pages_controller.rb:55
+#: ../app/controllers/pages_controller.rb:56
 msgid "Dashboard|Visits"
 msgstr ""
 
-#: ../app/controllers/pages_controller.rb:56
+#: ../app/controllers/pages_controller.rb:57
 msgid "Dashboard|Unique visitors"
 msgstr ""
 
-#: ../app/controllers/pages_controller.rb:57
+#: ../app/controllers/pages_controller.rb:58
 msgid "Dashboard|Pageviews"
 msgstr ""
 
-#: ../app/controllers/pages_controller.rb:58
+#: ../app/controllers/pages_controller.rb:59
 msgid "Dashboard|Total registered commoners"
 msgstr ""
 
@@ -1281,18 +1281,14 @@ msgid "Dashboard|Visits over time"
 msgstr ""
 
 #: ../app/views/pages/dashboard.html.erb:54
-msgid "Dashboard|Site search"
+msgid "Dashboard|Popular Stories"
 msgstr ""
 
 #: ../app/views/pages/dashboard.html.erb:59
-msgid "Dashboard site search|Keyword"
+msgid "Dashboard site popular story|Title"
 msgstr ""
 
-#: ../app/views/pages/dashboard.html.erb:60
-msgid "Dashboard site search|Visits"
-msgstr ""
-
-#: ../app/views/pages/dashboard.html.erb:76
+#: ../app/views/pages/dashboard.html.erb:93
 msgid "Dashboard|Social graph"
 msgstr ""
 
