@@ -25,7 +25,7 @@ class PagesController < ApplicationController
         commoners_voice: Story.published.commoners_voice
           .with_translations(I18n.locale, I18n.default_locale)
           .includes(:commoner, :tags, :comments, :images, :translations)
-          .first(6),
+          .first(12),
         tutorial: Story.published.tutorial
           .with_translations(I18n.locale, I18n.default_locale)
           .includes(:commoner, :tags, :comments, :images, :translations)
