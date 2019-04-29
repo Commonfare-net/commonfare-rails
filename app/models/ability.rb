@@ -18,7 +18,7 @@ class Ability
       # Commoncoin wallets not visible by guests
       cannot :read, Wallet, currency_id: nil
       # Only some group currency wallets are visible
-      can :short_view, Wallet
+      can :short_view, Wallet, currency_id: ENV['QR_CODE_ENABLED_CURRENCIES'].split(',').map(&:to_i)
       can :view, Wallet, currency_id: ENV['QR_CODE_ENABLED_CURRENCIES'].split(',').map(&:to_i)
       cannot :view, Wallet, walletable_type: 'Group'
       can [:affiliation, :affiliate], Group

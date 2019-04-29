@@ -14,8 +14,8 @@ namespace :oltrino do
     currency = group.currency
     wallets = []
     num.times do
-      commoner = Commoner.find_or_create_by name: generate_commoner_name do |commoner|
-        user_attributes_for(commoner)
+      commoner = Commoner.find_or_create_by name: generate_oltrino_commoner_name do |commoner|
+        oltrino_user_attributes_for(commoner)
       end
       Membership.create(commoner: commoner, group: group)
       wallet = Wallet.find_by(currency: currency, walletable: commoner)
@@ -23,8 +23,8 @@ namespace :oltrino do
       wallets << wallet
     end
     group.wallet.refresh_balance
-    generate_pdf_for_wallets(wallets, amount)
-    generate_csv_for_wallets(wallets, amount)
+    generate_pdf_for_oltrino_wallets(wallets, amount)
+    generate_csv_for_oltrino_wallets(wallets, amount)
   end
 
   desc "Destroy and recreate all the wallets in the given group"
@@ -63,7 +63,7 @@ namespace :oltrino do
         # 7 -> 45x45 modules
         # 8 -> 49x49 modules
         qr = RQRCode::QRCode.new(
-          commoner_wallet_url(member, wallet),
+          commoner_wallet_short_url(wallet),
           size: 7)
         qr_svg = qr.as_svg(offset: 0,
                            color: '000',
@@ -71,7 +71,7 @@ namespace :oltrino do
                            module_size: 5.5) # in pixels
         svg qr_svg, position: :center, width: 179
         move_down 2
-        text "WalletID #{wallet.id}", align: :center
+        text wallet.hash_id, align: :center, size: 10
         start_new_page
       end
     end
@@ -87,8 +87,8 @@ namespace :oltrino do
       csv << %w(Wallet_URL Wallet_ID)
       group.members.find_each do |member|
         wallet = Wallet.find_by(currency: currency, walletable: member)
-        wallet_url = commoner_wallet_url(member, wallet)
-        csv << [wallet_url, wallet.id]
+        wallet_url = commoner_wallet_short_url(wallet)
+        csv << [wallet_url, wallet.hash_id]
       end
     end
   end
@@ -99,10 +99,10 @@ namespace :oltrino do
     puts group.name
     currency = group.currency
     wallets = []
-    # out_csv = CSV.new(File.join(host_tmp_path, 'sf_sellers_out.csv'), headers: true)
-    CSV.open(File.join(host_tmp_path, 'sf_sellers_out.csv'), 'wb') do |out_csv|
+    # out_csv = CSV.new(File.join(host_tmp_path, 'oef_sellers_out.csv'), headers: true)
+    CSV.open(File.join(host_tmp_path, 'oef_sellers_out.csv'), 'wb') do |out_csv|
       out_csv << %w(Name Email Password)
-      CSV.foreach(File.join(host_tmp_path, 'sf_sellers.csv'), headers: true, header_converters: :symbol) do |row|
+      CSV.foreach(File.join(host_tmp_path, 'oef_sellers.csv'), headers: true, header_converters: :symbol) do |row|
         hash_row = row.to_hash
         name = hash_row[:name]
         email = hash_row[:email]
@@ -110,7 +110,7 @@ namespace :oltrino do
         puts "#{hash_row[:name]} #{hash_row[:email]}"
         out_csv << [name, email, password]
         commoner = Commoner.find_or_create_by name: name do |commoner|
-          seller_user_attributes_for(commoner, email, password)
+          seller_oltrino_user_attributes_for(commoner, email, password)
         end
         Membership.find_or_create_by(commoner: commoner, group: group, role: 'editor')
         wallet = Wallet.find_by(currency: currency, walletable: commoner)
@@ -118,8 +118,8 @@ namespace :oltrino do
       end
     end
     group.wallet.refresh_balance
-    generate_pdf_for_wallets(wallets, 0)
-    generate_csv_for_wallets(wallets, 0)
+    generate_pdf_for_oltrino_wallets(wallets, 0)
+    generate_csv_for_oltrino_wallets(wallets, 0)
   end
 
   def page_options
@@ -137,14 +137,14 @@ namespace :oltrino do
     I18n.l Time.zone.now, format: '%Y%m%d%H%M'
   end
 
-  def user_attributes_for(resource)
+  def oltrino_user_attributes_for(resource)
     resource.user_attributes = {
-      email: "#{resource.name.parameterize}@sf.it",
+      email: "#{resource.name.parameterize}@oef.it",
       password: [('a'..'z').to_a.shuffle[0,8].join, rand(100..999)].join
     }
   end
 
-  def seller_user_attributes_for(resource, email, password)
+  def seller_oltrino_user_attributes_for(resource, email, password)
     resource.user_attributes = {
       email: email,
       password: password
@@ -172,7 +172,7 @@ namespace :oltrino do
     Rails.application.routes.url_helpers.wallet_short_url(
       host: hostname,
       locale: 'it',
-      id: wallet.id)
+      hash_id: wallet.hash_id)
   end
 
   def hostname
@@ -186,16 +186,16 @@ namespace :oltrino do
     end
   end
 
-  def generate_commoner_name
-    name = "SF_#{[('a'..'z').to_a.shuffle[0,5].join, rand(100..999)].join}"
+  def generate_oltrino_commoner_name
+    name = "OEF_#{[('a'..'z').to_a.shuffle[0,5].join, rand(100..999)].join}"
     if Commoner.exists?(["lower(name) = ?", name.downcase])
-      generate_commoner_name
+      generate_oltrino_commoner_name
     else
       name
     end
   end
 
-  def generate_pdf_for_wallets(wallets, amount)
+  def generate_pdf_for_oltrino_wallets(wallets, amount)
     sorted_ids = wallets.map(&:id).sort
     Prawn::Document.generate("#{host_tmp_path}/#{timestamp}_oltrino_qrcodes_#{amount}sc_#{sorted_ids.first}-#{sorted_ids.last}.pdf", page_options) do
       wallets.each do |wallet|
@@ -203,7 +203,8 @@ namespace :oltrino do
         # 7 -> 45x45 modules
         # 8 -> 49x49 modules
         qr = RQRCode::QRCode.new(
-          commoner_wallet_url(wallet.walletable, wallet),
+          # commoner_wallet_url(wallet.walletable, wallet),
+          commoner_wallet_short_url(wallet),
           size: 7)
         qr_svg = qr.as_svg(offset: 0,
                            color: '000',
@@ -211,20 +212,21 @@ namespace :oltrino do
                            module_size: 5.5) # in pixels
         svg qr_svg, position: :center, width: 179
         move_down 2
-        text "WalletID #{wallet.id}", align: :center
+        text wallet.hash_id, align: :center, size: 10
         start_new_page
       end
     end
   end
 
-  def generate_csv_for_wallets(wallets, amount)
+  def generate_csv_for_oltrino_wallets(wallets, amount)
     sorted_ids = wallets.map(&:id).sort
     output_file = File.join(host_tmp_path, ("#{timestamp}_oltrino_wallet_urls_#{amount}sc_#{sorted_ids.first}-#{sorted_ids.last}.csv"))
     CSV.open(output_file, 'wb') do |csv|
       csv << %w(Wallet_URL Wallet_ID)
       wallets.each do |wallet|
-        wallet_url = commoner_wallet_url(wallet.walletable, wallet)
-        csv << [wallet_url, wallet.id]
+        # wallet_url = commoner_wallet_url(wallet.walletable, wallet)
+        wallet_url = commoner_wallet_short_url(wallet)
+        csv << [wallet_url, wallet.hash_id]
       end
     end
   end

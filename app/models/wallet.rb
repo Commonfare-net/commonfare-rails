@@ -20,6 +20,7 @@ class Wallet < ApplicationRecord
   end
 
   after_commit :get_initial_income, on: :create
+  after_commit :generate_hash_id, on: :create
   # before_destroy :empty_and_give_back
 
   scope :in_currency, ->(currency) { where(currency: currency) }
@@ -45,6 +46,8 @@ class Wallet < ApplicationRecord
   end
 
   def empty_and_give_back
+    binding.pry
+    return if balance.nil?
     client = SocialWallet::Client.new(
       api_endpoint: endpoint,
       api_key: api_key
@@ -84,6 +87,16 @@ class Wallet < ApplicationRecord
     else
       # 0 Group coins
       update_column(:balance, 0)
+    end
+  end
+
+  # Generates a unique hash_id for the wallet
+  def generate_hash_id
+    hash_id = Digest::SHA1.hexdigest("#{walletable.reload.to_s}#{rand(1..999)}")[4..32]
+    if Wallet.find_by(hash_id: hash_id).present?
+      generate_hash_id
+    else
+      update_column(:hash_id, hash_id)
     end
   end
 
