@@ -75,7 +75,7 @@
           <%# NOTE: uncomment to enable wallet %>
           <%= link_to(_('Commoncoin Wallet'), commoner_wallet_path(current_user.meta, current_user.meta.wallet), class: 'dropdown-item') if ENV['WALLET_ENABLED'] == 'true' %>
           <% current_user.meta.group_currency_wallets.find_each do |wallet| %>
-            <%= link_to((_('%{currency_name} Wallet') %{currency_name: currency_name_for_wallet(wallet)}), view_commoner_wallet_url(current_user.meta, wallet), class: 'dropdown-item') %>
+            <%= link_to((_('%{currency_name} Wallet') %{currency_name: currency_name_for_wallet(wallet)}), get_wallet_path_for_navbar(wallet, current_user.meta), class: 'dropdown-item') %>
           <% end %>
           <%= link_to _('Conversations'), conversations_path, class: 'dropdown-item' %>
           <div class="dropdown-divider"></div>

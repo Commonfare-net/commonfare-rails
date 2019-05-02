@@ -98,7 +98,7 @@
           </div>
           <div class="tab-pane fade" id="pills-wallet" role="tabpanel" aria-labelledby="pills-wallet-tab">
             <% if can? :read, @wallet %>
-              <%= link_to s_('Button|Go to Wallet'), get_wallet_path(@wallet, @wallet.walletable), class: 'btn btn-cf btn-block'  %>
+              <%= link_to s_('Button|Go to Wallet'), get_wallet_path_for_group_show(@wallet, @wallet.walletable), class: 'btn btn-cf btn-block'  %>
             <% end %>
           </div>
           <div class="tab-pane fade" id="pills-members" role="tabpanel" aria-labelledby="pills-members-tab">

@@ -6,6 +6,20 @@ module WalletsHelper
     commoner_wallet_path(commoner, wallet)
   end
 
+  # generates the correct wallet path in the navbar
+  # avoids to disclose the actual path of the wallet for QR enabled currencies
+  def get_wallet_path_for_navbar(wallet, commoner)
+    return wallet_short_path(wallet.hash_id) if current_ability.can?(:short_view, wallet)
+    view_commoner_wallet_path(commoner, wallet)
+  end
+
+  # generates the correct wallet path in the groups#show page
+  # avoids to disclose the actual path of the wallet for QR enabled currencies
+  def get_wallet_path_for_group_show(wallet, commoner)
+    return wallet_short_path(wallet.hash_id) if current_ability.can?(:short_view, wallet)
+    get_wallet_path(wallet, commoner)
+  end
+
   def get_autocomplete_wallets_path
     return autocomplete_group_wallets_path(@group) if @wallet.walletable == @group # TODO: fix this! should return true for group currency transactions
     autocomplete_commoner_wallets_path(@commoner, currency: @currency)

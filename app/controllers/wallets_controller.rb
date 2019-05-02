@@ -4,6 +4,7 @@ class WalletsController < ApplicationController
   load_and_authorize_resource :wallet, through: [:commoner, :group], except: :short_view
 
   before_action :set_currency
+  before_action :redirect_to_short_view, only: [:show, :view]
 
   include WalletsHelper
 
@@ -102,5 +103,11 @@ class WalletsController < ApplicationController
     @wallet.present? &&
     @wallet.currency.present? &&
     ENV['QR_CODE_ENABLED_CURRENCIES'].split(',').map(&:to_i).include?(@wallet.currency.id)
+  end
+
+  # forces a redirect to the safer short_view if it is possible
+  # avoids to disclose the actual path of the wallet for QR enabled currencies
+  def redirect_to_short_view
+    redirect_to wallet_short_path(@wallet.hash_id) if current_ability.can?(:short_view, @wallet)
   end
 end
