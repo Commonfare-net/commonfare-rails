@@ -108,6 +108,6 @@ class WalletsController < ApplicationController
   # forces a redirect to the safer short_view if it is possible
   # avoids to disclose the actual path of the wallet for QR enabled currencies
   def redirect_to_short_view
-    redirect_to wallet_short_path(@wallet.hash_id) if current_ability.can?(:short_view, @wallet)
+    redirect_to wallet_short_path(@wallet.hash_id) if current_ability.can?(:short_view, @wallet) && !@wallet.is_common_wallet?
   end
 end
