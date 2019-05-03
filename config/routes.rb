@@ -52,6 +52,8 @@ Rails.application.routes.draw do
     end
     get 'story_builder', to: 'stories#builder'
 
+    # Usage: wallet_short_url(wallet.hash_id)
+    match 'w/:hash_id', to: 'wallets#short_view', via: :get, as: 'wallet_short'
     resources :commoners, except: [:index] do
       resources :stories, only: :index
       # :index used for commoner/42/comments, visible only by comments' author

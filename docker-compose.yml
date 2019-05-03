@@ -80,28 +80,50 @@ services:
       - ./swapi-commoncoin-data/db:/data/db
     # ports:
     #   - "27017:27017" # required if social wallet api service listens only to 'localhost'
-  swapi_santacoin:
+  # swapi_santacoin:
+  #   image: dyne/social-wallet-api
+  #   container_name: swapi_santacoin
+  #   volumes:
+  #    - ./swapi-santacoin-conf/social-wallet-api.yaml:/app/resources/social-wallet-api.yaml
+  #    - ./swapi-santacoin-conf/apikey.yaml:/app/apikey.yaml
+  #   ports:
+  #     - "3037:3000" # if you specify the env variable SWAPI_PORT make sure it matches the container port here
+  #   environment:
+  #     - SWAPI_HOST=0.0.0.0 # hostname on which the social wallet api service will listen
+  #     # - SWAPI_PORT=4000 # port on which the social wallet api service will listen (default is 3000)
+  #   depends_on:
+  #     - swapi_santacoin_mongo
+  #   # network_mode: "host" # required if social wallet api service listens only to 'localhost'
+  #   # These two allow debug with pry
+  #   tty: true
+  #   stdin_open: true
+  # swapi_santacoin_mongo:
+  #   image: mongo
+  #   container_name: swapi_santacoin_mongo
+  #   volumes:
+  #     - ./swapi-santacoin-data/db:/data/db
+  swapi_oltrino:
     image: dyne/social-wallet-api
-    container_name: swapi_santacoin
+    container_name: swapi_oltrino
     volumes:
-     - ./swapi-santacoin-conf/social-wallet-api.yaml:/app/resources/social-wallet-api.yaml
-     - ./swapi-santacoin-conf/apikey.yaml:/app/apikey.yaml
+     - ./swapi-oltrino-conf/social-wallet-api.yaml:/app/resources/social-wallet-api.yaml
+     - ./swapi-oltrino-conf/apikey.yaml:/app/apikey.yaml
     ports:
-      - "3037:3000" # if you specify the env variable SWAPI_PORT make sure it matches the container port here
+      - "3038:3000" # if you specify the env variable SWAPI_PORT make sure it matches the container port here
     environment:
       - SWAPI_HOST=0.0.0.0 # hostname on which the social wallet api service will listen
       # - SWAPI_PORT=4000 # port on which the social wallet api service will listen (default is 3000)
     depends_on:
-      - swapi_santacoin_mongo
+      - swapi_oltrino_mongo
     # network_mode: "host" # required if social wallet api service listens only to 'localhost'
     # These two allow debug with pry
     tty: true
     stdin_open: true
-  swapi_santacoin_mongo:
+  swapi_oltrino_mongo:
     image: mongo
-    container_name: swapi_santacoin_mongo
+    container_name: swapi_oltrino_mongo
     volumes:
-      - ./swapi-santacoin-data/db:/data/db
+      - ./swapi-oltrino-data/db:/data/db
   commonshare:
     image: commonfare/commonshare-python
     container_name: commonshare

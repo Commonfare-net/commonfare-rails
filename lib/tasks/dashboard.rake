@@ -13,6 +13,12 @@ namespace :dashboard do
       period: :range,
       date: date_span
     )
+    popular_stories = Piwik::Actions.getPageTitles(
+      idSite: ENV['PIWIK_SITE_ID'],
+      period: :range,
+      date: date_span,
+      segment: "pageUrl=@%2Fstories%2F"
+    )
     inactive_commoners_count = Currency.find(ENV['QR_CODE_ENABLED_CURRENCIES'].split(',').map(&:to_i))
       .map(&:group)
       .map{|g| g.inactive_commoners.count}
@@ -27,6 +33,7 @@ namespace :dashboard do
     data['nb_visits'] = visits_summary.nb_visits
     data['nb_pageviews'] = actions_summary.nb_pageviews
     data['site_searches'] = site_searches.first(5).map { |s| {'label' => s['label'], 'nb_visits' => s['nb_visits']} }
+    data['popular_stories'] = popular_stories.first(5).map { |s| {'label' => s['label'].gsub('| Commonfare.net', '').strip, 'nb_visits' => s['nb_visits']} }
     write_to_file(data)
   end
 
