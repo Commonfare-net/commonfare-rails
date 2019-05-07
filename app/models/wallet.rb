@@ -46,7 +46,6 @@ class Wallet < ApplicationRecord
   end
 
   def empty_and_give_back
-    binding.pry
     return if balance.nil?
     client = SocialWallet::Client.new(
       api_endpoint: endpoint,
