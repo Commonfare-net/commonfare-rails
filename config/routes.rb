@@ -106,6 +106,7 @@ Rails.application.routes.draw do
         get 'transaction_confirm', to: 'transactions#confirm'
         resources :transactions, except: [:edit, :update, :destroy]
       end
+      match 'join_and_associate_qr_wallet/:hash_id', to: 'groups#join_and_associate_qr_wallet', via: :get, as: 'join_and_associate_qr_wallet'
     end
     resources :conversations, except: [:edit, :update, :destroy] do
       resources :messages, only: [:create, :destroy]

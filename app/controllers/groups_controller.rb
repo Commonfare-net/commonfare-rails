@@ -1,6 +1,6 @@
 class GroupsController < ApplicationController
   before_action :set_group, only: [:show, :edit, :update, :destroy, :leave, :affiliation, :affiliate]
-  before_action :set_commoner, only: [:new, :create, :leave]
+  before_action :set_commoner, only: [:new, :create, :leave, :join_and_associate_qr_wallet]
 
   # GET /groups
   # GET /groups.json
@@ -74,6 +74,20 @@ class GroupsController < ApplicationController
         format.html { redirect_to commoner_path(@commoner), notice: _('Activation complete!') }
       else
         format.html { render :affiliation }
+      end
+    end
+  end
+
+  def join_and_associate_qr_wallet
+    if params[:hash_id].present?
+      wallet = Wallet.find_by(hash_id: params[:hash_id])
+      respond_to do |format|
+        if wallet.present? && !@commoner.member_of?(wallet.currency.group)
+          associate_commoner_to_wallet(@commoner, wallet)
+          format.html { redirect_to wallet_short_path(wallet.hash_id), notice: _('Good! This wallet has been associated to your account') }
+        else
+          format.html { redirect_to wallet_short_path(wallet.hash_id), alert: _('Oh no, an error occurred') }
+        end
       end
     end
   end

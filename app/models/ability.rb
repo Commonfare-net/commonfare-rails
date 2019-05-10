@@ -49,6 +49,9 @@ class Ability
         can :join, Group do |group|
           !commoner.member_of? group
         end
+        can :join_and_associate_qr_wallet, Group do |group|
+          !commoner.member_of? group
+        end
         cannot [:affiliation, :affiliate], Group
         can :create, JoinRequest do |join_request|
           # commoner must not be a member and there must be no pending requests
