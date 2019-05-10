@@ -8,7 +8,10 @@ class Membership < ApplicationRecord
 
   private
   def create_wallet
-    if self.group.currency.present?
+    # creates a new wallet for the commoner if the group has a currency
+    # and if the commoner doesn't alreay have a wallet in the group
+    # (thing that happens in associate_commoner_to_wallet)
+    if self.group.currency.present? && !Wallet.find_by(walletable: self.commoner, currency: self.group.currency).present?
       Wallet.create(walletable: self.commoner,
                     address:    Digest::SHA2.hexdigest(self.commoner.email + Time.now.to_s),
                     currency:   self.group.currency)

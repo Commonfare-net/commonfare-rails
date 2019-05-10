@@ -17,6 +17,9 @@
     <%= link_to(s_('Show QR code'), '#', class: 'btn btn-outline-secondary btn-block', data: { toggle: "modal", target: "#qrModal" }) if can_view_qr_code? %>
     <%= link_to(s_('Button|Daily takings'), daily_takings_commoner_wallet_path(@commoner, @wallet, {day_start: get_day_start_for_wallet(@wallet)}), class: 'btn btn-outline-secondary btn-block') if can? :daily_takings, @wallet %>
     <%= link_to s_('Button|Activate account'), affiliation_group_path(@wallet.currency.group, { commoner_name: @wallet.holder.name}), class: 'btn btn-cf btn-block' if can_activate_account_for_group?(@wallet.currency.group, @wallet.holder) %>
+    <%= link_to s_('Button|Associate to your Commonfare account'), new_user_session_path({ hash_id: @wallet.hash_id}), class: 'btn btn-cf btn-block' if can_activate_account_for_group?(@wallet.currency.group, @wallet.holder) %>
+    <%= link_to s_('Button|Associate to this Commonfare account'), '#', class: 'btn btn-cf btn-block', data: { toggle: "modal", target: "#joinAndAssociateQrWalletModal" } if can? :join_and_associate_qr_wallet, @wallet.currency.group %>
+
     <% if can_top_up_wallet? %>
       <%= link_to(s_('Button|Withdraw'), withdraw_commoner_transactions_path(@wallet.walletable, { from_wallet_id: @wallet.id, currency: @wallet.currency.id }), class: 'btn btn btn-cf btn-block') %>
       <%= link_to(s_('Button|Top up'), top_up_commoner_transactions_path(@wallet.walletable, { to_wallet_id: @wallet.id, currency: @wallet.currency.id }), class: 'btn btn-cf-alt btn-block') %>
@@ -46,3 +49,4 @@
 </div>
 
 <%= render 'wallets/qr_modal' if can_view_qr_code? %>
+<%= render 'wallets/join_and_associate_qr_wallet_modal' if can? :join_and_associate_qr_wallet, @wallet.currency.group %>

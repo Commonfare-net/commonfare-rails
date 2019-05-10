@@ -92,11 +92,31 @@ class ApplicationController < ActionController::Base
 
   end
 
+  # Associate an existing commoner to an existing QR enabled wallet
+  # by manually acting on models and associations
+  def associate_commoner_to_wallet(commoner, wallet)
+    # 1. get the customer of the wallet
+    customer = wallet.walletable
+    # 2. get the group of the wallet
+    group = wallet.currency.group
+    # 3. give the wallet to the commoner
+    wallet.walletable = commoner
+    wallet.save
+    # 4. remove the customer from the group by destroying the membership
+    old_membership = Membership.find_by(commoner: customer, group: group)
+    old_membership.destroy
+    # 5. add the commoner to the group by creating the new membership, without creating a new wallet
+    new_membership = Membership.create(commoner: commoner, group: group, role: 'affiliate')
+    # 6. destroy the customer
+    customer.destroy
+  end
+
   # Delete all the keys in the session hash that have been used for
   # storing temporary data
   def clear_session
     session.delete :comment_request_params
     session.delete :comment_path_params
+    session.delete :hash_id
   end
 
   private

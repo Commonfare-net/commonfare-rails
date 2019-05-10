@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0\n"
 "Report-Msgid-Bugs-To: contact@translation.io\n"
-"POT-Creation-Date: 2019-04-24 16:54+0200\n"
-"PO-Revision-Date: 2019-04-24 16:54+0200\n"
+"POT-Creation-Date: 2019-05-10 14:18+0200\n"
+"PO-Revision-Date: 2019-05-10 14:18+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Italian\n"
 "Language: it\n"
@@ -81,11 +81,19 @@ msgstr "Discussione creata."
 msgid "Activation complete!"
 msgstr "Attivazione completata!"
 
-#: ../app/controllers/groups_controller.rb:88
+#: ../app/controllers/groups_controller.rb:87
+msgid "Good! This wallet has been associated to your account"
+msgstr "Bene! Questo portafoglio è stato associato al tuo account"
+
+#: ../app/controllers/groups_controller.rb:89
+msgid "Oh no, an error occurred"
+msgstr "Oh no, si è verificato un errore"
+
+#: ../app/controllers/groups_controller.rb:102
 msgid "Group was successfully created."
 msgstr "Gruppo creato."
 
-#: ../app/controllers/groups_controller.rb:102
+#: ../app/controllers/groups_controller.rb:116
 msgid "Group was successfully updated."
 msgstr "Gruppo modificato."
 
@@ -311,7 +319,7 @@ msgstr "utilizza solo due decimali"
 msgid "ValidationError|must be higher than %{min_price}"
 msgstr "Deve essere maggiore di %{min_price}"
 
-#: ../app/models/membership.rb:20
+#: ../app/models/membership.rb:23
 msgid "There must be at least one administrator"
 msgstr "Bisogna che vi sia almeno un Amministratore"
 
@@ -323,7 +331,7 @@ msgstr "non puoi essere tu stesso"
 msgid "ValidationError|must accept %{currency_name}"
 msgstr "deve accettare %{currency_name}"
 
-#: ../app/models/wallet.rb:39
+#: ../app/models/wallet.rb:40
 msgid "Unregistered commoner"
 msgstr "Commoner non registrato"
 
@@ -574,7 +582,7 @@ msgstr "Non ci sono storie presenti"
 
 #: ../app/views/commoners/show.html.erb:119
 #: ../app/views/pages/home.html.erb:104 ../app/views/wallets/show.html.erb:31
-#: ../app/views/wallets/view.html.erb:41
+#: ../app/views/wallets/view.html.erb:44
 msgid "See all"
 msgstr "Vedi tutte"
 
@@ -1698,7 +1706,7 @@ msgid "Title|Final reimbursement"
 msgstr "Rimborso finale"
 
 #: ../app/views/transactions/withdraw.html.erb:34
-#: ../app/views/wallets/view.html.erb:21
+#: ../app/views/wallets/view.html.erb:24
 msgid "Button|Withdraw"
 msgstr "Preleva"
 
@@ -1908,6 +1916,24 @@ msgstr "Accedi"
 msgid "Auth Button title|Sign up"
 msgstr "Registrati"
 
+#: ../app/views/wallets/_join_and_associate_qr_wallet_modal.html.erb:6
+msgid "Title|Please read before proceeding"
+msgstr "Leggi prima di andare avanti"
+
+#: ../app/views/wallets/_join_and_associate_qr_wallet_modal.html.erb:14
+msgid ""
+"After having associated this wallet to this Commonfare account, you will also "
+"become a member of the group <strong>%{group_name}</strong>.<br/> Click the bu"
+"tton below to proceed."
+msgstr ""
+"Dopo aver associato questo portafoglio al tuo account Commonfare, diverrai anc"
+"he membro del gruppo <strong>%{group_name}</strong>.<br/> Fai click sul botton"
+"e qui sotto per andare avanti."
+
+#: ../app/views/wallets/_join_and_associate_qr_wallet_modal.html.erb:19
+msgid "Title|Associate to this Commonfare account"
+msgstr "Associa a questo account Commonfare"
+
 #: ../app/views/wallets/_qr_modal.html.erb:21
 msgid "Close"
 msgstr "Chiudi"
@@ -1938,7 +1964,7 @@ msgstr "Il tuo portafoglio personale"
 msgid "Button|Send %{currency_code}"
 msgstr "Invia %{currency_code}"
 
-#: ../app/views/wallets/show.html.erb:21 ../app/views/wallets/view.html.erb:27
+#: ../app/views/wallets/show.html.erb:21 ../app/views/wallets/view.html.erb:30
 msgid "Transactions"
 msgstr "Transazioni"
 
@@ -1962,14 +1988,22 @@ msgstr "Incassi giornalieri"
 msgid "Button|Activate account"
 msgstr "Attiva account"
 
-#: ../app/views/wallets/view.html.erb:22
+#: ../app/views/wallets/view.html.erb:20
+msgid "Button|Associate to your Commonfare account"
+msgstr "Associa al tuo account Commonfare"
+
+#: ../app/views/wallets/view.html.erb:21
+msgid "Button|Associate to this Commonfare account"
+msgstr "Associa a questo account Commonfare"
+
+#: ../app/views/wallets/view.html.erb:25
 msgid "Button|Top up"
 msgstr "Ricarica"
 
-#: ../app/views/wallets/view.html.erb:23
+#: ../app/views/wallets/view.html.erb:26
 msgid "Button|Reimburse"
 msgstr "Rimborsa"
 
-#: ../app/views/wallets/view.html.erb:39
+#: ../app/views/wallets/view.html.erb:42
 msgid "Activate account to see more"
 msgstr "Attiva account vedere le altre"
