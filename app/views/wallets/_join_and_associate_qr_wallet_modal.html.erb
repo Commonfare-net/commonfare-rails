@@ -11,7 +11,7 @@
       <div class="modal-body">
         <div class="row">
           <div class="col">
-            <%= _("After having associated this wallet to this Commonfare account, you will also become a member of the group <strong>#{@wallet.currency.group.name}</strong>. Click the button below to proceed.").html_safe %>
+            <%= (_('After having associated this wallet to this Commonfare account, you will also become a member of the group <strong>%{group_name}</strong>.<br/> Click the button below to proceed.') %{group_name: @wallet.currency.group.name}).html_safe %>
           </div>
         </div>
       </div>

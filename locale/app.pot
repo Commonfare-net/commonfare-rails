@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0\n"
 "Report-Msgid-Bugs-To: contact@translation.io\n"
-"POT-Creation-Date: 2019-04-24 16:54+0200\n"
-"PO-Revision-Date: 2019-04-24 16:54+0200\n"
+"POT-Creation-Date: 2019-05-10 14:18+0200\n"
+"PO-Revision-Date: 2019-05-10 14:18+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -79,11 +79,19 @@ msgstr ""
 msgid "Activation complete!"
 msgstr ""
 
-#: ../app/controllers/groups_controller.rb:88
-msgid "Group was successfully created."
+#: ../app/controllers/groups_controller.rb:87
+msgid "Good! This wallet has been associated to your account"
+msgstr ""
+
+#: ../app/controllers/groups_controller.rb:89
+msgid "Oh no, an error occurred"
 msgstr ""
 
 #: ../app/controllers/groups_controller.rb:102
+msgid "Group was successfully created."
+msgstr ""
+
+#: ../app/controllers/groups_controller.rb:116
 msgid "Group was successfully updated."
 msgstr ""
 
@@ -307,7 +315,7 @@ msgstr ""
 msgid "ValidationError|must be higher than %{min_price}"
 msgstr ""
 
-#: ../app/models/membership.rb:20
+#: ../app/models/membership.rb:23
 msgid "There must be at least one administrator"
 msgstr ""
 
@@ -319,7 +327,7 @@ msgstr ""
 msgid "ValidationError|must accept %{currency_name}"
 msgstr ""
 
-#: ../app/models/wallet.rb:39
+#: ../app/models/wallet.rb:40
 msgid "Unregistered commoner"
 msgstr ""
 
@@ -556,7 +564,7 @@ msgstr ""
 
 #: ../app/views/commoners/show.html.erb:119
 #: ../app/views/pages/home.html.erb:104 ../app/views/wallets/show.html.erb:31
-#: ../app/views/wallets/view.html.erb:41
+#: ../app/views/wallets/view.html.erb:44
 msgid "See all"
 msgstr ""
 
@@ -1640,7 +1648,7 @@ msgid "Title|Final reimbursement"
 msgstr ""
 
 #: ../app/views/transactions/withdraw.html.erb:34
-#: ../app/views/wallets/view.html.erb:21
+#: ../app/views/wallets/view.html.erb:24
 msgid "Button|Withdraw"
 msgstr ""
 
@@ -1831,6 +1839,21 @@ msgstr ""
 msgid "Auth Button title|Sign up"
 msgstr ""
 
+#: ../app/views/wallets/_join_and_associate_qr_wallet_modal.html.erb:6
+msgid "Title|Please read before proceeding"
+msgstr ""
+
+#: ../app/views/wallets/_join_and_associate_qr_wallet_modal.html.erb:14
+msgid ""
+"After having associated this wallet to this Commonfare account, you will also "
+"become a member of the group <strong>%{group_name}</strong>.<br/> Click the bu"
+"tton below to proceed."
+msgstr ""
+
+#: ../app/views/wallets/_join_and_associate_qr_wallet_modal.html.erb:19
+msgid "Title|Associate to this Commonfare account"
+msgstr ""
+
 #: ../app/views/wallets/_qr_modal.html.erb:21
 msgid "Close"
 msgstr ""
@@ -1861,7 +1884,7 @@ msgstr ""
 msgid "Button|Send %{currency_code}"
 msgstr ""
 
-#: ../app/views/wallets/show.html.erb:21 ../app/views/wallets/view.html.erb:27
+#: ../app/views/wallets/show.html.erb:21 ../app/views/wallets/view.html.erb:30
 msgid "Transactions"
 msgstr ""
 
@@ -1885,14 +1908,22 @@ msgstr ""
 msgid "Button|Activate account"
 msgstr ""
 
-#: ../app/views/wallets/view.html.erb:22
+#: ../app/views/wallets/view.html.erb:20
+msgid "Button|Associate to your Commonfare account"
+msgstr ""
+
+#: ../app/views/wallets/view.html.erb:21
+msgid "Button|Associate to this Commonfare account"
+msgstr ""
+
+#: ../app/views/wallets/view.html.erb:25
 msgid "Button|Top up"
 msgstr ""
 
-#: ../app/views/wallets/view.html.erb:23
+#: ../app/views/wallets/view.html.erb:26
 msgid "Button|Reimburse"
 msgstr ""
 
-#: ../app/views/wallets/view.html.erb:39
+#: ../app/views/wallets/view.html.erb:42
 msgid "Activate account to see more"
 msgstr ""
