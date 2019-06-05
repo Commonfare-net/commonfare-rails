@@ -42,7 +42,9 @@ class Commoner < ApplicationRecord
   # NOTE: uncomment to enable wallet
   before_destroy :empty_wallet_and_give_back
 
-  validates :name, presence: true, uniqueness: { case_sensitive: false }
+  validates :name, presence: true,
+                   uniqueness: { case_sensitive: false },
+                   length: { minimum: 3 }
 
   def member_of?(group)
     self.groups.include? group
