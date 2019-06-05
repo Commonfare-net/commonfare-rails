@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0\n"
 "Report-Msgid-Bugs-To: contact@translation.io\n"
-"POT-Creation-Date: 2019-05-10 14:18+0200\n"
-"PO-Revision-Date: 2019-05-10 14:18+0200\n"
+"POT-Creation-Date: 2019-06-05 13:46+0200\n"
+"PO-Revision-Date: 2019-06-05 13:46+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Croatian\n"
 "Language: hr\n"
@@ -276,12 +276,10 @@ msgid "+ %{other_tags_count} more"
 msgstr "+ %{other_tags_count} više"
 
 #: ../app/helpers/stories_helper.rb:74
-#: ../app/views/commoners/welcome.html.erb:9
 msgid "Good Practices"
 msgstr "Dobre prakse"
 
 #: ../app/helpers/stories_helper.rb:76
-#: ../app/views/commoners/welcome.html.erb:9
 msgid "Welfare Provisions"
 msgstr "Odredbe socijalne skrbi"
 
@@ -630,27 +628,6 @@ msgstr ""
 "ko bismo zaštitili vašu privatnost. Vaše ime možete promjeniti bilo kada. Ako "
 "to želite učiniti sada, kliknite na ime!"
 
-#: ../app/views/commoners/welcome.html.erb:9
-msgid ""
-"Welcome page|Commonfare.net is constantly growing and more things will come in"
-" the next weeks. At the moment you can access the <strong>%{link_to_gps}</stro"
-"ng> and the <strong>%{link_to_wps}</strong> available in Italy, Croatia and th"
-"e Netherlands, and you can <strong>%{link_to_share_a_story}</strong> of your o"
-"wn that could be a personal experience, some good practices, or anything you w"
-"ould like that other people know of. You can also respond to other people's St"
-"ories by commenting them."
-msgstr ""
-"Commonfare.net kontinuirano raste i više sadržaja će biti dostupno sljedećih t"
-"jedana. U ovom trenutku možete pristupiti <strong>%{link_to_gps}</strong> i <s"
-"trong>%{link_to_wps}</strong> dostupnima u Italiji, Hrvatskoj i Nizozemskoj, t"
-"e možete <strong>%{link_to_share_a_story}</strong> svoju priču koja može biti "
-"osobno iskustvo, neka od dobrih praksi, ili bilo što za što bi željeli da drug"
-"i znaju. Također, možete komentirati objave drugih korisnika."
-
-#: ../app/views/commoners/welcome.html.erb:9
-msgid "Welcome page text|share a Story"
-msgstr "Podijeli svoju priču"
-
 #: ../app/views/commoners/welcome.html.erb:17
 msgid ""
 "Welcome page|If you want to know more about what Commonfare.net is and who is "
@@ -693,9 +670,8 @@ msgid "Conversation with %{commoner_name}"
 msgstr "Razgovor s %{commoner_name}"
 
 #: ../app/views/conversations/show.html.erb:5
-msgid "%{icon} Back to My conversations"
-msgstr ""
-"%{icon} Povratak na Moje razgovore\n"
+msgid "%{icon} Back to my conversations"
+msgstr "%{icon} Povratak na moje razgovore"
 
 #: ../app/views/currencies/_fields.html.erb:2
 msgid "Code"
