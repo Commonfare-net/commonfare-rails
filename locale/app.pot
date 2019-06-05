@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0\n"
 "Report-Msgid-Bugs-To: contact@translation.io\n"
-"POT-Creation-Date: 2019-05-10 14:18+0200\n"
-"PO-Revision-Date: 2019-05-10 14:18+0200\n"
+"POT-Creation-Date: 2019-06-05 13:46+0200\n"
+"PO-Revision-Date: 2019-06-05 13:46+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -265,12 +265,10 @@ msgid "+ %{other_tags_count} more"
 msgstr ""
 
 #: ../app/helpers/stories_helper.rb:74
-#: ../app/views/commoners/welcome.html.erb:9
 msgid "Good Practices"
 msgstr ""
 
 #: ../app/helpers/stories_helper.rb:76
-#: ../app/views/commoners/welcome.html.erb:9
 msgid "Welfare Provisions"
 msgstr ""
 
@@ -593,21 +591,6 @@ msgid ""
 "do it now, just click on it!"
 msgstr ""
 
-#: ../app/views/commoners/welcome.html.erb:9
-msgid ""
-"Welcome page|Commonfare.net is constantly growing and more things will come in"
-" the next weeks. At the moment you can access the <strong>%{link_to_gps}</stro"
-"ng> and the <strong>%{link_to_wps}</strong> available in Italy, Croatia and th"
-"e Netherlands, and you can <strong>%{link_to_share_a_story}</strong> of your o"
-"wn that could be a personal experience, some good practices, or anything you w"
-"ould like that other people know of. You can also respond to other people's St"
-"ories by commenting them."
-msgstr ""
-
-#: ../app/views/commoners/welcome.html.erb:9
-msgid "Welcome page text|share a Story"
-msgstr ""
-
 #: ../app/views/commoners/welcome.html.erb:17
 msgid ""
 "Welcome page|If you want to know more about what Commonfare.net is and who is "
@@ -648,7 +631,7 @@ msgid "Conversation with %{commoner_name}"
 msgstr ""
 
 #: ../app/views/conversations/show.html.erb:5
-msgid "%{icon} Back to My conversations"
+msgid "%{icon} Back to my conversations"
 msgstr ""
 
 #: ../app/views/currencies/_fields.html.erb:2
