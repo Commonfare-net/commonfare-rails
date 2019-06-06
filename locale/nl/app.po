@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0\n"
 "Report-Msgid-Bugs-To: contact@translation.io\n"
-"POT-Creation-Date: 2019-06-05 13:46+0200\n"
-"PO-Revision-Date: 2019-06-05 13:46+0200\n"
+"POT-Creation-Date: 2019-06-06 09:42+0200\n"
+"PO-Revision-Date: 2019-06-06 09:42+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Dutch\n"
 "Language: nl\n"
@@ -663,7 +663,19 @@ msgstr ""
 msgid "Title|New coin"
 msgstr ""
 
-#: ../app/views/currencies/new.html.erb:11
+#: ../app/views/currencies/new.html.erb:9
+msgid ""
+"This is an advanced feature that requires some experience with server configur"
+"ation. To get an Endpoint and API key, you will need to set up your own server"
+" and install the Social Wallet on it. For further details, read the %{tutorial"
+"_link}"
+msgstr ""
+
+#: ../app/views/currencies/new.html.erb:9
+msgid "tutorial"
+msgstr ""
+
+#: ../app/views/currencies/new.html.erb:14
 msgid "Title|Create"
 msgstr ""
 
