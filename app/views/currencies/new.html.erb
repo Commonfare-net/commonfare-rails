@@ -5,6 +5,9 @@
     <p>
       <%= (_('for group %{group_name}') %{group_name: link_to(@group.name, @group)}).html_safe %>
     </p>
+    <small>
+      <%= (_('This is an advanced feature that requires some experience with server configuration. To get an Endpoint and API key, you will need to set up your own server and install the Social Wallet on it. For further details, read the %{tutorial_link}') %{tutorial_link: link_to(_('tutorial'), "https://commonfare.net/#{I18n.locale}/stories/group-currency-tutorial", target: :blank)}).html_safe %>
+    </small>
     <%= simple_form_for([@group, @currency]) do |f| %>
       <%= f.error_notification %>
       <%= render 'fields', f: f %>
