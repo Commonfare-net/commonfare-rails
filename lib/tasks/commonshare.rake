@@ -4,7 +4,7 @@ namespace :commonshare do
     conn = Faraday.new ENV['COMMONSHARE_ENDPOINT']
     response = conn.get do |req|
       req.url '/parse'
-      req.options.timeout = 60*60
+      req.options.timeout = 60*60*3
     end
     unless response.status == 200 && MultiJson.load(response.body)['success'] == true
       puts "ERROR"
