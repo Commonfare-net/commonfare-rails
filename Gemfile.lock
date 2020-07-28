@@ -192,7 +192,7 @@ GEM
       thor (>= 0.14, < 2.0)
     js_cookie_rails (2.1.4)
       railties (>= 3.1)
-    json (2.1.0)
+    json (2.3.1)
     kaminari (1.0.1)
       activesupport (>= 4.1.0)
       kaminari-actionview (= 1.0.1)
