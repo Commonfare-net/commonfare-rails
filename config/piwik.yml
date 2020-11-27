@@ -12,14 +12,14 @@
 production:
   piwik:
     id_site: 2
-    url: piwik.commonfare.net
+    url: matomo.commonfare.net
     use_async: false
     disabled: false
 
 staging:
   piwik:
     id_site: 3
-    url: piwik.commonfare.net
+    url: matomo.commonfare.net
     use_async: false
     disabled: false
 
