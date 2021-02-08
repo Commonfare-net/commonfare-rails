@@ -91,7 +91,7 @@ gem 'friendly_id', '~> 5.2.0'
 gem 'friendly_id-globalize', git: 'https://github.com/norman/friendly_id-globalize'
 
 # Attachments
-gem 'carrierwave', '~> 1.0'
+gem 'carrierwave', '~> 1.3'
 gem 'mini_magick'
 gem 'simple_form_fancy_uploads'
 
